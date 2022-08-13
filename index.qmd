@@ -11,3 +11,5 @@ editor: visual
 
 - [Quarto 소개](about.html)
 - [발표자료 - `reveal.js`](slideshow.html)
+- 팔머 펭귄
+    - [Quarto 문서](Quarto_penguin.html)

@@ -1,0 +1,207 @@
+---
+title: "Quarto 기본사용법"
+description: Quarto 올바른 사용법!
+date: today # 날짜 설정: now, last-modified
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    toc: true
+    toc-depth: 2
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: true
+bibliography: bibliography.bib
+link-citations: yes
+csl: apa-single-spaced.csl
+---
+
+:::{.callout-warning}
+
+2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 "Getting to know Quarto" 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 [발표영상](https://www.youtube.com/watch?v=shVSmYna3GM&t=5s)과 [발표코드](https://github.com/rladies/meetup-presentations_freiburg/tree/master/2022-06-02_Quarto)를 참조 바랍니다.
+:::
+
+
+# 사전 준비
+
+## 데이터 선택
+
+항상 모든 사람이들이 말하는데....
+
+> 펭귄은 귀요미!
+
+... 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.
+
+:::{.callout-note}
+팔머펭귄(`palmerpenguins`) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(`iris`) 데이터를 대체하기 위해 제작된 것입니다.
+:::
+
+팔머펭귄 데이터셋에 대한 자세한 사항은 [Allison Horst's Github page.](https://allisonhorst.github.io/palmerpenguins/) 웹사이트를 참조합니다.
+
+
+:::{.callout-caution collapse="true"}
+## 데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요
+팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.
+:::
+
+{palmerpenguins} 패키지 [@palmer-penguins]를 통해 R에서 손쉽게 이용가능하게 
+되었고 원데이터는 @Gorman-2014 에서 최초 공개되었다.
+
+
+## 데이터와 패키지 불러오기
+
+먼저, 다음 작업을 순차적으로 수행한다:
+
+1. **패키지** 적재하기(loading)
+2. **데이터** 불러오기
+3. 데이터가 *올바른 형식*인지 확인한다.
+
+["올바른 형식"이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.]{.aside}
+
+:::{.callout-tip}
+## 다운로드하지 않고 데이터 사용하는 방법
+`palmerpenguins` 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.
+:::
+
+```{r library and data, warning = FALSE, message = FALSE}
+library(tidyverse)
+penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% 
+  drop_na()
+head(penguins)
+```
+
+결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 `r nrow(penguins)` 행수를 갖게 됨  [^1].
+
+
+## 요약 통계량
+
+::: {layout-ncol=2}
+![Allison Horst 박사가 그린 펭귄 3종 도식화](fig/penguin_species.png){#fig-penguins}
+
+![펭귄 부리(bill) 변수 설명](fig/culmen_depth.png){#fig-bill}
+:::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+평균 부리 길이는 `r mean(penguins$bill_length_mm)` mm,
+평균 부리 깊이는 `r mean(penguins$bill_depth_mm)` mm.
+:::
+
+::: {.column width="50%"}
+테이터 수집 시기는 `r min(penguins$year)` 년과 `r max(penguins$year)` 년도 사이.
+:::
+
+::::
+
+
+### Base R과 Tidyverse 구문 비교
+
+데이터프레임 특정 칼럼을 보는 코드를  Base R과 Tidyverse 구문으로 작성하면 차이를 
+확인할 수 있다.
+
+::: {.panel-tabset}
+#### Base R
+``` {.r}
+penguins$bill_length_mm
+```
+
+#### Tidyverse
+``` {.r}
+penguins %>% select(bill_length_mm)
+```
+
+:::
+
+
+# 시각화
+
+시각화 그래프 제작을 위한 몇가지 아이디어:
+
+* 펭귄 체중과 물갈퀴 길이
+    + 전체 데이터를 대상으로
+    + 혹은 각 펭귄 종별로 나눠서
+    + 부가적으로 성별도 고려하여
+* 물칼퀴 길이와 부리 길이
+* 부리 길이(bill length)와 부리 깊이(bill depth)
+
+## 펭귄 체중과 물갈퀴 길이
+
+다음 그래프는 [{palmerpenguins} 패키지 소품문](https://allisonhorst.github.io/palmerpenguins/articles/examples.html)에
+제시된 것은 간략하게 작성한 것임.
+
+
+### 전체 데이터
+
+```{r}
+#| label: fig-entire
+#| fig-cap: Penguin flipper length and body mass
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)") +
+  theme_minimal()
+
+mass_flipper
+```
+
+측정에 대한 설명은 @fig-bill 을 참조한다.
+
+### 펭귄 종별로 나눠서 시각화
+
+```{r}
+#| label: fig-species
+#| fig-cap: Penguin flipper length and body mass, separately by species
+mass_flipper_species <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal() +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)",
+       color = "펭귄 종",
+       shape = "펭귄 종") +
+  theme_minimal()
+
+mass_flipper_species
+```
+
+@fig-entire 그래프는 펭귄 종을 나누지 않았지만, 
+@fig-species 그래프는 펭귄 종별로 나눠 시각화.
+
+### 펭귄 종과 성별을 구분하여 시각화
+
+```{r}
+#| label: fig-sex
+#| fig-cap: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x
+#| cap-location: margin
+mass_flipper_species +
+  facet_wrap(~sex)
+```
+
+[^1]: 결측값을 갖는 행은 무조건 제거함에 주의!
+
+
+
+
