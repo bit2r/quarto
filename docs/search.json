@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "Quarto 소개\n발표자료 - reveal.js\n팔머 펭귄\n\nQuarto 문서"
+  },
+  {
+    "objectID": "quarto_about.html#문서-컴파일러-1",
+    "href": "quarto_about.html#문서-컴파일러-1",
+    "title": "Quarto",
+    "section": "1 문서 컴파일러 1",
+    "text": "1 문서 컴파일러 1\nQuarto 는 Pandoc에 기반한 오픈소스 과학기술 출판시스템이다. 하지만 특정 언어에 종속되지 않고 R, 파이썬, 쥴리아, 자바스크립트(Observable JS) 를 지원하고 있으며 이를 통해 다음 출판 저작물 작성이 가능하다.\n크게 세가지 부분에 대해 출판시스템에 대한 고민이 필요하다.\n\n콘텐츠(Content): 저작과 관련된 문서 내용\n디자인(Design): 출판 결과물에 대한 외양(Look and Feel)\n형식(Format): 출판물 최종 산출물\n\nQuarto 는 Literate Programming System 으로 다양한 언어를 지원하고 다양한 출판결과물을 연결시키는 핵심 엔진으로 Pandoc 을 사용한다.\n\n\n\n\n\n\n\n\nComputations\n문서 저작\n출력물\n\n\n\n\nPython, R, Julia, Observable JS\nPandoc, 마크다운 (Markdown)\n문서, 웹사이트, PPT, 책, 블로그등\n\n\n\n좀더 구체적으로 전문적인 출판을 위해서 문서저작에 다양한 기능과 함께 출판 산출물을 지원한다.\n\n문서저작(pandoc): 마크다운, 수식, 인용, 서지관리, 콜아웃(callout), 고급 layout 등\n출판산출물: 고품질 기사(article), 보고서, PPT, 웹사이트, 블로그, (HTML, PDF, MS 워드, ePub 등) 전자책"
+  },
+  {
+    "objectID": "quarto_about.html#single-sourcing-출판저작",
+    "href": "quarto_about.html#single-sourcing-출판저작",
+    "title": "Quarto",
+    "section": "2 Single Sourcing 출판저작",
+    "text": "2 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다.\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+  },
+  {
+    "objectID": "quarto_about.html#설치방법",
+    "href": "quarto_about.html#설치방법",
+    "title": "Quarto",
+    "section": "3 설치방법",
+    "text": "3 설치방법\nquarto 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. 그리고 나서 literate programming 방식으로 저작을 시작한다."
+  },
+  {
+    "objectID": "quarto_about.html#작업흐름",
+    "href": "quarto_about.html#작업흐름",
+    "title": "Quarto",
+    "section": "4 작업흐름",
+    "text": "4 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다.\n\nR (.Rmd)파이썬 (주피터)Quarto - RQuarto - 파이썬"
+  },
+  {
+    "objectID": "quarto_about.html#주요-기능",
+    "href": "quarto_about.html#주요-기능",
+    "title": "Quarto",
+    "section": "5 주요 기능",
+    "text": "5 주요 기능\n\n\n\nFeature\nR Markdown\nQuarto\n\n\n\n\nBasic Formats\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\nBeamer\n\nbeamer_presentation\n\n\nbeamer\n\n\n\nPowerPoint\n\npowerpoint_presentation\n\n\npptx\n\n\n\nHTML Slides\n\nxaringan\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\n\nbookdown\n\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\nSummer 2022\n\n\nJournal Articles\nrticles\nSummer 2022\n\n\nDashboards\nflexdashboard |\nFall 2022"
+  },
+  {
+    "objectID": "quarto_fonts.html",
+    "href": "quarto_fonts.html",
+    "title": "Quarto 글꼴",
+    "section": "",
+    "text": "R 마크다운 문서 작성에 필요한 글꼴 관련 정보\n\n\n\n\n글꼴(font)\n구글 노토 글꼴(Noto Fonts)\nR 마크다운 폰트"
+  },
+  {
+    "objectID": "quarto_fonts.html#typeface-vs-font",
+    "href": "quarto_fonts.html#typeface-vs-font",
+    "title": "Quarto 글꼴",
+    "section": "1.1 typeface vs font",
+    "text": "1.1 typeface vs font\ntypeface는 서체로 번역되고 font는 글꼴로 번역된다. 하나의 typeface에 다수 font가 포함될 수 있다. 팬그램(Pangram)은 ’모든 글자’라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다. 팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다. 영어 팬그램으로 가장 유명한 ‘The quick brown fox jumps over the lazy dog’는 19세기부터 사용되어 왔다. 유사하게 한글에서는 “다람쥐 헌 쳇바퀴에 타고파”가 사용되고 있다."
+  },
+  {
+    "objectID": "quarto_fonts.html#파일폰트와-웹폰트",
+    "href": "quarto_fonts.html#파일폰트와-웹폰트",
+    "title": "Quarto 글꼴",
+    "section": "1.2 파일폰트와 웹폰트",
+    "text": "1.2 파일폰트와 웹폰트\n데이터 사이언스 출판을 위해 필요한 글꼴을 반영하는 방식은 크게 두가지로 나뉜다. 하나는 전통적인 방식으로 운영체제에 내장된 글꼴을 문서제작에 글꼴을 반영하는 방식이고, 다른 하나는 웹폰트를 사용하는 방식이다. 웹폰트를 사용하게 될 경우 장점은 출판문서가 동작되는 컴퓨터에 해당 글꼴이 없어도 인터넷을 통해 다운로드하여 글꼴이 반영되기 때문에 글꼴이 없어 생기는 다양한 문제를 해결하는 장점이 있다. 웹폰트로 구글폰트와 눈누가 유명하다. 저작권을 살펴보고 문서제작에 필요한 글꼴을 사용하면 된다.\n\n눈누\n구글 폰트"
+  },
+  {
+    "objectID": "quarto_penguin.html",
+    "href": "quarto_penguin.html",
+    "title": "Quarto 기본사용법",
+    "section": "",
+    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
+  },
+  {
+    "objectID": "quarto_penguin.html#데이터-선택",
+    "href": "quarto_penguin.html#데이터-선택",
+    "title": "Quarto 기본사용법",
+    "section": "1.1 데이터 선택",
+    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
+  },
+  {
+    "objectID": "quarto_penguin.html#데이터와-패키지-불러오기",
+    "href": "quarto_penguin.html#데이터와-패키지-불러오기",
+    "title": "Quarto 기본사용법",
+    "section": "1.2 데이터와 패키지 불러오기",
+    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <chr>   <chr>           <dbl>         <dbl>            <dbl>       <dbl> <chr>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           36.7          19.3              193        3450 fema…\n5 Adelie  Torge…           39.3          20.6              190        3650 male \n6 Adelie  Torge…           38.9          17.8              181        3625 fema…\n# … with 1 more variable: year <dbl>\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
+  },
+  {
+    "objectID": "quarto_penguin.html#요약-통계량",
+    "href": "quarto_penguin.html#요약-통계량",
+    "title": "Quarto 기본사용법",
+    "section": "1.3 요약 통계량",
+    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
+  },
+  {
+    "objectID": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "href": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "title": "Quarto 기본사용법",
+    "section": "2.1 펭귄 체중과 물갈퀴 길이",
+    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
+  },
+  {
+    "objectID": "quarto_slideshow.html#글꼴",
+    "href": "quarto_slideshow.html#글꼴",
+    "title": "데이터 사이언스와 디자인",
+    "section": "글꼴",
+    "text": "글꼴"
+  },
+  {
+    "objectID": "quarto_slideshow.html#데이터-사이언스---출판",
+    "href": "quarto_slideshow.html#데이터-사이언스---출판",
+    "title": "데이터 사이언스와 디자인",
+    "section": "데이터 사이언스 - 출판",
+    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+  },
+  {
+    "objectID": "quarto_slideshow.html#quarto",
+    "href": "quarto_slideshow.html#quarto",
+    "title": "데이터 사이언스와 디자인",
+    "section": "Quarto",
+    "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/"
+  }
+]

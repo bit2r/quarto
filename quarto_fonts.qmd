@@ -1,0 +1,211 @@
+---
+title: "Quarto 글꼴"
+description: Quarto 한글 글꼴
+date: today # 날짜 설정: now, last-modified
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: 
+      - flatly
+      - css/quarto-fonts.css
+    code-fold: false
+    toc: true
+    toc-depth: 2
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: true
+bibliography: bibliography.bib
+link-citations: yes
+csl: apa-single-spaced.csl
+editor_options: 
+  chunk_output_type: console
+---
+
+::: callout-warning
+## R 마크다운 문서 작성에 필요한 글꼴 관련 정보
+
+- [글꼴(font)](http://aispiration.com/pdf/pdf-fonts.html)
+- [구글 노토 글꼴(Noto Fonts)](http://aispiration.com/pdf/pdf-noto.html)
+- [R 마크다운 폰트](http://aispiration.com/pdf/pdf-rmd-fonts.html)
+:::
+
+# 글꼴 분류 [^1] {#font-classification} 
+
+[^1]: [Adobe Korea (August 21, 2017), "글꼴의 기능과 디자인에 적합한 글꼴 선택 방법"](https://blog.adobe.com/ko/publish/2017/08/21/whats-in-a-fonts-can-define-your-design.html#gs.u0he6a)
+
+-   **활자(Type)**는 본래는 글자를 만드는 데 사용된 나무 또는 금속 조각을 일컫는 말이었습니다.
+-   **타이포그래피(Typography)**: 인쇄된 텍스트의 스타일과 모양을 가리키는 디자인 용어입니다.
+-   **서체(또는 글꼴 모음, Typeface)**: 글자 및 기호가 서로 비슷한 특징을 가지도록 디자인된 문자로 타임즈(Times), 에어리얼(Arial) 및 미니언(Minion)을 들 수 있습니다.
+-   **글꼴(Font)**: 서체의 특정 스타일을 지칭하는데, 예를 들어, 에어리얼 블랙(Arial Black)은 에어리얼 서체 중 한 글꼴이며, 미니언 프로 이탤릭체(Minion Pro Italic)는 미니언 글꼴 모음에 포함되어 있는 글꼴이다.
+
+글꼴(Font)는 다양하지만 크게 다음 5가지로 영문의 경우 분류된다. 글꼴은 기본적으로 **세리프(serif)**와 **산세리프(sans serif)**의 2가지 스타일로 구분되는데 세리프는 글자의 획 끝에 작은 삐침이 있는 글꼴이며 산스(sans)은 라틴어로 없다는 뜻이기 때문에 삐침이 없는 글꼴을 지칭합니다.
+
+-   serif
+-   sans serif
+-   script
+-   monospaced
+-   display 
+
+가장 쉽게 분류되는 `monospaced` 글꼴은 코드를 작성하기 위해 등간격을 갖는 글꼴로 `consolas`, `D2 Coding`이 대표적이다. 산세리프(Sans serif)와 세리프(Serif) 글꼴은 본문에 사용하기 적합하지만, 좀더 시선을 끄는 디자인을 위해서는 조금 더 매력적인 **디스플레이(Display)** 혹은 **스크립트(Script)**을 선택하고, 제목(Title)에는 산세리프 글꼴을 사용하는 것이 일반적이다. 
+
+![출판문서 글꼴 분류](fig/font-classification.png)
+
+## `typeface` vs `font` {#typeface-vs-font} 
+
+`typeface`는 서체로 번역되고 `font`는 글꼴로 번역된다. 하나의 `typeface`에 다수 `font`가 포함될 수 있다. [**팬그램(Pangram)**](https://ko.wikipedia.org/wiki/팬그램)은 '모든 글자'라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다. 팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다. 영어 팬그램으로 가장 유명한 **'The quick brown fox jumps over the lazy dog'**는 19세기부터 사용되어 왔다. 유사하게 한글에서는 **"다람쥐 헌 쳇바퀴에 타고파"**가 사용되고 있다.
+
+## 파일폰트와 웹폰트
+
+데이터 사이언스 출판을 위해 필요한 글꼴을 반영하는 방식은 크게 두가지로 나뉜다.
+하나는 전통적인 방식으로 운영체제에 내장된 글꼴을 문서제작에 글꼴을 반영하는 
+방식이고, 다른 하나는 웹폰트를 사용하는 방식이다. 웹폰트를 사용하게 될 경우
+장점은 출판문서가 동작되는 컴퓨터에 해당 글꼴이 없어도 인터넷을 통해 
+다운로드하여 글꼴이 반영되기 때문에 글꼴이 없어 생기는 다양한 문제를 해결하는 
+장점이 있다. 웹폰트로 구글폰트와 눈누가 유명하다. 저작권을 살펴보고 문서제작에 
+필요한 글꼴을 사용하면 된다.
+
+- [눈누](https://noonnu.cc/)
+- [구글 폰트](https://fonts.google.com/)
+
+![](fig/ttf-web-fonts.png)
+
+# 출판 문서
+
+데이터 사이언스 한글 출판 문서 제작을 위해서 다음 글꼴을 선택한다.
+제목으로 산스 세리프 폰트로 구글 폰트에서 "노토 산스 세리프"를 선정하고,
+본문은 눈누 웹사이트에서 "마루부리"를 선정하고 코딩 글꼴 폰트로 눈누에서
+`D2Coding` 폰트를 지정한다.
+
+- 산스 세리프(제목): Noto Sans Serif
+- 세리프(본문): 마루부리 
+- 등간격(코딩): D2Coding   
+ 
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: true
+#| eval: false
+
+library(tidyverse)
+
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)") +
+  theme_minimal()
+
+```
+  
+ 
+# css 파일
+
+출판문서 제작에 사용된 글꼴 관련 사항을 `css/quarto-fonts.css` 파일에 지정해둔다.
+
+
+```{css}
+/* 글꼴 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* HTML */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  font-family: "Nanum Myeongjo", "MaruBuri-Regular", "Noto Serif KR", serif;
+  font-size: 15px;
+}
+
+tt, code, pre {
+  font-family: "D2Coding", Consolas, monospace;
+  font-size: 15px;
+}
+```
+
+# 그래프
+
+그래프(`ggplot`)에 사용되는 글꼴도 마찬가지로 `showtext` 패키지 웹폰트를 사용해서
+다양한 한글도 사용할 수 있다. `showtext` 패키지는 `font_add_google()` 함수를 
+통해서 구글 한글폰트를 지정하여 이를 `ggplot` 에 적용시킬 수 있다.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: true
+library(tidyverse)
+library(showtext)
+library(palmerpenguins)
+
+font_add_google("Nanum Pen Script", "nanum_pen_script")
+font_add_google("Jua", "Jua")
+showtext_auto()
+
+theme_quarto <- theme(
+  text = element_text(family = 'Jua', size = 25),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    family = 'nanum_pen_script', size = 55,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[3],
+    margin = margin(t = 2, r = 0, b = 3, l = 0, unit = "mm")
+  ),
+  plot.subtitle = element_text(
+    family = 'Jua', size = 25,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[5],
+    margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "mm")
+  )
+  
+)
+
+theme_set(theme_minimal() + theme_quarto)
+
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)")
+
+mass_flipper
+
+
+```
+
+

@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66
+      url: 'https://quartopub.com/sites/statkclee/quarto-ds'

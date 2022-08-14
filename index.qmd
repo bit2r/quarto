@@ -1,9 +1,18 @@
 ---
 title: "Quarto"
-format: 
+format:
   html:
+    theme: flatly
+    code-fold: true
     toc: true
-    html-math-method: katex
+    toc-depth: 2
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: true
+bibliography: bibliography.bib
+link-citations: yes
+csl: apa-single-spaced.csl
 editor: visual
 ---
 
@@ -13,3 +22,4 @@ editor: visual
 - [발표자료 - `reveal.js`](slideshow.html)
 - 팔머 펭귄
     - [Quarto 문서](Quarto_penguin.html)
+-     

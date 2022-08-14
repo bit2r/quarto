@@ -1,0 +1,65 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "!materials/workshop/"
+
+website:
+  title: "Quarto 데이터 사이언스"
+  twitter-card:
+    card-style: summary_large_image
+    description: "한글 Quarto 첫걸음"
+    image: "fig/koRea_logo.png"
+  page-footer:
+    left: "[Quarto](https://quarto.org/) 로 제작"
+  navbar:
+    background: "#447099"
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Quarto
+        menu:
+        - href: quarto_about.qmd
+          text: Quarto 소개
+        - href: quarto_slideshow.qmd
+          text: Quarto 슬라이드
+      - text: 모듈
+        menu: 
+          - href: quarto_fonts.qmd
+            text: "글꼴"
+      - text: 관련 정보
+        menu: 
+          - href: https://use-r.kr/
+            text: "한국 R 컨퍼런스"
+          - href: "https://www.meetup.com/seoul-r-meetup"
+            text: 서울 R Meetup
+          - href: "https://tidyverse-korea.github.io/seoul-R/"
+            text: 서울 R Meetup Archive
+          - href: "https://r-community.org/usergroups/"
+            text: 글로벌 R Meetup
+          - href: "https://quarto.org/"
+            text: "Quarto"
+    right: 
+      - href: https://r2bit.com
+        text: R사용자회
+      - icon: youtube
+        href: "https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"
+      - icon: github
+        href:  https://github.com/bit2r/quarto
+      - icon: facebook
+        href: https://www.facebook.com/groups/tidyverse
+  sidebar: 
+    style: docked
+    contents: 
+      - section: "PPT"
+        contents:
+          - href: quarto_slideshow.qmd
+            text: Quarto 슬라이드
+
+format:
+  html:
+    theme: 
+      - litera
+      - style.css
+    toc: true
