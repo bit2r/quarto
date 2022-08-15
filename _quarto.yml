@@ -20,6 +20,8 @@ website:
         text: Home
       - text: Quarto
         menu:
+        - href: quarto_install.qmd
+          text: Quarto 설치/출판
         - href: quarto_about.qmd
           text: Quarto 소개
         - href: quarto_slideshow.qmd
@@ -28,6 +30,8 @@ website:
         menu: 
           - href: quarto_fonts.qmd
             text: "글꼴"
+          - href: quarto_layout.qmd
+            text: "레이아웃"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
@@ -61,5 +65,5 @@ format:
   html:
     theme: 
       - litera
-      - style.css
+      - css/quarto.scss
     toc: true

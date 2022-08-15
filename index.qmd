@@ -2,7 +2,8 @@
 title: "Quarto"
 format:
   html:
-    theme: flatly
+    theme: 
+      - flatly
     code-fold: true
     toc: true
     toc-depth: 2
@@ -21,5 +22,5 @@ editor: visual
 - [Quarto 소개](about.html)
 - [발표자료 - `reveal.js`](slideshow.html)
 - 팔머 펭귄
-    - [Quarto 문서](Quarto_penguin.html)
+    - [Quarto 문서](Quarto_penguin.html) 
 -     

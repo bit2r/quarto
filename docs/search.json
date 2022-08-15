@@ -7,39 +7,46 @@
     "text": "Quarto 소개\n발표자료 - reveal.js\n팔머 펭귄\n\nQuarto 문서"
   },
   {
-    "objectID": "quarto_about.html#문서-컴파일러-1",
-    "href": "quarto_about.html#문서-컴파일러-1",
+    "objectID": "quarto_about.html#블로그-저작-소프트웨어",
+    "href": "quarto_about.html#블로그-저작-소프트웨어",
     "title": "Quarto",
-    "section": "1 문서 컴파일러 1",
-    "text": "1 문서 컴파일러 1\nQuarto 는 Pandoc에 기반한 오픈소스 과학기술 출판시스템이다. 하지만 특정 언어에 종속되지 않고 R, 파이썬, 쥴리아, 자바스크립트(Observable JS) 를 지원하고 있으며 이를 통해 다음 출판 저작물 작성이 가능하다.\n크게 세가지 부분에 대해 출판시스템에 대한 고민이 필요하다.\n\n콘텐츠(Content): 저작과 관련된 문서 내용\n디자인(Design): 출판 결과물에 대한 외양(Look and Feel)\n형식(Format): 출판물 최종 산출물\n\nQuarto 는 Literate Programming System 으로 다양한 언어를 지원하고 다양한 출판결과물을 연결시키는 핵심 엔진으로 Pandoc 을 사용한다.\n\n\n\n\n\n\n\n\nComputations\n문서 저작\n출력물\n\n\n\n\nPython, R, Julia, Observable JS\nPandoc, 마크다운 (Markdown)\n문서, 웹사이트, PPT, 책, 블로그등\n\n\n\n좀더 구체적으로 전문적인 출판을 위해서 문서저작에 다양한 기능과 함께 출판 산출물을 지원한다.\n\n문서저작(pandoc): 마크다운, 수식, 인용, 서지관리, 콜아웃(callout), 고급 layout 등\n출판산출물: 고품질 기사(article), 보고서, PPT, 웹사이트, 블로그, (HTML, PDF, MS 워드, ePub 등) 전자책"
+    "section": "5.1 블로그 저작 소프트웨어",
+    "text": "5.1 블로그 저작 소프트웨어\n개인용 컴퓨터가 보급되면서 아래한글과 같은 워드 프로세서를 사용해서 저작을 하는 것이 일반화되었지만 곧이어 인터넷이 보급되면서 웹에 문서를 저작하는 것이 이제는 더욱 중요하게 되었다. 전문 개발자가 아닌 일반인이 HTML, CSS, JavaScript를 학습하여 웹에 문서를 제작하고 출판하는 것은 난이도가 있다보니 워드프레스와 티스토리 같은 위지위그 패러다임을 채택한 저작도구가 사용되고 있으나 상대적으로 HTML, CSS, JavaScript을 조합한 방식과 비교하여 고급스러운 면과 함께 정교함에 있어 아쉬움이 있는 것도 사실이다.\n\n워드프레스와 티스토리HTML + CSS + 자바스크립트"
   },
   {
-    "objectID": "quarto_about.html#single-sourcing-출판저작",
-    "href": "quarto_about.html#single-sourcing-출판저작",
+    "objectID": "quarto_about.html#quarto",
+    "href": "quarto_about.html#quarto",
     "title": "Quarto",
-    "section": "2 Single Sourcing 출판저작",
-    "text": "2 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다.\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+    "section": "5.2 Quarto",
+    "text": "5.2 Quarto\nQuarto 는 10년전부터 시작된 knitr 경험을 많이 녹여냈고 위지윔 패러다임에 기초를 하고 있다고 볼 수 있다. RStudio를 IDE로 Quarto CLI와 함께 출판물을 저작한다면 편집기에 있는 Visual 모드가 있어 위지윅 패러다임도 문서저작에 사용이 가능하다. 특히, R, 파이썬, SQL, 자바스크립트 등 컴퓨팅 엔진을 달리하여 문서에 그래프, 표, 인터랙티브 결과물도 함께 담을 수 있는 것은 커다란 장점이다."
   },
   {
-    "objectID": "quarto_about.html#설치방법",
-    "href": "quarto_about.html#설치방법",
+    "objectID": "quarto_about.html#yaml",
+    "href": "quarto_about.html#yaml",
     "title": "Quarto",
-    "section": "3 설치방법",
-    "text": "3 설치방법\nquarto 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. 그리고 나서 literate programming 방식으로 저작을 시작한다."
+    "section": "6.1 YAML",
+    "text": "6.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값출력옵션상세 출력옵션\n\n\n---\nkey: value\n---\n\n\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n\n\n\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\nquarto render document.qmd --to html\n\n\n\n---\nformat: pdf\n---\n\n\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\nquarto render document.qmd --to html -M code fold:true\n\n\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
   },
   {
-    "objectID": "quarto_about.html#작업흐름",
-    "href": "quarto_about.html#작업흐름",
+    "objectID": "quarto_about.html#마크다운",
+    "href": "quarto_about.html#마크다운",
     "title": "Quarto",
-    "section": "4 작업흐름",
-    "text": "4 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다.\n\nR (.Rmd)파이썬 (주피터)Quarto - RQuarto - 파이썬"
+    "section": "6.2 마크다운",
+    "text": "6.2 마크다운\n데이터 과학 문서 웹사이트에 “마크다운 기초”, “고급 마크다운”, “R 마크다운 실무” 를 참조한다."
   },
   {
-    "objectID": "quarto_about.html#주요-기능",
-    "href": "quarto_about.html#주요-기능",
+    "objectID": "quarto_about.html#코드",
+    "href": "quarto_about.html#코드",
     "title": "Quarto",
-    "section": "5 주요 기능",
-    "text": "5 주요 기능\n\n\n\nFeature\nR Markdown\nQuarto\n\n\n\n\nBasic Formats\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\nBeamer\n\nbeamer_presentation\n\n\nbeamer\n\n\n\nPowerPoint\n\npowerpoint_presentation\n\n\npptx\n\n\n\nHTML Slides\n\nxaringan\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\n\nbookdown\n\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\nSummer 2022\n\n\nJournal Articles\nrticles\nSummer 2022\n\n\nDashboards\nflexdashboard |\nFall 2022"
+    "section": "6.3 코드",
+    "text": "6.3 코드\nR, 파이썬, SQL, 자바스크립트 등 버그 없이 정상 동작하는 프로그램을 작성하여 포함시킨다."
+  },
+  {
+    "objectID": "quarto_about.html#yaml-코드편집",
+    "href": "quarto_about.html#yaml-코드편집",
+    "title": "Quarto",
+    "section": "6.4 YAML 코드편집",
+    "text": "6.4 YAML 코드편집\nRStudio, VSCode IDE는 탭-자동완성(tab-completion)을 제공한다. 즉, 첫단어를 타이핑하고 탭을 연결하여 키보드를 치게되면 연관 명령어가 나와 선택하면 된다. 혹은 Ctrl + space 단축키를 치게되면 전체 명령어가 나온다."
   },
   {
     "objectID": "quarto_fonts.html",
@@ -61,6 +68,13 @@
     "title": "Quarto 글꼴",
     "section": "1.2 파일폰트와 웹폰트",
     "text": "1.2 파일폰트와 웹폰트\n데이터 사이언스 출판을 위해 필요한 글꼴을 반영하는 방식은 크게 두가지로 나뉜다. 하나는 전통적인 방식으로 운영체제에 내장된 글꼴을 문서제작에 글꼴을 반영하는 방식이고, 다른 하나는 웹폰트를 사용하는 방식이다. 웹폰트를 사용하게 될 경우 장점은 출판문서가 동작되는 컴퓨터에 해당 글꼴이 없어도 인터넷을 통해 다운로드하여 글꼴이 반영되기 때문에 글꼴이 없어 생기는 다양한 문제를 해결하는 장점이 있다. 웹폰트로 구글폰트와 눈누가 유명하다. 저작권을 살펴보고 문서제작에 필요한 글꼴을 사용하면 된다.\n\n눈누\n구글 폰트"
+  },
+  {
+    "objectID": "quarto_install.html",
+    "href": "quarto_install.html",
+    "title": "Quarto 설치/출판",
+    "section": "",
+    "text": "2 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다.\n\n\n\n3 Quarto Pub 출판 1\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\n\nCode\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n\nCode\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\n\nCode\nquarto.cmd preview\nquarto.cmd publish quarto-pub\n\n\n\n\n\n\n\nFootnotes\n\n\nQuarto Pub↩︎"
   },
   {
     "objectID": "quarto_penguin.html",

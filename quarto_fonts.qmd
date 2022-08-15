@@ -74,7 +74,7 @@ editor_options:
 - [눈누](https://noonnu.cc/)
 - [구글 폰트](https://fonts.google.com/)
 
-![](fig/ttf-web-fonts.png)
+![](fig/ttf-web-fonts.png){width=70%, fig-align="center"}
 
 # 출판 문서
 
@@ -204,7 +204,86 @@ mass_flipper <- ggplot(data = penguins,
        y = "체질량(Body mass) (g)")
 
 mass_flipper
+```
 
+
+# 표
+
+구글 폰트에서 다양한 글꼴을 표 제목, 표 칼럼명, 표 셀값에 다르게 적용하며
+크기는 물론 색상과 굵기도 적용이 가능하다.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: true
+library(gt)
+
+basic_theme <- function(data, ...){
+  data %>% 
+    tab_options(
+      column_labels.background.color = "blue",
+      table.font.size = px(12),
+      column_labels.font.size = px(20),
+      row.striping.background_color = "#9678b6",
+      heading.align = "left",
+      heading.title.font.size = px(30)
+  )
+}
+
+palmerpenguins::penguins %>% 
+  select( 펭귄종=species, 섬=island, bill_length_mm, body_mass_g) %>% 
+  slice_sample(n = 20) %>% 
+  gt() %>% 
+    tab_header(title = md("팔머 펭귄 표본 **20 마리** 측정 정보")) %>% 
+    tab_source_note(source_note = "데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집") %>% 
+    cols_label(bill_length_mm = "부리 길이 (mm)",
+               body_mass_g    = "체질량 (g)") %>% 
+  tab_style(
+    style = cell_text(
+      font = c(
+        google_font(name = "Nanum Pen Script"),
+        default_fonts()
+      ),
+      size = "xx-large",
+      color = "gray35",
+      weight = "bolder"
+    ),
+    locations = cells_body(columns = bill_length_mm)
+  ) %>% 
+  # 체질량 칼럼  ---------------
+  tab_style(
+    style = cell_text(
+      font = c(
+        google_font(name = "Black Han Sans"),
+        default_fonts()
+      ),
+      size = "large",
+      color = "blue",
+      weight = "bolder"
+    ),
+    locations = cells_body(columns = body_mass_g)
+  ) %>% 
+  # 표 Header 와 첫번째 칼럼  ---------------
+  tab_style(
+    style = cell_text(
+      font = google_font("Do Hyeon"), 
+      size = "large"
+    ),
+    locations = list(
+      cells_column_labels(everything()), 
+      cells_body(columns = 1)
+    )
+  ) %>%   
+  # 표 제목 ---------------
+  tab_style(
+    style = cell_text(
+      font = google_font("Dokdo"), 
+      align = "left", 
+      size = "xx-large"
+    ),
+    locations = cells_title("title")
+  ) %>%   
+  basic_theme() 
 
 ```
 
