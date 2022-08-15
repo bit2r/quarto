@@ -8,7 +8,7 @@ format:
     footer: <https://r2bit.com/>
     incremental: false
     code-line-numbers: false
-    self-contained: true    
+    self-contained: false    
     mermaid-format: png    
     css: 
       - css/revealjs.css
@@ -17,14 +17,13 @@ editor: visual
 
 # 목차
 
-- __글꼴__
+-   **글꼴**
 
-- shiny 앱
+-   shiny 앱
 
-- 데이터 사이언스 아키텍처
+-   데이터 사이언스 아키텍처
 
 -   
-
 
 ## 글꼴
 
@@ -33,22 +32,20 @@ editor: visual
 ::: panel-tabset
 ### 문제점
 
-![문제점](fig/single-sourcing-problem.jpg){#fig-problem width=50%}
+![문제점](fig/single-sourcing-problem.jpg){#fig-problem width="50%"}
 
 ### 개념
 
-![Single Sourcing 개념](fig/single-sourcing-concept.jpg){#fig-concept  width=50%}
+![Single Sourcing 개념](fig/single-sourcing-concept.jpg){#fig-concept width="50%"}
 
 ### Single Sourcing Multi-Use
 
-![Single Sourcing Multi-Use](fig/single-sourcing-publishing.jpg){#fig-publishing  width=60%}
+![Single Sourcing Multi-Use](fig/single-sourcing-publishing.jpg){#fig-publishing width="60%"}
 :::
-
 
 ## Quarto
 
 ::: panel-tabset
-
 ### R
 
 ![](fig/quarto_workflow/rmd-knitr.png)
@@ -64,6 +61,4 @@ editor: visual
 ### Quarto: 파이썬
 
 ![](fig/quarto_workflow/qmd-jupyter.png)
-
 :::
-

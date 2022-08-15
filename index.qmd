@@ -1,26 +1,40 @@
 ---
-title: "Quarto"
+title: "Quarto 데이터 과학"
+description: Quarto 데이터 과학
+date: today # 날짜 설정: now, last-modified
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
 format:
   html:
-    theme: 
-      - flatly
     code-fold: true
     toc: true
     toc-depth: 2
     toc-title: 목차
     number-sections: true
     highlight-style: github    
-    self-contained: true
+    self-contained: false
 bibliography: bibliography.bib
 link-citations: yes
 csl: apa-single-spaced.csl
-editor: visual
+title-block-banner: false
 ---
 
-# 목차
+# 웹사이트
 
-- [Quarto 소개](about.html)
-- [발표자료 - `reveal.js`](slideshow.html)
-- 팔머 펭귄
-    - [Quarto 문서](Quarto_penguin.html) 
--     
+# 블로그
+
+# 보고서
+
+# PPT
+
+# 전자책
+
+
+
+
+

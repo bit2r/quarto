@@ -7,6 +7,7 @@ project:
 
 website:
   title: "Quarto 데이터 사이언스"
+  site-url: https://quartopub.com/sites/statkclee/quarto-ds
   twitter-card:
     card-style: summary_large_image
     description: "한글 Quarto 첫걸음"
@@ -17,38 +18,42 @@ website:
     background: "#447099"
     left:
       - href: index.qmd
-        text: Home
+        text: "Home"
+      - href: quarto_blog.qmd     
+        text: "Blog"
       - text: Quarto
         menu:
         - href: quarto_install.qmd
-          text: Quarto 설치/출판
+          text: "Quarto 설치/출판"
         - href: quarto_about.qmd
-          text: Quarto 소개
+          text: "Quarto 소개"
         - href: quarto_slideshow.qmd
-          text: Quarto 슬라이드
+          text: "Quarto 슬라이드"
       - text: 모듈
         menu: 
           - href: quarto_fonts.qmd
             text: "글꼴"
+          - href: quarto_sass.qmd
+            text: "외양 SASS"
           - href: quarto_layout.qmd
             text: "레이아웃"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
             text: "한국 R 컨퍼런스"
-          - href: "https://www.meetup.com/seoul-r-meetup"
-            text: 서울 R Meetup
-          - href: "https://tidyverse-korea.github.io/seoul-R/"
-            text: 서울 R Meetup Archive
-          - href: "https://r-community.org/usergroups/"
-            text: 글로벌 R Meetup
-          - href: "https://quarto.org/"
+          - href: https://www.meetup.com/seoul-r-meetup
+            text: "서울 R Meetup"
+          - href: https://tidyverse-korea.github.io/seoul-R/
+            text: "서울 R Meetup Archive"
+          - href: https://r-community.org/usergroups/
+            text: "글로벌 R Meetup"
+          - href: https://quarto.org/
             text: "Quarto"
     right: 
       - href: https://r2bit.com
-        text: R사용자회
+        text: "R사용자회"
       - icon: youtube
-        href: "https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"
+        href: https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw
       - icon: github
         href:  https://github.com/bit2r/quarto
       - icon: facebook
@@ -59,7 +64,7 @@ website:
       - section: "PPT"
         contents:
           - href: quarto_slideshow.qmd
-            text: Quarto 슬라이드
+            text: "Quarto 슬라이드"
 
 format:
   html:

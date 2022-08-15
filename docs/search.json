@@ -2,9 +2,37 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto",
+    "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "Quarto 소개\n발표자료 - reveal.js\n팔머 펭귄\n\nQuarto 문서"
+    "text": "2 블로그\n\n\n3 보고서\n\n\n4 PPT\n\n\n5 전자책"
+  },
+  {
+    "objectID": "posts/quarto_blog_20220815/index.html",
+    "href": "posts/quarto_blog_20220815/index.html",
+    "title": "Quarto 레이아웃",
+    "section": "",
+    "text": "Tips\n\n\n\nAlbert Rapp (July 24, 2022), “The ultimate guide to starting a Quarto blog"
+  },
+  {
+    "objectID": "posts/quarto_blog_20220815/index.html#merriweather",
+    "href": "posts/quarto_blog_20220815/index.html#merriweather",
+    "title": "Quarto 레이아웃",
+    "section": "1.1 Merriweather",
+    "text": "1.1 Merriweather\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n1.1.1 3 - Code\nThis is inline code plus a small code chunk.\n\n\nCode\nlibrary(tidyverse)\n\nggplot(mpg) +\n  geom_jitter(aes(cty, hwy), size = 4, alpha = 0.5) \n\n\n\n\n\n\n\n1.1.2 3 - Tabsets\n\n\n\n\nTransforming OLS estimatesMaximizing likelihood\n\n\n\n\nCode\npreds_lm %>% \n  ggplot(aes(body_mass_g, bill_length_mm, col = correct)) +\n  geom_jitter(size = 4, alpha = 0.6) +\n  facet_wrap(vars(species)) +\n  scale_color_manual(values = c('grey60', thematic::okabe_ito(3)[3])) +\n  scale_x_continuous(breaks = seq(3000, 6000, 1000)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    legend.position = 'top', \n    panel.background = element_rect(color = 'black'),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(\n    x = 'Body mass (in g)',\n    y = 'Bill length (in mm)'\n  )\n\n\n\n\n\n\n\n\n\nCode\nglm.mod <- glm(sex ~ body_mass_g + bill_length_mm + species, family = binomial, data = dat)\n\npreds <- dat %>% \n  mutate(\n    prob.fit = glm.mod$fitted.values,\n    prediction = if_else(prob.fit > 0.5, 'male', 'female'),\n    correct = if_else(sex == prediction, 'correct', 'incorrect')\n  )\n\n\npreds %>% \n  ggplot(aes(body_mass_g, bill_length_mm, col = correct)) +\n  geom_jitter(size = 4, alpha = 0.6) +\n  facet_wrap(vars(species)) +\n  scale_x_continuous(breaks = seq(3000, 6000, 1000)) +\n  scale_color_manual(values = c('grey60', thematic::okabe_ito(3)[3])) +\n  theme_minimal(base_size = 10) +\n  theme(\n    legend.position = 'top', \n    panel.background = element_rect(color = 'black'),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(\n    x = 'Body mass (in g)',\n    y = 'Bill length (in mm)'\n  )\n\n\n\n\n\n\n\n\n\n1.1.2.1 4 - Some math stuff\n\\[\n\\int_0^1 f(x) \\ dx\n\\]"
+  },
+  {
+    "objectID": "posts/quarto_blog_20220815/index.html#columns",
+    "href": "posts/quarto_blog_20220815/index.html#columns",
+    "title": "Quarto 레이아웃",
+    "section": "1.2 2 - Columns",
+    "text": "1.2 2 - Columns\n\n\n\n\nCode\ngeom_density(\n  mapping = NULL,\n  data = NULL,\n  stat = \"density\",\n  position = \"identity\",\n  ...,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE,\n  outline.type = \"upper\"\n)\n\n\n\n\nCode\nstat_density(\n  mapping = NULL,\n  data = NULL,\n  geom = \"area\",\n  position = \"stack\",\n  ...,\n  bw = \"nrd0\",\n  adjust = 1,\n  kernel = \"gaussian\",\n  n = 512,\n  trim = FALSE,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE\n)"
+  },
+  {
+    "objectID": "posts/quarto_blog_20220815/index.html#margin-captions",
+    "href": "posts/quarto_blog_20220815/index.html#margin-captions",
+    "title": "Quarto 레이아웃",
+    "section": "1.3 2 - Margin captions",
+    "text": "1.3 2 - Margin captions\n\n\nCode\nggplot(data = gapminder::gapminder, mapping = aes(x = lifeExp, fill = continent)) +\n  stat_density(position = \"identity\", alpha = 0.5)\n\n\n\n\n\nBla bla bla. This is a caption in the margin. Super cool isn’t it?"
   },
   {
     "objectID": "quarto_about.html#블로그-저작-소프트웨어",
@@ -49,6 +77,13 @@
     "text": "6.4 YAML 코드편집\nRStudio, VSCode IDE는 탭-자동완성(tab-completion)을 제공한다. 즉, 첫단어를 타이핑하고 탭을 연결하여 키보드를 치게되면 연관 명령어가 나와 선택하면 된다. 혹은 Ctrl + space 단축키를 치게되면 전체 명령어가 나온다."
   },
   {
+    "objectID": "quarto_blog.html",
+    "href": "quarto_blog.html",
+    "title": "Quarto 데이터 과학",
+    "section": "",
+    "text": "Quarto\n\n\n블로그\n\n\n\n\n첫번째 블로그 글\n\n\n\n\n\n\nAug 15, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "quarto_fonts.html",
     "href": "quarto_fonts.html",
     "title": "Quarto 글꼴",
@@ -75,6 +110,83 @@
     "title": "Quarto 설치/출판",
     "section": "",
     "text": "2 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다.\n\n\n\n3 Quarto Pub 출판 1\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\n\nCode\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n\nCode\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\n\nCode\nquarto.cmd preview\nquarto.cmd publish quarto-pub\n\n\n\n\n\n\n\nFootnotes\n\n\nQuarto Pub↩︎"
+  },
+  {
+    "objectID": "quarto_layout.html",
+    "href": "quarto_layout.html",
+    "title": "Quarto 레이아웃",
+    "section": "",
+    "text": "기사(Article) 작성에 Quarto 는 다음 레이아웃을 지원한다.\n\n기본 콘텐츠 영역 채우기\n콘텐츠 영역 넘겨 채우기\n전체 페이지 채우기\n문서 여백(margin) 채우기"
+  },
+  {
+    "objectID": "quarto_layout.html#기본",
+    "href": "quarto_layout.html#기본",
+    "title": "Quarto 레이아웃",
+    "section": "2.1 기본",
+    "text": "2.1 기본\n.column-body 을 기본을 사용하게 된다."
+  },
+  {
+    "objectID": "quarto_layout.html#body-칼럼",
+    "href": "quarto_layout.html#body-칼럼",
+    "title": "Quarto 레이아웃",
+    "section": "2.2 Body 칼럼",
+    "text": "2.2 Body 칼럼\n기본 콘텐츠 영역을 살짝 넘겨 콘텐츠를 담을 영역을 넓히고자 할 때는 .column-body-outset을 사용한다.\n:::{.column-body-outset}\n![](fig/horst-eco-r4ds.png)\n:::"
+  },
+  {
+    "objectID": "quarto_layout.html#전체-페이지",
+    "href": "quarto_layout.html#전체-페이지",
+    "title": "Quarto 레이아웃",
+    "section": "2.3 전체 페이지",
+    "text": "2.3 전체 페이지\n.column-page를 사용하게 되면 전체 페이지 칼럼을 사용하여 콘텐츠를 담는 공간을 넓힐 수 있다.\n:::{.column-page}\n![](fig/horst-eco-r4ds.png)\n:::"
+  },
+  {
+    "objectID": "quarto_layout.html#표-사례",
+    "href": "quarto_layout.html#표-사례",
+    "title": "Quarto 레이아웃",
+    "section": "2.4 표 사례",
+    "text": "2.4 표 사례\n이미지 뿐만 아니라 R 혹은 파이썬 실행결과 산출되는 그래프와 표도 레이아웃을 확장하여 구현할 수 있다.\n```{r}\n#| column: page\n\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3"
+  },
+  {
+    "objectID": "quarto_layout.html#화면-칼럼",
+    "href": "quarto_layout.html#화면-칼럼",
+    "title": "Quarto 레이아웃",
+    "section": "2.5 화면 칼럼",
+    "text": "2.5 화면 칼럼\n.column-screen 을 사용하게 되면 모니터 화면을 가득 채울 수 있다.\n::: {.column-screen}\n![](fig/horst-eco-r4ds.png)\n:::\n\n\n\n마찬가지로 R 혹은 파이썬 코드에 대해서 동일한 결과를 얻을 수 있다.\n```{r}\n#| column: screen\n\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n\nCode\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"R 출생지\")"
+  },
+  {
+    "objectID": "quarto_layout.html#화면-인셋",
+    "href": "quarto_layout.html#화면-인셋",
+    "title": "Quarto 레이아웃",
+    "section": "2.6 화면 인셋",
+    "text": "2.6 화면 인셋\n화면 인세(inset)을 사용하여 전체 모니터 화면 전체로 그래프 3개를 넣을 수 있다.\n```{r}\n#| column: screen-inset-shaded\n#| layout-nrow: 1\n\nplot(cars)\nplot(iris)\nplot(pressure)\n```\n\n\nCode\nplot(cars)\nplot(iris)\nplot(pressure)"
+  },
+  {
+    "objectID": "quarto_layout.html#여백-이미지",
+    "href": "quarto_layout.html#여백-이미지",
+    "title": "Quarto 레이아웃",
+    "section": "3.1 여백 이미지",
+    "text": "3.1 여백 이미지\n출판에서 유용한 기능 중 하나가 여백에 중요 정보를 기술하는 것이다. .column-margin 클래스를 사용하여 해당 기능을 구현한다.\n::: {.column-margin}\n![](fig/horst-eco-r4ds.png)\n:::"
+  },
+  {
+    "objectID": "quarto_layout.html#여백-그래프",
+    "href": "quarto_layout.html#여백-그래프",
+    "title": "Quarto 레이아웃",
+    "section": "3.2 여백 그래프",
+    "text": "3.2 여백 그래프\n여백에 ggplot 그래프 객체를 위치시킬 수도 있다.\n```{r}\n#| label: fig-mtcars\n#| fig-cap: \"MPG vs horsepower, colored by transmission.\"\n#| column: margin\n\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n```\n\n\nCode\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n\n\n\n\n\n\nFigure 1: MPG vs horsepower, colored by transmission."
+  },
+  {
+    "objectID": "quarto_layout.html#여백-표",
+    "href": "quarto_layout.html#여백-표",
+    "title": "Quarto 레이아웃",
+    "section": "3.3 여백 표",
+    "text": "3.3 여백 표\n마찬가지로 여백에 표를 위치시킬 수도 있다.\n```{r}\n#| column: margin\n\nknitr::kable(\n  mtcars[1:6, 1:3]\n)\n```\n\n\nCode\nknitr::kable(\n  mtcars[1:6, 1:3]\n)\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\n\n\n\n\nMazda RX4\n21.0\n6\n160\n\n\nMazda RX4 Wag\n21.0\n6\n160\n\n\nDatsun 710\n22.8\n4\n108\n\n\nHornet 4 Drive\n21.4\n6\n258\n\n\nHornet Sportabout\n18.7\n8\n360\n\n\nValiant\n18.1\n6\n225"
+  },
+  {
+    "objectID": "quarto_layout.html#수식-등",
+    "href": "quarto_layout.html#수식-등",
+    "title": "Quarto 레이아웃",
+    "section": "3.4 수식 등",
+    "text": "3.4 수식 등\n.column-margin 클래스에 수식을 비롯한 기타 콘텐츠도 반영시킬 수 있다.\n::: {.column-margin} \\([a, b]\\) 구간 \\(x\\)에 대한 미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus) 는 다음과 같다.\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]\n\n:::\n\n\n\\([a, b]\\) 구간 \\(x\\)에 대한 미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus) 는 다음과 같다.\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]"
   },
   {
     "objectID": "quarto_penguin.html",
@@ -110,6 +222,13 @@
     "title": "Quarto 기본사용법",
     "section": "2.1 펭귄 체중과 물갈퀴 길이",
     "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
+  },
+  {
+    "objectID": "quarto_sass.html",
+    "href": "quarto_sass.html",
+    "title": "Quarto 외양",
+    "section": "",
+    "text": "2 SASS 파일\nquarto.scss 파일에 글꼴과 색상 등 외양관련 정보를 담아 기록한다. 부츠트랩을 외양을 다루는데 많이 사용하기 때문에\nbootstrap/scss/_variables.scss을 참조하여 해당 영역 색상과 글꼴을 자유로이 변경시킨다.\n/*-- scss:defaults --*/\n\n// Color system\n\n// scss-docs-start gray-color-variables\n$white:    #fff !default;\n$gray-100: #f8f9fa !default;\n$gray-200: #e9ecef !default;\n$gray-300: #dee2e6 !default;\n$gray-400: #ced4da !default;\n$gray-500: #adb5bd !default;\n$gray-600: #6c757d !default;\n$gray-700: #495057 !default;\n$gray-800: #343a40 !default;\n$gray-900: #212529 !default;\n$black:    #000 !default;\n\n\n// 글꼴 \n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');\n@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');\n\n@font-face {\n    font-family: 'MaruBuri-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'D2Coding';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n\n// Typography\n//\n// Font, line-height, and color for body text, headings, and more.\n\n// scss-docs-start font-variables\n// stylelint-disable value-keyword-case\n$font-family-sans-serif: \"Noto Sans KR\", 'Nanum Myeongjo',  !default;\n// $font-family-serif: 'MaruBuri-Regular', \"Noto Serif KR\", !default;\n$font-family-monospace:  'D2Coding', \"Courier New\", monospace !default;\n\n// scss-docs-start headings-variables\n$headings-font-family:  $font-family-sans-serif !default;\n\n\n/*-- scss:rules --*/\n\n.navbar-dark {\n    background-color:$gray-600;\n    color: #000000;\n    font-family: 'MaruBuri-Regular';\n}\n\n.sidebar-item {\n    margin-bottom: 0.2em;\n    font-family: 'Noto Serif KR';\n}\n\nh1, .h1, h2, .h2 {\n    margin-top: 2rem;\n    margin-bottom: 1rem;\n    font-family: 'Noto Sans KR';\n}\n\np {\n    font-family: 'MaruBuri-Regular', serif;\n}\n\n\n3 작업방법\n개발하는 것이 웹사이트라서 quarto.cmd preview를 실행하여 로컬 컴퓨터에서 웹서버를 띄워 웹사이트를 보면서 작업하는 방식을 취힌다.\n\n\n\n미리보기 모드 동작\n$ quarto.cmd preview\nTerminating existing preview server....DONE\n\nPreparing to preview\n\nWatching files for changes\nBrowse at http://localhost:7171/\n\n\n\n미리보기 결과\n\n\n\n\n\n\n\n\n\nFootnotes\n\n\nRappA (2022. 7. 1.), “How to style your Quarto blog without knowing a lot of HTML/CSS”↩︎"
   },
   {
     "objectID": "quarto_slideshow.html#글꼴",
