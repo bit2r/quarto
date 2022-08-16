@@ -315,83 +315,6 @@
     "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/"
   },
   {
-    "objectID": "slideshow/hongik.html#housekeeping",
-    "href": "slideshow/hongik.html#housekeeping",
-    "title": "데이터 사이언스와 디자인",
-    "section": "Housekeeping",
-    "text": "Housekeeping\n\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋\n\n\n\n\n\n한국 R 사용자회"
-  },
-  {
-    "objectID": "slideshow/index.html#arrow",
-    "href": "slideshow/index.html#arrow",
-    "title": "Quarto 데이터 사이언스",
-    "section": "arrow",
-    "text": "arrow\n\narrow is software development platform for building high performance applications that process and transport large data sets\n\n\nThe arrow R package is an interface to data via the arrow backend, and has deep integration with dplyr:\n\nUngrouped mutate(), filter(), select() was available in arrow 5.0\n\n\ngroup_by() + summarize() aggregation was added in arrow 6.0\n\nMore complex dplyr operations were added in arrow7.0 and 8.0\n\n\n\narrow data can also be “handed off” to duckdb with to_duckdb() for any dbplyr commands without data conversion. IE no serialization or data copying costs are incurred."
-  },
-  {
-    "objectID": "slideshow/index.html#working-with-bigger-data",
-    "href": "slideshow/index.html#working-with-bigger-data",
-    "title": "Quarto 데이터 사이언스",
-    "section": "Working with bigger data?",
-    "text": "Working with bigger data?\n\nRelational databases (IE SQL) are still around and hugely popular but…\n\n\n\nData and specifically local files are getting bigger\n\n\n\n\nAdditionally, many Data Warehouses/Data Lakes use flat-file storage (.csv, .parquet, .json etc) - there are query engines in many environments, but you can often end up with large extracts.\n\n\n\nSo, how do you work with data extracts that aren’t already in a database, and are bigger than your memory?"
-  },
-  {
-    "objectID": "slideshow/index.html#pause-for-one-second",
-    "href": "slideshow/index.html#pause-for-one-second",
-    "title": "Quarto 데이터 사이언스",
-    "section": "Pause for one second",
-    "text": "Pause for one second\nIf it can fit in memory, then try out:\n\n\nvroom::vroom() or data.table::fread() for fast file reads into R\n\n\nvroom(col_select = c(column_name)) also allows for partial reads (ie specific columns)\n\n\narrow itself also has crazy fast file reads on many file types\n\n\n\n\n\n\ndata.table or the dplyr front-end to data.table via dtplyr for fast and efficient in-memory analysis\n\n\n\n\nLastly, the collapse R package for limited capability, but hyper-performant data manipulation"
-  },
-  {
-    "objectID": "slideshow/index.html#fill-your-quiver-with-arrows",
-    "href": "slideshow/index.html#fill-your-quiver-with-arrows",
-    "title": "Quarto 데이터 사이언스",
-    "section": "Fill your quiver with arrows",
-    "text": "Fill your quiver with arrows\n\nlibrary(arrow)  # interface to arrow\nlibrary(dplyr)  # expressive and consistent interface for data analysis\nlibrary(tictoc) # timing out computations\n\nUsing tictoc to watch cute dog videos time our computations."
-  },
-  {
-    "objectID": "slideshow/index.html#we-can-benchmark",
-    "href": "slideshow/index.html#we-can-benchmark",
-    "title": "Quarto 데이터 사이언스",
-    "section": "We can bench::mark()\n",
-    "text": "We can bench::mark()\n\n\n\n\nAll are pretty fast!\n\nBut again - the beauty of arrow is not just that it’s fast!\n\n\nIt’s fast at exploring the data BEFORE even having to wait for long reads OR having to get a workstation with enough memory to read it all in and compute on it!\n\n\nSo go out and use arrow + dplyr with duckdb for outrageously efficient exploratory data analysis!"
-  },
-  {
-    "objectID": "slideshow/index.html#section",
-    "href": "slideshow/index.html#section",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "데이터 사이언스"
-  },
-  {
-    "objectID": "slideshow/index.html#데이터-사이언스",
-    "href": "slideshow/index.html#데이터-사이언스",
-    "title": "Quarto 데이터 사이언스",
-    "section": "데이터 사이언스",
-    "text": "데이터 사이언스"
-  },
-  {
-    "objectID": "slideshow/index.html#section-1",
-    "href": "slideshow/index.html#section-1",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "데이터 사이언스"
-  },
-  {
-    "objectID": "slideshow/index.html#section-2",
-    "href": "slideshow/index.html#section-2",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "한국 R 사용자회"
-  },
-  {
-    "objectID": "slideshow/data-science.html#section",
-    "href": "slideshow/data-science.html#section",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "한국 R 사용자회"
-  },
-  {
     "objectID": "slideshow/data-science.html",
     "href": "slideshow/data-science.html",
     "title": "Quarto 데이터 사이언스",
@@ -413,22 +336,36 @@
     "text": "데이터 사이언스"
   },
   {
-    "objectID": "slideshow/subtitle-slide.html",
-    "href": "slideshow/subtitle-slide.html",
+    "objectID": "slideshow/index.html#section",
+    "href": "slideshow/index.html#section",
     "title": "Quarto 데이터 사이언스",
     "section": "",
-    "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/index.html#section-1",
+    "href": "slideshow/index.html#section-1",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/index.html#데이터-사이언스",
+    "href": "slideshow/index.html#데이터-사이언스",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 사이언스",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/index.html#section-2",
+    "href": "slideshow/index.html#section-2",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "한국 R 사용자회"
   },
   {
     "objectID": "slideshow/title-slide.html",
     "href": "slideshow/title-slide.html",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
-  },
-  {
-    "objectID": "slideshow/title.html",
-    "href": "slideshow/title.html",
     "title": "Quarto 데이터 사이언스",
     "section": "",
     "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"

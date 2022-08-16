@@ -24,6 +24,6 @@ execute:
 
 {{< include data-science.qmd >}}
 
-
+ 
 
 ## {background-image="../fig/slide-end.png" background-size="contain"}

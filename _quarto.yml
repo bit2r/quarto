@@ -76,3 +76,8 @@ format:
       - litera
       - css/quarto.scss
     toc: true
+    
+execute:
+  freeze: auto
+  
+    
