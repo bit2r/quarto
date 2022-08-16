@@ -8,9 +8,9 @@
 
 <meta name="author" content="이광춘">
 <meta name="dcterms.date" content="2022-08-16">
-<meta name="description" content="Quarto 데이터 과학">
+<meta name="description" content="빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.">
 
-<title>Quarto 데이터 사이언스 - Quarto 데이터 과학</title>
+<title>Quarto 데이터 사이언스 - 데이터 과학 글쓰기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,16 +57,17 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="twitter:title" content="Quarto 데이터 사이언스 - Quarto 데이터 과학">
-<meta name="twitter:description" content="Quarto 데이터 과학">
+<meta name="twitter:title" content="Quarto 데이터 사이언스 - 데이터 과학 글쓰기">
+<meta name="twitter:description" content="빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.">
 <meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
 <meta name="twitter:image-width" content="1388">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,10 +98,6 @@ ul.task-list{list-style: none;}
     <a class="dropdown-item" href="./quarto_about.html">
  <span class="dropdown-text">Quarto 소개</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./quarto_slideshow.html">
- <span class="dropdown-text">Quarto 슬라이드</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -117,6 +114,14 @@ ul.task-list{list-style: none;}
         <li>
     <a class="dropdown-item" href="./quarto_layout.html">
  <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
   </li>  
     </ul>
   </li>
@@ -172,7 +177,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Quarto 데이터 과학</h1>
+      <h1 class="quarto-secondary-nav-title">데이터 과학 글쓰기</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -198,6 +203,11 @@ ul.task-list{list-style: none;}
   <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">Quarto 슬라이드</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">홍익대 특강</a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -209,25 +219,28 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#웹사이트" id="toc-웹사이트" class="nav-link active" data-scroll-target="#웹사이트"> <span class="header-section-number">1</span> 웹사이트</a></li>
-  <li><a href="#블로그" id="toc-블로그" class="nav-link" data-scroll-target="#블로그"> <span class="header-section-number">2</span> 블로그</a></li>
-  <li><a href="#보고서" id="toc-보고서" class="nav-link" data-scroll-target="#보고서"> <span class="header-section-number">3</span> 보고서</a></li>
-  <li><a href="#ppt" id="toc-ppt" class="nav-link" data-scroll-target="#ppt"> <span class="header-section-number">4</span> PPT</a></li>
-  <li><a href="#전자책" id="toc-전자책" class="nav-link" data-scroll-target="#전자책"> <span class="header-section-number">5</span> 전자책</a></li>
+  <li><a href="#글쓰기" id="toc-글쓰기" class="nav-link active" data-scroll-target="#글쓰기"> <span class="header-section-number">1</span> 글쓰기</a></li>
+  <li><a href="#재현가능-글쓰기" id="toc-재현가능-글쓰기" class="nav-link" data-scroll-target="#재현가능-글쓰기"> <span class="header-section-number">2</span> 재현가능 글쓰기</a></li>
+  <li><a href="#디지털-글쓰기" id="toc-디지털-글쓰기" class="nav-link" data-scroll-target="#디지털-글쓰기"> <span class="header-section-number">3</span> 디지털 글쓰기</a>
+  <ul class="collapse">
+  <li><a href="#latex-philosophy" id="toc-latex-philosophy" class="nav-link" data-scroll-target="#latex-philosophy"> <span class="header-section-number">3.1</span> <span class="math inline">\(\LaTeX\)</span> 철학</a></li>
+  <li><a href="#wysiwyg" id="toc-wysiwyg" class="nav-link" data-scroll-target="#wysiwyg"> <span class="header-section-number">3.2</span> 시각적 디자인</a></li>
+  <li><a href="#latex-engine" id="toc-latex-engine" class="nav-link" data-scroll-target="#latex-engine"> <span class="header-section-number">3.3</span> <span class="math inline">\(\LaTeX\)</span> 엔진</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Quarto 데이터 과학</h1>
+<h1 class="title d-none d-lg-block">데이터 과학 글쓰기</h1>
 </div>
 
 <div>
   <div class="description">
-    Quarto 데이터 과학
+    빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.
   </div>
 </div>
 
@@ -262,23 +275,60 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="웹사이트" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 웹사이트</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/horst-eco-r4ds.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Original Openscapes artwork by Allison Horst</figcaption><p></p>
+</figure>
+</div>
+<div class="page-columns page-full"><p>Allison Horst <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 데이터 사이언스와 Tidyverse, 그리고 이를 지탱하는 커뮤니티에 대해 직관적으로 시각화한 사례.</p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;An extended version of the classic R4DS schematic from Grolemund &amp; Wickham, with environmental data science, communities, and communication <a href="https://www.openscapes.org/gallery/" class="uri">https://www.openscapes.org/gallery/</a></p></li></div></div>
+<section id="글쓰기" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 글쓰기</h1>
+<p><a href="https://quarto.org/docs/guide/">Quarto Guide</a> 웹사이트에 과학기술을 위한 문서 저작에 대한 전체적인 사항이 조망되어 있다. 최근 과학기술 저작물은 다양한 출판형식과 더불어 literate programming 패러다임을 도입하고 가독성과 커뮤니케이션 강화를 위해 상호작용 인터랙티브한 기능도 내장되어 있다.</p>
+<p><img src="fig/birds-eye-view.png" class="img-fluid"></p>
 </section>
-<section id="블로그" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> 블로그</h1>
+<section id="재현가능-글쓰기" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 재현가능 글쓰기</h1>
+<p>과학기술에서 재현성은 매우 중요한 개념이다. 과학기술에서 재현성이 무너진 연구결과가 무더기로 나옴에 따라 2010년 전후 <a href="https://ko.wikipedia.org/wiki/%EC%9E%AC%ED%98%84%EC%84%B1_%EC%9C%84%EA%B8%B0"><strong>재현성 위기(Reproducibity Crisis)</strong></a>에 대한 응전으로 재현가능한 논문저작과 관련된 기술적인 커뮤니티 활동이 전방위적으로 전개되고 있다.</p>
+<p><img src="fig/compendium-rr.png" class="img-fluid"></p>
 </section>
-<section id="보고서" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> 보고서</h1>
+<section id="디지털-글쓰기" class="level1 page-columns page-full" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 디지털 글쓰기</h1>
+<p>글쓰기의 난이도가 극강으로 진화하고 있다. 기존 원고지에 한글이나 영어로 감정, 사실, 소설 등 콘텐츠를 저작했다면 현재는 이미지를 넣어 이목을 끌고 가독성이 뛰어난 글꼴을 사용하여 가독성을 높여야한다. 재현성도 중요한 부분이라 자동화와 버젼관리도 기본기능으로 들어가야하고, 최근에는 인공지능 기계 저작물도 점차 범위를 넓혀가고 있어 이에 대한 학습과 이를 반영하는 기술적인 시도도 늘고 있다.</p>
+<p><img src="fig/digital-writing-overview.png" class="img-fluid"></p>
+<section id="latex-philosophy" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="latex-philosophy"><span class="header-section-number">3.1</span> <span class="math inline">\(\LaTeX\)</span> 철학</h2>
+<div class="page-columns page-full"><p><span class="math inline">\(\LaTeX\)</span>은 한마디로 정의하게 되면 <strong>“논리적인 디자인”</strong>이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. <span class="math inline">\(\LaTeX\)</span> 과 <span class="math inline">\(\TeX\)</span> 이 하는 업무가 다소 차이가 난다. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;김영록 (2017) “교육 현장에서의 텍의 활용”, <span class="math inline">\(\TeX\)</span> : 조판, 그 이상의 가능성</p></li></div></div>
+<ul>
+<li><span class="math inline">\(\LaTeX\)</span> 은 편집디자이너에 해당되는 업무를 수행</li>
+<li><span class="math inline">\(\TeX\)</span> 은 식자공에 해당되는 업무를 수행</li>
+</ul>
+<p><img src="fig/document-logical-design.png" class="img-fluid"></p>
+<p>컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. <span class="math inline">\(\LaTeX\)</span>의 명령어는 기본적으로 <strong>문서의 논리적 구조를 기술</strong>하는 것이다. 이렇게 기술된 명령어를 <span class="math inline">\(\TeX\)</span>으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.</p>
+<p><span class="math inline">\(\LaTeX\)</span>에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. <span class="math inline">\(\LaTeX\)</span> 으로 글을 작성하게 되면 점점 <span class="math inline">\(\LaTeX\)</span>이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.</p>
+<p>아마도 <span class="math inline">\(\LaTeX\)</span>의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 <span class="math inline">\(\LaTeX\)</span> 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.</p>
+<p>따라서, <span class="math inline">\(\LaTeX\)</span> 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다.</p>
 </section>
-<section id="ppt" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> PPT</h1>
+<section id="wysiwyg" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="wysiwyg"><span class="header-section-number">3.2</span> 시각적 디자인</h2>
+<p>문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 <strong>위즈윅(WSYIWIG, What You See Is What You Get)</strong> 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다.</p>
 </section>
-<section id="전자책" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> 전자책</h1>
+<section id="latex-engine" class="level2 page-columns page-full" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="latex-engine"><span class="header-section-number">3.3</span> <span class="math inline">\(\LaTeX\)</span> 엔진</h2>
+<div class="page-columns page-full"><p><span class="math inline">\(\LaTeX\)</span> 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 <a href="http://www.ktug.org/">KTUG 한국 <span class="math inline">\(\TeX\)</span> 사용자 그룹</a>에서 <span class="math inline">\(ko.TeX\)</span> Live를 추천하고 있다. 이유는 다음과 같다. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3" role="doc-endnote"><p><sup>3</sup>&nbsp;이호재 (2017), “레이텍을 빨리 쓸 수 있는 방법”, <span class="math inline">\(\TeX\)</span> : 조판, 그 이상의 가능성</p></li></div></div>
+<ul>
+<li>pdfLaTeX, XeLaTeX, LuaLaTeX 3종 <span class="math inline">\(\LaTeX\)</span> 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.</li>
+<li>운영체제에 따라 차이가 나지만 안정적으로 <span class="math inline">\(\LaTeX\)</span> 을 설치하여 실제 문서작업에 이용하기에는 <span class="math inline">\(\TeX\)</span> Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.</li>
+<li><span class="math inline">\(\TeX\)</span> 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 <span class="math inline">\(\TeX\)</span> 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨</li>
+</ul>
+<p>과거 <code>latex+divps+pspdf</code> 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, <code>pstricks</code>를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 <code>eps</code> 파일만 사용한다는 한계가 있다. 또 다른 <code>latex+dvipdfmx</code> 작업흐름은 중간에 <code>.dvi</code> 파일을 생성하고 <code>dvipdfmx</code>를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 <code>.tex</code> 소스파일에서 <code>.pdf</code> 파일을 즉시 생성한다는 점에서 인기가 있다.</p>
+<p>이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 <code>memoir</code> 혹은 <code>oblivoir</code> 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.</p>
+<p><img src="fig/tex-engines.png" class="img-fluid"></p>
 
 
 </section>
+</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

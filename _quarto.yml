@@ -27,8 +27,6 @@ website:
           text: "Quarto 설치/출판"
         - href: quarto_about.qmd
           text: "Quarto 소개"
-        - href: quarto_slideshow.qmd
-          text: "Quarto 슬라이드"
       - text: 모듈
         menu: 
           - href: quarto_fonts.qmd
@@ -37,6 +35,10 @@ website:
             text: "외양 SASS"
           - href: quarto_layout.qmd
             text: "레이아웃"
+          - href: quarto_latex.qmd
+            text: "한글 PDF 제작방법"
+          - href: quarto_pdf.qmd
+            text: "[사례] 한글 PDF"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
@@ -65,6 +67,8 @@ website:
         contents:
           - href: quarto_slideshow.qmd
             text: "Quarto 슬라이드"
+          - href: slideshow/index.qmd
+            text: "홍익대 특강"
 
 format:
   html:

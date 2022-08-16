@@ -1,13 +1,13 @@
 ---
-title: "Quarto 데이터 과학"
-description: Quarto 데이터 과학
+title: "데이터 과학 글쓰기"
+description: 빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.
 date: today # 날짜 설정: now, last-modified
 author:
   - name: 이광춘
     url: https://www.linkedin.com/in/kwangchunlee/
     affiliation: 한국 R 사용자회
     affiliation-url: https://github.com/bit2r
-title-block-banner: true
+title-block-banner: false
 #title-block-banner: "#562457"
 format:
   html:
@@ -21,18 +21,74 @@ format:
 bibliography: bibliography.bib
 link-citations: yes
 csl: apa-single-spaced.csl
-title-block-banner: false
+reference-location: margin
 ---
 
-# 웹사이트
+![Original Openscapes artwork by Allison Horst](fig/horst-eco-r4ds.png) 
 
-# 블로그
+Allison Horst [^r4ds] 데이터 사이언스와 Tidyverse, 그리고 이를 지탱하는 커뮤니티에 대해 직관적으로 시각화한 사례.
 
-# 보고서
+[^r4ds]: An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication <https://www.openscapes.org/gallery/>
 
-# PPT
+# 글쓰기
 
-# 전자책
+[Quarto Guide](https://quarto.org/docs/guide/) 웹사이트에 과학기술을 위한 문서 저작에 대한 전체적인 사항이 조망되어 있다. 최근 과학기술 저작물은 다양한 출판형식과 더불어 literate programming 패러다임을 도입하고 가독성과 커뮤니케이션 강화를 위해 상호작용 인터랙티브한 기능도 내장되어 있다.
+
+![](fig/birds-eye-view.png)
+
+# 재현가능 글쓰기
+
+과학기술에서 재현성은 매우 중요한 개념이다. 과학기술에서 재현성이 무너진 연구결과가 무더기로 나옴에 따라 2010년 전후 [**재현성 위기(Reproducibity Crisis)**](https://ko.wikipedia.org/wiki/%EC%9E%AC%ED%98%84%EC%84%B1_%EC%9C%84%EA%B8%B0)에 대한 응전으로 재현가능한 논문저작과 관련된 기술적인 커뮤니티 활동이 전방위적으로 전개되고 있다.
+
+![](fig/compendium-rr.png)
+
+# 디지털 글쓰기
+
+글쓰기의 난이도가 극강으로 진화하고 있다. 기존 원고지에 한글이나 영어로 감정, 사실, 소설 등 콘텐츠를 저작했다면 현재는 이미지를 넣어 이목을 끌고 가독성이 뛰어난 글꼴을 사용하여 가독성을 높여야한다. 재현성도 중요한 부분이라 자동화와 버젼관리도 기본기능으로 들어가야하고, 최근에는 인공지능 기계 저작물도 점차 범위를 넓혀가고 있어 이에 대한 학습과 이를 반영하는 기술적인 시도도 늘고 있다.
+
+![](fig/digital-writing-overview.png)
+
+## $\LaTeX$ 철학  {#latex-philosophy}
+
+$\LaTeX$은 한마디로 정의하게 되면 **"논리적인 디자인"**이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. $\LaTeX$ 과 $\TeX$ 이 하는 업무가 다소 차이가 난다. [^1]
+
+[^1]: 김영록 (2017) "교육 현장에서의 텍의 활용", $\TeX$ : 조판, 그 이상의 가능성
+
+- $\LaTeX$ 은 편집디자이너에 해당되는 업무를 수행
+- $\TeX$ 은 식자공에 해당되는 업무를 수행
+
+![](fig/document-logical-design.png)
+
+컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. $\LaTeX$의 명령어는 기본적으로 **문서의 논리적 구조를 기술**하는 것이다. 이렇게 기술된 명령어를 $\TeX$으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.
+
+$\LaTeX$에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. $\LaTeX$ 으로 글을 작성하게 되면 점점 $\LaTeX$이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.
+
+아마도 $\LaTeX$의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 $\LaTeX$ 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.
+
+따라서, $\LaTeX$ 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다.
+
+## 시각적 디자인 {#wysiwyg}
+
+문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 **위즈윅(WSYIWIG, What You See Is What You Get)** 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다.
+
+
+## $\LaTeX$ 엔진  {#latex-engine}
+
+$\LaTeX$ 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 [KTUG 한국 $\TeX$ 사용자 그룹](http://www.ktug.org/)에서 $ko.TeX$ Live를 추천하고 있다. 이유는 다음과 같다. [^2]
+
+[^2]: 이호재 (2017), "레이텍을 빨리 쓸 수 있는 방법", $\TeX$ : 조판, 그 이상의 가능성
+
+
+- pdfLaTeX, XeLaTeX, LuaLaTeX 3종 $\LaTeX$ 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.
+- 운영체제에 따라 차이가 나지만 안정적으로 $\LaTeX$ 을 설치하여 실제 문서작업에 이용하기에는 $\TeX$ Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.
+- $\TeX$ 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 $\TeX$ 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨
+
+과거 `latex+divps+pspdf` 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, `pstricks`를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 `eps` 파일만 사용한다는 한계가 있다. 또 다른 `latex+dvipdfmx` 작업흐름은 중간에 `.dvi` 파일을 생성하고 `dvipdfmx`를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 `.tex` 소스파일에서 `.pdf` 파일을 즉시 생성한다는 점에서 인기가 있다.
+
+이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 `memoir` 혹은 `oblivoir` 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.
+
+![](fig/tex-engines.png)
+
 
 
 

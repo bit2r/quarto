@@ -1,0 +1,16 @@
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px; color: black"}
+데이터 사이언스
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 300px; font-size: 5em; color: black;"}
+데이터 사이언스
+:::
+
+## 데이터 사이언스
+
+![](../fig/horst-eco-r4ds.png)

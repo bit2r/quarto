@@ -1,0 +1,29 @@
+---
+format: 
+  revealjs:
+    theme: ["simple", "theme/q-theme.scss"]
+    slide-number: c/t
+    logo: "../fig/koRea_logo.png"
+    footer: "[한국 R 사용자회](https://r2bit.com/)&nbsp;"
+    code-copy: true
+    center-title-slide: false
+    include-in-header: heading-meta.html
+    code-link: true
+    code-overflow: wrap
+    highlight-style: a11y
+    height: 1080
+    width: 1920
+    smaller: true
+    scrollable: true    
+execute: 
+  eval: true
+  echo: true
+---
+
+{{< include title-slide.qmd >}}
+
+{{< include data-science.qmd >}}
+
+
+
+## {background-image="../fig/slide-end.png" background-size="contain"}

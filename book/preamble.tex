@@ -1,0 +1,66 @@
+
+\documentclass[]{report} % use report class because it contains a title page
+
+% 한글 패키지 ----------------------------
+\usepackage{kotex}
+\usepackage{pdfpages} % 책 앞 겉면
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{booktabs, makecell}
+\usepackage{tikz}
+% \usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadings, shapes.geometric}
+\tcbuselibrary{skins,theorems,breakable}
+\usepackage{xcolor}
+
+
+% 한글 폰트 ----------------------------
+
+\setmainhangulfont{NanumMyeongjo} % NanumMyeongjo
+\setsanshangulfont{NanumGothic}     % MalgunGothic
+% \setsanshangulfont{맑은 고딕}     % MalgunGothic
+\setmonohangulfont{D2Coding}
+
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\title{$title$}          % set title to what you passed from the yaml in the R 
+                         % Markdown document
+
+\author{$author$}        % set author to empty to avoid warning message about 
+                         % no author set; use \author{$author$} if you want to 
+                         % set author from the yaml like `author: "My Name"`
+
+\date{$date$}                  % set date to empty to avoid a date on the title page;
+                         % use \date{$date$} to set from yaml `date: 2021-01-08`
+
+\begin{document}
+
+    \includepdf[fitpaper]{book/canva-cover}
+    
+    $body$
+    
+    \includepdf[fitpaper]{book/canva-backmatter}
+    
+\end{document}
+
+
+
+
+% \begin{document}
+% 
+% \includepdf[fitpaper]{book/canva-cover}
+% 
+% \end{document}
+
+% \frontmatter
+% 
+% \mainmatter
+% 
+% \backmatter
+% 
+% \includepdf[fitpaper]{book/canva-backmatter}

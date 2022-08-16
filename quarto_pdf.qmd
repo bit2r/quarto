@@ -1,0 +1,96 @@
+---
+title: "한글 PDF"
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+format: 
+  pdf:
+    documentclass: report
+    papersize: a4
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    lof: true
+    lot: true
+    include-in-header: 
+      text: |
+        \usepackage{pdfpages} 
+bibliography: bibliography.bib
+link-citations: yes
+csl: apa-single-spaced.csl
+mainfont: "NanumMyeongjo"
+sansfont: "NanumGothic"
+monofont: "D2Coding"
+CJKmainfont: "NanumGothic"
+---
+ 
+
+# 한글 사랑
+ 
+
+# 이미지
+
+::: {layout-ncol=2}
+![Allison Horst 박사가 그린 펭귄 3종 도식화](fig/penguin_species.png){#fig-penguins}
+
+![펭귄 부리(bill) 변수 설명](fig/culmen_depth.png){#fig-bill}
+:::
+
+# R 코드
+
+```{r}
+#| label: fig-entire
+#| fig-cap: Penguin flipper length and body mass
+#| eval: false
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)") +
+  theme_minimal()
+
+mass_flipper
+```
+
+# 표
+
+## \LaTeX 표 
+
+\begin{tabular}{|l|l|}\hline
+연령 & 빈도수 \\ \hline
+18--25  & 15 \\
+26--35  & 33 \\
+36--45  & 22 \\ \hline
+\end{tabular}
+
+## `gt` 표
+
+
+```{r}
+#| column: page
+
+knitr::kable(
+  mtcars[1:6, 1:10]
+)
+```
+
+# 데이터
+
+:::{.callout-caution collapse="true"}
+## 데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요
+팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.
+:::
+
+{palmerpenguins} 패키지 [@palmer-penguins]를 통해 R에서 손쉽게 이용가능하게 
+되었고 원데이터는 @Gorman-2014 에서 최초 공개되었다.
+
+
+\includepdf[fitpaper]{book/canva-backmatter}

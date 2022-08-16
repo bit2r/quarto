@@ -2,9 +2,30 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto 데이터 과학",
+    "title": "데이터 과학 글쓰기",
     "section": "",
-    "text": "2 블로그\n\n\n3 보고서\n\n\n4 PPT\n\n\n5 전자책"
+    "text": "Original Openscapes artwork by Allison Horst"
+  },
+  {
+    "objectID": "index.html#latex-philosophy",
+    "href": "index.html#latex-philosophy",
+    "title": "데이터 과학 글쓰기",
+    "section": "3.1 \\(\\LaTeX\\) 철학",
+    "text": "3.1 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. 22 김영록 (2017) “교육 현장에서의 텍의 활용”, \\(\\TeX\\) : 조판, 그 이상의 가능성\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
+  },
+  {
+    "objectID": "index.html#wysiwyg",
+    "href": "index.html#wysiwyg",
+    "title": "데이터 과학 글쓰기",
+    "section": "3.2 시각적 디자인",
+    "text": "3.2 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다."
+  },
+  {
+    "objectID": "index.html#latex-engine",
+    "href": "index.html#latex-engine",
+    "title": "데이터 과학 글쓰기",
+    "section": "3.3 \\(\\LaTeX\\) 엔진",
+    "text": "3.3 \\(\\LaTeX\\) 엔진\n\\(\\LaTeX\\) 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 KTUG 한국 \\(\\TeX\\) 사용자 그룹에서 \\(ko.TeX\\) Live를 추천하고 있다. 이유는 다음과 같다. 33 이호재 (2017), “레이텍을 빨리 쓸 수 있는 방법”, \\(\\TeX\\) : 조판, 그 이상의 가능성\n\npdfLaTeX, XeLaTeX, LuaLaTeX 3종 \\(\\LaTeX\\) 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.\n운영체제에 따라 차이가 나지만 안정적으로 \\(\\LaTeX\\) 을 설치하여 실제 문서작업에 이용하기에는 \\(\\TeX\\) Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.\n\\(\\TeX\\) 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 \\(\\TeX\\) 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨\n\n과거 latex+divps+pspdf 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, pstricks를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 eps 파일만 사용한다는 한계가 있다. 또 다른 latex+dvipdfmx 작업흐름은 중간에 .dvi 파일을 생성하고 dvipdfmx를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 .tex 소스파일에서 .pdf 파일을 즉시 생성한다는 점에서 인기가 있다.\n이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 memoir 혹은 oblivoir 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다."
   },
   {
     "objectID": "posts/quarto_blog_20220815/index.html",
@@ -19,6 +40,34 @@
     "title": "Quarto 블로그",
     "section": "4.1 quarto_blog.qmd",
     "text": "4.1 quarto_blog.qmd\n_quarto.yml 파일에 지정된 웹사이트에서 블로그로 들어가는 메뉴에 들어간 파일명이 quarto_blog.qmd 이라 해당 파일에 블로그 설정을 담아낸다.\n---\ntitle: \"Quarto 데이터 과학\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\npage-layout: full\ntitle-block-banner: false\n---"
+  },
+  {
+    "objectID": "posts/quarto_rr_20220816/index.html",
+    "href": "posts/quarto_rr_20220816/index.html",
+    "title": "재현가능 글쓰기",
+    "section": "",
+    "text": "Warning\n\n\n\n이광춘 (2019-12-28), “Computational Documents - 개요서(Compendium) 시작하며” 내용을 토대로 작성된 것임을 밝혀둡니다."
+  },
+  {
+    "objectID": "posts/quarto_rr_20220816/index.html#start-small",
+    "href": "posts/quarto_rr_20220816/index.html#start-small",
+    "title": "재현가능 글쓰기",
+    "section": "3.1 시작이 반이다",
+    "text": "3.1 시작이 반이다\n\n시작이 반이다 - start small\n\n\n\nCode\nproject\n|- DESCRIPTION\n|- README.md  \n|- Metadata.txt\n|\n|- data/                \n|   +- 2014ParasiteSurveyJustBrood.csv\n|   +- CedarBPLifeTable2014.csv\n|   +- NorthBPLifeTable2013.txt\n|   +- NorthBPLifeTable2014.csv|\n|- analysis/\n|   +- CodeforBPpaper.R"
+  },
+  {
+    "objectID": "posts/quarto_rr_20220816/index.html#pkg-development",
+    "href": "posts/quarto_rr_20220816/index.html#pkg-development",
+    "title": "재현가능 글쓰기",
+    "section": "3.2 팩키지 개발",
+    "text": "3.2 팩키지 개발\n\n팩키지 개발\n\n\n\nCode\nproject\n|- DESCRIPTION\n|- NAMESPACE\n|- README.md\n|- LakeTrophicModelling.Rproj\n|\n|- R/\n|   +- LakeTrophicModelling-package.r\n|   +- class_prob_rf.R\n|   +- condAccuracy.R\n|   +- crossval_rf.R\n|   +- density_plot.R\n|   +- ecdf_ks_ci.R\n|   +- ecor_map.R\n|   +- getCyanoAbund.R\n|   +- getLakeIDs.R\n|   +- importancePlot.R\n|\n|- man/\n|   +- class_prob_rf.Rd\n|   +- condAccuracy.Rd\n|   +- crossval_rf.Rd\n|   +- density_plot.Rd\n|   +- ecdf_ks_ci.Rd\n|   +- ecor_map.Rd\n|   +- getCyanoAbund.Rd\n|   +- getLakeIDs.Rd\n|   +- importancePlot.Rd\n|\n|- data/                \n|   +- LakeTrophicModelling.rda\n|\n|- vignettes/\n|\n|- inst/\n|   +- doc/\n|      +- manuscript.pdf\n|   +- extdata/\n|      +- ltmData.csv\n|      +- data_def.csv"
+  },
+  {
+    "objectID": "posts/quarto_rr_20220816/index.html#cicd-docker",
+    "href": "posts/quarto_rr_20220816/index.html#cicd-docker",
+    "title": "재현가능 글쓰기",
+    "section": "3.3 CI/CD와 도커",
+    "text": "3.3 CI/CD와 도커\nDockerfile 파일을 추가하여 환경도 재현가능하게 만들 수 있고, .travis.yml을 추가하여 CI/CD 환경도 구축할 수 있다. tests/를 추가하여 테스트 주도 개발(test-driven development, TDD)를 시도할 수 있고, 이를 통해 수작업 검증을 자동화하여 생산성과 품질을 대폭 향상시킬 수도 있다.\n\n\nCode\nproject\n|- DESCRIPTION          # project metadata and dependencies \n|- README.md            # top-level description of content and guide to users\n|- NAMESPACE            # exports R functions in the package for repeated use\n|- LICENSE              # specify the conditions of use and reuse of the code, data & text\n|- .travis.yml          # continuous integration service hook for auto-testing at each commit\n|- Dockerfile           # makes a custom isolated computational environment for the project\n|\n|- data/                # raw data, not changed once created\n|  +- my_data.csv       # data files in open formats such as TXT, CSV, TSV, etc.\n|\n|- analysis/            # any programmatic code\n|  +- my_report.Rmd     # R markdown file with narrative text interwoven with code chunks \n|  +- makefile          # builds a PDF/HTML/DOCX file from the Rmd, code, and data files\n|  +- scripts/          # code files (R, shell, etc.) used for data cleaning, analysis and visualisation \n|\n|- R/                     \n|  +- my_functions.R    # custom R functions that are used more than once throughout the project\n|\n|- man/\n|  +- my_functions.Rd   # documentation for the R functions (auto-generated when using devtools)\n|\n|- tests/\n|  +- testthat.R        # unit tests of R functions to ensure they perform as expected"
   },
   {
     "objectID": "quarto_about.html#블로그-저작-소프트웨어",
@@ -67,7 +116,7 @@
     "href": "quarto_blog.html",
     "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "Quarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 16, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
+    "text": "Quarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 16, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quarto_fonts.html",
@@ -96,6 +145,34 @@
     "title": "Quarto 설치/출판",
     "section": "",
     "text": "2 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다.\n\n\n\n3 Quarto Pub 출판 1\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\n\nCode\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n\nCode\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\n\nCode\nquarto.cmd preview\nquarto.cmd publish quarto-pub\n\n\n\n\n\n\n\nFootnotes\n\n\nQuarto Pub↩︎"
+  },
+  {
+    "objectID": "quarto_latex.html",
+    "href": "quarto_latex.html",
+    "title": "한글 LaTeX",
+    "section": "",
+    "text": "Danger\n\n\n\n\n\n이광춘, “글을 쓰는 것은 소프트웨어 개발이다!”, 강서양천신문 특집기고(’15년 9월) 와 LaTeX, PDF, 문서, 그리고 사고에서 관련 내용을 발췌한 것임을 밝혀둡니다. 그리고, Quarto PDF 문서를 많이 참고 했습니다."
+  },
+  {
+    "objectID": "quarto_latex.html#latex-엔진",
+    "href": "quarto_latex.html#latex-엔진",
+    "title": "한글 LaTeX",
+    "section": "3.1 \\(\\LaTeX\\) 엔진",
+    "text": "3.1 \\(\\LaTeX\\) 엔진\n보통 TexLive에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex이 Quarto \\(\\LaTeX\\) 기본엔진이다. 달리 특정하지 않게 되면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\nquarto install tool tinytex\nkotex 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 \\(\\LaTeX\\) 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, tidytex를 기본 \\(\\LaTeX\\) 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 tinytex::parse_install() 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.\n\n\nCode\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)"
+  },
+  {
+    "objectID": "quarto_latex.html#yaml-파일",
+    "href": "quarto_latex.html#yaml-파일",
+    "title": "한글 LaTeX",
+    "section": "3.2 YAML 파일",
+    "text": "3.2 YAML 파일\n문서를 구성하는 기본사항을 적어둔다. PDF 문서를 저작하는 것이라 \\(\\LaTeX\\) 에 대한 기본 지식은 Quarto PDF 문서를 생성하는데 많은 도움이 된다. 글꼴 지정관련하여 로컬 컴퓨터에 폰트 디렉토리에 관련 글꼴 정보가 운영체제와 연결되어 있어야 한다.\nPandoc 문서에 메타데이터 variables for LaTeX을 참조하여 필요한 상세설정작업을 수행한다.\n---\ntitle: \"한글 PDF\"\nformat: \n  pdf:\n    documentclass: report\n    papersize: a4\n    toc: true\n    toc-depth: 2\n    number-sections: true\n    colorlinks: true\n    include-in-header: \n      text: |\n        \\usepackage{pdfpages} \nbibliography: bibliography.bib\nlink-citations: yes\ncsl: apa-single-spaced.csl\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\n---\nQuarto 가 문서 변환 핵심 엔진으로 사용하고 있는 Pandoc 은 \\(\\LaTeX\\) 외에도 ConTeXt, roff ms, HTML (via wkhtmltopdf) 을 사용해서 PDF 파일을 제작할 수 있다. 기존 Pandoc을 이런 방식으로 PDF 를 제작하신 분은 다음 내용을 건너뛰는 것도 좋을 듯 싶다."
+  },
+  {
+    "objectID": "quarto_latex.html#저작",
+    "href": "quarto_latex.html#저작",
+    "title": "한글 LaTeX",
+    "section": "3.3 저작",
+    "text": "3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(\\LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n\n3.3.1 이미지\n\\(\\LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n3.3.2 R 코드\n\\(\\LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n3.3.3 표\n\\(\\LaTeX\\)에 \\(\\LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\n\n3.3.3.1 LaTeX 표\n\n\n\n3.3.3.2 gt 표\n\n\nCode\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n\n\n\n3.3.4 데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다.\n\n\n3.3.5 PDF 겉면\nfitpaper \\(\\LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다."
   },
   {
     "objectID": "quarto_layout.html",
@@ -236,5 +313,124 @@
     "title": "데이터 사이언스와 디자인",
     "section": "Quarto",
     "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/"
+  },
+  {
+    "objectID": "slideshow/hongik.html#housekeeping",
+    "href": "slideshow/hongik.html#housekeeping",
+    "title": "데이터 사이언스와 디자인",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋\n\n\n\n\n\n한국 R 사용자회"
+  },
+  {
+    "objectID": "slideshow/index.html#arrow",
+    "href": "slideshow/index.html#arrow",
+    "title": "Quarto 데이터 사이언스",
+    "section": "arrow",
+    "text": "arrow\n\narrow is software development platform for building high performance applications that process and transport large data sets\n\n\nThe arrow R package is an interface to data via the arrow backend, and has deep integration with dplyr:\n\nUngrouped mutate(), filter(), select() was available in arrow 5.0\n\n\ngroup_by() + summarize() aggregation was added in arrow 6.0\n\nMore complex dplyr operations were added in arrow7.0 and 8.0\n\n\n\narrow data can also be “handed off” to duckdb with to_duckdb() for any dbplyr commands without data conversion. IE no serialization or data copying costs are incurred."
+  },
+  {
+    "objectID": "slideshow/index.html#working-with-bigger-data",
+    "href": "slideshow/index.html#working-with-bigger-data",
+    "title": "Quarto 데이터 사이언스",
+    "section": "Working with bigger data?",
+    "text": "Working with bigger data?\n\nRelational databases (IE SQL) are still around and hugely popular but…\n\n\n\nData and specifically local files are getting bigger\n\n\n\n\nAdditionally, many Data Warehouses/Data Lakes use flat-file storage (.csv, .parquet, .json etc) - there are query engines in many environments, but you can often end up with large extracts.\n\n\n\nSo, how do you work with data extracts that aren’t already in a database, and are bigger than your memory?"
+  },
+  {
+    "objectID": "slideshow/index.html#pause-for-one-second",
+    "href": "slideshow/index.html#pause-for-one-second",
+    "title": "Quarto 데이터 사이언스",
+    "section": "Pause for one second",
+    "text": "Pause for one second\nIf it can fit in memory, then try out:\n\n\nvroom::vroom() or data.table::fread() for fast file reads into R\n\n\nvroom(col_select = c(column_name)) also allows for partial reads (ie specific columns)\n\n\narrow itself also has crazy fast file reads on many file types\n\n\n\n\n\n\ndata.table or the dplyr front-end to data.table via dtplyr for fast and efficient in-memory analysis\n\n\n\n\nLastly, the collapse R package for limited capability, but hyper-performant data manipulation"
+  },
+  {
+    "objectID": "slideshow/index.html#fill-your-quiver-with-arrows",
+    "href": "slideshow/index.html#fill-your-quiver-with-arrows",
+    "title": "Quarto 데이터 사이언스",
+    "section": "Fill your quiver with arrows",
+    "text": "Fill your quiver with arrows\n\nlibrary(arrow)  # interface to arrow\nlibrary(dplyr)  # expressive and consistent interface for data analysis\nlibrary(tictoc) # timing out computations\n\nUsing tictoc to watch cute dog videos time our computations."
+  },
+  {
+    "objectID": "slideshow/index.html#we-can-benchmark",
+    "href": "slideshow/index.html#we-can-benchmark",
+    "title": "Quarto 데이터 사이언스",
+    "section": "We can bench::mark()\n",
+    "text": "We can bench::mark()\n\n\n\n\nAll are pretty fast!\n\nBut again - the beauty of arrow is not just that it’s fast!\n\n\nIt’s fast at exploring the data BEFORE even having to wait for long reads OR having to get a workstation with enough memory to read it all in and compute on it!\n\n\nSo go out and use arrow + dplyr with duckdb for outrageously efficient exploratory data analysis!"
+  },
+  {
+    "objectID": "slideshow/index.html#section",
+    "href": "slideshow/index.html#section",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/index.html#데이터-사이언스",
+    "href": "slideshow/index.html#데이터-사이언스",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 사이언스",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/index.html#section-1",
+    "href": "slideshow/index.html#section-1",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/index.html#section-2",
+    "href": "slideshow/index.html#section-2",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "한국 R 사용자회"
+  },
+  {
+    "objectID": "slideshow/data-science.html#section",
+    "href": "slideshow/data-science.html#section",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "한국 R 사용자회"
+  },
+  {
+    "objectID": "slideshow/data-science.html",
+    "href": "slideshow/data-science.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/data-science.html#section-1",
+    "href": "slideshow/data-science.html#section-1",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/data-science.html#데이터-사이언스",
+    "href": "slideshow/data-science.html#데이터-사이언스",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 사이언스",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/subtitle-slide.html",
+    "href": "slideshow/subtitle-slide.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
+  },
+  {
+    "objectID": "slideshow/title-slide.html",
+    "href": "slideshow/title-slide.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
+  },
+  {
+    "objectID": "slideshow/title.html",
+    "href": "slideshow/title.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
   }
 ]

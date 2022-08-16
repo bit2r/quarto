@@ -49,11 +49,8 @@ quarto create-project myblog --type website:blog
 다른 방식은 RStudio 에서 `New Project`를 선택한 후에 `Quarto Blog` 프로젝트를 시작하는 방식이다.
 
 
-```{r}
-knitr::include_graphics(
-  glue::glue("{here::here()}/fig/quarto-blog-project.png")
-)
-```
+![](../../fig/quarto-blog-project.png)
+
 
 
 
