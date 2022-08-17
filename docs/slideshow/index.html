@@ -22,6 +22,70 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #aa5d00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #aa5d00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #007faa; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #007faa; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #aa5d00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
 <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -353,6 +417,8 @@
 <p><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> &nbsp; <a href="https://github.com/bit2r/quarto">github.com/bit2r/quarto</a></p>
 <p><img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/ggplot2.png" class="absolute" style="top: 425px; left: 1100px; width: 300px; "><img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidymodels.png" class="absolute" style="top: 425px; left: 1400px; width: 300px; "></p>
 <p><img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyverse.png" class="absolute" style="top: 680px; left: 1250px; width: 300px; "></p>
+<!-- {{< include data-science.qmd >}} -->
+<!-- ## {background-image="../fig/slide-end.png" background-size="contain"} -->
 </section><section id="section" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title"></h2>
 <div style="margin-top: 100px; color: black">
 <p>데이터 사이언스</p>
@@ -363,7 +429,158 @@
 </div>
 </section><section id="데이터-사이언스" class="slide level2"><h2>데이터 사이언스</h2>
 
-<img data-src="../fig/horst-eco-r4ds.png" class="r-stretch"></section><section id="section-2" class="slide level2" data-background-image="../fig/slide-end.png" data-background-size="contain"><h2></h2>
+<img data-src="../fig/horst-eco-r4ds.png" class="r-stretch"></section><section id="데이터-사이언스---출판" class="slide level2"><h2>데이터 사이언스 - 출판</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">문제점</a></li>
+<li><a href="#tabset-1-2">개념</a></li>
+<li><a href="#tabset-1-3">Single Sourcing Multi-Use</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="fig-problem" class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../fig/single-sourcing-problem.jpg" style="width:50.0%"></p>
+<p></p><figcaption>Figure 1: 문제점</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2">
+<div id="fig-concept" class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../fig/single-sourcing-concept.jpg" style="width:50.0%"></p>
+<p></p><figcaption>Figure 2: Single Sourcing 개념</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3">
+<div id="fig-publishing" class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../fig/single-sourcing-publishing.jpg" style="width:60.0%"></p>
+<p></p><figcaption>Figure 3: Single Sourcing Multi-Use</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section><section id="quarto" class="slide level2"><h2>Quarto</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-2-1">R</a></li>
+<li><a href="#tabset-2-2">파이썬</a></li>
+<li><a href="#tabset-2-3">Quarto: R</a></li>
+<li><a href="#tabset-2-4">Quarto: 파이썬</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><img data-src="../fig/quarto_workflow/rmd-knitr.png"></p>
+</div>
+<div id="tabset-2-2">
+<p><img data-src="../fig/quarto_workflow/jupyter-alone.png"></p>
+</div>
+<div id="tabset-2-3">
+<p><img data-src="../fig/quarto_workflow/qmd-knitr.png"></p>
+</div>
+<div id="tabset-2-4">
+<p><img data-src="../fig/quarto_workflow/qmd-jupyter.png"></p>
+</div>
+</div>
+</div>
+</section><section id="시각화---그래프-문법" class="slide level2"><h2>시각화 - 그래프 문법 <sup>1</sup>
+</h2>
+<div class="panel-tabset">
+<!-- 데이터  -->
+<div class="columns">
+<div class="column">
+<h3 id="r-코드">R 코드</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>bill_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="at">sex =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"여성"</span>,<span class="st">"여성"</span>,<span class="st">"남성"</span>,<span class="st">"남성"</span>)),</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="at">time =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"점심"</span>,<span class="st">"저녁"</span>,<span class="st">"점심"</span>,<span class="st">"저녁"</span>), <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"점심"</span>,<span class="st">"저녁"</span>)),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="at">total_bill =</span> <span class="fu">c</span>(<span class="fl">13.53</span>, <span class="fl">16.81</span>, <span class="fl">16.24</span>, <span class="fl">17.42</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<h3 id="실행결과">실행결과</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>bill_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   sex time total_bill
+1 여성 점심      13.53
+2 여성 저녁      16.81
+3 남성 점심      16.24
+4 남성 저녁      17.42</code></pre>
+</div>
+</div>
+</div>
+</div>
+<!-- ggplot -->
+<div class="columns">
+<div class="column">
+<h3 id="r-코드-1">R 코드</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>bill_df <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>time, <span class="at">y=</span>total_bill, <span class="at">group=</span>sex, <span class="at">shape=</span>sex, <span class="at">colour=</span>sex)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>sex), <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span>    </span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">fill=</span><span class="st">"white"</span>) <span class="sc">+</span>        </span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="fu">expand_limits</span>(<span class="at">y=</span><span class="dv">0</span>) <span class="sc">+</span>                      </span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="fu">scale_colour_hue</span>(<span class="at">name=</span><span class="st">"결재자 성별"</span>, <span class="at">l=</span><span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="fu">scale_shape_manual</span>(<span class="at">name=</span><span class="st">"결재자 성별"</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">21</span>)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="fu">scale_linetype_discrete</span>(<span class="at">name=</span><span class="st">"결재자 성별"</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="fu">xlab</span>(<span class="st">"점심, 석식"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"팁(Tip)"</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="fu">ggtitle</span>(<span class="st">"식사 결재 평균 팁"</span>) <span class="sc">+</span>    </span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="fu">c</span>(.<span class="dv">7</span>, .<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<h3 id="실행결과-1">실행결과</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Base R -->
+<div class="columns">
+<div class="column">
+<h3 id="r-코드-2">R 코드</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>bill_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( bill_df<span class="sc">$</span>total_bill,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>                   <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>                   <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>                   <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"여성"</span>, <span class="st">"남성"</span>), <span class="fu">c</span>(<span class="st">"점심"</span>, <span class="st">"저녁"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                   )</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a>mf_col <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3CC3BD"</span>, <span class="st">"#FD8210"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">barplot</span>(bill_mat, <span class="at">beside =</span> <span class="cn">TRUE</span>, <span class="at">border=</span><span class="cn">NA</span>, <span class="at">col=</span>mf_col)</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="fu">row.names</span>(bill_mat), <span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span>mf_col)</span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="fu">par</span>(<span class="at">cex=</span><span class="fl">1.2</span>, <span class="at">cex.axis=</span><span class="fl">1.1</span>)</span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="fu">matplot</span>(bill_mat, <span class="at">type=</span><span class="st">"b"</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span>mf_col,</span>
+<span id="cb5-14"><a href="#cb5-14"></a>    <span class="at">cex=</span><span class="fl">1.5</span>, <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">bty=</span><span class="st">"n"</span>, <span class="at">xaxt=</span><span class="st">"n"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15"></a>    <span class="at">xlim=</span><span class="fu">c</span>(<span class="fl">0.7</span>, <span class="fl">2.2</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">18</span>), <span class="at">ylab=</span><span class="st">""</span>,</span>
+<span id="cb5-16"><a href="#cb5-16"></a>    <span class="at">main=</span><span class="st">"식사 결재 평균 팁"</span>, <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">at=</span><span class="fu">axTicks</span>(<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">sprintf</span>(<span class="st">"$%s"</span>, <span class="fu">axTicks</span>(<span class="dv">2</span>)),</span>
+<span id="cb5-18"><a href="#cb5-18"></a>    <span class="at">las=</span><span class="dv">1</span>, <span class="at">cex.axis=</span><span class="fl">0.8</span>, <span class="at">col=</span><span class="cn">NA</span>, <span class="at">line =</span> <span class="sc">-</span><span class="fl">0.5</span>)</span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="fu">grid</span>(<span class="cn">NA</span>, <span class="cn">NULL</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">lwd=</span><span class="dv">1</span>, <span class="at">col=</span><span class="st">"#000000"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lty=</span><span class="dv">3</span>, <span class="at">lwd=</span><span class="dv">1</span>, <span class="at">col=</span><span class="st">"#000000"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="fu">mtext</span>(<span class="st">"점심"</span>, <span class="at">side=</span><span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span>)</span>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="fu">mtext</span>(<span class="st">"저녁"</span>, <span class="at">side=</span><span class="dv">1</span>, <span class="at">at=</span><span class="dv">2</span>)</span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="fu">text</span>(<span class="fl">1.5</span>, <span class="fl">17.3</span>, <span class="st">"남성"</span>, <span class="at">srt=</span><span class="dv">8</span>, <span class="at">font=</span><span class="dv">3</span>)</span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="fu">text</span>(<span class="fl">1.5</span>, <span class="fl">15.1</span>, <span class="st">"여성"</span>, <span class="at">srt=</span><span class="dv">33</span>, <span class="at">font=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<h3 id="실행결과-2">실행결과</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>Comparing ggplot2 and R Base Graphics By <a href="https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/">Nathan Yau</a></p></li></ol></aside></section><section id="dplyr---데이터-문법" class="slide level2"><h2>
+<code>dplyr</code> - 데이터 문법</h2>
 
 
 <img src="../fig/koRea_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">

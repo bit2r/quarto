@@ -116,7 +116,7 @@
     "href": "quarto_blog.html",
     "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "Quarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 16, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
+    "text": "Quarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 17, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 17, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quarto_fonts.html",
@@ -315,27 +315,6 @@
     "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/"
   },
   {
-    "objectID": "slideshow/data-science.html",
-    "href": "slideshow/data-science.html",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "데이터 사이언스"
-  },
-  {
-    "objectID": "slideshow/data-science.html#section-1",
-    "href": "slideshow/data-science.html#section-1",
-    "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "데이터 사이언스"
-  },
-  {
-    "objectID": "slideshow/data-science.html#데이터-사이언스",
-    "href": "slideshow/data-science.html#데이터-사이언스",
-    "title": "Quarto 데이터 사이언스",
-    "section": "데이터 사이언스",
-    "text": "데이터 사이언스"
-  },
-  {
     "objectID": "slideshow/index.html#section",
     "href": "slideshow/index.html#section",
     "title": "Quarto 데이터 사이언스",
@@ -357,11 +336,32 @@
     "text": "데이터 사이언스"
   },
   {
-    "objectID": "slideshow/index.html#section-2",
-    "href": "slideshow/index.html#section-2",
+    "objectID": "slideshow/index.html#데이터-사이언스---출판",
+    "href": "slideshow/index.html#데이터-사이언스---출판",
     "title": "Quarto 데이터 사이언스",
-    "section": "",
-    "text": "한국 R 사용자회"
+    "section": "데이터 사이언스 - 출판",
+    "text": "데이터 사이언스 - 출판\n\n\n문제점\n개념\nSingle Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+  },
+  {
+    "objectID": "slideshow/index.html#quarto",
+    "href": "slideshow/index.html#quarto",
+    "title": "Quarto 데이터 사이언스",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nR\n파이썬\nQuarto: R\nQuarto: 파이썬"
+  },
+  {
+    "objectID": "slideshow/index.html#시각화---그래프-문법",
+    "href": "slideshow/index.html#시각화---그래프-문법",
+    "title": "Quarto 데이터 사이언스",
+    "section": "시각화 - 그래프 문법 1\n",
+    "text": "시각화 - 그래프 문법 1\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n실행결과\n\n\n\n\n\n\n\n\nComparing ggplot2 and R Base Graphics By Nathan Yau"
+  },
+  {
+    "objectID": "slideshow/index.html#dplyr---데이터-문법",
+    "href": "slideshow/index.html#dplyr---데이터-문법",
+    "title": "Quarto 데이터 사이언스",
+    "section": "\ndplyr - 데이터 문법",
+    "text": "dplyr - 데이터 문법\n\n\n\n한국 R 사용자회"
   },
   {
     "objectID": "slideshow/title-slide.html",
