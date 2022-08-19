@@ -361,7 +361,7 @@
     "href": "slideshow/index.html#dplyr---데이터-문법",
     "title": "Quarto 데이터 사이언스",
     "section": "\ndplyr - 데이터 문법",
-    "text": "dplyr - 데이터 문법\n\n\n\n한국 R 사용자회"
+    "text": "dplyr - 데이터 문법"
   },
   {
     "objectID": "slideshow/title-slide.html",
@@ -369,5 +369,208 @@
     "title": "Quarto 데이터 사이언스",
     "section": "",
     "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
+  },
+  {
+    "objectID": "slideshow/index.html#복잡성",
+    "href": "slideshow/index.html#복잡성",
+    "title": "Quarto 데이터 사이언스",
+    "section": "복잡성",
+    "text": "복잡성\n\n\n\n엑셀 1\n\n\n아래한글 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nXKCD 1667: AlgorithmsWriting Technical Papers with Markdown and Pandoc"
+  },
+  {
+    "objectID": "slideshow/index.html#코드",
+    "href": "slideshow/index.html#코드",
+    "title": "Quarto 데이터 사이언스",
+    "section": "코드",
+    "text": "코드\n\n\n데이터 가공\ndplyr R\nBase R\nSQL\n파이썬\n\n\n\n\n\nflights 데이터프레임에서\n출발 연착시간(dep_delay) 칼럼에서 결측값이 없는 (!is.na()) 행을 필터링 하고\n날짜별(date), 시간별(hour) 그룹을 묶어\n평균 출발 연착시간을 계산하고 총빈도수 총계를 내고\n총빈도수가 10회 이상인 날짜와 시간을 찾아내시오\n\n\n\n\nhourly_delay <- flights %>%  \n  filter(!is.na(dep_delay)) %>% \n  group_by(date, hour) %>% \n  summarise(delay = mean(dep_delay), n = n()) %>%  \n  filter(n > 10) \n\n\n\n\nhourly_delay <- filter(   \n    summarise(   \n        group_by(   \n             filter(   \n                 flights,    \n                 !is.na(dep_delay)   \n             ),    \n             date, hour   \n        ),    \n    delay = mean(dep_delay),    \n         n = n()   \n    ),    \n    n > 10   \n)\n\n\n\n\nSELECT \"date\", \"hour\", \"delay\", \"n\"\nFROM (\n    SELECT \"date\", \"hour\",\n        AVG(\"dep_delay\") AS \"delay\",\n        COUNT() AS \"n\"\n    FROM \"flights\"\n    WHERE NOT(\"dep_delay\" IS NULL)\n    GROUP BY \"date\", \"hour\"\n) AS \"_W1\"\nWHERE \"n\" > 10.0\n\n\n\n\nflights[['date','hour','dep_delay']]\n...\n\n\n\n\n\n\n\n한국 R 사용자회"
+  },
+  {
+    "objectID": "slideshow/index.html#디자인---코드",
+    "href": "slideshow/index.html#디자인---코드",
+    "title": "Quarto 데이터 사이언스",
+    "section": "디자인 - 코드",
+    "text": "디자인 - 코드\n\n\n데이터 가공\ndplyr R\nBase R\nSQL\n파이썬\n\n\n\n\n날짜와 시간별로 총 빈도수와 출발연착 평균 시간을 구한다. 단, 총빈도수가 10 회 미만인 것은 제외하고 출발연착 시간의 결측값을 제거하고 계산한다.\n\n\n\nflights 데이터프레임에서\n출발 연착시간(dep_delay) 칼럼에서 결측값이 없는 (!is.na()) 행을 필터링 하고\n날짜별(date), 시간별(hour) 그룹을 묶어\n평균 출발 연착시간을 계산하고 총빈도수 총계를 내고\n총빈도수가 10회 이상인 날짜와 시간을 찾아내시오\n\n\n\n\nhourly_delay <- flights %>%  \n  filter(!is.na(dep_delay)) %>% \n  group_by(date, hour) %>% \n  summarise(delay = mean(dep_delay), n = n()) %>%  \n  filter(n > 10) \n\n\n\n\nhourly_delay <- filter(   \n    summarise(   \n        group_by(   \n             filter(   \n                 flights,    \n                 !is.na(dep_delay)   \n             ),    \n             date, hour   \n        ),    \n    delay = mean(dep_delay),    \n         n = n()   \n    ),    \n    n > 10   \n)\n\n\n\n\nSELECT \"date\", \"hour\", \"delay\", \"n\"\nFROM (\n    SELECT \"date\", \"hour\",\n        AVG(\"dep_delay\") AS \"delay\",\n        COUNT() AS \"n\"\n    FROM \"flights\"\n    WHERE NOT(\"dep_delay\" IS NULL)\n    GROUP BY \"date\", \"hour\"\n) AS \"_W1\"\nWHERE \"n\" > 10.0\n\n\n\n\nflights[['date','hour','dep_delay']]\n..."
+  },
+  {
+    "objectID": "slideshow/index.html#데이터",
+    "href": "slideshow/index.html#데이터",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터",
+    "text": "데이터\n\n\n\n\n한국 R 사용자회"
+  },
+  {
+    "objectID": "slideshow/index.html#디자인---데이터",
+    "href": "slideshow/index.html#디자인---데이터",
+    "title": "Quarto 데이터 사이언스",
+    "section": "디자인 - 데이터",
+    "text": "디자인 - 데이터\n\n\n정돈된 데이터\n사례 - 결핵 데이터\n사례 - Messy 데이터\n사례 - 코드\n사례 - Tidy 데이터\n\n\n\n\n\n\n\n\n\nWHO 결핵 원데이터\n\nWHO 에서 년도별, 국가별, 연령별, 성별, 진단방법별 결핵 발병사례 조사 통계 데이터\n진단방법\n\n\nrel stands for cases of relapse\n\nep stands for cases of extrapulmonary TB\n\nsn stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)\n\nsp stands for cases of pulmonary TB that could be diagnosed by a pulmonary smear (smear positive)\n\n\n연령\n\n014 = 0 – 14 years old\n1524 = 15 – 24 years old\n2534 = 25 – 34 years old\n3544 = 35 – 44 years old\n4554 = 45 – 54 years old\n5564 = 55 – 64 years old\n65 = 65 or older\n\n\n성별\n\nmales (m)\nfemales (f)\n\n\n\n\n\n\nlibrary(tidyverse)\ntidyr::who \n\n# A tibble: 7,240 × 60\n   country  iso2  iso3   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544\n   <chr>    <chr> <chr> <int>       <int>        <int>        <int>        <int>\n 1 Afghani… AF    AFG    1980          NA           NA           NA           NA\n 2 Afghani… AF    AFG    1981          NA           NA           NA           NA\n 3 Afghani… AF    AFG    1982          NA           NA           NA           NA\n 4 Afghani… AF    AFG    1983          NA           NA           NA           NA\n 5 Afghani… AF    AFG    1984          NA           NA           NA           NA\n 6 Afghani… AF    AFG    1985          NA           NA           NA           NA\n 7 Afghani… AF    AFG    1986          NA           NA           NA           NA\n 8 Afghani… AF    AFG    1987          NA           NA           NA           NA\n 9 Afghani… AF    AFG    1988          NA           NA           NA           NA\n10 Afghani… AF    AFG    1989          NA           NA           NA           NA\n# … with 7,230 more rows, and 52 more variables: new_sp_m4554 <int>,\n#   new_sp_m5564 <int>, new_sp_m65 <int>, new_sp_f014 <int>,\n#   new_sp_f1524 <int>, new_sp_f2534 <int>, new_sp_f3544 <int>,\n#   new_sp_f4554 <int>, new_sp_f5564 <int>, new_sp_f65 <int>,\n#   new_sn_m014 <int>, new_sn_m1524 <int>, new_sn_m2534 <int>,\n#   new_sn_m3544 <int>, new_sn_m4554 <int>, new_sn_m5564 <int>,\n#   new_sn_m65 <int>, new_sn_f014 <int>, new_sn_f1524 <int>, …\n\n\n\n\n\nwho %>%\n  pivot_longer(\n    cols = new_sp_m014:newrel_f65, \n    names_to = \"key\", \n    values_to = \"cases\", \n    values_drop_na = TRUE\n  ) %>% \n  mutate(\n    key = stringr::str_replace(key, \"newrel\", \"new_rel\")\n  ) %>%\n  separate(key, c(\"new\", \"var\", \"sexage\")) %>% \n  select(-new, -iso2, -iso3) %>% \n  separate(sexage, c(\"sex\", \"age\"), sep = 1)\n\n\n\n\n\n# A tibble: 76,046 × 6\n   country      year var   sex   age   cases\n   <chr>       <int> <chr> <chr> <chr> <int>\n 1 Afghanistan  1997 sp    m     014       0\n 2 Afghanistan  1997 sp    m     1524     10\n 3 Afghanistan  1997 sp    m     2534      6\n 4 Afghanistan  1997 sp    m     3544      3\n 5 Afghanistan  1997 sp    m     4554      5\n 6 Afghanistan  1997 sp    m     5564      2\n 7 Afghanistan  1997 sp    m     65        0\n 8 Afghanistan  1997 sp    f     014       5\n 9 Afghanistan  1997 sp    f     1524     38\n10 Afghanistan  1997 sp    f     2534     36\n# … with 76,036 more rows"
+  },
+  {
+    "objectID": "slideshow/index.html#디자인---사람-대-기계",
+    "href": "slideshow/index.html#디자인---사람-대-기계",
+    "title": "Quarto 데이터 사이언스",
+    "section": "디자인 - 사람 대 기계",
+    "text": "디자인 - 사람 대 기계\n\n\n전체 개발 시간\n사람 < 기계\n사람 > 기계"
+  },
+  {
+    "objectID": "slideshow/index.html#데이터-과학-욕구단계설",
+    "href": "slideshow/index.html#데이터-과학-욕구단계설",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 과학 욕구단계설",
+    "text": "데이터 과학 욕구단계설\n\n\n매슬로 욕구단계설\n가치 피라미드"
+  },
+  {
+    "objectID": "slideshow/index.html#section-2",
+    "href": "slideshow/index.html#section-2",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 문제"
+  },
+  {
+    "objectID": "slideshow/index.html#section-3",
+    "href": "slideshow/index.html#section-3",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 문제"
+  },
+  {
+    "objectID": "slideshow/index.html#section-4",
+    "href": "slideshow/index.html#section-4",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 노력들"
+  },
+  {
+    "objectID": "slideshow/index.html#section-5",
+    "href": "slideshow/index.html#section-5",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 노력들"
+  },
+  {
+    "objectID": "slideshow/index.html#section-6",
+    "href": "slideshow/index.html#section-6",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "한국 R 사용자회"
+  },
+  {
+    "objectID": "slideshow/problem.html",
+    "href": "slideshow/problem.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 문제"
+  },
+  {
+    "objectID": "slideshow/problem.html#section-1",
+    "href": "slideshow/problem.html#section-1",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 문제"
+  },
+  {
+    "objectID": "slideshow/problem.html#시각화---그래프-문법",
+    "href": "slideshow/problem.html#시각화---그래프-문법",
+    "title": "Quarto 데이터 사이언스",
+    "section": "시각화 - 그래프 문법 3",
+    "text": "시각화 - 그래프 문법 3\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n\n\n실행결과"
+  },
+  {
+    "objectID": "slideshow/problem.html#디자인---코드",
+    "href": "slideshow/problem.html#디자인---코드",
+    "title": "Quarto 데이터 사이언스",
+    "section": "디자인 - 코드",
+    "text": "디자인 - 코드\n\n데이터 가공dplyr RBase RSQL파이썬\n\n\n\n날짜와 시간별로 총 빈도수와 출발연착 평균 시간을 구한다. 단, 총빈도수가 10 회 미만인 것은 제외하고 출발연착 시간의 결측값을 제거하고 계산한다.\n\n\nflights 데이터프레임에서\n출발 연착시간(dep_delay) 칼럼에서 결측값이 없는 (!is.na()) 행을 필터링 하고\n날짜별(date), 시간별(hour) 그룹을 묶어\n평균 출발 연착시간을 계산하고 총빈도수 총계를 내고\n총빈도수가 10회 이상인 날짜와 시간을 찾아내시오\n\n\n\n\nhourly_delay <- flights %>%  \n  filter(!is.na(dep_delay)) %>% \n  group_by(date, hour) %>% \n  summarise(delay = mean(dep_delay), n = n()) %>%  \n  filter(n > 10) \n\n\n\n\nhourly_delay <- filter(   \n    summarise(   \n        group_by(   \n             filter(   \n                 flights,    \n                 !is.na(dep_delay)   \n             ),    \n             date, hour   \n        ),    \n    delay = mean(dep_delay),    \n         n = n()   \n    ),    \n    n > 10   \n)\n\n\n\n\nSELECT \"date\", \"hour\", \"delay\", \"n\"\nFROM (\n    SELECT \"date\", \"hour\",\n        AVG(\"dep_delay\") AS \"delay\",\n        COUNT() AS \"n\"\n    FROM \"flights\"\n    WHERE NOT(\"dep_delay\" IS NULL)\n    GROUP BY \"date\", \"hour\"\n) AS \"_W1\"\nWHERE \"n\" > 10.0\n\n\n\n\nflights[['date','hour','dep_delay']]\n..."
+  },
+  {
+    "objectID": "slideshow/problem.html#디자인---데이터",
+    "href": "slideshow/problem.html#디자인---데이터",
+    "title": "Quarto 데이터 사이언스",
+    "section": "디자인 - 데이터",
+    "text": "디자인 - 데이터\n\n정돈된 데이터사례 - 결핵 데이터사례 - Messy 데이터사례 - 코드사례 - Tidy 데이터\n\n\n\n\n\n\n\n\nWHO 결핵 원데이터\nWHO 에서 년도별, 국가별, 연령별, 성별, 진단방법별 결핵 발병사례 조사 통계 데이터\n진단방법\n\nrel stands for cases of relapse\nep stands for cases of extrapulmonary TB\nsn stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)\nsp stands for cases of pulmonary TB that could be diagnosed by a pulmonary smear (smear positive)\n\n연령\n\n014 = 0 – 14 years old\n1524 = 15 – 24 years old\n2534 = 25 – 34 years old\n3544 = 35 – 44 years old\n4554 = 45 – 54 years old\n5564 = 55 – 64 years old\n65 = 65 or older\n\n성별\n\nmales (m)\nfemales (f)\n\n\n\n\n\nlibrary(tidyverse)\ntidyr::who \n\n# A tibble: 7,240 × 60\n   country  iso2  iso3   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544\n   <chr>    <chr> <chr> <int>       <int>        <int>        <int>        <int>\n 1 Afghani… AF    AFG    1980          NA           NA           NA           NA\n 2 Afghani… AF    AFG    1981          NA           NA           NA           NA\n 3 Afghani… AF    AFG    1982          NA           NA           NA           NA\n 4 Afghani… AF    AFG    1983          NA           NA           NA           NA\n 5 Afghani… AF    AFG    1984          NA           NA           NA           NA\n 6 Afghani… AF    AFG    1985          NA           NA           NA           NA\n 7 Afghani… AF    AFG    1986          NA           NA           NA           NA\n 8 Afghani… AF    AFG    1987          NA           NA           NA           NA\n 9 Afghani… AF    AFG    1988          NA           NA           NA           NA\n10 Afghani… AF    AFG    1989          NA           NA           NA           NA\n# … with 7,230 more rows, and 52 more variables: new_sp_m4554 <int>,\n#   new_sp_m5564 <int>, new_sp_m65 <int>, new_sp_f014 <int>,\n#   new_sp_f1524 <int>, new_sp_f2534 <int>, new_sp_f3544 <int>,\n#   new_sp_f4554 <int>, new_sp_f5564 <int>, new_sp_f65 <int>,\n#   new_sn_m014 <int>, new_sn_m1524 <int>, new_sn_m2534 <int>,\n#   new_sn_m3544 <int>, new_sn_m4554 <int>, new_sn_m5564 <int>,\n#   new_sn_m65 <int>, new_sn_f014 <int>, new_sn_f1524 <int>, …\n\n\n\n\n\nwho %>%\n  pivot_longer(\n    cols = new_sp_m014:newrel_f65, \n    names_to = \"key\", \n    values_to = \"cases\", \n    values_drop_na = TRUE\n  ) %>% \n  mutate(\n    key = stringr::str_replace(key, \"newrel\", \"new_rel\")\n  ) %>%\n  separate(key, c(\"new\", \"var\", \"sexage\")) %>% \n  select(-new, -iso2, -iso3) %>% \n  separate(sexage, c(\"sex\", \"age\"), sep = 1)\n\n\n\n\n\n# A tibble: 76,046 × 6\n   country      year var   sex   age   cases\n   <chr>       <int> <chr> <chr> <chr> <int>\n 1 Afghanistan  1997 sp    m     014       0\n 2 Afghanistan  1997 sp    m     1524     10\n 3 Afghanistan  1997 sp    m     2534      6\n 4 Afghanistan  1997 sp    m     3544      3\n 5 Afghanistan  1997 sp    m     4554      5\n 6 Afghanistan  1997 sp    m     5564      2\n 7 Afghanistan  1997 sp    m     65        0\n 8 Afghanistan  1997 sp    f     014       5\n 9 Afghanistan  1997 sp    f     1524     38\n10 Afghanistan  1997 sp    f     2534     36\n# … with 76,036 more rows"
+  },
+  {
+    "objectID": "slideshow/problem.html#디자인---사람-대-기계",
+    "href": "slideshow/problem.html#디자인---사람-대-기계",
+    "title": "Quarto 데이터 사이언스",
+    "section": "디자인 - 사람 대 기계",
+    "text": "디자인 - 사람 대 기계\n\n전체 개발 시간사람 < 기계사람 > 기계"
+  },
+  {
+    "objectID": "slideshow/data-science.html",
+    "href": "slideshow/data-science.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/data-science.html#section-1",
+    "href": "slideshow/data-science.html#section-1",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/data-science.html#데이터-사이언스",
+    "href": "slideshow/data-science.html#데이터-사이언스",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 사이언스",
+    "text": "데이터 사이언스"
+  },
+  {
+    "objectID": "slideshow/data-science.html#데이터-과학-욕구단계설",
+    "href": "slideshow/data-science.html#데이터-과학-욕구단계설",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 과학 욕구단계설",
+    "text": "데이터 과학 욕구단계설\n\n매슬로 욕구단계설가치 피라미드"
+  },
+  {
+    "objectID": "slideshow/data-science.html#복잡성",
+    "href": "slideshow/data-science.html#복잡성",
+    "title": "Quarto 데이터 사이언스",
+    "section": "복잡성",
+    "text": "복잡성\n\n엑셀 1아래한글 2"
+  },
+  {
+    "objectID": "slideshow/data-science.html#데이터-사이언스---출판",
+    "href": "slideshow/data-science.html#데이터-사이언스---출판",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 사이언스 - 출판",
+    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+  },
+  {
+    "objectID": "slideshow/solution.html",
+    "href": "slideshow/solution.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 노력들"
+  },
+  {
+    "objectID": "slideshow/solution.html#section-1",
+    "href": "slideshow/solution.html#section-1",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 과학 노력들"
+  },
+  {
+    "objectID": "slideshow/solution.html#quarto",
+    "href": "slideshow/solution.html#quarto",
+    "title": "Quarto 데이터 사이언스",
+    "section": "Quarto",
+    "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬"
+  },
+  {
+    "objectID": "slideshow/problem.html#복잡성",
+    "href": "slideshow/problem.html#복잡성",
+    "title": "Quarto 데이터 사이언스",
+    "section": "복잡성",
+    "text": "복잡성\n\n엑셀 1아래한글 2"
+  },
+  {
+    "objectID": "slideshow/problem.html#데이터-사이언스---출판",
+    "href": "slideshow/problem.html#데이터-사이언스---출판",
+    "title": "Quarto 데이터 사이언스",
+    "section": "데이터 사이언스 - 출판",
+    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
   }
 ]

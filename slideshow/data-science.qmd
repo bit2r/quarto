@@ -1,2 +1,41 @@
 
 
+## {auto-animate=true}
+
+::: {style="margin-top: 100px; color: black"}
+데이터 사이언스
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 300px; font-size: 5em; color: black;"}
+데이터 사이언스
+:::
+
+## 데이터 사이언스
+
+::: {.r-stack}
+
+![](../fig/horst-eco-r4ds.png){.fragment}
+
+![](../fig/data-science-overview.png){.fragment width="800"}
+:::
+
+## 데이터 과학 욕구단계설
+
+::: panel-tabset
+
+### 매슬로 욕구단계설 
+
+![](../fig/pyramid-needs.png)
+
+### 가치 피라미드
+
+![](../fig/pyramid-data-science.png)
+
+
+:::
+
+
+
+

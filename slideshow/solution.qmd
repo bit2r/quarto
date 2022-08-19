@@ -1,0 +1,33 @@
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px; color: black"}
+데이터 과학 노력들
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 300px; font-size: 5em; color: black;"}
+데이터 과학 노력들
+:::
+
+## Quarto
+
+::: panel-tabset
+### R
+
+![](../fig/quarto_workflow/rmd-knitr.png)
+
+### 파이썬
+
+![](../fig/quarto_workflow/jupyter-alone.png)
+
+### Quarto: R
+
+![](../fig/quarto_workflow/qmd-knitr.png)
+
+### Quarto: 파이썬
+
+![](../fig/quarto_workflow/qmd-jupyter.png)
+:::
+

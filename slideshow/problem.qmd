@@ -1,0 +1,391 @@
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px; color: black"}
+데이터 과학 문제
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 300px; font-size: 5em; color: black;"}
+데이터 과학 문제
+:::
+
+## 데이터 사이언스 - 출판
+
+::: panel-tabset
+### 문제점
+
+![문제점](../fig/single-sourcing-problem.jpg){#fig-problem width="50%"}
+
+### 개념
+
+![Single Sourcing 개념](../fig/single-sourcing-concept.jpg){#fig-concept width="50%"}
+
+### Single Sourcing Multi-Use
+
+![Single Sourcing Multi-Use](../fig/single-sourcing-publishing.jpg){#fig-publishing width="60%"}
+:::
+
+
+
+## 복잡성
+
+::: panel-tabset
+
+### 엑셀 [^excel]
+
+[^excel]: [XKCD 1667: Algorithms](https://www.explainxkcd.com/wiki/index.php/1667:_Algorithms)
+
+<br>
+
+<center>
+![](../fig/xkcd-algorithms.png){width="1000"}
+</center>
+
+### 아래한글 [^markdown] {.selected}
+
+<center>
+![](../fig/markdown-writing.png) 
+</center>
+
+[^markdown]: [Writing Technical Papers with Markdown and Pandoc](https://blog.kdheepak.com/writing-papers-with-markdown.html)
+
+:::
+
+
+
+## 시각화 - 그래프 문법 ^[Comparing ggplot2 and R Base Graphics By [Nathan Yau](https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/)]
+
+::: {.panel-tabset}
+
+<!-- 데이터  -->
+:::: columns
+
+::: {.column}
+
+### R 코드
+
+```{r}
+library(tidyverse)
+bill_df <- data.frame(
+  sex = factor(c("여성","여성","남성","남성")),
+  time = factor(c("점심","저녁","점심","저녁"), levels=c("점심","저녁")),
+  total_bill = c(13.53, 16.81, 16.24, 17.42)
+)
+```
+:::
+
+::: {.column}
+### 실행결과
+```{r}
+bill_df
+```
+:::
+
+::::
+
+
+<!-- ggplot -->
+::: {.columns}
+
+::: {.column}
+
+### R 코드
+
+```{r}
+#| eval: false
+bill_df %>% 
+  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +
+    geom_line(aes(linetype=sex), size=1) +    
+    geom_point(size=3, fill="white") +        
+    expand_limits(y=0) +                      
+    scale_colour_hue(name="결재자 성별", l=30) +
+    scale_shape_manual(name="결재자 성별", values=c(22,21)) +
+    scale_linetype_discrete(name="결재자 성별") +
+    xlab("점심, 석식") + ylab("팁(Tip)") +
+    ggtitle("식사 결재 평균 팁") +    
+    theme_bw() +
+    theme(legend.position=c(.7, .4))
+
+```
+:::
+
+::: {.column}
+### 실행결과
+```{r}
+#| echo: false
+bill_df %>% 
+  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +
+    geom_line(aes(linetype=sex), size=1) +    
+    geom_point(size=3, fill="white") +        
+    expand_limits(y=0) +                      
+    scale_colour_hue(name="결재자 성별", l=30) +
+    scale_shape_manual(name="결재자 성별", values=c(22,21)) +
+    scale_linetype_discrete(name="결재자 성별") +
+    xlab("점심, 석식") + ylab("팁(Tip)") +
+    ggtitle("식사 결재 평균 팁") +    
+    theme_bw() +
+    theme(legend.position=c(.7, .4))
+```
+:::
+
+:::
+
+<!-- Base R -->
+
+::: {.columns}
+
+::: {.column}
+
+### R 코드
+
+```{r}
+#| eval: false
+bill_mat <- matrix( bill_df$total_bill,
+                   nrow = 2,
+                   byrow=TRUE,
+                   dimnames = list(c("여성", "남성"), c("점심", "저녁"))
+                   )
+
+mf_col <- c("#3CC3BD", "#FD8210")
+barplot(bill_mat, beside = TRUE, border=NA, col=mf_col)
+legend("topleft", row.names(bill_mat), pch=15, col=mf_col)
+
+
+par(cex=1.2, cex.axis=1.1)
+matplot(bill_mat, type="b", lty=1, pch=19, col=mf_col,
+    cex=1.5, lwd=3, las=1, bty="n", xaxt="n",
+    xlim=c(0.7, 2.2), ylim=c(12,18), ylab="",
+    main="식사 결재 평균 팁", yaxt="n")
+axis(2, at=axTicks(2), labels=sprintf("$%s", axTicks(2)),
+    las=1, cex.axis=0.8, col=NA, line = -0.5)
+grid(NA, NULL, lty=3, lwd=1, col="#000000")
+abline(v=c(1,2), lty=3, lwd=1, col="#000000")
+mtext("점심", side=1, at=1)
+mtext("저녁", side=1, at=2)
+text(1.5, 17.3, "남성", srt=8, font=3)
+text(1.5, 15.1, "여성", srt=33, font=3)
+
+
+```
+:::
+
+::: {.column}
+### 실행결과
+```{r}
+#| echo: false
+bill_mat <- matrix( bill_df$total_bill,
+                   nrow = 2,
+                   byrow=TRUE,
+                   dimnames = list(c("여성", "남성"), c("점심", "저녁"))
+                   )
+
+mf_col <- c("#3CC3BD", "#FD8210")
+
+par(cex=1.2, cex.axis=1.1)
+matplot(bill_mat, type="b", lty=1, pch=19, col=mf_col,
+    cex=1.5, lwd=3, las=1, bty="n", xaxt="n",
+    xlim=c(0.7, 2.2), ylim=c(12,18), ylab="",
+    main="식사 결재 평균 팁", yaxt="n")
+axis(2, at=axTicks(2), labels=sprintf("$%s", axTicks(2)),
+    las=1, cex.axis=0.8, col=NA, line = -0.5)
+grid(NA, NULL, lty=3, lwd=1, col="#000000")
+abline(v=c(1,2), lty=3, lwd=1, col="#000000")
+mtext("점심", side=1, at=1)
+mtext("저녁", side=1, at=2)
+text(1.5, 17.3, "남성", srt=8, font=3)
+text(1.5, 15.1, "여성", srt=33, font=3)
+
+```
+:::
+
+:::
+
+:::
+
+
+
+
+## 디자인 - 코드
+
+::: panel-tabset
+
+### 데이터 가공
+
+> 날짜와 시간별로 총 빈도수와 출발연착 평균 시간을 구한다. 단, 총빈도수가 10 회 미만인 것은 제외하고  출발연착 시간의 결측값을 제거하고 계산한다.
+
+- `flights` 데이터프레임에서
+- 출발 연착시간(`dep_delay`) 칼럼에서 결측값이 없는 (`!is.na()`) 행을 필터링 하고
+- 날짜별(`date`), 시간별(`hour`) 그룹을 묶어
+- 평균 출발 연착시간을 계산하고 총빈도수 총계를 내고
+- 총빈도수가 10회 이상인 날짜와 시간을 찾아내시오
+
+### `dplyr` R
+
+```{r}
+#| eval: false
+hourly_delay <- flights %>%  
+  filter(!is.na(dep_delay)) %>% 
+  group_by(date, hour) %>% 
+  summarise(delay = mean(dep_delay), n = n()) %>%  
+  filter(n > 10) 
+```
+
+### Base R 
+
+```{r}
+#| eval: false
+
+hourly_delay <- filter(   
+    summarise(   
+        group_by(   
+             filter(   
+                 flights,    
+                 !is.na(dep_delay)   
+             ),    
+             date, hour   
+        ),    
+    delay = mean(dep_delay),    
+         n = n()   
+    ),    
+    n > 10   
+)
+```
+
+
+### SQL
+
+```{sql}
+#| eval: false
+SELECT "date", "hour", "delay", "n"
+FROM (
+    SELECT "date", "hour",
+        AVG("dep_delay") AS "delay",
+        COUNT() AS "n"
+    FROM "flights"
+    WHERE NOT("dep_delay" IS NULL)
+    GROUP BY "date", "hour"
+) AS "_W1"
+WHERE "n" > 10.0
+```
+
+### 파이썬
+
+```{python}
+#| eval: false
+flights[['date','hour','dep_delay']]
+...
+```
+
+::: 
+
+## 디자인 - 데이터
+
+::: panel-tabset
+
+### 정돈된 데이터
+
+<center>
+![](../fig/messy_tidy_data.png){width="1000"}
+</center>
+
+### 사례 - 결핵 데이터
+
+- WHO [결핵 원데이터](http://www.who.int/tb/country/data/download/en/) 
+- WHO 에서 년도별, 국가별, 연령별, 성별, 진단방법별 결핵 발병사례 조사 통계 데이터
+- 진단방법
+    - `rel` stands for cases of relapse
+    - `ep` stands for cases of extrapulmonary TB
+    - `sn` stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)
+    - `sp` stands for cases of pulmonary TB that could be diagnosed by a pulmonary smear (smear positive)
+- 연령
+    - 014 = 0 – 14 years old
+    - 1524 = 15 – 24 years old
+    - 2534 = 25 – 34 years old
+    - 3544 = 35 – 44 years old
+    - 4554 = 45 – 54 years old
+    - 5564 = 55 – 64 years old
+    - 65 = 65 or older
+- 성별
+    - males (m) 
+    - females (f)
+    
+
+### 사례 - Messy 데이터
+
+```{r}
+library(tidyverse)
+tidyr::who 
+```
+
+### 사례 - 코드
+
+```{r}
+#| eval: false
+who %>%
+  pivot_longer(
+    cols = new_sp_m014:newrel_f65, 
+    names_to = "key", 
+    values_to = "cases", 
+    values_drop_na = TRUE
+  ) %>% 
+  mutate(
+    key = stringr::str_replace(key, "newrel", "new_rel")
+  ) %>%
+  separate(key, c("new", "var", "sexage")) %>% 
+  select(-new, -iso2, -iso3) %>% 
+  separate(sexage, c("sex", "age"), sep = 1)
+```
+
+### 사례 - Tidy 데이터
+
+```{r}
+#| eval: true
+#| echo: false
+tidyr::who %>%
+  pivot_longer(
+    cols = new_sp_m014:newrel_f65, 
+    names_to = "key", 
+    values_to = "cases", 
+    values_drop_na = TRUE
+  ) %>% 
+  mutate(
+    key = stringr::str_replace(key, "newrel", "new_rel")
+  ) %>%
+  separate(key, c("new", "var", "sexage")) %>% 
+  select(-new, -iso2, -iso3) %>% 
+  separate(sexage, c("sex", "age"), sep = 1)
+```
+
+:::
+
+## 디자인 - 사람 대 기계
+
+::: panel-tabset
+
+### 전체 개발 시간
+
+<br>
+<center>
+![](../fig/human-computer-total.png)
+</center>
+
+
+### 사람 `<` 기계 
+
+<br>
+<center>
+![](../fig/human-computer-machine.png)
+</center>
+
+### 사람 `>` 기계 
+
+<br>
+<center>
+![](../fig/human-computer-human.png)
+</center>
+
+
+:::
+
