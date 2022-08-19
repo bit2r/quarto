@@ -47,7 +47,7 @@ csl: apa-single-spaced.csl
 
 기본 콘텐츠 영역을 살짝 넘겨 콘텐츠를 담을 영역을 넓히고자 할 때는 `.column-body-outset`을 사용한다.
 
-````{verbatim}
+````verbatim
 :::{.column-body-outset}
 ![](fig/horst-eco-r4ds.png)
 :::
@@ -61,7 +61,7 @@ csl: apa-single-spaced.csl
 
 `.column-page`를 사용하게 되면 전체 페이지 칼럼을 사용하여 콘텐츠를 담는 공간을 넓힐 수 있다.
 
-````{verbatim}
+````verbatim
 :::{.column-page}
 ![](fig/horst-eco-r4ds.png)
 :::
@@ -76,7 +76,7 @@ csl: apa-single-spaced.csl
 
 이미지 뿐만 아니라 R 혹은 파이썬 실행결과 산출되는 그래프와 표도 레이아웃을 확장하여 구현할 수 있다. 
 
-````{verbatim}
+````verbatim
 ```{r}
 #| column: page
 
@@ -101,7 +101,7 @@ knitr::kable(
 
 `.column-screen` 을 사용하게 되면 모니터 화면을 가득 채울 수 있다.
 
-````{verbatim}
+````verbatim
 ::: {.column-screen}
 ![](fig/horst-eco-r4ds.png)
 :::
@@ -115,7 +115,7 @@ knitr::kable(
 
 마찬가지로 R 혹은 파이썬 코드에 대해서 동일한 결과를 얻을 수 있다.
 
-````{verbatim}
+````verbatim
 ```{r}
 #| column: screen
 
@@ -140,7 +140,7 @@ leaflet() %>%
 화면 인세(inset)을 사용하여 전체 모니터 화면 전체로 그래프 3개를 넣을 수 있다.
 
 
-````{verbatim}
+````verbatim
 ```{r}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
@@ -167,7 +167,7 @@ plot(pressure)
 출판에서 유용한 기능 중 하나가 여백에 중요 정보를 기술하는 것이다.
 `.column-margin` 클래스를 사용하여 해당 기능을 구현한다.
 
-````{verbatim}
+````verbatim
 ::: {.column-margin}
 ![](fig/horst-eco-r4ds.png)
 :::
@@ -181,9 +181,9 @@ plot(pressure)
 
 여백에 ggplot 그래프 객체를 위치시킬 수도 있다.
 
-````{verbatim}
+````verbatim
 ```{r}
-#| label: fig-mtcars
+#| label: fig-mtcars-margin
 #| fig-cap: "MPG vs horsepower, colored by transmission."
 #| column: margin
 
@@ -199,7 +199,7 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +
 ````
 
 ```{r}
-#| label: fig-mtcars
+#| label: fig-mtcars-mpg
 #| fig-cap: "MPG vs horsepower, colored by transmission."
 #| column: margin
 
@@ -217,7 +217,7 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +
 
 마찬가지로 여백에 표를 위치시킬 수도 있다.
 
-````{verbatim}
+````verbatim
 ```{r}
 #| column: margin
 
@@ -240,7 +240,7 @@ knitr::kable(
 `.column-margin` 클래스에 수식을 비롯한 기타 콘텐츠도 반영시킬 수 있다.
 
 
-````{verbatim}
+````verbatim
 
 ::: {.column-margin}
  $[a, b]$ 구간 $x$에 대한 **미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus)** 는 다음과 같다.
@@ -265,7 +265,7 @@ $$\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x).$$
 
 $\LaTeX$의 `\newpage`와 같은 기능을 `{{< pagebreak >}}`으로 구현할 수 있다.
 
-````{verbatim}
+````verbatim
 page 1
 
 {{< pagebreak >}}
@@ -278,7 +278,7 @@ page 2
 
 각주, 미주를 비롯하여 참고문헌 등 다양한 참조를 여백에 바로 표시할 경우 다음과 같이 작성하면 된다. 이와 같이 작성하면 참고문헌 등 관련 정보를 문서 마지막에 위치하는 대신 여백에 바로 표시된다.
 
-````{verbatim}
+````verbatim
 ---
 reference-location: margin
 citation-location: margin
@@ -292,7 +292,7 @@ citation-location: margin
 
 팔머펭귄 데이터셋은 붓꽃 데이터를 대체하기 위해 몇년에 걸쳐 안정화를 이룬 위대한 데이터셋[@palmer-penguins]이다. 한국에도 도입이 시급하다.
 
-````{verbatim}
+````verbatim
 [This is a span that has the class aside which places it in the margin without a footnote number.]{.aside}
 ```
 
@@ -305,7 +305,7 @@ citation-location: margin
 R 그래프를 제작한 후에 캡션을 보통 그래프 하단에 붙이게 되나 그래프에 대한 설명을 여백 캡션으로 두고자 하는 경우 `cap-location: margin` 을 R 코드 덩어리 내부에 지정하면 된다.
 
 
-````{verbatim}
+````verbatim
 ```{r}
 #| label: fig-cap-margin
 #| fig-cap: "MPG vs horsepower, colored by transmission."
@@ -323,7 +323,7 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +
 ````
 
 ```{r}
-#| label: fig-cap-margin
+#| label: fig-cap-margin-log
 #| fig-cap: "MPG vs horsepower, colored by transmission."
 #| cap-location: margin
 
@@ -355,7 +355,7 @@ body, page, screen, outset, inset, right, left 를 달리하여 콘텐츠 레이
 
 `.screen-inset-right`를 해당 콘텐츠에 지정할 경우 우측 전체 영역에 콘텐츠를 넣을 수 있다.
 
-````{verbatim}
+````verbatim
 :::{.screen-inset-right}
 ![](fig/horst-eco-r4ds.png)
 :::

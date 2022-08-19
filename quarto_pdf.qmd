@@ -24,7 +24,6 @@ csl: apa-single-spaced.csl
 mainfont: "NanumMyeongjo"
 sansfont: "NanumGothic"
 monofont: "D2Coding"
-CJKmainfont: "NanumGothic"
 ---
  
 
