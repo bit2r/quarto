@@ -1,5 +1,40 @@
 [
   {
+    "objectID": "Quarto_penguin.html",
+    "href": "Quarto_penguin.html",
+    "title": "Quarto 기본사용법",
+    "section": "",
+    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
+  },
+  {
+    "objectID": "Quarto_penguin.html#데이터-선택",
+    "href": "Quarto_penguin.html#데이터-선택",
+    "title": "Quarto 기본사용법",
+    "section": "1.1 데이터 선택",
+    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
+  },
+  {
+    "objectID": "Quarto_penguin.html#데이터와-패키지-불러오기",
+    "href": "Quarto_penguin.html#데이터와-패키지-불러오기",
+    "title": "Quarto 기본사용법",
+    "section": "1.2 데이터와 패키지 불러오기",
+    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <chr>   <chr>           <dbl>         <dbl>            <dbl>       <dbl> <chr>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           36.7          19.3              193        3450 fema…\n5 Adelie  Torge…           39.3          20.6              190        3650 male \n6 Adelie  Torge…           38.9          17.8              181        3625 fema…\n# … with 1 more variable: year <dbl>\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
+  },
+  {
+    "objectID": "Quarto_penguin.html#요약-통계량",
+    "href": "Quarto_penguin.html#요약-통계량",
+    "title": "Quarto 기본사용법",
+    "section": "1.3 요약 통계량",
+    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
+  },
+  {
+    "objectID": "Quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "href": "Quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "title": "Quarto 기본사용법",
+    "section": "2.1 펭귄 체중과 물갈퀴 길이",
+    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "데이터 과학 글쓰기",
@@ -214,14 +249,14 @@
     "href": "quarto_layout.html#화면-칼럼",
     "title": "Quarto 레이아웃",
     "section": "2.5 화면 칼럼",
-    "text": "2.5 화면 칼럼\n.column-screen 을 사용하게 되면 모니터 화면을 가득 채울 수 있다.\n::: {.column-screen}\n![](fig/horst-eco-r4ds.png)\n:::\n\n\n\n마찬가지로 R 혹은 파이썬 코드에 대해서 동일한 결과를 얻을 수 있다.\n::: {.cell .column-screen}\n\n```{.r .cell-code}\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-05d352d979f129ca036f\" style=\"width:100%;height:464px;\" class=\"leaflet html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-05d352d979f129ca036f\">{\"x\":{\"options\":{\"crs\":{\"crsClass\":\"L.CRS.EPSG3857\",\"code\":null,\"proj4def\":null,\"projectedBounds\":null,\"options\":{}}},\"calls\":[{\"method\":\"addTiles\",\"args\":[\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\",null,null,{\"minZoom\":0,\"maxZoom\":18,\"tileSize\":256,\"subdomains\":\"abc\",\"errorTileUrl\":\"\",\"tms\":false,\"noWrap\":false,\"zoomOffset\":0,\"zoomReverse\":false,\"opacity\":1,\"zIndex\":1,\"detectRetina\":false,\"attribution\":\"&copy; <a href=\\\"https://openstreetmap.org\\\">OpenStreetMap<\\/a> contributors, <a href=\\\"https://creativecommons.org/licenses/by-sa/2.0/\\\">CC-BY-SA<\\/a>\"}]},{\"method\":\"addMarkers\",\"args\":[-36.852,174.768,null,null,null,{\"interactive\":true,\"draggable\":false,\"keyboard\":true,\"title\":\"\",\"alt\":\"\",\"zIndexOffset\":0,\"opacity\":1,\"riseOnHover\":false,\"riseOffset\":250},\"The birthplace of R\",null,null,null,null,{\"interactive\":false,\"permanent\":false,\"direction\":\"auto\",\"opacity\":1,\"offset\":[0,0],\"textsize\":\"10px\",\"textOnly\":false,\"className\":\"\",\"sticky\":true},null]}],\"limits\":{\"lat\":[-36.852,-36.852],\"lng\":[174.768,174.768]}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::\n\n\nCode\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"R 출생지\")"
+    "text": "2.5 화면 칼럼\n.column-screen 을 사용하게 되면 모니터 화면을 가득 채울 수 있다.\n::: {.column-screen}\n![](fig/horst-eco-r4ds.png)\n:::\n\n\n\n마찬가지로 R 혹은 파이썬 코드에 대해서 동일한 결과를 얻을 수 있다.\n::: {.cell .column-screen}\n\n```{.r .cell-code}\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-e05d8769f4bf4c9ab49a\" style=\"width:100%;height:464px;\" class=\"leaflet html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-e05d8769f4bf4c9ab49a\">{\"x\":{\"options\":{\"crs\":{\"crsClass\":\"L.CRS.EPSG3857\",\"code\":null,\"proj4def\":null,\"projectedBounds\":null,\"options\":{}}},\"calls\":[{\"method\":\"addTiles\",\"args\":[\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\",null,null,{\"minZoom\":0,\"maxZoom\":18,\"tileSize\":256,\"subdomains\":\"abc\",\"errorTileUrl\":\"\",\"tms\":false,\"noWrap\":false,\"zoomOffset\":0,\"zoomReverse\":false,\"opacity\":1,\"zIndex\":1,\"detectRetina\":false,\"attribution\":\"&copy; <a href=\\\"https://openstreetmap.org\\\">OpenStreetMap<\\/a> contributors, <a href=\\\"https://creativecommons.org/licenses/by-sa/2.0/\\\">CC-BY-SA<\\/a>\"}]},{\"method\":\"addMarkers\",\"args\":[-36.852,174.768,null,null,null,{\"interactive\":true,\"draggable\":false,\"keyboard\":true,\"title\":\"\",\"alt\":\"\",\"zIndexOffset\":0,\"opacity\":1,\"riseOnHover\":false,\"riseOffset\":250},\"The birthplace of R\",null,null,null,null,{\"interactive\":false,\"permanent\":false,\"direction\":\"auto\",\"opacity\":1,\"offset\":[0,0],\"textsize\":\"10px\",\"textOnly\":false,\"className\":\"\",\"sticky\":true},null]}],\"limits\":{\"lat\":[-36.852,-36.852],\"lng\":[174.768,174.768]}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::\n\n\nCode\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"R 출생지\")"
   },
   {
     "objectID": "quarto_layout.html#화면-인셋",
     "href": "quarto_layout.html#화면-인셋",
     "title": "Quarto 레이아웃",
     "section": "2.6 화면 인셋",
-    "text": "2.6 화면 인셋\n화면 인세(inset)을 사용하여 전체 모니터 화면 전체로 그래프 3개를 넣을 수 있다.\n::: {.cell .column-screen-inset-shaded layout-nrow=\"1\"}\n\n```{.r .cell-code}\nplot(cars)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(iris)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-5-2.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(pressure)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-5-3.png){width=672}\n:::\n:::\n\n\nCode\nplot(cars)\nplot(iris)\nplot(pressure)"
+    "text": "2.6 화면 인셋\n화면 인세(inset)을 사용하여 전체 모니터 화면 전체로 그래프 3개를 넣을 수 있다.\n::: {.cell .column-screen-inset-shaded layout-nrow=\"1\"}\n\n```{.r .cell-code}\nplot(cars)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-10-1.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(iris)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-10-2.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(pressure)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-10-3.png){width=672}\n:::\n:::\n\n\nCode\nplot(cars)\nplot(iris)\nplot(pressure)"
   },
   {
     "objectID": "quarto_layout.html#여백-이미지",
@@ -250,41 +285,6 @@
     "title": "Quarto 레이아웃",
     "section": "3.4 수식 등",
     "text": "3.4 수식 등\n.column-margin 클래스에 수식을 비롯한 기타 콘텐츠도 반영시킬 수 있다.\n\n::: {.column-margin}\n $[a, b]$ 구간 $x$에 대한 **미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus)** 는 다음과 같다.\n\n\n\n$$\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).$$\n\n\n\n:::\n\n\n\n\\([a, b]\\) 구간 \\(x\\)에 대한 미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus) 는 다음과 같다.\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]"
-  },
-  {
-    "objectID": "quarto_penguin.html",
-    "href": "quarto_penguin.html",
-    "title": "Quarto 기본사용법",
-    "section": "",
-    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
-  },
-  {
-    "objectID": "quarto_penguin.html#데이터-선택",
-    "href": "quarto_penguin.html#데이터-선택",
-    "title": "Quarto 기본사용법",
-    "section": "1.1 데이터 선택",
-    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
-  },
-  {
-    "objectID": "quarto_penguin.html#데이터와-패키지-불러오기",
-    "href": "quarto_penguin.html#데이터와-패키지-불러오기",
-    "title": "Quarto 기본사용법",
-    "section": "1.2 데이터와 패키지 불러오기",
-    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <chr>   <chr>           <dbl>         <dbl>            <dbl>       <dbl> <chr>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           36.7          19.3              193        3450 fema…\n5 Adelie  Torge…           39.3          20.6              190        3650 male \n6 Adelie  Torge…           38.9          17.8              181        3625 fema…\n# … with 1 more variable: year <dbl>\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
-  },
-  {
-    "objectID": "quarto_penguin.html#요약-통계량",
-    "href": "quarto_penguin.html#요약-통계량",
-    "title": "Quarto 기본사용법",
-    "section": "1.3 요약 통계량",
-    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
-  },
-  {
-    "objectID": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
-    "href": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
-    "title": "Quarto 기본사용법",
-    "section": "2.1 펭귄 체중과 물갈퀴 길이",
-    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
   },
   {
     "objectID": "quarto_sass.html",
@@ -655,7 +655,7 @@
     "href": "slideshow/problem.html#시각화---그래프-문법",
     "title": "Quarto 데이터 사이언스",
     "section": "시각화 - 그래프 문법 3",
-    "text": "시각화 - 그래프 문법 3\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n\n\n실행결과"
+    "text": "시각화 - 그래프 문법 3\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.5     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.1     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n\n\n실행결과"
   },
   {
     "objectID": "slideshow/problem.html#디자인---코드",
