@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "Quarto_penguin.html",
-    "href": "Quarto_penguin.html",
-    "title": "Quarto 기본사용법",
-    "section": "",
-    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
-  },
-  {
-    "objectID": "Quarto_penguin.html#데이터-선택",
-    "href": "Quarto_penguin.html#데이터-선택",
-    "title": "Quarto 기본사용법",
-    "section": "1.1 데이터 선택",
-    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
-  },
-  {
-    "objectID": "Quarto_penguin.html#데이터와-패키지-불러오기",
-    "href": "Quarto_penguin.html#데이터와-패키지-불러오기",
-    "title": "Quarto 기본사용법",
-    "section": "1.2 데이터와 패키지 불러오기",
-    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <chr>   <chr>           <dbl>         <dbl>            <dbl>       <dbl> <chr>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           36.7          19.3              193        3450 fema…\n5 Adelie  Torge…           39.3          20.6              190        3650 male \n6 Adelie  Torge…           38.9          17.8              181        3625 fema…\n# … with 1 more variable: year <dbl>\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
-  },
-  {
-    "objectID": "Quarto_penguin.html#요약-통계량",
-    "href": "Quarto_penguin.html#요약-통계량",
-    "title": "Quarto 기본사용법",
-    "section": "1.3 요약 통계량",
-    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
-  },
-  {
-    "objectID": "Quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
-    "href": "Quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
-    "title": "Quarto 기본사용법",
-    "section": "2.1 펭귄 체중과 물갈퀴 길이",
-    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "데이터 과학 글쓰기",
@@ -151,7 +116,7 @@
     "href": "quarto_blog.html",
     "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "Quarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 19, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 19, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
+    "text": "Quarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 20, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 20, 2022\n\n\nVictor Lee, 이광춘\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quarto_fonts.html",
@@ -249,14 +214,14 @@
     "href": "quarto_layout.html#화면-칼럼",
     "title": "Quarto 레이아웃",
     "section": "2.5 화면 칼럼",
-    "text": "2.5 화면 칼럼\n.column-screen 을 사용하게 되면 모니터 화면을 가득 채울 수 있다.\n::: {.column-screen}\n![](fig/horst-eco-r4ds.png)\n:::\n\n\n\n마찬가지로 R 혹은 파이썬 코드에 대해서 동일한 결과를 얻을 수 있다.\n::: {.cell .column-screen}\n\n```{.r .cell-code}\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-d9b7109fc169f5bc1077\" style=\"width:100%;height:464px;\" class=\"leaflet html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-d9b7109fc169f5bc1077\">{\"x\":{\"options\":{\"crs\":{\"crsClass\":\"L.CRS.EPSG3857\",\"code\":null,\"proj4def\":null,\"projectedBounds\":null,\"options\":{}}},\"calls\":[{\"method\":\"addTiles\",\"args\":[\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\",null,null,{\"minZoom\":0,\"maxZoom\":18,\"tileSize\":256,\"subdomains\":\"abc\",\"errorTileUrl\":\"\",\"tms\":false,\"noWrap\":false,\"zoomOffset\":0,\"zoomReverse\":false,\"opacity\":1,\"zIndex\":1,\"detectRetina\":false,\"attribution\":\"&copy; <a href=\\\"https://openstreetmap.org\\\">OpenStreetMap<\\/a> contributors, <a href=\\\"https://creativecommons.org/licenses/by-sa/2.0/\\\">CC-BY-SA<\\/a>\"}]},{\"method\":\"addMarkers\",\"args\":[-36.852,174.768,null,null,null,{\"interactive\":true,\"draggable\":false,\"keyboard\":true,\"title\":\"\",\"alt\":\"\",\"zIndexOffset\":0,\"opacity\":1,\"riseOnHover\":false,\"riseOffset\":250},\"The birthplace of R\",null,null,null,null,{\"interactive\":false,\"permanent\":false,\"direction\":\"auto\",\"opacity\":1,\"offset\":[0,0],\"textsize\":\"10px\",\"textOnly\":false,\"className\":\"\",\"sticky\":true},null]}],\"limits\":{\"lat\":[-36.852,-36.852],\"lng\":[174.768,174.768]}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::\n\n\nCode\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"R 출생지\")"
+    "text": "2.5 화면 칼럼\n.column-screen 을 사용하게 되면 모니터 화면을 가득 채울 수 있다.\n::: {.column-screen}\n![](fig/horst-eco-r4ds.png)\n:::\n\n\n\n마찬가지로 R 혹은 파이썬 코드에 대해서 동일한 결과를 얻을 수 있다.\n::: {.cell .column-screen}\n\n```{.r .cell-code}\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-05d352d979f129ca036f\" style=\"width:100%;height:464px;\" class=\"leaflet html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-05d352d979f129ca036f\">{\"x\":{\"options\":{\"crs\":{\"crsClass\":\"L.CRS.EPSG3857\",\"code\":null,\"proj4def\":null,\"projectedBounds\":null,\"options\":{}}},\"calls\":[{\"method\":\"addTiles\",\"args\":[\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\",null,null,{\"minZoom\":0,\"maxZoom\":18,\"tileSize\":256,\"subdomains\":\"abc\",\"errorTileUrl\":\"\",\"tms\":false,\"noWrap\":false,\"zoomOffset\":0,\"zoomReverse\":false,\"opacity\":1,\"zIndex\":1,\"detectRetina\":false,\"attribution\":\"&copy; <a href=\\\"https://openstreetmap.org\\\">OpenStreetMap<\\/a> contributors, <a href=\\\"https://creativecommons.org/licenses/by-sa/2.0/\\\">CC-BY-SA<\\/a>\"}]},{\"method\":\"addMarkers\",\"args\":[-36.852,174.768,null,null,null,{\"interactive\":true,\"draggable\":false,\"keyboard\":true,\"title\":\"\",\"alt\":\"\",\"zIndexOffset\":0,\"opacity\":1,\"riseOnHover\":false,\"riseOffset\":250},\"The birthplace of R\",null,null,null,null,{\"interactive\":false,\"permanent\":false,\"direction\":\"auto\",\"opacity\":1,\"offset\":[0,0],\"textsize\":\"10px\",\"textOnly\":false,\"className\":\"\",\"sticky\":true},null]}],\"limits\":{\"lat\":[-36.852,-36.852],\"lng\":[174.768,174.768]}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::\n\n\nCode\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"R 출생지\")"
   },
   {
     "objectID": "quarto_layout.html#화면-인셋",
     "href": "quarto_layout.html#화면-인셋",
     "title": "Quarto 레이아웃",
     "section": "2.6 화면 인셋",
-    "text": "2.6 화면 인셋\n화면 인세(inset)을 사용하여 전체 모니터 화면 전체로 그래프 3개를 넣을 수 있다.\n::: {.cell .column-screen-inset-shaded layout-nrow=\"1\"}\n\n```{.r .cell-code}\nplot(cars)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-10-1.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(iris)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-10-2.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(pressure)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-10-3.png){width=672}\n:::\n:::\n\n\nCode\nplot(cars)\nplot(iris)\nplot(pressure)"
+    "text": "2.6 화면 인셋\n화면 인세(inset)을 사용하여 전체 모니터 화면 전체로 그래프 3개를 넣을 수 있다.\n::: {.cell .column-screen-inset-shaded layout-nrow=\"1\"}\n\n```{.r .cell-code}\nplot(cars)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(iris)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-5-2.png){width=672}\n:::\n\n```{.r .cell-code}\nplot(pressure)\n```\n\n::: {.cell-output-display}\n![](quarto_layout_files/figure-html/unnamed-chunk-5-3.png){width=672}\n:::\n:::\n\n\nCode\nplot(cars)\nplot(iris)\nplot(pressure)"
   },
   {
     "objectID": "quarto_layout.html#여백-이미지",
@@ -287,6 +252,41 @@
     "text": "3.4 수식 등\n.column-margin 클래스에 수식을 비롯한 기타 콘텐츠도 반영시킬 수 있다.\n\n::: {.column-margin}\n $[a, b]$ 구간 $x$에 대한 **미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus)** 는 다음과 같다.\n\n\n\n$$\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).$$\n\n\n\n:::\n\n\n\n\\([a, b]\\) 구간 \\(x\\)에 대한 미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus) 는 다음과 같다.\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]"
   },
   {
+    "objectID": "quarto_penguin.html",
+    "href": "quarto_penguin.html",
+    "title": "Quarto 기본사용법",
+    "section": "",
+    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
+  },
+  {
+    "objectID": "quarto_penguin.html#데이터-선택",
+    "href": "quarto_penguin.html#데이터-선택",
+    "title": "Quarto 기본사용법",
+    "section": "1.1 데이터 선택",
+    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
+  },
+  {
+    "objectID": "quarto_penguin.html#데이터와-패키지-불러오기",
+    "href": "quarto_penguin.html#데이터와-패키지-불러오기",
+    "title": "Quarto 기본사용법",
+    "section": "1.2 데이터와 패키지 불러오기",
+    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <chr>   <chr>           <dbl>         <dbl>            <dbl>       <dbl> <chr>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           36.7          19.3              193        3450 fema…\n5 Adelie  Torge…           39.3          20.6              190        3650 male \n6 Adelie  Torge…           38.9          17.8              181        3625 fema…\n# … with 1 more variable: year <dbl>\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
+  },
+  {
+    "objectID": "quarto_penguin.html#요약-통계량",
+    "href": "quarto_penguin.html#요약-통계량",
+    "title": "Quarto 기본사용법",
+    "section": "1.3 요약 통계량",
+    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
+  },
+  {
+    "objectID": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "href": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "title": "Quarto 기본사용법",
+    "section": "2.1 펭귄 체중과 물갈퀴 길이",
+    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
+  },
+  {
     "objectID": "quarto_sass.html",
     "href": "quarto_sass.html",
     "title": "Quarto 외양",
@@ -294,25 +294,193 @@
     "text": "2 SASS 파일\nquarto.scss 파일에 글꼴과 색상 등 외양관련 정보를 담아 기록한다. 부츠트랩을 외양을 다루는데 많이 사용하기 때문에\nbootstrap/scss/_variables.scss을 참조하여 해당 영역 색상과 글꼴을 자유로이 변경시킨다.\n/*-- scss:defaults --*/\n\n// Color system\n\n// scss-docs-start gray-color-variables\n$white:    #fff !default;\n$gray-100: #f8f9fa !default;\n$gray-200: #e9ecef !default;\n$gray-300: #dee2e6 !default;\n$gray-400: #ced4da !default;\n$gray-500: #adb5bd !default;\n$gray-600: #6c757d !default;\n$gray-700: #495057 !default;\n$gray-800: #343a40 !default;\n$gray-900: #212529 !default;\n$black:    #000 !default;\n\n\n// 글꼴 \n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');\n@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');\n\n@font-face {\n    font-family: 'MaruBuri-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'D2Coding';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n\n// Typography\n//\n// Font, line-height, and color for body text, headings, and more.\n\n// scss-docs-start font-variables\n// stylelint-disable value-keyword-case\n$font-family-sans-serif: \"Noto Sans KR\", 'Nanum Myeongjo',  !default;\n// $font-family-serif: 'MaruBuri-Regular', \"Noto Serif KR\", !default;\n$font-family-monospace:  'D2Coding', \"Courier New\", monospace !default;\n\n// scss-docs-start headings-variables\n$headings-font-family:  $font-family-sans-serif !default;\n\n\n/*-- scss:rules --*/\n\n.navbar-dark {\n    background-color:$gray-600;\n    color: #000000;\n    font-family: 'MaruBuri-Regular';\n}\n\n.sidebar-item {\n    margin-bottom: 0.2em;\n    font-family: 'Noto Serif KR';\n}\n\nh1, .h1, h2, .h2 {\n    margin-top: 2rem;\n    margin-bottom: 1rem;\n    font-family: 'Noto Sans KR';\n}\n\np {\n    font-family: 'MaruBuri-Regular', serif;\n}\n\n\n3 작업방법\n개발하는 것이 웹사이트라서 quarto.cmd preview를 실행하여 로컬 컴퓨터에서 웹서버를 띄워 웹사이트를 보면서 작업하는 방식을 취힌다.\n\n\n\n미리보기 모드 동작\n$ quarto.cmd preview\nTerminating existing preview server....DONE\n\nPreparing to preview\n\nWatching files for changes\nBrowse at http://localhost:7171/\n\n\n\n미리보기 결과\n\n\n\n\n\n\n\n\n\nFootnotes\n\n\nRappA (2022. 7. 1.), “How to style your Quarto blog without knowing a lot of HTML/CSS”↩︎"
   },
   {
-    "objectID": "quarto_slideshow.html#글꼴",
-    "href": "quarto_slideshow.html#글꼴",
-    "title": "데이터 사이언스와 디자인",
-    "section": "글꼴",
-    "text": "글꼴"
+    "objectID": "quarto_slideshow.html#hello-there",
+    "href": "quarto_slideshow.html#hello-there",
+    "title": "Quarto Presentations",
+    "section": "Hello, There",
+    "text": "Hello, There\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
   },
   {
-    "objectID": "quarto_slideshow.html#데이터-사이언스---출판",
-    "href": "quarto_slideshow.html#데이터-사이언스---출판",
-    "title": "데이터 사이언스와 디자인",
-    "section": "데이터 사이언스 - 출판",
-    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+    "objectID": "quarto_slideshow.html#pretty-code",
+    "href": "quarto_slideshow.html#pretty-code",
+    "title": "Quarto Presentations",
+    "section": "Pretty Code",
+    "text": "Pretty Code\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n  })\n}\n\nLearn more: Syntax Highlighting"
   },
   {
-    "objectID": "quarto_slideshow.html#quarto",
-    "href": "quarto_slideshow.html#quarto",
-    "title": "데이터 사이언스와 디자인",
-    "section": "Quarto",
-    "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/"
+    "objectID": "quarto_slideshow.html#code-animations",
+    "href": "quarto_slideshow.html#code-animations",
+    "title": "Quarto Presentations",
+    "section": "Code Animations",
+    "text": "Code Animations\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n    barplot(WorldPhones[,input$region]*1000, \n            main=input$region,\n            ylab=\"Number of Telephones\",\n            xlab=\"Year\")\n  })\n}\n\nLearn more: Code Animations"
+  },
+  {
+    "objectID": "quarto_slideshow.html#line-highlighting",
+    "href": "quarto_slideshow.html#line-highlighting",
+    "title": "Quarto Presentations",
+    "section": "Line Highlighting",
+    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting"
+  },
+  {
+    "objectID": "quarto_slideshow.html#executable-code",
+    "href": "quarto_slideshow.html#executable-code",
+    "title": "Quarto Presentations",
+    "section": "Executable Code",
+    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\n\nLearn more: Executable Code"
+  },
+  {
+    "objectID": "quarto_slideshow.html#latex-equations",
+    "href": "quarto_slideshow.html#latex-equations",
+    "title": "Quarto Presentations",
+    "section": "LaTeX Equations",
+    "text": "LaTeX Equations\nMathJax rendering of equations to HTML\n\n\n\\begin{gather*}\na_1=b_1+c_1\\\\\na_2=b_2+c_2-d_2+e_2\n\\end{gather*}\n\n\\begin{align}\na_{11}& =b_{11}&\n  a_{12}& =b_{12}\\\\\na_{21}& =b_{21}&\n  a_{22}& =b_{22}+c_{22}\n\\end{align}\n\n\\[\\begin{gather*}\na_1=b_1+c_1\\\\\na_2=b_2+c_2-d_2+e_2\n\\end{gather*}\\]\n\\[\\begin{align}\na_{11}& =b_{11}&\n  a_{12}& =b_{12}\\\\\na_{21}& =b_{21}&\n  a_{22}& =b_{22}+c_{22}\n\\end{align}\\]\n\n\n\nLearn more: LaTeX Equations"
+  },
+  {
+    "objectID": "quarto_slideshow.html#column-layout",
+    "href": "quarto_slideshow.html#column-layout",
+    "title": "Quarto Presentations",
+    "section": "Column Layout",
+    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\nMotor Trend Car Road Tests\nThe data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.440\n\n\nValiant\n18.1\n6\n225\n105\n3.460\n\n\n\n\n\n\n\n\nLearn more: Multiple Columns"
+  },
+  {
+    "objectID": "quarto_slideshow.html#incremental-lists",
+    "href": "quarto_slideshow.html#incremental-lists",
+    "title": "Quarto Presentations",
+    "section": "Incremental Lists",
+    "text": "Incremental Lists\nLists can optionally be displayed incrementally:\n\n\nFirst item\nSecond item\nThird item\n\n\n\n Insert pauses to make other types of content display incrementally.\n\nLearn more: Incremental Lists"
+  },
+  {
+    "objectID": "quarto_slideshow.html#fragments",
+    "href": "quarto_slideshow.html#fragments",
+    "title": "Quarto Presentations",
+    "section": "Fragments",
+    "text": "Fragments\nIncremental text display and animation with fragments:\n\n\nFade in\n\n\nSlide up while fading in\n\n\nSlide left while fading in\n\n\nFade in then semi out\n\n\n\nStrike\n\n\nHighlight red\n\n\nLearn more: Fragments"
+  },
+  {
+    "objectID": "quarto_slideshow.html#slide-backgrounds",
+    "href": "quarto_slideshow.html#slide-backgrounds",
+    "title": "Quarto Presentations",
+    "section": "Slide Backgrounds",
+    "text": "Slide Backgrounds\nSet the background attribute on a slide to change the background color (all CSS color formats are supported).\nDifferent background transitions are available via the background-transition option.\n\nLearn more: Slide Backgrounds"
+  },
+  {
+    "objectID": "quarto_slideshow.html#media-backgrounds",
+    "href": "quarto_slideshow.html#media-backgrounds",
+    "title": "Quarto Presentations",
+    "section": "Media Backgrounds",
+    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
+  },
+  {
+    "objectID": "quarto_slideshow.html#absolute-position",
+    "href": "quarto_slideshow.html#absolute-position",
+    "title": "Quarto Presentations",
+    "section": "Absolute Position",
+    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
+  },
+  {
+    "objectID": "quarto_slideshow.html#auto-animate",
+    "href": "quarto_slideshow.html#auto-animate",
+    "title": "Quarto Presentations",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate.\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Auto-Animate"
+  },
+  {
+    "objectID": "quarto_slideshow.html#auto-animate-1",
+    "href": "quarto_slideshow.html#auto-animate-1",
+    "title": "Quarto Presentations",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate.\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Auto-Animate"
+  },
+  {
+    "objectID": "quarto_slideshow.html#slide-transitions",
+    "href": "quarto_slideshow.html#slide-transitions",
+    "title": "Quarto Presentations",
+    "section": "Slide Transitions",
+    "text": "Slide Transitions\nThe next few slides will transition using the slide transition\n\n\n\n\n\n\n\nTransition\nDescription\n\n\n\n\nnone\nNo transition (default, switch instantly)\n\n\nfade\nCross fade\n\n\nslide\nSlide horizontally\n\n\nconvex\nSlide at a convex angle\n\n\nconcave\nSlide at a concave angle\n\n\nzoom\nScale the incoming slide so it grows in from the center of the screen.\n\n\n\n\nLearn more: Slide Transitions"
+  },
+  {
+    "objectID": "quarto_slideshow.html#tabsets",
+    "href": "quarto_slideshow.html#tabsets",
+    "title": "Quarto Presentations",
+    "section": "Tabsets",
+    "text": "Tabsets\n\nPlotData\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160.0\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160.0\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108.0\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258.0\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360.0\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225.0\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\nDuster 360\n14.3\n8\n360.0\n245\n3.21\n3.570\n15.84\n0\n0\n3\n4\n\n\nMerc 240D\n24.4\n4\n146.7\n62\n3.69\n3.190\n20.00\n1\n0\n4\n2\n\n\nMerc 230\n22.8\n4\n140.8\n95\n3.92\n3.150\n22.90\n1\n0\n4\n2\n\n\nMerc 280\n19.2\n6\n167.6\n123\n3.92\n3.440\n18.30\n1\n0\n4\n4\n\n\nMerc 280C\n17.8\n6\n167.6\n123\n3.92\n3.440\n18.90\n1\n0\n4\n4\n\n\nMerc 450SE\n16.4\n8\n275.8\n180\n3.07\n4.070\n17.40\n0\n0\n3\n3\n\n\nMerc 450SL\n17.3\n8\n275.8\n180\n3.07\n3.730\n17.60\n0\n0\n3\n3\n\n\nMerc 450SLC\n15.2\n8\n275.8\n180\n3.07\n3.780\n18.00\n0\n0\n3\n3\n\n\nCadillac Fleetwood\n10.4\n8\n472.0\n205\n2.93\n5.250\n17.98\n0\n0\n3\n4\n\n\nLincoln Continental\n10.4\n8\n460.0\n215\n3.00\n5.424\n17.82\n0\n0\n3\n4\n\n\nChrysler Imperial\n14.7\n8\n440.0\n230\n3.23\n5.345\n17.42\n0\n0\n3\n4\n\n\nFiat 128\n32.4\n4\n78.7\n66\n4.08\n2.200\n19.47\n1\n1\n4\n1\n\n\nHonda Civic\n30.4\n4\n75.7\n52\n4.93\n1.615\n18.52\n1\n1\n4\n2\n\n\nToyota Corolla\n33.9\n4\n71.1\n65\n4.22\n1.835\n19.90\n1\n1\n4\n1\n\n\nToyota Corona\n21.5\n4\n120.1\n97\n3.70\n2.465\n20.01\n1\n0\n3\n1\n\n\nDodge Challenger\n15.5\n8\n318.0\n150\n2.76\n3.520\n16.87\n0\n0\n3\n2\n\n\nAMC Javelin\n15.2\n8\n304.0\n150\n3.15\n3.435\n17.30\n0\n0\n3\n2\n\n\nCamaro Z28\n13.3\n8\n350.0\n245\n3.73\n3.840\n15.41\n0\n0\n3\n4\n\n\nPontiac Firebird\n19.2\n8\n400.0\n175\n3.08\n3.845\n17.05\n0\n0\n3\n2\n\n\nFiat X1-9\n27.3\n4\n79.0\n66\n4.08\n1.935\n18.90\n1\n1\n4\n1\n\n\nPorsche 914-2\n26.0\n4\n120.3\n91\n4.43\n2.140\n16.70\n0\n1\n5\n2\n\n\nLotus Europa\n30.4\n4\n95.1\n113\n3.77\n1.513\n16.90\n1\n1\n5\n2\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.50\n0\n1\n5\n4\n\n\nFerrari Dino\n19.7\n6\n145.0\n175\n3.62\n2.770\n15.50\n0\n1\n5\n6\n\n\nMaserati Bora\n15.0\n8\n301.0\n335\n3.54\n3.570\n14.60\n0\n1\n5\n8\n\n\nVolvo 142E\n21.4\n4\n121.0\n109\n4.11\n2.780\n18.60\n1\n1\n4\n2\n\n\n\n\n\n\n\n\n\nLearn more: Tabsets"
+  },
+  {
+    "objectID": "quarto_slideshow.html#interactive-slides",
+    "href": "quarto_slideshow.html#interactive-slides",
+    "title": "Quarto Presentations",
+    "section": "Interactive Slides",
+    "text": "Interactive Slides\nInclude Jupyter widgets and htmlwidgets in your presentations\n\n\n\n\n\n\n\nLearn more: Jupyter widgets, htmlwidgets"
+  },
+  {
+    "objectID": "quarto_slideshow.html#interactive-slides-1",
+    "href": "quarto_slideshow.html#interactive-slides-1",
+    "title": "Quarto Presentations",
+    "section": "Interactive Slides",
+    "text": "Interactive Slides\nTurn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.\n\n\n\n\n\nviewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Observable, Shiny, Component Layout"
+  },
+  {
+    "objectID": "quarto_slideshow.html#preview-links",
+    "href": "quarto_slideshow.html#preview-links",
+    "title": "Quarto Presentations",
+    "section": "Preview Links",
+    "text": "Preview Links\nNavigate to hyperlinks without disrupting the flow of your presentation.\nUse the preview-links option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration:\n\nMatplotlib: Visualization with Python\n\n\nLearn more: Preview Links"
+  },
+  {
+    "objectID": "quarto_slideshow.html#themes",
+    "href": "quarto_slideshow.html#themes",
+    "title": "Quarto Presentations",
+    "section": "Themes",
+    "text": "Themes\n10 Built-in Themes (or create your own)\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Themes"
+  },
+  {
+    "objectID": "quarto_slideshow.html#easy-navigation",
+    "href": "quarto_slideshow.html#easy-navigation",
+    "title": "Quarto Presentations",
+    "section": "Easy Navigation",
+    "text": "Easy Navigation\n\nQuickly jump to other parts of your presentation\n\n\n\n\n\n\n\nToggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools.\n\n\n\nYou can also press m to toggle the menu open and closed.\n\nLearn more: Navigation"
+  },
+  {
+    "objectID": "quarto_slideshow.html#chalkboard",
+    "href": "quarto_slideshow.html#chalkboard",
+    "title": "Quarto Presentations",
+    "section": "Chalkboard",
+    "text": "Chalkboard\n\nFree form drawing and slide annotations\n\n\n\n\n\n\n\nUse the chalkboard button at the bottom left of the slide to toggle the chalkboard.\n\n\n\n\n\n\n\n\n\nUse the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.\n\n\n\nYou can also press b to toggle the chalkboard or c to toggle the notes canvas.\n\nLearn more: Chalkboard"
+  },
+  {
+    "objectID": "quarto_slideshow.html#point-of-view",
+    "href": "quarto_slideshow.html#point-of-view",
+    "title": "Quarto Presentations",
+    "section": "Point of View",
+    "text": "Point of View\nPress o to toggle overview mode:\n\nHold down the Alt key (or Ctrl in Linux) and click on any element to zoom towards it—try it now on this slide.\n\nLearn more: Overview Mode, Slide Zoom"
+  },
+  {
+    "objectID": "quarto_slideshow.html#speaker-view",
+    "href": "quarto_slideshow.html#speaker-view",
+    "title": "Quarto Presentations",
+    "section": "Speaker View",
+    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\n\nLearn more: Speaker View"
+  },
+  {
+    "objectID": "quarto_slideshow.html#authoring-tools",
+    "href": "quarto_slideshow.html#authoring-tools",
+    "title": "Quarto Presentations",
+    "section": "Authoring Tools",
+    "text": "Authoring Tools\nLive side-by-side preview for any notebook or text editor including Jupyter and VS Code\n\n\n\n\n\n\n\n\nLearn more: Jupyter, VS Code, Text Editors"
+  },
+  {
+    "objectID": "quarto_slideshow.html#authoring-tools-1",
+    "href": "quarto_slideshow.html#authoring-tools-1",
+    "title": "Quarto Presentations",
+    "section": "Authoring Tools",
+    "text": "Authoring Tools\nRStudio includes an integrated presentation preview pane\n\n\nLearn more: RStudio"
+  },
+  {
+    "objectID": "quarto_slideshow.html#and-more",
+    "href": "quarto_slideshow.html#and-more",
+    "title": "Quarto Presentations",
+    "section": "And More…",
+    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\nhttps://quarto.org"
   },
   {
     "objectID": "slideshow/data-science.html",
@@ -487,7 +655,7 @@
     "href": "slideshow/problem.html#시각화---그래프-문법",
     "title": "Quarto 데이터 사이언스",
     "section": "시각화 - 그래프 문법 3",
-    "text": "시각화 - 그래프 문법 3\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.5     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.1     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n\n\n실행결과"
+    "text": "시각화 - 그래프 문법 3\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n\n\n실행결과"
   },
   {
     "objectID": "slideshow/problem.html#디자인---코드",
