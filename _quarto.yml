@@ -69,6 +69,10 @@ website:
             text: "Quarto 슬라이드"
           - href: slideshow/index.qmd
             text: "홍익대 특강"
+      - section: "전자책"
+        contents:
+          - href: https://statkclee.quarto.pub/quarto-book/
+            text: "Quarto 전자책"
 
 format:
   html:
