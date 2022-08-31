@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+<meta name="dcterms.date" content="2022-08-31">
+<meta name="description" content="디지털 글쓰기의 첫 걸음을 함께 해봅니다.">
+
+<title>Quarto 데이터 사이언스 - 디지털 글쓰기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="twitter:title" content="Quarto 데이터 사이언스 - 디지털 글쓰기">
+<meta name="twitter:description" content="디지털 글쓰기의 첫 걸음을 함께 해봅니다.">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Quarto 데이터 사이언스</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../quarto_blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quarto</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="../quarto_install.html">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../quarto_about.html">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">모듈</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../quarto_fonts.html">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../quarto_sass.html">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../quarto_layout.html">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../quarto_latex.html">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../quarto_pdf.pdf">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">관련 정보</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tidyverse-korea.github.io/seoul-R/">
+ <span class="dropdown-text">서울 R Meetup Archive</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com">R사용자회</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">디지털 글쓰기</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">디지털 글쓰기</h1>
+                  <div>
+        <div class="description">
+          디지털 글쓰기의 첫 걸음을 함께 해봅니다.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 31, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PPT</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quarto_slideshow.html" class="sidebar-item-text sidebar-link">Quarto 슬라이드</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slideshow/index.html" class="sidebar-item-text sidebar-link">홍익대 특강</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">전자책</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">Quarto 전자책</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">디지털 글쓰기</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing/index.html" class="sidebar-item-text sidebar-link active">마크다운 글쓰기</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#디지털-문서-제작-패러다임" id="toc-디지털-문서-제작-패러다임" class="nav-link active" data-scroll-target="#디지털-문서-제작-패러다임"> <span class="header-section-number">1</span> 디지털 문서 제작 패러다임</a></li>
+  <li><a href="#문서로-보는-민주주의" id="toc-문서로-보는-민주주의" class="nav-link" data-scroll-target="#문서로-보는-민주주의"> <span class="header-section-number">2</span> 문서로 보는 민주주의</a></li>
+  <li><a href="#디지털-문서-저작" id="toc-디지털-문서-저작" class="nav-link" data-scroll-target="#디지털-문서-저작"> <span class="header-section-number">3</span> 디지털 문서 저작</a></li>
+  <li><a href="#과학문서-저작" id="toc-과학문서-저작" class="nav-link" data-scroll-target="#과학문서-저작"> <span class="header-section-number">4</span> 과학문서 저작</a></li>
+  <li><a href="#사례-한국-r-컨퍼런스2021" id="toc-사례-한국-r-컨퍼런스2021" class="nav-link" data-scroll-target="#사례-한국-r-컨퍼런스2021"> <span class="header-section-number">5</span> 사례: 한국 R 컨퍼런스(2021)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<section id="디지털-문서-제작-패러다임" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 디지털 문서 제작 패러다임</h1>
+<p>신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 <strong>위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)</strong>에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.</p>
+<p>위지윅의 대척점에 있는 것이 <strong>위지윔(WYSIWYM, What You See Is What You Mean)</strong>으로 대표적인 것인 <span class="math inline">\(\LaTeX\)</span> 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.</p>
+<p><span class="math inline">\(\LaTeX\)</span>이 갖는 장점은 이제 프로그래밍 코드(R/파이썬/SQL/쉘스크립트/자바스크립트 등)을 문서저작에 포함되며 <strong>literate programming</strong> 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">이미지 출처: http://www.cbinews.co.kr/news/articleView.html?idxno=36859</span></div></div>
+<p><img src="../fig/digital-writing-paradigm-shift.png" class="img-fluid"></p>
+</section>
+<section id="문서로-보는-민주주의" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 문서로 보는 민주주의</h1>
+<p>대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다.</p>
+<p><img src="../fig/three-pillar.png" class="img-fluid"></p>
+</section>
+<section id="디지털-문서-저작" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 디지털 문서 저작</h1>
+<p>과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 <span class="math inline">\(\LaTeX\)</span> 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.</p>
+<p>하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.</p>
+<p>이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다.</p>
+<p><img src="../fig/digital-writing.gif" class="img-fluid"></p>
+</section>
+<section id="과학문서-저작" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 과학문서 저작</h1>
+<ul>
+<li><a href="http://statkclee.github.io/modern-scientific-authoring/01-mess-kr.html">심각한 현재상황</a></li>
+<li><a href="http://statkclee.github.io/modern-scientific-authoring/02-markdown-kr.html">마크다운 기초</a></li>
+<li><a href="http://statkclee.github.io/modern-scientific-authoring/03-advanced-kr.html">고급 마크다운</a></li>
+<li><a href="http://aispiration.com/comp_document/rmarkdown-in-production.html">문서저작 실무</a></li>
+<li><a href="http://aispiration.com/comp_document/cd-latex.html">수학 수식</a></li>
+</ul>
+</section>
+<section id="사례-한국-r-컨퍼런스2021" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 사례: 한국 R 컨퍼런스(2021)</h1>
+<ul>
+<li><a href="https://github.com/tidyverse-korea/rconf">컨퍼런스 웹사이트</a></li>
+<li>컨퍼런스 전 기획
+<ul>
+<li><a href="https://github.com/tidyverse-korea/poster">컨퍼런스 포스터</a></li>
+<li><a href="https://github.com/tidyverse-korea/sponsor">컨퍼런스 후원</a></li>
+</ul></li>
+<li>컨퍼런스 본 행사
+<ul>
+<li><a href="http://aispiration.com/ds-authoring/useR-r-user-community.html#1">발표 슬라이드</a></li>
+<li><a href="https://github.com/tidyverse-korea/templates">발표 템플릿</a></li>
+</ul></li>
+<li>컨퍼런스 후 설문
+<ul>
+<li><a href="https://github.com/tidyverse-korea/rconf-2021-survey">설문조사 보고서</a></li>
+</ul></li>
+<li>기타
+<ul>
+<li><a href="https://github.com/tidyverse-korea/renewable">탄소중립 신재생 에너지 캠프</a></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -73,7 +73,10 @@ website:
         contents:
           - href: https://statkclee.quarto.pub/quarto-book/
             text: "Quarto 전자책"
-
+      - section: "디지털 글쓰기"
+        contents:
+          - href: writing/index.qmd
+            text: "마크다운 글쓰기"
 format:
   html:
     theme: 
