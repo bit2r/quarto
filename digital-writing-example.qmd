@@ -1,0 +1,30 @@
+---
+title: "디지털 글쓰기"
+description: 디지털 글쓰기의 첫 걸음을 함께 해봅니다.
+date: today # 날짜 설정: now, last-modified
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+---
+
+# 디지털 글쓰기
+
+디지털 글쓰기는 최근 들어 무척이나 관심을 가지고 있다.
+
+# 디지털 표 그리기
+
+디지털 글쓰기의 중요 요소인 표를 삽입해보자.
+
+| 구분 | 설명   | 비고                     |
+|------|--------|--------------------------|
+| 동물 | 개     | 동물... 그리고 사람 비교 |
+| 동물 | 고양이 | 개 vs 고양이             |
+| 사람 | 철수   | 서울시 거주              |
+
+# 이미지도 삽입해야 합니다.
+
+![상자이미지](images/Method%20Draw%20Image.png){width="200"}
+
+

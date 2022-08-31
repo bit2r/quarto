@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="dcterms.date" content="2022-08-20">
+<meta name="dcterms.date" content="2022-08-31">
 <meta name="description" content="Quarto 올바른 사용법!">
 
 <title>Quarto 데이터 사이언스 - Quarto 기본사용법</title>
@@ -300,7 +300,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 20, 2022</p>
+        <p class="date">August 31, 2022</p>
       </div>
     </div>
       
@@ -343,6 +343,21 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">Quarto 전자책</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">디지털 글쓰기</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">마크다운 글쓰기</a>
   </div>
 </li>
       </ul>
@@ -461,15 +476,15 @@ Note
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
-  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-  &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;
-1 Adelie  Torge…           39.1          18.7              181        3750 male 
-2 Adelie  Torge…           39.5          17.4              186        3800 fema…
-3 Adelie  Torge…           40.3          18                195        3250 fema…
-4 Adelie  Torge…           36.7          19.3              193        3450 fema…
-5 Adelie  Torge…           39.3          20.6              190        3650 male 
-6 Adelie  Torge…           38.9          17.8              181        3625 fema…
-# … with 1 more variable: year &lt;dbl&gt;</code></pre>
+  species island    bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
+  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
+2 Adelie  Torgersen           39.5          17.4         186    3800 fema…  2007
+3 Adelie  Torgersen           40.3          18           195    3250 fema…  2007
+4 Adelie  Torgersen           36.7          19.3         193    3450 fema…  2007
+5 Adelie  Torgersen           39.3          20.6         190    3650 male   2007
+6 Adelie  Torgersen           38.9          17.8         181    3625 fema…  2007
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
 </div>
 </div>
 <p>결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>

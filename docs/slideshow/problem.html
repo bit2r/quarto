@@ -278,6 +278,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">디지털 글쓰기</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing/index.html" class="sidebar-item-text sidebar-link">마크다운 글쓰기</a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -381,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ ggplot2 3.3.5     ✔ purrr   0.3.4
-✔ tibble  3.1.7     ✔ dplyr   1.0.9
+✔ tibble  3.1.8     ✔ dplyr   1.0.9
 ✔ tidyr   1.2.0     ✔ stringr 1.4.0
 ✔ readr   2.1.1     ✔ forcats 0.5.1</code></pre>
 </div>
@@ -600,25 +615,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>tidyr<span class="sc">::</span>who </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,240 × 60
-   country  iso2  iso3   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544
-   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;int&gt;       &lt;int&gt;        &lt;int&gt;        &lt;int&gt;        &lt;int&gt;
- 1 Afghani… AF    AFG    1980          NA           NA           NA           NA
- 2 Afghani… AF    AFG    1981          NA           NA           NA           NA
- 3 Afghani… AF    AFG    1982          NA           NA           NA           NA
- 4 Afghani… AF    AFG    1983          NA           NA           NA           NA
- 5 Afghani… AF    AFG    1984          NA           NA           NA           NA
- 6 Afghani… AF    AFG    1985          NA           NA           NA           NA
- 7 Afghani… AF    AFG    1986          NA           NA           NA           NA
- 8 Afghani… AF    AFG    1987          NA           NA           NA           NA
- 9 Afghani… AF    AFG    1988          NA           NA           NA           NA
-10 Afghani… AF    AFG    1989          NA           NA           NA           NA
-# … with 7,230 more rows, and 52 more variables: new_sp_m4554 &lt;int&gt;,
-#   new_sp_m5564 &lt;int&gt;, new_sp_m65 &lt;int&gt;, new_sp_f014 &lt;int&gt;,
-#   new_sp_f1524 &lt;int&gt;, new_sp_f2534 &lt;int&gt;, new_sp_f3544 &lt;int&gt;,
-#   new_sp_f4554 &lt;int&gt;, new_sp_f5564 &lt;int&gt;, new_sp_f65 &lt;int&gt;,
-#   new_sn_m014 &lt;int&gt;, new_sn_m1524 &lt;int&gt;, new_sn_m2534 &lt;int&gt;,
-#   new_sn_m3544 &lt;int&gt;, new_sn_m4554 &lt;int&gt;, new_sn_m5564 &lt;int&gt;,
-#   new_sn_m65 &lt;int&gt;, new_sn_f014 &lt;int&gt;, new_sn_f1524 &lt;int&gt;, …</code></pre>
+   country     iso2  iso3   year new_s…¹ new_s…² new_s…³ new_s…⁴ new_s…⁵ new_s…⁶
+   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;
+ 1 Afghanistan AF    AFG    1980      NA      NA      NA      NA      NA      NA
+ 2 Afghanistan AF    AFG    1981      NA      NA      NA      NA      NA      NA
+ 3 Afghanistan AF    AFG    1982      NA      NA      NA      NA      NA      NA
+ 4 Afghanistan AF    AFG    1983      NA      NA      NA      NA      NA      NA
+ 5 Afghanistan AF    AFG    1984      NA      NA      NA      NA      NA      NA
+ 6 Afghanistan AF    AFG    1985      NA      NA      NA      NA      NA      NA
+ 7 Afghanistan AF    AFG    1986      NA      NA      NA      NA      NA      NA
+ 8 Afghanistan AF    AFG    1987      NA      NA      NA      NA      NA      NA
+ 9 Afghanistan AF    AFG    1988      NA      NA      NA      NA      NA      NA
+10 Afghanistan AF    AFG    1989      NA      NA      NA      NA      NA      NA
+# … with 7,230 more rows, 50 more variables: new_sp_m65 &lt;int&gt;,
+#   new_sp_f014 &lt;int&gt;, new_sp_f1524 &lt;int&gt;, new_sp_f2534 &lt;int&gt;,
+#   new_sp_f3544 &lt;int&gt;, new_sp_f4554 &lt;int&gt;, new_sp_f5564 &lt;int&gt;,
+#   new_sp_f65 &lt;int&gt;, new_sn_m014 &lt;int&gt;, new_sn_m1524 &lt;int&gt;,
+#   new_sn_m2534 &lt;int&gt;, new_sn_m3544 &lt;int&gt;, new_sn_m4554 &lt;int&gt;,
+#   new_sn_m5564 &lt;int&gt;, new_sn_m65 &lt;int&gt;, new_sn_f014 &lt;int&gt;,
+#   new_sn_f1524 &lt;int&gt;, new_sn_f2534 &lt;int&gt;, new_sn_f3544 &lt;int&gt;, …</code></pre>
 </div>
 </div>
 </div>
