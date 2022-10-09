@@ -1,0 +1,24 @@
+---
+title: "음악"
+author: "이광춘"
+format: 
+  pdf:
+    documentclass: report
+    papersize: a4
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    lof: true
+    lot: true
+bibliography: bibliography.bib
+link-citations: yes
+csl: apa-single-spaced.csl
+mainfont: "NanumMyeongjo"
+sansfont: "NanumGothic"
+monofont: "D2Coding"
+---
+ 
+
+
+우리 가자자

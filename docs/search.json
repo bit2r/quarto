@@ -845,5 +845,12 @@
     "title": "로우코드 Shiny 앱 개발",
     "section": "3.5 실행화면",
     "text": "3.5 실행화면"
+  },
+  {
+    "objectID": "quarto_interactive.html",
+    "href": "quarto_interactive.html",
+    "title": "Old Faithful",
+    "section": "",
+    "text": "Number of bins:"
   }
 ]
