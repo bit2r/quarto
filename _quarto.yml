@@ -39,6 +39,8 @@ website:
             text: "한글 PDF 제작방법"
           - href: quarto_pdf.qmd
             text: "[사례] 한글 PDF"
+          - href: writing_history.qmd
+            text: "글쓰기 역사"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
