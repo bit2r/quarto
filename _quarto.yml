@@ -40,7 +40,7 @@ website:
           - href: quarto_pdf.qmd
             text: "[사례] 한글 PDF"
           - href: writing_history.qmd
-            text: "글쓰기 역사"
+            text: "문자와 종이 역사"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
