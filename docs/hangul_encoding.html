@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+
+<title>Quarto 데이터 사이언스 - 한글 인코딩</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="twitter:title" content="Quarto 데이터 사이언스 - 한글 인코딩">
+<meta name="twitter:description" content="한글 Quarto 첫걸음">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Quarto 데이터 사이언스</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto_blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quarto</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./quarto_install.html">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_about.html">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">글쓰기</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_fonts.html">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_sass.html">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_layout.html">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">관련 정보</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tidyverse-korea.github.io/seoul-R/">
+ <span class="dropdown-text">서울 R Meetup Archive</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com">R사용자회</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">한글 인코딩</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">한글 인코딩</h1>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PPT</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">Quarto 슬라이드</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">홍익대 특강</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">전자책</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">Quarto 전자책</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">디지털 글쓰기</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">마크다운 글쓰기</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#웹-표준-인코딩" id="toc-웹-표준-인코딩" class="nav-link active" data-scroll-target="#웹-표준-인코딩"> <span class="header-section-number">1</span> 웹 표준 인코딩</a></li>
+  <li><a href="#유니코드와-utf-8" id="toc-유니코드와-utf-8" class="nav-link" data-scroll-target="#유니코드와-utf-8"> <span class="header-section-number">2</span> 유니코드와 UTF-8</a></li>
+  <li><a href="#r-4.2" id="toc-r-4.2" class="nav-link" data-scroll-target="#r-4.2"> <span class="header-section-number">3</span> R 4.2</a></li>
+  <li><a href="#문자표" id="toc-문자표" class="nav-link" data-scroll-target="#문자표"> <span class="header-section-number">4</span> 문자표</a>
+  <ul class="collapse">
+  <li><a href="#ascii-문자" id="toc-ascii-문자" class="nav-link" data-scroll-target="#ascii-문자"> <span class="header-section-number">4.1</span> ASCII 문자</a></li>
+  <li><a href="#확장-ascii-문자" id="toc-확장-ascii-문자" class="nav-link" data-scroll-target="#확장-ascii-문자"> <span class="header-section-number">4.2</span> 확장 ASCII 문자</a></li>
+  <li><a href="#유니코드" id="toc-유니코드" class="nav-link" data-scroll-target="#유니코드"> <span class="header-section-number">4.3</span> 유니코드</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<section id="웹-표준-인코딩" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 웹 표준 인코딩</h1>
+<p>스마트폰의 대중화에 따라 더이상 윈도우 운영체제에서 사용되는 문자체계가 더이상 표준이 되지 못하고 여러 문제점을 야기함에 따라 <strong>유니코드 + UTF-8</strong> 체제가 대세로 자리잡고 있는 것이 확연히 나타나고 있다.</p>
+<p>2010년 구글에서 <a href="https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">발표</a>한 자료에 의하면 2010년 UTF-8 인코딩이 웹에서 주류로 부상하기 시작한 것이 확인되었다. <span class="citation" data-cites="unicode2010">(<a href="#ref-unicode2010" role="doc-biblioref">Davis, 2010</a>)</span> 웹기반 플롯 디지털 도구를 활용하여 그래프(<a href="https://apps.automeris.io/wpd/">WebPlotDigitizer</a>)에서 데이터를 추출하여 시각화면 유사한 결과를 시각적으로 표현할 수 있다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">데이터 출처: <a href="https://w3techs.com/technologies/history_overview/character_encoding/ms/y">Historical yearly trends in the usage statistics of character encodings for websites</a></span></div></div>
+<p>2010년 이후 웹에서 가장 점유율이 높은 인코딩 방식은 UTF-8으로 W3Tech Web Technology Surveys 를 통해 확인을 할 수 있다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>extrafont<span class="sc">::</span><span class="fu">loadfonts</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. 2000년부터 웹 인코딩 추세 ------------------</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ascii <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ascii_red.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"연도"</span>, <span class="st">"ascii"</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ascii_tbl <span class="ot">&lt;-</span> ascii <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(연도 <span class="ot">=</span> <span class="fu">floor</span>(연도)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(연도) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">ascii =</span> <span class="fu">mean</span>(ascii))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>iso_8859 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/iso_orange.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"연도"</span>, <span class="st">"iso_8859"</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>iso_8859_tbl <span class="ot">&lt;-</span> iso_8859 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(연도 <span class="ot">=</span> <span class="fu">floor</span>(연도)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(연도) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">iso_8859 =</span> <span class="fu">mean</span>(iso_8859))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>utf_8 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/utf-8_blue.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"연도"</span>, <span class="st">"utf_8"</span>))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>utf_8_tbl <span class="ot">&lt;-</span> utf_8 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(연도 <span class="ot">=</span> <span class="fu">floor</span>(연도)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(연도) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">utf_8 =</span> <span class="fu">mean</span>(utf_8, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)) </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>encoding_tbl <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ascii_tbl, iso_8859_tbl) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(utf_8_tbl) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>연도) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(value), <span class="dv">0</span>, value)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(연도 <span class="sc">&lt;=</span> <span class="dv">2009</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>encoding_2010_g <span class="ot">&lt;-</span> encoding_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(연도 <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">make_date</span>(<span class="at">year =</span> 연도)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 연도, <span class="at">y =</span> value, <span class="at">color =</span> name)) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"MaruBuri"</span>) <span class="sc">+</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"점유율(%)"</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">"웹에서 UTF-8 성장세"</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">"2010 ~ 2010년"</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="st">"인코딩"</span>) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"ascii"</span> <span class="ot">=</span> <span class="st">"gray50"</span>, <span class="st">"iso_8859"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"utf_8"</span> <span class="ot">=</span> <span class="st">"blue"</span>)) <span class="sc">+</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) <span class="sc">+</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expand_limits</span>(<span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. 2010년부터 웹 인코딩 추세 ------------------</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>encoding_raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/web_encoding.xlsx"</span>, </span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>                           <span class="at">col_types =</span> <span class="st">"text"</span>)</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>encoding_web <span class="ot">&lt;-</span> encoding_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>구분, <span class="at">names_to =</span> <span class="st">"연도"</span>, <span class="at">values_to =</span> <span class="st">"점유율"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(연도 <span class="ot">=</span> <span class="fu">str_extract</span>(연도, <span class="st">"</span><span class="sc">\\</span><span class="st">d{4}"</span>) <span class="sc">%&gt;%</span> <span class="fu">as.integer</span>(.)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(점유율 <span class="ot">=</span> <span class="fu">parse_number</span>(점유율)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(구분, 연도) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(점유율 <span class="ot">=</span> <span class="fu">min</span>(점유율, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>encoding_2022_g <span class="ot">&lt;-</span> encoding_web <span class="sc">%&gt;%</span> </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(구분 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"EUC-KR"</span>, <span class="st">"GB2312"</span>, <span class="st">"Shift JIS"</span>, <span class="st">"UTF-8"</span>, <span class="st">"ISO-8859-1"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(연도 <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">make_date</span>(<span class="at">year =</span> 연도)) <span class="sc">%&gt;%</span>   </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 연도, <span class="at">y =</span> 점유율, <span class="at">color =</span> 구분)) <span class="sc">+</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"MaruBuri"</span>) <span class="sc">+</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"점유율(%)"</span>,</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">"웹에서 UTF-8 성장세"</span>,</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">"2011 ~ 2012년 3분기"</span>,</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="st">"인코딩"</span>) <span class="sc">+</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"EUC-KR"</span> <span class="ot">=</span> <span class="st">"gray50"</span>, <span class="st">"GB2312"</span> <span class="ot">=</span> <span class="st">"gray80"</span>, <span class="st">"Shift JIS"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"ISO-8859-1"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"UTF-8"</span> <span class="ot">=</span> <span class="st">"blue"</span>)) <span class="sc">+</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)   <span class="sc">+</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expand_limits</span>(<span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="do">## 3. 시각화 요약 ------------------</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>encoding_2010_g <span class="sc">+</span> encoding_2022_g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="hangul_encoding_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hangul_encoding_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="유니코드와-utf-8" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 유니코드와 UTF-8</h1>
+<p>사람과 사람 사이 의사소통하는데 필요한 것 중 하나가 <strong>문자</strong>다. 문자는 영어 알파벳, 한국어 한글, 중국 한자 등 무수히 많은 언어가 문자를 사용해서 의사를 소통한다. 이를 컴퓨터를 활용해서 의사소통하는 경우 컴퓨터가 인식할 수 있도록 바이트를 사용한다.</p>
+<p>컴퓨터는 바이트로 만들어 졌고, 바이트를 묶어 파일이 되고, 파일을 네트워크에 전송해서 다른 컴퓨터에 넘겨야 되고, 이를 사람이 읽을 수 있는 형태로 변환하면 의사소통이 완성된다. 이 과정에서 인코딩(Encoding, 부호화)하는 과정과 디코딩(Decoding, 복화화)하는 과정을 거치게 된다.</p>
+<ul>
+<li>컴퓨터에서 입출력되는 모든 정보는 바이트(Byte), 즉 예를 들어 알파벳 <code>A</code>는 <code>0100 0001</code>으로 부호화되어 전달된다.</li>
+<li><code>0100 0001</code> 바이트를 사람이 인식할 수 있는 <code>A</code>로 인식한 최초의 약속이 <strong>아스키(ASCII)</strong> 다.</li>
+<li>영문자를 기반으로한 ASCII 256개 기호보다 많은 기호를 전달할 필요가 있다. 특히, CJK 동아시아 한자문화권에서는 더욱 그렇다. 그렇게 컴퓨터를 이용하여 문자를 전달하고 전달받고자하는 영문자를 제외한 다른 문화권에서 이를 확장한 노력이 동시 다발적으로 일어났고 한글은 EUC-KR, 일본문자는 Shift_JIS, 중국 한자는 GB2312, 러시아 등에서 사용되는 키릴 문자는 Windows-1251, 같은 라틴문화권이지만 각자 고유 문자를 갖고 있는 스페인, 프랑스, 독일 등은 Windows-1252 규약을 사용했다.</li>
+<li>표의문자(이모지 등)가 대거 등장하고 아랍어를 비롯한 전세계 문자를 컴퓨터에 넣기 위해서 더 많은 문자를 담을 수 있는 표준이 필요했고 <strong>유니코드(Unicode)</strong> 가 탄생했고 이제 웹 표준으로 정착됨은 물론 모든 문서의 문자를 표현하는 표준으로 자리잡아가고 있다.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/encoding_unicode.png" class="lightbox" title="유니코드와 UTF-8" data-gallery="quarto-lightbox-gallery-2"><img src="images/encoding_unicode.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">유니코드와 UTF-8</figcaption><p></p>
+</figure>
+</div>
+<p><strong>유니코드(Unicode)</strong>는 글자와 코드가 1:1 매핑되어 있는 단순한 <strong>코드표</strong>에 불과하고 산업표준으로 일종의 국가 당사자간 약속이다. <strong>한글</strong>이 표현된 유니코드 영역은 <a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EC%98%81%EC%97%AD">위키백과 유니코드 영역</a>에서 찾을 수 있다.</p>
+<p><strong>UTF-8(Universal Coded Character Set + Transformation Format – 8-bit의 약자)</strong>은 앞서 정의한 유니코드를 위한 가변 길이 문자 인코딩 방식 중 하나로, 켄 톰프슨과 롭 파이크가 제작했다.</p>
+<p>예를 들어, 영어 <code>A</code> 대문자는 1 바이트, 한글 <code>가</code>는 3 바이트다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>A2Bit <span class="ot">&lt;-</span> pryr<span class="sc">::</span><span class="fu">bits</span>(<span class="st">"A"</span>, <span class="at">split =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>A2Bit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "01000001"</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(A2Bit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Ga2Bit <span class="ot">&lt;-</span> pryr<span class="sc">::</span><span class="fu">bits</span>(<span class="st">"가"</span>, <span class="at">split =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Ga2Bit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "11101010 10110000 10000000"</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Ga2Bit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="r-4.2" class="level1 page-columns page-full" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> R 4.2</h1>
+<p>R 4.2 버전은 그 이전 R과 달리 크게 변화된 문자체계를 갖고 있다. R 언어로 통계 및 데이터 과학 작업을 할 경우 크게 3개 문자표(Character Map)가 중요하다. 사실 다른 언어권의 문자도 유사하게 생각하여 확장할 수도 있다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">Alex Farach, “Let’s start at the beginning - bits to character encoding in R”, rstudio::conf(2022)</span></div></div>
+<ul>
+<li>ASCII: 7 비트 = <span class="math inline">\(2^7 = 128\)</span> 문자</li>
+<li>Latin1 (ISO-8859-1): 8 비트 = <span class="math inline">\(2^8 = 256\)</span> 문자</li>
+<li>UTF-8 (Unicode Transformation 8-bit): 1:4 바이트 = 1,112,064 문자(혹은, Code Points)</li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>MBCS(Multi-Byte Character Set)</strong>는 바이트 2개이상을 사용해서 문자를 표현하는 인코딩 방식으로 2 바이트를 사용하는 <strong>DBCS(double-byte character set)</strong>으로 한글, 일본문자, 한자(CJK)를 표현하는데 큰 무리가 없었기 때문에 MBCS = DBCS 로 볼 수 있었다. MBCS는 <strong>UNICODE</strong>라는 산업표준이 정립되기 이전에 CJK 문자를 표현하기 위한 하나의 과도기적 문자표로 이해할 수 있다.</p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>coffee_v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"커피"</span>, <span class="st">"coffee"</span>, <span class="st">"café"</span>, <span class="st">"caf\u00E9"</span>, <span class="st">"caf</span><span class="sc">\xe9</span><span class="st">"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(coffee_v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "커피"    "coffee"  "café"    "café"    "caf\xe9"</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span>(coffee_v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "UTF-8"   "unknown" "UTF-8"   "UTF-8"   "unknown"</code></pre>
+</div>
+</div>
+<p>R 4.2 이후 버전에서 <code>Encoding()</code> 함수를 사용해서 인코딩을 확인할 수 있다. 크게 보면 기존</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">l10n_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codepage
+[1] 65001
+
+$system.codepage
+[1] 65001</code></pre>
+</div>
+</div>
+<p>MBCS와 UTF-8 이 활성화되어 있지만, Latin-1 즉 확장 아스키 코드는 비활성화되어 있고 코드페이지는 65001을 갖고 있다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getlocale</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "LC_COLLATE=Korean_Korea.utf8;LC_CTYPE=Korean_Korea.utf8;LC_MONETARY=Korean_Korea.utf8;LC_NUMERIC=C;LC_TIME=Korean_Korea.utf8"</code></pre>
+</div>
+</div>
+<p><strong>로컬라이제이션(localization)</strong>은 사용자의 문화와 언어에 맞추는 일체의 과정을 의미하고 당연히 문자도 여기에 포함된다. 날짜, 시간, 숫자 표기법 등이 여기에 포함된다. 로컬라이제이션이 영문자로도 길기 때문에 줄여서 <code>l10n</code>으로 표현한다.</p>
+<ul>
+<li>LC_ALL: 모든 카테고리에 대한 로케일 설정을 위한 환경변수</li>
+<li>LC_CTYPE: 문자 분류, 글자수, 대소문자 구분</li>
+<li>LC_NUMERIC: 숫자와 관련된 기준</li>
+<li>LC_COLLATE: 문자열의 정렬 순서를 결정</li>
+<li>LC_TIME: 날짜 시간 표시방법</li>
+<li>LC_MONETARY: 통화나 금액과 관련된 숫자의 기준</li>
+<li>LC_MESSAGES: 메시지 표시</li>
+<li>LC_PAPER: 종이</li>
+<li>LC_ADDRESS: 주소</li>
+<li>LC_TELEPHONE: 전화번호</li>
+<li>LC_MEASUREMENT: 측정단위 (무게, 온도 등)</li>
+<li>LC_NAME: ???</li>
+<li>LC_IDENTIFICATION: ???</li>
+</ul>
+</section>
+<section id="문자표" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 문자표</h1>
+<p><strong>ASCII</strong>는 7비트로 총 <span class="math inline">\(2^7=128\)</span> 문자 주로 영미권 문자를 문자표(Character Map)에 매핑하는데 사용되는 인코딩 방식이다. 영어 파운드화 등 기호를 확장하여 인접한 라틴문화권 문자도 컴퓨터로 표시할 수 있도록 확장한 표준이 <strong>ISO-8859-1</strong>로 8비트를 사용하여 총 <span class="math inline">\(2^8=256\)</span>개 문자 표현이 가능하다.</p>
+<p>요약하면, 영문자(Alphabet)를 표현하는데 ASCII 7비트 총 128개 문자로 충분했으나 추가 문자가 필요한 언어의 경우 이를 확장하여 256개 문자를 각자 나머지 128개 문자를 각자 문자에 넣어 표준을 제정하여 사용했었다.</p>
+<ul>
+<li>EUC-KR: 한글</li>
+<li>Shift_JIS : 일본문자</li>
+<li>GB2312: 한자</li>
+<li>Windows-1251: 키릴 문자 (러시아 등)</li>
+<li>Windows-1252: 스페인, 프랑스, 독일 등</li>
+<li>…</li>
+</ul>
+<p>과거 문자를 단순히 영미권과 주요 선진국에서 사용하던 것을 넘어 전세계 문자를 컴퓨터로 표현하는데 유니코드가 제정되었고 웹에서 빠르게 국제표준으로 자리잡았다.</p>
+<section id="ascii-문자" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="ascii-문자"><span class="header-section-number">4.1</span> ASCII 문자</h2>
+<p><strong>ASCII</strong> 총 <span class="math inline">\(2^7=128\)</span> 문자 중 제어문자를 제외한 출력가능한 문자를 뽑아보자.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>coderange <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">33</span><span class="sc">:</span><span class="dv">126</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ascii_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> 십진수   <span class="ot">=</span> coderange,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> 십육진수 <span class="ot">=</span> <span class="fu">as.raw</span>(coderange),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> 문자     <span class="ot">=</span> <span class="fu">rawToChar</span>(<span class="fu">as.raw</span>(coderange), <span class="at">multiple=</span><span class="cn">TRUE</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> 이진수   <span class="ot">=</span> pryr<span class="sc">::</span><span class="fu">bits</span>(문자, <span class="at">split =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(문자, <span class="at">.before =</span> 십진수)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>ascii_table <span class="sc">%&gt;%</span> </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 4
+   문자  십진수 십육진수 이진수  
+   &lt;chr&gt;  &lt;int&gt; &lt;raw&gt;    &lt;chr&gt;   
+ 1 q        113 71       01110001
+ 2 6         54 36       00110110
+ 3 @         64 40       01000000
+ 4 n        110 6e       01101110
+ 5 s        115 73       01110011
+ 6 Y         89 59       01011001
+ 7 V         86 56       01010110
+ 8 p        112 70       01110000
+ 9 o        111 6f       01101111
+10 M         77 4d       01001101
+# … with 20 more rows</code></pre>
+</div>
+</div>
+<p>출력가능한 ASCII 문자표를 33번부터 126번까지 <strong>문자 십진수 이진수</strong> 순으로 출력하면 다음과 같다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mmtable2) <span class="co"># devtools::install_github("ianmoran11/mmtable2")</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>ascii_table <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">index =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x_grp =</span> index <span class="sc">%/%</span> <span class="dv">10</span> ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y_grp =</span> index <span class="sc">%%</span> <span class="dv">10</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(x_grp, y_grp) <span class="sc">%&gt;%</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(문자 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{문자} {십진수} {이진수}"</span>) ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mmtable</span>(<span class="at">cells =</span> 문자) <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">header_left</span>(x_grp) <span class="sc">+</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">header_top</span>(y_grp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="nqafpjqpqy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#nqafpjqpqy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nqafpjqpqy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nqafpjqpqy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nqafpjqpqy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nqafpjqpqy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nqafpjqpqy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nqafpjqpqy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nqafpjqpqy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nqafpjqpqy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nqafpjqpqy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nqafpjqpqy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nqafpjqpqy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nqafpjqpqy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nqafpjqpqy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nqafpjqpqy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nqafpjqpqy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nqafpjqpqy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nqafpjqpqy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nqafpjqpqy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nqafpjqpqy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nqafpjqpqy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nqafpjqpqy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nqafpjqpqy .gt_left {
+  text-align: left;
+}
+
+#nqafpjqpqy .gt_center {
+  text-align: center;
+}
+
+#nqafpjqpqy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nqafpjqpqy .gt_font_normal {
+  font-weight: normal;
+}
+
+#nqafpjqpqy .gt_font_bold {
+  font-weight: bold;
+}
+
+#nqafpjqpqy .gt_font_italic {
+  font-style: italic;
+}
+
+#nqafpjqpqy .gt_super {
+  font-size: 65%;
+}
+
+#nqafpjqpqy .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#nqafpjqpqy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nqafpjqpqy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nqafpjqpqy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nqafpjqpqy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nqafpjqpqy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nqafpjqpqy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"> </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">  </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">   </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">    </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">     </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">      </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">       </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">        </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">         </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">          </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">           </th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;"></td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">1</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">2</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">3</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">4</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">5</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">6</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">7</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">8</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">9</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">! 33 00100001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">" 34 00100010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"># 35 00100011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">$ 36 00100100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">% 37 00100101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">&amp; 38 00100110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">' 39 00100111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">( 40 00101000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">) 41 00101001</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">1</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">* 42 00101010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">+ 43 00101011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">, 44 00101100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">- 45 00101101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">. 46 00101110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">/ 47 00101111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">0 48 00110000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">1 49 00110001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">2 50 00110010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">3 51 00110011</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">2</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">4 52 00110100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">5 53 00110101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">6 54 00110110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">7 55 00110111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">8 56 00111000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">9 57 00111001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">: 58 00111010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">; 59 00111011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">&lt; 60 00111100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">= 61 00111101</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">3</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">&gt; 62 00111110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">? 63 00111111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">@ 64 01000000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">A 65 01000001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">B 66 01000010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">C 67 01000011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">D 68 01000100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">E 69 01000101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">F 70 01000110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">G 71 01000111</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">4</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">H 72 01001000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">I 73 01001001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">J 74 01001010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">K 75 01001011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">L 76 01001100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">M 77 01001101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">N 78 01001110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">O 79 01001111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">P 80 01010000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Q 81 01010001</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">5</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">R 82 01010010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">S 83 01010011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">T 84 01010100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">U 85 01010101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">V 86 01010110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">W 87 01010111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">X 88 01011000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Y 89 01011001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Z 90 01011010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">[ 91 01011011</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">6</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">\ 92 01011100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">] 93 01011101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">^ 94 01011110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">_ 95 01011111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">` 96 01100000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">a 97 01100001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">b 98 01100010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">c 99 01100011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">d 100 01100100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">e 101 01100101</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">7</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">f 102 01100110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">g 103 01100111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">h 104 01101000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">i 105 01101001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">j 106 01101010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">k 107 01101011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">l 108 01101100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">m 109 01101101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">n 110 01101110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">o 111 01101111</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">8</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">p 112 01110000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">q 113 01110001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">r 114 01110010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">s 115 01110011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">t 116 01110100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">u 117 01110101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">v 118 01110110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">w 119 01110111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">x 120 01111000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">y 121 01111001</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">9</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">z 122 01111010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">{ 123 01111011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">| 124 01111100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">} 125 01111101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">~ 126 01111110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="확장-ascii-문자" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="확장-ascii-문자"><span class="header-section-number">4.2</span> 확장 ASCII 문자</h2>
+<p>확장 <strong>ASCII</strong> 총 <span class="math inline">\(2^8=256\)</span> 문자 중 앞선 기본 ASCII를 제외한 나머지 확장문자표를 출력해보자.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>coderange <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">161</span><span class="sc">:</span><span class="dv">255</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># iconv(extendedascii, from="Windows-1252", to="UTF-8") </span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>extended_ascii_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> 십진수   <span class="ot">=</span> coderange,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> 십육진수 <span class="ot">=</span> <span class="fu">as.raw</span>(coderange),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> 문자     <span class="ot">=</span> <span class="fu">rawToChar</span>(<span class="fu">as.raw</span>(coderange), <span class="at">multiple=</span><span class="cn">TRUE</span>),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> 이진수   <span class="ot">=</span> pryr<span class="sc">::</span><span class="fu">bits</span>(문자, <span class="at">split =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(문자, <span class="at">.before =</span> 십진수) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(문자 <span class="ot">=</span> <span class="fu">str_conv</span>(문자, <span class="at">encoding =</span> <span class="st">"latin-1"</span>)) </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>extended_ascii_table  <span class="sc">%&gt;%</span> </span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 4
+   문자  십진수 십육진수 이진수  
+   &lt;chr&gt;  &lt;int&gt; &lt;raw&gt;    &lt;chr&gt;   
+ 1 Ç        199 c7       11000111
+ 2 ¸        184 b8       10111000
+ 3 ü        252 fc       11111100
+ 4 ¬        172 ac       10101100
+ 5 ö        246 f6       11110110
+ 6 ó        243 f3       11110011
+ 7 ß        223 df       11011111
+ 8 Ñ        209 d1       11010001
+ 9 ³        179 b3       10110011
+10 ¹        185 b9       10111001
+# … with 20 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mmtable2) <span class="co"># devtools::install_github("ianmoran11/mmtable2")</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>extended_ascii_table <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">index =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x_grp =</span> index <span class="sc">%/%</span> <span class="dv">10</span> ) <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y_grp =</span> index <span class="sc">%%</span> <span class="dv">10</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(x_grp, y_grp) <span class="sc">%&gt;%</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(문자 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{문자} {십진수} {이진수}"</span>) ) <span class="sc">%&gt;%</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mmtable</span>(<span class="at">cells =</span> 문자) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">header_left</span>(x_grp) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">header_top</span>(y_grp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="znvnbhtywo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#znvnbhtywo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#znvnbhtywo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#znvnbhtywo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#znvnbhtywo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#znvnbhtywo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#znvnbhtywo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#znvnbhtywo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#znvnbhtywo .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#znvnbhtywo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#znvnbhtywo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#znvnbhtywo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#znvnbhtywo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#znvnbhtywo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#znvnbhtywo .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#znvnbhtywo .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#znvnbhtywo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#znvnbhtywo .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#znvnbhtywo .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#znvnbhtywo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#znvnbhtywo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#znvnbhtywo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#znvnbhtywo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#znvnbhtywo .gt_left {
+  text-align: left;
+}
+
+#znvnbhtywo .gt_center {
+  text-align: center;
+}
+
+#znvnbhtywo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#znvnbhtywo .gt_font_normal {
+  font-weight: normal;
+}
+
+#znvnbhtywo .gt_font_bold {
+  font-weight: bold;
+}
+
+#znvnbhtywo .gt_font_italic {
+  font-style: italic;
+}
+
+#znvnbhtywo .gt_super {
+  font-size: 65%;
+}
+
+#znvnbhtywo .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#znvnbhtywo .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#znvnbhtywo .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#znvnbhtywo .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#znvnbhtywo .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#znvnbhtywo .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#znvnbhtywo .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"> </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">  </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">   </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">    </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">     </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">      </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">       </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">        </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">         </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">          </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">           </th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;"></td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">1</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">2</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">3</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">4</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">5</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">6</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">7</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">8</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">9</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¡ 161 10100001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¢ 162 10100010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">£ 163 10100011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¤ 164 10100100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¥ 165 10100101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¦ 166 10100110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">§ 167 10100111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¨ 168 10101000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">© 169 10101001</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">1</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ª 170 10101010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">« 171 10101011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¬ 172 10101100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">­ 173 10101101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">® 174 10101110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¯ 175 10101111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">° 176 10110000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">± 177 10110001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">² 178 10110010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">³ 179 10110011</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">2</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">´ 180 10110100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">µ 181 10110101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¶ 182 10110110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">· 183 10110111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¸ 184 10111000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¹ 185 10111001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">º 186 10111010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">» 187 10111011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¼ 188 10111100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">½ 189 10111101</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">3</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¾ 190 10111110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¿ 191 10111111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">À 192 11000000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Á 193 11000001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Â 194 11000010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ã 195 11000011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ä 196 11000100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Å 197 11000101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Æ 198 11000110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ç 199 11000111</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">4</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">È 200 11001000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">É 201 11001001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ê 202 11001010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ë 203 11001011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ì 204 11001100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Í 205 11001101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Î 206 11001110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ï 207 11001111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ð 208 11010000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ñ 209 11010001</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">5</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ò 210 11010010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ó 211 11010011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ô 212 11010100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Õ 213 11010101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ö 214 11010110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">× 215 11010111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ø 216 11011000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ù 217 11011001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ú 218 11011010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Û 219 11011011</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">6</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ü 220 11011100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ý 221 11011101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Þ 222 11011110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ß 223 11011111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">à 224 11100000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">á 225 11100001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">â 226 11100010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ã 227 11100011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ä 228 11100100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">å 229 11100101</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">7</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">æ 230 11100110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ç 231 11100111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">è 232 11101000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">é 233 11101001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ê 234 11101010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ë 235 11101011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ì 236 11101100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">í 237 11101101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">î 238 11101110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ï 239 11101111</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">8</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ð 240 11110000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ñ 241 11110001</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ò 242 11110010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ó 243 11110011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ô 244 11110100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">õ 245 11110101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ö 246 11110110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">÷ 247 11110111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ø 248 11111000</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ù 249 11111001</td></tr>
+    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">9</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ú 250 11111010</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">û 251 11111011</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ü 252 11111100</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ý 253 11111101</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">þ 254 11111110</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ÿ 255 11111111</td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
+<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>[참조: <a href="https://www.r-bloggers.com/2011/03/ascii-code-table-in-r/">Ascii code table in R</a>], <a href="https://www.sciencebuddies.org/science-fair-projects/references/ascii-table" class="aside">ASCII Table with All 256 Character codes in decimal, hexadecimal, octal and binary</a></p>
+</section>
+<section id="유니코드" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="유니코드"><span class="header-section-number">4.3</span> 유니코드</h2>
+<p><a href="https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters" class="uri">https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters</a></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Unicode)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>hangul_block <span class="ot">&lt;-</span> <span class="fu">u_scripts</span>()[<span class="st">'Hangul'</span>]<span class="sc">$</span>Hangul</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>Unicode<span class="sc">::</span><span class="fu">u_blocks</span>(<span class="st">'Hangul'</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>hangul_scripts <span class="ot">&lt;-</span> <span class="fu">u_scripts</span>(<span class="st">'Hangul'</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(hangul_scripts, n_of_u_chars)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>expand_ranges <span class="ot">&lt;-</span> <span class="fu">as.u_char_seq</span>(hangul_scripts<span class="sc">$</span>Hangul[<span class="dv">2</span>])</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>unicode_chars <span class="ot">&lt;-</span> <span class="fu">unlist</span>(expand_ranges)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">intToUtf8</span>(unicode_chars)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="fu">chr_unserialise_unicode</span>(<span class="st">'&lt;U+AC00&gt;'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-unicode2010" class="csl-entry" role="doc-biblioentry">
+Davis, M. (2010). <em>Unicode nearing 50</em>. <a href="https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+
+
+
+</body></html>

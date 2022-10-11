@@ -27,8 +27,12 @@ website:
           text: "Quarto 설치/출판"
         - href: quarto_about.qmd
           text: "Quarto 소개"
-      - text: 모듈
+      - text: "글쓰기"
         menu: 
+          - href: writing_history.qmd
+            text: "문자와 종이 역사"
+          - href: hangul_encoding.qmd
+            text: "한글 인코딩"
           - href: quarto_fonts.qmd
             text: "글꼴"
           - href: quarto_sass.qmd
@@ -39,8 +43,6 @@ website:
             text: "한글 PDF 제작방법"
           - href: quarto_pdf.qmd
             text: "[사례] 한글 PDF"
-          - href: writing_history.qmd
-            text: "문자와 종이 역사"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
