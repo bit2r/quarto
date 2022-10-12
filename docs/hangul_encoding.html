@@ -377,7 +377,11 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#ascii-문자" id="toc-ascii-문자" class="nav-link" data-scroll-target="#ascii-문자"> <span class="header-section-number">4.1</span> ASCII 문자</a></li>
   <li><a href="#확장-ascii-문자" id="toc-확장-ascii-문자" class="nav-link" data-scroll-target="#확장-ascii-문자"> <span class="header-section-number">4.2</span> 확장 ASCII 문자</a></li>
-  <li><a href="#유니코드" id="toc-유니코드" class="nav-link" data-scroll-target="#유니코드"> <span class="header-section-number">4.3</span> 유니코드</a></li>
+  <li><a href="#유니코드" id="toc-유니코드" class="nav-link" data-scroll-target="#유니코드"> <span class="header-section-number">4.3</span> 유니코드</a>
+  <ul class="collapse">
+  <li><a href="#영문자" id="toc-영문자" class="nav-link" data-scroll-target="#영문자"> <span class="header-section-number">4.3.1</span> 영문자</a></li>
+  <li><a href="#한글" id="toc-한글" class="nav-link" data-scroll-target="#한글"> <span class="header-section-number">4.3.2</span> 한글</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -505,7 +509,7 @@ div.csl-indent {
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/encoding_unicode.png" class="lightbox" title="유니코드와 UTF-8" data-gallery="quarto-lightbox-gallery-2"><img src="images/encoding_unicode.png" class="img-fluid figure-img"></a></p>
+<p><a href="images/encoding_unicode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="유니코드와 UTF-8"><img src="images/encoding_unicode.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">유니코드와 UTF-8</figcaption><p></p>
 </figure>
 </div>
@@ -634,7 +638,7 @@ $system.codepage
 <li>LC_IDENTIFICATION: ???</li>
 </ul>
 </section>
-<section id="문자표" class="level1" data-number="4">
+<section id="문자표" class="level1 page-columns page-full" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> 문자표</h1>
 <p><strong>ASCII</strong>는 7비트로 총 <span class="math inline">\(2^7=128\)</span> 문자 주로 영미권 문자를 문자표(Character Map)에 매핑하는데 사용되는 인코딩 방식이다. 영어 파운드화 등 기호를 확장하여 인접한 라틴문화권 문자도 컴퓨터로 표시할 수 있도록 확장한 표준이 <strong>ISO-8859-1</strong>로 8비트를 사용하여 총 <span class="math inline">\(2^8=256\)</span>개 문자 표현이 가능하다.</p>
 <p>요약하면, 영문자(Alphabet)를 표현하는데 ASCII 7비트 총 128개 문자로 충분했으나 추가 문자가 필요한 언어의 경우 이를 확장하여 256개 문자를 각자 나머지 128개 문자를 각자 문자에 넣어 표준을 제정하여 사용했었다.</p>
@@ -670,16 +674,16 @@ $system.codepage
 <pre><code># A tibble: 30 × 4
    문자  십진수 십육진수 이진수  
    &lt;chr&gt;  &lt;int&gt; &lt;raw&gt;    &lt;chr&gt;   
- 1 q        113 71       01110001
- 2 6         54 36       00110110
- 3 @         64 40       01000000
- 4 n        110 6e       01101110
- 5 s        115 73       01110011
- 6 Y         89 59       01011001
- 7 V         86 56       01010110
- 8 p        112 70       01110000
- 9 o        111 6f       01101111
-10 M         77 4d       01001101
+ 1 "I"       73 49       01001001
+ 2 "3"       51 33       00110011
+ 3 "z"      122 7a       01111010
+ 4 "S"       83 53       01010011
+ 5 "#"       35 23       00100011
+ 6 "&gt;"       62 3e       00111110
+ 7 "\\"      92 5c       01011100
+ 8 "b"       98 62       01100010
+ 9 "w"      119 77       01110111
+10 "="       61 3d       00111101
 # … with 20 more rows</code></pre>
 </div>
 </div>
@@ -702,12 +706,12 @@ $system.codepage
 </details>
 <div class="cell-output-display">
 
-<div id="nqafpjqpqy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="znyunsogxw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#nqafpjqpqy .gt_table {
+#znyunsogxw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -732,7 +736,7 @@ $system.codepage
   border-left-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_heading {
+#znyunsogxw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -744,7 +748,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_title {
+#znyunsogxw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -756,7 +760,7 @@ $system.codepage
   border-bottom-width: 0;
 }
 
-#nqafpjqpqy .gt_subtitle {
+#znyunsogxw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -768,13 +772,13 @@ $system.codepage
   border-top-width: 0;
 }
 
-#nqafpjqpqy .gt_bottom_border {
+#znyunsogxw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_col_headings {
+#znyunsogxw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -789,7 +793,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_col_heading {
+#znyunsogxw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -809,7 +813,7 @@ $system.codepage
   overflow-x: hidden;
 }
 
-#nqafpjqpqy .gt_column_spanner_outer {
+#znyunsogxw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -821,15 +825,15 @@ $system.codepage
   padding-right: 4px;
 }
 
-#nqafpjqpqy .gt_column_spanner_outer:first-child {
+#znyunsogxw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nqafpjqpqy .gt_column_spanner_outer:last-child {
+#znyunsogxw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nqafpjqpqy .gt_column_spanner {
+#znyunsogxw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -841,7 +845,7 @@ $system.codepage
   width: 100%;
 }
 
-#nqafpjqpqy .gt_group_heading {
+#znyunsogxw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -866,7 +870,7 @@ $system.codepage
   vertical-align: middle;
 }
 
-#nqafpjqpqy .gt_empty_group_heading {
+#znyunsogxw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -881,15 +885,15 @@ $system.codepage
   vertical-align: middle;
 }
 
-#nqafpjqpqy .gt_from_md > :first-child {
+#znyunsogxw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nqafpjqpqy .gt_from_md > :last-child {
+#znyunsogxw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nqafpjqpqy .gt_row {
+#znyunsogxw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -908,7 +912,7 @@ $system.codepage
   overflow-x: hidden;
 }
 
-#nqafpjqpqy .gt_stub {
+#znyunsogxw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -921,7 +925,7 @@ $system.codepage
   padding-right: 5px;
 }
 
-#nqafpjqpqy .gt_stub_row_group {
+#znyunsogxw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -935,11 +939,11 @@ $system.codepage
   vertical-align: top;
 }
 
-#nqafpjqpqy .gt_row_group_first td {
+#znyunsogxw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nqafpjqpqy .gt_summary_row {
+#znyunsogxw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -949,16 +953,16 @@ $system.codepage
   padding-right: 5px;
 }
 
-#nqafpjqpqy .gt_first_summary_row {
+#znyunsogxw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_first_summary_row.thick {
+#znyunsogxw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nqafpjqpqy .gt_last_summary_row {
+#znyunsogxw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -968,7 +972,7 @@ $system.codepage
   border-bottom-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_grand_summary_row {
+#znyunsogxw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -978,7 +982,7 @@ $system.codepage
   padding-right: 5px;
 }
 
-#nqafpjqpqy .gt_first_grand_summary_row {
+#znyunsogxw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -988,11 +992,11 @@ $system.codepage
   border-top-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_striped {
+#znyunsogxw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nqafpjqpqy .gt_table_body {
+#znyunsogxw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1001,7 +1005,7 @@ $system.codepage
   border-bottom-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_footnotes {
+#znyunsogxw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1015,7 +1019,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_footnote {
+#znyunsogxw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1024,7 +1028,7 @@ $system.codepage
   padding-right: 5px;
 }
 
-#nqafpjqpqy .gt_sourcenotes {
+#znyunsogxw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1038,7 +1042,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#nqafpjqpqy .gt_sourcenote {
+#znyunsogxw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1046,64 +1050,64 @@ $system.codepage
   padding-right: 5px;
 }
 
-#nqafpjqpqy .gt_left {
+#znyunsogxw .gt_left {
   text-align: left;
 }
 
-#nqafpjqpqy .gt_center {
+#znyunsogxw .gt_center {
   text-align: center;
 }
 
-#nqafpjqpqy .gt_right {
+#znyunsogxw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nqafpjqpqy .gt_font_normal {
+#znyunsogxw .gt_font_normal {
   font-weight: normal;
 }
 
-#nqafpjqpqy .gt_font_bold {
+#znyunsogxw .gt_font_bold {
   font-weight: bold;
 }
 
-#nqafpjqpqy .gt_font_italic {
+#znyunsogxw .gt_font_italic {
   font-style: italic;
 }
 
-#nqafpjqpqy .gt_super {
+#znyunsogxw .gt_super {
   font-size: 65%;
 }
 
-#nqafpjqpqy .gt_footnote_marks {
+#znyunsogxw .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#nqafpjqpqy .gt_asterisk {
+#znyunsogxw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nqafpjqpqy .gt_indent_1 {
+#znyunsogxw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nqafpjqpqy .gt_indent_2 {
+#znyunsogxw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nqafpjqpqy .gt_indent_3 {
+#znyunsogxw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nqafpjqpqy .gt_indent_4 {
+#znyunsogxw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nqafpjqpqy .gt_indent_5 {
+#znyunsogxw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1279,16 +1283,16 @@ $system.codepage
 <pre><code># A tibble: 30 × 4
    문자  십진수 십육진수 이진수  
    &lt;chr&gt;  &lt;int&gt; &lt;raw&gt;    &lt;chr&gt;   
- 1 Ç        199 c7       11000111
- 2 ¸        184 b8       10111000
- 3 ü        252 fc       11111100
- 4 ¬        172 ac       10101100
- 5 ö        246 f6       11110110
- 6 ó        243 f3       11110011
- 7 ß        223 df       11011111
- 8 Ñ        209 d1       11010001
- 9 ³        179 b3       10110011
-10 ¹        185 b9       10111001
+ 1 ¤        164 a4       10100100
+ 2 ÷        247 f7       11110111
+ 3 æ        230 e6       11100110
+ 4 Þ        222 de       11011110
+ 5 ®        174 ae       10101110
+ 6 Ý        221 dd       11011101
+ 7 Ô        212 d4       11010100
+ 8 Ä        196 c4       11000100
+ 9 ¸        184 b8       10111000
+10 ç        231 e7       11100111
 # … with 20 more rows</code></pre>
 </div>
 </div>
@@ -1302,596 +1306,204 @@ $system.codepage
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x_grp =</span> index <span class="sc">%/%</span> <span class="dv">10</span> ) <span class="sc">%&gt;%</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y_grp =</span> index <span class="sc">%%</span> <span class="dv">10</span> ) <span class="sc">%&gt;%</span> </span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(x_grp, y_grp) <span class="sc">%&gt;%</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(문자 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{문자} {십진수} {이진수}"</span>) ) <span class="sc">%&gt;%</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(문자 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{문자}</span><span class="sc">\n</span><span class="st">{십진수}</span><span class="sc">\n</span><span class="st"> {이진수}"</span>) ) <span class="sc">%&gt;%</span></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mmtable</span>(<span class="at">cells =</span> 문자) <span class="sc">+</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">header_left</span>(x_grp) <span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">header_top</span>(y_grp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x_grp, <span class="at">y=</span>y_grp)) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> 문자), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>(<span class="at">base_family =</span> <span class="st">"MaruBuri"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="znvnbhtywo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-#znvnbhtywo .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#znvnbhtywo .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#znvnbhtywo .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#znvnbhtywo .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#znvnbhtywo .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#znvnbhtywo .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#znvnbhtywo .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#znvnbhtywo .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#znvnbhtywo .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#znvnbhtywo .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#znvnbhtywo .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#znvnbhtywo .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#znvnbhtywo .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#znvnbhtywo .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#znvnbhtywo .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#znvnbhtywo .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#znvnbhtywo .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#znvnbhtywo .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#znvnbhtywo .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#znvnbhtywo .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#znvnbhtywo .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#znvnbhtywo .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#znvnbhtywo .gt_left {
-  text-align: left;
-}
-
-#znvnbhtywo .gt_center {
-  text-align: center;
-}
-
-#znvnbhtywo .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#znvnbhtywo .gt_font_normal {
-  font-weight: normal;
-}
-
-#znvnbhtywo .gt_font_bold {
-  font-weight: bold;
-}
-
-#znvnbhtywo .gt_font_italic {
-  font-style: italic;
-}
-
-#znvnbhtywo .gt_super {
-  font-size: 65%;
-}
-
-#znvnbhtywo .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 75%;
-  vertical-align: 0.4em;
-}
-
-#znvnbhtywo .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#znvnbhtywo .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#znvnbhtywo .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#znvnbhtywo .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#znvnbhtywo .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#znvnbhtywo .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"> </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">  </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">   </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">    </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">     </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">       </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">        </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">         </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">          </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">           </th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;"></td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">0</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">1</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">2</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">3</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">4</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">5</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">6</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">7</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">8</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">9</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¡ 161 10100001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¢ 162 10100010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">£ 163 10100011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¤ 164 10100100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¥ 165 10100101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¦ 166 10100110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">§ 167 10100111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¨ 168 10101000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">© 169 10101001</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">1</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ª 170 10101010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">« 171 10101011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¬ 172 10101100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">­ 173 10101101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">® 174 10101110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¯ 175 10101111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">° 176 10110000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">± 177 10110001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">² 178 10110010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">³ 179 10110011</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">2</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">´ 180 10110100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">µ 181 10110101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¶ 182 10110110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">· 183 10110111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¸ 184 10111000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¹ 185 10111001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">º 186 10111010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">» 187 10111011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¼ 188 10111100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">½ 189 10111101</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">3</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¾ 190 10111110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">¿ 191 10111111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">À 192 11000000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Á 193 11000001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Â 194 11000010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ã 195 11000011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ä 196 11000100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Å 197 11000101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Æ 198 11000110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ç 199 11000111</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">4</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">È 200 11001000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">É 201 11001001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ê 202 11001010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ë 203 11001011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ì 204 11001100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Í 205 11001101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Î 206 11001110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ï 207 11001111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ð 208 11010000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ñ 209 11010001</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">5</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ò 210 11010010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ó 211 11010011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ô 212 11010100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Õ 213 11010101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ö 214 11010110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">× 215 11010111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ø 216 11011000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ù 217 11011001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ú 218 11011010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Û 219 11011011</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">6</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ü 220 11011100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Ý 221 11011101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">Þ 222 11011110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ß 223 11011111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">à 224 11100000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">á 225 11100001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">â 226 11100010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ã 227 11100011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ä 228 11100100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">å 229 11100101</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">7</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">æ 230 11100110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ç 231 11100111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">è 232 11101000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">é 233 11101001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ê 234 11101010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ë 235 11101011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ì 236 11101100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">í 237 11101101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">î 238 11101110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ï 239 11101111</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">8</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ð 240 11110000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ñ 241 11110001</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ò 242 11110010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ó 243 11110011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ô 244 11110100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">õ 245 11110101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ö 246 11110110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">÷ 247 11110111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ø 248 11111000</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ù 249 11111001</td></tr>
-    <tr><td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">9</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ú 250 11111010</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">û 251 11111011</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ü 252 11111100</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ý 253 11111101</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">þ 254 11111110</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;">ÿ 255 11111111</td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td>
-<td class="gt_row gt_left" style="background-color: #FFFFFF; color: #000000;"> </td></tr>
-  </tbody>
-  
-  
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="hangul_encoding_files/figure-html/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="hangul_encoding_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
 </div>
 </div>
 </div>
 <p>[참조: <a href="https://www.r-bloggers.com/2011/03/ascii-code-table-in-r/">Ascii code table in R</a>], <a href="https://www.sciencebuddies.org/science-fair-projects/references/ascii-table" class="aside">ASCII Table with All 256 Character codes in decimal, hexadecimal, octal and binary</a></p>
 </section>
-<section id="유니코드" class="level2" data-number="4.3">
+<section id="유니코드" class="level2 page-columns page-full" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="유니코드"><span class="header-section-number">4.3</span> 유니코드</h2>
-<p><a href="https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters" class="uri">https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters</a></p>
+<p><a href="https://cran.r-project.org/web/packages/Unicode/index.html"><code>Unicode</code></a> 패키지를 통해서 유니코드에 등록된 문자를 확인할 수 있다.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Unicode)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>hangul_block <span class="ot">&lt;-</span> <span class="fu">u_scripts</span>()[<span class="st">'Hangul'</span>]<span class="sc">$</span>Hangul</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>Unicode<span class="sc">::</span><span class="fu">u_blocks</span>(<span class="st">'Hangul'</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>hangul_scripts <span class="ot">&lt;-</span> <span class="fu">u_scripts</span>(<span class="st">'Hangul'</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(hangul_scripts, n_of_u_chars)</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>expand_ranges <span class="ot">&lt;-</span> <span class="fu">as.u_char_seq</span>(hangul_scripts<span class="sc">$</span>Hangul[<span class="dv">2</span>])</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>unicode_chars <span class="ot">&lt;-</span> <span class="fu">unlist</span>(expand_ranges)</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">intToUtf8</span>(unicode_chars)</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="fu">chr_unserialise_unicode</span>(<span class="st">'&lt;U+AC00&gt;'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>all_scripts <span class="ot">&lt;-</span> <span class="fu">u_scripts</span>()</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_scripts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "Adlam"                  "Ahom"                   "Anatolian_Hieroglyphs" 
+  [4] "Arabic"                 "Armenian"               "Avestan"               
+  [7] "Balinese"               "Bamum"                  "Bassa_Vah"             
+ [10] "Batak"                  "Bengali"                "Bhaiksuki"             
+ [13] "Bopomofo"               "Brahmi"                 "Braille"               
+ [16] "Buginese"               "Buhid"                  "Canadian_Aboriginal"   
+ [19] "Carian"                 "Caucasian_Albanian"     "Chakma"                
+ [22] "Cham"                   "Cherokee"               "Chorasmian"            
+ [25] "Common"                 "Coptic"                 "Cuneiform"             
+ [28] "Cypriot"                "Cypro_Minoan"           "Cyrillic"              
+ [31] "Deseret"                "Devanagari"             "Dives_Akuru"           
+ [34] "Dogra"                  "Duployan"               "Egyptian_Hieroglyphs"  
+ [37] "Elbasan"                "Elymaic"                "Ethiopic"              
+ [40] "Georgian"               "Glagolitic"             "Gothic"                
+ [43] "Grantha"                "Greek"                  "Gujarati"              
+ [46] "Gunjala_Gondi"          "Gurmukhi"               "Han"                   
+ [49] "Hangul"                 "Hanifi_Rohingya"        "Hanunoo"               
+ [52] "Hatran"                 "Hebrew"                 "Hiragana"              
+ [55] "Imperial_Aramaic"       "Inherited"              "Inscriptional_Pahlavi" 
+ [58] "Inscriptional_Parthian" "Javanese"               "Kaithi"                
+ [61] "Kannada"                "Katakana"               "Kawi"                  
+ [64] "Kayah_Li"               "Kharoshthi"             "Khitan_Small_Script"   
+ [67] "Khmer"                  "Khojki"                 "Khudawadi"             
+ [70] "Lao"                    "Latin"                  "Lepcha"                
+ [73] "Limbu"                  "Linear_A"               "Linear_B"              
+ [76] "Lisu"                   "Lycian"                 "Lydian"                
+ [79] "Mahajani"               "Makasar"                "Malayalam"             
+ [82] "Mandaic"                "Manichaean"             "Marchen"               
+ [85] "Masaram_Gondi"          "Medefaidrin"            "Meetei_Mayek"          
+ [88] "Mende_Kikakui"          "Meroitic_Cursive"       "Meroitic_Hieroglyphs"  
+ [91] "Miao"                   "Modi"                   "Mongolian"             
+ [94] "Mro"                    "Multani"                "Myanmar"               
+ [97] "Nabataean"              "Nag_Mundari"            "Nandinagari"           
+[100] "New_Tai_Lue"            "Newa"                   "Nko"                   
+[103] "Nushu"                  "Nyiakeng_Puachue_Hmong" "Ogham"                 
+[106] "Ol_Chiki"               "Old_Hungarian"          "Old_Italic"            
+[109] "Old_North_Arabian"      "Old_Permic"             "Old_Persian"           
+[112] "Old_Sogdian"            "Old_South_Arabian"      "Old_Turkic"            
+[115] "Old_Uyghur"             "Oriya"                  "Osage"                 
+[118] "Osmanya"                "Pahawh_Hmong"           "Palmyrene"             
+[121] "Pau_Cin_Hau"            "Phags_Pa"               "Phoenician"            
+[124] "Psalter_Pahlavi"        "Rejang"                 "Runic"                 
+[127] "Samaritan"              "Saurashtra"             "Sharada"               
+[130] "Shavian"                "Siddham"                "SignWriting"           
+[133] "Sinhala"                "Sogdian"                "Sora_Sompeng"          
+[136] "Soyombo"                "Sundanese"              "Syloti_Nagri"          
+[139] "Syriac"                 "Tagalog"                "Tagbanwa"              
+[142] "Tai_Le"                 "Tai_Tham"               "Tai_Viet"              
+[145] "Takri"                  "Tamil"                  "Tangsa"                
+[148] "Tangut"                 "Telugu"                 "Thaana"                
+[151] "Thai"                   "Tibetan"                "Tifinagh"              
+[154] "Tirhuta"                "Toto"                   "Ugaritic"              
+[157] "Vai"                    "Vithkuqi"               "Wancho"                
+[160] "Warang_Citi"            "Yezidi"                 "Yi"                    
+[163] "Zanabazar_Square"      </code></pre>
+</div>
+</div>
+<section id="영문자" class="level3 page-columns page-full" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="영문자"><span class="header-section-number">4.3.1</span> 영문자</h3>
+<p>영문자를 유니코드에서 찾아 살펴보자. 영문자는 라틴 계열이라 라틴계열에 포함된 문자를 뽑아서 유니코드 범위를 정해서 유니코드 범위에 포함된 문자를 사람이 읽을 수 있는 문자로 화면에 일부만 출력한다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">코드 참조: <a href="https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters">How to generate all possible unicode characters?</a></span></div></div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>latin_char <span class="ot">&lt;-</span>  <span class="fu">u_scripts</span>(<span class="st">'Latin'</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>latin_char_length <span class="ot">&lt;-</span> <span class="fu">map</span>(latin_char, n_of_u_chars)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>show_characters <span class="ot">&lt;-</span> <span class="cf">function</span>(i) {</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  expand_ranges <span class="ot">&lt;-</span> <span class="fu">as.u_char_seq</span>(latin_char<span class="sc">$</span>Latin[i])</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  unicode_chars <span class="ot">&lt;-</span> <span class="fu">unlist</span>(expand_ranges)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intToUtf8</span>(unicode_chars)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="fu">map_chr</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, show_characters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "ABCDEFGHIJKLMNOPQRSTUVWXYZ"                                                                                                                                                                                             
+ [2] "abcdefghijklmnopqrstuvwxyz"                                                                                                                                                                                             
+ [3] "ª"                                                                                                                                                                                                                     
+ [4] "º"                                                                                                                                                                                                                     
+ [5] "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ"                                                                                                                                                                                              
+ [6] "ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö"                                                                                                                                                                                   
+ [7] "øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺ"
+ [8] "ƻ"                                                                                                                                                                                                                      
+ [9] "Ƽƽƾƿ"                                                                                                                                                                                                                   
+[10] "ǀǁǂǃ"                                                                                                                                                                                                                   </code></pre>
+</div>
+</div>
+</section>
+<section id="한글" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="한글"><span class="header-section-number">4.3.2</span> 한글</h3>
+<p>동일하게 유니코드에 등록된 한글도 확인해보자. 한글완성형으로 한글 유니코드 7번째 블록에 11,172 개 글자가 등록되어 있어 이를 제외한 한글을 뽑아보자.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>hangul_scripts <span class="ot">&lt;-</span> <span class="fu">u_scripts</span>(<span class="st">'Hangul'</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>hangul_char_length <span class="ot">&lt;-</span> <span class="fu">map</span>(hangul_scripts, n_of_u_chars)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(hangul_scripts, n_of_u_chars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Hangul
+ [1]   256     2    94    31    31    29 11172    23    49    31     6     6
+[13]     6     3</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>expand_ranges <span class="ot">&lt;-</span> <span class="fu">as.u_char_seq</span>(hangul_scripts<span class="sc">$</span>Hangul[<span class="dv">7</span>])</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>show_hangul <span class="ot">&lt;-</span> <span class="cf">function</span>(i) {</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  expand_ranges <span class="ot">&lt;-</span> <span class="fu">as.u_char_seq</span>(hangul_scripts<span class="sc">$</span>Hangul[i])</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  unicode_chars <span class="ot">&lt;-</span> <span class="fu">unlist</span>(expand_ranges)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intToUtf8</span>(unicode_chars)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="fu">map_chr</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">8</span><span class="sc">:</span><span class="dv">14</span>), show_hangul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒᄓᄔᄕᄖᄗᄘᄙᄚᄛᄜᄝᄞᄟᄠᄡᄢᄣᄤᄥᄦᄧᄨᄩᄪᄫᄬᄭᄮᄯᄰᄱᄲᄳᄴᄵᄶᄷᄸᄹᄺᄻᄼᄽᄾᄿᅀᅁᅂᅃᅄᅅᅆᅇᅈᅉᅊᅋᅌᅍᅎᅏᅐᅑᅒᅓᅔᅕᅖᅗᅘᅙᅚᅛᅜᅝᅞᅟᅠᅡᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᅶᅷᅸᅹᅺᅻᅼᅽᅾᅿᆀᆁᆂᆃᆄᆅᆆᆇᆈᆉᆊᆋᆌᆍᆎᆏᆐᆑᆒᆓᆔᆕᆖᆗᆘᆙᆚᆛᆜᆝᆞᆟᆠᆡᆢᆣᆤᆥᆦᆧᆨᆩᆪᆫᆬᆭᆮᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂᇃᇄᇅᇆᇇᇈᇉᇊᇋᇌᇍᇎᇏᇐᇑᇒᇓᇔᇕᇖᇗᇘᇙᇚᇛᇜᇝᇞᇟᇠᇡᇢᇣᇤᇥᇦᇧᇨᇩᇪᇫᇬᇭᇮᇯᇰᇱᇲᇳᇴᇵᇶᇷᇸᇹᇺᇻᇼᇽᇾᇿ"
+ [2] "〮〯"                                                                                                                                                                                            
+ [3] "ㄱㄲㄳㄴㄵㄶㄷㄸㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅃㅄㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣㅤㅥㅦㅧㅨㅩㅪㅫㅬㅭㅮㅯㅰㅱㅲㅳㅴㅵㅶㅷㅸㅹㅺㅻㅼㅽㅾㅿㆀㆁㆂㆃㆄㆅㆆㆇㆈㆉㆊㆋㆌㆍㆎ"    
+ [4] "㈀㈁㈂㈃㈄㈅㈆㈇㈈㈉㈊㈋㈌㈍㈎㈏㈐㈑㈒㈓㈔㈕㈖㈗㈘㈙㈚㈛㈜㈝㈞"                                                                                                                                  
+ [5] "㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭㉮㉯㉰㉱㉲㉳㉴㉵㉶㉷㉸㉹㉺㉻㉼㉽㉾"                                                                                                                                  
+ [6] "ꥠꥡꥢꥣꥤꥥꥦꥧꥨꥩꥪꥫꥬꥭꥮꥯꥰꥱꥲꥳꥴꥵꥶꥷꥸꥹꥺꥻꥼ"                                                                                                                                      
+ [7] "ힰힱힲힳힴힵힶힷힸힹힺힻힼힽힾힿퟀퟁퟂퟃퟄퟅퟆ"                                                                                                                                                                         
+ [8] "ퟋퟌퟍퟎퟏퟐퟑퟒퟓퟔퟕퟖퟗퟘퟙퟚퟛퟜퟝퟞퟟퟠퟡퟢퟣퟤퟥퟦퟧퟨퟩퟪퟫퟬퟭퟮퟯퟰퟱퟲퟳퟴퟵퟶퟷퟸퟹퟺퟻ"                                                                                                                                               
+ [9] "ﾠﾡﾢﾣﾤﾥﾦﾧﾨﾩﾪﾫﾬﾭﾮﾯﾰﾱﾲﾳﾴﾵﾶﾷﾸﾹﾺﾻﾼﾽﾾ"                                                                                                                                                                 
+[10] "ￂￃￄￅￆￇ"                                                                                                                                                                                          
+[11] "ￊￋￌￍￎￏ"                                                                                                                                                                                          
+[12] "ￒￓￔￕￖￗ"                                                                                                                                                                                          
+[13] "ￚￛￜ"                                                                                                                                                                                             </code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>rlang</code> 패키지 <code>chr_unserialise_unicode()</code> 함수는 유니코드를 문자로 변환하여 확인할 때 유용하다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chr_unserialise_unicode</span>(<span class="st">'&lt;U+AC00&gt;'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "가"</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chr_unserialise_unicode</span>(<span class="st">'&lt;U+FFDC&gt;'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ￜ"</code></pre>
+</div>
+</div>
+</div>
 </div>
 
 
 
+</section>
 </section>
 </section>
 
@@ -2003,7 +1615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 

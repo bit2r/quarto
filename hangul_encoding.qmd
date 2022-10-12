@@ -12,7 +12,7 @@ format:
     theme: flatly
     code-fold: true
     toc: true
-    toc-depth: 2
+    toc-depth: 3
     toc-title: 목차
     number-sections: true
     highlight-style: github    
@@ -293,11 +293,11 @@ extended_ascii_table %>%
   mutate(x_grp = index %/% 10 ) %>%
   mutate(y_grp = index %% 10 ) %>% 
   group_by(x_grp, y_grp) %>%
-  summarise(문자 = glue::glue("{문자} {십진수} {이진수}") ) %>%
+  summarise(문자 = glue::glue("{문자}\n{십진수}\n {이진수}") ) %>%
   ungroup() %>%
-  mmtable(cells = 문자) +
-  header_left(x_grp) +
-  header_top(y_grp)
+  ggplot(aes(x=x_grp, y=y_grp)) +
+    geom_text(aes(label = 문자), size = 3) +
+    theme_void(base_family = "MaruBuri")
 ```
 
 [참조: [Ascii code table in R](https://www.r-bloggers.com/2011/03/ascii-code-table-in-r/)],
@@ -305,35 +305,67 @@ extended_ascii_table %>%
 
 ## 유니코드
 
-<https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters>
+[`Unicode`](https://cran.r-project.org/web/packages/Unicode/index.html) 패키지를 통해서 유니코드에 등록된 문자를 확인할 수 있다.
 
 ```{r}
-#| eval: false
-
 library(Unicode)
 library(rlang)
 
-hangul_block <- u_scripts()['Hangul']$Hangul
+all_scripts <- u_scripts()
+names(all_scripts)
+```
 
-Unicode::u_blocks('Hangul')
+### 영문자
 
+영문자를 유니코드에서 찾아 살펴보자. 영문자는 라틴 계열이라 라틴계열에 포함된 문자를 뽑아서 유니코드 범위를 정해서 유니코드 범위에 포함된 문자를 사람이 읽을 수 있는 문자로 화면에 일부만 출력한다.
+
+[코드 참조: [How to generate all possible unicode characters?](https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters)]{.aside}
+
+
+```{r}
+latin_char <-  u_scripts('Latin')
+
+latin_char_length <- map(latin_char, n_of_u_chars)
+
+show_characters <- function(i) {
+  expand_ranges <- as.u_char_seq(latin_char$Latin[i])
+  unicode_chars <- unlist(expand_ranges)
+  intToUtf8(unicode_chars)
+}
+
+map_chr(1:10, show_characters)
+```
+
+### 한글
+
+동일하게 유니코드에 등록된 한글도 확인해보자.
+한글완성형으로 한글 유니코드 7번째 블록에 11,172 개 글자가 등록되어 있어 이를 제외한 한글을 뽑아보자.
+
+```{r}
 hangul_scripts <- u_scripts('Hangul')
+
+hangul_char_length <- map(hangul_scripts, n_of_u_chars)
 
 map(hangul_scripts, n_of_u_chars)
 
-expand_ranges <- as.u_char_seq(hangul_scripts$Hangul[2])
+expand_ranges <- as.u_char_seq(hangul_scripts$Hangul[7])
 
-unicode_chars <- unlist(expand_ranges)
+show_hangul <- function(i) {
+  expand_ranges <- as.u_char_seq(hangul_scripts$Hangul[i])
+  unicode_chars <- unlist(expand_ranges)
+  intToUtf8(unicode_chars)
+}
 
-intToUtf8(unicode_chars)
-
-chr_unserialise_unicode('<U+AC00>')
+map_chr(c(1:6,8:14), show_hangul)
 ```
 
+:::{.callout-note}
 
+`rlang` 패키지 `chr_unserialise_unicode()` 함수는 유니코드를 문자로 변환하여 확인할 때 유용하다.
 
-
-
-
-
-
+```{r}
+library(rlang)
+chr_unserialise_unicode('<U+AC00>')
+chr_unserialise_unicode('<U+FFDC>')
+```
+:::
