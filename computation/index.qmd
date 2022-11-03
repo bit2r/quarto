@@ -1,0 +1,41 @@
+---
+title: "코딩 (계산)"
+date: last-modified # 날짜 설정: now, last-modified
+categories: ['Quarto', '재현가능 글쓰기', '코딩', '계산']
+description: '프로그래밍 언어를 통해 계산 작업을 수행한다.'
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    toc: true
+    toc-depth: 2
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: true
+link-citations: yes
+reference-location: margin
+bibliography: ../bibliography.bib
+csl: ../apa-single-spaced.csl
+---
+
+# 멘탈 모형
+
+![](../fig/mental-model.png)
+
+
+
+
+

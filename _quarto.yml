@@ -81,6 +81,11 @@ website:
         contents:
           - href: writing/index.qmd
             text: "마크다운 글쓰기"
+      - section: "코딩(Computation)"
+        contents:
+          - href: computation/index.qmd
+            text: "코드 덩어리"
+
 format:
   html:
     theme: 
