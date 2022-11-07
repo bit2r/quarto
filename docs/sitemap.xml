@@ -2,134 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/computation/index.html</loc>
-    <lastmod>2022-11-07T07:45:04.259Z</lastmod>
+    <lastmod>2022-11-07T11:18:33.737Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quartopub.com/sites/statkclee/quarto-ds/computation/matplotlib.html</loc>
+    <lastmod>2022-11-07T11:18:42.454Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/digital-writing-example.html</loc>
-    <lastmod>2022-11-07T07:40:08.621Z</lastmod>
+    <lastmod>2022-11-07T11:18:43.644Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/hangul_encoding.html</loc>
-    <lastmod>2022-11-07T07:40:16.448Z</lastmod>
+    <lastmod>2022-11-07T11:18:47.431Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/index.html</loc>
-    <lastmod>2022-11-07T07:40:17.440Z</lastmod>
+    <lastmod>2022-11-07T11:18:48.644Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/absolute.html</loc>
-    <lastmod>2022-11-07T07:40:23.071Z</lastmod>
+    <lastmod>2022-11-07T11:18:50.557Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/auto-animate-code.html</loc>
-    <lastmod>2022-11-07T07:40:24.095Z</lastmod>
+    <lastmod>2022-11-07T11:18:51.537Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/auto-animate-movement.html</loc>
-    <lastmod>2022-11-07T07:40:24.820Z</lastmod>
+    <lastmod>2022-11-07T11:18:52.381Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/auto-animate-stack.html</loc>
-    <lastmod>2022-11-07T07:40:25.666Z</lastmod>
+    <lastmod>2022-11-07T11:18:53.219Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/auto-animate.html</loc>
-    <lastmod>2022-11-07T07:40:26.352Z</lastmod>
+    <lastmod>2022-11-07T11:18:54.030Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/fragments-nested.html</loc>
-    <lastmod>2022-11-07T07:40:27.030Z</lastmod>
+    <lastmod>2022-11-07T11:18:55.428Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/fragments.html</loc>
-    <lastmod>2022-11-07T07:40:27.825Z</lastmod>
+    <lastmod>2022-11-07T11:18:56.628Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/stack.html</loc>
-    <lastmod>2022-11-07T07:40:28.591Z</lastmod>
+    <lastmod>2022-11-07T11:18:57.335Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/mini/zoom.html</loc>
-    <lastmod>2022-11-07T07:40:29.420Z</lastmod>
+    <lastmod>2022-11-07T11:18:58.368Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/posts/20220815_quarto_blog/index.html</loc>
-    <lastmod>2022-11-07T07:40:32.703Z</lastmod>
+    <lastmod>2022-11-07T11:19:02.494Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/posts/20220816_quarto_rr/index.html</loc>
-    <lastmod>2022-11-07T07:40:41.002Z</lastmod>
+    <lastmod>2022-11-07T11:19:12.225Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/posts/20220831_low_code_shiny/index.html</loc>
-    <lastmod>2022-11-07T07:40:50.016Z</lastmod>
+    <lastmod>2022-11-07T11:19:21.945Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_about.html</loc>
-    <lastmod>2022-11-07T07:40:51.886Z</lastmod>
+    <lastmod>2022-11-07T11:19:24.201Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_blog.html</loc>
-    <lastmod>2022-11-07T07:40:54.521Z</lastmod>
+    <lastmod>2022-11-07T11:19:27.109Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_fonts.html</loc>
-    <lastmod>2022-11-07T07:41:01.467Z</lastmod>
+    <lastmod>2022-11-07T11:19:34.362Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_install.html</loc>
-    <lastmod>2022-11-07T07:41:02.955Z</lastmod>
+    <lastmod>2022-11-07T11:19:36.036Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_latex.html</loc>
-    <lastmod>2022-11-07T07:41:04.784Z</lastmod>
+    <lastmod>2022-11-07T11:19:38.293Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_layout.html</loc>
-    <lastmod>2022-11-07T07:41:06.789Z</lastmod>
+    <lastmod>2022-11-07T11:19:40.414Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_penguin.html</loc>
-    <lastmod>2022-11-07T07:41:23.700Z</lastmod>
+    <lastmod>2022-11-07T11:19:56.654Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_sass.html</loc>
-    <lastmod>2022-11-07T07:41:24.725Z</lastmod>
+    <lastmod>2022-11-07T11:19:58.048Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/quarto_slideshow.html</loc>
-    <lastmod>2022-11-07T07:41:31.159Z</lastmod>
+    <lastmod>2022-11-07T11:20:01.632Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/slideshow/data-science.html</loc>
-    <lastmod>2022-11-07T07:41:33.675Z</lastmod>
+    <lastmod>2022-11-07T11:20:04.104Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/slideshow/end-slide.html</loc>
-    <lastmod>2022-11-07T07:41:34.513Z</lastmod>
+    <lastmod>2022-11-07T11:20:04.927Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/slideshow/index.html</loc>
-    <lastmod>2022-11-07T07:41:46.738Z</lastmod>
+    <lastmod>2022-11-07T11:20:08.674Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/slideshow/problem.html</loc>
-    <lastmod>2022-11-07T07:41:48.744Z</lastmod>
+    <lastmod>2022-11-07T11:20:10.829Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/slideshow/solution.html</loc>
-    <lastmod>2022-11-07T07:41:49.720Z</lastmod>
+    <lastmod>2022-11-07T11:20:11.567Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/slideshow/title-slide.html</loc>
-    <lastmod>2022-11-07T07:41:50.842Z</lastmod>
+    <lastmod>2022-11-07T11:20:13.139Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/writing/index.html</loc>
-    <lastmod>2022-11-07T07:41:53.225Z</lastmod>
+    <lastmod>2022-11-07T11:20:16.010Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/writing_history.html</loc>
-    <lastmod>2022-11-07T07:41:54.820Z</lastmod>
+    <lastmod>2022-11-07T11:20:17.361Z</lastmod>
   </url>
 </urlset>

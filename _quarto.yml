@@ -85,7 +85,10 @@ website:
         contents:
           - href: computation/index.qmd
             text: "코딩 (계산)"
-
+          - href: computation/matplotlib_py.ipynb
+            text: ".ipynb 파이썬 파일"
+          - href: computation/matplotlib.qmd
+            text: ".qmd Quarto 파일"
 format:
   html:
     theme: 

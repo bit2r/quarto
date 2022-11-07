@@ -51,6 +51,14 @@ csl: ../apa-single-spaced.csl
 
 # VS 코드
 
+VS 코드 `TERMINAL`에서 윈도우에서 `quarto.cmd convert` 맥/리눅스에서 `quarto convert` 명령어로 `.ipynb` 파일을 `.qmd` 파일로 변환시킬 수 있으며 
+반대로 `.qmd` quarto 파일을 `.ipynb` 파일로 변환시킬 수 있다. 이후 후속 작업은 그에 맞춰 진행하면 된다.
+자세한 사항은 [Quarto JupyterLab](https://quarto.org/docs/tools/jupyter-lab.html) 웹사이트를 참고한다.
+
+````bash
+$ quarto.cmd convert basics-jupyter.ipynb # qmd 파일 변환
+$ quarto.cmd convert basics-jupyter.qmd # ipynb 파일 변환
+````
 
 
 
