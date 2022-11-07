@@ -2,22 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.2.237">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="dcterms.date" content="2022-08-31">
+<meta name="dcterms.date" content="2022-11-07">
 <meta name="description" content="Quarto 한글 글꼴">
 
 <title>Quarto 데이터 사이언스 - Quarto 글꼴</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -56,7 +61,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -69,7 +74,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -122,8 +127,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <meta name="twitter:title" content="Quarto 데이터 사이언스 - Quarto 글꼴">
-<meta name="twitter:description" content="Quarto 한글 글꼴">
-<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:description" content="한글 Quarto 첫걸음">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
 <meta name="twitter:image-width" content="1388">
@@ -135,22 +140,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Quarto 데이터 사이언스</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quarto_blog.html">Blog</a>
+    <a class="nav-link" href="./quarto_blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quarto</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
         <li>
     <a class="dropdown-item" href="./quarto_install.html">
@@ -163,8 +174,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">모듈</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">글쓰기</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./quarto_fonts.html">
  <span class="dropdown-text">글꼴</span></a>
@@ -188,7 +209,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">관련 정보</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">관련 정보</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
     <a class="dropdown-item" href="https://use-r.kr/">
@@ -215,22 +238,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://r2bit.com">R사용자회</a>
+    <a class="nav-link" href="https://r2bit.com">
+ <span class="menu-text">R사용자회</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -261,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     
   <div class="quarto-title-meta-author">
     <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
+    <div class="quarto-title-meta-heading"></div>
     
       <div class="quarto-title-meta-contents">
       <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
@@ -281,9 +305,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 31, 2022</p>
+        <p class="date">November 7, 2022</p>
       </div>
     </div>
+    
       
     </div>
     
@@ -343,24 +368,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">코딩(Computation)</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">코드 덩어리</a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
-  <ul>
-  <li><a href="#font-classification" id="toc-font-classification" class="nav-link active" data-scroll-target="#font-classification"> <span class="header-section-number">1</span> 글꼴 분류 </a>
   <ul class="collapse">
-  <li><a href="#typeface-vs-font" id="toc-typeface-vs-font" class="nav-link" data-scroll-target="#typeface-vs-font"> <span class="header-section-number">1.1</span> <code>typeface</code> vs <code>font</code></a></li>
-  <li><a href="#파일폰트와-웹폰트" id="toc-파일폰트와-웹폰트" class="nav-link" data-scroll-target="#파일폰트와-웹폰트"> <span class="header-section-number">1.2</span> 파일폰트와 웹폰트</a></li>
+  <li><a href="#font-classification" id="toc-font-classification" class="nav-link active" data-scroll-target="#font-classification"><span class="toc-section-number">1</span>  글꼴 분류 </a>
+  <ul class="collapse">
+  <li><a href="#typeface-vs-font" id="toc-typeface-vs-font" class="nav-link" data-scroll-target="#typeface-vs-font"><span class="toc-section-number">1.1</span>  <code>typeface</code> vs <code>font</code></a></li>
+  <li><a href="#파일폰트와-웹폰트" id="toc-파일폰트와-웹폰트" class="nav-link" data-scroll-target="#파일폰트와-웹폰트"><span class="toc-section-number">1.2</span>  파일폰트와 웹폰트</a></li>
   </ul></li>
-  <li><a href="#출판-문서" id="toc-출판-문서" class="nav-link" data-scroll-target="#출판-문서"> <span class="header-section-number">2</span> 출판 문서</a></li>
-  <li><a href="#css-파일" id="toc-css-파일" class="nav-link" data-scroll-target="#css-파일"> <span class="header-section-number">3</span> css 파일</a></li>
-  <li><a href="#그래프" id="toc-그래프" class="nav-link" data-scroll-target="#그래프"> <span class="header-section-number">4</span> 그래프</a></li>
-  <li><a href="#표" id="toc-표" class="nav-link" data-scroll-target="#표"> <span class="header-section-number">5</span> 표</a></li>
+  <li><a href="#출판-문서" id="toc-출판-문서" class="nav-link" data-scroll-target="#출판-문서"><span class="toc-section-number">2</span>  출판 문서</a></li>
+  <li><a href="#css-파일" id="toc-css-파일" class="nav-link" data-scroll-target="#css-파일"><span class="toc-section-number">3</span>  css 파일</a></li>
+  <li><a href="#그래프" id="toc-그래프" class="nav-link" data-scroll-target="#그래프"><span class="toc-section-number">4</span>  그래프</a></li>
+  <li><a href="#표" id="toc-표" class="nav-link" data-scroll-target="#표"><span class="toc-section-number">5</span>  표</a></li>
   </ul>
 </nav>
     </div>
@@ -663,7 +703,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fhjzgwvkjh .gt_table {
+:where(#fhjzgwvkjh) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -688,7 +728,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_heading {
+:where(#fhjzgwvkjh) .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -700,7 +740,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_title {
+:where(#fhjzgwvkjh) .gt_title {
   color: #333333;
   font-size: 30px;
   font-weight: initial;
@@ -710,7 +750,7 @@ html {
   border-bottom-width: 0;
 }
 
-#fhjzgwvkjh .gt_subtitle {
+:where(#fhjzgwvkjh) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -720,13 +760,13 @@ html {
   border-top-width: 0;
 }
 
-#fhjzgwvkjh .gt_bottom_border {
+:where(#fhjzgwvkjh) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_col_headings {
+:where(#fhjzgwvkjh) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -741,7 +781,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_col_heading {
+:where(#fhjzgwvkjh) .gt_col_heading {
   color: #FFFFFF;
   background-color: #0000FF;
   font-size: 20px;
@@ -761,7 +801,7 @@ html {
   overflow-x: hidden;
 }
 
-#fhjzgwvkjh .gt_column_spanner_outer {
+:where(#fhjzgwvkjh) .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0000FF;
   font-size: 20px;
@@ -773,15 +813,15 @@ html {
   padding-right: 4px;
 }
 
-#fhjzgwvkjh .gt_column_spanner_outer:first-child {
+:where(#fhjzgwvkjh) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fhjzgwvkjh .gt_column_spanner_outer:last-child {
+:where(#fhjzgwvkjh) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fhjzgwvkjh .gt_column_spanner {
+:where(#fhjzgwvkjh) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -793,7 +833,7 @@ html {
   width: 100%;
 }
 
-#fhjzgwvkjh .gt_group_heading {
+:where(#fhjzgwvkjh) .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -815,7 +855,7 @@ html {
   vertical-align: middle;
 }
 
-#fhjzgwvkjh .gt_empty_group_heading {
+:where(#fhjzgwvkjh) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -830,15 +870,15 @@ html {
   vertical-align: middle;
 }
 
-#fhjzgwvkjh .gt_from_md > :first-child {
+:where(#fhjzgwvkjh) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fhjzgwvkjh .gt_from_md > :last-child {
+:where(#fhjzgwvkjh) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fhjzgwvkjh .gt_row {
+:where(#fhjzgwvkjh) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -857,7 +897,7 @@ html {
   overflow-x: hidden;
 }
 
-#fhjzgwvkjh .gt_stub {
+:where(#fhjzgwvkjh) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -869,7 +909,7 @@ html {
   padding-left: 12px;
 }
 
-#fhjzgwvkjh .gt_summary_row {
+:where(#fhjzgwvkjh) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -879,7 +919,7 @@ html {
   padding-right: 5px;
 }
 
-#fhjzgwvkjh .gt_first_summary_row {
+:where(#fhjzgwvkjh) .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -889,7 +929,7 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_grand_summary_row {
+:where(#fhjzgwvkjh) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -899,7 +939,7 @@ html {
   padding-right: 5px;
 }
 
-#fhjzgwvkjh .gt_first_grand_summary_row {
+:where(#fhjzgwvkjh) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -909,11 +949,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_striped {
+:where(#fhjzgwvkjh) .gt_striped {
   background-color: #9678B6;
 }
 
-#fhjzgwvkjh .gt_table_body {
+:where(#fhjzgwvkjh) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -922,7 +962,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_footnotes {
+:where(#fhjzgwvkjh) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -936,13 +976,13 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_footnote {
+:where(#fhjzgwvkjh) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#fhjzgwvkjh .gt_sourcenotes {
+:where(#fhjzgwvkjh) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -956,41 +996,41 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#fhjzgwvkjh .gt_sourcenote {
+:where(#fhjzgwvkjh) .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#fhjzgwvkjh .gt_left {
+:where(#fhjzgwvkjh) .gt_left {
   text-align: left;
 }
 
-#fhjzgwvkjh .gt_center {
+:where(#fhjzgwvkjh) .gt_center {
   text-align: center;
 }
 
-#fhjzgwvkjh .gt_right {
+:where(#fhjzgwvkjh) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fhjzgwvkjh .gt_font_normal {
+:where(#fhjzgwvkjh) .gt_font_normal {
   font-weight: normal;
 }
 
-#fhjzgwvkjh .gt_font_bold {
+:where(#fhjzgwvkjh) .gt_font_bold {
   font-weight: bold;
 }
 
-#fhjzgwvkjh .gt_font_italic {
+:where(#fhjzgwvkjh) .gt_font_italic {
   font-style: italic;
 }
 
-#fhjzgwvkjh .gt_super {
+:where(#fhjzgwvkjh) .gt_super {
   font-size: 65%;
 }
 
-#fhjzgwvkjh .gt_footnote_marks {
+:where(#fhjzgwvkjh) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1108,10 +1148,10 @@ html {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1" role="doc-endnote"><p><a href="https://blog.adobe.com/ko/publish/2017/08/21/whats-in-a-fonts-can-define-your-design.html#gs.u0he6a">Adobe Korea (August 21, 2017), “글꼴의 기능과 디자인에 적합한 글꼴 선택 방법”</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://blog.adobe.com/ko/publish/2017/08/21/whats-in-a-fonts-can-define-your-design.html#gs.u0he6a">Adobe Korea (August 21, 2017), “글꼴의 기능과 디자인에 적합한 글꼴 선택 방법”</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1155,7 +1195,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1183,31 +1240,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

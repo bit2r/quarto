@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.2.237">
 <title>Quarto 데이터 사이언스 – index</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,10 +18,15 @@
 <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -59,7 +64,7 @@
     code span { color: #545454; } /* Normal */
     code span.al { color: #7928a1; } /* Alert */
     code span.an { color: #696969; } /* Annotation */
-    code span.at { color: #aa5d00; } /* Attribute */
+    code span.at { color: #a55a00; } /* Attribute */
     code span.bn { color: #7928a1; } /* BaseN */
     code span.bu { } /* BuiltIn */
     code span.cf { color: #d91e18; } /* ControlFlow */
@@ -72,18 +77,18 @@
     code span.dv { color: #7928a1; } /* DecVal */
     code span.er { color: #7928a1; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #aa5d00; } /* Float */
+    code span.fl { color: #a55a00; } /* Float */
     code span.fu { color: #06287e; } /* Function */
     code span.im { } /* Import */
     code span.in { color: #696969; } /* Information */
     code span.kw { color: #d91e18; } /* Keyword */
-    code span.op { color: #007faa; } /* Operator */
+    code span.op { color: #00769e; } /* Operator */
     code span.ot { color: #d91e18; } /* Other */
     code span.pp { color: #7928a1; } /* Preprocessor */
-    code span.sc { color: #007faa; } /* SpecialChar */
+    code span.sc { color: #00769e; } /* SpecialChar */
     code span.ss { color: #008000; } /* SpecialString */
     code span.st { color: #008000; } /* String */
-    code span.va { color: #aa5d00; } /* Variable */
+    code span.va { color: #a55a00; } /* Variable */
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
@@ -377,7 +382,7 @@
       margin-right: 0; 
     }
   </style>
-<meta name="twitter:title" content="데이터 사이언스와 디자인">
+<meta name="twitter:title" content="">
 <meta name="twitter:description" content="디자인과 아키텍쳐의 중요성">
 <meta name="twitter:url" content="https://jthomasmock.github.io/arrow-dplyr/#/">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/jthomasmock/arrow-dplyr/master/index-img.png">
@@ -385,7 +390,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@thomas_mock">
 <meta name="twitter:site" content="@thomas_mock">
-<meta property="og:title" content="데이터 사이언스와 디자인">
+<meta property="og:title" content="">
 <meta property="og:description" content="디자인과 아키텍쳐의 중요성">
 <meta property="og:url" content="https://jthomasmock.github.io/arrow-dplyr/#/">
 <meta property="og:image" content="https://raw.githubusercontent.com/jthomasmock/arrow-dplyr/master/index-img.png">
@@ -464,21 +469,21 @@
 <div id="tabset-2-1">
 <div id="fig-problem" class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="../fig/single-sourcing-problem.jpg" style="width:50.0%"></p>
-<p></p><figcaption>Figure 1: 문제점</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;1: 문제점</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div id="tabset-2-2">
 <div id="fig-concept" class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="../fig/single-sourcing-concept.jpg" style="width:50.0%"></p>
-<p></p><figcaption>Figure 2: Single Sourcing 개념</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;2: Single Sourcing 개념</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div id="tabset-2-3">
 <div id="fig-publishing" class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="../fig/single-sourcing-publishing.jpg" style="width:60.0%"></p>
-<p></p><figcaption>Figure 3: Single Sourcing Multi-Use</figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;3: Single Sourcing Multi-Use</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -508,7 +513,7 @@
 </div>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p><a href="https://www.explainxkcd.com/wiki/index.php/1667:_Algorithms">XKCD 1667: Algorithms</a></p></li><li id="fn2" role="doc-endnote"><p><a href="https://blog.kdheepak.com/writing-papers-with-markdown.html">Writing Technical Papers with Markdown and Pandoc</a></p></li></ol></aside></section><section id="시각화---그래프-문법" class="slide level2"><h2>시각화 - 그래프 문법 <sup>1</sup>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://www.explainxkcd.com/wiki/index.php/1667:_Algorithms">XKCD 1667: Algorithms</a></p></li><li id="fn2"><p><a href="https://blog.kdheepak.com/writing-papers-with-markdown.html">Writing Technical Papers with Markdown and Pandoc</a></p></li></ol></aside></section><section id="시각화---그래프-문법" class="slide level2"><h2>시각화 - 그래프 문법 <sup>1</sup>
 </h2>
 <div class="panel-tabset">
 <!-- 데이터  -->
@@ -559,7 +564,7 @@
 <h3 id="실행결과-1">실행결과</h3>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -598,13 +603,13 @@
 <h3 id="실행결과-2">실행결과</h3>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn3" role="doc-endnote"><p>Comparing ggplot2 and R Base Graphics By <a href="https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/">Nathan Yau</a></p></li></ol></aside></section><section id="디자인---코드" class="slide level2"><h2>디자인 - 코드</h2>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Comparing ggplot2 and R Base Graphics By <a href="https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/">Nathan Yau</a></p></li></ol></aside></section><section id="디자인---코드" class="slide level2"><h2>디자인 - 코드</h2>
 <div class="panel-tabset">
 <ul id="tabset-5" class="panel-tabset-tabby">
 <li><a data-tabby-default="" href="#tabset-5-1">데이터 가공</a></li>
@@ -1056,12 +1061,15 @@
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -1072,13 +1080,6 @@
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -1128,7 +1129,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -1158,31 +1176,50 @@
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.2.237">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -54,7 +59,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -67,7 +72,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -156,22 +161,28 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Quarto 데이터 사이언스</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quarto_blog.html">Blog</a>
+    <a class="nav-link" href="./quarto_blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quarto</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
         <li>
     <a class="dropdown-item" href="./quarto_install.html">
@@ -184,7 +195,9 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">글쓰기</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">글쓰기</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
     <a class="dropdown-item" href="./writing_history.html">
@@ -217,7 +230,9 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">관련 정보</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">관련 정보</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
     <a class="dropdown-item" href="https://use-r.kr/">
@@ -244,22 +259,23 @@ div.csl-indent {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://r2bit.com">R사용자회</a>
+    <a class="nav-link" href="https://r2bit.com">
+ <span class="menu-text">R사용자회</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -285,7 +301,7 @@ div.csl-indent {
     
   <div class="quarto-title-meta-author">
     <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
+    <div class="quarto-title-meta-heading"></div>
     
       <div class="quarto-title-meta-contents">
       <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
@@ -302,6 +318,7 @@ div.csl-indent {
   <div class="quarto-title-meta">
 
         
+    
       
     </div>
     
@@ -361,26 +378,41 @@ div.csl-indent {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">코딩(Computation)</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">코드 덩어리</a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#웹-표준-인코딩" id="toc-웹-표준-인코딩" class="nav-link active" data-scroll-target="#웹-표준-인코딩"> <span class="header-section-number">1</span> 웹 표준 인코딩</a></li>
-  <li><a href="#유니코드와-utf-8" id="toc-유니코드와-utf-8" class="nav-link" data-scroll-target="#유니코드와-utf-8"> <span class="header-section-number">2</span> 유니코드와 UTF-8</a></li>
-  <li><a href="#r-4.2" id="toc-r-4.2" class="nav-link" data-scroll-target="#r-4.2"> <span class="header-section-number">3</span> R 4.2</a></li>
-  <li><a href="#문자표" id="toc-문자표" class="nav-link" data-scroll-target="#문자표"> <span class="header-section-number">4</span> 문자표</a>
+  <li><a href="#웹-표준-인코딩" id="toc-웹-표준-인코딩" class="nav-link active" data-scroll-target="#웹-표준-인코딩"><span class="toc-section-number">1</span>  웹 표준 인코딩</a></li>
+  <li><a href="#유니코드와-utf-8" id="toc-유니코드와-utf-8" class="nav-link" data-scroll-target="#유니코드와-utf-8"><span class="toc-section-number">2</span>  유니코드와 UTF-8</a></li>
+  <li><a href="#r-4.2" id="toc-r-4.2" class="nav-link" data-scroll-target="#r-4.2"><span class="toc-section-number">3</span>  R 4.2</a></li>
+  <li><a href="#문자표" id="toc-문자표" class="nav-link" data-scroll-target="#문자표"><span class="toc-section-number">4</span>  문자표</a>
   <ul class="collapse">
-  <li><a href="#ascii-문자" id="toc-ascii-문자" class="nav-link" data-scroll-target="#ascii-문자"> <span class="header-section-number">4.1</span> ASCII 문자</a></li>
-  <li><a href="#확장-ascii-문자" id="toc-확장-ascii-문자" class="nav-link" data-scroll-target="#확장-ascii-문자"> <span class="header-section-number">4.2</span> 확장 ASCII 문자</a></li>
-  <li><a href="#유니코드" id="toc-유니코드" class="nav-link" data-scroll-target="#유니코드"> <span class="header-section-number">4.3</span> 유니코드</a>
+  <li><a href="#ascii-문자" id="toc-ascii-문자" class="nav-link" data-scroll-target="#ascii-문자"><span class="toc-section-number">4.1</span>  ASCII 문자</a></li>
+  <li><a href="#확장-ascii-문자" id="toc-확장-ascii-문자" class="nav-link" data-scroll-target="#확장-ascii-문자"><span class="toc-section-number">4.2</span>  확장 ASCII 문자</a></li>
+  <li><a href="#유니코드" id="toc-유니코드" class="nav-link" data-scroll-target="#유니코드"><span class="toc-section-number">4.3</span>  유니코드</a>
   <ul class="collapse">
-  <li><a href="#영문자" id="toc-영문자" class="nav-link" data-scroll-target="#영문자"> <span class="header-section-number">4.3.1</span> 영문자</a></li>
-  <li><a href="#한글" id="toc-한글" class="nav-link" data-scroll-target="#한글"> <span class="header-section-number">4.3.2</span> 한글</a></li>
+  <li><a href="#영문자" id="toc-영문자" class="nav-link" data-scroll-target="#영문자"><span class="toc-section-number">4.3.1</span>  영문자</a></li>
+  <li><a href="#한글" id="toc-한글" class="nav-link" data-scroll-target="#한글"><span class="toc-section-number">4.3.2</span>  한글</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -396,7 +428,7 @@ div.csl-indent {
 <h1 data-number="1"><span class="header-section-number">1</span> 웹 표준 인코딩</h1>
 <p>스마트폰의 대중화에 따라 더이상 윈도우 운영체제에서 사용되는 문자체계가 더이상 표준이 되지 못하고 여러 문제점을 야기함에 따라 <strong>유니코드 + UTF-8</strong> 체제가 대세로 자리잡고 있는 것이 확연히 나타나고 있다.</p>
 <p>2010년 구글에서 <a href="https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">발표</a>한 자료에 의하면 2010년 UTF-8 인코딩이 웹에서 주류로 부상하기 시작한 것이 확인되었다. <span class="citation" data-cites="unicode2010">(<a href="#ref-unicode2010" role="doc-biblioref">Davis, 2010</a>)</span> 웹기반 플롯 디지털 도구를 활용하여 그래프(<a href="https://apps.automeris.io/wpd/">WebPlotDigitizer</a>)에서 데이터를 추출하여 시각화면 유사한 결과를 시각적으로 표현할 수 있다.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">데이터 출처: <a href="https://w3techs.com/technologies/history_overview/character_encoding/ms/y">Historical yearly trends in the usage statistics of character encodings for websites</a></span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">데이터 출처: <a href="https://w3techs.com/technologies/history_overview/character_encoding/ms/y">Historical yearly trends in the usage statistics of character encodings for websites</a></span></div></div>
 <p>2010년 이후 웹에서 가장 점유율이 높은 인코딩 방식은 UTF-8으로 W3Tech Web Technology Surveys 를 통해 확인을 할 수 있다.</p>
 <div class="cell">
 <details>
@@ -509,7 +541,7 @@ div.csl-indent {
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/encoding_unicode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="유니코드와 UTF-8"><img src="images/encoding_unicode.png" class="img-fluid figure-img"></a></p>
+<p><a href="images/encoding_unicode.png" class="lightbox" title="유니코드와 UTF-8" data-gallery="quarto-lightbox-gallery-2"><img src="images/encoding_unicode.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">유니코드와 UTF-8</figcaption><p></p>
 </figure>
 </div>
@@ -552,7 +584,7 @@ div.csl-indent {
 <section id="r-4.2" class="level1 page-columns page-full" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> R 4.2</h1>
 <p>R 4.2 버전은 그 이전 R과 달리 크게 변화된 문자체계를 갖고 있다. R 언어로 통계 및 데이터 과학 작업을 할 경우 크게 3개 문자표(Character Map)가 중요하다. 사실 다른 언어권의 문자도 유사하게 생각하여 확장할 수도 있다.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">Alex Farach, “Let’s start at the beginning - bits to character encoding in R”, rstudio::conf(2022)</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Alex Farach, “Let’s start at the beginning - bits to character encoding in R”, rstudio::conf(2022)</span></div></div>
 <ul>
 <li>ASCII: 7 비트 = <span class="math inline">\(2^7 = 128\)</span> 문자</li>
 <li>Latin1 (ISO-8859-1): 8 비트 = <span class="math inline">\(2^8 = 256\)</span> 문자</li>
@@ -711,7 +743,7 @@ $system.codepage
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#znyunsogxw .gt_table {
+:where(#znyunsogxw) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -736,7 +768,7 @@ $system.codepage
   border-left-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_heading {
+:where(#znyunsogxw) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -748,7 +780,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_title {
+:where(#znyunsogxw) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -760,7 +792,7 @@ $system.codepage
   border-bottom-width: 0;
 }
 
-#znyunsogxw .gt_subtitle {
+:where(#znyunsogxw) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -772,13 +804,13 @@ $system.codepage
   border-top-width: 0;
 }
 
-#znyunsogxw .gt_bottom_border {
+:where(#znyunsogxw) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_col_headings {
+:where(#znyunsogxw) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -793,7 +825,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_col_heading {
+:where(#znyunsogxw) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -813,7 +845,7 @@ $system.codepage
   overflow-x: hidden;
 }
 
-#znyunsogxw .gt_column_spanner_outer {
+:where(#znyunsogxw) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -825,15 +857,15 @@ $system.codepage
   padding-right: 4px;
 }
 
-#znyunsogxw .gt_column_spanner_outer:first-child {
+:where(#znyunsogxw) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#znyunsogxw .gt_column_spanner_outer:last-child {
+:where(#znyunsogxw) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#znyunsogxw .gt_column_spanner {
+:where(#znyunsogxw) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -845,7 +877,7 @@ $system.codepage
   width: 100%;
 }
 
-#znyunsogxw .gt_group_heading {
+:where(#znyunsogxw) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -870,7 +902,7 @@ $system.codepage
   vertical-align: middle;
 }
 
-#znyunsogxw .gt_empty_group_heading {
+:where(#znyunsogxw) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -885,15 +917,15 @@ $system.codepage
   vertical-align: middle;
 }
 
-#znyunsogxw .gt_from_md > :first-child {
+:where(#znyunsogxw) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#znyunsogxw .gt_from_md > :last-child {
+:where(#znyunsogxw) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#znyunsogxw .gt_row {
+:where(#znyunsogxw) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -912,7 +944,7 @@ $system.codepage
   overflow-x: hidden;
 }
 
-#znyunsogxw .gt_stub {
+:where(#znyunsogxw) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -925,7 +957,7 @@ $system.codepage
   padding-right: 5px;
 }
 
-#znyunsogxw .gt_stub_row_group {
+:where(#znyunsogxw) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -939,11 +971,11 @@ $system.codepage
   vertical-align: top;
 }
 
-#znyunsogxw .gt_row_group_first td {
+:where(#znyunsogxw) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#znyunsogxw .gt_summary_row {
+:where(#znyunsogxw) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -953,16 +985,16 @@ $system.codepage
   padding-right: 5px;
 }
 
-#znyunsogxw .gt_first_summary_row {
+:where(#znyunsogxw) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_first_summary_row.thick {
+:where(#znyunsogxw) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#znyunsogxw .gt_last_summary_row {
+:where(#znyunsogxw) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -972,7 +1004,7 @@ $system.codepage
   border-bottom-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_grand_summary_row {
+:where(#znyunsogxw) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -982,7 +1014,7 @@ $system.codepage
   padding-right: 5px;
 }
 
-#znyunsogxw .gt_first_grand_summary_row {
+:where(#znyunsogxw) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -992,11 +1024,11 @@ $system.codepage
   border-top-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_striped {
+:where(#znyunsogxw) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#znyunsogxw .gt_table_body {
+:where(#znyunsogxw) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1005,7 +1037,7 @@ $system.codepage
   border-bottom-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_footnotes {
+:where(#znyunsogxw) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1019,7 +1051,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_footnote {
+:where(#znyunsogxw) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1028,7 +1060,7 @@ $system.codepage
   padding-right: 5px;
 }
 
-#znyunsogxw .gt_sourcenotes {
+:where(#znyunsogxw) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1042,7 +1074,7 @@ $system.codepage
   border-right-color: #D3D3D3;
 }
 
-#znyunsogxw .gt_sourcenote {
+:where(#znyunsogxw) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1050,64 +1082,64 @@ $system.codepage
   padding-right: 5px;
 }
 
-#znyunsogxw .gt_left {
+:where(#znyunsogxw) .gt_left {
   text-align: left;
 }
 
-#znyunsogxw .gt_center {
+:where(#znyunsogxw) .gt_center {
   text-align: center;
 }
 
-#znyunsogxw .gt_right {
+:where(#znyunsogxw) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#znyunsogxw .gt_font_normal {
+:where(#znyunsogxw) .gt_font_normal {
   font-weight: normal;
 }
 
-#znyunsogxw .gt_font_bold {
+:where(#znyunsogxw) .gt_font_bold {
   font-weight: bold;
 }
 
-#znyunsogxw .gt_font_italic {
+:where(#znyunsogxw) .gt_font_italic {
   font-style: italic;
 }
 
-#znyunsogxw .gt_super {
+:where(#znyunsogxw) .gt_super {
   font-size: 65%;
 }
 
-#znyunsogxw .gt_footnote_marks {
+:where(#znyunsogxw) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#znyunsogxw .gt_asterisk {
+:where(#znyunsogxw) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#znyunsogxw .gt_indent_1 {
+:where(#znyunsogxw) .gt_indent_1 {
   text-indent: 5px;
 }
 
-#znyunsogxw .gt_indent_2 {
+:where(#znyunsogxw) .gt_indent_2 {
   text-indent: 10px;
 }
 
-#znyunsogxw .gt_indent_3 {
+:where(#znyunsogxw) .gt_indent_3 {
   text-indent: 15px;
 }
 
-#znyunsogxw .gt_indent_4 {
+:where(#znyunsogxw) .gt_indent_4 {
   text-indent: 20px;
 }
 
-#znyunsogxw .gt_indent_5 {
+:where(#znyunsogxw) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1395,7 +1427,7 @@ $system.codepage
 <section id="영문자" class="level3 page-columns page-full" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="영문자"><span class="header-section-number">4.3.1</span> 영문자</h3>
 <p>영문자를 유니코드에서 찾아 살펴보자. 영문자는 라틴 계열이라 라틴계열에 포함된 문자를 뽑아서 유니코드 범위를 정해서 유니코드 범위에 포함된 문자를 사람이 읽을 수 있는 문자로 화면에 일부만 출력한다.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">코드 참조: <a href="https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters">How to generate all possible unicode characters?</a></span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">코드 참조: <a href="https://stackoverflow.com/questions/71587307/how-to-generate-all-possible-unicode-characters">How to generate all possible unicode characters?</a></span></div></div>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -1553,7 +1585,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1581,31 +1630,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
@@ -1615,7 +1683,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});</script>
 
 
 

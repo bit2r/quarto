@@ -2,22 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.2.237">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="dcterms.date" content="2022-08-31">
+<meta name="dcterms.date" content="2022-11-07">
 <meta name="description" content="디지털 글쓰기의 첫 걸음을 함께 해봅니다.">
 
 <title>Quarto 데이터 사이언스 - 디지털 글쓰기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -60,8 +65,8 @@ ul.task-list{list-style: none;}
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="twitter:title" content="Quarto 데이터 사이언스 - 디지털 글쓰기">
-<meta name="twitter:description" content="디지털 글쓰기의 첫 걸음을 함께 해봅니다.">
-<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:description" content="한글 Quarto 첫걸음">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
 <meta name="twitter:image-width" content="1388">
@@ -73,22 +78,28 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Quarto 데이터 사이언스</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">Home</a>
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../quarto_blog.html">Blog</a>
+    <a class="nav-link" href="../quarto_blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quarto</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
         <li>
     <a class="dropdown-item" href="../quarto_install.html">
@@ -101,8 +112,18 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">모듈</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">글쓰기</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../writing_history.html">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../hangul_encoding.html">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../quarto_fonts.html">
  <span class="dropdown-text">글꼴</span></a>
@@ -126,7 +147,9 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">관련 정보</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">관련 정보</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
     <a class="dropdown-item" href="https://use-r.kr/">
@@ -153,22 +176,23 @@ ul.task-list{list-style: none;}
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://r2bit.com">R사용자회</a>
+    <a class="nav-link" href="https://r2bit.com">
+ <span class="menu-text">R사용자회</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -199,7 +223,7 @@ ul.task-list{list-style: none;}
     
   <div class="quarto-title-meta-author">
     <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
+    <div class="quarto-title-meta-heading"></div>
     
       <div class="quarto-title-meta-contents">
       <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
@@ -219,9 +243,10 @@ ul.task-list{list-style: none;}
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 31, 2022</p>
+        <p class="date">November 7, 2022</p>
       </div>
     </div>
+    
       
     </div>
     
@@ -281,20 +306,35 @@ ul.task-list{list-style: none;}
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">코딩(Computation)</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computation/index.html" class="sidebar-item-text sidebar-link">코드 덩어리</a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
-  <ul>
-  <li><a href="#디지털-문서-제작-패러다임" id="toc-디지털-문서-제작-패러다임" class="nav-link active" data-scroll-target="#디지털-문서-제작-패러다임"> <span class="header-section-number">1</span> 디지털 문서 제작 패러다임</a></li>
-  <li><a href="#문서로-보는-민주주의" id="toc-문서로-보는-민주주의" class="nav-link" data-scroll-target="#문서로-보는-민주주의"> <span class="header-section-number">2</span> 문서로 보는 민주주의</a></li>
-  <li><a href="#디지털-문서-저작" id="toc-디지털-문서-저작" class="nav-link" data-scroll-target="#디지털-문서-저작"> <span class="header-section-number">3</span> 디지털 문서 저작</a></li>
-  <li><a href="#과학문서-저작" id="toc-과학문서-저작" class="nav-link" data-scroll-target="#과학문서-저작"> <span class="header-section-number">4</span> 과학문서 저작</a></li>
-  <li><a href="#사례-한국-r-컨퍼런스2021" id="toc-사례-한국-r-컨퍼런스2021" class="nav-link" data-scroll-target="#사례-한국-r-컨퍼런스2021"> <span class="header-section-number">5</span> 사례: 한국 R 컨퍼런스(2021)</a></li>
+  <ul class="collapse">
+  <li><a href="#디지털-문서-제작-패러다임" id="toc-디지털-문서-제작-패러다임" class="nav-link active" data-scroll-target="#디지털-문서-제작-패러다임"><span class="toc-section-number">1</span>  디지털 문서 제작 패러다임</a></li>
+  <li><a href="#문서로-보는-민주주의" id="toc-문서로-보는-민주주의" class="nav-link" data-scroll-target="#문서로-보는-민주주의"><span class="toc-section-number">2</span>  문서로 보는 민주주의</a></li>
+  <li><a href="#디지털-문서-저작" id="toc-디지털-문서-저작" class="nav-link" data-scroll-target="#디지털-문서-저작"><span class="toc-section-number">3</span>  디지털 문서 저작</a></li>
+  <li><a href="#과학문서-저작" id="toc-과학문서-저작" class="nav-link" data-scroll-target="#과학문서-저작"><span class="toc-section-number">4</span>  과학문서 저작</a></li>
+  <li><a href="#사례-한국-r-컨퍼런스2021" id="toc-사례-한국-r-컨퍼런스2021" class="nav-link" data-scroll-target="#사례-한국-r-컨퍼런스2021"><span class="toc-section-number">5</span>  사례: 한국 R 컨퍼런스(2021)</a></li>
   </ul>
 </nav>
     </div>
@@ -309,7 +349,7 @@ ul.task-list{list-style: none;}
 <p>신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 <strong>위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)</strong>에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.</p>
 <p>위지윅의 대척점에 있는 것이 <strong>위지윔(WYSIWYM, What You See Is What You Mean)</strong>으로 대표적인 것인 <span class="math inline">\(\LaTeX\)</span> 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.</p>
 <p><span class="math inline">\(\LaTeX\)</span>이 갖는 장점은 이제 프로그래밍 코드(R/파이썬/SQL/쉘스크립트/자바스크립트 등)을 문서저작에 포함되며 <strong>literate programming</strong> 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">이미지 출처: http://www.cbinews.co.kr/news/articleView.html?idxno=36859</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">이미지 출처: http://www.cbinews.co.kr/news/articleView.html?idxno=36859</span></div></div>
 <p><img src="../fig/digital-writing-paradigm-shift.png" class="img-fluid"></p>
 </section>
 <section id="문서로-보는-민주주의" class="level1" data-number="2">
@@ -403,7 +443,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -431,31 +488,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

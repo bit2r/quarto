@@ -84,7 +84,7 @@ website:
       - section: "코딩(Computation)"
         contents:
           - href: computation/index.qmd
-            text: "코드 덩어리"
+            text: "코딩 (계산)"
 
 format:
   html:

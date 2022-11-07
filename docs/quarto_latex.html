@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.2.237">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -54,7 +59,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -67,7 +72,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -141,7 +146,7 @@ div.csl-indent {
 
 <meta name="twitter:title" content="Quarto 데이터 사이언스 - 한글 LaTeX">
 <meta name="twitter:description" content="한글 Quarto 첫걸음">
-<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
 <meta name="twitter:image-width" content="1388">
@@ -153,22 +158,28 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Quarto 데이터 사이언스</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quarto_blog.html">Blog</a>
+    <a class="nav-link" href="./quarto_blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quarto</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
         <li>
     <a class="dropdown-item" href="./quarto_install.html">
@@ -181,8 +192,18 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">모듈</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">글쓰기</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./quarto_fonts.html">
  <span class="dropdown-text">글꼴</span></a>
@@ -206,7 +227,9 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">관련 정보</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">관련 정보</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
     <a class="dropdown-item" href="https://use-r.kr/">
@@ -233,22 +256,23 @@ div.csl-indent {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://r2bit.com">R사용자회</a>
+    <a class="nav-link" href="https://r2bit.com">
+ <span class="menu-text">R사용자회</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -274,7 +298,7 @@ div.csl-indent {
     
   <div class="quarto-title-meta-author">
     <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
+    <div class="quarto-title-meta-heading"></div>
     
       <div class="quarto-title-meta-contents">
       <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
@@ -291,6 +315,7 @@ div.csl-indent {
   <div class="quarto-title-meta">
 
         
+    
       
     </div>
     
@@ -350,24 +375,39 @@ div.csl-indent {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">코딩(Computation)</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">코드 덩어리</a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
-  <ul>
-  <li><a href="#출판-디지털-전환" id="toc-출판-디지털-전환" class="nav-link active" data-scroll-target="#출판-디지털-전환"> <span class="header-section-number">1</span> 출판 디지털 전환</a></li>
-  <li><a href="#latex-knuth" id="toc-latex-knuth" class="nav-link" data-scroll-target="#latex-knuth"> <span class="header-section-number">2</span> <span class="math inline">\(\LaTeX\)</span> 개요</a></li>
-  <li><a href="#quarto-pdf" id="toc-quarto-pdf" class="nav-link" data-scroll-target="#quarto-pdf"> <span class="header-section-number">3</span> Quarto PDF</a>
   <ul class="collapse">
-  <li><a href="#latex-엔진" id="toc-latex-엔진" class="nav-link" data-scroll-target="#latex-엔진"> <span class="header-section-number">3.1</span> <span class="math inline">\(\LaTeX\)</span> 엔진</a></li>
-  <li><a href="#yaml-파일" id="toc-yaml-파일" class="nav-link" data-scroll-target="#yaml-파일"> <span class="header-section-number">3.2</span> YAML 파일</a></li>
-  <li><a href="#저작" id="toc-저작" class="nav-link" data-scroll-target="#저작"> <span class="header-section-number">3.3</span> 저작</a></li>
+  <li><a href="#출판-디지털-전환" id="toc-출판-디지털-전환" class="nav-link active" data-scroll-target="#출판-디지털-전환"><span class="toc-section-number">1</span>  출판 디지털 전환</a></li>
+  <li><a href="#latex-knuth" id="toc-latex-knuth" class="nav-link" data-scroll-target="#latex-knuth"><span class="toc-section-number">2</span>  <span class="math inline">\(\LaTeX\)</span> 개요</a></li>
+  <li><a href="#quarto-pdf" id="toc-quarto-pdf" class="nav-link" data-scroll-target="#quarto-pdf"><span class="toc-section-number">3</span>  Quarto PDF</a>
+  <ul class="collapse">
+  <li><a href="#latex-엔진" id="toc-latex-엔진" class="nav-link" data-scroll-target="#latex-엔진"><span class="toc-section-number">3.1</span>  <span class="math inline">\(\LaTeX\)</span> 엔진</a></li>
+  <li><a href="#yaml-파일" id="toc-yaml-파일" class="nav-link" data-scroll-target="#yaml-파일"><span class="toc-section-number">3.2</span>  YAML 파일</a></li>
+  <li><a href="#저작" id="toc-저작" class="nav-link" data-scroll-target="#저작"><span class="toc-section-number">3.3</span>  저작</a></li>
   </ul></li>
-  <li><a href="#한글-글꼴" id="toc-한글-글꼴" class="nav-link" data-scroll-target="#한글-글꼴"> <span class="header-section-number">4</span> 한글 글꼴</a></li>
+  <li><a href="#한글-글꼴" id="toc-한글-글꼴" class="nav-link" data-scroll-target="#한글-글꼴"><span class="toc-section-number">4</span>  한글 글꼴</a></li>
   </ul>
 </nav>
     </div>
@@ -497,7 +537,7 @@ Danger
 <div id="fig-penguins" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig/penguin_species.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 1: Allison Horst 박사가 그린 펭귄 3종 도식화</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Allison Horst 박사가 그린 펭귄 3종 도식화</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -505,7 +545,7 @@ Danger
 <div id="fig-bill" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig/culmen_depth.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 2: 펭귄 부리(bill) 변수 설명</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: 펭귄 부리(bill) 변수 설명</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -724,11 +764,11 @@ Gorman, K. B., Williams, T. D., &amp; Fraser, W. R. (2014). Ecological sexual di
 <div id="ref-palmer-penguins" class="csl-entry" role="doc-biblioentry">
 Horst, A. M., Hill, A. P., &amp; Gorman, K. B. (2020). <em>Palmerpenguins: Palmer archipelago (antarctica) penguin data</em>. <a href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a>
 </div>
-</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1" role="doc-endnote"><p><a href="http://wiki.ktug.org/wiki/wiki.php/ModernLaTeX">Modern LaTeX</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p><a href="http://www.ntg.nl/maps/11/18.pdf">What is TeX and Metafont all about?</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="http://wiki.ktug.org/wiki/wiki.php/ModernLaTeX">Modern LaTeX</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="http://www.ntg.nl/maps/11/18.pdf">What is TeX and Metafont all about?</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -772,7 +812,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -800,31 +857,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

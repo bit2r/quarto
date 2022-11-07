@@ -1,45 +1,45 @@
 [
   {
-    "objectID": "Quarto_penguin.html",
-    "href": "Quarto_penguin.html",
-    "title": "Quarto 기본사용법",
+    "objectID": "computation/index.html",
+    "href": "computation/index.html",
+    "title": "코딩 (계산)",
     "section": "",
-    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
-  },
-  {
-    "objectID": "Quarto_penguin.html#데이터-선택",
-    "href": "Quarto_penguin.html#데이터-선택",
-    "title": "Quarto 기본사용법",
-    "section": "1.1 데이터 선택",
-    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
-  },
-  {
-    "objectID": "Quarto_penguin.html#데이터와-패키지-불러오기",
-    "href": "Quarto_penguin.html#데이터와-패키지-불러오기",
-    "title": "Quarto 기본사용법",
-    "section": "1.2 데이터와 패키지 불러오기",
-    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year\n  <chr>   <chr>              <dbl>         <dbl>       <dbl>   <dbl> <chr> <dbl>\n1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007\n2 Adelie  Torgersen           39.5          17.4         186    3800 fema…  2007\n3 Adelie  Torgersen           40.3          18           195    3250 fema…  2007\n4 Adelie  Torgersen           36.7          19.3         193    3450 fema…  2007\n5 Adelie  Torgersen           39.3          20.6         190    3650 male   2007\n6 Adelie  Torgersen           38.9          17.8         181    3625 fema…  2007\n# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
-  },
-  {
-    "objectID": "Quarto_penguin.html#요약-통계량",
-    "href": "Quarto_penguin.html#요약-통계량",
-    "title": "Quarto 기본사용법",
-    "section": "1.3 요약 통계량",
-    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
-  },
-  {
-    "objectID": "Quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
-    "href": "Quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
-    "title": "Quarto 기본사용법",
-    "section": "2.1 펭귄 체중과 물갈퀴 길이",
-    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
+    "text": "기존 특정 언어에 긍정적으로 보면 친화적인 부정적으로 보면 종속된 통합개발환경(IDE)를 활용하여 데이터 사이언스 개발작업을 수행했다면 다양한 언어를 활용하여 해당 문제를 해결해야하는 세상으로 급격히 넘어감에 따라 통합개발환경에 대한 이해도 새로 정립해야될 필요성이 부각되고 있다.\n\n\n특정 언어(C/C++, 자바스크립트, 파이썬, R, SQL 등)를 지원하는 통합개발환경이 존재하지만 특정언어에 많은 노력을 투여하는 개발자가 존재하는 반면 여러 언어를 통합개발하는 경우도 있어 각 업무별로 최적화된 통합개발환경 선정도 중요하다. 예를 들어, C/C++ 개발자는 코드블록, 자바스크립트는 웹스톰 혹은 VS 코드, 파이썬 개발자는 파이참, 주피터, R 개발자는 RStudio, SQL 개발자는 DB Visualizer 가 많은 개발자를 확보하고 있다.\n\n\n\n언어에 특화된 전용 통합개발환경\n\n\n\n\n\n특정 언어를 타지 않고 다양한 언어를 두루 지원하는 통합개발환경(RStudio, VS Code, 주피터, Vim/Emacs)을 활용하여 데이터 과학 저작이 가능하다. R/파이썬/SQL/자바스크립트 등 다양한 언어를 통합개발환경에서 유연하게 작업을 도와줄 수 있는 기능을 갖춘 도구가 필요하다."
   },
   {
     "objectID": "digital-writing-example.html",
     "href": "digital-writing-example.html",
     "title": "디지털 글쓰기",
     "section": "",
-    "text": "디지털 표 그리기\n디지털 글쓰기의 중요 요소인 표를 삽입해보자.\n\n\n\n구분\n설명\n비고\n\n\n\n\n동물\n개\n동물… 그리고 사람 비교\n\n\n동물\n고양이\n개 vs 고양이\n\n\n사람\n철수\n서울시 거주\n\n\n\n\n\n이미지도 삽입해야 합니다.\n\n\n\n상자이미지"
+    "text": "디지털 글쓰기\n디지털 글쓰기는 최근 들어 무척이나 관심을 가지고 있다.\n\n\n디지털 표 그리기\n디지털 글쓰기의 중요 요소인 표를 삽입해보자.\n\n\n\n구분\n설명\n비고\n\n\n\n\n동물\n개\n동물… 그리고 사람 비교\n\n\n동물\n고양이\n개 vs 고양이\n\n\n사람\n철수\n서울시 거주\n\n\n\n\n\n이미지도 삽입해야 합니다.\n\n\n\n상자이미지"
+  },
+  {
+    "objectID": "hangul_encoding.html",
+    "href": "hangul_encoding.html",
+    "title": "한글 인코딩",
+    "section": "",
+    "text": "스마트폰의 대중화에 따라 더이상 윈도우 운영체제에서 사용되는 문자체계가 더이상 표준이 되지 못하고 여러 문제점을 야기함에 따라 유니코드 + UTF-8 체제가 대세로 자리잡고 있는 것이 확연히 나타나고 있다.\n2010년 구글에서 발표한 자료에 의하면 2010년 UTF-8 인코딩이 웹에서 주류로 부상하기 시작한 것이 확인되었다. (Davis, 2010) 웹기반 플롯 디지털 도구를 활용하여 그래프(WebPlotDigitizer)에서 데이터를 추출하여 시각화면 유사한 결과를 시각적으로 표현할 수 있다.\n데이터 출처: Historical yearly trends in the usage statistics of character encodings for websites\n2010년 이후 웹에서 가장 점유율이 높은 인코딩 방식은 UTF-8으로 W3Tech Web Technology Surveys 를 통해 확인을 할 수 있다.\n\n\nCode\nlibrary(tidyverse)\nextrafont::loadfonts()\n\n## 1. 2000년부터 웹 인코딩 추세 ------------------\nascii <- read_csv(\"data/ascii_red.csv\", col_names = FALSE) %>% \n  set_names(c(\"연도\", \"ascii\"))\n\nascii_tbl <- ascii %>% \n  mutate(연도 = floor(연도)) %>% \n  group_by(연도) %>% \n  summarize(ascii = mean(ascii))\n\niso_8859 <- read_csv(\"data/iso_orange.csv\", col_names = FALSE) %>% \n  set_names(c(\"연도\", \"iso_8859\"))\n\niso_8859_tbl <- iso_8859 %>% \n  mutate(연도 = floor(연도)) %>% \n  group_by(연도) %>% \n  summarize(iso_8859 = mean(iso_8859))\n\nutf_8 <- read_csv(\"data/utf-8_blue.csv\", col_names = FALSE) %>% \n  set_names(c(\"연도\", \"utf_8\"))\n\nutf_8_tbl <- utf_8 %>% \n  mutate(연도 = floor(연도)) %>% \n  group_by(연도) %>% \n  summarize(utf_8 = mean(utf_8, na.rm = FALSE)) \n\nencoding_tbl <- left_join(ascii_tbl, iso_8859_tbl) %>% \n  left_join(utf_8_tbl) %>% \n  pivot_longer(cols = -연도) %>% \n  mutate(value = ifelse(is.na(value), 0, value)) %>% \n  filter(연도 <= 2009)\n\nencoding_2010_g <- encoding_tbl %>% \n  mutate(연도 = lubridate::make_date(year = 연도)) %>% \n  ggplot(aes(x = 연도, y = value, color = name)) +\n    geom_line() +\n    geom_point() +\n    theme_bw(base_family = \"MaruBuri\") +\n    labs(x = \"\",\n         y = \"점유율(%)\",\n         title = \"웹에서 UTF-8 성장세\",\n         subtitle = \"2010 ~ 2010년\",\n         color = \"인코딩\") +\n    scale_y_continuous(labels = scales::percent) +\n    scale_color_manual(values = c(\"ascii\" = \"gray50\", \"iso_8859\" = \"red\", \"utf_8\" = \"blue\")) +\n  theme(legend.position = \"top\") +\n  expand_limits(y = c(0, 1))\n\n## 2. 2010년부터 웹 인코딩 추세 ------------------\nlibrary(readxl)\n\nencoding_raw <- read_excel(\"data/web_encoding.xlsx\", \n                           col_types = \"text\")\n\nencoding_web <- encoding_raw %>% \n  janitor::clean_names(ascii = FALSE) %>% \n  pivot_longer(cols = -구분, names_to = \"연도\", values_to = \"점유율\") %>% \n  mutate(연도 = str_extract(연도, \"\\\\d{4}\") %>% as.integer(.)) %>% \n  mutate(점유율 = parse_number(점유율)) %>% \n  group_by(구분, 연도) %>% \n  summarise(점유율 = min(점유율, na.rm = TRUE)) %>% \n  ungroup()\n\nencoding_2022_g <- encoding_web %>% \n  filter(구분 %in% c(\"EUC-KR\", \"GB2312\", \"Shift JIS\", \"UTF-8\", \"ISO-8859-1\")) %>% \n  mutate(연도 = lubridate::make_date(year = 연도)) %>%   \n  ggplot(aes(x = 연도, y = 점유율, color = 구분)) +\n    geom_line() +\n    geom_point() +\n    theme_bw(base_family = \"MaruBuri\") +\n    labs(x = \"\",\n         y = \"점유율(%)\",\n         title = \"웹에서 UTF-8 성장세\",\n         subtitle = \"2011 ~ 2012년 3분기\",\n         color = \"인코딩\") +\n    scale_y_continuous(labels = scales::percent) +\n    scale_color_manual(values = c(\"EUC-KR\" = \"gray50\", \"GB2312\" = \"gray80\", \"Shift JIS\" = \"gray70\", \"ISO-8859-1\" = \"red\", \"UTF-8\" = \"blue\")) +\n  theme(legend.position = \"top\")   +\n  expand_limits(y = c(0, 1))\n\n## 3. 시각화 요약 ------------------\nlibrary(patchwork)\n\nencoding_2010_g + encoding_2022_g"
+  },
+  {
+    "objectID": "hangul_encoding.html#ascii-문자",
+    "href": "hangul_encoding.html#ascii-문자",
+    "title": "한글 인코딩",
+    "section": "4.1 ASCII 문자",
+    "text": "4.1 ASCII 문자\nASCII 총 \\(2^7=128\\) 문자 중 제어문자를 제외한 출력가능한 문자를 뽑아보자.\n\n\nCode\ncoderange <- c(33:126)\n\nascii_table <- tibble(\n 십진수   = coderange,\n 십육진수 = as.raw(coderange),\n 문자     = rawToChar(as.raw(coderange), multiple=TRUE),\n 이진수   = pryr::bits(문자, split = TRUE)\n) %>% \n  relocate(문자, .before = 십진수)\n\nascii_table %>% \n  slice_sample(n=30)\n\n\n# A tibble: 30 × 4\n   문자  십진수 십육진수 이진수  \n   <chr>  <int> <raw>    <chr>   \n 1 \"I\"       73 49       01001001\n 2 \"3\"       51 33       00110011\n 3 \"z\"      122 7a       01111010\n 4 \"S\"       83 53       01010011\n 5 \"#\"       35 23       00100011\n 6 \">\"       62 3e       00111110\n 7 \"\\\\\"      92 5c       01011100\n 8 \"b\"       98 62       01100010\n 9 \"w\"      119 77       01110111\n10 \"=\"       61 3d       00111101\n# … with 20 more rows\n\n\n출력가능한 ASCII 문자표를 33번부터 126번까지 문자 십진수 이진수 순으로 출력하면 다음과 같다.\n\n\nCode\nlibrary(mmtable2) # devtools::install_github(\"ianmoran11/mmtable2\")\n\nascii_table %>% \n  mutate(index = row_number()) %>% \n  mutate(x_grp = index %/% 10 ) %>%\n  mutate(y_grp = index %% 10 ) %>% \n  group_by(x_grp, y_grp) %>%\n  summarise(문자 = glue::glue(\"{문자} {십진수} {이진수}\") ) %>%\n  ungroup() %>%\n  mmtable(cells = 문자) +\n  header_left(x_grp) +\n  header_top(y_grp)\n\n\n\n\n\n\n  \n  \n    \n       \n        \n         \n          \n           \n            \n             \n              \n               \n                \n                 \n    \n  \n  \n    \n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n    0\n \n! 33 00100001\n\" 34 00100010\n# 35 00100011\n$ 36 00100100\n% 37 00100101\n& 38 00100110\n' 39 00100111\n( 40 00101000\n) 41 00101001\n    1\n* 42 00101010\n+ 43 00101011\n, 44 00101100\n- 45 00101101\n. 46 00101110\n/ 47 00101111\n0 48 00110000\n1 49 00110001\n2 50 00110010\n3 51 00110011\n    2\n4 52 00110100\n5 53 00110101\n6 54 00110110\n7 55 00110111\n8 56 00111000\n9 57 00111001\n: 58 00111010\n; 59 00111011\n< 60 00111100\n= 61 00111101\n    3\n> 62 00111110\n? 63 00111111\n@ 64 01000000\nA 65 01000001\nB 66 01000010\nC 67 01000011\nD 68 01000100\nE 69 01000101\nF 70 01000110\nG 71 01000111\n    4\nH 72 01001000\nI 73 01001001\nJ 74 01001010\nK 75 01001011\nL 76 01001100\nM 77 01001101\nN 78 01001110\nO 79 01001111\nP 80 01010000\nQ 81 01010001\n    5\nR 82 01010010\nS 83 01010011\nT 84 01010100\nU 85 01010101\nV 86 01010110\nW 87 01010111\nX 88 01011000\nY 89 01011001\nZ 90 01011010\n[ 91 01011011\n    6\n\\ 92 01011100\n] 93 01011101\n^ 94 01011110\n_ 95 01011111\n` 96 01100000\na 97 01100001\nb 98 01100010\nc 99 01100011\nd 100 01100100\ne 101 01100101\n    7\nf 102 01100110\ng 103 01100111\nh 104 01101000\ni 105 01101001\nj 106 01101010\nk 107 01101011\nl 108 01101100\nm 109 01101101\nn 110 01101110\no 111 01101111\n    8\np 112 01110000\nq 113 01110001\nr 114 01110010\ns 115 01110011\nt 116 01110100\nu 117 01110101\nv 118 01110110\nw 119 01110111\nx 120 01111000\ny 121 01111001\n    9\nz 122 01111010\n{ 123 01111011\n| 124 01111100\n} 125 01111101\n~ 126 01111110"
+  },
+  {
+    "objectID": "hangul_encoding.html#확장-ascii-문자",
+    "href": "hangul_encoding.html#확장-ascii-문자",
+    "title": "한글 인코딩",
+    "section": "4.2 확장 ASCII 문자",
+    "text": "4.2 확장 ASCII 문자\n확장 ASCII 총 \\(2^8=256\\) 문자 중 앞선 기본 ASCII를 제외한 나머지 확장문자표를 출력해보자.\n\n\nCode\ncoderange <- c(161:255)\n# iconv(extendedascii, from=\"Windows-1252\", to=\"UTF-8\") \n\nextended_ascii_table <- tibble(\n 십진수   = coderange,\n 십육진수 = as.raw(coderange),\n 문자     = rawToChar(as.raw(coderange), multiple=TRUE),\n 이진수   = pryr::bits(문자, split = TRUE)\n) %>% \n  relocate(문자, .before = 십진수) %>% \n  mutate(문자 = str_conv(문자, encoding = \"latin-1\")) \n\nextended_ascii_table  %>% \n  slice_sample(n=30)\n\n\n# A tibble: 30 × 4\n   문자  십진수 십육진수 이진수  \n   <chr>  <int> <raw>    <chr>   \n 1 ¤        164 a4       10100100\n 2 ÷        247 f7       11110111\n 3 æ        230 e6       11100110\n 4 Þ        222 de       11011110\n 5 ®        174 ae       10101110\n 6 Ý        221 dd       11011101\n 7 Ô        212 d4       11010100\n 8 Ä        196 c4       11000100\n 9 ¸        184 b8       10111000\n10 ç        231 e7       11100111\n# … with 20 more rows\n\n\n\n\nCode\nlibrary(mmtable2) # devtools::install_github(\"ianmoran11/mmtable2\")\n\nextended_ascii_table %>% \n  mutate(index = row_number()) %>% \n  mutate(x_grp = index %/% 10 ) %>%\n  mutate(y_grp = index %% 10 ) %>% \n  group_by(x_grp, y_grp) %>%\n  summarise(문자 = glue::glue(\"{문자}\\n{십진수}\\n {이진수}\") ) %>%\n  ungroup() %>%\n  ggplot(aes(x=x_grp, y=y_grp)) +\n    geom_text(aes(label = 문자), size = 3) +\n    theme_void(base_family = \"MaruBuri\")\n\n\n\n\n\n\n\n\n\n[참조: Ascii code table in R], ASCII Table with All 256 Character codes in decimal, hexadecimal, octal and binary"
+  },
+  {
+    "objectID": "hangul_encoding.html#유니코드",
+    "href": "hangul_encoding.html#유니코드",
+    "title": "한글 인코딩",
+    "section": "4.3 유니코드",
+    "text": "4.3 유니코드\nUnicode 패키지를 통해서 유니코드에 등록된 문자를 확인할 수 있다.\n\n\nCode\nlibrary(Unicode)\nlibrary(rlang)\n\nall_scripts <- u_scripts()\nnames(all_scripts)\n\n\n  [1] \"Adlam\"                  \"Ahom\"                   \"Anatolian_Hieroglyphs\" \n  [4] \"Arabic\"                 \"Armenian\"               \"Avestan\"               \n  [7] \"Balinese\"               \"Bamum\"                  \"Bassa_Vah\"             \n [10] \"Batak\"                  \"Bengali\"                \"Bhaiksuki\"             \n [13] \"Bopomofo\"               \"Brahmi\"                 \"Braille\"               \n [16] \"Buginese\"               \"Buhid\"                  \"Canadian_Aboriginal\"   \n [19] \"Carian\"                 \"Caucasian_Albanian\"     \"Chakma\"                \n [22] \"Cham\"                   \"Cherokee\"               \"Chorasmian\"            \n [25] \"Common\"                 \"Coptic\"                 \"Cuneiform\"             \n [28] \"Cypriot\"                \"Cypro_Minoan\"           \"Cyrillic\"              \n [31] \"Deseret\"                \"Devanagari\"             \"Dives_Akuru\"           \n [34] \"Dogra\"                  \"Duployan\"               \"Egyptian_Hieroglyphs\"  \n [37] \"Elbasan\"                \"Elymaic\"                \"Ethiopic\"              \n [40] \"Georgian\"               \"Glagolitic\"             \"Gothic\"                \n [43] \"Grantha\"                \"Greek\"                  \"Gujarati\"              \n [46] \"Gunjala_Gondi\"          \"Gurmukhi\"               \"Han\"                   \n [49] \"Hangul\"                 \"Hanifi_Rohingya\"        \"Hanunoo\"               \n [52] \"Hatran\"                 \"Hebrew\"                 \"Hiragana\"              \n [55] \"Imperial_Aramaic\"       \"Inherited\"              \"Inscriptional_Pahlavi\" \n [58] \"Inscriptional_Parthian\" \"Javanese\"               \"Kaithi\"                \n [61] \"Kannada\"                \"Katakana\"               \"Kawi\"                  \n [64] \"Kayah_Li\"               \"Kharoshthi\"             \"Khitan_Small_Script\"   \n [67] \"Khmer\"                  \"Khojki\"                 \"Khudawadi\"             \n [70] \"Lao\"                    \"Latin\"                  \"Lepcha\"                \n [73] \"Limbu\"                  \"Linear_A\"               \"Linear_B\"              \n [76] \"Lisu\"                   \"Lycian\"                 \"Lydian\"                \n [79] \"Mahajani\"               \"Makasar\"                \"Malayalam\"             \n [82] \"Mandaic\"                \"Manichaean\"             \"Marchen\"               \n [85] \"Masaram_Gondi\"          \"Medefaidrin\"            \"Meetei_Mayek\"          \n [88] \"Mende_Kikakui\"          \"Meroitic_Cursive\"       \"Meroitic_Hieroglyphs\"  \n [91] \"Miao\"                   \"Modi\"                   \"Mongolian\"             \n [94] \"Mro\"                    \"Multani\"                \"Myanmar\"               \n [97] \"Nabataean\"              \"Nag_Mundari\"            \"Nandinagari\"           \n[100] \"New_Tai_Lue\"            \"Newa\"                   \"Nko\"                   \n[103] \"Nushu\"                  \"Nyiakeng_Puachue_Hmong\" \"Ogham\"                 \n[106] \"Ol_Chiki\"               \"Old_Hungarian\"          \"Old_Italic\"            \n[109] \"Old_North_Arabian\"      \"Old_Permic\"             \"Old_Persian\"           \n[112] \"Old_Sogdian\"            \"Old_South_Arabian\"      \"Old_Turkic\"            \n[115] \"Old_Uyghur\"             \"Oriya\"                  \"Osage\"                 \n[118] \"Osmanya\"                \"Pahawh_Hmong\"           \"Palmyrene\"             \n[121] \"Pau_Cin_Hau\"            \"Phags_Pa\"               \"Phoenician\"            \n[124] \"Psalter_Pahlavi\"        \"Rejang\"                 \"Runic\"                 \n[127] \"Samaritan\"              \"Saurashtra\"             \"Sharada\"               \n[130] \"Shavian\"                \"Siddham\"                \"SignWriting\"           \n[133] \"Sinhala\"                \"Sogdian\"                \"Sora_Sompeng\"          \n[136] \"Soyombo\"                \"Sundanese\"              \"Syloti_Nagri\"          \n[139] \"Syriac\"                 \"Tagalog\"                \"Tagbanwa\"              \n[142] \"Tai_Le\"                 \"Tai_Tham\"               \"Tai_Viet\"              \n[145] \"Takri\"                  \"Tamil\"                  \"Tangsa\"                \n[148] \"Tangut\"                 \"Telugu\"                 \"Thaana\"                \n[151] \"Thai\"                   \"Tibetan\"                \"Tifinagh\"              \n[154] \"Tirhuta\"                \"Toto\"                   \"Ugaritic\"              \n[157] \"Vai\"                    \"Vithkuqi\"               \"Wancho\"                \n[160] \"Warang_Citi\"            \"Yezidi\"                 \"Yi\"                    \n[163] \"Zanabazar_Square\"      \n\n\n\n4.3.1 영문자\n영문자를 유니코드에서 찾아 살펴보자. 영문자는 라틴 계열이라 라틴계열에 포함된 문자를 뽑아서 유니코드 범위를 정해서 유니코드 범위에 포함된 문자를 사람이 읽을 수 있는 문자로 화면에 일부만 출력한다.\n코드 참조: How to generate all possible unicode characters?\n\n\nCode\nlatin_char <-  u_scripts('Latin')\n\nlatin_char_length <- map(latin_char, n_of_u_chars)\n\nshow_characters <- function(i) {\n  expand_ranges <- as.u_char_seq(latin_char$Latin[i])\n  unicode_chars <- unlist(expand_ranges)\n  intToUtf8(unicode_chars)\n}\n\nmap_chr(1:10, show_characters)\n\n\n [1] \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"                                                                                                                                                                                             \n [2] \"abcdefghijklmnopqrstuvwxyz\"                                                                                                                                                                                             \n [3] \"ª\"                                                                                                                                                                                                                     \n [4] \"º\"                                                                                                                                                                                                                     \n [5] \"ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ\"                                                                                                                                                                                              \n [6] \"ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö\"                                                                                                                                                                                   \n [7] \"øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺ\"\n [8] \"ƻ\"                                                                                                                                                                                                                      \n [9] \"Ƽƽƾƿ\"                                                                                                                                                                                                                   \n[10] \"ǀǁǂǃ\"                                                                                                                                                                                                                   \n\n\n\n\n4.3.2 한글\n동일하게 유니코드에 등록된 한글도 확인해보자. 한글완성형으로 한글 유니코드 7번째 블록에 11,172 개 글자가 등록되어 있어 이를 제외한 한글을 뽑아보자.\n\n\nCode\nhangul_scripts <- u_scripts('Hangul')\n\nhangul_char_length <- map(hangul_scripts, n_of_u_chars)\n\nmap(hangul_scripts, n_of_u_chars)\n\n\n$Hangul\n [1]   256     2    94    31    31    29 11172    23    49    31     6     6\n[13]     6     3\n\n\nCode\nexpand_ranges <- as.u_char_seq(hangul_scripts$Hangul[7])\n\nshow_hangul <- function(i) {\n  expand_ranges <- as.u_char_seq(hangul_scripts$Hangul[i])\n  unicode_chars <- unlist(expand_ranges)\n  intToUtf8(unicode_chars)\n}\n\nmap_chr(c(1:6,8:14), show_hangul)\n\n\n [1] \"ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒᄓᄔᄕᄖᄗᄘᄙᄚᄛᄜᄝᄞᄟᄠᄡᄢᄣᄤᄥᄦᄧᄨᄩᄪᄫᄬᄭᄮᄯᄰᄱᄲᄳᄴᄵᄶᄷᄸᄹᄺᄻᄼᄽᄾᄿᅀᅁᅂᅃᅄᅅᅆᅇᅈᅉᅊᅋᅌᅍᅎᅏᅐᅑᅒᅓᅔᅕᅖᅗᅘᅙᅚᅛᅜᅝᅞᅟᅠᅡᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᅶᅷᅸᅹᅺᅻᅼᅽᅾᅿᆀᆁᆂᆃᆄᆅᆆᆇᆈᆉᆊᆋᆌᆍᆎᆏᆐᆑᆒᆓᆔᆕᆖᆗᆘᆙᆚᆛᆜᆝᆞᆟᆠᆡᆢᆣᆤᆥᆦᆧᆨᆩᆪᆫᆬᆭᆮᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂᇃᇄᇅᇆᇇᇈᇉᇊᇋᇌᇍᇎᇏᇐᇑᇒᇓᇔᇕᇖᇗᇘᇙᇚᇛᇜᇝᇞᇟᇠᇡᇢᇣᇤᇥᇦᇧᇨᇩᇪᇫᇬᇭᇮᇯᇰᇱᇲᇳᇴᇵᇶᇷᇸᇹᇺᇻᇼᇽᇾᇿ\"\n [2] \"〮〯\"                                                                                                                                                                                            \n [3] \"ㄱㄲㄳㄴㄵㄶㄷㄸㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅃㅄㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣㅤㅥㅦㅧㅨㅩㅪㅫㅬㅭㅮㅯㅰㅱㅲㅳㅴㅵㅶㅷㅸㅹㅺㅻㅼㅽㅾㅿㆀㆁㆂㆃㆄㆅㆆㆇㆈㆉㆊㆋㆌㆍㆎ\"    \n [4] \"㈀㈁㈂㈃㈄㈅㈆㈇㈈㈉㈊㈋㈌㈍㈎㈏㈐㈑㈒㈓㈔㈕㈖㈗㈘㈙㈚㈛㈜㈝㈞\"                                                                                                                                  \n [5] \"㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭㉮㉯㉰㉱㉲㉳㉴㉵㉶㉷㉸㉹㉺㉻㉼㉽㉾\"                                                                                                                                  \n [6] \"ꥠꥡꥢꥣꥤꥥꥦꥧꥨꥩꥪꥫꥬꥭꥮꥯꥰꥱꥲꥳꥴꥵꥶꥷꥸꥹꥺꥻꥼ\"                                                                                                                                      \n [7] \"ힰힱힲힳힴힵힶힷힸힹힺힻힼힽힾힿퟀퟁퟂퟃퟄퟅퟆ\"                                                                                                                                                                         \n [8] \"ퟋퟌퟍퟎퟏퟐퟑퟒퟓퟔퟕퟖퟗퟘퟙퟚퟛퟜퟝퟞퟟퟠퟡퟢퟣퟤퟥퟦퟧퟨퟩퟪퟫퟬퟭퟮퟯퟰퟱퟲퟳퟴퟵퟶퟷퟸퟹퟺퟻ\"                                                                                                                                               \n [9] \"ﾠﾡﾢﾣﾤﾥﾦﾧﾨﾩﾪﾫﾬﾭﾮﾯﾰﾱﾲﾳﾴﾵﾶﾷﾸﾹﾺﾻﾼﾽﾾ\"                                                                                                                                                                 \n[10] \"ￂￃￄￅￆￇ\"                                                                                                                                                                                          \n[11] \"ￊￋￌￍￎￏ\"                                                                                                                                                                                          \n[12] \"ￒￓￔￕￖￗ\"                                                                                                                                                                                          \n[13] \"ￚￛￜ\"                                                                                                                                                                                             \n\n\n\n\n\n\n\n\nNote\n\n\n\nrlang 패키지 chr_unserialise_unicode() 함수는 유니코드를 문자로 변환하여 확인할 때 유용하다.\n\n\nCode\nlibrary(rlang)\nchr_unserialise_unicode('<U+AC00>')\n\n\n[1] \"가\"\n\n\nCode\nchr_unserialise_unicode('<U+FFDC>')\n\n\n[1] \"ￜ\""
   },
   {
     "objectID": "index.html",
@@ -70,46 +70,116 @@
     "text": "3.3 \\(\\LaTeX\\) 엔진\n\\(\\LaTeX\\) 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 KTUG 한국 \\(\\TeX\\) 사용자 그룹에서 \\(ko.TeX\\) Live를 추천하고 있다. 이유는 다음과 같다. 33 이호재 (2017), “레이텍을 빨리 쓸 수 있는 방법”, \\(\\TeX\\) : 조판, 그 이상의 가능성\n\npdfLaTeX, XeLaTeX, LuaLaTeX 3종 \\(\\LaTeX\\) 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.\n운영체제에 따라 차이가 나지만 안정적으로 \\(\\LaTeX\\) 을 설치하여 실제 문서작업에 이용하기에는 \\(\\TeX\\) Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.\n\\(\\TeX\\) 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 \\(\\TeX\\) 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨\n\n과거 latex+divps+pspdf 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, pstricks를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 eps 파일만 사용한다는 한계가 있다. 또 다른 latex+dvipdfmx 작업흐름은 중간에 .dvi 파일을 생성하고 dvipdfmx를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 .tex 소스파일에서 .pdf 파일을 즉시 생성한다는 점에서 인기가 있다.\n이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 memoir 혹은 oblivoir 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다."
   },
   {
-    "objectID": "posts/quarto_blog_20220815/index.html",
-    "href": "posts/quarto_blog_20220815/index.html",
+    "objectID": "posts/20220815_quarto_blog/index.html",
+    "href": "posts/20220815_quarto_blog/index.html",
     "title": "Quarto 블로그",
     "section": "",
     "text": "블로그를 작성하고 운영하는 이유를 다음과 같이 들 수 있다.\n\n학습: 강의를 듣거나 무언가 읽어 독서를 통해 학습되는 지식보다 글쓰기를 통해 축적되는 지식이 어떻게 보면 학습 효과가 더 크다. 특히, 학습한 내용을 코드로 작성하여 돌려볼 경우 학습효과를 배가시킨다.\n지식나눔: 구글 검색엔진을 통해 검색된 블로그 게시글을 통해 짧은 시간 학습에 도움을 받지만, 마찬가지로 본인이 작성한 블로그 게시글이 다른 사람에게 도움을 주는 것도 사실이다. 한가지 명심할 사항은 본인 실력보다 한두단계 앞선 사람으로 배우는 것이 실질적으로 큰 도움이 된다. 그래서 눈높이 교육이라는 얘기도 있지 않나 싶다.\n구인구직, 포트폴리오: 차곡차곡 누적된 블로그 게시물은 그 자체로 포트폴리오가 되고 헤드헌터를 통해 채용 인터뷰 요청을 받게 된다."
   },
   {
-    "objectID": "posts/quarto_blog_20220815/index.html#quarto_blog.qmd",
-    "href": "posts/quarto_blog_20220815/index.html#quarto_blog.qmd",
+    "objectID": "posts/20220815_quarto_blog/index.html#quarto_blog.qmd",
+    "href": "posts/20220815_quarto_blog/index.html#quarto_blog.qmd",
     "title": "Quarto 블로그",
     "section": "4.1 quarto_blog.qmd",
     "text": "4.1 quarto_blog.qmd\n_quarto.yml 파일에 지정된 웹사이트에서 블로그로 들어가는 메뉴에 들어간 파일명이 quarto_blog.qmd 이라 해당 파일에 블로그 설정을 담아낸다.\n---\ntitle: \"Quarto 데이터 과학\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\npage-layout: full\ntitle-block-banner: false\n---"
   },
   {
-    "objectID": "posts/quarto_rr_20220816/index.html",
-    "href": "posts/quarto_rr_20220816/index.html",
+    "objectID": "posts/20220816_quarto_rr/index.html",
+    "href": "posts/20220816_quarto_rr/index.html",
     "title": "재현가능 글쓰기",
     "section": "",
     "text": "Warning\n\n\n\n이광춘 (2019-12-28), “Computational Documents - 개요서(Compendium) 시작하며” 내용을 토대로 작성된 것임을 밝혀둡니다."
   },
   {
-    "objectID": "posts/quarto_rr_20220816/index.html#start-small",
-    "href": "posts/quarto_rr_20220816/index.html#start-small",
+    "objectID": "posts/20220816_quarto_rr/index.html#start-small",
+    "href": "posts/20220816_quarto_rr/index.html#start-small",
     "title": "재현가능 글쓰기",
     "section": "3.1 시작이 반이다",
     "text": "3.1 시작이 반이다\n\n시작이 반이다 - start small\n\n\n\nCode\nproject\n|- DESCRIPTION\n|- README.md  \n|- Metadata.txt\n|\n|- data/                \n|   +- 2014ParasiteSurveyJustBrood.csv\n|   +- CedarBPLifeTable2014.csv\n|   +- NorthBPLifeTable2013.txt\n|   +- NorthBPLifeTable2014.csv|\n|- analysis/\n|   +- CodeforBPpaper.R"
   },
   {
-    "objectID": "posts/quarto_rr_20220816/index.html#pkg-development",
-    "href": "posts/quarto_rr_20220816/index.html#pkg-development",
+    "objectID": "posts/20220816_quarto_rr/index.html#pkg-development",
+    "href": "posts/20220816_quarto_rr/index.html#pkg-development",
     "title": "재현가능 글쓰기",
     "section": "3.2 팩키지 개발",
     "text": "3.2 팩키지 개발\n\n팩키지 개발\n\n\n\nCode\nproject\n|- DESCRIPTION\n|- NAMESPACE\n|- README.md\n|- LakeTrophicModelling.Rproj\n|\n|- R/\n|   +- LakeTrophicModelling-package.r\n|   +- class_prob_rf.R\n|   +- condAccuracy.R\n|   +- crossval_rf.R\n|   +- density_plot.R\n|   +- ecdf_ks_ci.R\n|   +- ecor_map.R\n|   +- getCyanoAbund.R\n|   +- getLakeIDs.R\n|   +- importancePlot.R\n|\n|- man/\n|   +- class_prob_rf.Rd\n|   +- condAccuracy.Rd\n|   +- crossval_rf.Rd\n|   +- density_plot.Rd\n|   +- ecdf_ks_ci.Rd\n|   +- ecor_map.Rd\n|   +- getCyanoAbund.Rd\n|   +- getLakeIDs.Rd\n|   +- importancePlot.Rd\n|\n|- data/                \n|   +- LakeTrophicModelling.rda\n|\n|- vignettes/\n|\n|- inst/\n|   +- doc/\n|      +- manuscript.pdf\n|   +- extdata/\n|      +- ltmData.csv\n|      +- data_def.csv"
   },
   {
-    "objectID": "posts/quarto_rr_20220816/index.html#cicd-docker",
-    "href": "posts/quarto_rr_20220816/index.html#cicd-docker",
+    "objectID": "posts/20220816_quarto_rr/index.html#cicd-docker",
+    "href": "posts/20220816_quarto_rr/index.html#cicd-docker",
     "title": "재현가능 글쓰기",
     "section": "3.3 CI/CD와 도커",
     "text": "3.3 CI/CD와 도커\nDockerfile 파일을 추가하여 환경도 재현가능하게 만들 수 있고, .travis.yml을 추가하여 CI/CD 환경도 구축할 수 있다. tests/를 추가하여 테스트 주도 개발(test-driven development, TDD)를 시도할 수 있고, 이를 통해 수작업 검증을 자동화하여 생산성과 품질을 대폭 향상시킬 수도 있다.\n\n\nCode\nproject\n|- DESCRIPTION          # project metadata and dependencies \n|- README.md            # top-level description of content and guide to users\n|- NAMESPACE            # exports R functions in the package for repeated use\n|- LICENSE              # specify the conditions of use and reuse of the code, data & text\n|- .travis.yml          # continuous integration service hook for auto-testing at each commit\n|- Dockerfile           # makes a custom isolated computational environment for the project\n|\n|- data/                # raw data, not changed once created\n|  +- my_data.csv       # data files in open formats such as TXT, CSV, TSV, etc.\n|\n|- analysis/            # any programmatic code\n|  +- my_report.Rmd     # R markdown file with narrative text interwoven with code chunks \n|  +- makefile          # builds a PDF/HTML/DOCX file from the Rmd, code, and data files\n|  +- scripts/          # code files (R, shell, etc.) used for data cleaning, analysis and visualisation \n|\n|- R/                     \n|  +- my_functions.R    # custom R functions that are used more than once throughout the project\n|\n|- man/\n|  +- my_functions.Rd   # documentation for the R functions (auto-generated when using devtools)\n|\n|- tests/\n|  +- testthat.R        # unit tests of R functions to ensure they perform as expected"
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html",
+    "href": "posts/20220831_low_code_shiny/index.html",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "",
+    "text": "출처: https://itwiki.kr/w/로우_코드\n로우코드는 필요한 부품을 간단한 명령으로 조합하여 시스템을 만드는 개발 방법으로, 복잡한 코딩 과정을 단순화해서 소프트웨어를 빠르게 개발 및 배포하도록 만든 일종의 개발 환경으로 소개되고 있다.\nShiny 앱은 2012년 처음 소개된 이후 약 10년의 세월이 흐르며 다양한 프레임워크가 등장하여 서로 경쟁하고 있다. 이 분야를 개척한 것은 Shiny가 처음이지만 R을 기본언어로 하다보니 파이썬이나 자바스크립트와 같은 다른 언어을 많이 사용하고 있는 다른 반응형 대쉬보드 프레임워크가 등장하다 보니 GitHub 별점수에서 상대적으로 밀리고 있는 것으로 보인다. React 기반한 파이썬 프레임워크 Plotly Dash, 파이썬 Streamlit이 사용자면에서 최근들어 급증하고 있는데 최근 추세를 반영하고 있다고 볼 수 있다.\n출처: Streamlit vs. Dash vs. Shiny vs. Voila vs. Flask vs. Jupyter - Comparing data dashboarding tools and frameworks\n\n\n\n\n\n\n장점단점\n\n\n\n프로그램 개발 시간 단축\n\n\n모든 소스 코드를 작성하지 않고, 앱을 조합하여 시스템을 구축 하여 개발 기간을 단축\n\n\n개발비 절감\n\n\n개발 기간을 줄이는 효과로 프로그래머의 인력이 감소 개발에 들어 가는 인건비를 절감 하는 효과\n전문 개발자의 경우 필요에 따라 자동화와 불필요한 요소 생략 등을 통해 작업 효율성을 대폭 향상할 수 있다. 이런 효율성 향상은 결국 비용감소\n\n\n오류가 줄어든다\n\n\n프로그램밍을 직접 수행하는 부분이 적어지는 만큼 실수가 줄어 든다.\n사람이 작성하는 코드의 양이 적어지면서 오류 확률이 줄어 든다.\n그 결과 버그 수정 등에 걸리는 시간 단축과 비용 경감에 효과가 있다.\n\n\n인력 확보가 비교적 쉽다.\n\n\n엔지니어가 전문적인 실력을 갖추지 않았더라고 개발 작업이 가능.\n숙련된 엔지니어에 대한 의존성이 줄어 든다.\n\n\n\n\n자유도가 낮다\n\n\n대규모 개발에 사용의 어려움으로 인해 단순 구조 및 단일 비즈니스 프로세스에 적합하다.\n개발 툴에 따라서 가능 한 기능이 다르기 때문에 각 툴에만 의존 하게 되는 단점\n\n\n프로그램의 창의성 악화\n\n\n로우코드에 의존하게 되면 시스템을 새로 구축 하는 프로그래머가 점점 줄어 들어 창의성을 발휘하여 개발하는 경우가 적어 질 것이다.\n\n\n보안의 취약\n\n\n간단한 기능을 만들때는 기본적인 보안 관리에 소홀 할 수 있다.\n빠른 속도와 낮은 비용에만 너무 초점을 맞추면 관리 부족과 보안 취약점이 들어 날 수 있다.\n\n\n\n\n시장에서 다음 시스템이 인기를 끌고 있다.\n\nOutSystems\nmendix\nServiceNow\nKintone\nKISSFLOW\nAppian\nBoomi Flow"
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#shinyuieditor",
+    "href": "posts/20220831_low_code_shiny/index.html#shinyuieditor",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "2.1 shinyuieditor",
+    "text": "2.1 shinyuieditor\nshinyuieditor는 2022-08-31 현재 알파버젼이지만 기존 Shiny UI 개발에 많은 노력이 든 것에 비하면 빠르고 쉽게 ui.R UI 부분을 제작할 수 있다.\n예를 들어 Drag and Drop 으로 UI 구성요소를 추가하는 것도 가능하다.\n\n\nVideo\n\n\n그외에도 Shiny 앱 개발에 필요한 다양한 다음 작업을 수행할 수 있다.\n\nUI 구성요소 이동\nUI 구성요소 선택\nUI 구성요소 삭제\nUI 구성요소 설정사항 변경\n행/열 폭 확인\n행/열을 레이아웃 격자에 추가/삭제\n행/열 폭 길이조정\n변경사항 Undo/Redo 기능\n\n동영상 사용방법은 shinyuieditor How to 참고\nshinyuieditor 패키지 명령어는 몇개 없는데 Shiny 앱 UI 제작을 위해 launch_editor() 함수를 사용해서 제작한다. 첫 선택사항에 따라 “shiny앱명칭” 디렉토리 아래 app.R 혹은 ui.R, server.R 이 생성된 것을 확인할 수 있다.\n\nshinyuieditor::launch_editor(app_loc = \"shiny앱명칭\")\n\nUI 제작이 마무리되면 bslib 패키지로 외양을 가꾸고 server.R 서버 코드를 작성하면 간단히 Shiny 앱 개발이 마무리된다."
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#dashboard-builder",
+    "href": "posts/20220831_low_code_shiny/index.html#dashboard-builder",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "2.2 Dashboard-Builder",
+    "text": "2.2 Dashboard-Builder\nPeter Gandenberger, “Dashboard-Builder: Building Shiny Apps without writing any code”, rstudio::conf(2022), 바로가기\nPeter Gandenberger가 최근에 개발한 Dashboard Builder는 대쉬보드를 키보드 입력없이 마우스만 사용해서 간단히 개발할 수 있다. Dashboard Builder 는 gridstackeR 패키지 기반하고 있다.\n로우코드 대쉬보드 개발 작업흐름은 다음과 같다.\n\n데이터 불러오기\n대쉬보드 구성요소 생성\n대쉬보드 내보내기\n후속작업을 통해 기능추가 및 개선 작업 수행\n\n2분 22초면 대쉬보드를 뚝딱 제작할 수 있는 사례를 다음 동영상을 통해 확인할 수 있다. DASHBOARD-BUILDER: create R-Shiny Dashboards in 2 Minutes and 22 Seconds"
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#bslib-외양",
+    "href": "posts/20220831_low_code_shiny/index.html#bslib-외양",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "2.3 bslib 외양",
+    "text": "2.3 bslib 외양\nShiny 앱의 외양 Look-and-Feel 을 수월히 제작할 수 있게 해주는 패키지가 bslib로 이를 통해서 Shiny 앱 개발 생산성을 크게 높일 수 있다.\n\n\n\n\n\nbslib 패키지 bs_theme_preview() 함수를 통해 Shiny 외양을 원하는 대로 제작할 수 있다. 다양한 외양 관련 사항을 지정하면 관련 사항이 코드로 떨어지게 되어 이를 복사하여 Shiny 앱에 CSS 나 코드에 직접 넣어 사용할 수 있다.\n\nbs_theme_preview()\n\n# Warning: package ‘bslib’ was built under R version 4.2.1\n# \n# Attaching package: ‘bslib’\n# \n# The following object is masked from ‘package:utils’:\n# \n#     page\n# \n# Warning: package ‘rlang’ was built under R version 4.2.1\n# Using libcurl 7.64.1 with Schannel\n# This Font Awesome icon ('exclamation-triangle') does not exist:\n# * if providing a custom `html_dependency` these `name` checks can \n#   be deactivated with `verify_fa = FALSE`\n# \n# Listening on http://127.0.0.1:4337\n# \n# ####  Update your bs_theme() R code with:  #####\n# bs_theme_update(theme, primary = \"#6C8FC4\", base_font = font_collection(\"system-ui\", \n#     \"-apple-system\", \"Segoe UI\", font_google(\"Roboto\"), \"Helvetica Neue\", \n#     \"Arial\", font_google(\"Noto Sans\"), \"Liberation Sans\", \"sans-serif\", \n#     \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \n#     \"Noto Color Emoji\"))"
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#데이터-패키지",
+    "href": "posts/20220831_low_code_shiny/index.html#데이터-패키지",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "2.4 데이터 패키지",
+    "text": "2.4 데이터 패키지\n데이터를 별도 패키지로 묶어 관리하게 되면 Shiny 앱을 개발할 때 별도 데이터 패키지로 묶어 필요한 경우 Shiny 앱에서 불러 사용하게 되면 관리도 그렇고 개발시간도 단축시킬 수 있다.\n\n통계청 통계교육원 실용통계 교과서에 실린 데이터를 묶어낸 R 데이터 패키지: hsData"
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#ui-화면-설계",
+    "href": "posts/20220831_low_code_shiny/index.html#ui-화면-설계",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "3.1 UI 화면 설계",
+    "text": "3.1 UI 화면 설계\n파워포인트, figma 등 화면설계 도구를 사용해서 Shiny UI를 작성한다."
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#shinyuieditor-1",
+    "href": "posts/20220831_low_code_shiny/index.html#shinyuieditor-1",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "3.2 shinyuieditor",
+    "text": "3.2 shinyuieditor\nshinyuieditor 패키지를 사용해서 Shiny 앱 UI 부분을 제작한다."
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#서버-구현",
+    "href": "posts/20220831_low_code_shiny/index.html#서버-구현",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "3.3 서버 구현",
+    "text": "3.3 서버 구현\n마지막으로 server.R 코드를 작성하여 hsData 데이터 패키지에 포함된 데이터셋을 선택할 경우 해당 통계 분석결과를 자동으로 실행되도록 구현한다."
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#배포",
+    "href": "posts/20220831_low_code_shiny/index.html#배포",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "3.4 배포",
+    "text": "3.4 배포\nshinyapps.io에 RStudio 에서 버튼을 몇번 눌러 배포한다.\n\nhttps://r2bit.shinyapps.io/bitStat-HS/"
+  },
+  {
+    "objectID": "posts/20220831_low_code_shiny/index.html#실행화면",
+    "href": "posts/20220831_low_code_shiny/index.html#실행화면",
+    "title": "로우코드 Shiny 앱 개발",
+    "section": "3.5 실행화면",
+    "text": "3.5 실행화면"
   },
   {
     "objectID": "quarto_about.html#블로그-저작-소프트웨어",
@@ -130,7 +200,7 @@
     "href": "quarto_about.html#yaml",
     "title": "Quarto",
     "section": "6.1 YAML",
-    "text": "6.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값출력옵션상세 출력옵션\n\n\n---\nkey: value\n---\n\n\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n\n\n\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\nquarto render document.qmd --to html\n\n\n\n---\nformat: pdf\n---\n\n\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\nquarto render document.qmd --to html -M code fold:true\n\n\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
+    "text": "6.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값출력옵션상세 출력옵션\n\n\n---\nkey: value\n---\n\n\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n\n\n\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\n\n\nterminal\n\nquarto render document.qmd --to html\n\n\n\n\n---\nformat: pdf\n---\n\n\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\n\n\nterminal\n\nquarto render document.qmd --to html -M code fold:true\n\n\n\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
   },
   {
     "objectID": "quarto_about.html#마크다운",
@@ -158,7 +228,7 @@
     "href": "quarto_blog.html",
     "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "Quarto\n\n\nLow code\n\n\nshiny\n\n\n앱개발\n\n\nshinyuieditor\n\n\n데이터 패키지\n\n\nbslib\n\n\n구글 폰트\n\n\ndashboard-builder\n\n\n\n\nShiny 앱개발에 Shiny 생태계를 구성하는 로우코드(Low Code)를 적극 도입하여 개발시간을 단축하고 생산성을 높이는 방법을 소개한다.\n\n\n\n\n\n\nAug 31, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 15, 2022\n\n\n이광춘\n\n\n\n\n\n\nNo matching items"
+    "text": "로우코드 Shiny 앱 개발\n\n\n\n\n\n\n\nQuarto\n\n\nLow code\n\n\nshiny\n\n\n앱개발\n\n\nshinyuieditor\n\n\n데이터 패키지\n\n\nbslib\n\n\n구글 폰트\n\n\ndashboard-builder\n\n\n\n\nShiny 앱개발에 Shiny 생태계를 구성하는 로우코드(Low Code)를 적극 도입하여 개발시간을 단축하고 생산성을 높이는 방법을 소개한다.\n\n\n\n\n\n\nAug 31, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n재현가능 글쓰기\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\nQuarto 블로그\n\n\n\n\n\n\n\nQuarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 15, 2022\n\n\n이광춘\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quarto_fonts.html",
@@ -186,7 +256,7 @@
     "href": "quarto_install.html",
     "title": "Quarto 설치/출판",
     "section": "",
-    "text": "2 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다.\n\n\n\n3 Quarto Pub 출판 1\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\n\nCode\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n\nCode\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\n\nCode\nquarto.cmd preview\nquarto.cmd publish quarto-pub\n\n\n\n\n\n\n\nFootnotes\n\n\nQuarto Pub↩︎"
+    "text": "Quarto를 운영체제에 맞춰 설치한다. Quarto 는 기본적으로 CLI 라서 설치 후 제대로 설정이 되었는지는 환경설정에 경로를 등록해줘야 한다.\n\nQuarto 다운로드Quarto 설치Quarto CLI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n윈도우 시스템의 경우 quarto.exe가 아니고 quarto.cmd 라 이에 유의한다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto.cmd 을 사용해서 출판한다.\n\n\nCode\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\STATKC~1\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.cmd\" \n\n\n\n\n\n\nquarto 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. Quarto CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 literate programming 방식으로 마크다운과 프로그래밍 언어를 결합하여 출판을 위한 전문 문서 저작을 시작한다."
   },
   {
     "objectID": "quarto_latex.html",
@@ -214,7 +284,7 @@
     "href": "quarto_latex.html#저작",
     "title": "한글 LaTeX",
     "section": "3.3 저작",
-    "text": "3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(\\LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n\n3.3.1 이미지\n\\(\\LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n3.3.2 R 코드\n\\(\\LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n3.3.3 표\n\\(\\LaTeX\\)에 \\(\\LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\n\n3.3.3.1 LaTeX 표\n\n\n\n3.3.3.2 gt 표\n\n\nCode\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n\n\n\n3.3.4 데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다.\n\n\n3.3.5 PDF 겉면\nfitpaper \\(\\LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다."
+    "text": "3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(\\LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n\n3.3.1 이미지\n\\(\\LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n3.3.2 R 코드\n\\(\\LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n3.3.3 표\n\\(\\LaTeX\\)에 \\(\\LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\n\n3.3.3.1 LaTeX 표\n\n\n\n3.3.3.2 gt 표\n\n\nCode\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n\n\n\n3.3.4 데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다.\n\n\n3.3.5 PDF 겉면\nfitpaper \\(\\LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다."
   },
   {
     "objectID": "quarto_layout.html",
@@ -277,7 +347,7 @@
     "href": "quarto_layout.html#여백-그래프",
     "title": "Quarto 레이아웃",
     "section": "3.2 여백 그래프",
-    "text": "3.2 여백 그래프\n여백에 ggplot 그래프 객체를 위치시킬 수도 있다.\n::: {.cell .column-margin}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n```\n\n::: {.cell-output-display}\n![MPG vs horsepower, colored by transmission.](quarto_layout_files/figure-html/fig-mtcars-margin-1.png){#fig-mtcars-margin width=672}\n:::\n:::\n\n\nCode\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n\n\n\n\n\n\nFigure 1: MPG vs horsepower, colored by transmission."
+    "text": "3.2 여백 그래프\n여백에 ggplot 그래프 객체를 위치시킬 수도 있다.\n::: {.cell .column-margin}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n```\n\n::: {.cell-output-display}\n![MPG vs horsepower, colored by transmission.](quarto_layout_files/figure-html/fig-mtcars-margin-1.png){#fig-mtcars-margin width=672}\n:::\n:::\n\n\nCode\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n\n\n\n\n\n\nFigure 1: MPG vs horsepower, colored by transmission."
   },
   {
     "objectID": "quarto_layout.html#여백-표",
@@ -291,14 +361,49 @@
     "href": "quarto_layout.html#수식-등",
     "title": "Quarto 레이아웃",
     "section": "3.4 수식 등",
-    "text": "3.4 수식 등\n.column-margin 클래스에 수식을 비롯한 기타 콘텐츠도 반영시킬 수 있다.\n\n::: {.column-margin}\n $[a, b]$ 구간 $x$에 대한 **미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus)** 는 다음과 같다.\n\n\n\n$$\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).$$\n\n\n\n:::\n\n\n\n\\([a, b]\\) 구간 \\(x\\)에 대한 미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus) 는 다음과 같다.\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]"
+    "text": "3.4 수식 등\n.column-margin 클래스에 수식을 비롯한 기타 콘텐츠도 반영시킬 수 있다.\n\n::: {.column-margin}\n $[a, b]$ 구간 $x$에 대한 **미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus)** 는 다음과 같다.\n\n\n$$\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).$$\n\n\n:::\n\n\n\n\\([a, b]\\) 구간 \\(x\\)에 대한 미적분학의 첫 번째 기본 정리(first fundamental theorem of calculus) 는 다음과 같다.\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]"
+  },
+  {
+    "objectID": "quarto_penguin.html",
+    "href": "quarto_penguin.html",
+    "title": "Quarto 기본사용법",
+    "section": "",
+    "text": "Warning\n\n\n\n2022년 6월 3일 Julia Müller가 R-Ladies Freiburg 에서 발표한 “Getting to know Quarto” 발표자료 기초하여 작성된 문서입니다. 자세한 사항은 발표영상과 발표코드를 참조 바랍니다."
+  },
+  {
+    "objectID": "quarto_penguin.html#데이터-선택",
+    "href": "quarto_penguin.html#데이터-선택",
+    "title": "Quarto 기본사용법",
+    "section": "1.1 데이터 선택",
+    "text": "1.1 데이터 선택\n항상 모든 사람이들이 말하는데….\n\n펭귄은 귀요미!\n\n… 이제부터 펭귄 데이터로 즐거운 데이터 사이언스를 시작해봅시다.\n\n\n\n\n\n\nNote\n\n\n\n팔머펭귄(palmerpenguins) 데이터셋은 기계학습과 데이터 사이언스에 흔히 사용되는 붓꽃(iris) 데이터를 대체하기 위해 제작된 것입니다.\n\n\n팔머펭귄 데이터셋에 대한 자세한 사항은 Allison Horst’s Github page. 웹사이트를 참조합니다.\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다."
+  },
+  {
+    "objectID": "quarto_penguin.html#데이터와-패키지-불러오기",
+    "href": "quarto_penguin.html#데이터와-패키지-불러오기",
+    "title": "Quarto 기본사용법",
+    "section": "1.2 데이터와 패키지 불러오기",
+    "text": "1.2 데이터와 패키지 불러오기\n먼저, 다음 작업을 순차적으로 수행한다:\n\n패키지 적재하기(loading)\n데이터 불러오기\n데이터가 올바른 형식인지 확인한다.\n\n“올바른 형식”이란, 데이터가 정돈되어(tidy) 요약통계량, 시각화, 모형개발에 올바른 형태로 준비되어 있음을 의미함.\n\n\n\n\n\n\n다운로드하지 않고 데이터 사용하는 방법\n\n\n\npalmerpenguins 데이터 패키지에 동일한 데이터를 바로 이용할 수 있음.\n\n\n\n\nCode\nlibrary(tidyverse)\npenguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv') %>% \n  drop_na()\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year\n  <chr>   <chr>              <dbl>         <dbl>       <dbl>   <dbl> <chr> <dbl>\n1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007\n2 Adelie  Torgersen           39.5          17.4         186    3800 fema…  2007\n3 Adelie  Torgersen           40.3          18           195    3250 fema…  2007\n4 Adelie  Torgersen           36.7          19.3         193    3450 fema…  2007\n5 Adelie  Torgersen           39.3          20.6         190    3650 male   2007\n6 Adelie  Torgersen           38.9          17.8         181    3625 fema…  2007\n# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g\n\n\n결측값이 있어 제거함. 따라서 데이터는 관측점으로 총 333 행수를 갖게 됨 1."
+  },
+  {
+    "objectID": "quarto_penguin.html#요약-통계량",
+    "href": "quarto_penguin.html#요약-통계량",
+    "title": "Quarto 기본사용법",
+    "section": "1.3 요약 통계량",
+    "text": "1.3 요약 통계량\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n평균 부리 길이는 43.9927928 mm, 평균 부리 깊이는 17.1648649 mm.\n\n테이터 수집 시기는 2007 년과 2009 년도 사이.\n\n\n\n1.3.1 Base R과 Tidyverse 구문 비교\n데이터프레임 특정 칼럼을 보는 코드를 Base R과 Tidyverse 구문으로 작성하면 차이를 확인할 수 있다.\n\nBase RTidyverse\n\n\npenguins$bill_length_mm\n\n\npenguins %>% select(bill_length_mm)"
+  },
+  {
+    "objectID": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "href": "quarto_penguin.html#펭귄-체중과-물갈퀴-길이",
+    "title": "Quarto 기본사용법",
+    "section": "2.1 펭귄 체중과 물갈퀴 길이",
+    "text": "2.1 펭귄 체중과 물갈퀴 길이\n다음 그래프는 {palmerpenguins} 패키지 소품문에 제시된 것은 간략하게 작성한 것임.\n\n2.1.1 전체 데이터\n\n\nCode\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n\nFigure 3: Penguin flipper length and body mass\n\n\n\n\n측정에 대한 설명은 Figure 2 을 참조한다.\n\n\n2.1.2 펭귄 종별로 나눠서 시각화\n\n\nCode\nmass_flipper_species <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\",\n       color = \"펭귄 종\",\n       shape = \"펭귄 종\") +\n  theme_minimal()\n\nmass_flipper_species\n\n\n\n\n\nFigure 4: Penguin flipper length and body mass, separately by species\n\n\n\n\nFigure 3 그래프는 펭귄 종을 나누지 않았지만, Figure 4 그래프는 펭귄 종별로 나눠 시각화.\n\n\n2.1.3 펭귄 종과 성별을 구분하여 시각화\n\n\nCode\nmass_flipper_species +\n  facet_wrap(~sex)\n\n\n\n\n\nFigure 5: 펭귄 종과 성별로 나눠 펭귄 물갈퀴 길이와 체질량 시각화x"
   },
   {
     "objectID": "quarto_sass.html",
     "href": "quarto_sass.html",
     "title": "Quarto 외양",
     "section": "",
-    "text": "2 SASS 파일\nquarto.scss 파일에 글꼴과 색상 등 외양관련 정보를 담아 기록한다. 부츠트랩을 외양을 다루는데 많이 사용하기 때문에\nbootstrap/scss/_variables.scss을 참조하여 해당 영역 색상과 글꼴을 자유로이 변경시킨다.\n/*-- scss:defaults --*/\n\n// Color system\n\n// scss-docs-start gray-color-variables\n$white:    #fff !default;\n$gray-100: #f8f9fa !default;\n$gray-200: #e9ecef !default;\n$gray-300: #dee2e6 !default;\n$gray-400: #ced4da !default;\n$gray-500: #adb5bd !default;\n$gray-600: #6c757d !default;\n$gray-700: #495057 !default;\n$gray-800: #343a40 !default;\n$gray-900: #212529 !default;\n$black:    #000 !default;\n\n\n// 글꼴 \n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');\n@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');\n\n@font-face {\n    font-family: 'MaruBuri-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'D2Coding';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n\n// Typography\n//\n// Font, line-height, and color for body text, headings, and more.\n\n// scss-docs-start font-variables\n// stylelint-disable value-keyword-case\n$font-family-sans-serif: \"Noto Sans KR\", 'Nanum Myeongjo',  !default;\n// $font-family-serif: 'MaruBuri-Regular', \"Noto Serif KR\", !default;\n$font-family-monospace:  'D2Coding', \"Courier New\", monospace !default;\n\n// scss-docs-start headings-variables\n$headings-font-family:  $font-family-sans-serif !default;\n\n\n/*-- scss:rules --*/\n\n.navbar-dark {\n    background-color:$gray-600;\n    color: #000000;\n    font-family: 'MaruBuri-Regular';\n}\n\n.sidebar-item {\n    margin-bottom: 0.2em;\n    font-family: 'Noto Serif KR';\n}\n\nh1, .h1, h2, .h2 {\n    margin-top: 2rem;\n    margin-bottom: 1rem;\n    font-family: 'Noto Sans KR';\n}\n\np {\n    font-family: 'MaruBuri-Regular', serif;\n}\n\n\n3 작업방법\n개발하는 것이 웹사이트라서 quarto.cmd preview를 실행하여 로컬 컴퓨터에서 웹서버를 띄워 웹사이트를 보면서 작업하는 방식을 취힌다.\n\n\n\n미리보기 모드 동작\n$ quarto.cmd preview\nTerminating existing preview server....DONE\n\nPreparing to preview\n\nWatching files for changes\nBrowse at http://localhost:7171/\n\n\n\n미리보기 결과\n\n\n\n\n\n\n\n\n\nFootnotes\n\n\nRappA (2022. 7. 1.), “How to style your Quarto blog without knowing a lot of HTML/CSS”↩︎"
+    "text": "1 SASS 파일 위치 1\n기존 외양 정보를 담은 .css 파일을 확장하여 .scss 파일에 담아둔다. 웹사이트 구조를 담고 있는 _quarto.yaml 파일에 외양 정보를 담고 있는 .scss 파일을 지정해둔다. 예를 들어 외양 정보가 담긴 quarto.scss 파일이 css/ 디렉토리 아래 존재한다면 다음과 같이 _quarto.yaml 파일에 반영한다.\n...\n\nformat:\n  html:\n    theme: \n      - litera\n      - css/quarto.scss\n    toc: true\n...\n\n\n2 SASS 파일\nquarto.scss 파일에 글꼴과 색상 등 외양관련 정보를 담아 기록한다. 부츠트랩을 외양을 다루는데 많이 사용하기 때문에\nbootstrap/scss/_variables.scss을 참조하여 해당 영역 색상과 글꼴을 자유로이 변경시킨다.\n/*-- scss:defaults --*/\n\n// Color system\n\n// scss-docs-start gray-color-variables\n$white:    #fff !default;\n$gray-100: #f8f9fa !default;\n$gray-200: #e9ecef !default;\n$gray-300: #dee2e6 !default;\n$gray-400: #ced4da !default;\n$gray-500: #adb5bd !default;\n$gray-600: #6c757d !default;\n$gray-700: #495057 !default;\n$gray-800: #343a40 !default;\n$gray-900: #212529 !default;\n$black:    #000 !default;\n\n\n// 글꼴 \n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');\n@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');\n\n@font-face {\n    font-family: 'MaruBuri-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'D2Coding';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n\n// Typography\n//\n// Font, line-height, and color for body text, headings, and more.\n\n// scss-docs-start font-variables\n// stylelint-disable value-keyword-case\n$font-family-sans-serif: \"Noto Sans KR\", 'Nanum Myeongjo',  !default;\n// $font-family-serif: 'MaruBuri-Regular', \"Noto Serif KR\", !default;\n$font-family-monospace:  'D2Coding', \"Courier New\", monospace !default;\n\n// scss-docs-start headings-variables\n$headings-font-family:  $font-family-sans-serif !default;\n\n\n/*-- scss:rules --*/\n\n.navbar-dark {\n    background-color:$gray-600;\n    color: #000000;\n    font-family: 'MaruBuri-Regular';\n}\n\n.sidebar-item {\n    margin-bottom: 0.2em;\n    font-family: 'Noto Serif KR';\n}\n\nh1, .h1, h2, .h2 {\n    margin-top: 2rem;\n    margin-bottom: 1rem;\n    font-family: 'Noto Sans KR';\n}\n\np {\n    font-family: 'MaruBuri-Regular', serif;\n}\n\n\n3 작업방법\n개발하는 것이 웹사이트라서 quarto.cmd preview를 실행하여 로컬 컴퓨터에서 웹서버를 띄워 웹사이트를 보면서 작업하는 방식을 취힌다.\n\n\n\n미리보기 모드 동작\n$ quarto.cmd preview\nTerminating existing preview server....DONE\n\nPreparing to preview\n\nWatching files for changes\nBrowse at http://localhost:7171/\n\n\n\n미리보기 결과\n\n\n\n\n\n\n\n\n\nFootnotes\n\n\nRappA (2022. 7. 1.), “How to style your Quarto blog without knowing a lot of HTML/CSS”↩︎"
   },
   {
     "objectID": "quarto_slideshow.html#hello-there",
@@ -564,7 +669,7 @@
     "href": "slideshow/index.html#데이터-사이언스---출판",
     "title": "Quarto 데이터 사이언스",
     "section": "데이터 사이언스 - 출판",
-    "text": "데이터 사이언스 - 출판\n\n\n문제점\n개념\nSingle Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+    "text": "데이터 사이언스 - 출판\n\n\n문제점\n개념\nSingle Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
   },
   {
     "objectID": "slideshow/index.html#복잡성",
@@ -648,7 +753,7 @@
     "href": "slideshow/problem.html#데이터-사이언스---출판",
     "title": "Quarto 데이터 사이언스",
     "section": "데이터 사이언스 - 출판",
-    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
   },
   {
     "objectID": "slideshow/problem.html#복잡성",
@@ -711,140 +816,14 @@
     "href": "slideshow/title-slide.html",
     "title": "Quarto 데이터 사이언스",
     "section": "",
-    "text": "디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
+    "text": "데이터 사이언스와 디자인\n\n\n디자인과 아키텍쳐의 중요성\n\n\n\n이광춘, 한국 R 사용자회\n\n\n2022-10-11\n\n\n\n   github.com/bit2r/quarto"
   },
   {
     "objectID": "writing/index.html",
     "href": "writing/index.html",
     "title": "디지털 글쓰기",
     "section": "",
-    "text": "2 문서로 보는 민주주의\n대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다.\n\n\n\n3 디지털 문서 저작\n과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 \\(\\LaTeX\\) 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.\n하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.\n이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다.\n\n\n\n4 과학문서 저작\n\n심각한 현재상황\n마크다운 기초\n고급 마크다운\n문서저작 실무\n수학 수식\n\n\n\n5 사례: 한국 R 컨퍼런스(2021)\n\n컨퍼런스 웹사이트\n컨퍼런스 전 기획\n\n컨퍼런스 포스터\n컨퍼런스 후원\n\n컨퍼런스 본 행사\n\n발표 슬라이드\n발표 템플릿\n\n컨퍼런스 후 설문\n\n설문조사 보고서\n\n기타\n\n탄소중립 신재생 에너지 캠프"
-  },
-  {
-    "objectID": "posts/20220815_quarto_blog/index.html",
-    "href": "posts/20220815_quarto_blog/index.html",
-    "title": "Quarto 블로그",
-    "section": "",
-    "text": "블로그를 작성하고 운영하는 이유를 다음과 같이 들 수 있다.\n\n학습: 강의를 듣거나 무언가 읽어 독서를 통해 학습되는 지식보다 글쓰기를 통해 축적되는 지식이 어떻게 보면 학습 효과가 더 크다. 특히, 학습한 내용을 코드로 작성하여 돌려볼 경우 학습효과를 배가시킨다.\n지식나눔: 구글 검색엔진을 통해 검색된 블로그 게시글을 통해 짧은 시간 학습에 도움을 받지만, 마찬가지로 본인이 작성한 블로그 게시글이 다른 사람에게 도움을 주는 것도 사실이다. 한가지 명심할 사항은 본인 실력보다 한두단계 앞선 사람으로 배우는 것이 실질적으로 큰 도움이 된다. 그래서 눈높이 교육이라는 얘기도 있지 않나 싶다.\n구인구직, 포트폴리오: 차곡차곡 누적된 블로그 게시물은 그 자체로 포트폴리오가 되고 헤드헌터를 통해 채용 인터뷰 요청을 받게 된다."
-  },
-  {
-    "objectID": "posts/20220815_quarto_blog/index.html#quarto_blog.qmd",
-    "href": "posts/20220815_quarto_blog/index.html#quarto_blog.qmd",
-    "title": "Quarto 블로그",
-    "section": "4.1 quarto_blog.qmd",
-    "text": "4.1 quarto_blog.qmd\n_quarto.yml 파일에 지정된 웹사이트에서 블로그로 들어가는 메뉴에 들어간 파일명이 quarto_blog.qmd 이라 해당 파일에 블로그 설정을 담아낸다.\n---\ntitle: \"Quarto 데이터 과학\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\npage-layout: full\ntitle-block-banner: false\n---"
-  },
-  {
-    "objectID": "posts/20220816_quarto_rr/index.html",
-    "href": "posts/20220816_quarto_rr/index.html",
-    "title": "재현가능 글쓰기",
-    "section": "",
-    "text": "Warning\n\n\n\n이광춘 (2019-12-28), “Computational Documents - 개요서(Compendium) 시작하며” 내용을 토대로 작성된 것임을 밝혀둡니다."
-  },
-  {
-    "objectID": "posts/20220816_quarto_rr/index.html#start-small",
-    "href": "posts/20220816_quarto_rr/index.html#start-small",
-    "title": "재현가능 글쓰기",
-    "section": "3.1 시작이 반이다",
-    "text": "3.1 시작이 반이다\n\n시작이 반이다 - start small\n\n\n\nCode\nproject\n|- DESCRIPTION\n|- README.md  \n|- Metadata.txt\n|\n|- data/                \n|   +- 2014ParasiteSurveyJustBrood.csv\n|   +- CedarBPLifeTable2014.csv\n|   +- NorthBPLifeTable2013.txt\n|   +- NorthBPLifeTable2014.csv|\n|- analysis/\n|   +- CodeforBPpaper.R"
-  },
-  {
-    "objectID": "posts/20220816_quarto_rr/index.html#pkg-development",
-    "href": "posts/20220816_quarto_rr/index.html#pkg-development",
-    "title": "재현가능 글쓰기",
-    "section": "3.2 팩키지 개발",
-    "text": "3.2 팩키지 개발\n\n팩키지 개발\n\n\n\nCode\nproject\n|- DESCRIPTION\n|- NAMESPACE\n|- README.md\n|- LakeTrophicModelling.Rproj\n|\n|- R/\n|   +- LakeTrophicModelling-package.r\n|   +- class_prob_rf.R\n|   +- condAccuracy.R\n|   +- crossval_rf.R\n|   +- density_plot.R\n|   +- ecdf_ks_ci.R\n|   +- ecor_map.R\n|   +- getCyanoAbund.R\n|   +- getLakeIDs.R\n|   +- importancePlot.R\n|\n|- man/\n|   +- class_prob_rf.Rd\n|   +- condAccuracy.Rd\n|   +- crossval_rf.Rd\n|   +- density_plot.Rd\n|   +- ecdf_ks_ci.Rd\n|   +- ecor_map.Rd\n|   +- getCyanoAbund.Rd\n|   +- getLakeIDs.Rd\n|   +- importancePlot.Rd\n|\n|- data/                \n|   +- LakeTrophicModelling.rda\n|\n|- vignettes/\n|\n|- inst/\n|   +- doc/\n|      +- manuscript.pdf\n|   +- extdata/\n|      +- ltmData.csv\n|      +- data_def.csv"
-  },
-  {
-    "objectID": "posts/20220816_quarto_rr/index.html#cicd-docker",
-    "href": "posts/20220816_quarto_rr/index.html#cicd-docker",
-    "title": "재현가능 글쓰기",
-    "section": "3.3 CI/CD와 도커",
-    "text": "3.3 CI/CD와 도커\nDockerfile 파일을 추가하여 환경도 재현가능하게 만들 수 있고, .travis.yml을 추가하여 CI/CD 환경도 구축할 수 있다. tests/를 추가하여 테스트 주도 개발(test-driven development, TDD)를 시도할 수 있고, 이를 통해 수작업 검증을 자동화하여 생산성과 품질을 대폭 향상시킬 수도 있다.\n\n\nCode\nproject\n|- DESCRIPTION          # project metadata and dependencies \n|- README.md            # top-level description of content and guide to users\n|- NAMESPACE            # exports R functions in the package for repeated use\n|- LICENSE              # specify the conditions of use and reuse of the code, data & text\n|- .travis.yml          # continuous integration service hook for auto-testing at each commit\n|- Dockerfile           # makes a custom isolated computational environment for the project\n|\n|- data/                # raw data, not changed once created\n|  +- my_data.csv       # data files in open formats such as TXT, CSV, TSV, etc.\n|\n|- analysis/            # any programmatic code\n|  +- my_report.Rmd     # R markdown file with narrative text interwoven with code chunks \n|  +- makefile          # builds a PDF/HTML/DOCX file from the Rmd, code, and data files\n|  +- scripts/          # code files (R, shell, etc.) used for data cleaning, analysis and visualisation \n|\n|- R/                     \n|  +- my_functions.R    # custom R functions that are used more than once throughout the project\n|\n|- man/\n|  +- my_functions.Rd   # documentation for the R functions (auto-generated when using devtools)\n|\n|- tests/\n|  +- testthat.R        # unit tests of R functions to ensure they perform as expected"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html",
-    "href": "posts/20220831_low_code_shiny/index.html",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "",
-    "text": "출처: https://itwiki.kr/w/로우_코드\n로우코드는 필요한 부품을 간단한 명령으로 조합하여 시스템을 만드는 개발 방법으로, 복잡한 코딩 과정을 단순화해서 소프트웨어를 빠르게 개발 및 배포하도록 만든 일종의 개발 환경으로 소개되고 있다.\nShiny 앱은 2012년 처음 소개된 이후 약 10년의 세월이 흐르며 다양한 프레임워크가 등장하여 서로 경쟁하고 있다. 이 분야를 개척한 것은 Shiny가 처음이지만 R을 기본언어로 하다보니 파이썬이나 자바스크립트와 같은 다른 언어을 많이 사용하고 있는 다른 반응형 대쉬보드 프레임워크가 등장하다 보니 GitHub 별점수에서 상대적으로 밀리고 있는 것으로 보인다. React 기반한 파이썬 프레임워크 Plotly Dash, 파이썬 Streamlit이 사용자면에서 최근들어 급증하고 있는데 최근 추세를 반영하고 있다고 볼 수 있다.\n출처: Streamlit vs. Dash vs. Shiny vs. Voila vs. Flask vs. Jupyter - Comparing data dashboarding tools and frameworks\n\n\n\n\n\n\n장점단점\n\n\n\n프로그램 개발 시간 단축\n\n\n모든 소스 코드를 작성하지 않고, 앱을 조합하여 시스템을 구축 하여 개발 기간을 단축\n\n\n개발비 절감\n\n\n개발 기간을 줄이는 효과로 프로그래머의 인력이 감소 개발에 들어 가는 인건비를 절감 하는 효과\n전문 개발자의 경우 필요에 따라 자동화와 불필요한 요소 생략 등을 통해 작업 효율성을 대폭 향상할 수 있다. 이런 효율성 향상은 결국 비용감소\n\n\n오류가 줄어든다\n\n\n프로그램밍을 직접 수행하는 부분이 적어지는 만큼 실수가 줄어 든다.\n사람이 작성하는 코드의 양이 적어지면서 오류 확률이 줄어 든다.\n그 결과 버그 수정 등에 걸리는 시간 단축과 비용 경감에 효과가 있다.\n\n\n인력 확보가 비교적 쉽다.\n\n\n엔지니어가 전문적인 실력을 갖추지 않았더라고 개발 작업이 가능.\n숙련된 엔지니어에 대한 의존성이 줄어 든다.\n\n\n\n\n자유도가 낮다\n\n\n대규모 개발에 사용의 어려움으로 인해 단순 구조 및 단일 비즈니스 프로세스에 적합하다.\n개발 툴에 따라서 가능 한 기능이 다르기 때문에 각 툴에만 의존 하게 되는 단점\n\n\n프로그램의 창의성 악화\n\n\n로우코드에 의존하게 되면 시스템을 새로 구축 하는 프로그래머가 점점 줄어 들어 창의성을 발휘하여 개발하는 경우가 적어 질 것이다.\n\n\n보안의 취약\n\n\n간단한 기능을 만들때는 기본적인 보안 관리에 소홀 할 수 있다.\n빠른 속도와 낮은 비용에만 너무 초점을 맞추면 관리 부족과 보안 취약점이 들어 날 수 있다.\n\n\n\n\n시장에서 다음 시스템이 인기를 끌고 있다.\n\nOutSystems\nmendix\nServiceNow\nKintone\nKISSFLOW\nAppian\nBoomi Flow"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#shinyuieditor",
-    "href": "posts/20220831_low_code_shiny/index.html#shinyuieditor",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "2.1 shinyuieditor",
-    "text": "2.1 shinyuieditor\nshinyuieditor는 2022-08-31 현재 알파버젼이지만 기존 Shiny UI 개발에 많은 노력이 든 것에 비하면 빠르고 쉽게 ui.R UI 부분을 제작할 수 있다.\n예를 들어 Drag and Drop 으로 UI 구성요소를 추가하는 것도 가능하다.\n\n\nVideo\n\n\n그외에도 Shiny 앱 개발에 필요한 다양한 다음 작업을 수행할 수 있다.\n\nUI 구성요소 이동\nUI 구성요소 선택\nUI 구성요소 삭제\nUI 구성요소 설정사항 변경\n행/열 폭 확인\n행/열을 레이아웃 격자에 추가/삭제\n행/열 폭 길이조정\n변경사항 Undo/Redo 기능\n\n동영상 사용방법은 shinyuieditor How to 참고\nshinyuieditor 패키지 명령어는 몇개 없는데 Shiny 앱 UI 제작을 위해 launch_editor() 함수를 사용해서 제작한다. 첫 선택사항에 따라 “shiny앱명칭” 디렉토리 아래 app.R 혹은 ui.R, server.R 이 생성된 것을 확인할 수 있다.\n\nshinyuieditor::launch_editor(app_loc = \"shiny앱명칭\")\n\nUI 제작이 마무리되면 bslib 패키지로 외양을 가꾸고 server.R 서버 코드를 작성하면 간단히 Shiny 앱 개발이 마무리된다."
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#dashboard-builder",
-    "href": "posts/20220831_low_code_shiny/index.html#dashboard-builder",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "2.2 Dashboard-Builder",
-    "text": "2.2 Dashboard-Builder\nPeter Gandenberger, “Dashboard-Builder: Building Shiny Apps without writing any code”, rstudio::conf(2022), 바로가기\nPeter Gandenberger가 최근에 개발한 Dashboard Builder는 대쉬보드를 키보드 입력없이 마우스만 사용해서 간단히 개발할 수 있다. Dashboard Builder 는 gridstackeR 패키지 기반하고 있다.\n로우코드 대쉬보드 개발 작업흐름은 다음과 같다.\n\n데이터 불러오기\n대쉬보드 구성요소 생성\n대쉬보드 내보내기\n후속작업을 통해 기능추가 및 개선 작업 수행\n\n2분 22초면 대쉬보드를 뚝딱 제작할 수 있는 사례를 다음 동영상을 통해 확인할 수 있다. DASHBOARD-BUILDER: create R-Shiny Dashboards in 2 Minutes and 22 Seconds"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#bslib",
-    "href": "posts/20220831_low_code_shiny/index.html#bslib",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "2.3 bslib",
-    "text": "2.3 bslib"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#bslib-외양",
-    "href": "posts/20220831_low_code_shiny/index.html#bslib-외양",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "2.3 bslib 외양",
-    "text": "2.3 bslib 외양\nShiny 앱의 외양 Look-and-Feel 을 수월히 제작할 수 있게 해주는 패키지가 bslib로 이를 통해서 Shiny 앱 개발 생산성을 크게 높일 수 있다.\n\n\n\n\n\nbslib 패키지 bs_theme_preview() 함수를 통해 Shiny 외양을 원하는 대로 제작할 수 있다. 다양한 외양 관련 사항을 지정하면 관련 사항이 코드로 떨어지게 되어 이를 복사하여 Shiny 앱에 CSS 나 코드에 직접 넣어 사용할 수 있다.\n\nbs_theme_preview()\n\n# Warning: package ‘bslib’ was built under R version 4.2.1\n# \n# Attaching package: ‘bslib’\n# \n# The following object is masked from ‘package:utils’:\n# \n#     page\n# \n# Warning: package ‘rlang’ was built under R version 4.2.1\n# Using libcurl 7.64.1 with Schannel\n# This Font Awesome icon ('exclamation-triangle') does not exist:\n# * if providing a custom `html_dependency` these `name` checks can \n#   be deactivated with `verify_fa = FALSE`\n# \n# Listening on http://127.0.0.1:4337\n# \n# ####  Update your bs_theme() R code with:  #####\n# bs_theme_update(theme, primary = \"#6C8FC4\", base_font = font_collection(\"system-ui\", \n#     \"-apple-system\", \"Segoe UI\", font_google(\"Roboto\"), \"Helvetica Neue\", \n#     \"Arial\", font_google(\"Noto Sans\"), \"Liberation Sans\", \"sans-serif\", \n#     \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \n#     \"Noto Color Emoji\"))"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#데이터-패키지",
-    "href": "posts/20220831_low_code_shiny/index.html#데이터-패키지",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "2.4 데이터 패키지",
-    "text": "2.4 데이터 패키지\n데이터를 별도 패키지로 묶어 관리하게 되면 Shiny 앱을 개발할 때 별도 데이터 패키지로 묶어 필요한 경우 Shiny 앱에서 불러 사용하게 되면 관리도 그렇고 개발시간도 단축시킬 수 있다.\n\n통계청 통계교육원 실용통계 교과서에 실린 데이터를 묶어낸 R 데이터 패키지: hsData"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#ui-화면-설계",
-    "href": "posts/20220831_low_code_shiny/index.html#ui-화면-설계",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "3.1 UI 화면 설계",
-    "text": "3.1 UI 화면 설계\n파워포인트, figma 등 화면설계 도구를 사용해서 Shiny UI를 작성한다."
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#테스트",
-    "href": "posts/20220831_low_code_shiny/index.html#테스트",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "3.2 테스트",
-    "text": "3.2 테스트"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#shinyuieditor-1",
-    "href": "posts/20220831_low_code_shiny/index.html#shinyuieditor-1",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "3.2 shinyuieditor",
-    "text": "3.2 shinyuieditor\nshinyuieditor 패키지를 사용해서 Shiny 앱 UI 부분을 제작한다."
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#서버-구현",
-    "href": "posts/20220831_low_code_shiny/index.html#서버-구현",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "3.3 서버 구현",
-    "text": "3.3 서버 구현\n마지막으로 server.R 코드를 작성하여 hsData 데이터 패키지에 포함된 데이터셋을 선택할 경우 해당 통계 분석결과를 자동으로 실행되도록 구현한다."
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#배포",
-    "href": "posts/20220831_low_code_shiny/index.html#배포",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "3.4 배포",
-    "text": "3.4 배포\nshinyapps.io에 RStudio 에서 버튼을 몇번 눌러 배포한다.\n\nhttps://r2bit.shinyapps.io/bitStat-HS/"
-  },
-  {
-    "objectID": "posts/20220831_low_code_shiny/index.html#실행화면",
-    "href": "posts/20220831_low_code_shiny/index.html#실행화면",
-    "title": "로우코드 Shiny 앱 개발",
-    "section": "3.5 실행화면",
-    "text": "3.5 실행화면"
+    "text": "1 디지털 문서 제작 패러다임\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.\n위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(\\LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\\(\\LaTeX\\)이 갖는 장점은 이제 프로그래밍 코드(R/파이썬/SQL/쉘스크립트/자바스크립트 등)을 문서저작에 포함되며 literate programming 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다.\n이미지 출처: http://www.cbinews.co.kr/news/articleView.html?idxno=36859\n\n\n\n2 문서로 보는 민주주의\n대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다.\n\n\n\n3 디지털 문서 저작\n과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 \\(\\LaTeX\\) 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.\n하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.\n이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다.\n\n\n\n4 과학문서 저작\n\n심각한 현재상황\n마크다운 기초\n고급 마크다운\n문서저작 실무\n수학 수식\n\n\n\n5 사례: 한국 R 컨퍼런스(2021)\n\n컨퍼런스 웹사이트\n컨퍼런스 전 기획\n\n컨퍼런스 포스터\n컨퍼런스 후원\n\n컨퍼런스 본 행사\n\n발표 슬라이드\n발표 템플릿\n\n컨퍼런스 후 설문\n\n설문조사 보고서\n\n기타\n\n탄소중립 신재생 에너지 캠프"
   },
   {
     "objectID": "writing_history.html",
@@ -880,40 +859,5 @@
     "title": "문자와 종이 역사",
     "section": "3.4 표의 문자",
     "text": "3.4 표의 문자\n한자와 같은 표의 문자가 여러가지 단점이 있는 것처럼 보이기도 하지만 표의문자가 갖는 장점으로 인해 그 중요성이 더욱 부각되고 있다. 표의문자가 갖는 장점은 문자 자체 의미가 부여되기 때문에 전세계 누구도 문자만 보면 그 뜻을 유추할 수 있다는 점이다.\n\n그림문자(Pictographic): 🌜, 😀, 🍰, …\n표의문자(Ideogrpahic): 🚫 금지와 같은 의미를 갖는 문자로 ⛔ 🚸 교통 표지판, ▶️ 전자제품 사용\n추상 어표(Abstract Logograpahic): 한자 사람 인(人), %, &, …\n\n그림문자와 표의문자를 결합하게 되면 다음과 같이 흡연을 금지하는 의미를 명확히 전달할 수 있다.\n\n\n\n흡연과 금지가 결합된 표의문자"
-  },
-  {
-    "objectID": "hangul_encoding.html",
-    "href": "hangul_encoding.html",
-    "title": "한글 인코딩",
-    "section": "",
-    "text": "스마트폰의 대중화에 따라 더이상 윈도우 운영체제에서 사용되는 문자체계가 더이상 표준이 되지 못하고 여러 문제점을 야기함에 따라 유니코드 + UTF-8 체제가 대세로 자리잡고 있는 것이 확연히 나타나고 있다.\n2010년 구글에서 발표한 자료에 의하면 2010년 UTF-8 인코딩이 웹에서 주류로 부상하기 시작한 것이 확인되었다. (Davis, 2010) 웹기반 플롯 디지털 도구를 활용하여 그래프(WebPlotDigitizer)에서 데이터를 추출하여 시각화면 유사한 결과를 시각적으로 표현할 수 있다.\n데이터 출처: Historical yearly trends in the usage statistics of character encodings for websites\n2010년 이후 웹에서 가장 점유율이 높은 인코딩 방식은 UTF-8으로 W3Tech Web Technology Surveys 를 통해 확인을 할 수 있다.\n\n\nCode\nlibrary(tidyverse)\nextrafont::loadfonts()\n\n## 1. 2000년부터 웹 인코딩 추세 ------------------\nascii <- read_csv(\"data/ascii_red.csv\", col_names = FALSE) %>% \n  set_names(c(\"연도\", \"ascii\"))\n\nascii_tbl <- ascii %>% \n  mutate(연도 = floor(연도)) %>% \n  group_by(연도) %>% \n  summarize(ascii = mean(ascii))\n\niso_8859 <- read_csv(\"data/iso_orange.csv\", col_names = FALSE) %>% \n  set_names(c(\"연도\", \"iso_8859\"))\n\niso_8859_tbl <- iso_8859 %>% \n  mutate(연도 = floor(연도)) %>% \n  group_by(연도) %>% \n  summarize(iso_8859 = mean(iso_8859))\n\nutf_8 <- read_csv(\"data/utf-8_blue.csv\", col_names = FALSE) %>% \n  set_names(c(\"연도\", \"utf_8\"))\n\nutf_8_tbl <- utf_8 %>% \n  mutate(연도 = floor(연도)) %>% \n  group_by(연도) %>% \n  summarize(utf_8 = mean(utf_8, na.rm = FALSE)) \n\nencoding_tbl <- left_join(ascii_tbl, iso_8859_tbl) %>% \n  left_join(utf_8_tbl) %>% \n  pivot_longer(cols = -연도) %>% \n  mutate(value = ifelse(is.na(value), 0, value)) %>% \n  filter(연도 <= 2009)\n\nencoding_2010_g <- encoding_tbl %>% \n  mutate(연도 = lubridate::make_date(year = 연도)) %>% \n  ggplot(aes(x = 연도, y = value, color = name)) +\n    geom_line() +\n    geom_point() +\n    theme_bw(base_family = \"MaruBuri\") +\n    labs(x = \"\",\n         y = \"점유율(%)\",\n         title = \"웹에서 UTF-8 성장세\",\n         subtitle = \"2010 ~ 2010년\",\n         color = \"인코딩\") +\n    scale_y_continuous(labels = scales::percent) +\n    scale_color_manual(values = c(\"ascii\" = \"gray50\", \"iso_8859\" = \"red\", \"utf_8\" = \"blue\")) +\n  theme(legend.position = \"top\") +\n  expand_limits(y = c(0, 1))\n\n## 2. 2010년부터 웹 인코딩 추세 ------------------\nlibrary(readxl)\n\nencoding_raw <- read_excel(\"data/web_encoding.xlsx\", \n                           col_types = \"text\")\n\nencoding_web <- encoding_raw %>% \n  janitor::clean_names(ascii = FALSE) %>% \n  pivot_longer(cols = -구분, names_to = \"연도\", values_to = \"점유율\") %>% \n  mutate(연도 = str_extract(연도, \"\\\\d{4}\") %>% as.integer(.)) %>% \n  mutate(점유율 = parse_number(점유율)) %>% \n  group_by(구분, 연도) %>% \n  summarise(점유율 = min(점유율, na.rm = TRUE)) %>% \n  ungroup()\n\nencoding_2022_g <- encoding_web %>% \n  filter(구분 %in% c(\"EUC-KR\", \"GB2312\", \"Shift JIS\", \"UTF-8\", \"ISO-8859-1\")) %>% \n  mutate(연도 = lubridate::make_date(year = 연도)) %>%   \n  ggplot(aes(x = 연도, y = 점유율, color = 구분)) +\n    geom_line() +\n    geom_point() +\n    theme_bw(base_family = \"MaruBuri\") +\n    labs(x = \"\",\n         y = \"점유율(%)\",\n         title = \"웹에서 UTF-8 성장세\",\n         subtitle = \"2011 ~ 2012년 3분기\",\n         color = \"인코딩\") +\n    scale_y_continuous(labels = scales::percent) +\n    scale_color_manual(values = c(\"EUC-KR\" = \"gray50\", \"GB2312\" = \"gray80\", \"Shift JIS\" = \"gray70\", \"ISO-8859-1\" = \"red\", \"UTF-8\" = \"blue\")) +\n  theme(legend.position = \"top\")   +\n  expand_limits(y = c(0, 1))\n\n## 3. 시각화 요약 ------------------\nlibrary(patchwork)\n\nencoding_2010_g + encoding_2022_g"
-  },
-  {
-    "objectID": "hangul_encoding.html#ascii-문자",
-    "href": "hangul_encoding.html#ascii-문자",
-    "title": "한글 인코딩",
-    "section": "4.1 ASCII 문자",
-    "text": "4.1 ASCII 문자\nASCII 총 \\(2^7=128\\) 문자 중 제어문자를 제외한 출력가능한 문자를 뽑아보자.\n\n\nCode\ncoderange <- c(33:126)\n\nascii_table <- tibble(\n 십진수   = coderange,\n 십육진수 = as.raw(coderange),\n 문자     = rawToChar(as.raw(coderange), multiple=TRUE),\n 이진수   = pryr::bits(문자, split = TRUE)\n) %>% \n  relocate(문자, .before = 십진수)\n\nascii_table %>% \n  slice_sample(n=30)\n\n\n# A tibble: 30 × 4\n   문자  십진수 십육진수 이진수  \n   <chr>  <int> <raw>    <chr>   \n 1 \"I\"       73 49       01001001\n 2 \"3\"       51 33       00110011\n 3 \"z\"      122 7a       01111010\n 4 \"S\"       83 53       01010011\n 5 \"#\"       35 23       00100011\n 6 \">\"       62 3e       00111110\n 7 \"\\\\\"      92 5c       01011100\n 8 \"b\"       98 62       01100010\n 9 \"w\"      119 77       01110111\n10 \"=\"       61 3d       00111101\n# … with 20 more rows\n\n\n출력가능한 ASCII 문자표를 33번부터 126번까지 문자 십진수 이진수 순으로 출력하면 다음과 같다.\n\n\nCode\nlibrary(mmtable2) # devtools::install_github(\"ianmoran11/mmtable2\")\n\nascii_table %>% \n  mutate(index = row_number()) %>% \n  mutate(x_grp = index %/% 10 ) %>%\n  mutate(y_grp = index %% 10 ) %>% \n  group_by(x_grp, y_grp) %>%\n  summarise(문자 = glue::glue(\"{문자} {십진수} {이진수}\") ) %>%\n  ungroup() %>%\n  mmtable(cells = 문자) +\n  header_left(x_grp) +\n  header_top(y_grp)\n\n\n\n\n\n\n  \n  \n    \n       \n        \n         \n          \n           \n            \n             \n              \n               \n                \n                 \n    \n  \n  \n    \n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n    0\n \n! 33 00100001\n\" 34 00100010\n# 35 00100011\n$ 36 00100100\n% 37 00100101\n& 38 00100110\n' 39 00100111\n( 40 00101000\n) 41 00101001\n    1\n* 42 00101010\n+ 43 00101011\n, 44 00101100\n- 45 00101101\n. 46 00101110\n/ 47 00101111\n0 48 00110000\n1 49 00110001\n2 50 00110010\n3 51 00110011\n    2\n4 52 00110100\n5 53 00110101\n6 54 00110110\n7 55 00110111\n8 56 00111000\n9 57 00111001\n: 58 00111010\n; 59 00111011\n< 60 00111100\n= 61 00111101\n    3\n> 62 00111110\n? 63 00111111\n@ 64 01000000\nA 65 01000001\nB 66 01000010\nC 67 01000011\nD 68 01000100\nE 69 01000101\nF 70 01000110\nG 71 01000111\n    4\nH 72 01001000\nI 73 01001001\nJ 74 01001010\nK 75 01001011\nL 76 01001100\nM 77 01001101\nN 78 01001110\nO 79 01001111\nP 80 01010000\nQ 81 01010001\n    5\nR 82 01010010\nS 83 01010011\nT 84 01010100\nU 85 01010101\nV 86 01010110\nW 87 01010111\nX 88 01011000\nY 89 01011001\nZ 90 01011010\n[ 91 01011011\n    6\n\\ 92 01011100\n] 93 01011101\n^ 94 01011110\n_ 95 01011111\n` 96 01100000\na 97 01100001\nb 98 01100010\nc 99 01100011\nd 100 01100100\ne 101 01100101\n    7\nf 102 01100110\ng 103 01100111\nh 104 01101000\ni 105 01101001\nj 106 01101010\nk 107 01101011\nl 108 01101100\nm 109 01101101\nn 110 01101110\no 111 01101111\n    8\np 112 01110000\nq 113 01110001\nr 114 01110010\ns 115 01110011\nt 116 01110100\nu 117 01110101\nv 118 01110110\nw 119 01110111\nx 120 01111000\ny 121 01111001\n    9\nz 122 01111010\n{ 123 01111011\n| 124 01111100\n} 125 01111101\n~ 126 01111110"
-  },
-  {
-    "objectID": "hangul_encoding.html#확장-ascii-문자",
-    "href": "hangul_encoding.html#확장-ascii-문자",
-    "title": "한글 인코딩",
-    "section": "4.2 확장 ASCII 문자",
-    "text": "4.2 확장 ASCII 문자\n확장 ASCII 총 \\(2^8=256\\) 문자 중 앞선 기본 ASCII를 제외한 나머지 확장문자표를 출력해보자.\n\n\nCode\ncoderange <- c(161:255)\n# iconv(extendedascii, from=\"Windows-1252\", to=\"UTF-8\") \n\nextended_ascii_table <- tibble(\n 십진수   = coderange,\n 십육진수 = as.raw(coderange),\n 문자     = rawToChar(as.raw(coderange), multiple=TRUE),\n 이진수   = pryr::bits(문자, split = TRUE)\n) %>% \n  relocate(문자, .before = 십진수) %>% \n  mutate(문자 = str_conv(문자, encoding = \"latin-1\")) \n\nextended_ascii_table  %>% \n  slice_sample(n=30)\n\n\n# A tibble: 30 × 4\n   문자  십진수 십육진수 이진수  \n   <chr>  <int> <raw>    <chr>   \n 1 ¤        164 a4       10100100\n 2 ÷        247 f7       11110111\n 3 æ        230 e6       11100110\n 4 Þ        222 de       11011110\n 5 ®        174 ae       10101110\n 6 Ý        221 dd       11011101\n 7 Ô        212 d4       11010100\n 8 Ä        196 c4       11000100\n 9 ¸        184 b8       10111000\n10 ç        231 e7       11100111\n# … with 20 more rows\n\n\n\n\nCode\nlibrary(mmtable2) # devtools::install_github(\"ianmoran11/mmtable2\")\n\nextended_ascii_table %>% \n  mutate(index = row_number()) %>% \n  mutate(x_grp = index %/% 10 ) %>%\n  mutate(y_grp = index %% 10 ) %>% \n  group_by(x_grp, y_grp) %>%\n  summarise(문자 = glue::glue(\"{문자}\\n{십진수}\\n {이진수}\") ) %>%\n  ungroup() %>%\n  ggplot(aes(x=x_grp, y=y_grp)) +\n    geom_text(aes(label = 문자), size = 3) +\n    theme_void(base_family = \"MaruBuri\")\n\n\n\n\n\n\n\n\n\n[참조: Ascii code table in R], ASCII Table with All 256 Character codes in decimal, hexadecimal, octal and binary"
-  },
-  {
-    "objectID": "hangul_encoding.html#유니코드",
-    "href": "hangul_encoding.html#유니코드",
-    "title": "한글 인코딩",
-    "section": "4.3 유니코드",
-    "text": "4.3 유니코드\nUnicode 패키지를 통해서 유니코드에 등록된 문자를 확인할 수 있다.\n\n\nCode\nlibrary(Unicode)\nlibrary(rlang)\n\nall_scripts <- u_scripts()\nnames(all_scripts)\n\n\n  [1] \"Adlam\"                  \"Ahom\"                   \"Anatolian_Hieroglyphs\" \n  [4] \"Arabic\"                 \"Armenian\"               \"Avestan\"               \n  [7] \"Balinese\"               \"Bamum\"                  \"Bassa_Vah\"             \n [10] \"Batak\"                  \"Bengali\"                \"Bhaiksuki\"             \n [13] \"Bopomofo\"               \"Brahmi\"                 \"Braille\"               \n [16] \"Buginese\"               \"Buhid\"                  \"Canadian_Aboriginal\"   \n [19] \"Carian\"                 \"Caucasian_Albanian\"     \"Chakma\"                \n [22] \"Cham\"                   \"Cherokee\"               \"Chorasmian\"            \n [25] \"Common\"                 \"Coptic\"                 \"Cuneiform\"             \n [28] \"Cypriot\"                \"Cypro_Minoan\"           \"Cyrillic\"              \n [31] \"Deseret\"                \"Devanagari\"             \"Dives_Akuru\"           \n [34] \"Dogra\"                  \"Duployan\"               \"Egyptian_Hieroglyphs\"  \n [37] \"Elbasan\"                \"Elymaic\"                \"Ethiopic\"              \n [40] \"Georgian\"               \"Glagolitic\"             \"Gothic\"                \n [43] \"Grantha\"                \"Greek\"                  \"Gujarati\"              \n [46] \"Gunjala_Gondi\"          \"Gurmukhi\"               \"Han\"                   \n [49] \"Hangul\"                 \"Hanifi_Rohingya\"        \"Hanunoo\"               \n [52] \"Hatran\"                 \"Hebrew\"                 \"Hiragana\"              \n [55] \"Imperial_Aramaic\"       \"Inherited\"              \"Inscriptional_Pahlavi\" \n [58] \"Inscriptional_Parthian\" \"Javanese\"               \"Kaithi\"                \n [61] \"Kannada\"                \"Katakana\"               \"Kawi\"                  \n [64] \"Kayah_Li\"               \"Kharoshthi\"             \"Khitan_Small_Script\"   \n [67] \"Khmer\"                  \"Khojki\"                 \"Khudawadi\"             \n [70] \"Lao\"                    \"Latin\"                  \"Lepcha\"                \n [73] \"Limbu\"                  \"Linear_A\"               \"Linear_B\"              \n [76] \"Lisu\"                   \"Lycian\"                 \"Lydian\"                \n [79] \"Mahajani\"               \"Makasar\"                \"Malayalam\"             \n [82] \"Mandaic\"                \"Manichaean\"             \"Marchen\"               \n [85] \"Masaram_Gondi\"          \"Medefaidrin\"            \"Meetei_Mayek\"          \n [88] \"Mende_Kikakui\"          \"Meroitic_Cursive\"       \"Meroitic_Hieroglyphs\"  \n [91] \"Miao\"                   \"Modi\"                   \"Mongolian\"             \n [94] \"Mro\"                    \"Multani\"                \"Myanmar\"               \n [97] \"Nabataean\"              \"Nag_Mundari\"            \"Nandinagari\"           \n[100] \"New_Tai_Lue\"            \"Newa\"                   \"Nko\"                   \n[103] \"Nushu\"                  \"Nyiakeng_Puachue_Hmong\" \"Ogham\"                 \n[106] \"Ol_Chiki\"               \"Old_Hungarian\"          \"Old_Italic\"            \n[109] \"Old_North_Arabian\"      \"Old_Permic\"             \"Old_Persian\"           \n[112] \"Old_Sogdian\"            \"Old_South_Arabian\"      \"Old_Turkic\"            \n[115] \"Old_Uyghur\"             \"Oriya\"                  \"Osage\"                 \n[118] \"Osmanya\"                \"Pahawh_Hmong\"           \"Palmyrene\"             \n[121] \"Pau_Cin_Hau\"            \"Phags_Pa\"               \"Phoenician\"            \n[124] \"Psalter_Pahlavi\"        \"Rejang\"                 \"Runic\"                 \n[127] \"Samaritan\"              \"Saurashtra\"             \"Sharada\"               \n[130] \"Shavian\"                \"Siddham\"                \"SignWriting\"           \n[133] \"Sinhala\"                \"Sogdian\"                \"Sora_Sompeng\"          \n[136] \"Soyombo\"                \"Sundanese\"              \"Syloti_Nagri\"          \n[139] \"Syriac\"                 \"Tagalog\"                \"Tagbanwa\"              \n[142] \"Tai_Le\"                 \"Tai_Tham\"               \"Tai_Viet\"              \n[145] \"Takri\"                  \"Tamil\"                  \"Tangsa\"                \n[148] \"Tangut\"                 \"Telugu\"                 \"Thaana\"                \n[151] \"Thai\"                   \"Tibetan\"                \"Tifinagh\"              \n[154] \"Tirhuta\"                \"Toto\"                   \"Ugaritic\"              \n[157] \"Vai\"                    \"Vithkuqi\"               \"Wancho\"                \n[160] \"Warang_Citi\"            \"Yezidi\"                 \"Yi\"                    \n[163] \"Zanabazar_Square\"      \n\n\n\n4.3.1 영문자\n영문자를 유니코드에서 찾아 살펴보자. 영문자는 라틴 계열이라 라틴계열에 포함된 문자를 뽑아서 유니코드 범위를 정해서 유니코드 범위에 포함된 문자를 사람이 읽을 수 있는 문자로 화면에 일부만 출력한다.\n코드 참조: How to generate all possible unicode characters?\n\n\nCode\nlatin_char <-  u_scripts('Latin')\n\nlatin_char_length <- map(latin_char, n_of_u_chars)\n\nshow_characters <- function(i) {\n  expand_ranges <- as.u_char_seq(latin_char$Latin[i])\n  unicode_chars <- unlist(expand_ranges)\n  intToUtf8(unicode_chars)\n}\n\nmap_chr(1:10, show_characters)\n\n\n [1] \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"                                                                                                                                                                                             \n [2] \"abcdefghijklmnopqrstuvwxyz\"                                                                                                                                                                                             \n [3] \"ª\"                                                                                                                                                                                                                     \n [4] \"º\"                                                                                                                                                                                                                     \n [5] \"ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ\"                                                                                                                                                                                              \n [6] \"ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö\"                                                                                                                                                                                   \n [7] \"øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺ\"\n [8] \"ƻ\"                                                                                                                                                                                                                      \n [9] \"Ƽƽƾƿ\"                                                                                                                                                                                                                   \n[10] \"ǀǁǂǃ\"                                                                                                                                                                                                                   \n\n\n\n\n4.3.2 한글\n동일하게 유니코드에 등록된 한글도 확인해보자. 한글완성형으로 한글 유니코드 7번째 블록에 11,172 개 글자가 등록되어 있어 이를 제외한 한글을 뽑아보자.\n\n\nCode\nhangul_scripts <- u_scripts('Hangul')\n\nhangul_char_length <- map(hangul_scripts, n_of_u_chars)\n\nmap(hangul_scripts, n_of_u_chars)\n\n\n$Hangul\n [1]   256     2    94    31    31    29 11172    23    49    31     6     6\n[13]     6     3\n\n\nCode\nexpand_ranges <- as.u_char_seq(hangul_scripts$Hangul[7])\n\nshow_hangul <- function(i) {\n  expand_ranges <- as.u_char_seq(hangul_scripts$Hangul[i])\n  unicode_chars <- unlist(expand_ranges)\n  intToUtf8(unicode_chars)\n}\n\nmap_chr(c(1:6,8:14), show_hangul)\n\n\n [1] \"ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒᄓᄔᄕᄖᄗᄘᄙᄚᄛᄜᄝᄞᄟᄠᄡᄢᄣᄤᄥᄦᄧᄨᄩᄪᄫᄬᄭᄮᄯᄰᄱᄲᄳᄴᄵᄶᄷᄸᄹᄺᄻᄼᄽᄾᄿᅀᅁᅂᅃᅄᅅᅆᅇᅈᅉᅊᅋᅌᅍᅎᅏᅐᅑᅒᅓᅔᅕᅖᅗᅘᅙᅚᅛᅜᅝᅞᅟᅠᅡᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᅶᅷᅸᅹᅺᅻᅼᅽᅾᅿᆀᆁᆂᆃᆄᆅᆆᆇᆈᆉᆊᆋᆌᆍᆎᆏᆐᆑᆒᆓᆔᆕᆖᆗᆘᆙᆚᆛᆜᆝᆞᆟᆠᆡᆢᆣᆤᆥᆦᆧᆨᆩᆪᆫᆬᆭᆮᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂᇃᇄᇅᇆᇇᇈᇉᇊᇋᇌᇍᇎᇏᇐᇑᇒᇓᇔᇕᇖᇗᇘᇙᇚᇛᇜᇝᇞᇟᇠᇡᇢᇣᇤᇥᇦᇧᇨᇩᇪᇫᇬᇭᇮᇯᇰᇱᇲᇳᇴᇵᇶᇷᇸᇹᇺᇻᇼᇽᇾᇿ\"\n [2] \"〮〯\"                                                                                                                                                                                            \n [3] \"ㄱㄲㄳㄴㄵㄶㄷㄸㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅃㅄㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣㅤㅥㅦㅧㅨㅩㅪㅫㅬㅭㅮㅯㅰㅱㅲㅳㅴㅵㅶㅷㅸㅹㅺㅻㅼㅽㅾㅿㆀㆁㆂㆃㆄㆅㆆㆇㆈㆉㆊㆋㆌㆍㆎ\"    \n [4] \"㈀㈁㈂㈃㈄㈅㈆㈇㈈㈉㈊㈋㈌㈍㈎㈏㈐㈑㈒㈓㈔㈕㈖㈗㈘㈙㈚㈛㈜㈝㈞\"                                                                                                                                  \n [5] \"㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭㉮㉯㉰㉱㉲㉳㉴㉵㉶㉷㉸㉹㉺㉻㉼㉽㉾\"                                                                                                                                  \n [6] \"ꥠꥡꥢꥣꥤꥥꥦꥧꥨꥩꥪꥫꥬꥭꥮꥯꥰꥱꥲꥳꥴꥵꥶꥷꥸꥹꥺꥻꥼ\"                                                                                                                                      \n [7] \"ힰힱힲힳힴힵힶힷힸힹힺힻힼힽힾힿퟀퟁퟂퟃퟄퟅퟆ\"                                                                                                                                                                         \n [8] \"ퟋퟌퟍퟎퟏퟐퟑퟒퟓퟔퟕퟖퟗퟘퟙퟚퟛퟜퟝퟞퟟퟠퟡퟢퟣퟤퟥퟦퟧퟨퟩퟪퟫퟬퟭퟮퟯퟰퟱퟲퟳퟴퟵퟶퟷퟸퟹퟺퟻ\"                                                                                                                                               \n [9] \"ﾠﾡﾢﾣﾤﾥﾦﾧﾨﾩﾪﾫﾬﾭﾮﾯﾰﾱﾲﾳﾴﾵﾶﾷﾸﾹﾺﾻﾼﾽﾾ\"                                                                                                                                                                 \n[10] \"ￂￃￄￅￆￇ\"                                                                                                                                                                                          \n[11] \"ￊￋￌￍￎￏ\"                                                                                                                                                                                          \n[12] \"ￒￓￔￕￖￗ\"                                                                                                                                                                                          \n[13] \"ￚￛￜ\"                                                                                                                                                                                             \n\n\n\n\n\n\n\n\nNote\n\n\n\nrlang 패키지 chr_unserialise_unicode() 함수는 유니코드를 문자로 변환하여 확인할 때 유용하다.\n\n\nCode\nlibrary(rlang)\nchr_unserialise_unicode('<U+AC00>')\n\n\n[1] \"가\"\n\n\nCode\nchr_unserialise_unicode('<U+FFDC>')\n\n\n[1] \"ￜ\""
-  },
-  {
-    "objectID": "computation/index.html",
-    "href": "computation/index.html",
-    "title": "코딩 (계산)",
-    "section": "",
-    "text": "1 멘탈 모형"
   }
 ]
