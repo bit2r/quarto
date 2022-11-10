@@ -189,6 +189,34 @@
     "text": "3.5 실행화면"
   },
   {
+    "objectID": "posts/20221110_bookdown/index.html",
+    "href": "posts/20221110_bookdown/index.html",
+    "title": "기존 Bookdown 책을 Quarto Book 변환",
+    "section": "",
+    "text": "Yihui Xie가 시작한 bookdown 패키지는 다양한 데이터 과학 책을 제작하는데 꼭 필요한 텍스트와 프로그래밍 코드(R)를 재현가능하게 묶어 책을 다양한 형태로 출간하는데 큰 도움을 주었다. 하지만 R 언어 기반으로 시작한 다양한 문서생성 생태계는 각 문서를 제작하는데 서로 다른 패키지를 사용한다는 점에서 초창기에는 찬사를 받았지만, 지금은 너무 다양한 문서를 제작하는데 서로 다른 패키지와 조금 다른 구문을 적용한다는 점에서 어려움도 가중된 것도 사실이다. 예를 들어,\n\n블로그 제작: blogdown\n패키지 웹사이트 제작: pkgdown\n책 제작: bookdown\n과학기술 논문 제작: distill\nCV 이력서 제작: vitae\n통계 포스터 등: pagedown\n…\n\nR과 마크다운(Markdown)을 결합한 Literate Programming 을 웹출판에 적용하면서 매해 새로운 패키지가 제공되면서 2015년 이후 Yihui Xie를 비롯한 동료 개발자들이 어떤 문서를 제작할지 흥미로운 시절을 보낸 것도 사실이다. 하지만 앞서 언급한 다양한 문서를 서로 다른 방식으로 제작한다는 피로감으로 Quarto가 등장하면서 이런 문제는 모두 사라질 것으로 보인다.\n이제 남은 문제는 기존에 bookdown으로 제작한 책을 어떻게 quarto book으로 변환하냐는 문제다. 그래서 직접 해봤습니다.\n\n\n\n\n\n\n정말 간단합니다.\n\n\n\n7분 투자하여 Nicholas Tierney (2022-04-11), “Notes on Changing from Rmarkdown/Bookdown to Quarto”, Credibly Curious - Nick Tierney’s (mostly) rstats blog 블로그 읽고 기존 bookdown 저작파일을 Quarto Book으로 변환한 후 quarto render 끝."
+  },
+  {
+    "objectID": "posts/20221110_bookdown/index.html#파일-확장자-변환",
+    "href": "posts/20221110_bookdown/index.html#파일-확장자-변환",
+    "title": "기존 Bookdown 책을 Quarto Book 변환",
+    "section": "3.1 파일 확장자 변환",
+    "text": "3.1 파일 확장자 변환\n기존 bookdown 전자책은 .Rmd 파일로 되어 있어 .qmd 파일로 확장자를 변경시켜야된다. 책 자체가 대체로 많은 파일로 구성되어 있기 때문에 일괄 처리하는 것이 정확성을 높이고 속도도 빠르다.\n\n# 1. change filenames: filename.Rmd —> filename.qmd -----\nlibrary(fs)\nlibrary(stringr)\nrmd_names <- dir_ls(path = \".\", glob = \"*.Rmd\")\nqmd_names <- str_replace(string = rmd_names,\n                         pattern = \"Rmd\",\n                         replacement = \"qmd\")\nfile_move(path = rmd_names,\n          new_path = qmd_names)\n\nfile_move(path = \"_bookdown.yml\",\n          new_path = \"_quarto.yml\")"
+  },
+  {
+    "objectID": "posts/20221110_bookdown/index.html#quarto.yml-파일",
+    "href": "posts/20221110_bookdown/index.html#quarto.yml-파일",
+    "title": "기존 Bookdown 책을 Quarto Book 변환",
+    "section": "3.2 _quarto.yml 파일",
+    "text": "3.2 _quarto.yml 파일\nbookdown은 _bookdown.yml, _output.yml을 포함한 각 역할을 담당하는 .yml 파일로 나눠져있지만 Quarto 는 이런 것을 단 하나의 _quarto.yml 파일로 제작해 놨습니다. 따라서 중요한 _bookdown.yml 파일의 .Rmd 파일을 앞서 변환시킨 .qmd 파일로 변화시켜 quarto.yml 파일을 준비한다.\n\n# 2. Change _bookdown.yml to _quarto.yml and remove _output.yml ----\n\nlibrary(readr)\nlibrary(stringr)\nquarto_yaml_rmd <- read_lines(\"_quarto.yml\")\n\nquarto_yaml_qmd <- str_replace_all(string = quarto_yaml_rmd,\n                                   pattern = \"Rmd\",\n                                   replacement = \"qmd\")\n\nwrite_lines(\n  x = quarto_yaml_qmd,\n  file = \"_quarto.yml\"\n)"
+  },
+  {
+    "objectID": "posts/20221110_bookdown/index.html#quarto-book-컴파일",
+    "href": "posts/20221110_bookdown/index.html#quarto-book-컴파일",
+    "title": "기존 Bookdown 책을 Quarto Book 변환",
+    "section": "3.3 Quarto Book 컴파일",
+    "text": "3.3 Quarto Book 컴파일\n_quarto.yml 파일을 열어 Quarto Book 문법에 맞춰 편집한 후 quarto preview, quarto render 명령어로 작업을 전자책을 제작한 후 GitHub Pages 나 Quarto Pub에 배포한다."
+  },
+  {
     "objectID": "quarto_about.html#블로그-저작-소프트웨어",
     "href": "quarto_about.html#블로그-저작-소프트웨어",
     "title": "Quarto",
@@ -235,7 +263,7 @@
     "href": "quarto_blog.html",
     "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "로우코드 Shiny 앱 개발\n\n\n\n\n\n\n\nQuarto\n\n\nLow code\n\n\nshiny\n\n\n앱개발\n\n\nshinyuieditor\n\n\n데이터 패키지\n\n\nbslib\n\n\n구글 폰트\n\n\ndashboard-builder\n\n\n\n\nShiny 앱개발에 Shiny 생태계를 구성하는 로우코드(Low Code)를 적극 도입하여 개발시간을 단축하고 생산성을 높이는 방법을 소개한다.\n\n\n\n\n\n\nAug 31, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n재현가능 글쓰기\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\nQuarto 블로그\n\n\n\n\n\n\n\nQuarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 15, 2022\n\n\n이광춘\n\n\n\n\n\n\nNo matching items"
+    "text": "기존 Bookdown 책을 Quarto Book 변환\n\n\n\n\n\n\n\nQuarto Book\n\n\nBookdown\n\n\n전자책\n\n\n리보그\n\n\nReeborg\n\n\n\n\n기존 Bookdown으로 제작된 리보그(Reeborg) 코딩 전자책을 Quato Book으로 변환한 경험을 공유합니다.\n\n\n\n\n\n\nNov 10, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n로우코드 Shiny 앱 개발\n\n\n\n\n\n\n\nQuarto\n\n\nLow code\n\n\nshiny\n\n\n앱개발\n\n\nshinyuieditor\n\n\n데이터 패키지\n\n\nbslib\n\n\n구글 폰트\n\n\ndashboard-builder\n\n\n\n\nShiny 앱개발에 Shiny 생태계를 구성하는 로우코드(Low Code)를 적극 도입하여 개발시간을 단축하고 생산성을 높이는 방법을 소개한다.\n\n\n\n\n\n\nAug 31, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n재현가능 글쓰기\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\nQuarto 블로그\n\n\n\n\n\n\n\nQuarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 15, 2022\n\n\n이광춘\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quarto_fonts.html",

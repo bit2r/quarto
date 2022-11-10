@@ -2,6 +2,7 @@
   {
     "listing": "/quarto_blog.html",
     "items": [
+      "/posts/20221110_bookdown/index.html",
       "/posts/20220831_low_code_shiny/index.html",
       "/posts/20220816_quarto_rr/index.html",
       "/posts/20220815_quarto_blog/index.html"
