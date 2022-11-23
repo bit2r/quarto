@@ -1,0 +1,870 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>가비아</td>
+							<td class="ac">코스닥</td>
+							<td>ir.gabia.com</td>
+							<td>경기도 성남시 분당구 대왕판교로 660(삼평동) 유스페이스1 B동 5층</td>
+							<td>1544-4370</td>
+							<td>02-829-3896</td>
+						</tr>
+						
+						<tr>
+							<td>가온미디어</td>
+							<td class="ac">코스닥</td>
+							<td>www.kaonmedia.co.kr</td>
+							<td>경기도 성남시 분당구 성남대로 884-3 (야탑동, 가온미디어빌딩)</td>
+							<td>031-724-8500</td>
+							<td>031-724-8560</td>
+						</tr>
+						
+						<tr>
+							<td>가온전선</td>
+							<td class="ac">코스피</td>
+							<td>www.gaoncable.com</td>
+							<td>경기도 군포시 엘에스로45번길 120</td>
+							<td>031-8068-3917</td>
+							<td>031-8068-3917</td>
+						</tr>
+						
+						<tr>
+							<td>가온칩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.gaonchips.com</td>
+							<td>경기도 성남시 분당구 판교로255번길 35 B동 6층(삼평동, 판교실리콘파크)</td>
+							<td>031-697-8267</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>감성코퍼레이션</td>
+							<td class="ac">코스닥</td>
+							<td>www.virtualtek.co.kr</td>
+							<td>서울특별시 서초구 방배로 162 서울시 서초구 방배로 162, 4층(예광빌딩)</td>
+							<td>02-3140-1000</td>
+							<td>070-4269-2138</td>
+						</tr>
+						
+						<tr>
+							<td>강남제비스코</td>
+							<td class="ac">코스피</td>
+							<td>www.jevisco.com</td>
+							<td>부산광역시 부산진구 중앙대로 639 18층(범천동, 엠디엠타워)</td>
+							<td>051-892-4221</td>
+							<td>051-892-4221</td>
+						</tr>
+						
+						<tr>
+							<td>강스템바이오텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.kangstem.com</td>
+							<td>서울시 강남구 테헤란로 512 신안빌딩 17층</td>
+							<td>02-888-1590</td>
+							<td>02-2036-7514</td>
+						</tr>
+						
+						<tr>
+							<td>강원랜드</td>
+							<td class="ac">코스피</td>
+							<td>kangwonland.high1.com</td>
+							<td>강원도 정선군 사북읍 하이원길 265</td>
+							<td>033-590-7700</td>
+							<td>033-590-7700</td>
+						</tr>
+						
+						<tr>
+							<td>강원에너지</td>
+							<td class="ac">코스닥</td>
+							<td>www.kwb21.com</td>
+							<td>전라북도 군산시 자유무역1길 60 웰크론강원 5109, 51010, 51012</td>
+							<td>031-358-7683</td>
+							<td>02-6670-9000</td>
+						</tr>
+						
+						<tr>
+							<td>갤럭시아머니트리</td>
+							<td class="ac">코스닥</td>
+							<td>www.galaxiamoneytree.co.kr</td>
+							<td>서울시 강남구 광평로 281 수서빌딩 15층 (수서동)</td>
+							<td>1566-0123</td>
+							<td>070-4193-4023</td>
+						</tr>
+						
+						<tr>
+							<td>갤럭시아에스엠</td>
+							<td class="ac">코스피</td>
+							<td>www.galaxiasme.com</td>
+							<td>서울시 강남구 학동로 311 미성빌딩 7층</td>
+							<td>02-775-1300</td>
+							<td>02-775-1300</td>
+						</tr>
+						
+						<tr>
+							<td>경남스틸</td>
+							<td class="ac">코스닥</td>
+							<td>www.ksteel.co.kr</td>
+							<td>경남 창원시 성산구 연덕로15번길 10</td>
+							<td>055-274-2066</td>
+							<td>055-274-2066</td>
+						</tr>
+						
+						<tr>
+							<td>경남제약</td>
+							<td class="ac">코스닥</td>
+							<td>www.kyungnampharm.co.kr</td>
+							<td>경남 의령군 의령읍 구룡로4남길 79</td>
+							<td>055-572-8700</td>
+							<td>02-3490-5158</td>
+						</tr>
+						
+						<tr>
+							<td>경농</td>
+							<td class="ac">코스피</td>
+							<td>www.knco.co.kr</td>
+							<td>서울특별시 서초구 효령로 77길 28 동오빌딩</td>
+							<td>02-3488-5800</td>
+							<td>02-3488-5800</td>
+						</tr>
+						
+						<tr>
+							<td>경동나비엔</td>
+							<td class="ac">코스피</td>
+							<td>www.kdnavien.co.kr</td>
+							<td>경기도 평택시 서탄면 수월암길 95</td>
+							<td>031-659-1144</td>
+							<td>031-659-1144</td>
+						</tr>
+						
+						<tr>
+							<td>경동도시가스</td>
+							<td class="ac">코스피</td>
+							<td>www.kdgas.co.kr</td>
+							<td>울산시 북구 염포로 260-10</td>
+							<td>052-219-5300</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>경동인베스트</td>
+							<td class="ac">코스피</td>
+							<td>www.kdinvest.co.kr</td>
+							<td>경기도 성남시 분당구 수내로46번길 4 경동빌딩</td>
+							<td>052-219-5300</td>
+							<td>052-219-5300</td>
+						</tr>
+						
+						<tr>
+							<td>경동제약</td>
+							<td class="ac">코스닥</td>
+							<td>www.kdpharma.co.kr</td>
+							<td>경기도 화성시 양감면 제약단지로 224-3</td>
+							<td>031-352-0990</td>
+							<td>02-576-6121</td>
+						</tr>
+						
+						<tr>
+							<td>경방</td>
+							<td class="ac">코스피</td>
+							<td>www.kyungbang.co.kr</td>
+							<td>서울시 영등포구 영중로 15 (영등포동4가)</td>
+							<td>02-2638-6000</td>
+							<td>02-2638-6000</td>
+						</tr>
+						
+						<tr>
+							<td>경보제약</td>
+							<td class="ac">코스피</td>
+							<td>www.kbpharma.co.kr</td>
+							<td>충남 아산시 실옥로 174 (실옥동)</td>
+							<td>02-2175-2315</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>경인양행</td>
+							<td class="ac">코스피</td>
+							<td>www.kisco.co</td>
+							<td>인천시 서구 건지로 199 (석남동 223-52)</td>
+							<td>032-571-7498</td>
+							<td>032-571-7498</td>
+						</tr>
+						
+						<tr>
+							<td>경인전자</td>
+							<td class="ac">코스피</td>
+							<td>www.kie.co.kr</td>
+							<td>서울시 금천구 가산디지털 2로 184 1411호(가산동, 벽산/경인디지털밸리 2차)</td>
+							<td>02-2113-2000</td>
+							<td>02-2113-2000</td>
+						</tr>
+						
+						<tr>
+							<td>경창산업</td>
+							<td class="ac">코스닥</td>
+							<td>www.kc.co.kr</td>
+							<td>대구시 달서구 성서로 35길 6 (월암동)</td>
+							<td>053-721-1041</td>
+							<td>053-721-1041</td>
+						</tr>
+						
+						<tr>
+							<td>계룡건설</td>
+							<td class="ac">코스피</td>
+							<td>www.krcon.co.kr</td>
+							<td>대전광역시 서구 문정로 48번길 48(탄방동) 계룡건설빌딩</td>
+							<td>042-480-7114~5</td>
+							<td>042-480-7114</td>
+						</tr>
+						
+						<tr>
+							<td>계양전기</td>
+							<td class="ac">코스피</td>
+							<td>www.keyang.co.kr</td>
+							<td>서울시 강남구 테헤란로 508 해성2빌딩 2층(대치동)</td>
+							<td>02-559-6800</td>
+							<td>02-559-6800</td>
+						</tr>
+						
+						<tr>
+							<td>고려산업</td>
+							<td class="ac">코스피</td>
+							<td>www.hafeed.com</td>
+							<td>부산시 사상구 새벽시장로 21(감전동)</td>
+							<td>051-600-5000</td>
+							<td>051-600-5000</td>
+						</tr>
+						
+						<tr>
+							<td>고려시멘트</td>
+							<td class="ac">코스닥</td>
+							<td>www.koreacement.co.kr</td>
+							<td>전라남도 장성군 장성읍 영천로 35 고려시멘트</td>
+							<td>061-390-6300</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>고려신용정보</td>
+							<td class="ac">코스닥</td>
+							<td>www.koryoinfo.co.kr</td>
+							<td>서울시 서초구 서초대로 353 (서초동, 유니온타워)</td>
+							<td>02-3450-9000</td>
+							<td>02-3450-9012</td>
+						</tr>
+						
+						<tr>
+							<td>고려아연</td>
+							<td class="ac">코스피</td>
+							<td>www.koreazinc.co.kr</td>
+							<td>서울시 강남구 강남대로 542 (논현동), 영풍빌딩</td>
+							<td>02-519-3416</td>
+							<td>02-519-3416</td>
+						</tr>
+						
+						<tr>
+							<td>고려제강</td>
+							<td class="ac">코스피</td>
+							<td>www.kiswire.com</td>
+							<td>부산광역시 수영구 구락로 141번길 37(망미동)</td>
+							<td>051-760-1700</td>
+							<td>051-760-1700</td>
+						</tr>
+						
+						<tr>
+							<td>고려제약</td>
+							<td class="ac">코스닥</td>
+							<td>www.nicepharma.com</td>
+							<td>경기도 이천시 신둔면 원적로 69-10</td>
+							<td>031-634-7100</td>
+							<td>02-529-6100</td>
+						</tr>
+						
+						<tr>
+							<td>고바이오랩</td>
+							<td class="ac">코스닥</td>
+							<td>www.kobiolabs.com</td>
+							<td>서울특별시 관악구 관악로 1 220동 745-1호(신림동, 서울대학교종합연구동)</td>
+							<td>02-888-9964</td>
+							<td>02-888-9964</td>
+						</tr>
+						
+						<tr>
+							<td>고영</td>
+							<td class="ac">코스닥</td>
+							<td>www.kohyoung.com</td>
+							<td>서울시 금천구 가산디지털 2로 53, 14층(가산동, 한라시그마밸리)</td>
+							<td>02-6343-6000</td>
+							<td>02-6343-6334</td>
+						</tr>
+						
+						<tr>
+							<td>골드앤에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.wfminc.co.kr</td>
+							<td>서울특별시 영등포구 국회대로74길 12 9층 901호 (여의도동,남중빌딩)</td>
+							<td>02-565-4874</td>
+							<td>02-565-4874</td>
+						</tr>
+						
+						<tr>
+							<td>골드퍼시픽</td>
+							<td class="ac">코스닥</td>
+							<td>www.gold-pacific.com</td>
+							<td>경기도 성남시 중원구 둔촌대로 555 9층 907호(상대원동, 선일테크노피아)</td>
+							<td>02-2029-0700</td>
+							<td>02-2029-0700</td>
+						</tr>
+						
+						<tr>
+							<td>골든센츄리</td>
+							<td class="ac">코스닥</td>
+							<td>www.jsj-wheel.co.kr</td>
+							<td>P.O.Box31119 GrandPavilion, HibiscusWay, 802WestBayRoad, GrandCayman, KY1-1205CaymanIslands</td>
+							<td>86-514-80806067</td>
+							<td>02-780-8863</td>
+						</tr>
+						
+						<tr>
+							<td>골프존</td>
+							<td class="ac">코스닥</td>
+							<td>company.golfzon.com</td>
+							<td>서울특별시 강남구 영동대로 735 </td>
+							<td>1577-4333</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>골프존뉴딘홀딩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.golfzonnewdin.com</td>
+							<td>서울시 강남구 영동대로 735</td>
+							<td>1577-4333</td>
+							<td>070-8640-6202</td>
+						</tr>
+						
+						<tr>
+							<td>골프존데카</td>
+							<td class="ac">코넥스</td>
+							<td>www.golfbuddy.kr</td>
+							<td>경기도 성남시 분당구 판교로 253 C동 303호 (삼평동, 판교이노밸리)</td>
+							<td>1644-8481</td>
+							<td>031-709-8038</td>
+						</tr>
+						
+						<tr>
+							<td>공구우먼</td>
+							<td class="ac">코스닥</td>
+							<td>www.09women.net</td>
+							<td>경기도 양주시 평화로 1525 (회정동) 본관</td>
+							<td>1588-0903</td>
+							<td>070-4269-2124</td>
+						</tr>
+						
+						<tr>
+							<td>관악산업</td>
+							<td class="ac">코넥스</td>
+							<td>www.gwan-ak.co.kr</td>
+							<td>서울시 송파구 올림픽로 293-19 (신천동, 현대타워빌딩 2층)</td>
+							<td>02)2240-7900</td>
+							<td>02-2240-7923</td>
+						</tr>
+						
+						<tr>
+							<td>광동제약</td>
+							<td class="ac">코스피</td>
+							<td>www.ekdp.com</td>
+							<td>서울시 서초구 서초중앙로 85, 가산빌딩 3~8층 (서초동)</td>
+							<td>02-6006-7777</td>
+							<td>02-6006-7777</td>
+						</tr>
+						
+						<tr>
+							<td>광림</td>
+							<td class="ac">코스닥</td>
+							<td>www.kanglim.com</td>
+							<td>충북 청주시 서원구 현도면 청남로 484</td>
+							<td>043-260-9111</td>
+							<td>043-260-9111</td>
+						</tr>
+						
+						<tr>
+							<td>광명전기</td>
+							<td class="ac">코스피</td>
+							<td>www.kmec.co.kr</td>
+							<td>경기도 안산시 단원구 목내로 160(목내동)</td>
+							<td>031-494-0720</td>
+							<td>031-494-0720</td>
+						</tr>
+						
+						<tr>
+							<td>광무</td>
+							<td class="ac">코스닥</td>
+							<td>www.kwangmu.co.kr</td>
+							<td>서울특별시 서초구 남부순환로 2634-27 나동 1,4층 (양재동, 성원빌딩)</td>
+							<td>02-3459-0500</td>
+							<td>02-3459-0500</td>
+						</tr>
+						
+						<tr>
+							<td>광전자</td>
+							<td class="ac">코스피</td>
+							<td>www.auk.co.kr</td>
+							<td>전북 익산시 약촌로8길 62-8 (어양동)</td>
+							<td>063-839-1111</td>
+							<td>063-839-1111</td>
+						</tr>
+						
+						<tr>
+							<td>광주신세계</td>
+							<td class="ac">코스피</td>
+							<td>www.gjshinsegae.co.kr</td>
+							<td>광주시 서구 무진대로 932 (광천동)</td>
+							<td>062-360-1234</td>
+							<td>062-360-1234</td>
+						</tr>
+						
+						<tr>
+							<td>광진실업</td>
+							<td class="ac">코스닥</td>
+							<td>www.kjsteel.co.kr</td>
+							<td>부산시 사하구 하신중앙로 160 (신평동)</td>
+							<td>051-204-9102</td>
+							<td>051-204-9102</td>
+						</tr>
+						
+						<tr>
+							<td>교보10호스팩</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 영등포구 의사당대로 97 (여의도동, 교보증권빌딩) 17층</td>
+							<td>02-3771-9125</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>교보11호스팩</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 영등포구 의사당대로 97 (여의도동, 교보증권빌딩) 17층</td>
+							<td>02-3771-9424</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>교보12호스팩</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>	서울특별시 영등포구 의사당대로 97</td>
+							<td>02-3771-9420</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>교보13호스팩</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 영등포구 의사당대로 97, 17층 -</td>
+							<td>02-3771-9424</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>교보증권</td>
+							<td class="ac">코스피</td>
+							<td>www.iprovest.com</td>
+							<td>서울시 영등포구 여의도동 의사당대로 97 (여의도동 26-4)교보증권빌딩</td>
+							<td>02-3771-9000</td>
+							<td>02-3771-9000</td>
+						</tr>
+						
+						<tr>
+							<td>교촌에프앤비</td>
+							<td class="ac">코스피</td>
+							<td>www.kyochonfnb.com</td>
+							<td>경상북도 칠곡군 가산면 송신로 78 교촌에프앤비(주)</td>
+							<td>054-971-9995</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>구영테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.guyoungtech.com</td>
+							<td>대구시 달성군 구지면 국가산단대로39길 119 (창리)</td>
+							<td>053-592-6111</td>
+							<td>053-592-6111</td>
+						</tr>
+						
+						<tr>
+							<td>국도화학</td>
+							<td class="ac">코스피</td>
+							<td>www.kukdo.com</td>
+							<td>서울시 금천구 가산디지털 2로 61 (가산동)</td>
+							<td>02-3282-1542</td>
+							<td>02-3282-1476</td>
+						</tr>
+						
+						<tr>
+							<td>국동</td>
+							<td class="ac">코스피</td>
+							<td>www.kd.co.kr</td>
+							<td>서울특별시 동대문구 천호대로 405</td>
+							<td>02-3407-7731</td>
+							<td>02-3407-7705</td>
+						</tr>
+						
+						<tr>
+							<td>국보</td>
+							<td class="ac">코스피</td>
+							<td>www.kukbo.com</td>
+							<td>부산광역시 수영구 광남로 42 8층(남천동, 국보빌딩)</td>
+							<td>02-765-5544</td>
+							<td>02-765-5544</td>
+						</tr>
+						
+						<tr>
+							<td>국보디자인</td>
+							<td class="ac">코스닥</td>
+							<td>www.ikukbo.com</td>
+							<td>서울시 마포구 월드컵로10길 49 (서교동)</td>
+							<td>02-6220-1800</td>
+							<td>02-6220-1800</td>
+						</tr>
+						
+						<tr>
+							<td>국순당</td>
+							<td class="ac">코스닥</td>
+							<td>www.ksdb.co.kr</td>
+							<td>강원도 횡성군 둔내면 강변로 975</td>
+							<td>033-3404-300</td>
+							<td>02-513-8587</td>
+						</tr>
+						
+						<tr>
+							<td>국영지앤엠</td>
+							<td class="ac">코스닥</td>
+							<td>www.kukyounggnm.com</td>
+							<td>서울시 서초구 서초중앙로 36 준영빌딩 7층</td>
+							<td>02-2015-0300</td>
+							<td>02-2015-0372</td>
+						</tr>
+						
+						<tr>
+							<td>국일신동</td>
+							<td class="ac">코스닥</td>
+							<td>www.kukilmetal.com</td>
+							<td>경기도 안산시 단원구 번영2로 58</td>
+							<td>031-499-9192</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>국일제지</td>
+							<td class="ac">코스닥</td>
+							<td>www.kukilpaper.co.kr</td>
+							<td>경기도 용인시 처인구 이동면 백옥대로 563</td>
+							<td>031-339-9100</td>
+							<td>02-6900-5500</td>
+						</tr>
+						
+						<tr>
+							<td>국전약품</td>
+							<td class="ac">코스닥</td>
+							<td>www.kukjeon.co.kr</td>
+							<td>경기도 안양시 동안구 학의로 282,B동 1516호 (관양동,금강펜테리움)</td>
+							<td>031-3486-2246</td>
+							<td>070-4894-6318</td>
+						</tr>
+						
+						<tr>
+							<td>국제약품</td>
+							<td class="ac">코스피</td>
+							<td>www.kukjepharm.co.kr</td>
+							<td>경기도 성남시 분당구 야탑로 96-8</td>
+							<td>031-781-9081~9</td>
+							<td>031-781-9081</td>
+						</tr>
+						
+						<tr>
+							<td>굿센</td>
+							<td class="ac">코넥스</td>
+							<td>www.goodcen.com</td>
+							<td>서울시 서초구 반포대로 13 아이티센 빌딩</td>
+							<td>02-580-6500</td>
+							<td>02-3497-8351</td>
+						</tr>
+						
+						<tr>
+							<td>그래디언트</td>
+							<td class="ac">코스닥</td>
+							<td>www.gradiant.co.kr</td>
+							<td>서울시 강남구 삼성로 512 삼성동빌딩</td>
+							<td>02-6203-5157</td>
+							<td>02-6203-5157</td>
+						</tr>
+						
+						<tr>
+							<td>그리티</td>
+							<td class="ac">코스닥</td>
+							<td>www.gritees.com</td>
+							<td>서울시 강남구 언주로 151길 7</td>
+							<td>02-6907-8888</td>
+							<td>02-6907-8819</td>
+						</tr>
+						
+						<tr>
+							<td>그린케미칼</td>
+							<td class="ac">코스피</td>
+							<td>www.korgc.com</td>
+							<td>충남 서산시 대산읍 독곶2로 103</td>
+							<td>041-661-5000</td>
+							<td>041-661-5000</td>
+						</tr>
+						
+						<tr>
+							<td>그린플러스</td>
+							<td class="ac">코스닥</td>
+							<td>www.greenplus.co.kr</td>
+							<td>충남 예산군 응봉면 응봉로 50-42</td>
+							<td>041-332-6421</td>
+							<td>041-332-6421</td>
+						</tr>
+						
+						<tr>
+							<td>극동유화</td>
+							<td class="ac">코스피</td>
+							<td>www.kdoc.co.kr</td>
+							<td>경남 양산시 어실로 101</td>
+							<td>055-370-9900</td>
+							<td>055-370-9900</td>
+						</tr>
+						
+						<tr>
+							<td>글로벌에스엠</td>
+							<td class="ac">코스닥</td>
+							<td>www.globalsmtech.com</td>
+							<td>Offshore Incorporations, Scotia Centre, 4thFloor, P.O. Box 2804, George Town, Grand Cayman</td>
+							<td>031-932-9770</td>
+							<td>031-932-9970</td>
+						</tr>
+						
+						<tr>
+							<td>글로벌텍스프리</td>
+							<td class="ac">코스닥</td>
+							<td>www.global-taxfree.com</td>
+							<td>서울시 중구 퇴계로 131, 9층(충무로2가, 신일빌딩)</td>
+							<td>070-5020-3620</td>
+							<td>070-5020-3620</td>
+						</tr>
+						
+						<tr>
+							<td>글로본</td>
+							<td class="ac">코스닥</td>
+							<td>www.globon.co.kr</td>
+							<td>서울시 강남구 도산대로 331 (신사동)</td>
+							<td>02-6934-0800</td>
+							<td>02-2112-6200</td>
+						</tr>
+						
+						<tr>
+							<td>금강공업</td>
+							<td class="ac">코스피</td>
+							<td>www.kumkangkind.com</td>
+							<td>부산시 사하구 다산로 110 (다대동)</td>
+							<td>051-264-8881</td>
+							<td>051-264-8881</td>
+						</tr>
+						
+						<tr>
+							<td>금강철강</td>
+							<td class="ac">코스닥</td>
+							<td>www.kksteel.co.kr</td>
+							<td>서울시 서초구 서운로 19, 701호 (서초동, 서초월드오피스텔)</td>
+							<td>02-3471-0001</td>
+							<td>02-3471-0001</td>
+						</tr>
+						
+						<tr>
+							<td>금비</td>
+							<td class="ac">코스피</td>
+							<td>www.kumbi.co.kr</td>
+							<td>경기도 이천시 부발읍 중부대로1707번길 13</td>
+							<td>031-632-5280</td>
+							<td>031-632-5280</td>
+						</tr>
+						
+						<tr>
+							<td>금양</td>
+							<td class="ac">코스피</td>
+							<td>www.kyc.co.kr</td>
+							<td>부산시 사상구 낙동대로960번길 81 (감전동)</td>
+							<td>051-316-5881</td>
+							<td>051-316-5881</td>
+						</tr>
+						
+						<tr>
+							<td>금호건설</td>
+							<td class="ac">코스피</td>
+							<td>www.kumhoenc.com</td>
+							<td>전남 나주시 시청길4</td>
+							<td>061-333-7612</td>
+							<td>061-333-7612</td>
+						</tr>
+						
+						<tr>
+							<td>금호석유</td>
+							<td class="ac">코스피</td>
+							<td>www.kkpc.com</td>
+							<td>서울시 중구 청계천로 100(수표동, 시그니쳐타워스 서울)</td>
+							<td>02-6961-1114</td>
+							<td>02-6961-1114</td>
+						</tr>
+						
+						<tr>
+							<td>금호에이치티</td>
+							<td class="ac">코스피</td>
+							<td>www.kumhoht.co.kr</td>
+							<td>광주시 광산구 용아로 717</td>
+							<td>062-958-2700</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>금호전기</td>
+							<td class="ac">코스피</td>
+							<td>www.khe.co.kr</td>
+							<td>서울특별시 영등포구 국제금융로 10 쓰리아이에프씨동 14층</td>
+							<td>02-707-4000</td>
+							<td>02-707-4000</td>
+						</tr>
+						
+						<tr>
+							<td>금호타이어</td>
+							<td class="ac">코스피</td>
+							<td>www.kumhotire.com</td>
+							<td>광주시 광산구 어등대로 658 (소촌동)</td>
+							<td>062-940-2114</td>
+							<td>062-940-2114</td>
+						</tr>
+						
+						<tr>
+							<td>금화피에스시</td>
+							<td class="ac">코스닥</td>
+							<td>www.geumhwa.co.kr</td>
+							<td>서울시 강남구 테헤란로25길 15-4 (역삼동 643-11)</td>
+							<td>02-2186-6220</td>
+							<td>02-2186-6220</td>
+						</tr>
+						
+						<tr>
+							<td>기가레인</td>
+							<td class="ac">코스닥</td>
+							<td>www.gigalane.com</td>
+							<td>경기도 화성시 동탄산단10길 61 </td>
+							<td>031-233-7325</td>
+							<td>031-233-7325</td>
+						</tr>
+						
+						<tr>
+							<td>기산텔레콤</td>
+							<td class="ac">코스닥</td>
+							<td>www.kisantel.co.kr</td>
+							<td>서울시 송파구 오금로 111, 세기빌딩 11층 (방이동)</td>
+							<td>02-3433-8200</td>
+							<td>02-3433-8310</td>
+						</tr>
+						
+						<tr>
+							<td>기신정기</td>
+							<td class="ac">코스피</td>
+							<td>www.kishin.com</td>
+							<td>인천시 남동구 은봉로 111 49동 1호(논현동, 남동공단)</td>
+							<td>032-820-1600</td>
+							<td>032-820-1600</td>
+						</tr>
+						
+						<tr>
+							<td>기아</td>
+							<td class="ac">코스피</td>
+							<td>www.kia.com</td>
+							<td>서울시 서초구 헌릉로 12</td>
+							<td>02-3464-1114</td>
+							<td>02-3464-1114</td>
+						</tr>
+						
+						<tr>
+							<td>기업은행</td>
+							<td class="ac">코스피</td>
+							<td>www.ibk.co.kr</td>
+							<td>서울시 중구 을지로 79 (을지로 2가 50), 중소기업은행본점건물</td>
+							<td>02-729-6114</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>까뮤이앤씨</td>
+							<td class="ac">코스피</td>
+							<td>www.camusenc.com</td>
+							<td>경기도 이천시 대월면 경충대로 1937번길 57</td>
+							<td>031-633-9114</td>
+							<td>031-633-9114</td>
+						</tr>
+						
+						<tr>
+							<td>까스텔바작</td>
+							<td class="ac">코스닥</td>
+							<td>www.castelbajac.com</td>
+							<td>서울특별시 강남구 개포로 208 형지빌딩</td>
+							<td>02-3498-0330</td>
+							<td>02-3498-0495</td>
+						</tr>
+						
+						<tr>
+							<td>깨끗한나라</td>
+							<td class="ac">코스피</td>
+							<td>www.kleannara.com</td>
+							<td>서울특별시 용산구 한남대로 98</td>
+							<td>02-2270-9200</td>
+							<td>02-2270-9200</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

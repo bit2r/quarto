@@ -1,0 +1,591 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>라닉스</td>
+							<td class="ac">코스닥</td>
+							<td>ranix.co.kr</td>
+							<td>서울특별시 강남구 언주로135길 25 (논현동)</td>
+							<td>02-584-5516</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>라온시큐어</td>
+							<td class="ac">코스닥</td>
+							<td>www.raonsecure.com</td>
+							<td>서울특별시 강남구 테헤란로 145 18층(역삼동,우신빌딩)</td>
+							<td>02-561-4545</td>
+							<td>02-561-4545</td>
+						</tr>
+						
+						<tr>
+							<td>라온테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.raonrobot.com</td>
+							<td>경기도 수원시 권선구 산업로156번길 88-4</td>
+							<td>031)201-0000</td>
+							<td>031-201-0000</td>
+						</tr>
+						
+						<tr>
+							<td>라온피플</td>
+							<td class="ac">코스닥</td>
+							<td>www.laonpeople.com</td>
+							<td>경기도 성남시 분당구 판교로 723 분당테크노파크B동 402-1호  </td>
+							<td>1899-3058</td>
+							<td>070-4496-2525</td>
+						</tr>
+						
+						<tr>
+							<td>라이온켐텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.lctkorea.com</td>
+							<td>대전시 대덕구 대덕대로1277번길 36</td>
+							<td>042-930-3300</td>
+							<td>042-930-3353</td>
+						</tr>
+						
+						<tr>
+							<td>라이트론</td>
+							<td class="ac">코스닥</td>
+							<td>www.lightron.co.kr</td>
+							<td>대전시 대덕구 문평동로 68</td>
+							<td>042-930-7700</td>
+							<td>02-508-0341</td>
+						</tr>
+						
+						<tr>
+							<td>라이프사이언스테크놀로지</td>
+							<td class="ac">코넥스</td>
+							<td>www.lstgrp.com</td>
+							<td>서울시 강서구 양천로 401 B-1207(가양동, 강서한강자이타워)</td>
+							<td>070)8620-8020</td>
+							<td>070-8620-8870</td>
+						</tr>
+						
+						<tr>
+							<td>라이프시맨틱스</td>
+							<td class="ac">코스닥</td>
+							<td>www.lifesemantics.kr</td>
+							<td>서울특별시 강남구 언주로 533 (역삼동)</td>
+							<td>1661-2858</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>라파스</td>
+							<td class="ac">코스닥</td>
+							<td>www.raphas.co.kr</td>
+							<td>서울특별시 강서구 마곡중앙8로1길 62</td>
+							<td>02-392-3011</td>
+							<td>070-4483-5221</td>
+						</tr>
+						
+						<tr>
+							<td>라피치</td>
+							<td class="ac">코넥스</td>
+							<td>www.rapeech.com</td>
+							<td>서울특별시 강남구 도곡로8길 6, 3층(도곡동, 지호빌딩)</td>
+							<td>02-3420-9114</td>
+							<td>02-3420-9237</td>
+						</tr>
+						
+						<tr>
+							<td>락앤락</td>
+							<td class="ac">코스피</td>
+							<td>www.locknlock.com</td>
+							<td>경기도 안성시 원곡면 만세로 1260 -</td>
+							<td>02-520-9539</td>
+							<td>02-520-9539</td>
+						</tr>
+						
+						<tr>
+							<td>래몽래인</td>
+							<td class="ac">코스닥</td>
+							<td>www.raemongraein.co.kr</td>
+							<td>서울특별시 강남구 학동로25길 19 -</td>
+							<td>02)761-9978</td>
+							<td>02-6956-9978</td>
+						</tr>
+						
+						<tr>
+							<td>램테크놀러지</td>
+							<td class="ac">코스닥</td>
+							<td>www.ramtech.co.kr</td>
+							<td>경기도 용인시 처인구 양지면 주북로 285</td>
+							<td>031-323-1119</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>랩지노믹스</td>
+							<td class="ac">코스닥</td>
+							<td>www.labgenomics.co.kr</td>
+							<td>경기도 성남시 분당구 대왕판교로 700, 코리아바이오파크 B동 6층</td>
+							<td>031-628-0702</td>
+							<td>031-628-0725</td>
+						</tr>
+						
+						<tr>
+							<td>러셀</td>
+							<td class="ac">코스닥</td>
+							<td>www.erussell.co.kr</td>
+							<td>충청북도 청주시 흥덕구 옥산면 옥산산단로 36 (호죽리)</td>
+							<td>043-532-8818</td>
+							<td>043-532-8818</td>
+						</tr>
+						
+						<tr>
+							<td>럭스피아</td>
+							<td class="ac">코넥스</td>
+							<td>www.luxpialed.com</td>
+							<td>경기도 수원시 영통구 광교로 109</td>
+							<td>070)8671-2500</td>
+							<td>070-8671-2500</td>
+						</tr>
+						
+						<tr>
+							<td>레고켐바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.legochembio.com</td>
+							<td>대전광역시 유성구 국제과학10로 10 (주)레고켐 바이오사이언스</td>
+							<td>042-861-0688</td>
+							<td>042-861-0688</td>
+						</tr>
+						
+						<tr>
+							<td>레드캡투어</td>
+							<td class="ac">코스닥</td>
+							<td>ir.redcaptour.com</td>
+							<td>서울시 중구 을지로 100 파인에비뉴 비동 19층</td>
+							<td>02-2001-4563</td>
+							<td>02-2001-4563</td>
+						</tr>
+						
+						<tr>
+							<td>레몬</td>
+							<td class="ac">코스닥</td>
+							<td>www.lemonano.co.kr</td>
+							<td>경상북도 구미시 산동면 산호대로 1105-65</td>
+							<td>054-470-8800</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>레이</td>
+							<td class="ac">코스닥</td>
+							<td>www.raymedical.com </td>
+							<td>경기도 성남시 분당구 판교역로 221 (삼평동 672) 투썬월드빌딩 12층</td>
+							<td>031-605-1000</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>레이언스</td>
+							<td class="ac">코스닥</td>
+							<td>www.rayence.com</td>
+							<td>경기도 화성시 삼성1로1길 14 (석우동)</td>
+							<td>031-8015-6420</td>
+							<td>031-8015-6277</td>
+						</tr>
+						
+						<tr>
+							<td>레이저쎌</td>
+							<td class="ac">코스닥</td>
+							<td>www.laserssel.com</td>
+							<td>충청남도 아산시 배방읍 호서로79번길 20, 1층</td>
+							<td>031-8060-3325</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>레이크머티리얼즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.lake-led.com</td>
+							<td>세종특별자치시  전의면 산단길 22-144 </td>
+							<td>044-414-9400</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>레인보우로보틱스</td>
+							<td class="ac">코스닥</td>
+							<td>www.rainbow-robotics.com</td>
+							<td>대전광역시 유성구 엑스포로339번길 10-19 (주)레인보우</td>
+							<td>042-719-8070</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>렌딩머신</td>
+							<td class="ac">코넥스</td>
+							<td>www.yelopay.com</td>
+							<td>서울특별시 강남구 논현로150길 23 3층 (논현동, 연호빌딩)</td>
+							<td>1566-3895</td>
+							<td>02-6207-2404</td>
+						</tr>
+						
+						<tr>
+							<td>로보로보</td>
+							<td class="ac">코스닥</td>
+							<td>www.roborobo.co.kr</td>
+							<td>서울시 강북구 도봉로 54길 6, 로보로보빌딩 5층(미아동)</td>
+							<td>02-909-5050</td>
+							<td>02-909-5050</td>
+						</tr>
+						
+						<tr>
+							<td>로보스타</td>
+							<td class="ac">코스닥</td>
+							<td>www.robostar.co.kr</td>
+							<td>경기도 안산시 상록구 수인로 700 (사사동119-38)</td>
+							<td>031-400-3600</td>
+							<td>031-400-3600</td>
+						</tr>
+						
+						<tr>
+							<td>로보쓰리</td>
+							<td class="ac">코넥스</td>
+							<td>www.robo3.com</td>
+							<td>서울특별시 강남구 봉은사로18길 47 (역삼동622-7) 전층</td>
+							<td>02)544-9145</td>
+							<td>02-544-9145</td>
+						</tr>
+						
+						<tr>
+							<td>로보티즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.robotis.com</td>
+							<td>서울시 강서구 마곡중앙5로1길 37</td>
+							<td>070-8671-2600</td>
+							<td>070-8671-2600</td>
+						</tr>
+						
+						<tr>
+							<td>로스웰</td>
+							<td class="ac">코스닥</td>
+							<td>www.rothwell.com.cn</td>
+							<td>Unit 402, 4th Floor, Fairmont House, No. 8 Cotton Tree Drive, Admiralty Hong Kong</td>
+							<td>86-514-876387</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>로지스몬</td>
+							<td class="ac">코넥스</td>
+							<td>www.logismon.co.kr</td>
+							<td>서울특별시 동대문구 황물로 60 4층 411호, 412호 (답십리동)</td>
+							<td>02-6265-9969</td>
+							<td>02-6265-9969</td>
+						</tr>
+						
+						<tr>
+							<td>로지시스</td>
+							<td class="ac">코스닥</td>
+							<td>www.logisys.co.kr</td>
+							<td>서울시 마포구 독막로 281</td>
+							<td>02-2125-6300</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>로체시스템즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.rorze.co.kr</td>
+							<td>경기도 용인시 처인구 남사면 완장천로 448-34</td>
+							<td>031-335-9100</td>
+							<td>031-335-9100</td>
+						</tr>
+						
+						<tr>
+							<td>롯데관광개발</td>
+							<td class="ac">코스피</td>
+							<td>www.lottetour.com</td>
+							<td>제주특별자치도 제주시 노연로 12 (노형동)</td>
+							<td>1577-3000</td>
+							<td>1577-3000</td>
+						</tr>
+						
+						<tr>
+							<td>롯데렌탈</td>
+							<td class="ac">코스피</td>
+							<td>lotterentacar.net</td>
+							<td>경기도 안양시 동안구 전파로 88, 8층(호계동, 신원비젼타워)</td>
+							<td>02-3404-9867</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>롯데리츠</td>
+							<td class="ac">코스피</td>
+							<td>www.lottereit.co.kr</td>
+							<td>서울특별시 송파구 올림픽로 300 롯데월드타워 30층</td>
+							<td>02-3213-8152</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>롯데손해보험</td>
+							<td class="ac">코스피</td>
+							<td>www.lotteins.co.kr</td>
+							<td>서울시 중구 소월로 3 (남창동) 롯데손해보험빌딩</td>
+							<td>02-1588-3344</td>
+							<td>02-1588-3344</td>
+						</tr>
+						
+						<tr>
+							<td>롯데쇼핑</td>
+							<td class="ac">코스피</td>
+							<td>www.lotteshopping.com</td>
+							<td>서울시 중구 남대문로 81 (소공동)</td>
+							<td>02-771-2500</td>
+							<td>02-771-2500</td>
+						</tr>
+						
+						<tr>
+							<td>롯데정밀화학</td>
+							<td class="ac">코스피</td>
+							<td>www.lottefinechem.com</td>
+							<td>울산시 남구 여천로 217번길 19 (여천동)</td>
+							<td>052-270-6114</td>
+							<td>052-270-6114</td>
+						</tr>
+						
+						<tr>
+							<td>롯데정보통신</td>
+							<td class="ac">코스피</td>
+							<td>www.ldcc.co.kr</td>
+							<td>서울시 금천구 가산디지털2로 179</td>
+							<td>02-2626-4000</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>롯데제과</td>
+							<td class="ac">코스피</td>
+							<td>www.lotteconf.co.kr</td>
+							<td>서울시 영등포구 양평로21길 10</td>
+							<td>02-2670-6614</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>롯데지주</td>
+							<td class="ac">코스피</td>
+							<td>www.lotte.co.kr</td>
+							<td>서울시 송파구 올림픽로 300 (신천동 29)</td>
+							<td>02-750-7114</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>롯데칠성</td>
+							<td class="ac">코스피</td>
+							<td>company.lottechilsung.co.kr</td>
+							<td>서울시 서초구 서초대로70길 15</td>
+							<td>02-3479-9114</td>
+							<td>02-3479-9114</td>
+						</tr>
+						
+						<tr>
+							<td>롯데케미칼</td>
+							<td class="ac">코스피</td>
+							<td>www.lottechem.com</td>
+							<td>서울시 송파구 올림픽로 300(신천동)</td>
+							<td>02-829-4114</td>
+							<td>02-829-4114</td>
+						</tr>
+						
+						<tr>
+							<td>롯데하이마트</td>
+							<td class="ac">코스피</td>
+							<td>www.himart.co.kr/index.jsp</td>
+							<td>서울시 강남구 삼성로 156 롯데하이마트빌딩</td>
+							<td>02-2050-5000</td>
+							<td>02-2050-5000</td>
+						</tr>
+						
+						<tr>
+							<td>루닛</td>
+							<td class="ac">코스닥</td>
+							<td>www.lunit.io</td>
+							<td>서울특별시 강남구 강남대로 374 4층~9층(역삼동, 케이스퀘어 강남II)</td>
+							<td>02-2138-0827</td>
+							<td>070-8853-0558</td>
+						</tr>
+						
+						<tr>
+							<td>루멘스</td>
+							<td class="ac">코스닥</td>
+							<td>www.lumens.co.kr</td>
+							<td>경기도 용인시 기흥구 기흥로 58 , 기흥ICT밸리 B동 15층(구갈동) -</td>
+							<td>031-8033-1200</td>
+							<td>031-8033-2000</td>
+						</tr>
+						
+						<tr>
+							<td>루켄테크놀러지스</td>
+							<td class="ac">코넥스</td>
+							<td>www.luken.co.kr</td>
+							<td>경기도 용인시 처인구 양지면 중부대로2670번길 53-8 (추계리)</td>
+							<td>070)8633-8009</td>
+							<td>031-366-1853</td>
+						</tr>
+						
+						<tr>
+							<td>루트락</td>
+							<td class="ac">코넥스</td>
+							<td>www.rootloc.com</td>
+							<td>서울특별시 금천구 디지털로9길 68 B125호 (가산동,대륭포스트타워5차)</td>
+							<td>02-6941-4300</td>
+							<td>02-6941-4306</td>
+						</tr>
+						
+						<tr>
+							<td>루트로닉</td>
+							<td class="ac">코스닥</td>
+							<td>www.lutronic.com</td>
+							<td>경기도 고양시 덕양구 소원로 219 루트로닉센터</td>
+							<td>070-4714-6013</td>
+							<td>070-4714-6022</td>
+						</tr>
+						
+						<tr>
+							<td>룽투코리아</td>
+							<td class="ac">코스닥</td>
+							<td>www.longtukorea.com</td>
+							<td>경기도 안양시 동안구 부림로 170 4113(관양동 17361), 4층</td>
+							<td>02-2640-3557</td>
+							<td>031-8068-6602</td>
+						</tr>
+						
+						<tr>
+							<td>리노공업</td>
+							<td class="ac">코스닥</td>
+							<td>leeno.com/kr</td>
+							<td>부산시 강서구 미음산단로 105번길 10</td>
+							<td>051-831-3232</td>
+							<td>051-831-3232</td>
+						</tr>
+						
+						<tr>
+							<td>리노스</td>
+							<td class="ac">코스닥</td>
+							<td>www.leenos.co.kr</td>
+							<td>서울특별시 서초구 서운로 19 (서초동, 서초월드오피스텔) 4층</td>
+							<td>02-3489-6800</td>
+							<td>02-3489-6800</td>
+						</tr>
+						
+						<tr>
+							<td>리더스 기술투자</td>
+							<td class="ac">코스닥</td>
+							<td>www.geminivc.co.kr</td>
+							<td>서울특별시 강남구 테헤란로 447 KB우준타워 KB우준타워 17층</td>
+							<td>02-2051-9640</td>
+							<td>02-2051-9640</td>
+						</tr>
+						
+						<tr>
+							<td>리더스코스메틱</td>
+							<td class="ac">코스닥</td>
+							<td>www.leaderscosmetics.com</td>
+							<td>서울시 광진구 능동로 90 더클래식 500 씨 404호</td>
+							<td>031-499-8541</td>
+							<td>070-4632-2054</td>
+						</tr>
+						
+						<tr>
+							<td>리드코프</td>
+							<td class="ac">코스닥</td>
+							<td>www.leadcorp.co.kr</td>
+							<td>서울특별시 중구 소공로 109 3층(소공동, 소공동한화빌딩)</td>
+							<td>02-2126-5000</td>
+							<td>02-2126-5064</td>
+						</tr>
+						
+						<tr>
+							<td>리메드</td>
+							<td class="ac">코스닥</td>
+							<td>www.remed.kr</td>
+							<td>대전시 유성구 테크노2로187 (용산동, 미건테크노월드2차301~303)</td>
+							<td>042-934-5560</td>
+							<td>031-606-5751</td>
+						</tr>
+						
+						<tr>
+							<td>리파인</td>
+							<td class="ac">코스닥</td>
+							<td>www.refine.co.kr</td>
+							<td>서울특별시 강남구 테헤란로 625 4층</td>
+							<td>02-2189-8700</td>
+							<td>02-2189-8700</td>
+						</tr>
+						
+						<tr>
+							<td>린드먼아시아</td>
+							<td class="ac">코스닥</td>
+							<td>www.laic.kr</td>
+							<td>서울시 강남구 테헤란로 234, 4층(역삼동, 삼익빌딩)</td>
+							<td>070-7019-4006</td>
+							<td>070-7019-4021</td>
+						</tr>
+						
+						<tr>
+							<td>링네트</td>
+							<td class="ac">코스닥</td>
+							<td>www.ringnet.co.kr</td>
+							<td>서울특별시 구로구 디지털로33길 28</td>
+							<td>02-6675-1500</td>
+							<td>02-6675-1220</td>
+						</tr>
+						
+						<tr>
+							<td>링크제니시스</td>
+							<td class="ac">코스닥</td>
+							<td>www.linkgenesis.co.kr</td>
+							<td>경기도 안양시 동안구 시민대로 401 319호(관양동, 대륭테크노타운15차)</td>
+							<td>031-422-3581</td>
+							<td>031-422-3581</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

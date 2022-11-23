@@ -1,0 +1,987 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>바다로19호</td>
+							<td class="ac">코스피</td>
+							<td></td>
+							<td>제주 제주시 이도2동 제주도중소기업종합지원센터</td>
+							<td>02-3210-3333</td>
+							<td>02-3210-3333</td>
+						</tr>
+						
+						<tr>
+							<td>바디텍메드</td>
+							<td class="ac">코스닥</td>
+							<td>www.boditech.co.kr</td>
+							<td>강원도 춘천시 동내면 거두단지 1길 43</td>
+							<td>02-2004-4938</td>
+							<td>033-243-1400</td>
+						</tr>
+						
+						<tr>
+							<td>바른손</td>
+							<td class="ac">코스닥</td>
+							<td>www.barunson.co.kr</td>
+							<td>경기도 수원시 영통구 대학3로 1 5층 (이의동, 광교K타워)</td>
+							<td>02-596-4411</td>
+							<td>02-585-0771</td>
+						</tr>
+						
+						<tr>
+							<td>바른손이앤에이</td>
+							<td class="ac">코스닥</td>
+							<td>www.barunsonena.com</td>
+							<td>서울특별시 용산구 한남대로 130 볼보빌딩 3층</td>
+							<td>070-7609-1404</td>
+							<td>070-7609-1428</td>
+						</tr>
+						
+						<tr>
+							<td>바른전자</td>
+							<td class="ac">코스닥</td>
+							<td>www.bec.co.kr</td>
+							<td>경기도 화성시 동탄면 경기동로 548 (장지동)</td>
+							<td>031-8020-6000</td>
+							<td>02-2182-6114</td>
+						</tr>
+						
+						<tr>
+							<td>바스칸바이오제약</td>
+							<td class="ac">코넥스</td>
+							<td>baskhanbio.com</td>
+							<td>경기도 안성시 원곡면 원당로 354</td>
+							<td>031-692-2900</td>
+							<td>070-8894-3536</td>
+						</tr>
+						
+						<tr>
+							<td>바이넥스</td>
+							<td class="ac">코스닥</td>
+							<td>www.bi-nex.com</td>
+							<td>부산시 사하구 다대로 368-3</td>
+							<td>032-850-3000</td>
+							<td>032-850-3232</td>
+						</tr>
+						
+						<tr>
+							<td>바이브컴퍼니</td>
+							<td class="ac">코스닥</td>
+							<td>www.vaiv.kr</td>
+							<td>서울특별시 용산구 독서당로 97 (한남동)</td>
+							<td>02-565-0531</td>
+							<td>02-565-0531</td>
+						</tr>
+						
+						<tr>
+							<td>바이오니아</td>
+							<td class="ac">코스닥</td>
+							<td>www.bioneer.co.kr</td>
+							<td>대전시 대덕구 문평서로 8-11</td>
+							<td>042-936-8500</td>
+							<td>042)930-8513</td>
+						</tr>
+						
+						<tr>
+							<td>바이오다인</td>
+							<td class="ac">코스닥</td>
+							<td>www.biodyne.asia</td>
+							<td>서울특별시 성동구 아차산로5길 24-4</td>
+							<td>070-4185-8605</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>바이오로그디바이스</td>
+							<td class="ac">코스닥</td>
+							<td>www.biologdevice.com</td>
+							<td>경기도 용인시 기흥구 기흥로 58-1 제A동 1805호 (구갈동, 기흥ICT밸리SKV1)</td>
+							<td>031-831-3696</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>바이오솔루션</td>
+							<td class="ac">코스닥</td>
+							<td>www.biosolutions.co.kr</td>
+							<td>서울특별시 서초구 논현로 121 두일빌딩 1층,3~8층(양재동)</td>
+							<td>02-3446-8884</td>
+							<td>02-6491-6100</td>
+						</tr>
+						
+						<tr>
+							<td>바이오스마트</td>
+							<td class="ac">코스닥</td>
+							<td>www.bio-smart.com</td>
+							<td>서울시 성동구 광나루로 172 (성수동1가) 린하우스</td>
+							<td>02-3218-9000</td>
+							<td>02-3218-9000</td>
+						</tr>
+						
+						<tr>
+							<td>바이오시네틱스</td>
+							<td class="ac">코넥스</td>
+							<td>www.bio-synectics.com</td>
+							<td>서울시 금천구 가산디지털2로 184, 708호(가산동, 벽산디지털밸리 2차)</td>
+							<td>02)2113-1285</td>
+							<td>02-2113-1276</td>
+						</tr>
+						
+						<tr>
+							<td>바이오에프디엔씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.biofdnc.com</td>
+							<td>인천광역시 연수구 송도미래로 30 에이동 509~511호</td>
+							<td>032-811-2027</td>
+							<td>032-236-7019</td>
+						</tr>
+						
+						<tr>
+							<td>바이오인프라생명과학</td>
+							<td class="ac">코넥스</td>
+							<td>http://www.bioinfra.co.kr</td>
+							<td>서울특별시 종로구 대학로 49 7층(연건동, SGI빌딩)</td>
+							<td>02-6271-0102</td>
+							<td>02-6239-5502</td>
+						</tr>
+						
+						<tr>
+							<td>바이오톡스텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.biotoxtech.com</td>
+							<td>충북 청주시 청원구 오창읍 연구단지로53</td>
+							<td>043-210-7777</td>
+							<td>043-210-7777</td>
+						</tr>
+						
+						<tr>
+							<td>바이오프로테크</td>
+							<td class="ac">코넥스</td>
+							<td>www.protechsite.com</td>
+							<td>강원도 원주시 문막읍 동화공단로 151-3(동화첨단의료기기산업단지)</td>
+							<td>033)735-7720</td>
+							<td>033-735-7720</td>
+						</tr>
+						
+						<tr>
+							<td>바이오플러스</td>
+							<td class="ac">코스닥</td>
+							<td>www.ubioplus.co.kr</td>
+							<td>경기도 성남시 중원구 사기막골로45번길 14, 18층 제에이-1801,1802호</td>
+							<td>070-4915-2294</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>바이온</td>
+							<td class="ac">코스닥</td>
+							<td>www.by-on.co.kr</td>
+							<td>충청북도 청주시 청원구 오창읍 화산여천길 63-32 2층(여천리)</td>
+							<td>043-213-2722</td>
+							<td>02-516-0720</td>
+						</tr>
+						
+						<tr>
+							<td>바이옵트로</td>
+							<td class="ac">코스닥</td>
+							<td>www.bioptro.co.kr</td>
+							<td>경기도 용인시 기흥구 탑실로58번길 14(공세동)</td>
+							<td>031)8005-5155</td>
+							<td>031-8005-5155</td>
+						</tr>
+						
+						<tr>
+							<td>바이젠셀</td>
+							<td class="ac">코스닥</td>
+							<td>www.vigencell.com</td>
+							<td>서울특별시 서초구 반포대로 222 옴니버스파크 5F, 6F</td>
+							<td>02-2127-7590</td>
+							<td>070-4193-4015</td>
+						</tr>
+						
+						<tr>
+							<td>바텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.vatechcorp.co.kr</td>
+							<td>경기도 화성시 삼성1로 2길 13(석우동)</td>
+							<td>031-679-2000</td>
+							<td>031-379-9505</td>
+						</tr>
+						
+						<tr>
+							<td>박셀바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.vaxcell-bio.com</td>
+							<td>전라남도 화순군 화순읍 산단길 12-55 (내평리)</td>
+							<td>061-373-0046</td>
+							<td>061-373-0046</td>
+						</tr>
+						
+						<tr>
+							<td>방림</td>
+							<td class="ac">코스피</td>
+							<td>www.pangrim.com</td>
+							<td>서울시 마포구 월드컵북로 402 KGIT상암센터 18층</td>
+							<td>02-2085-2114</td>
+							<td>02-2085-2114</td>
+						</tr>
+						
+						<tr>
+							<td>배럴</td>
+							<td class="ac">코스닥</td>
+							<td>www.getbarrel.com</td>
+							<td>서울특별시 용산구 원효로 138 201호, 302호 (원효로3가,청진빌딩)</td>
+							<td>02-335-3176</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>백광산업</td>
+							<td class="ac">코스피</td>
+							<td>www.pkic.co.kr</td>
+							<td>전북 군산시 임해로 494-16</td>
+							<td>063-450-1700</td>
+							<td>063-450-1700</td>
+						</tr>
+						
+						<tr>
+							<td>백금T&A</td>
+							<td class="ac">코스닥</td>
+							<td>www.bgtna.com</td>
+							<td>경기도 군포시 엘에스로 153-18, 5~6층(산본동, L&C타워)</td>
+							<td>031-488-7900</td>
+							<td>031-488-7910</td>
+						</tr>
+						
+						<tr>
+							<td>백산</td>
+							<td class="ac">코스피</td>
+							<td>www.baiksan.co.kr</td>
+							<td>경기도 시흥시 공단1대로27번길 47 (정왕동)</td>
+							<td>031-499-0044</td>
+							<td>031-499-0044</td>
+						</tr>
+						
+						<tr>
+							<td>밸로프</td>
+							<td class="ac">코스닥</td>
+							<td>www.valofe.com</td>
+							<td>서울특별시 금천구 디지털로 130 남성프라자 601, 602, 603호</td>
+							<td>070-7462-1007</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>버킷스튜디오</td>
+							<td class="ac">코스닥</td>
+							<td>www.acomstudio.co.kr</td>
+							<td>서울특별시 강남구 선릉로 803 4층, 5층(신사동)</td>
+							<td>02-3452-5079</td>
+							<td>02-3452-5079</td>
+						</tr>
+						
+						<tr>
+							<td>범양건영</td>
+							<td class="ac">코스피</td>
+							<td>www.iby.co.kr</td>
+							<td>부산광역시 동구 초량중로 114 105동 비102호, 비104호(초량동, 범양레우스 센트럴베이)</td>
+							<td>041-573-5631</td>
+							<td>051-711-7555</td>
+						</tr>
+						
+						<tr>
+							<td>범한퓨얼셀</td>
+							<td class="ac">코스닥</td>
+							<td>www.bumhanfuelcell.com</td>
+							<td>경상남도 창원시 마산회원구 자유무역4길 61 봉암동</td>
+							<td>055-224-0500</td>
+							<td>055-224-0500</td>
+						</tr>
+						
+						<tr>
+							<td>베노홀딩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.entermate.com</td>
+							<td>서울특별시 강남구 언주로134길 4 IB타워 6층</td>
+							<td>02-3276-5871</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>베뉴지</td>
+							<td class="ac">코스닥</td>
+							<td>www.granddept.co.kr</td>
+							<td>서울시 강남구 대치동 936-21</td>
+							<td>02-3665-0101</td>
+							<td>02-2657-2004</td>
+						</tr>
+						
+						<tr>
+							<td>베른</td>
+							<td class="ac">코넥스</td>
+							<td>acecamper.co.kr</td>
+							<td>충청남도 아산시 고불로 707, 1호동(좌부동)</td>
+							<td>1899-8805</td>
+							<td>1899-8805</td>
+						</tr>
+						
+						<tr>
+							<td>베셀</td>
+							<td class="ac">코스닥</td>
+							<td>www.vessel21.com</td>
+							<td>경기도 수원시 권선구 산업로155번길 281</td>
+							<td>031-683-3953</td>
+							<td>031-683-3953</td>
+						</tr>
+						
+						<tr>
+							<td>베스파</td>
+							<td class="ac">코스닥</td>
+							<td>www.vespainteractive.com</td>
+							<td>서울시 강남구 테헤란로 83길 15 9층</td>
+							<td>02-6954-0889</td>
+							<td>02-6954-0889</td>
+						</tr>
+						
+						<tr>
+							<td>베트남개발1</td>
+							<td class="ac">코스피</td>
+							<td></td>
+							<td>서울 영등포구 여의도동 15-24</td>
+							<td>02-2168-0493</td>
+							<td>02-2168-0493</td>
+						</tr>
+						
+						<tr>
+							<td>벽산</td>
+							<td class="ac">코스피</td>
+							<td>www.byucksan.com</td>
+							<td>서울시 중구 퇴계로 307 (광희동 1가, 광희빌딩)</td>
+							<td>02-2260-6114</td>
+							<td>02-2260-6114</td>
+						</tr>
+						
+						<tr>
+							<td>보광산업</td>
+							<td class="ac">코스닥</td>
+							<td>www.bokwangindustry.co.kr</td>
+							<td>대구시 북구 유통단지로3길 40</td>
+							<td>053-384-0881</td>
+							<td>053-384-0883</td>
+						</tr>
+						
+						<tr>
+							<td>보라티알</td>
+							<td class="ac">코스닥</td>
+							<td>www.boratr.co.kr</td>
+							<td>서울특별시 강남구 강남대로 518 화이트518</td>
+							<td>02-538-3373</td>
+							<td>070-8680-5705</td>
+						</tr>
+						
+						<tr>
+							<td>보락</td>
+							<td class="ac">코스피</td>
+							<td>www.bolak.co.kr</td>
+							<td>경기도 화성시 양감면 초록로 720-37</td>
+							<td>031-352-6455</td>
+							<td>031-352-6455</td>
+						</tr>
+						
+						<tr>
+							<td>보령</td>
+							<td class="ac">코스피</td>
+							<td>www.boryung.co.kr</td>
+							<td>서울시 종로구 창경궁로 136 보령빌딩</td>
+							<td>02-708-8000</td>
+							<td>02-708-8000</td>
+						</tr>
+						
+						<tr>
+							<td>보로노이</td>
+							<td class="ac">코스닥</td>
+							<td>voronoi.io</td>
+							<td>인천광역시 연수구 송도과학로 32 IT센터 S동 18층</td>
+							<td>032-830-4855</td>
+							<td>032-830-4855</td>
+						</tr>
+						
+						<tr>
+							<td>보성파워텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.bosungpower.co.kr</td>
+							<td>충북 충주시 주덕읍 대창길 70</td>
+							<td>031-491-0311</td>
+							<td>031-491-0311</td>
+						</tr>
+						
+						<tr>
+							<td>보해양조</td>
+							<td class="ac">코스피</td>
+							<td>www.bohae.co.kr</td>
+							<td>전남 목포시 호남로68번길 36</td>
+							<td>061-243-3141</td>
+							<td>061-240-5700</td>
+						</tr>
+						
+						<tr>
+							<td>본느</td>
+							<td class="ac">코스닥</td>
+							<td>www.bonne.co.kr</td>
+							<td>서울특별시 강남구 선릉로90길 14 프레티늄 빌딩</td>
+							<td>02-6423-4111</td>
+							<td>031-4365-3733</td>
+						</tr>
+						
+						<tr>
+							<td>볼빅</td>
+							<td class="ac">코넥스</td>
+							<td>www.volvik.co.kr</td>
+							<td>충북 음성군 대소면 대금로 628</td>
+							<td>043)877-1916</td>
+							<td>02-424-5211</td>
+						</tr>
+						
+						<tr>
+							<td>부광약품</td>
+							<td class="ac">코스피</td>
+							<td>www.bukwang.co.kr</td>
+							<td>서울시 동작구 상도로 7(대방동)</td>
+							<td>02-828-8114</td>
+							<td>02-828-8114</td>
+						</tr>
+						
+						<tr>
+							<td>부국증권</td>
+							<td class="ac">코스피</td>
+							<td>www.bookook.co.kr</td>
+							<td>서울시 영등포구 국제금융로 6길 17</td>
+							<td>02-368-9200</td>
+							<td>02-368-9200</td>
+						</tr>
+						
+						<tr>
+							<td>부국철강</td>
+							<td class="ac">코스피</td>
+							<td>www.bks.co.kr</td>
+							<td>광주시 광산구 하남산단9번로 90 (안청동)</td>
+							<td>062-954-3806</td>
+							<td>062-954-3806</td>
+						</tr>
+						
+						<tr>
+							<td>부방</td>
+							<td class="ac">코스닥</td>
+							<td>www.bubang.com</td>
+							<td>서울시 강남구  삼성로 528 (삼성동, 부방빌딩)</td>
+							<td>02-2008-7272</td>
+							<td>02-2008-7272</td>
+						</tr>
+						
+						<tr>
+							<td>부산산업</td>
+							<td class="ac">코스피</td>
+							<td>www.busanind.co.kr</td>
+							<td>부산시 사상구 장인로 35 (감전동)</td>
+							<td>051-315-8331</td>
+							<td>051-315-8331</td>
+						</tr>
+						
+						<tr>
+							<td>부산주공</td>
+							<td class="ac">코스피</td>
+							<td>www.pci21c.com</td>
+							<td>부산시 기장군 장안읍 신소재산단1로 10</td>
+							<td>051-780-5980</td>
+							<td>051-780-5980</td>
+						</tr>
+						
+						<tr>
+							<td>부스타</td>
+							<td class="ac">코스닥</td>
+							<td>www.booster.co.kr</td>
+							<td>충북 진천군 이월면 고등2길 18</td>
+							<td>043-536-9107</td>
+							<td>02-2657-8907</td>
+						</tr>
+						
+						<tr>
+							<td>뷰노</td>
+							<td class="ac">코스닥</td>
+							<td>www.vuno.co</td>
+							<td>서울특별시 서초구 강남대로 479 9층</td>
+							<td>02-515-6646</td>
+							<td>02-518-6629</td>
+						</tr>
+						
+						<tr>
+							<td>뷰웍스</td>
+							<td class="ac">코스닥</td>
+							<td>www.vieworks.com</td>
+							<td>경기도 안양시 동안구 부림로 170번길 41-3(관양동)</td>
+							<td>070-7011-6161</td>
+							<td>070-7011-6240</td>
+						</tr>
+						
+						<tr>
+							<td>브랜드엑스코퍼레이션</td>
+							<td class="ac">코스닥</td>
+							<td>www.brandxcorp.com</td>
+							<td>서울특별시 성동구 뚝섬로1길 63 (성수동1가, 영창디지털타워) 12층</td>
+							<td>02-6959-2362</td>
+							<td>02-6959-2362</td>
+						</tr>
+						
+						<tr>
+							<td>브레인즈컴퍼니</td>
+							<td class="ac">코스닥</td>
+							<td>www.brainz.co.kr</td>
+							<td>서울특별시 성동구 성수이로 87 (성수동2가, 성문빌딩) 8층</td>
+							<td>02-2205-6001</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>브리지텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.bridgetec.co.kr</td>
+							<td>서울시 영등포구 국제금융로2길32 여의도파이낸스타워 17,18층</td>
+							<td>02-3430-4114</td>
+							<td>02-3430-4038</td>
+						</tr>
+						
+						<tr>
+							<td>브릿지바이오테라퓨틱스</td>
+							<td class="ac">코스닥</td>
+							<td>www.bridgebiorx.com</td>
+							<td>경기도 성남시 분당구 판교로 255번길 58, 303호 (삼평동, 씨즈타워)</td>
+							<td>031-8092-3280</td>
+							<td>031-8092-3280</td>
+						</tr>
+						
+						<tr>
+							<td>브이씨</td>
+							<td class="ac">코스닥</td>
+							<td>voicecaddie.co.kr</td>
+							<td>서울특별시 강남구 테헤란로108길 23(대치동, 보이스캐디사옥</td>
+							<td>02-538-3100</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>브이원텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.v-one.co.kr</td>
+							<td>경기도 성남시 분당구 대왕판교로 660, A-710 (삼평동, 유스페이스1)</td>
+							<td>031-607-5540</td>
+							<td>031-706-5542</td>
+						</tr>
+						
+						<tr>
+							<td>브이티지엠피</td>
+							<td class="ac">코스닥</td>
+							<td>www.gmp.co.kr</td>
+							<td>경기도 파주시 산업단지길 139 (문발동)</td>
+							<td>031-943-4600</td>
+							<td>02-508-3785</td>
+						</tr>
+						
+						<tr>
+							<td>블루베리 NFT</td>
+							<td class="ac">코스닥</td>
+							<td>www.unidusok.com</td>
+							<td>충북 증평군 증평읍 광장로 473-3</td>
+							<td>043-836-0025</td>
+							<td>02-2203-3835</td>
+						</tr>
+						
+						<tr>
+							<td>블루콤</td>
+							<td class="ac">코스닥</td>
+							<td>www.bluec.co.kr</td>
+							<td>인천시 연수구 벤처로 116 (송도동)</td>
+							<td>032-810-0500</td>
+							<td>032-810-0522</td>
+						</tr>
+						
+						<tr>
+							<td>블루탑</td>
+							<td class="ac">코넥스</td>
+							<td>www.e-tkc.com</td>
+							<td>인천시 남동구 남동서로269번길 4</td>
+							<td>032)818-6440</td>
+							<td>032-721-9110</td>
+						</tr>
+						
+						<tr>
+							<td>블리츠웨이</td>
+							<td class="ac">코스닥</td>
+							<td>blitzway.com</td>
+							<td>서울특별시 영등포구 국회대로 638 블리츠웨이빌딩</td>
+							<td>02-512-7692</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>비나텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.vina.co.kr</td>
+							<td>전북 전주시 덕진구 운암로 15 (팔복동2가)</td>
+							<td>063-715-3020</td>
+							<td>070-4193-4155</td>
+						</tr>
+						
+						<tr>
+							<td>비덴트</td>
+							<td class="ac">코스닥</td>
+							<td>www.tvlogic.co.kr</td>
+							<td>서울시 금천구 가산디지털1로 84, 12층 (가산동, 에이스하이엔드 8차)</td>
+							<td>070-8668-6611</td>
+							<td>070-7811-7086</td>
+						</tr>
+						
+						<tr>
+							<td>비디아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.bdindustry.co.kr</td>
+							<td>경기도 화성시 팔탄면 서해로 1155</td>
+							<td>02-2082-8890</td>
+							<td>070-7496-7171</td>
+						</tr>
+						
+						<tr>
+							<td>비보존 제약</td>
+							<td class="ac">코스닥</td>
+							<td>www.vivozonhc.com</td>
+							<td>경기도 화성시 향남읍 제약공단2길 34-40</td>
+							<td>031-213-9200</td>
+							<td>031-210-7802</td>
+						</tr>
+						
+						<tr>
+							<td>비비씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.bestbristle.com</td>
+							<td>대전광역시 대덕구 문평동로 25 -</td>
+							<td>042-932-9773</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>비비안</td>
+							<td class="ac">코스피</td>
+							<td>www.vivien.co.kr</td>
+							<td>서울시 용산구 서빙고로 51길 52(서빙고동)</td>
+							<td>02-3780-1114</td>
+							<td>02-3780-1114</td>
+						</tr>
+						
+						<tr>
+							<td>비상교육</td>
+							<td class="ac">코스피</td>
+							<td>www.visang.com</td>
+							<td>서울시 구로구 디지털로33길 48 (구로동, 대륭포스트타워 7차 19층)</td>
+							<td>1544-0554</td>
+							<td>070-4193-4106</td>
+						</tr>
+						
+						<tr>
+							<td>비스토스</td>
+							<td class="ac">코스닥</td>
+							<td>www.bistos.co.kr</td>
+							<td>경기도 성남시 중원구 갈마치로 302 A동 701호(상대원동, 성남우림라이온스밸리5차)</td>
+							<td>031-750-0340</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>비씨엔씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.bcnc.co.kr</td>
+							<td>경기도 이천시 신둔면 마소로57번길 25 비씨엔씨</td>
+							<td>031-645-1551</td>
+							<td>031-645-1551</td>
+						</tr>
+						
+						<tr>
+							<td>비씨월드제약</td>
+							<td class="ac">코스닥</td>
+							<td>www.bcwp.co.kr</td>
+							<td>경기도 여주시 가남읍 여주남로 872-23</td>
+							<td>031-881-6800</td>
+							<td>02-2182-0498</td>
+						</tr>
+						
+						<tr>
+							<td>비아트론</td>
+							<td class="ac">코스닥</td>
+							<td>www.viatrontech.com</td>
+							<td>경기도 수원시 권선구 산업로 155번길 139(고색동)</td>
+							<td>070-4016-3200</td>
+							<td>070-4016-3312</td>
+						</tr>
+						
+						<tr>
+							<td>비에이치</td>
+							<td class="ac">코스닥</td>
+							<td>www.bhe.co.kr</td>
+							<td>인천시 부평구 평천로 199번길 25</td>
+							<td>032-510-2000</td>
+							<td>032-510-2655</td>
+						</tr>
+						
+						<tr>
+							<td>비에이치아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.bhi.co.kr</td>
+							<td>경남 함안군 군북면 장백로 122</td>
+							<td>055-585-3800</td>
+							<td>055-585-3800</td>
+						</tr>
+						
+						<tr>
+							<td>비엔디생활건강</td>
+							<td class="ac">코넥스</td>
+							<td>www.e-seje.com</td>
+							<td>인천시 부평구 서달로 298번길 73</td>
+							<td>02)552-8481</td>
+							<td>02-552-8481</td>
+						</tr>
+						
+						<tr>
+							<td>비엘</td>
+							<td class="ac">코스닥</td>
+							<td>www.bioleaders.co.kr</td>
+							<td>경기도 용인시 수지구 신수로 767, 7층 (동천동, 분당수지유타워 지식산업센터)</td>
+							<td>031-280-9650</td>
+							<td>031-280-9650</td>
+						</tr>
+						
+						<tr>
+							<td>비엘팜텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.nextbt.co.kr</td>
+							<td>경기도 용인시 수지구 신수로 767 7층(동천동, 분당수지유타워 지식산업센터)</td>
+							<td>043-878-8851</td>
+							<td>02-3401-4490</td>
+						</tr>
+						
+						<tr>
+							<td>비엘헬스케어</td>
+							<td class="ac">코넥스</td>
+							<td>www.naturalfnp.com</td>
+							<td>충북 청원군 오창읍 양청송대길 39(송대리)</td>
+							<td>043)211-1056</td>
+							<td>02-400-4418</td>
+						</tr>
+						
+						<tr>
+							<td>비엠티</td>
+							<td class="ac">코스닥</td>
+							<td>www.superlok.com</td>
+							<td>경남 양산시 산막공단남 11길 35</td>
+							<td>055-783-1000</td>
+							<td>055-783-1013</td>
+						</tr>
+						
+						<tr>
+							<td>비올</td>
+							<td class="ac">코스닥</td>
+							<td>www.viol.co.kr</td>
+							<td>경기도 성남시 분당구 판교로 744 분당테크노파크 C동 808호,809호</td>
+							<td>070-4477-8803</td>
+							<td>031-8017-7401</td>
+						</tr>
+						
+						<tr>
+							<td>비즈니스온</td>
+							<td class="ac">코스닥</td>
+							<td>www.businesson.co.kr</td>
+							<td>서울시 성동구 광나루로 172 3층</td>
+							<td>02-559-0800</td>
+							<td>02-559-0800</td>
+						</tr>
+						
+						<tr>
+							<td>비츠로셀</td>
+							<td class="ac">코스닥</td>
+							<td>www.vitzrocell.com</td>
+							<td>충남 당진시 합덕읍 인더스파크로 70</td>
+							<td>041-330-0236</td>
+							<td>02-2024-3246</td>
+						</tr>
+						
+						<tr>
+							<td>비츠로시스</td>
+							<td class="ac">코스닥</td>
+							<td>www.vitzrosys.com</td>
+							<td>서울특별시 구로구 디지털로31길 20 8층 802호(구로동, 에이스테크노타워5차)</td>
+							<td>02-460-2000</td>
+							<td>02-460-2150</td>
+						</tr>
+						
+						<tr>
+							<td>비츠로테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.vitzrotech.com</td>
+							<td>경기도 안산시 단원구 별망로 327</td>
+							<td>031-489-2000</td>
+							<td>02-2024-3121</td>
+						</tr>
+						
+						<tr>
+							<td>비케이탑스</td>
+							<td class="ac">코스피</td>
+							<td>www.bktops.co.kr</td>
+							<td>서울특별시 강남구 테헤란로 401</td>
+							<td>02-3453-7655</td>
+							<td>02-3453-7655</td>
+						</tr>
+						
+						<tr>
+							<td>비케이홀딩스</td>
+							<td class="ac">코스닥</td>
+							<td>http://phoenixmaterials.kr/</td>
+							<td>경북 구미시 첨단기업1로 87</td>
+							<td>054-470-0886</td>
+							<td>054-470-0831</td>
+						</tr>
+						
+						<tr>
+							<td>비투엔</td>
+							<td class="ac">코스닥</td>
+							<td>www.b2en.com</td>
+							<td>서울특별시 영등포구 선유로 146 이앤씨드림타워 2층</td>
+							<td>02-2636-0090</td>
+							<td>02-2636-0090</td>
+						</tr>
+						
+						<tr>
+							<td>비트나인</td>
+							<td class="ac">코스닥</td>
+							<td>bitnine.net</td>
+							<td>서울특별시 강남구 테헤란로 516 정헌빌딩 4층</td>
+							<td>070-4800-3517</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>비트컴퓨터</td>
+							<td class="ac">코스닥</td>
+							<td>www.bit.kr</td>
+							<td>서울시 서초구 서초대로74길 33 (서초동)</td>
+							<td>02-3486-1234</td>
+							<td>02-3486-1234</td>
+						</tr>
+						
+						<tr>
+							<td>비플라이소프트</td>
+							<td class="ac">코스닥</td>
+							<td>www.bflysoft.co.kr</td>
+							<td>서울특별시 중구 퇴계로 385 준타워 9층</td>
+							<td>02)3487-0215</td>
+							<td>02-3487-0215</td>
+						</tr>
+						
+						<tr>
+							<td>비피도</td>
+							<td class="ac">코스닥</td>
+							<td>www.bifido.com</td>
+							<td>강원도 홍천군 홍천읍 농공단지길 23-16</td>
+							<td>033-435-4962</td>
+							<td>070-4367-0216</td>
+						</tr>
+						
+						<tr>
+							<td>빅솔론</td>
+							<td class="ac">코스닥</td>
+							<td>www.bixolon.com</td>
+							<td>경기도 성남시 분당구 판교역로241번길 20 미래에셋벤처타워 8층</td>
+							<td>031-218-5500</td>
+							<td>031-218-5542</td>
+						</tr>
+						
+						<tr>
+							<td>빅텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.victek.co.kr</td>
+							<td>경기도 이천시 마장면 덕이로 180-31</td>
+							<td>031-631-7301</td>
+							<td>031-631-7301</td>
+						</tr>
+						
+						<tr>
+							<td>빅텐츠</td>
+							<td class="ac">코넥스</td>
+							<td>www.vicpd.co.kr</td>
+							<td>서울특별시 마포구 상암산로 76 16층 일부</td>
+							<td>02)786-2245</td>
+							<td>02-786-2245</td>
+						</tr>
+						
+						<tr>
+							<td>빙그레</td>
+							<td class="ac">코스피</td>
+							<td>www.bing.co.kr</td>
+							<td>경기도 남양주시 다산순환로 45 (도농동)</td>
+							<td>02-2022-6000</td>
+							<td>02-2022-6000</td>
+						</tr>
+						
+						<tr>
+							<td>빛샘전자</td>
+							<td class="ac">코스닥</td>
+							<td>www.vissem.com</td>
+							<td>경기도 용인시 기흥구 언동로53-11 (청덕동)</td>
+							<td>031-288-3420</td>
+							<td>031-288-3412</td>
+						</tr>
+						
+						<tr>
+							<td>뿌리깊은나무들</td>
+							<td class="ac">코넥스</td>
+							<td>www.redwoods.co.kr</td>
+							<td>서울시 영등포구 의사당대로 38, 101동 1314호 (여의도동, 여의도더샵아일랜드파크)</td>
+							<td>02)565-1676</td>
+							<td>02-6264-1762</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

@@ -1,0 +1,879 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>마니커</td>
+							<td class="ac">코스피</td>
+							<td>www.maniker.co.kr</td>
+							<td>경기도 용인시 처인구 이동읍 화산로93번길 15-7 -</td>
+							<td>031-281-5300</td>
+							<td>031-281-5300</td>
+						</tr>
+						
+						<tr>
+							<td>마니커에프앤지</td>
+							<td class="ac">코스닥</td>
+							<td>www.manikerfng.com</td>
+							<td>경기도 용인시 처인구 이동면 백옥대로144번길 36-2  </td>
+							<td>031-899-1114</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>마스턴프리미어리츠</td>
+							<td class="ac">코스피</td>
+							<td></td>
+							<td>서울특별시 서초구 강남대로 465 (서초동, 교보생명보험(주)서초사옥) A동 21층</td>
+							<td></td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>마이크로디지탈</td>
+							<td class="ac">코스닥</td>
+							<td>www.md-best.com</td>
+							<td>경기도 성남시 분당구 판교로228번길 15 제윈스동 701호</td>
+							<td>031-701-2225</td>
+							<td>031-701-2225</td>
+						</tr>
+						
+						<tr>
+							<td>마이크로컨텍솔</td>
+							<td class="ac">코스닥</td>
+							<td>www.mcsgroup.co.kr</td>
+							<td>충남 천안시 서북구 성거읍 오송2길 15-21</td>
+							<td>041-621-4331</td>
+							<td>041-621-4331</td>
+						</tr>
+						
+						<tr>
+							<td>마이크로프랜드</td>
+							<td class="ac">코스닥</td>
+							<td>www.microfriend.co.kr</td>
+							<td>서울시 노원구 공릉로 232, 10층(공릉동, 서울테크노파크)</td>
+							<td>02-944-6400</td>
+							<td>02-944-6414</td>
+						</tr>
+						
+						<tr>
+							<td>마인즈랩</td>
+							<td class="ac">코스닥</td>
+							<td>www.mindslab.ai</td>
+							<td>경기도 성남시 분당구 대왕판교로644번길 49 다산타워5층</td>
+							<td>1661-3222</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>마크로젠</td>
+							<td class="ac">코스닥</td>
+							<td>www.macrogen.com</td>
+							<td>서울시 금천구 벚꽃로 254, 10층 (가산동, 월드메르디앙벤처센터)</td>
+							<td>02-2113-7000</td>
+							<td>02-3489-7558</td>
+						</tr>
+						
+						<tr>
+							<td>만호제강</td>
+							<td class="ac">코스피</td>
+							<td>www.manhorope.com</td>
+							<td>부산시 강서구 녹산화전로 71(송정동)</td>
+							<td>051-601-0351</td>
+							<td>051-601-0351</td>
+						</tr>
+						
+						<tr>
+							<td>매일유업</td>
+							<td class="ac">코스닥</td>
+							<td>www.maeil.com</td>
+							<td>서울시 종로구 종로1길 50</td>
+							<td>02-2127-2113</td>
+							<td>02-3671-3607</td>
+						</tr>
+						
+						<tr>
+							<td>매일홀딩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.maeilholdings.com</td>
+							<td>서울시 종로구 종로1길 50 더 케이 트윈타워 A동</td>
+							<td>02-2127-2113</td>
+							<td>02-2127-2096</td>
+						</tr>
+						
+						<tr>
+							<td>매커스</td>
+							<td class="ac">코스닥</td>
+							<td>www.makus.co.kr</td>
+							<td>서울시 강남구 봉은사로 44길 73</td>
+							<td>02-3490-9500</td>
+							<td>02-3490-9514</td>
+						</tr>
+						
+						<tr>
+							<td>맥스트</td>
+							<td class="ac">코스닥</td>
+							<td>www.maxst.com</td>
+							<td>서울특별시 강남구 남부순환로351길 4 (도곡동, 도곡동STAY77) 3층</td>
+							<td>02-585-9566</td>
+							<td>02-585-9566</td>
+						</tr>
+						
+						<tr>
+							<td>맥쿼리인프라</td>
+							<td class="ac">코스피</td>
+							<td>www.mkif.com</td>
+							<td>서울특별시 종로구 우정국로 26 A동 18층(공평동, 센트로폴리스)</td>
+							<td>02-3705-8565</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>맵스리얼티1</td>
+							<td class="ac">코스피</td>
+							<td></td>
+							<td>서울 영등포구 여의도동 미래에셋빌딩 45-1</td>
+							<td>02-769-7822</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>머큐리</td>
+							<td class="ac">코스닥</td>
+							<td>www.mercury.co.kr</td>
+							<td>인천시 서구 가재울로 90</td>
+							<td>032-580-3090</td>
+							<td>032-580-3043</td>
+						</tr>
+						
+						<tr>
+							<td>멀티캠퍼스</td>
+							<td class="ac">코스닥</td>
+							<td>www.multicampus.com</td>
+							<td>서울시 강남구 언주로 508 서울상록회관 17층</td>
+							<td>02-6262-9114</td>
+							<td>02-6262-9114</td>
+						</tr>
+						
+						<tr>
+							<td>메가스터디</td>
+							<td class="ac">코스닥</td>
+							<td>www.megastudyholdings.com</td>
+							<td>서울특별시 서초구 효령로 304 24층(서초동, 국제전자센터)</td>
+							<td>02-6984-6814</td>
+							<td>02-6984-6814</td>
+						</tr>
+						
+						<tr>
+							<td>메가스터디교육</td>
+							<td class="ac">코스닥</td>
+							<td>corp.megastudy.net</td>
+							<td>서울시 서초구 효령로 321 (서초동, 덕원빌딩)</td>
+							<td>02-3489-8200</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>메가엠디</td>
+							<td class="ac">코스닥</td>
+							<td>www.megamd.co.kr</td>
+							<td>서울특별시 서초구 반포대로 81 4층(서초동, 영림빌딩)</td>
+							<td>02-3489-8346</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>메드팩토</td>
+							<td class="ac">코스닥</td>
+							<td>www.medpacto.com</td>
+							<td>서울특별시 서초구 명달로 92 보림빌딩</td>
+							<td>02-6938-0200</td>
+							<td>02-6938-0200</td>
+						</tr>
+						
+						<tr>
+							<td>메디쎄이</td>
+							<td class="ac">코넥스</td>
+							<td>www.medyssey.co.kr</td>
+							<td>충북 제천시 한방엑스포로 129 (왕암동)</td>
+							<td>043)716-1014</td>
+							<td>043-716-1014</td>
+						</tr>
+						
+						<tr>
+							<td>메디아나</td>
+							<td class="ac">코스닥</td>
+							<td>www.mediana.co.kr</td>
+							<td>강원도 원주시 문막읍 동화공단로 132</td>
+							<td>033-742-5400</td>
+							<td>033-742-5400</td>
+						</tr>
+						
+						<tr>
+							<td>메디안디노스틱</td>
+							<td class="ac">코넥스</td>
+							<td>www.mediandiagnostics.com</td>
+							<td>강원도 춘천시 동내면 순환대로 878</td>
+							<td>033)244-0100</td>
+							<td>033-244-0100</td>
+						</tr>
+						
+						<tr>
+							<td>메디앙스</td>
+							<td class="ac">코스닥</td>
+							<td>www.medience.co.kr</td>
+							<td>서울특별시 강남구 논현로64길 4 5층~6층</td>
+							<td>02-708-8357</td>
+							<td>02-708-8311</td>
+						</tr>
+						
+						<tr>
+							<td>메디젠휴먼케어</td>
+							<td class="ac">코넥스</td>
+							<td>www.medizencare.com</td>
+							<td>서울특별시 송파구 정의로7길 6 PNS홈즈타워 6층</td>
+							<td>02)555-9808</td>
+							<td>02-555-9806</td>
+						</tr>
+						
+						<tr>
+							<td>메디콕스</td>
+							<td class="ac">코스닥</td>
+							<td>www.c-ocean.co.kr</td>
+							<td>서울특별시 강남구 도산대로 549 2~3층 (청담동, 블루펄빌딩)</td>
+							<td>02-3218-9500</td>
+							<td>02-3218-9500</td>
+						</tr>
+						
+						<tr>
+							<td>메디톡스</td>
+							<td class="ac">코스닥</td>
+							<td>www.medy-tox.co.kr</td>
+							<td>충북 청주시 청원구 오창읍 각리1길 78</td>
+							<td>043-217-1555</td>
+							<td>02-6901-5844</td>
+						</tr>
+						
+						<tr>
+							<td>메디포스트</td>
+							<td class="ac">코스닥</td>
+							<td>www.medi-post.co.kr</td>
+							<td>경기도 성남시 분당구 대왕판교로 644번길 21(삼평동)</td>
+							<td>02-3465-6677</td>
+							<td>02-3465-6615</td>
+						</tr>
+						
+						<tr>
+							<td>메디프론</td>
+							<td class="ac">코스닥</td>
+							<td>www.medifron.com</td>
+							<td>서울특별시 금천구 가산디지털1로 186 제에이동 제5층 제517호(가산동, 제이플라츠)</td>
+							<td>02-545-9277</td>
+							<td>02-545-9277</td>
+						</tr>
+						
+						<tr>
+							<td>메리츠금융지주</td>
+							<td class="ac">코스피</td>
+							<td>www.meritzgroup.com</td>
+							<td>서울시 강남구 강남대로 382(역삼동)</td>
+							<td>02-2018-6868</td>
+							<td>02-2018-6868</td>
+						</tr>
+						
+						<tr>
+							<td>메리츠증권</td>
+							<td class="ac">코스피</td>
+							<td>home.imeritz.com</td>
+							<td>서울특별시 영등포구 국제금융로 10  Three IFC, 메리츠종금증권</td>
+							<td>02-785-6611</td>
+							<td>02-785-6611</td>
+						</tr>
+						
+						<tr>
+							<td>메리츠화재</td>
+							<td class="ac">코스피</td>
+							<td>www.meritzfire.com</td>
+							<td>서울시 강남구 강남대로 382 메리츠타워</td>
+							<td>02-1566-7711</td>
+							<td>02-1566-7711</td>
+						</tr>
+						
+						<tr>
+							<td>메이슨캐피탈</td>
+							<td class="ac">코스닥</td>
+							<td>www.mason-capital.co.kr</td>
+							<td>전북 전주시 완산구 기린대로 213, 전주대우빌딩 14층 12호</td>
+							<td>063-287-5305</td>
+							<td>02-2125-3210</td>
+						</tr>
+						
+						<tr>
+							<td>메지온</td>
+							<td class="ac">코스닥</td>
+							<td>www.mezzion.co.kr</td>
+							<td>서울특별시 강남구 삼성로 570 석천빌딩 7층</td>
+							<td>02-560-8000</td>
+							<td>02-560-8011</td>
+						</tr>
+						
+						<tr>
+							<td>메카로</td>
+							<td class="ac">코스닥</td>
+							<td>www.mecaro.com</td>
+							<td>경기도 평택시 산단로121번길 89 (주)메카로</td>
+							<td>031-663-4476</td>
+							<td>070-4134-5825</td>
+						</tr>
+						
+						<tr>
+							<td>메타랩스</td>
+							<td class="ac">코스피</td>
+							<td>www.metalabs.co.kr</td>
+							<td>서울시 강남구 언주로 428 아비스타 R&D센터</td>
+							<td>02-2189-7700</td>
+							<td>02-2189-7700</td>
+						</tr>
+						
+						<tr>
+							<td>메타바이오메드</td>
+							<td class="ac">코스닥</td>
+							<td>www.meta-biomed.com</td>
+							<td>충북 청주시 흥덕구 오송읍 오송생명1로 270</td>
+							<td>043-218-1981</td>
+							<td>043-230-8806</td>
+						</tr>
+						
+						<tr>
+							<td>멕아이씨에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.mek-ics.com</td>
+							<td>경기도 파주시 상지석길 21</td>
+							<td>070-7119-2520</td>
+							<td>070-7119-2508</td>
+						</tr>
+						
+						<tr>
+							<td>멜파스</td>
+							<td class="ac">코스닥</td>
+							<td>www.melfas.com</td>
+							<td>경기도 성남시 분당구 판교역로 225-14 멜파스 빌딩</td>
+							<td>031-707-2280</td>
+							<td>031-707-2280</td>
+						</tr>
+						
+						<tr>
+							<td>명문제약</td>
+							<td class="ac">코스피</td>
+							<td>www.mmpharm.co.kr</td>
+							<td>경기도 화성시 향남읍 제약공단2길 26</td>
+							<td>031-350-4000</td>
+							<td>031-350-4000</td>
+						</tr>
+						
+						<tr>
+							<td>명성티엔에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.ms-mc.co.kr</td>
+							<td>대구시 달서구 성서공단로25길 16(갈산동)</td>
+							<td>053-582-3577</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>명신산업</td>
+							<td class="ac">코스피</td>
+							<td>www.myoungshinindustry.com</td>
+							<td>경상북도 경주시 천북면 천북산단로 91</td>
+							<td>054-740-2665</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>명진홀딩스</td>
+							<td class="ac">코넥스</td>
+							<td>www.salmonkorea.com</td>
+							<td>서울특별시 강남구 봉은사로 170 제 1110호</td>
+							<td>02)1670-2380</td>
+							<td>1670-2386</td>
+						</tr>
+						
+						<tr>
+							<td>모나리자</td>
+							<td class="ac">코스피</td>
+							<td>www.monalisa.co.kr</td>
+							<td>서울시 동작구 보라매로5길 15, 전문건설회관 21층</td>
+							<td>02-829-8800</td>
+							<td>02-829-8800</td>
+						</tr>
+						
+						<tr>
+							<td>모나미</td>
+							<td class="ac">코스피</td>
+							<td>www.monami.com</td>
+							<td>경기도 용인시 수지구 손곡로 17(동천동)</td>
+							<td>031-216-0153</td>
+							<td>031-216-0153</td>
+						</tr>
+						
+						<tr>
+							<td>모다이노칩</td>
+							<td class="ac">코스닥</td>
+							<td>www.moda-innochips.com</td>
+							<td>경기도 안산시 단원구 동산로 27번길 42-7 (원시동)</td>
+							<td>031-315-7250</td>
+							<td>031-8040-0010</td>
+						</tr>
+						
+						<tr>
+							<td>모델솔루션</td>
+							<td class="ac">코스닥</td>
+							<td>www.model-solution.com</td>
+							<td>서울특별시 금천구 벚꽃로20길 24 모델솔루션</td>
+							<td>02-896-0311</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>모두투어</td>
+							<td class="ac">코스닥</td>
+							<td>www.modetour.com</td>
+							<td>서울시 중구 을지로 16 프레지던트호텔 5층 모두투어네트워크</td>
+							<td>1544-5252</td>
+							<td>02-728-8091</td>
+						</tr>
+						
+						<tr>
+							<td>모두투어리츠</td>
+							<td class="ac">코스피</td>
+							<td>www.modetourreit.com</td>
+							<td>서울특별시 중구 소공로 116 (소공동, 서울센타빌딩) 701호</td>
+							<td>02-6253-5911</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>모바일어플라이언스</td>
+							<td class="ac">코스닥</td>
+							<td>www.mobileappliance.co.kr</td>
+							<td>경기도 안양시 동안구 시민대로 401, 1701~1706호</td>
+							<td>031-777-8071</td>
+							<td>031-421-8071</td>
+						</tr>
+						
+						<tr>
+							<td>모베이스</td>
+							<td class="ac">코스닥</td>
+							<td>www.mobase.com</td>
+							<td>경기도 화성시 동탄첨단산업1로 73 (영천동)</td>
+							<td>032-529-4200</td>
+							<td>032-529-4200</td>
+						</tr>
+						
+						<tr>
+							<td>모베이스전자</td>
+							<td class="ac">코스닥</td>
+							<td>www.seoyonelec.com</td>
+							<td>경기도 수원시 권선구 산업로 156번길 100(고색동)</td>
+							<td>031-5174-3000</td>
+							<td>031-5174-3037</td>
+						</tr>
+						
+						<tr>
+							<td>모비데이즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.mobidays.com</td>
+							<td>서울특별시 강남구 역삼로8길 15 2층, 3층(역삼동, 홍우빌딩)</td>
+							<td>02-6929-1620</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>모비릭스</td>
+							<td class="ac">코스닥</td>
+							<td>www.mobirix.com</td>
+							<td>서울특별시 금천구 가산디지털1로 186 604호~607호(가산동,제이플라츠)</td>
+							<td>1588-3027</td>
+							<td>02-2028-5703</td>
+						</tr>
+						
+						<tr>
+							<td>모비스</td>
+							<td class="ac">코스닥</td>
+							<td>www.mobiis.com</td>
+							<td>경기도 성남시 분당구 판교로 253 이노밸리 C동 2층 203호</td>
+							<td>031-8018-8484</td>
+							<td>031-8018-8486</td>
+						</tr>
+						
+						<tr>
+							<td>모아데이타</td>
+							<td class="ac">코스닥</td>
+							<td>www.moadata.co.kr</td>
+							<td>경기도 성남시 수정구 달래내로 46 810호 (시흥동, 성남글로벌융합센터)</td>
+							<td>070-4099-5131</td>
+							<td>070-4187-2057</td>
+						</tr>
+						
+						<tr>
+							<td>모아텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.moatech.com</td>
+							<td>인천시 남동구 인주대로 698 (구월동)</td>
+							<td>032-810-9000</td>
+							<td>032-810-9000</td>
+						</tr>
+						
+						<tr>
+							<td>모코엠시스</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 마포구 상암산로 76 YTN 뉴스퀘어 14층</td>
+							<td>02-2141-4100</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>모토닉</td>
+							<td class="ac">코스피</td>
+							<td>www.motonic.com</td>
+							<td>서울시 중구 청계천로 100 동관 9층(수표동, 시그니쳐타워)</td>
+							<td>02-730-8711</td>
+							<td>02-730-8711</td>
+						</tr>
+						
+						<tr>
+							<td>모트렉스</td>
+							<td class="ac">코스닥</td>
+							<td>www.motrex.co.kr</td>
+							<td>경기도 성남시 분당구 황새울로258번길 25 서영빌딩 12층</td>
+							<td>070-4862-6100</td>
+							<td>070-4626-8119</td>
+						</tr>
+						
+						<tr>
+							<td>모헨즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.imohenz.com</td>
+							<td>충남 천안시 동남구 풍세면 남관리 195</td>
+							<td>041-578-7202</td>
+							<td>02-571-3011</td>
+						</tr>
+						
+						<tr>
+							<td>무림P&P</td>
+							<td class="ac">코스피</td>
+							<td>www.moorim.co.kr</td>
+							<td>울산광역시 울주군 온산읍 우봉강양로 3-36</td>
+							<td>052-231-7000</td>
+							<td>052-231-7000</td>
+						</tr>
+						
+						<tr>
+							<td>무림SP</td>
+							<td class="ac">코스닥</td>
+							<td>www.moorim.co.kr</td>
+							<td>서울시 강남구 강남대로 656</td>
+							<td>02-3485-1603</td>
+							<td>02-512-3672</td>
+						</tr>
+						
+						<tr>
+							<td>무림페이퍼</td>
+							<td class="ac">코스피</td>
+							<td>www.moorim.co.kr</td>
+							<td>경남 진주시 남강로 1003</td>
+							<td>055-751-1234</td>
+							<td>055-751-1234</td>
+						</tr>
+						
+						<tr>
+							<td>무송지오씨</td>
+							<td class="ac">코넥스</td>
+							<td>www.goc2001.com</td>
+							<td>광주광역시 북구 첨단연신로 293 (연제동)</td>
+							<td>062)973-6114</td>
+							<td>062-973-6114</td>
+						</tr>
+						
+						<tr>
+							<td>무진메디</td>
+							<td class="ac">코넥스</td>
+							<td>www.moogene.com</td>
+							<td>경기도 하남시 미사강변중앙로7번안길 25 씨동 10층(풍산동,유-테크밸리씨타워)</td>
+							<td>031)628-6886</td>
+							<td>031-8027-6150</td>
+						</tr>
+						
+						<tr>
+							<td>무학</td>
+							<td class="ac">코스피</td>
+							<td>www.muhak.co.kr</td>
+							<td>경남 창원시 마산회원구 봉암공단2길 6</td>
+							<td>1588-2226</td>
+							<td>1588-2226</td>
+						</tr>
+						
+						<tr>
+							<td>문배철강</td>
+							<td class="ac">코스피</td>
+							<td>www.moonbaesteel.co.kr</td>
+							<td>서울시 동작구 동작대로 35 (사당동)</td>
+							<td>02-758-6600</td>
+							<td>02-758-6600</td>
+						</tr>
+						
+						<tr>
+							<td>미디어젠</td>
+							<td class="ac">코스닥</td>
+							<td>www.mediazen.co.kr</td>
+							<td>경기도 성남시 분당구 성남대로331번길 8 킨스타워(정자동) 11층 1103호실</td>
+							<td>02-6429-7100</td>
+							<td>02-6429-7104</td>
+						</tr>
+						
+						<tr>
+							<td>미래나노텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.mntech.co.kr</td>
+							<td>충북 청주시 청원군 옥산면 과학산업1로 16</td>
+							<td>043-710-1100</td>
+							<td>043-710-1100</td>
+						</tr>
+						
+						<tr>
+							<td>미래산업</td>
+							<td class="ac">코스피</td>
+							<td>www.mirae.co.kr</td>
+							<td>충남 천안시 서북구 백석공단7로 65 (백석동)</td>
+							<td>041-621-5070</td>
+							<td>041-621-5070</td>
+						</tr>
+						
+						<tr>
+							<td>미래생명자원</td>
+							<td class="ac">코스닥</td>
+							<td>www.milaebio.com</td>
+							<td>서울시 송파구 법원로9길26, D동 506~512호(문정동)</td>
+							<td>02-2203-7397</td>
+							<td>02-2203-7397</td>
+						</tr>
+						
+						<tr>
+							<td>미래아이앤지</td>
+							<td class="ac">코스피</td>
+							<td>www.miraeing.co.kr</td>
+							<td>서울시 강남구 삼성로648 삼성동</td>
+							<td>02-3470-4400</td>
+							<td>02-3470-4400</td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋글로벌리츠</td>
+							<td class="ac">코스피</td>
+							<td></td>
+							<td>	서울특별시 종로구 종로 33 (청진동, 그랑서울)</td>
+							<td>02-3774-6614</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋대우스팩 5호</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 중구 을지로5길 26 미래에셋 센터원(Mirae Asset CENTER1)</td>
+							<td>02-3774-7312</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋맵스리츠</td>
+							<td class="ac">코스피</td>
+							<td></td>
+							<td>서울특별시 종로구 종로 33(청진동, 그랑서울)</td>
+							<td>02-3774-2209</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋벤처투자</td>
+							<td class="ac">코스닥</td>
+							<td>venture.miraeasset.co.kr</td>
+							<td>경기도 성남시 분당구 판교역로241번길 20</td>
+							<td>070-4800-2104</td>
+							<td>02-6205-2645</td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋비전스팩1호</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 중구 을지로5길 26 (수하동, 미래에셋 센터원빌딩 이스트타워)</td>
+							<td>02-3774-3762</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋생명</td>
+							<td class="ac">코스피</td>
+							<td>life.miraeasset.com</td>
+							<td>서울시 영등포구 국제금융로 56 (미래에셋대우빌딩)</td>
+							<td>02-1588-0220</td>
+							<td>02-1588-0220</td>
+						</tr>
+						
+						<tr>
+							<td>미래에셋증권</td>
+							<td class="ac">코스피</td>
+							<td>securities.miraeasset.com</td>
+							<td>서울시 중구 을지로5길 26(수하동, 미래에셋센터원빌딩 이스트타워)</td>
+							<td>02-1588-6800</td>
+							<td>02-1588-6800</td>
+						</tr>
+						
+						<tr>
+							<td>미래엔에듀파트너</td>
+							<td class="ac">코넥스</td>
+							<td>www.thepartner.co.kr</td>
+							<td>서울특별시 용산구 한남대로11길 12 고뫄스빌딩 6층</td>
+							<td>02)6337-5500</td>
+							<td>02-6337-5443</td>
+						</tr>
+						
+						<tr>
+							<td>미래컴퍼니</td>
+							<td class="ac">코스닥</td>
+							<td>www.meerecompany.com</td>
+							<td>경기도 화성시 양감면 정문송산로 69-12</td>
+							<td>031-350-9997</td>
+							<td>031-350-9997</td>
+						</tr>
+						
+						<tr>
+							<td>미스터블루</td>
+							<td class="ac">코스닥</td>
+							<td>www.mrbluecorp.com</td>
+							<td>서울시 마포구 월드컵북로6길 18 (동교동, 미스터블루빌딩)</td>
+							<td>02-337-0610</td>
+							<td>02-337-0610</td>
+						</tr>
+						
+						<tr>
+							<td>미원상사</td>
+							<td class="ac">코스피</td>
+							<td>www.mwc.co.kr</td>
+							<td>경기도 안산시 단원구 원시로 49 (목내동)</td>
+							<td>031-8084-8300</td>
+							<td>031-8084-8300</td>
+						</tr>
+						
+						<tr>
+							<td>미원에스씨</td>
+							<td class="ac">코스피</td>
+							<td>www.miramer.co.kr</td>
+							<td>전북 완주군 봉동읍 완주산단1로 167</td>
+							<td>063-260-1500</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>미원홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.miramer.com</td>
+							<td>경기도 용인시 수지구 포은대로 59번길 20</td>
+							<td>063-260-1500</td>
+							<td>063-260-1500</td>
+						</tr>
+						
+						<tr>
+							<td>미원화학</td>
+							<td class="ac">코스피</td>
+							<td>www.miwonchemicals.com</td>
+							<td>울산시 남구 장생포로 247</td>
+							<td>052-261-7988</td>
+							<td>052-261-7988</td>
+						</tr>
+						
+						<tr>
+							<td>미창석유</td>
+							<td class="ac">코스피</td>
+							<td>www.michang.co.kr</td>
+							<td>부산시 영도구 해양로 241 (동삼동)</td>
+							<td>051-403-6441</td>
+							<td>051-403-6441</td>
+						</tr>
+						
+						<tr>
+							<td>미코</td>
+							<td class="ac">코스닥</td>
+							<td>www.mico.kr</td>
+							<td>경기도 안성시 대덕면 모산로 53 </td>
+							<td>031-670-5800</td>
+							<td>031-612-6230</td>
+						</tr>
+						
+						<tr>
+							<td>미코바이오메드</td>
+							<td class="ac">코스닥</td>
+							<td>www.micobiomed.com            </td>
+							<td>경기도 성남시 수정구 창업로 54 가동 3층, 4층(시흥동, LH기업성장센터)</td>
+							<td>070-5227-6000</td>
+							<td>070-5227-6028</td>
+						</tr>
+						
+						<tr>
+							<td>미투온</td>
+							<td class="ac">코스닥</td>
+							<td>www.me2on.com</td>
+							<td>서울특별시 강남구 학동로 343 더피나클강남 6층</td>
+							<td>02-515-2864</td>
+							<td>02-515-2864</td>
+						</tr>
+						
+						<tr>
+							<td>미투젠</td>
+							<td class="ac">코스닥</td>
+							<td>www.me2zen.com</td>
+							<td>FLAT D1, 36/F, MONTERY PLAZA, 15 CHONG YIP STREET, KWUN TONG, KOWLOON, HONG KONG -</td>
+							<td>02-6004-3329</td>
+							<td></td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

@@ -1,0 +1,753 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>나노</td>
+							<td class="ac">코스닥</td>
+							<td>www.nanoin.com</td>
+							<td>경북 상주시 청리면 마공공단로 60</td>
+							<td>054-533-5887</td>
+							<td>054-533-5887</td>
+						</tr>
+						
+						<tr>
+							<td>나노브릭</td>
+							<td class="ac">코스닥</td>
+							<td>www.nanobrick.co.kr </td>
+							<td>경기도 평택시 산단로52번길 68</td>
+							<td>031-663-9420</td>
+							<td>02-6969-6440</td>
+						</tr>
+						
+						<tr>
+							<td>나노신소재</td>
+							<td class="ac">코스닥</td>
+							<td>www.anapro.com</td>
+							<td>세종시 부강면 금호안골길 78, 부강지방산업단지내</td>
+							<td>044-275-6966</td>
+							<td>042-710-6966</td>
+						</tr>
+						
+						<tr>
+							<td>나노씨엠에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.nanocms.co.kr</td>
+							<td>충청남도 천안시 서북구 직산읍 4산단4로 48 (모시리)</td>
+							<td>041-587-3901</td>
+							<td>041-587-3901</td>
+						</tr>
+						
+						<tr>
+							<td>나노엔텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.nanoentek.com</td>
+							<td>서울시 구로구 디지털로26길 5, 에이스하이엔드타워1차 12층</td>
+							<td>02-6220-7728</td>
+							<td>02-6220-7879</td>
+						</tr>
+						
+						<tr>
+							<td>나노캠텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.nanosbiz.com</td>
+							<td>경기도 안성시 양성면 양성로 112 </td>
+							<td>031-671-9466</td>
+							<td>031-671-9466</td>
+						</tr>
+						
+						<tr>
+							<td>나눔테크</td>
+							<td class="ac">코넥스</td>
+							<td>www.nanoomtech.co.kr</td>
+							<td>광주시 북구 첨단벤처소로 57 (월출동)</td>
+							<td>062)955-8588</td>
+							<td>070-4493-4040</td>
+						</tr>
+						
+						<tr>
+							<td>나라소프트</td>
+							<td class="ac">코넥스</td>
+							<td>www.narasoft.com</td>
+							<td>서울특별시 서초구 논현로 155 광성빌딩 3층(양재동)</td>
+							<td>02)3487-7988</td>
+							<td>02-3487-7988</td>
+						</tr>
+						
+						<tr>
+							<td>나라엠앤디</td>
+							<td class="ac">코스닥</td>
+							<td>www.naramnd.com</td>
+							<td>경남 창원시 성산구 공단로 675 (성주동 50-1)</td>
+							<td>055-239-3600</td>
+							<td>055-239-3604</td>
+						</tr>
+						
+						<tr>
+							<td>나래나노텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.naraenano.co.kr</td>
+							<td>경기도 용인시 처인구 이동읍 백옥대로 250 (주)나래나노텍</td>
+							<td>031-337-2600</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>나무가</td>
+							<td class="ac">코스닥</td>
+							<td>www.namuga.co.kr</td>
+							<td>경기도 성남시 중원구 사기막골로 124, 709호(상대원동, SKn테크노파크)</td>
+							<td>031-776-0120</td>
+							<td>070-7012-8400</td>
+						</tr>
+						
+						<tr>
+							<td>나무기술</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>서울특별시 강서구 마곡중앙8로3길 41 (마곡동, 나무기술 마곡R&amp;D센터)</td>
+							<td>031-8060-0200</td>
+							<td>031-8017-3900</td>
+						</tr>
+						
+						<tr>
+							<td>나스미디어</td>
+							<td class="ac">코스닥</td>
+							<td>www.nasmedia.co.kr</td>
+							<td>서울시 강남구 도곡로1길 14 삼일프라자 4,5층</td>
+							<td>02-2188-7300</td>
+							<td>02-2188-7450</td>
+						</tr>
+						
+						<tr>
+							<td>나우IB</td>
+							<td class="ac">코스닥</td>
+							<td>www.nauib.com</td>
+							<td>서울시 강남구 삼성로 511 골든타워 11층</td>
+							<td>02-565-6234</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>나우코스</td>
+							<td class="ac">코넥스</td>
+							<td>www.nowcos.com</td>
+							<td>세종특별자치시 전의면 산단길 220</td>
+							<td>044-862-2791</td>
+							<td>02-6959-9073</td>
+						</tr>
+						
+						<tr>
+							<td>나이벡</td>
+							<td class="ac">코스닥</td>
+							<td>www.nibec.co.kr</td>
+							<td>충북 진천군 이월면 밤디길 116 이월전기전자농공1단지</td>
+							<td>043-532-7458</td>
+							<td>02-765-1976</td>
+						</tr>
+						
+						<tr>
+							<td>나이스디앤비</td>
+							<td class="ac">코스닥</td>
+							<td>www.nicednb.com</td>
+							<td>서울시 마포구 마포대로 217 (아현동)</td>
+							<td>02-2122-2500</td>
+							<td>02-2122-2370</td>
+						</tr>
+						
+						<tr>
+							<td>나이스정보통신</td>
+							<td class="ac">코스닥</td>
+							<td>www.nicevan.co.kr</td>
+							<td>서울시 영등포구 은행로 17</td>
+							<td>02-2187-2700</td>
+							<td>02-2187-2813</td>
+						</tr>
+						
+						<tr>
+							<td>나인테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.naintec.co.kr</td>
+							<td>경기도 평택시 진위면 마산6로 6 -</td>
+							<td>031-476-0305</td>
+							<td>031-476-0305</td>
+						</tr>
+						
+						<tr>
+							<td>남광토건</td>
+							<td class="ac">코스피</td>
+							<td>www.namkwang.co.kr</td>
+							<td>경기도 용인시 기흥구 흥덕중앙로 120(영덕동, 흥덕유타워)</td>
+							<td>02-3011-0114</td>
+							<td>02-3011-0114</td>
+						</tr>
+						
+						<tr>
+							<td>남선알미늄</td>
+							<td class="ac">코스피</td>
+							<td>www.namsun.co.kr</td>
+							<td>대구시 달성군 논공읍 논공중앙로 288</td>
+							<td>053-610-5200</td>
+							<td>053-610-5200</td>
+						</tr>
+						
+						<tr>
+							<td>남성</td>
+							<td class="ac">코스피</td>
+							<td>www.namsung.com</td>
+							<td>서울특별시 금천구 디지털로 130 남성프라자 15층</td>
+							<td>02-2109-1550</td>
+							<td>02-2109-1550</td>
+						</tr>
+						
+						<tr>
+							<td>남양유업</td>
+							<td class="ac">코스피</td>
+							<td>www.namyangi.com</td>
+							<td>서울시 강남구 도산대로 240 1964빌딩</td>
+							<td>02-2010-6601</td>
+							<td>02-2010-6601</td>
+						</tr>
+						
+						<tr>
+							<td>남해화학</td>
+							<td class="ac">코스피</td>
+							<td>www.nhchem.co.kr</td>
+							<td>서울시 강남구 테헤란로113길 15(삼성동)</td>
+							<td>061-688-5354</td>
+							<td>061-688-5354</td>
+						</tr>
+						
+						<tr>
+							<td>남화산업</td>
+							<td class="ac">코스닥</td>
+							<td>www.muangc.co.kr</td>
+							<td>전남 무안군 청계면 서호로 162</td>
+							<td>061-450-9000</td>
+							<td>061-450-9025</td>
+						</tr>
+						
+						<tr>
+							<td>남화토건</td>
+							<td class="ac">코스닥</td>
+							<td>www.namhwaconst.co.kr</td>
+							<td>전남 화순군 화순읍 벽라1길 40</td>
+							<td>061-374-4409</td>
+							<td>062-520-1070</td>
+						</tr>
+						
+						<tr>
+							<td>내츄럴엔도텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.naturalendo.co.kr</td>
+							<td>경기도 성남시 분당구 판교로 255번길 58, 씨즈타워 A동 3층</td>
+							<td>070-4601-3139</td>
+							<td>070-4601-3178</td>
+						</tr>
+						
+						<tr>
+							<td>네오리진</td>
+							<td class="ac">코스닥</td>
+							<td>www.kornicglory.co.kr</td>
+							<td>서울시 강남구 학동로 155, 3, 4층 (논현동, 원영빌딩)</td>
+							<td>02-3476-4200</td>
+							<td>02-3476-7409</td>
+						</tr>
+						
+						<tr>
+							<td>네오셈</td>
+							<td class="ac">코스닥</td>
+							<td>www.neosem.com</td>
+							<td>서울시 중구 삼일대로 343</td>
+							<td>031-8091-8800</td>
+							<td>031-8091-0853</td>
+						</tr>
+						
+						<tr>
+							<td>네오오토</td>
+							<td class="ac">코스닥</td>
+							<td>www.neooto.kr</td>
+							<td>서울시 종로구 새문안로5길 19, 6층(당주동, 로얄빌딩)</td>
+							<td>02-732-2871</td>
+							<td>02-6732-2871</td>
+						</tr>
+						
+						<tr>
+							<td>네오위즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.neowiz.co.kr</td>
+							<td>경기도 성남시 분당구 대왕판교로 645번길 14 네오위즈판교타워</td>
+							<td>031-8023-6600</td>
+							<td>031-8023-6600</td>
+						</tr>
+						
+						<tr>
+							<td>네오위즈홀딩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.neowiz.com</td>
+							<td>경기도 성남시 분당구 대왕판교로 645번길 14 네오위즈판교타워</td>
+							<td>031-8023-6600</td>
+							<td>031-8023-6600</td>
+						</tr>
+						
+						<tr>
+							<td>네오이뮨텍</td>
+							<td class="ac">코스닥</td>
+							<td>neoimmunetech.com</td>
+							<td>2400 Research Boulevard, Suite 250, Rockville, MD 20850</td>
+							<td>+1-240-801-9068</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>네오크레마</td>
+							<td class="ac">코스닥</td>
+							<td>www.cremar.co.kr </td>
+							<td>서울특별시 송파구 중대로 211 (가락동, 나은빌딩)</td>
+							<td>02-401-4088</td>
+							<td>02-401-4088</td>
+						</tr>
+						
+						<tr>
+							<td>네오티스</td>
+							<td class="ac">코스닥</td>
+							<td>www.neotis.co.kr</td>
+							<td>경기도 안성시 죽산면 용대길 38-9, 두교산업단지</td>
+							<td>031-671-0170</td>
+							<td>02-597-1391</td>
+						</tr>
+						
+						<tr>
+							<td>네오팜</td>
+							<td class="ac">코스닥</td>
+							<td>www.neopharm.co.kr</td>
+							<td>대전시 유성구 테크노2로 309-8</td>
+							<td>042-864-0038</td>
+							<td>042-864-0043</td>
+						</tr>
+						
+						<tr>
+							<td>네오펙트</td>
+							<td class="ac">코스닥</td>
+							<td>www.neofect.com</td>
+							<td>경기도 성남시 수정구 창업로 42 판교제2테크노밸리 경기기업성장센터 801호</td>
+							<td>031-889-8521</td>
+							<td>070-8852-6770</td>
+						</tr>
+						
+						<tr>
+							<td>네온테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.neontech.co.kr</td>
+							<td>경기도 안양시 동안구 부림로 146 네온테크 </td>
+							<td>031-352-8740</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>네이블</td>
+							<td class="ac">코스닥</td>
+							<td>www.nablecomm.com</td>
+							<td>서울특별시 강남구 봉은사로 129 1213호(논현동, 거평타운)</td>
+							<td>070-7780-9835</td>
+							<td>070-7780-9835</td>
+						</tr>
+						
+						<tr>
+							<td>네이처셀</td>
+							<td class="ac">코스닥</td>
+							<td>www.naturecell.co.kr</td>
+							<td>서울시 영등포구 국회대로 76길 10, 5층</td>
+							<td>02-3472-1681</td>
+							<td>02-545-4137</td>
+						</tr>
+						
+						<tr>
+							<td>네패스</td>
+							<td class="ac">코스닥</td>
+							<td>www.nepes.co.kr</td>
+							<td>충북 음성군 삼성면 금일로 965번길 105</td>
+							<td>02-3470-2700</td>
+							<td>02-3470-2723</td>
+						</tr>
+						
+						<tr>
+							<td>네패스아크</td>
+							<td class="ac">코스닥</td>
+							<td>www.nepesark.co.kr</td>
+							<td>충청북도 청주시 청원구 오창읍 과학산업2로 587-32 (송대리)</td>
+							<td>043-240-0230</td>
+							<td>043-240-0230</td>
+						</tr>
+						
+						<tr>
+							<td>넥센</td>
+							<td class="ac">코스피</td>
+							<td>www.nexencorp.co.kr</td>
+							<td>경남 김해시 김해대로 2595</td>
+							<td>055-333-0771</td>
+							<td>055-333-0771</td>
+						</tr>
+						
+						<tr>
+							<td>넥센타이어</td>
+							<td class="ac">코스피</td>
+							<td>www.nexentire.com</td>
+							<td>경남 양산시 충렬로 355 (유산동)</td>
+							<td>055-370-5114</td>
+							<td>055-370-5114</td>
+						</tr>
+						
+						<tr>
+							<td>넥스턴바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.nexturn.co.kr</td>
+							<td>경기도 용인시 기흥구 기흥단지로 121번길 35</td>
+							<td>031-288-2021</td>
+							<td>031-288-2020</td>
+						</tr>
+						
+						<tr>
+							<td>넥스트아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.nexteye.com</td>
+							<td>경기도 안양시 동안구 동편로13번길65 넥스트아이빌딩</td>
+							<td>031-389-2200</td>
+							<td>031-389-2204</td>
+						</tr>
+						
+						<tr>
+							<td>넥스트칩</td>
+							<td class="ac">코스닥</td>
+							<td>www.nextchip.com</td>
+							<td>경기도 성남시 분당구 판교역로 230 비동 10층(삼평동, 삼환하이펙스)</td>
+							<td>02-3460-4594</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>넥스틴</td>
+							<td class="ac">코스닥</td>
+							<td>www.nextinsol.com</td>
+							<td>경기도 화성시 동탄산단9길 23-12</td>
+							<td>031-629-2339</td>
+							<td>031-629-2300</td>
+						</tr>
+						
+						<tr>
+							<td>넥슨게임즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.natgames.co.kr</td>
+							<td>서울특별시 강남구 남부순환로 2621 5층(도곡동, 에스앤아이강남빌딩)</td>
+							<td>02-6421-7767</td>
+							<td>02-6421-7733</td>
+						</tr>
+						
+						<tr>
+							<td>넵튠</td>
+							<td class="ac">코스닥</td>
+							<td>www.neptunegames.co.kr</td>
+							<td>경기도 성남시 분당구 황새울로 246 9층(수내동, 도담빌딩)</td>
+							<td>031-698-3498</td>
+							<td>031-698-3498</td>
+						</tr>
+						
+						<tr>
+							<td>넷마블</td>
+							<td class="ac">코스피</td>
+							<td>www.netmarble.net</td>
+							<td>서울특별시 구로구 디지털로26길 38 (구로동, 지타워)</td>
+							<td>02-2271-7114</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>노드메이슨</td>
+							<td class="ac">코넥스</td>
+							<td>www.huxley.co.kr</td>
+							<td>서울특별시 마포구 토정로 119 노드메이슨 빌딩</td>
+							<td>070)7123-0077</td>
+							<td>02-6925-2103</td>
+						</tr>
+						
+						<tr>
+							<td>노랑풍선</td>
+							<td class="ac">코스닥</td>
+							<td>http://www.ybtour.co.kr</td>
+							<td>서울특별시 중구 수표로 31 (저동2가, 노랑풍선빌딩)</td>
+							<td>02-2022-7200</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>노루페인트</td>
+							<td class="ac">코스피</td>
+							<td>www.noroopaint.com</td>
+							<td>경기도 안양시 만안구 박달로 351</td>
+							<td>031-467-6114</td>
+							<td>031-467-6114</td>
+						</tr>
+						
+						<tr>
+							<td>노루홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.norooholdings.com   </td>
+							<td>경기도 안양시 만안구 박달로 351</td>
+							<td>031-467-6114</td>
+							<td>031-467-6114</td>
+						</tr>
+						
+						<tr>
+							<td>노바렉스</td>
+							<td class="ac">코스닥</td>
+							<td>www.novarex.co.kr</td>
+							<td>충청북도 청주시 흥덕구 오송읍 오송생명14로 80 노바렉스 오송공장</td>
+							<td>02-587-0019</td>
+							<td>02-587-0019</td>
+						</tr>
+						
+						<tr>
+							<td>노바텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.mynovatech.com</td>
+							<td>경기도 용인시 기흥구 흥덕중앙로 120</td>
+							<td>031-627-5290</td>
+							<td>031-627-5297</td>
+						</tr>
+						
+						<tr>
+							<td>노브메타파마</td>
+							<td class="ac">코넥스</td>
+							<td>www.novmeta.com</td>
+							<td>서울시 강남구 언주로 727 13층 (논현동, 트리스빌딩)</td>
+							<td>02)538-1893</td>
+							<td>02-538-1893</td>
+						</tr>
+						
+						<tr>
+							<td>노블엠앤비</td>
+							<td class="ac">코스닥</td>
+							<td>www.digitaloptics.co.kr</td>
+							<td>경기도 용인시 처인구 남사면 경기동로 21-11 1동</td>
+							<td>031-777-9361</td>
+							<td>02-538-5375</td>
+						</tr>
+						
+						<tr>
+							<td>노을</td>
+							<td class="ac">코스닥</td>
+							<td>www.noul.kr</td>
+							<td>경기도 용인시 수지구 광교중앙로 338 (상현동, 광교우미뉴브) 비동 10층</td>
+							<td>031-308-6310</td>
+							<td>070-4352-2014</td>
+						</tr>
+						
+						<tr>
+							<td>노터스</td>
+							<td class="ac">코스닥</td>
+							<td>www.knotus.co.kr</td>
+							<td>인천광역시 연수구 아카데미로79번길 38 </td>
+							<td>032-833-8899</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>녹십자</td>
+							<td class="ac">코스피</td>
+							<td>www.gccorp.com</td>
+							<td>경기도 용인시 기흥구 이현로30번길 107 (보정동)</td>
+							<td>031-260-9300</td>
+							<td>031-260-9300</td>
+						</tr>
+						
+						<tr>
+							<td>녹십자엠에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.greencrossms.com</td>
+							<td>경기도 용인시 기흥구 용구대로2469번길 15 2층</td>
+							<td>031-260-9300</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>녹십자웰빙</td>
+							<td class="ac">코스닥</td>
+							<td>www.greencrosswb.com</td>
+							<td>서울특별시 영등포구 여의대로 108 파크원타워2 33층</td>
+							<td>031-629-8600</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>녹십자홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.greencross.com</td>
+							<td>경기도 용인시 기흥구 이현로30번길 107 (보정동)</td>
+							<td>031-260-9300</td>
+							<td>031-260-9300</td>
+						</tr>
+						
+						<tr>
+							<td>녹원씨엔아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.nokwoncni.co.kr</td>
+							<td>경기도 파주시 신촌2로 1 (주)녹원씨엔아이</td>
+							<td>02-2025-6500</td>
+							<td>02-2025-6500</td>
+						</tr>
+						
+						<tr>
+							<td>농심</td>
+							<td class="ac">코스피</td>
+							<td>www.nongshim.com</td>
+							<td>서울시 동작구 여의대방로 112 (신대방동)</td>
+							<td>02-820-7114</td>
+							<td>02-820-7114</td>
+						</tr>
+						
+						<tr>
+							<td>농심홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.nongshimholdings.co.kr</td>
+							<td>서울시 동작구 여의대방로 112 (신대방동 370 농심빌딩)</td>
+							<td>02-820-7820</td>
+							<td>02-820-7820</td>
+						</tr>
+						
+						<tr>
+							<td>농우바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.nongwoobio.co.kr</td>
+							<td>경기도 수원시 영통구 센트럴타운로 114-8 (이의동)</td>
+							<td>031-218-1116</td>
+							<td>031-218-1116</td>
+						</tr>
+						
+						<tr>
+							<td>누리플랜</td>
+							<td class="ac">코스닥</td>
+							<td>www.nuriplan.com</td>
+							<td>경기도 김포시 대곶면 대곶로202번길 191</td>
+							<td>031-997-9097</td>
+							<td>02-3660-4263</td>
+						</tr>
+						
+						<tr>
+							<td>누리플렉스</td>
+							<td class="ac">코스닥</td>
+							<td>www.nuritelecom.co.kr</td>
+							<td>서울시 서초구 사평대로16 누리빌딩 (방배동)</td>
+							<td>02-781-0700</td>
+							<td>02-781-0792</td>
+						</tr>
+						
+						<tr>
+							<td>누보</td>
+							<td class="ac">코스닥</td>
+							<td>www.nousbo.com</td>
+							<td>경기도 수원시 권선구 서호로 89 6동 교육관 325호(서둔동)</td>
+							<td>031-295-6189</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>뉴로메카</td>
+							<td class="ac">코스닥</td>
+							<td>www.neuromeka.com</td>
+							<td>서울특별시 성동구 연무장5가길 7 현대테라스타워 W동 15층 -</td>
+							<td>1661-0773</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>뉴보텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.nuvotec.co.kr</td>
+							<td>강원도 원주시 태장공단길 42-6</td>
+							<td>033-734-6001</td>
+							<td>02-475-8811</td>
+						</tr>
+						
+						<tr>
+							<td>뉴인텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.nuin.co.kr</td>
+							<td>충남 아산시 음봉면 음봉면로 243</td>
+							<td>041-541-8100</td>
+							<td>041-913-0054</td>
+						</tr>
+						
+						<tr>
+							<td>뉴지랩파마</td>
+							<td class="ac">코스닥</td>
+							<td>www.hdprocctv.com</td>
+							<td>경기도 부천시 신흥로 362번길 23(내동)</td>
+							<td>032-683-7903</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>뉴트리</td>
+							<td class="ac">코스닥</td>
+							<td>www.newtree.co.kr</td>
+							<td>서울시 송파구 백제고분로 27길 6-14 (삼전동 101-3) </td>
+							<td>02-565-3494</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>뉴파워프라즈마</td>
+							<td class="ac">코스닥</td>
+							<td>www.newpower.co.kr</td>
+							<td>경기도 수원시 권선구 산업로155번길 214 (주)뉴파워프라즈마</td>
+							<td>031-612-7600</td>
+							<td>031-612-7615</td>
+						</tr>
+						
+						<tr>
+							<td>뉴프렉스</td>
+							<td class="ac">코스닥</td>
+							<td>www.newflex.co.kr</td>
+							<td>경기도 안산시 단원구 만해로 181, 반월공단 603블럭 4로트</td>
+							<td>031-494-9325</td>
+							<td>031-493-9325</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

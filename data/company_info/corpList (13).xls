@@ -1,0 +1,1086 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>파나진</td>
+							<td class="ac">코스닥</td>
+							<td>www.panagene.com</td>
+							<td>대전시 유성구 테크노10로 54</td>
+							<td>042-861-9295</td>
+							<td>042-861-9295</td>
+						</tr>
+						
+						<tr>
+							<td>파나케이아</td>
+							<td class="ac">코스닥</td>
+							<td>www.supexbnp.com</td>
+							<td>경기도 안산시 단원구 번영로 39, 4바 204호(성곡동, 시화공단)</td>
+							<td>031-495-8262</td>
+							<td>031-628-2605</td>
+						</tr>
+						
+						<tr>
+							<td>파라다이스</td>
+							<td class="ac">코스닥</td>
+							<td>www.paradise.co.kr</td>
+							<td>서울특별시 중구 퇴계로 299 파라다이스빌딩</td>
+							<td>02-2277-0190</td>
+							<td>02-2277-0190</td>
+						</tr>
+						
+						<tr>
+							<td>파라텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.paratech.co.kr</td>
+							<td>경기도 부천시 길주로425번길 30-21(춘의동) -</td>
+							<td> 02-3780-8763</td>
+							<td>02-3780-8763</td>
+						</tr>
+						
+						<tr>
+							<td>파루</td>
+							<td class="ac">코스닥</td>
+							<td>www.paru.co.kr</td>
+							<td>전남 순천시 서면 산단4길 12</td>
+							<td>061-755-5114</td>
+							<td>061-759-5131</td>
+						</tr>
+						
+						<tr>
+							<td>파마리서치</td>
+							<td class="ac">코스닥</td>
+							<td>www.pr-products.co.kr</td>
+							<td>강원도 강릉시 과학단지로 77-19 (대전동)</td>
+							<td>033-645-7640</td>
+							<td>031-8039-1569</td>
+						</tr>
+						
+						<tr>
+							<td>파마리서치바이오</td>
+							<td class="ac">코넥스</td>
+							<td>www.biocnd.com</td>
+							<td>경기도 성남시 분당구 대왕판교로 660, 유스페이스1, B동 1201호</td>
+							<td>031)628-4300</td>
+							<td>031-8039-1401</td>
+						</tr>
+						
+						<tr>
+							<td>파멥신</td>
+							<td class="ac">코스닥</td>
+							<td>www.pharmabcine.com</td>
+							<td>대전시 유성구 대덕대로 593 대덕테크비즈센터 307호</td>
+							<td>042-863-2017</td>
+							<td>042-863-2017</td>
+						</tr>
+						
+						<tr>
+							<td>파미셀</td>
+							<td class="ac">코스피</td>
+							<td>www.pharmicell.com</td>
+							<td>서울시 강남구 언주로 874, 7층(신사동, 쌍봉빌딩)</td>
+							<td>02-3496-0114</td>
+							<td>02-3496-0114</td>
+						</tr>
+						
+						<tr>
+							<td>파버나인</td>
+							<td class="ac">코스닥</td>
+							<td>www.pavonine.net</td>
+							<td>인천시 남동구 호구포로 33 남동공단 157블럭 4로트</td>
+							<td>032-814-6900</td>
+							<td>032-899-8615</td>
+						</tr>
+						
+						<tr>
+							<td>파세코</td>
+							<td class="ac">코스닥</td>
+							<td>www.paseco.co.kr</td>
+							<td>경기도 안산시 단원구 원시로 248 (원시동)</td>
+							<td>031-492-8341</td>
+							<td>031-599-5795</td>
+						</tr>
+						
+						<tr>
+							<td>파수</td>
+							<td class="ac">코스닥</td>
+							<td>www.fasoo.com</td>
+							<td>서울시 마포구 월드컵북로 396, 누리꿈스퀘어비즈니스센타 17층</td>
+							<td>02-300-9000</td>
+							<td>02-300-9008</td>
+						</tr>
+						
+						<tr>
+							<td>파워넷</td>
+							<td class="ac">코스닥</td>
+							<td>www.gopowernet.com</td>
+							<td>서울시 금천구 두산로 70, B동 17층(독산동, 현대지식산업센터)</td>
+							<td>02-3282-0700</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>파워로직스</td>
+							<td class="ac">코스닥</td>
+							<td>www.powerlogics.co.kr</td>
+							<td>충북 청주시 흥덕구 옥산면 과학산업4로 163</td>
+							<td>043-219-5600</td>
+							<td>043-219-5608</td>
+						</tr>
+						
+						<tr>
+							<td>파워풀엑스</td>
+							<td class="ac">코넥스</td>
+							<td>www.flexpower.co.kr</td>
+							<td>서울특별시 강남구 논현로115길 13 파워풀엑스빌딩</td>
+							<td>02)500-8088</td>
+							<td>02-500-8088</td>
+						</tr>
+						
+						<tr>
+							<td>파이버프로</td>
+							<td class="ac">코스닥</td>
+							<td>www.fiberpro.com</td>
+							<td>대전광역시 유성구 가정북로 26-55 주식회사 파이버프로</td>
+							<td>042-360-0010</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>파이오링크</td>
+							<td class="ac">코스닥</td>
+							<td>www.piolink.com</td>
+							<td>서울시 금천구 가산디지털2로 98 IT캐슬 1동 401호</td>
+							<td>02-2025-6900</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>파인디앤씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.finednc.co.kr</td>
+							<td>충남 아산시 음봉면 연암산로 169</td>
+							<td>041-538-9000</td>
+							<td>041-538-9011</td>
+						</tr>
+						
+						<tr>
+							<td>파인디지털</td>
+							<td class="ac">코스닥</td>
+							<td>www.finedigital.com</td>
+							<td>경기도 성남시 분당구 성남대로925번길 41, 파인벤처빌딩 7층, 8층</td>
+							<td>031-788-8800</td>
+							<td>031-788-8734</td>
+						</tr>
+						
+						<tr>
+							<td>파인엠텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.finemtec.com</td>
+							<td>경기도 안양시 만안구 전파로24번길 93 (안양동)</td>
+							<td>031-463-8800</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>파인테크닉스</td>
+							<td class="ac">코스닥</td>
+							<td>www.finetechnix.com</td>
+							<td>경기도 안양시 만안구 덕천로 38 (주)파인테크닉스</td>
+							<td>031-463-8888</td>
+							<td>031-463-8812</td>
+						</tr>
+						
+						<tr>
+							<td>파인텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.ifinetek.com</td>
+							<td>서울특별시 마포구 마포대로 38 내제2층202호(도화동)</td>
+							<td>031-900-9700</td>
+							<td>031-900-9750</td>
+						</tr>
+						
+						<tr>
+							<td>파커스</td>
+							<td class="ac">코스닥</td>
+							<td>www.daejindmp.co.kr</td>
+							<td>충남 천안시 서북구 성거읍 천흥 8길 49</td>
+							<td>041-522-5361</td>
+							<td>02-3443-5360</td>
+						</tr>
+						
+						<tr>
+							<td>파크시스템스</td>
+							<td class="ac">코스닥</td>
+							<td>www.parksystems.co.kr</td>
+							<td>경기도 수원시 영통구 광교로 109 (이의동,나노소자특화팹센터4층)</td>
+							<td>031-546-6900</td>
+							<td>031-780-7447</td>
+						</tr>
+						
+						<tr>
+							<td>파트론</td>
+							<td class="ac">코스닥</td>
+							<td>www.partron.co.kr</td>
+							<td>경기도 화성시 삼성1로2길 22</td>
+							<td>031-201-7700</td>
+							<td>031-201-7751</td>
+						</tr>
+						
+						<tr>
+							<td>판도라티비</td>
+							<td class="ac">코넥스</td>
+							<td>www.pandora.tv</td>
+							<td>경기도 성남시 분당구 대왕판교로644번길 49 DTC타워 11층(삼평동, DTC타워)</td>
+							<td>070)4484-7100</td>
+							<td>070-4484-7100</td>
+						</tr>
+						
+						<tr>
+							<td>판타지오</td>
+							<td class="ac">코스닥</td>
+							<td>www.fantagio.kr</td>
+							<td>서울특별시 강남구 삼성로 648 2층</td>
+							<td>02-3452-6100</td>
+							<td>02-3452-6100</td>
+						</tr>
+						
+						<tr>
+							<td>팜스빌</td>
+							<td class="ac">코스닥</td>
+							<td>www.pharmsville.com</td>
+							<td>서울특별시 강서구 마곡중앙8로3길 37 </td>
+							<td>02-553-1323</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>팜스코</td>
+							<td class="ac">코스피</td>
+							<td>www.farmsco.com</td>
+							<td>경기도 안성시 미양면 제2공단4길 33</td>
+							<td>031-7207-114</td>
+							<td>031-7207-114</td>
+						</tr>
+						
+						<tr>
+							<td>팜스토리</td>
+							<td class="ac">코스닥</td>
+							<td>www.dodrambnf.co.kr</td>
+							<td>서울시 강남구 강남대로 310 유니온센터 3층</td>
+							<td>02-501-1648</td>
+							<td>02-501-1648</td>
+						</tr>
+						
+						<tr>
+							<td>팜젠사이언스</td>
+							<td class="ac">코스피</td>
+							<td>www.wooridulpharm.com</td>
+							<td>경기도 화성시 향남읍 제약공단2길 50</td>
+							<td>02-2194-3532</td>
+							<td>031-370-6000</td>
+						</tr>
+						
+						<tr>
+							<td>패션플랫폼</td>
+							<td class="ac">코스닥</td>
+							<td>www.fashion-platform.co.kr</td>
+							<td>서울시 강남구 논현로28길 9, 3층(도곡동, 유진빌딩)</td>
+							<td>02-573-1250</td>
+							<td>02-573-1250</td>
+						</tr>
+						
+						<tr>
+							<td>팬스타엔터프라이즈</td>
+							<td class="ac">코스닥</td>
+							<td>www.panstar-enterprise.com</td>
+							<td>부산시 중구 해관로 30 팬스타크루즈프라자</td>
+							<td>1577-3520</td>
+							<td>1577-3520</td>
+						</tr>
+						
+						<tr>
+							<td>팬엔터테인먼트</td>
+							<td class="ac">코스닥</td>
+							<td>www.thepan.co.kr</td>
+							<td>서울시 마포구 월드컵북로58길 10 (상암동, 더 팬)</td>
+							<td>02-380-2100</td>
+							<td>02-380-2100</td>
+						</tr>
+						
+						<tr>
+							<td>팬오션</td>
+							<td class="ac">코스피</td>
+							<td>www.panocean.com</td>
+							<td>서울시 종로구 종로5길 7, Tower8</td>
+							<td>02-316-5114</td>
+							<td>02-316-5114</td>
+						</tr>
+						
+						<tr>
+							<td>팬젠</td>
+							<td class="ac">코스닥</td>
+							<td>www.pangen.com</td>
+							<td>경기도 수원시 영통구 신원로 306, 2동 4층(원천동 영통이노플렉스)</td>
+							<td>031-733-9165</td>
+							<td>031-733-9165</td>
+						</tr>
+						
+						<tr>
+							<td>퍼스텍</td>
+							<td class="ac">코스피</td>
+							<td>www.firsteccom.co.kr</td>
+							<td>경남 창원시 성산구 남면로 485</td>
+							<td>055-212-1606</td>
+							<td>055-280-1911</td>
+						</tr>
+						
+						<tr>
+							<td>퍼시스</td>
+							<td class="ac">코스피</td>
+							<td>www.fursys.com</td>
+							<td>서울시 송파구 오금로 311 (오금동)</td>
+							<td>02-443-9999</td>
+							<td>02-443-9999</td>
+						</tr>
+						
+						<tr>
+							<td>펄어비스</td>
+							<td class="ac">코스닥</td>
+							<td>www.pearlabyss.com</td>
+							<td>경기도 과천시 과천대로2길 48 (갈현동, 펄어비스 홈 원)</td>
+							<td>031-476-8583</td>
+							<td>02-503-8530</td>
+						</tr>
+						
+						<tr>
+							<td>펌텍코리아</td>
+							<td class="ac">코스닥</td>
+							<td>www.pum-tech.co.kr</td>
+							<td>인천광역시 부평구 부평대로329번길 46</td>
+							<td>032-683-4080</td>
+							<td>032-724-7523</td>
+						</tr>
+						
+						<tr>
+							<td>페이퍼코리아</td>
+							<td class="ac">코스피</td>
+							<td>www.papercorea.co.kr</td>
+							<td>전북 군산시 외항로 1245</td>
+							<td>063-440-5000</td>
+							<td>063-440-5000</td>
+						</tr>
+						
+						<tr>
+							<td>펨토바이오메드</td>
+							<td class="ac">코넥스</td>
+							<td>www.femtobiomed.com </td>
+							<td>경기도 성남시 분당구 판교로228번길 17</td>
+							<td>031)622-8501</td>
+							<td>031-622-8501</td>
+						</tr>
+						
+						<tr>
+							<td>펩트론</td>
+							<td class="ac">코스닥</td>
+							<td>www.peptron.co.kr</td>
+							<td>대전시 유성구 유성대로1628번길 37-24</td>
+							<td>042-360-8880</td>
+							<td>042-360-8880</td>
+						</tr>
+						
+						<tr>
+							<td>평화산업</td>
+							<td class="ac">코스피</td>
+							<td>www.ph.co.kr</td>
+							<td>대구시 달성군 논공읍 논공로 597</td>
+							<td>053-610-7027</td>
+							<td>053-610-7027</td>
+						</tr>
+						
+						<tr>
+							<td>평화홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.ph.co.kr</td>
+							<td>대구시 달성군 논공읍 논공로 597</td>
+							<td>053-610-8500</td>
+							<td>053-610-8500</td>
+						</tr>
+						
+						<tr>
+							<td>포메탈</td>
+							<td class="ac">코스닥</td>
+							<td>www.formetal.co.kr</td>
+							<td>충남 서산시 지곡면 무장산업로 229-7</td>
+							<td>041-670-6200</td>
+							<td>041-670-6212</td>
+						</tr>
+						
+						<tr>
+							<td>포바이포</td>
+							<td class="ac">코스닥</td>
+							<td>www.4by4inc.com</td>
+							<td>서울특별시 서초구 강남대로 479 신논현타워, 12층, 13층, 14층</td>
+							<td>02-511-4416</td>
+							<td>02-511-4416</td>
+						</tr>
+						
+						<tr>
+							<td>포스코 ICT</td>
+							<td class="ac">코스닥</td>
+							<td>www.poscoict.com</td>
+							<td>경북 포항시 남구 호동로 68</td>
+							<td>054-280-1114</td>
+							<td>031-723-2524</td>
+						</tr>
+						
+						<tr>
+							<td>포스코스틸리온</td>
+							<td class="ac">코스피</td>
+							<td>www.poscocnc.com</td>
+							<td>경북 포항시 남구 철강로 173 (장흥동)</td>
+							<td>054-280-6114</td>
+							<td>054-280-6114</td>
+						</tr>
+						
+						<tr>
+							<td>포스코엠텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.poscomtech.com</td>
+							<td>경북 포항시 남구 형산강북로 131 (효자동)</td>
+							<td>054-280-8114</td>
+							<td>054-280-8206</td>
+						</tr>
+						
+						<tr>
+							<td>포스코인터내셔널</td>
+							<td class="ac">코스피</td>
+							<td>www.poscointl.com</td>
+							<td>서울특별시 강남구 테헤란로 134 포스코타워역삼(26층)</td>
+							<td>02-759-2114</td>
+							<td>02-759-2114</td>
+						</tr>
+						
+						<tr>
+							<td>포스코케미칼</td>
+							<td class="ac">코스피</td>
+							<td>www.poscochemical.com</td>
+							<td>경북 포항시 남구 신항로 110 (주)포스코켐텍</td>
+							<td>054-290-0114</td>
+							<td>054-290-0114</td>
+						</tr>
+						
+						<tr>
+							<td>포시에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.forcs.com</td>
+							<td>서울시 강남구 논현로 646</td>
+							<td>02-828-1400</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>포인트모바일</td>
+							<td class="ac">코스닥</td>
+							<td>www.pointmobile.co.kr</td>
+							<td>서울특별시 금천구 디지털로9길 32 (가산동, 갑을그레이트밸리)</td>
+							<td>02-3397-7870</td>
+							<td>070-7090-2743</td>
+						</tr>
+						
+						<tr>
+							<td>포인트엔지니어링</td>
+							<td class="ac">코스닥</td>
+							<td>www.pointeng.co.kr</td>
+							<td>충청남도 아산시 둔포면 아산밸리로 89 </td>
+							<td>02-750-5546</td>
+							<td>070-4465-7318</td>
+						</tr>
+						
+						<tr>
+							<td>포커스에이치엔에스</td>
+							<td class="ac">코스닥</td>
+							<td>www.focushns.co.kr</td>
+							<td>경기도 안양시 동안구 엘에스로91번길 16-17 포커스빌딩</td>
+							<td>031-689-3380</td>
+							<td>031-689-3380</td>
+						</tr>
+						
+						<tr>
+							<td>폴라리스세원</td>
+							<td class="ac">코스닥</td>
+							<td>www.sewonmfg.co.kr</td>
+							<td>경기도 평택시 산단로64번길 56(모곡동)</td>
+							<td>031-615-6710</td>
+							<td>02-3015-1338</td>
+						</tr>
+						
+						<tr>
+							<td>폴라리스오피스</td>
+							<td class="ac">코스닥</td>
+							<td>www.infraware-global.com</td>
+							<td>서울특별시 금천구 가산디지털1로 19 대륭테크노타운 18차 19층</td>
+							<td>02-537-0538</td>
+							<td>02-6190-7724</td>
+						</tr>
+						
+						<tr>
+							<td>폴라리스우노</td>
+							<td class="ac">코스닥</td>
+							<td>www.unon.co.kr</td>
+							<td>전북 완주군 봉동읍 완주산단3로 158-15</td>
+							<td>063-261-7555</td>
+							<td>063-261-7557</td>
+						</tr>
+						
+						<tr>
+							<td>푸드나무</td>
+							<td class="ac">코스닥</td>
+							<td>www.foodnamoo.com</td>
+							<td>서울시 마포구 월드컵북로 396, 15층  (상암동, 누리꿈스퀘어 비즈니스타워)</td>
+							<td>02-3152-8088</td>
+							<td>070-4497-3881</td>
+						</tr>
+						
+						<tr>
+							<td>푸드웰</td>
+							<td class="ac">코스닥</td>
+							<td>www.foodwell.com</td>
+							<td>대구시 달서구 성서서로 121</td>
+							<td>053-980-3320</td>
+							<td>053-980-3350</td>
+						</tr>
+						
+						<tr>
+							<td>푸른기술</td>
+							<td class="ac">코스닥</td>
+							<td>www.puloon.co.kr</td>
+							<td>서울시 서초구 효령로 60길 23-10 (주)푸른빌딩 2층</td>
+							<td>02-6959-4700</td>
+							<td>02-6959-4704</td>
+						</tr>
+						
+						<tr>
+							<td>푸른저축은행</td>
+							<td class="ac">코스닥</td>
+							<td>www.prsb.co.kr</td>
+							<td>서울시 서초구 강남대로 581 (잠원동 28-1) 푸른빌딩</td>
+							<td>02-545-9000</td>
+							<td>02-545-9000</td>
+						</tr>
+						
+						<tr>
+							<td>풀무원</td>
+							<td class="ac">코스피</td>
+							<td>www.pulmuone.kr</td>
+							<td>충북 음성군 대소면 삼양로 730-27</td>
+							<td>043-879-4500</td>
+							<td>043-879-4500</td>
+						</tr>
+						
+						<tr>
+							<td>풍강</td>
+							<td class="ac">코스닥</td>
+							<td>www.pungkang.com</td>
+							<td>경기도 화성시 우정읍 남양만로 745</td>
+							<td>031-359-3600</td>
+							<td>031-359-3654</td>
+						</tr>
+						
+						<tr>
+							<td>풍국주정</td>
+							<td class="ac">코스닥</td>
+							<td>www.pungguk.com</td>
+							<td>대구시 달서구 성서로 72</td>
+							<td>053-583-2071</td>
+							<td>053-583-2071</td>
+						</tr>
+						
+						<tr>
+							<td>풍산</td>
+							<td class="ac">코스피</td>
+							<td>www.poongsan.co.kr</td>
+							<td>경기도 평택시 포승읍 평택항로156번길 134</td>
+							<td>02-3406-5114</td>
+							<td>02-3406-5114</td>
+						</tr>
+						
+						<tr>
+							<td>풍산홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.poongsanhc.co.kr</td>
+							<td>인천시 계양구 아나지로 156 효성동 (주)풍산홀딩스</td>
+							<td>02-2278-6700</td>
+							<td>032-540-7114</td>
+						</tr>
+						
+						<tr>
+							<td>풍원정밀</td>
+							<td class="ac">코스닥</td>
+							<td>www.poongwon.com</td>
+							<td>경기도 안산시 단원구 산단로35번길 24 풍원정밀(주)</td>
+							<td>031-493-2107</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>퓨런티어</td>
+							<td class="ac">코스닥</td>
+							<td>www.furonteer.com</td>
+							<td>경기도 성남시 중원구 사기막골로 58 (주)퓨런티어</td>
+							<td>070-4618-6100</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>퓨쳐메디신</td>
+							<td class="ac">코넥스</td>
+							<td>www.futuremedicine.co.kr</td>
+							<td>경기도 성남시 수정구 창업로 54 616호(시흥동, LH기업성장센터) -</td>
+							<td>02-3429-3473</td>
+							<td>02-2289-8655</td>
+						</tr>
+						
+						<tr>
+							<td>퓨쳐켐</td>
+							<td class="ac">코스닥</td>
+							<td>www.futurechem.co.kr</td>
+							<td>서울특별시 성동구 성수일로8길 59 평화빌딩 B동 3층(성수동2가)</td>
+							<td>02-497-3114</td>
+							<td>02-497-3114</td>
+						</tr>
+						
+						<tr>
+							<td>프럼파스트</td>
+							<td class="ac">코스닥</td>
+							<td>www.plumbfast.co.kr</td>
+							<td>대전시 중구 동서대로 1187(태평동)</td>
+							<td>041-865-9681</td>
+							<td>044-865-9681</td>
+						</tr>
+						
+						<tr>
+							<td>프레스티지바이오로직스</td>
+							<td class="ac">코스닥</td>
+							<td>www.pbpharma.co.kr</td>
+							<td>충청북도 청주시 흥덕구 오송읍 오송생명1로 197 (연제리 654)</td>
+							<td>043-232-1552</td>
+							<td>02-322-1552</td>
+						</tr>
+						
+						<tr>
+							<td>프레스티지바이오파마</td>
+							<td class="ac">코스피</td>
+							<td>www.prestigebiopharma.com</td>
+							<td>	21 Biopolis Road, #04-24/28 Nucleos South Building, Singapore 138567</td>
+							<td>070-4423-7935</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>프로스테믹스</td>
+							<td class="ac">코스닥</td>
+							<td>www.prostemics.com</td>
+							<td>서울특별시 성동구 왕십리로 58 FORHU 309호</td>
+							<td>02-545-2520</td>
+							<td>02-545-2520</td>
+						</tr>
+						
+						<tr>
+							<td>프로이천</td>
+							<td class="ac">코스닥</td>
+							<td>www.pro-2000.co.kr</td>
+							<td>경기도 군포시 고산로148번길 17 군포IT밸리 411호</td>
+							<td>031-451-1171</td>
+							<td>031-451-1171</td>
+						</tr>
+						
+						<tr>
+							<td>프로테옴텍</td>
+							<td class="ac">코넥스</td>
+							<td>www.proteometech.com</td>
+							<td>서울시 강서구 양천로 401 A동 702호</td>
+							<td>02)6968-5277</td>
+							<td>02-6968-5277</td>
+						</tr>
+						
+						<tr>
+							<td>프로텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.protec21.co.kr</td>
+							<td>경기도 안양시 동안구 시민대로327번길 11-14 (관양동)</td>
+							<td>032-822-9171</td>
+							<td>031-470-0722</td>
+						</tr>
+						
+						<tr>
+							<td>프롬바이오</td>
+							<td class="ac">코스닥</td>
+							<td>frombio-company.co.kr</td>
+							<td>경기도 수원시 영통구 신원로 88 디지털엠파이어2, 104동 102호</td>
+							<td>031-695-8200</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>프리시젼바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.precision-bio.com</td>
+							<td>대전광역시 유성구 테크노2로 306 프리시젼바이오(주)</td>
+							<td>042-867-6300</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>프리엠스</td>
+							<td class="ac">코스닥</td>
+							<td>www.freems.co.kr</td>
+							<td>경기도 부천시 삼작로178번길 14(내동)</td>
+							<td>032-670-2000</td>
+							<td>032-670-2007</td>
+						</tr>
+						
+						<tr>
+							<td>플라즈맵</td>
+							<td class="ac">코스닥</td>
+							<td>plasmapp.com</td>
+							<td>대전광역시 유성구 과학로 125 바이오벤처센터동 111호(어은동, 한국생명공학연구원) -</td>
+							<td>042-716-2115</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>플래스크</td>
+							<td class="ac">코스닥</td>
+							<td>www.gemvaxzio.com</td>
+							<td>서울특별시 송파구 법원로11길 11 비동 1305호</td>
+							<td>02-3443-1911</td>
+							<td>070-8633-7108</td>
+						</tr>
+						
+						<tr>
+							<td>플래티어</td>
+							<td class="ac">코스닥</td>
+							<td>plateer.com</td>
+							<td>서울특별시 송파구 법원로9길 26 에이치비지니스파크 D동 6층</td>
+							<td>02-554-4668</td>
+							<td>02-554-4668</td>
+						</tr>
+						
+						<tr>
+							<td>플랜티넷</td>
+							<td class="ac">코스닥</td>
+							<td>www.plantynet.com</td>
+							<td>경기도 성남시 분당구 대왕판교로670 유스페이스2 A동 6층</td>
+							<td>070-4489-7000</td>
+							<td>070-4489-7000</td>
+						</tr>
+						
+						<tr>
+							<td>플럼라인생명과학</td>
+							<td class="ac">코넥스</td>
+							<td>www.plumblinels.com</td>
+							<td>서울특별시 서초구 서초대로34길 18 4층 (유노피스빌딩)</td>
+							<td>031)400-3862</td>
+							<td>02-582-3542</td>
+						</tr>
+						
+						<tr>
+							<td>플레이그램</td>
+							<td class="ac">코스피</td>
+							<td>www.nk-ms.com</td>
+							<td>서울시 강남구 삼성로648 4층 삼성동</td>
+							<td>02-6000-7800</td>
+							<td>02-6000-7800</td>
+						</tr>
+						
+						<tr>
+							<td>플레이디</td>
+							<td class="ac">코스닥</td>
+							<td>www.playd.com</td>
+							<td>경기도 성남시 분당구 황새울로359번길 11</td>
+							<td></td>
+							<td>1566-3265</td>
+						</tr>
+						
+						<tr>
+							<td>플레이위드</td>
+							<td class="ac">코스닥</td>
+							<td>www.playwith.co.kr</td>
+							<td>경기도 성남시 분당구 판교로256번길 25 제씨동 9층</td>
+							<td>031-724-2400</td>
+							<td>031-724-2400</td>
+						</tr>
+						
+						<tr>
+							<td>플리토</td>
+							<td class="ac">코스닥</td>
+							<td>www.flitto.com</td>
+							<td>서울특별시 강남구 테헤란로 211 한국고등교육재단빌딩 9층</td>
+							<td>02-512-0142</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>피노텍</td>
+							<td class="ac">코넥스</td>
+							<td>www.finotek.co.kr</td>
+							<td>서울시 서초구 양재천로9길 1 3층(양재동,용두빌딩)</td>
+							<td>02)522-3558</td>
+							<td>02-522-3558</td>
+						</tr>
+						
+						<tr>
+							<td>피델릭스</td>
+							<td class="ac">코스닥</td>
+							<td>www.fidelix.co.kr</td>
+							<td>경기도 성남시 분당구 백현로 93(수내동22-2) 후너스빌딩 6층</td>
+							<td>031-785-3500</td>
+							<td>031-785-3685</td>
+						</tr>
+						
+						<tr>
+							<td>피씨디렉트</td>
+							<td class="ac">코스닥</td>
+							<td>www.pcdirect.co.kr</td>
+							<td>서울시 용산구 원효로 138, 8층 (원효로3가, 청진빌딩)</td>
+							<td>02-785-3001</td>
+							<td>02-785-3001</td>
+						</tr>
+						
+						<tr>
+							<td>피씨엘</td>
+							<td class="ac">코스닥</td>
+							<td>www.pclchip.com</td>
+							<td>서울시 금천구 디지털로9길 99, 701호(가산동, 스타밸리)</td>
+							<td>070-4673-3433</td>
+							<td>02-2144-3901</td>
+						</tr>
+						
+						<tr>
+							<td>피앤씨테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.pnctech.co.kr</td>
+							<td>경기도 안양시 동안구 전파로104번길 62 (호계동)</td>
+							<td>031-452-5791</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>피에스엠씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.psmc.kr</td>
+							<td>경기도 화성시 향남읍 발안공단로 4길 16 (구문천리 928)</td>
+							<td>031-522-3700</td>
+							<td>031-522-3700</td>
+						</tr>
+						
+						<tr>
+							<td>피에스케이</td>
+							<td class="ac">코스닥</td>
+							<td>www.pskinc.com</td>
+							<td>경기도 화성시 삼성1로4길 48</td>
+							<td>031-660-8703</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>피에스케이홀딩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.psk-inc.com</td>
+							<td>경기도 화성시 삼성1로4길 48 (석우동)</td>
+							<td>031-660-8700</td>
+							<td>031-660-8700</td>
+						</tr>
+						
+						<tr>
+							<td>피에스텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.pstec.co.kr</td>
+							<td>서울시 성동구 왕십리로 46 (성수동1가)</td>
+							<td>02-3408-1790</td>
+							<td>031-988-2661</td>
+						</tr>
+						
+						<tr>
+							<td>피에이치씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.philosyshealthcare.co.kr</td>
+							<td>경기도 성남시 분당구 정자일로 23, ㈜필로시스헬스케어빌딩(금곡동)</td>
+							<td>031-778-0800</td>
+							<td>031-778-0800</td>
+						</tr>
+						
+						<tr>
+							<td>피에이치에이</td>
+							<td class="ac">코스닥</td>
+							<td>www.phakr.com</td>
+							<td>대구시 달서구 성서4차 첨단로 392 (대천동 1032번지)</td>
+							<td>053-350-6311</td>
+							<td>053-350-6311</td>
+						</tr>
+						
+						<tr>
+							<td>피엔아이컴퍼니</td>
+							<td class="ac">코넥스</td>
+							<td>www.pnisys.com</td>
+							<td>제주도 제주시 첨단로 245-2</td>
+							<td>070)8610-5333</td>
+							<td>070-8610-3026</td>
+						</tr>
+						
+						<tr>
+							<td>피엔에이치테크</td>
+							<td class="ac">코스닥</td>
+							<td>www.phtech.co.kr</td>
+							<td>경기도 용인시 기흥구 동백중앙로16번길 16-25, 804호(중동, 대우프론티어밸리1단지)</td>
+							<td>031-8021-1890</td>
+							<td>070-4420-7893</td>
+						</tr>
+						
+						<tr>
+							<td>피엔케이피부임상연구센타</td>
+							<td class="ac">코스닥</td>
+							<td>www.pnkskin.com</td>
+							<td>서울특별시 영등포구 국회대로62길 25 교육시설재난공제회관 4층</td>
+							<td>02-6925-1502</td>
+							<td>02-6925-1502</td>
+						</tr>
+						
+						<tr>
+							<td>피엔티</td>
+							<td class="ac">코스닥</td>
+							<td>www.epnt.co.kr</td>
+							<td>경상북도 구미시 첨단기업로 33 (주)피엔티</td>
+							<td>054-469-6950</td>
+							<td>054-461-9080</td>
+						</tr>
+						
+						<tr>
+							<td>피제이메탈</td>
+							<td class="ac">코스닥</td>
+							<td>www.pjmetal.co.kr</td>
+							<td>서울시 강남구 테헤란로 81길 13, 11층(삼성동, 동원빌딩)</td>
+							<td>02-555-4451</td>
+							<td>02-555-4451</td>
+						</tr>
+						
+						<tr>
+							<td>피제이전자</td>
+							<td class="ac">코스닥</td>
+							<td>www.pjems.co.kr</td>
+							<td>경기도 부천시 오정구 삼작로 22 부천테크노파크 101동 601호</td>
+							<td>032-326-7000</td>
+							<td>032-326-7000</td>
+						</tr>
+						
+						<tr>
+							<td>피코그램</td>
+							<td class="ac">코스닥</td>
+							<td>www.picogram.co.kr/</td>
+							<td>인천광역시 부평구 부평북로 118 청천동</td>
+							<td>032-678-5114</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>피플바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.peoplebio.net</td>
+							<td>경기도 성남시 분당구 판교로 242 C동 6층</td>
+							<td>031-526-7825</td>
+							<td>031-526-7825</td>
+						</tr>
+						
+						<tr>
+							<td>피피아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.ppitek.com</td>
+							<td>광주 북구 용봉동 300 전남대 자연과학대 4호관113호</td>
+							<td>062-972-0116</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>픽셀플러스</td>
+							<td class="ac">코스닥</td>
+							<td>www.pixelplus.com</td>
+							<td>경기도 수원시 영통구 광교로 105(이의동, 경기알앤디비센터 6층)</td>
+							<td>031-888-5300</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>핀텔</td>
+							<td class="ac">코스닥</td>
+							<td>www.pintel.co.kr</td>
+							<td>경기도 용인시 기흥구 기흥로 58 B동 604호  </td>
+							<td>031-693-6381</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>필옵틱스</td>
+							<td class="ac">코스닥</td>
+							<td>www.philoptics.com</td>
+							<td>경기도 오산시 지곶중앙로 1-19 -</td>
+							<td>031-292-8321</td>
+							<td>031-292-8321</td>
+						</tr>
+						
+						<tr>
+							<td>핌스</td>
+							<td class="ac">코스닥</td>
+							<td>www.pimskorea.com</td>
+							<td>인천광역시 남동구 남동동로138번길 15 -</td>
+							<td>032-875-7333</td>
+							<td>032-875-7333</td>
+						</tr>
+						
+						<tr>
+							<td>핑거</td>
+							<td class="ac">코스닥</td>
+							<td>www.finger.co.kr</td>
+							<td>서울특별시 영등포구 여의대로 24, 43층(여의도동, 전국경제인연합회회관)</td>
+							<td>02-799-2510</td>
+							<td>02-799-2510</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

@@ -1,0 +1,186 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>차바이오텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.chabio.com</td>
+							<td>서울시 강남구 도산대로 442, 3층(청담동, 피엔폴루스)</td>
+							<td>031-881-7400</td>
+							<td>031-881-7400</td>
+						</tr>
+						
+						<tr>
+							<td>차백신연구소</td>
+							<td class="ac">코스닥</td>
+							<td>www.chavaccine.com</td>
+							<td>경기도 성남시 중원구 둔촌대로 560 상대원동, 벽산테크노피아</td>
+							<td>031-737-8208</td>
+							<td>031-881-7327</td>
+						</tr>
+						
+						<tr>
+							<td>참엔지니어링</td>
+							<td class="ac">코스피</td>
+							<td>www.charmeng.com</td>
+							<td>경기도 용인시 처인구 남사면 형제로 5</td>
+							<td>031-330-8500</td>
+							<td>031-330-8500</td>
+						</tr>
+						
+						<tr>
+							<td>참좋은여행</td>
+							<td class="ac">코스닥</td>
+							<td>www.verygoodtour.com</td>
+							<td>서울특별시 중구 서소문로 135 (서소문동, 연호빌딩)</td>
+							<td>02-2188-4137</td>
+							<td>02-2188-4137</td>
+						</tr>
+						
+						<tr>
+							<td>창해에탄올</td>
+							<td class="ac">코스닥</td>
+							<td>www.chethanol.com</td>
+							<td>전북 전주시 덕진구 원만성로 15(팔복동)</td>
+							<td>063-214-7800</td>
+							<td>02-538-1607</td>
+						</tr>
+						
+						<tr>
+							<td>천보</td>
+							<td class="ac">코스닥</td>
+							<td></td>
+							<td>충북 충주시 주덕읍 중원산업로 312</td>
+							<td>070-4865-2525</td>
+							<td>070-4865-2525</td>
+						</tr>
+						
+						<tr>
+							<td>천일고속</td>
+							<td class="ac">코스피</td>
+							<td>www.chunilexpress.com</td>
+							<td>부산시 동구 중앙대로 168 (초량동)</td>
+							<td>051-254-9111~2</td>
+							<td>051-254-5086</td>
+						</tr>
+						
+						<tr>
+							<td>청광건설</td>
+							<td class="ac">코넥스</td>
+							<td>www.chungkwang.co.kr</td>
+							<td>서울시 강남구 언주로 550 (역삼동, 청광빌딩)</td>
+							<td>02)3461-3600</td>
+							<td>02-3461-6393</td>
+						</tr>
+						
+						<tr>
+							<td>청담글로벌</td>
+							<td class="ac">코스닥</td>
+							<td>www.chungdamgroup.com</td>
+							<td>인천광역시 연수구 인천타워대로 323 (송도동, 송도센트로드) B동 2401호</td>
+							<td>032-721-8211</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>체리부로</td>
+							<td class="ac">코스닥</td>
+							<td>www.cherrybro.com</td>
+							<td>충북 진천군 이월면 생거진천로 1770</td>
+							<td>043-530-3200</td>
+							<td>043-530-3212</td>
+						</tr>
+						
+						<tr>
+							<td>체시스</td>
+							<td class="ac">코스피</td>
+							<td>www.chasys.com</td>
+							<td>경북 경산시 진량읍 일연로 528</td>
+							<td>053-851-8511</td>
+							<td>053-851-8511</td>
+						</tr>
+						
+						<tr>
+							<td>초록뱀미디어</td>
+							<td class="ac">코스닥</td>
+							<td>www.chorokbaem.com</td>
+							<td>서울특별시 강남구 도산대로 414 14층(청담동, 한성청담빌딩)</td>
+							<td>02-6925-7000</td>
+							<td>02-6925-7000</td>
+						</tr>
+						
+						<tr>
+							<td>초록뱀이앤엠</td>
+							<td class="ac">코스닥</td>
+							<td>www.lichem.co.kr</td>
+							<td>충청북도 증평군 증평읍 증평산단로 80 (주)스카이이앤엠</td>
+							<td>042-825-8630</td>
+							<td>042-825-8630</td>
+						</tr>
+						
+						<tr>
+							<td>초록뱀컴퍼니</td>
+							<td class="ac">코스닥</td>
+							<td>www.wholdingcompany.co.kr</td>
+							<td>서울특별시 강남구 도산대로 414 14층(청담동, 한성청담빌딩)</td>
+							<td>032-880-9261</td>
+							<td>02-6237-9780</td>
+						</tr>
+						
+						<tr>
+							<td>초록뱀헬스케어</td>
+							<td class="ac">코스피</td>
+							<td>www.wooridulls.co.kr</td>
+							<td>경기도 화성시 병점중앙로 156, 202호(진안동, 드림빌딩)</td>
+							<td>02-2186-1300</td>
+							<td>02-2186-1300</td>
+						</tr>
+						
+						<tr>
+							<td>칩스앤미디어</td>
+							<td class="ac">코스닥</td>
+							<td>www.chipsnmedia.com</td>
+							<td>서울특별시 강남구 테헤란로 509 엔씨타워1  7층,8층</td>
+							<td>02-568-3767</td>
+							<td>02-568-3767</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>

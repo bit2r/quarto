@@ -1,0 +1,91 @@
+---
+title: "대기업 본사 지도"
+date: "2022-11-24" # 날짜 설정: now, last-modified
+date-format: "YYYY년 MM월 DD일"
+lang: kr
+categories: ["지도", "대기업", "공정거래위원회", "로고"]
+description: |
+  공정거래위원회에서 지정한 상위 대기업 본사 주소를 기준으로 서울시 지도에 로고를 입혀 시각화 합니다.
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: false
+    toc: true
+    toc-depth: 2
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: true
+link-citations: yes
+filters:
+   - lightbox      
+lightbox: auto
+---
+
+
+# 데이터
+
+대기업 주소를 지도에 로고를 입혀 시각화하기 위해 필요한 데이터는 다음과 같다.
+
+1. 공정거래위원회 지정 최신 공시대상기업집단: [공정위 뉴스 2022년 대기업집단 지정결과](https://www.ftc.go.kr/www/selectReportUserView.do?key=10&rpttype=1&report_data_no=9580) [자료출처: www.ftc.go.kr]{.aside}
+1. 
+
+## 대기업 집단 순위
+
+공정위 2022년 기준 공시대상 대기업집단 지정결과를 확인할 수 있다.
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)
+library(readxl)
+
+rank_raw <- read_excel(glue::glue("{here::here()}/data/220428(조간) 2022년도 대기업집단 지정결과_별첨1.xlsx"), sheet = "22년", skip = 4)
+
+rank_tbl <- rank_raw %>% 
+  set_names(c("순위_22", "순위_21", "변동", "기업명", "동일인", "계열사_22", "계열사_21", "자산_22", "자산_21")) %>% 
+  filter(변동 !="제외") %>% 
+  select(기업명, 동일인, 계열사수=계열사_22, 자산총액 = 자산_22) %>% 
+  mutate(계열사수 = parse_number(계열사수),
+         자산총액 = parse_number(자산총액)/1000) %>% 
+  filter(!is.na(기업명))
+
+rank_tbl
+```
+
+## 본사 주소
+
+fnguide 에서 [기업주소록](https://comp.fnguide.com/SVO2/ASP/SVD_CorpList.asp?pGB=1&gicode=A005930&cID=&MenuYn=Y&ReportGB=&NewMenuID=502&stkGb=)에서 엑셀파일로 가-하, A-Z, 0-9 기업본사주소가 담긴 정보를 다운로드 받아 후처리한다.
+
+- `.xls` 파일을 `.xlsx` 파일 변환 
+- 자세한 사항 [How To Convert Multiple Xls Files To Xlsx Files In Excel?](https://www.extendoffice.com/documents/excel/1349-excel-batch-convert-xls-to-xlsx.html#a2) 참조하여 VBA 스크립트로 처리한다.
+
+```{r}
+company_list <- fs::dir_ls(glue::glue("{here::here()}/data/company_xlsx"))
+
+company_raw <- map_df(company_list, read_excel)
+
+company_raw
+```
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,681 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<style type="text/css">
+body, table, tr, td {
+	font-family:돋움, seoul, arial, verdana;
+	font-size:12px;
+	line-height:120%;
+}
+
+.ar {
+text-align :right;
+padding-right: 5;
+}
+
+.ac {
+text-align :center;
+}
+
+</style>
+</head>
+<body>
+				<table cellpadding="0" cellspacing="0"   border="1" bordercolor="#cccccc">
+					<thead>
+						<tr height="21">
+						<th bgcolor="#d3e1eb">종목명</th>
+						<th bgcolor="#d3e1eb">시장</th>
+						<th bgcolor="#d3e1eb">홈페이지</th>
+						<th bgcolor="#d3e1eb">본사주소</th>
+						<th bgcolor="#d3e1eb">대표전화</th>
+						<th bgcolor="#d3e1eb">IR담당</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+						<tr>
+							<td>타스컴</td>
+							<td class="ac">코넥스</td>
+							<td>www.yidobio.com</td>
+							<td>경기도 안양시 동안구 학의로 268 </td>
+							<td>031)433-6620</td>
+							<td>02-433-6620</td>
+						</tr>
+						
+						<tr>
+							<td>타이거일렉</td>
+							<td class="ac">코스닥</td>
+							<td>www.tigerelec.com</td>
+							<td>인천시 남구 염전로187번길 33</td>
+							<td>032-579-4100</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>타임기술</td>
+							<td class="ac">코넥스</td>
+							<td>timett.co.kr</td>
+							<td>경상남도 창원시 성산구 완암로 50, 메카동 813호 (성산동, SK테크노파크) </td>
+							<td>055-281-6540</td>
+							<td>055-281-6540</td>
+						</tr>
+						
+						<tr>
+							<td>탈로스</td>
+							<td class="ac">코넥스</td>
+							<td>www.talos.or.kr</td>
+							<td>경기도 안양시 동안구 학의로 282 금강펜테리움IT타워 1701호~1708호 -</td>
+							<td>031-337-6500</td>
+							<td>031-337-6500</td>
+						</tr>
+						
+						<tr>
+							<td>탑머티리얼</td>
+							<td class="ac">코스닥</td>
+							<td>www.topbattery.co.kr</td>
+							<td>경기도 이천시 호법면 덕평로 554-30 (주)탑머티리얼</td>
+							<td>031-632-9876</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>탑선</td>
+							<td class="ac">코넥스</td>
+							<td>www.topsun.kr</td>
+							<td>전남 장성군 동화면 전자농공단지길 32</td>
+							<td>061)399-1500</td>
+							<td>061-399-1500</td>
+						</tr>
+						
+						<tr>
+							<td>탑엔지니어링</td>
+							<td class="ac">코스닥</td>
+							<td>www.topengnet.com</td>
+							<td>경북 구미시 고아읍 농공단지길 53-17</td>
+							<td>054-482-0342</td>
+							<td>031-8039-1034</td>
+						</tr>
+						
+						<tr>
+							<td>탑코미디어</td>
+							<td class="ac">코스닥</td>
+							<td>www.dmt.kr</td>
+							<td>서울시 강남구 언주로 710 성암빌딩 8층</td>
+							<td>031-420-7500</td>
+							<td>02-3400-8323</td>
+						</tr>
+						
+						<tr>
+							<td>태경비케이</td>
+							<td class="ac">코스피</td>
+							<td>www.bkmp.co.kr</td>
+							<td>서울시 강서구 공항대로 467(등촌동) 송원빌딩 6층</td>
+							<td>02-3661-8018</td>
+							<td>02-3661-8018</td>
+						</tr>
+						
+						<tr>
+							<td>태경산업</td>
+							<td class="ac">코스피</td>
+							<td>www.taekyung.co.kr</td>
+							<td>서울시 강서구 공항대로 467, 4층(등촌동, 송원빌딩)</td>
+							<td>031-206-0071</td>
+							<td>02-3661-8011</td>
+						</tr>
+						
+						<tr>
+							<td>태경케미컬</td>
+							<td class="ac">코스피</td>
+							<td>www.taekyungchem.co.kr</td>
+							<td>서울시 강서구 공항대로 467 (등촌동)</td>
+							<td>02-3661-8011</td>
+							<td>02-3661-8011</td>
+						</tr>
+						
+						<tr>
+							<td>태광</td>
+							<td class="ac">코스닥</td>
+							<td>www.tkbend.co.kr</td>
+							<td>부산시 강서구 녹산산업대로 117-12 (송정동)</td>
+							<td>051-970-6617</td>
+							<td>051-970-6617</td>
+						</tr>
+						
+						<tr>
+							<td>태광산업</td>
+							<td class="ac">코스피</td>
+							<td>www.taekwang.co.kr</td>
+							<td>서울시 중구 동호로 310 (장충동2가)</td>
+							<td>02-3406-0290</td>
+							<td>02-3406-0300</td>
+						</tr>
+						
+						<tr>
+							<td>태림포장</td>
+							<td class="ac">코스피</td>
+							<td>www.tailim.com</td>
+							<td>경기도 시흥시 공단1대로 379번안길 74</td>
+							<td>031-499-3333</td>
+							<td>031-499-3333</td>
+						</tr>
+						
+						<tr>
+							<td>태성</td>
+							<td class="ac">코스닥</td>
+							<td>www.taesung2000.com</td>
+							<td>경기도 안산시 단원구 해안로 228 (원시동, ㈜태성)</td>
+							<td>031-482-2240</td>
+							<td>031-364-5911</td>
+						</tr>
+						
+						<tr>
+							<td>태양</td>
+							<td class="ac">코스닥</td>
+							<td>www.taeyangsun.co.kr</td>
+							<td>충남 천안시 서북구 업성1길 27</td>
+							<td>041-621-9810</td>
+							<td>02-2186-1223</td>
+						</tr>
+						
+						<tr>
+							<td>태양금속</td>
+							<td class="ac">코스피</td>
+							<td>www.taeyangmetal.com</td>
+							<td>경기도 안산시 단원구 해봉로 212 (성곡동)</td>
+							<td>031-490-5500</td>
+							<td>031-490-5500</td>
+						</tr>
+						
+						<tr>
+							<td>태양기계</td>
+							<td class="ac">코넥스</td>
+							<td>www.sun-mc.co.kr</td>
+							<td>경기도 화성시 팔탄면 푸른들판로 843-24</td>
+							<td>031)354-9150</td>
+							<td>031-354-9152</td>
+						</tr>
+						
+						<tr>
+							<td>태영건설</td>
+							<td class="ac">코스피</td>
+							<td>www.taeyoung.com</td>
+							<td>경기도 광명시 신기로 20 -</td>
+							<td>031-910-6999</td>
+							<td>02-2151-6999</td>
+						</tr>
+						
+						<tr>
+							<td>태웅</td>
+							<td class="ac">코스닥</td>
+							<td>www.taewoong.com</td>
+							<td>부산시 강서구 녹산산단27로 67 (송정동)</td>
+							<td>051-329-5000</td>
+							<td>051-329-5088</td>
+						</tr>
+						
+						<tr>
+							<td>태웅로직스</td>
+							<td class="ac">코스닥</td>
+							<td>www.e-tgl.com</td>
+							<td>서울특별시 강남구 테헤란로37길 13-6, 9층 (역삼동, 유니빌딩)</td>
+							<td>02-2029-4300</td>
+							<td>02-501-1785</td>
+						</tr>
+						
+						<tr>
+							<td>태원물산</td>
+							<td class="ac">코스피</td>
+							<td>www.twms.co.kr</td>
+							<td>서울시 강남구 테헤란로 86길 14 (대치동)</td>
+							<td>02-555-4301</td>
+							<td>02-555-4301</td>
+						</tr>
+						
+						<tr>
+							<td>태평양물산</td>
+							<td class="ac">코스피</td>
+							<td>www.panpacific.co.kr</td>
+							<td>서울시 구로구 디지털로31길 12 (구로동)</td>
+							<td>02-850-9000</td>
+							<td>02-3494-9000</td>
+						</tr>
+						
+						<tr>
+							<td>테고사이언스</td>
+							<td class="ac">코스닥</td>
+							<td>www.tegoscience.com</td>
+							<td>서울시 강서구 마곡중앙8로 93 (마곡동, 테고사이언스)</td>
+							<td>02-818-2900</td>
+							<td>02-818-2900</td>
+						</tr>
+						
+						<tr>
+							<td>테라사이언스</td>
+							<td class="ac">코스닥</td>
+							<td>www.samwon-tech.com</td>
+							<td>경남 창원시 성산구 창원대로 1144번길 78(성주동)</td>
+							<td>055-213-7000</td>
+							<td>055-213-7108</td>
+						</tr>
+						
+						<tr>
+							<td>테라젠이텍스</td>
+							<td class="ac">코스닥</td>
+							<td>www.thera-gen.com</td>
+							<td>경기도 안산시 단원구 산단로68번길 58(초지동)</td>
+							<td>02-3463-7111</td>
+							<td>070-4609-5549</td>
+						</tr>
+						
+						<tr>
+							<td>테스</td>
+							<td class="ac">코스닥</td>
+							<td>www.hites.co.kr</td>
+							<td>경기도 용인시 처인구 양지면 중부대로 2374-36</td>
+							<td>031-323-2552</td>
+							<td>031-323-2552</td>
+						</tr>
+						
+						<tr>
+							<td>테이팩스</td>
+							<td class="ac">코스피</td>
+							<td>www.tapex.co.kr</td>
+							<td>경기도 수원시 영통구 대학4로 17 제8층 812호, 813호(이의동, 에이스광교타워 1차)</td>
+							<td>031-8047-4100</td>
+							<td>031-8047-4100</td>
+						</tr>
+						
+						<tr>
+							<td>테크엔</td>
+							<td class="ac">코넥스</td>
+							<td>www.techen.co.kr</td>
+							<td>대구시 달성군 구지면 국가산단대로50길 99</td>
+							<td>053)593-5678</td>
+							<td>053-593-9842</td>
+						</tr>
+						
+						<tr>
+							<td>테크윙</td>
+							<td class="ac">코스닥</td>
+							<td>www.techwing.co.kr</td>
+							<td>경기도 화성시 동탄면 동탄산단6길 37</td>
+							<td>031-378-8000</td>
+							<td>031-780-7435</td>
+						</tr>
+						
+						<tr>
+							<td>테크트랜스</td>
+							<td class="ac">코넥스</td>
+							<td>www.techtrans.co.kr</td>
+							<td>경북 경산시 진량읍 금박로 656-6</td>
+							<td>053)815-8830</td>
+							<td>070-4206-2708</td>
+						</tr>
+						
+						<tr>
+							<td>텔레칩스</td>
+							<td class="ac">코스닥</td>
+							<td>www.telechips.com</td>
+							<td>서울시 송파구 올림픽로35다길 42 (신천동, 루터회관 19~23층)</td>
+							<td>02-3443-6792</td>
+							<td>02-3443-6792</td>
+						</tr>
+						
+						<tr>
+							<td>텔레필드</td>
+							<td class="ac">코스닥</td>
+							<td>www.telefield.com</td>
+							<td>경기도 성남시 분당구 판교로 255, E동 301호 (삼평동, 판교이노밸리)</td>
+							<td>031-730-5900</td>
+							<td>031-730-5905</td>
+						</tr>
+						
+						<tr>
+							<td>텔코웨어</td>
+							<td class="ac">코스피</td>
+							<td>www.telcoware.com</td>
+							<td>서울시 서초구 법원로 3길 20-7 (서초동)</td>
+							<td>02-2105-9800</td>
+							<td>02-2105-9800</td>
+						</tr>
+						
+						<tr>
+							<td>텔콘RF제약</td>
+							<td class="ac">코스닥</td>
+							<td>www.telcon.co.kr</td>
+							<td>경기도 용인시 기흥구 공세로 54 </td>
+							<td>031-371-8502</td>
+							<td>02-515-8808</td>
+						</tr>
+						
+						<tr>
+							<td>토니모리</td>
+							<td class="ac">코스피</td>
+							<td>www.etonymoly.com</td>
+							<td>서울시 서초구 남부순환로 2557 (서초동, 토니모리빌딩)</td>
+							<td>02-593-3191</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>토마토시스템</td>
+							<td class="ac">코넥스</td>
+							<td>www.tomatosystem.co.kr</td>
+							<td>서울특별시 강남구 논현로128길 5(논현동, 장뻘빌딩 5,6,8층)</td>
+							<td>02-3445-2194</td>
+							<td>02-3445-2194</td>
+						</tr>
+						
+						<tr>
+							<td>토박스코리아</td>
+							<td class="ac">코스닥</td>
+							<td>www.toebox.co.kr</td>
+							<td>서울시 구로구 디지털로26길 111 JNK디지털타워 702호</td>
+							<td>070-7799-8485</td>
+							<td>02-6101-3639</td>
+						</tr>
+						
+						<tr>
+							<td>토비스</td>
+							<td class="ac">코스닥</td>
+							<td>www.tovism.com</td>
+							<td>인천시 연수구 갯벌로 92</td>
+							<td>032-712-5100</td>
+							<td>032-712-5112</td>
+						</tr>
+						
+						<tr>
+							<td>토탈소프트</td>
+							<td class="ac">코스닥</td>
+							<td>www.tsb.co.kr</td>
+							<td>부산시 해운대구 반송로 513번길 66-39 (석대동)</td>
+							<td>070-4733-1000</td>
+							<td>051-603-3000</td>
+						</tr>
+						
+						<tr>
+							<td>톱텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.toptec.co.kr</td>
+							<td>경상북도 구미시 산동면 첨단기업5로 140-22 </td>
+							<td>054-472-1100</td>
+							<td>054-472-1100</td>
+						</tr>
+						
+						<tr>
+							<td>투비소프트</td>
+							<td class="ac">코스닥</td>
+							<td>www.tobesoft.com</td>
+							<td>서울시 강남구 봉은사로 617  2~5층(삼성동, 인탑스빌딩)</td>
+							<td>02-2140-7700</td>
+							<td>02-2140-7700</td>
+						</tr>
+						
+						<tr>
+							<td>툴젠</td>
+							<td class="ac">코스닥</td>
+							<td>www.toolgen.com</td>
+							<td>서울특별시 강서구 마곡중앙로 172 바이오이노베이션파크,8층</td>
+							<td>02)873-8168</td>
+							<td>02-3660-1334</td>
+						</tr>
+						
+						<tr>
+							<td>트루윈</td>
+							<td class="ac">코스닥</td>
+							<td>www.truwin.co.kr</td>
+							<td>대전시 유성구 엑스포로 385</td>
+							<td>042-612-5000</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>트윔</td>
+							<td class="ac">코스닥</td>
+							<td>www.twim21.com</td>
+							<td>경기도 화성시 삼성1로4길 7-4 (석우동)</td>
+							<td>031-8055-8276</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>특수건설</td>
+							<td class="ac">코스닥</td>
+							<td>www.tuksu.co.kr</td>
+							<td>서울특별시 서초구 서운로 7 </td>
+							<td>02-590-6400</td>
+							<td>02-590-6422</td>
+						</tr>
+						
+						<tr>
+							<td>티라유텍</td>
+							<td class="ac">코스닥</td>
+							<td>www.thirautech.com</td>
+							<td>서울특별시 강남구 학동로5길 7</td>
+							<td>02-3461-6531</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티로보틱스</td>
+							<td class="ac">코스닥</td>
+							<td>www.t-robotics.net</td>
+							<td>경기도 오산시 가장산업서북로 103-37 (지곶동)</td>
+							<td>031-716-4507</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티비씨</td>
+							<td class="ac">코스닥</td>
+							<td>www.tbc.co.kr</td>
+							<td>대구시 수성구 동대구로 23</td>
+							<td>053-760-1900</td>
+							<td>053-760-1900</td>
+						</tr>
+						
+						<tr>
+							<td>티사이언티픽</td>
+							<td class="ac">코스닥</td>
+							<td>www.omnitel.co.kr</td>
+							<td>서울특별시 강남구 강남대로 556 이투데이빌딩 18층</td>
+							<td>070-7605-6117</td>
+							<td>070-7605-6117</td>
+						</tr>
+						
+						<tr>
+							<td>티쓰리</td>
+							<td class="ac">코스닥</td>
+							<td>www.t3.co.kr</td>
+							<td>서울특별시 금천구 가산디지털1로 186, 3층 -</td>
+							<td>070-4050-8000</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티씨케이</td>
+							<td class="ac">코스닥</td>
+							<td>www.tck.co.kr</td>
+							<td>경기도 안성시 미양면 개정산업단지로 71</td>
+							<td>031-677-0277</td>
+							<td>031-678-0047</td>
+						</tr>
+						
+						<tr>
+							<td>티앤알바이오팹</td>
+							<td class="ac">코스닥</td>
+							<td>www.tnrbiofab.com</td>
+							<td>경기도 시흥시 산기대학로 237, 5층 540호(한국산업기술대학교 스마트허브산학융합본부)</td>
+							<td>031-431-3344</td>
+							<td>031-431-3344</td>
+						</tr>
+						
+						<tr>
+							<td>티앤엘</td>
+							<td class="ac">코스닥</td>
+							<td>www.tnl.co.kr</td>
+							<td>경기도 용인시 수지구 신수로 767 에이동 2401호</td>
+							<td>031-323-3113</td>
+							<td>070-4688-6611</td>
+						</tr>
+						
+						<tr>
+							<td>티에스넥스젠</td>
+							<td class="ac">코스닥</td>
+							<td>www.hlbpower.com</td>
+							<td>서울특별시 강남구 언주로 527 3층(역삼동, 강남텔레피아빌딩)</td>
+							<td>02-6416-2200</td>
+							<td>02-544-3301</td>
+						</tr>
+						
+						<tr>
+							<td>티에스아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.taesungind.co.kr</td>
+							<td>경기도 화성시 향남읍 발안로 702-66 (주)티에스아이</td>
+							<td>031-667-2623</td>
+							<td>070-4827-3071</td>
+						</tr>
+						
+						<tr>
+							<td>티에스이</td>
+							<td class="ac">코스닥</td>
+							<td>www.tse21.com</td>
+							<td>충청남도 천안시 서북구 직산읍 군수1길 189 </td>
+							<td>041-581-9955</td>
+							<td>041-581-9955</td>
+						</tr>
+						
+						<tr>
+							<td>티에이치엔</td>
+							<td class="ac">코스피</td>
+							<td>www.th-net.co.kr</td>
+							<td>대구시 달서구 갈산동 성서로71길 43 (갈산동)</td>
+							<td>053-583-3001</td>
+							<td>053-583-3001</td>
+						</tr>
+						
+						<tr>
+							<td>티에프이</td>
+							<td class="ac">코스닥</td>
+							<td>www.tfe.co.kr</td>
+							<td>경기도 화성시 반월길 50-8 -</td>
+							<td>031-206-0541</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티엘비</td>
+							<td class="ac">코스닥</td>
+							<td>www.tlbpcb.com</td>
+							<td>경기도 안산시 단원구 신원로 305 (목내동, (주)티엘비)</td>
+							<td>031-8040-2055</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티엘아이</td>
+							<td class="ac">코스닥</td>
+							<td>www.tli.co.kr</td>
+							<td>경기도 성남시 중원구 양현로 405번길 12 티엘아이빌딩 7~10층</td>
+							<td>031-784-6800</td>
+							<td>031-784-6815</td>
+						</tr>
+						
+						<tr>
+							<td>티엘엔지니어링</td>
+							<td class="ac">코넥스</td>
+							<td>www.tleng.kr</td>
+							<td>경기도 광명시 원광명로37번길 32</td>
+							<td>02-2135-1668</td>
+							<td>02-2135-1913</td>
+						</tr>
+						
+						<tr>
+							<td>티와이홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>ty-holdings.co.kr</td>
+							<td>서울특별시 영등포구 여의공원로 111, 10층(여의도동)</td>
+							<td>02-2090-6613</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티움바이오</td>
+							<td class="ac">코스닥</td>
+							<td>www.tiumbio.com</td>
+							<td>경기도 성남시 분당구 대왕판교로644번길 49 4층(상평동, 다산타워)</td>
+							<td>070-4162-7320</td>
+							<td>031-600-1531</td>
+						</tr>
+						
+						<tr>
+							<td>티웨이항공</td>
+							<td class="ac">코스피</td>
+							<td>www.twayair.com</td>
+							<td>서울시 강서구 하늘길 210 김포국제공항 화물청사 3층</td>
+							<td>02-6250-5900</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>티웨이홀딩스</td>
+							<td class="ac">코스피</td>
+							<td>www.twayholdings.com</td>
+							<td>서울시 성동구 아차산로 153, 7층 (성수동 2가, 예림출판문화센터)</td>
+							<td>02-2056-9800</td>
+							<td>02-2056-9800</td>
+						</tr>
+						
+						<tr>
+							<td>티케이케미칼</td>
+							<td class="ac">코스닥</td>
+							<td>www.tkchemi.co.kr</td>
+							<td>대구시 북구 원대로 128, 연우빌딩 3층</td>
+							<td>02-2001-6000</td>
+							<td>02-2001-6216</td>
+						</tr>
+						
+						<tr>
+							<td>티플랙스</td>
+							<td class="ac">코스닥</td>
+							<td>www.tplex.co.kr</td>
+							<td>경기도 안산시 단원구 엠티브이1로 75 (목내동)</td>
+							<td>031-488-8800</td>
+							<td>031-488-8800</td>
+						</tr>
+						
+						<tr>
+							<td>티피씨글로벌</td>
+							<td class="ac">코스닥</td>
+							<td>www.tc21.co.kr</td>
+							<td>경북 경산시 진량읍 일연로 574</td>
+							<td>053-854-7500</td>
+							<td>053-850-8310</td>
+						</tr>
+						
+						<tr>
+							<td>틸론</td>
+							<td class="ac">코넥스</td>
+							<td>www.tilon.co.kr</td>
+							<td>서울특별시 강서구 마곡중앙14로 22 틸론</td>
+							<td>02)2627-9005</td>
+							<td>02-2627-9000</td>
+						</tr>
+						
+						<tr>
+							<td>팅크웨어</td>
+							<td class="ac">코스닥</td>
+							<td>www.thinkware.co.kr</td>
+							<td>경기도 성남시 분당구 판교역로 240, 삼환하이펙스 A동 9층</td>
+							<td>02-589-9000</td>
+							<td>02-589-9135</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			
+		</body>
+	</html>
