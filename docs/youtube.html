@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.237">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+<meta name="dcterms.date" content="2022-12-01">
+<meta name="description" content="2005년 스타트업으로 시작한 유튜브가 이제는 대세를 넘어 유튜브 없는 세상을 상상할 수 없게 되었다. 이제 동영상 글쓰기도 심각히 고민해봐야 하는 시점이 된 듯 싶다.">
+
+<title>Quarto 데이터 사이언스 - 동영상 글쓰기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<meta name="twitter:title" content="Quarto 데이터 사이언스 - 동영상 글쓰기">
+<meta name="twitter:description" content="한글 Quarto 첫걸음">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig\koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Quarto 데이터 사이언스</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto_blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./quarto_install.html">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_about.html">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">글쓰기</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_fonts.html">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_sass.html">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_layout.html">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./youtube.html">
+ <span class="dropdown-text">동영상 글쓰기</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">관련 정보</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tidyverse-korea.github.io/seoul-R/">
+ <span class="dropdown-text">서울 R Meetup Archive</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com">
+ <span class="menu-text">R사용자회</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">동영상 글쓰기</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">동영상 글쓰기</h1>
+                  <div>
+        <div class="description">
+          2005년 스타트업으로 시작한 유튜브가 이제는 대세를 넘어 유튜브 없는 세상을 상상할 수 없게 되었다. 이제 동영상 글쓰기도 심각히 고민해봐야 하는 시점이 된 듯 싶다.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading"></div>
+    
+      <div class="quarto-title-meta-contents">
+      <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 1, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PPT</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">Quarto 슬라이드</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">홍익대 특강</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">전자책</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">Quarto 전자책</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">디지털 글쓰기</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">마크다운 글쓰기</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">코딩(Computation)</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">코딩 (계산)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib_py.ipynb" class="sidebar-item-text sidebar-link">.ipynb 파이썬 파일</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib.html" class="sidebar-item-text sidebar-link">.qmd Quarto 파일</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul class="collapse">
+  <li><a href="#파이널-컷의-개괄적-이해" id="toc-파이널-컷의-개괄적-이해" class="nav-link active" data-scroll-target="#파이널-컷의-개괄적-이해"><span class="toc-section-number">1</span>  파이널 컷의 개괄적 이해</a></li>
+  <li><a href="#importing-organizing" id="toc-importing-organizing" class="nav-link" data-scroll-target="#importing-organizing"><span class="toc-section-number">2</span>  Importing &amp; Organizing</a></li>
+  <li><a href="#sequencing-시퀀싱하기" id="toc-sequencing-시퀀싱하기" class="nav-link" data-scroll-target="#sequencing-시퀀싱하기"><span class="toc-section-number">3</span>  Sequencing (시퀀싱하기)</a></li>
+  <li><a href="#export내보내기" id="toc-export내보내기" class="nav-link" data-scroll-target="#export내보내기"><span class="toc-section-number">4</span>  Export(내보내기)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">용호수님의 <a href="https://www.youtube.com/watch?v=2aORJ7hKVMI">파이널 컷 한시간에 끝내기</a>에 언급된 사항을 중심으로 요약</span></div></div>
+<section id="파이널-컷의-개괄적-이해" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="파이널-컷의-개괄적-이해"><span class="header-section-number">1</span> 파이널 컷의 개괄적 이해</h2>
+<p>파이널 컷의 <strong>Library(라이브러리)</strong>는 Finder(윈도의 탐색기)의 Bundle(번들) <code>fcpbundle</code>의 확장자가 동영상 글쓰기의 모든 것을 담아낸다. 즉, 파이널 컷은 기본적으로 <code>fcpbundle</code> 확장자를 갖는 파일에 동영상 제작에 필요한 모든 자원(소리, 동영상, 이미지, 텍스트 등)을 한 곳에 저장한다.</p>
+<p><img src="images/final_cut_overview.png" class="img-fluid"></p>
+</section>
+<section id="importing-organizing" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="importing-organizing"><span class="header-section-number">2</span> Importing &amp; Organizing</h2>
+<section id="작업대-정리" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="작업대-정리"><span class="header-section-number">2.1</span> 작업대 정리</h3>
+<p>아무것도 없는 상황에서 시작작업을 설정한다. 이를 위해서 기존 <code>fcpbundle</code> 확장자를 갖는 라이브러리가 열려있는 경우 “Close Library”를 마우스 우클릭으로 실행한다. 그렇게 되면 깔끔한 작업공간이 생성된다.</p>
+</section>
+<section id="신규-라이브러리" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="신규-라이브러리"><span class="header-section-number">2.2</span> 신규 라이브러리</h3>
+<p><strong>“Open Library”</strong> 를 클릭한 후 기존 작업된 라이브러리를 가져오거나 <strong>New…</strong>를 클릭하여 새로운 작업공간을 Finder에서 지정한다. 이를 통해서 Finder와 Final Cut 두 작업공간이 동기화 되었다.</p>
+<p><img src="images/final_cut_library.png" class="img-fluid"></p>
+</section>
+<section id="자원-가져오기" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="자원-가져오기"><span class="header-section-number">2.3</span> 자원 가져오기</h3>
+<p>아래 화살표 버튼을 클릭하면 동영상 편집에 사용되는 다양한 외부 자원(동영상, 소리, 이미지, 텍스트, 애니메이션 등)을 가져와서 작업대에서 다양한 요리를 통해 멋진 동영상을 제작할 수 있다.</p>
+<p><img src="images/final_cut_import.png" class="img-fluid"></p>
+</section>
+<section id="내장음원" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="내장음원"><span class="header-section-number">2.4</span> 내장음원</h3>
+<p><strong>Sound Effects</strong>가 내장되어 있어 필요한 음원을 검색하여 동영상에 녹여낸다.</p>
+<p><img src="images/final_cut_audio_builtin.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="sequencing-시퀀싱하기" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sequencing-시퀀싱하기"><span class="header-section-number">3</span> Sequencing (시퀀싱하기)</h2>
+<p>결국 동영상 글쓰기는 프로젝트를 통해 다양한 자원을 시퀀싱하는 것으로 이해할 수 있다. 이를 위해 프로젝트를 생성하여 시퀀싱 작업을 수행한다.</p>
+<p><img src="images/final_cut_project.png" class="img-fluid"></p>
+<section id="동영상-잘라내기" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="동영상-잘라내기"><span class="header-section-number">3.1</span> 동영상 잘라내기</h3>
+<p>요리재료 동영상을 자를 경우 시작점과 끝점을 지정하여 해당 동영상만 잘라내어 편집에 사용한다.</p>
+<ul>
+<li>동영상 잘라내기 위치 지정
+<ul>
+<li>I, in-point 설정</li>
+<li>O, out-point 설정</li>
+</ul></li>
+<li>동영상 삽입위치 지정
+<ul>
+<li>E, Main Storyline 맨뒤에 붙이기</li>
+<li>Q, Main Storyline에 연결하여 삽입</li>
+<li>W, Time Indicator 기준으로 중간에 삽입</li>
+</ul></li>
+</ul>
+</section>
+<section id="소리-편집" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="소리-편집"><span class="header-section-number">3.2</span> 소리 편집</h3>
+<p>소리를 편집해야 하는 경우 우측 하단에 있는 기능을 활용한다. 우선 동영상과 소리를 분리하고 소리를 편집하는 Blade를 사용하여 편집할 위치를 지정하고 <strong>⌥ (Option, Alt) + <code>]</code></strong> 혹은 <strong>⌥ (Option, Alt) + <code>[</code></strong> 을 사용한다. 혹은 단축키로 ⌘ + <code>B</code>… ⌘ + <code>B</code>를 눌러 날려버릴 영역의 지점을 표시하고 <code>A</code>키를 눌러 영역을 선정한 후 ⌫ 삭제키를 눌러 삭제한다. 즉,</p>
+<ul>
+<li>⌘ + B: 클립 자르기</li>
+<li>⌥ + <code>[</code> 혹은 <code>]</code> 앞뒤 잘라내기</li>
+</ul>
+<p><img src="images/final_cut_audio.png" class="img-fluid"></p>
+</section>
+<section id="미세조정" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="미세조정"><span class="header-section-number">3.3</span> 미세조정</h3>
+<ul>
+<li><code>,</code>: 좌측으로 1 프레임 잘라내기 (Trimming)
+<ul>
+<li>쉬프트 ⇧ + <code>,</code>: 좌측으로 10 프레임 잘라내기 (Trimming)</li>
+</ul></li>
+<li><code>.</code>: 우측으로 1 프레임 잘라내기 (Trimming)
+<ul>
+<li>쉬프트 ⇧ + <code>.</code>: 우측으로 10 프레임 잘라내기 (Trimming)</li>
+</ul></li>
+<li>쉬프트 ⇧ + <code>/</code>: 다듬어진 트림 결과 확인</li>
+</ul>
+</section>
+<section id="오디오-삭제" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="오디오-삭제"><span class="header-section-number">3.4</span> 오디오 삭제</h3>
+<p>동영상에 오디오가 딸려오는데 경우에 따라서 오디오를 날려버리고 영상만 필요한 경우가 있다. 이럴때 해당 클립을 선택하여 우클릭을 한다. 그리고 난 후 <code>Expand Audio Components</code>를 클릭하여 동영상에서 영상과 오디오를 분리하고 오디오를 삭제한다. 단축키는 <strong>⌃ + ⌥ + S</strong>로 오디오를 분리한 후 삭제한다.</p>
+<p><img src="images/final_cut_audio_remove.png" class="img-fluid"></p>
+</section>
+<section id="볼륨조정" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="볼륨조정"><span class="header-section-number">3.5</span> 볼륨조정</h3>
+<p>오디오 클립을 선택한 후에 단축키를 사용해서 음량을 조절할 수 있다.</p>
+<ul>
+<li>⌃ + : 1 데시벨 음량 증가</li>
+<li>⌃ - : 1 데시벨 음량 감소</li>
+</ul>
+<p>양쪽 점을 클릭하여 음량에 대한 Fade 효과도 넣을 수 있다.</p>
+<p><img src="images/final_cut_audio_fade.png" class="img-fluid"></p>
+</section>
+<section id="텍스트-넣기" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="텍스트-넣기"><span class="header-section-number">3.6</span> 텍스트 넣기</h3>
+<p>⌃ + t 단축키를 사용하여 텍스트를 동영상에 올릴 수 있다.</p>
+</section>
+<section id="이미지-넣기" class="level3" data-number="3.7">
+<h3 data-number="3.7" class="anchored" data-anchor-id="이미지-넣기"><span class="header-section-number">3.7</span> 이미지 넣기</h3>
+<p>다운로드 받은 이미지를 드래그하여 편집중인 작업대에 넣으면 자동으로 자원으로 삽입되고 이를 시퀀싱에 가져와서 적당한 곳에 넣으면 이미지를 동영상에 넣을 수 있다.</p>
+</section>
+<section id="이미지-이동-변형" class="level3" data-number="3.8">
+<h3 data-number="3.8" class="anchored" data-anchor-id="이미지-이동-변형"><span class="header-section-number">3.8</span> 이미지 이동 변형</h3>
+<p>이미지를 영상 하단에 버튼을 클릭하여 자유롭게 영상을 이동시키고 크기를 확대축소한다.</p>
+<p><img src="images/final_cut_image.png" class="img-fluid"></p>
+</section>
+<section id="애니메이션" class="level3" data-number="3.9">
+<h3 data-number="3.9" class="anchored" data-anchor-id="애니메이션"><span class="header-section-number">3.9</span> 애니메이션</h3>
+<p>Crop + Transform 기능을 사용하여 해당 영상에 애니메이션 기능 좌우 이동 혹은 확대축소를 할 수 있다.</p>
+</section>
+<section id="배경음-넣기" class="level3" data-number="3.10">
+<h3 data-number="3.10" class="anchored" data-anchor-id="배경음-넣기"><span class="header-section-number">3.10</span> 배경음 넣기</h3>
+<p>음원을 선택하고** R (Range Selection)**을 눌러 배경음을 선택하고 소리를 배경음으로 넣어 줄인다.</p>
+<p><img src="images/final_cut_background_sound.png" class="img-fluid"></p>
+</section>
+<section id="소리limiter" class="level3" data-number="3.11">
+<h3 data-number="3.11" class="anchored" data-anchor-id="소리limiter"><span class="header-section-number">3.11</span> 소리Limiter</h3>
+</section>
+<section id="transition" class="level3" data-number="3.12">
+<h3 data-number="3.12" class="anchored" data-anchor-id="transition"><span class="header-section-number">3.12</span> Transition</h3>
+<p>Cross Dissolve가 기본설정입니다.</p>
+</section>
+<section id="색보정" class="level3" data-number="3.13">
+<h3 data-number="3.13" class="anchored" data-anchor-id="색보정"><span class="header-section-number">3.13</span> 색보정</h3>
+</section>
+</section>
+<section id="export내보내기" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="export내보내기"><span class="header-section-number">4</span> Export(내보내기)</h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+  </div>
+</footer>
+
+
+
+</body></html>

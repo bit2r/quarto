@@ -1,0 +1,14 @@
+{
+  "hash": "1ddc752b5e8a5c182bd50be7ffd6d614",
+  "result": {
+    "markdown": "---\ntitle: \"동영상 글쓰기\"\ndescription: 2005년 스타트업으로 시작한 유튜브가 이제는 대세를 넘어 유튜브 없는 세상을 상상할 수 없게 되었다. 이제 동영상 글쓰기도 심각히 고민해봐야 하는 시점이 된 듯 싶다.\ndate: today # 날짜 설정: now, last-modified\nauthor:\n  - name: 이광춘\n    url: https://www.linkedin.com/in/kwangchunlee/\n    affiliation: 한국 R 사용자회\n    affiliation-url: https://github.com/bit2r\ntitle-block-banner: true\n#title-block-banner: \"#562457\"\nformat:\n  html:\n    theme: \n      - flatly\n      - css/quarto-fonts.css\n    code-fold: false\n    toc: true\n    toc-depth: 2\n    toc-title: 목차\n    number-sections: true\n    highlight-style: github    \n    self-contained: false\nbibliography: bibliography.bib\nlink-citations: yes\ncsl: apa-single-spaced.csl\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n[용호수님의 [파이널 컷 한시간에 끝내기](https://www.youtube.com/watch?v=2aORJ7hKVMI)에 언급된 사항을 중심으로 요약]{.aside}\n\n## 파이널 컷의 개괄적 이해\n\n파이널 컷의 **Library(라이브러리)**는 Finder(윈도의 탐색기)의 Bundle(번들) `fcpbundle`의 확장자가 동영상 글쓰기의 모든 것을 담아낸다. 즉, 파이널 컷은 기본적으로 `fcpbundle` 확장자를 갖는 파일에 동영상 제작에 필요한 모든 자원(소리, 동영상, 이미지, 텍스트 등)을 한 곳에 저장한다.\n\n![](images/final_cut_overview.png)\n\n## Importing & Organizing\n\n### 작업대 정리\n\n아무것도 없는 상황에서 시작작업을 설정한다. 이를 위해서 기존 `fcpbundle` 확장자를 갖는 라이브러리가 열려있는 경우 \"Close Library\"를 마우스 우클릭으로 실행한다. 그렇게 되면 깔끔한 작업공간이 생성된다.\n\n### 신규 라이브러리\n\n\n**\"Open Library\"** 를 클릭한 후 기존 작업된 라이브러리를 가져오거나 **New...**를 클릭하여 새로운 작업공간을 Finder에서 지정한다. 이를 통해서 Finder와 Final Cut 두 작업공간이 동기화 되었다.\n\n![](images/final_cut_library.png)\n\n### 자원 가져오기\n\n아래 화살표 버튼을 클릭하면 동영상 편집에 사용되는 다양한 외부 자원(동영상, 소리, 이미지, 텍스트, 애니메이션 등)을 가져와서 작업대에서 다양한 요리를 통해 멋진 동영상을 제작할 수 있다.\n\n![](images/final_cut_import.png)\n\n\n\n## Sequencing (시퀀싱하기)\n\n결국 동영상 글쓰기는 프로젝트를 통해 다양한 자원을 시퀀싱하는 것으로 이해할 수 있다. 이를 위해 프로젝트를 생성하여 시퀀싱 작업을 수행한다.\n\n![](images/final_cut_project.png)\n\n### 동영상 잘라내기\n\n요리재료 동영상을 자를 경우 시작점과 끝점을 지정하여 해당 동영상만 잘라내어 편집에 사용한다.\n\n- 동영상 잘라내기 위치 지정\n    - I, in-point 설정\n    - O, out-point 설정\n- 동영상 삽입위치 지정\n    - E, Main Storyline 맨뒤에 붙이기\n    - Q, Main Storyline에 연결하여 삽입\n    - W, Time Indicator 기준으로 중간에 삽입\n\n### 소리 편집\n\n소리를 편집해야 하는 경우 우측 하단에 있는 기능을 활용한다.\n우선 동영상과 소리를 분리하고 소리를 편집하는 Blade를 사용하여 편집할 위치를 지정하고 **Option(U+2325) + `]`** 혹은 **Option + `[`** 을 사용한다. U+2325\n\n![](images/final_cut_audio.png)\n\n\n\n\n\n## Export(내보내기)\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -217,6 +217,48 @@
     "text": "3.3 Quarto Book 컴파일\n_quarto.yml 파일을 열어 Quarto Book 문법에 맞춰 편집한 후 quarto preview, quarto render 명령어로 작업을 전자책을 제작한 후 GitHub Pages 나 Quarto Pub에 배포한다."
   },
   {
+    "objectID": "posts/20221124_ftc/index.html#대기업-집단-순위",
+    "href": "posts/20221124_ftc/index.html#대기업-집단-순위",
+    "title": "대기업 본사 지도",
+    "section": "1.1 대기업 집단 순위",
+    "text": "1.1 대기업 집단 순위\n공정위 2022년 기준 공시대상 대기업집단 지정결과를 확인할 수 있다.\n\nlibrary(tidyverse)\nlibrary(readxl)\n\nrank_raw <- read_excel(glue::glue(\"{here::here()}/data/220428(조간) 2022년도 대기업집단 지정결과_별첨1.xlsx\"), sheet = \"22년\", skip = 4)\n\nrank_tbl <- rank_raw %>% \n  set_names(c(\"순위_22\", \"순위_21\", \"변동\", \"기업명\", \"동일인\", \"계열사_22\", \"계열사_21\", \"자산_22\", \"자산_21\")) %>% \n  filter(변동 !=\"제외\") %>% \n  select(기업명, 동일인, 계열사수=계열사_22, 자산총액 = 자산_22) %>% \n  mutate(계열사수 = parse_number(계열사수),\n         자산총액 = parse_number(자산총액)/1000) %>% \n  filter(!is.na(기업명))\n\nrank_tbl\n\n# A tibble: 76 × 4\n   기업명     동일인             계열사수 자산총액\n   <chr>      <chr>                 <dbl>    <dbl>\n 1 삼성       이재용                   60    484. \n 2 에스케이   최태원                  186    292. \n 3 현대자동차 정의선                   57    258. \n 4 엘지       구광모                   73    168. \n 5 롯데       신동빈                   85    122. \n 6 포스코     포스코홀딩스(주)         38     96.3\n 7 한화       김승연                   91     80.4\n 8 지에스     허창수                   93     76.8\n 9 현대중공업 정몽준                   36     75.3\n10 농협       농업협동조합중앙회       53     67.0\n# … with 66 more rows"
+  },
+  {
+    "objectID": "posts/20221124_ftc/index.html#본사-주소",
+    "href": "posts/20221124_ftc/index.html#본사-주소",
+    "title": "대기업 본사 지도",
+    "section": "1.2 본사 주소",
+    "text": "1.2 본사 주소\nfnguide 에서 기업주소록에서 엑셀파일로 가-하, A-Z, 0-9 기업본사주소가 담긴 정보를 다운로드 받아 후처리한다.\n\n.xls 파일을 .xlsx 파일 변환\n자세한 사항 How To Convert Multiple Xls Files To Xlsx Files In Excel? 참조하여 VBA 스크립트로 처리한다.\n\n\ncompany_list <- fs::dir_ls(glue::glue(\"{here::here()}/data/company_xlsx\"))\n\ncompany_raw <- map_df(company_list, read_excel)\n\ncompany_raw\n\n# A tibble: 2,553 × 6\n   종목명           시장   홈페이지                   본사주소    대표…¹  IR담당\n   <chr>            <chr>  <chr>                      <chr>       <chr>   <chr> \n 1 가비아           코스닥 ir.gabia.com               경기도 성…  1544-4… 02-82…\n 2 가온미디어       코스닥 www.kaonmedia.co.kr        경기도 성…  031-72… 031-7…\n 3 가온전선         코스피 www.gaoncable.com          경기도 군…  031-80… 031-8…\n 4 가온칩스         코스닥 www.gaonchips.com          경기도 성…  031-69… <NA>  \n 5 감성코퍼레이션   코스닥 www.virtualtek.co.kr       서울특별시… 02-314… 070-4…\n 6 강남제비스코     코스피 www.jevisco.com            부산광역시… 051-89… 051-8…\n 7 강스템바이오텍   코스닥 www.kangstem.com           서울시 강…  02-888… 02-20…\n 8 강원랜드         코스피 kangwonland.high1.com      강원도 정…  033-59… 033-5…\n 9 강원에너지       코스닥 www.kwb21.com              전라북도 …  031-35… 02-66…\n10 갤럭시아머니트리 코스닥 www.galaxiamoneytree.co.kr 서울시 강…  1566-0… 070-4…\n# … with 2,543 more rows, and abbreviated variable name ¹​대표전화"
+  },
+  {
+    "objectID": "posts/20221124_ftc/index.html#데이터-결합",
+    "href": "posts/20221124_ftc/index.html#데이터-결합",
+    "title": "대기업 본사 지도",
+    "section": "1.3 데이터 결합",
+    "text": "1.3 데이터 결합\n\nrank_tbl %>% \n  left_join(company_raw, by = c(\"기업명\" = \"종목명\")) %>% \n  filter(!is.na(본사주소))\n\n# A tibble: 23 × 9\n   기업명     동일인 계열사수 자산총액 시장   홈페이지    본사…¹  대표…²  IR담당\n   <chr>      <chr>     <dbl>    <dbl> <chr>  <chr>       <chr>   <chr>   <chr> \n 1 한화       김승연       91     80.4 코스피 www.hanwha… 서울시… 02-729… 02-72…\n 2 현대중공업 정몽준       36     75.3 코스피 www.hhi.co… 울산광… 052-20… 052-2…\n 3 신세계     이명희       53     61.1 코스피 www.shinse… 서울시… 02-727… 02-72…\n 4 한진       조원태       33     35.2 코스피 www.hanjin… 서울시… 02-728… 02-72…\n 5 카카오     김범수      136     32.2 코스피 www.kakaoc… 제주도… 1577-3… 1577-…\n 6 두산       박정원       21     26.3 코스피 www.doosan… 서울시… 02-339… 02-33…\n 7 DL         이준용       42     24.8 코스피 www.dlhold… 서울특… 02-201… 02-20…\n 8 현대백화점 정지선       23     18.2 코스피 www.ehyund… 서울특… 02-549… 02-54…\n 9 하림       김홍국       55     15.4 코스닥 www.harim.… 전북 …  063-86… 063-8…\n10 효성       조현준       53     14.8 코스피 www.hyosun… 서울시… 02-707… 02-70…\n# … with 13 more rows, and abbreviated variable names ¹​본사주소, ²​대표전화"
+  },
+  {
+    "objectID": "posts/20221124_ftc/index.html#지오코딩",
+    "href": "posts/20221124_ftc/index.html#지오코딩",
+    "title": "대기업 본사 지도",
+    "section": "2.1 지오코딩",
+    "text": "2.1 지오코딩\n현재까지 준비한 데이터는 텍스트 주소정보로 이를 지도위에 뿌리기 위해서는 지오코딩을 통해 위경도를 계산해야만 한다.\n\n2.1.1 지오코딩 함수\n카카오 지도 API를 사용해서 주소 텍스트를 넣게 되면 위경도를 반환하는 함수를 제작한다.\n\nlibrary(httr)\nlibrary(jsonlite)\n\n# usethis::edit_r_environ()\n\nget_geocodes <- function(address) {\n  # HTTP 요청을 실행합니다. \n  address_res <- GET(url = 'https://dapi.kakao.com/v2/local/search/address.json',\n             query = list(query = address),\n             add_headers(Authorization = paste0(\"KakaoAK \", Sys.getenv(\"KAKAO_MAP_API_KEY\"))))\n  \n  # KPMG 지리정보 데이터프레임\n  address_list <- address_res %>% \n    content(as = 'text') %>% \n    fromJSON()\n  \n  ## 도로명주소\n  long_lat <- address_list$documents$road_address %>% \n    dplyr::select(x, y) %>% \n    mutate(across(.cols = c(x, y), as.numeric))\n  \n  return(long_lat)\n}\n# 주소를 지정합니다. \nkpmg_addr <- '서울특별시 강남구 역삼동 737' \nget_geocodes(kpmg_addr)\n\n         x        y\n1 127.0365 37.50002\n\n# get_geocodes('서울 종로구 서린동 99')\n\n\n\n2.1.2 지오코딩 실행\n기업수가 제법 되기 때문에 데이터프레임으로 주소를 앞서 개발한 사용자정의함수 get_geocodes()에 보내 위경도 정보를 받아 후속 분석 업무에 효율적으로 사용할 수 있도록 준비한다. 네이버 주소에 우편번호가 포함되어 있어 이를 위경도 좌표로 변환하는 과정에 오류가 있어 이를 발견하고 확인한 후 모든 종목에 대한 데이터를 깔끔하게 정리해둔다.\n\nmarcap_geocode <- marcap_address %>% \n  mutate(geocode_data = map(본사주소, safely(get_geocodes, otherwise = NA_real_)))\n\nmarcap_geocode_tbl <- marcap_geocode %>% \n  # select(종목명, geocode_data) %>% \n  mutate(result = map(geocode_data, \"result\")) %>% \n  # mutate(check = map_lgl(result, is.data.frame)) %>% \n  # filter(check) %>% \n  select(종목명, 홈페이지, 시가총액, 본사주소, result) %>% \n  unnest(result) \n  \nmarcap_geocode_tbl %>% \n  write_rds(glue::glue(\"{here::here()}/data/marcap_geocode.rds\"))"
+  },
+  {
+    "objectID": "posts/20221124_ftc/index.html#지도",
+    "href": "posts/20221124_ftc/index.html#지도",
+    "title": "대기업 본사 지도",
+    "section": "3.1 지도",
+    "text": "3.1 지도\n시가총액 상위 기업 본사 위치를 지도에 올리기 위해서 지도가 필요하다. 이를 위해서 leaflet 패키지가 필요하고 전체 지도를 표시하는 것은 의미가 없기 때문에 해당 본사가 위치한 특히 본사가 몰려있는 수도권에 한정하여 지도를 가져온다.\n\nlibrary(leaflet)\nlibrary(fontawesome)\n\nmarcap_geocode <- \n  read_rds(glue::glue(\"{here::here()}/data/marcap_geocode.rds\")) \n  \n\n## 서울경기도 중심\nlat_lng_tbl <- marcap_geocode %>% \n  filter(str_detect(본사주소, \"서울|경기\")) %>% \n  summarise(lat_mean = mean(y),\n            lng_mean = mean(x))\n\nleaflet(marcap_geocode) %>%\n  setView(lat = lat_lng_tbl$lat_mean, \n          lng = lat_lng_tbl$lng_mean, zoom=11) %>%\n  addTiles()"
+  },
+  {
+    "objectID": "posts/20221124_ftc/index.html#본사위치",
+    "href": "posts/20221124_ftc/index.html#본사위치",
+    "title": "대기업 본사 지도",
+    "section": "3.2 본사위치",
+    "text": "3.2 본사위치\n본사위치를 다른 곳과 달리하여 시각화를 한다.\n\n# 시각화 아이콘\nlandmark_icons <- awesomeIconList(\n  \"학교\" = makeAwesomeIcon(\n    icon = \"school\",\n    markerColor = \"blue\",\n    library = \"fa\",\n    text = fa(\"school\")\n  ),\n  \"기업\" = makeAwesomeIcon(\n    icon = \"walking\",\n    markerColor = \"green\",\n    library = \"fa\",\n    text = fa(\"walking\")\n  )\n)\n\nmarcap_geocode %>% \n  add_row(종목명 = \"한양대\", 홈페이지=\"https://www.hanyang.ac.kr/\", 시가총액 = 0,\n          본사주소 = \"서울 성동구 왕십리로 222\", \n          x = 127.0454092, y = 37.5571759) %>% \n  mutate(구분 = ifelse(종목명 == \"한양대\", \"학교\", \"기업\")) %>% \n  leaflet() %>%\n    setView(lat = lat_lng_tbl$lat_mean, \n            lng = lat_lng_tbl$lng_mean, zoom=11) %>%\n    addProviderTiles('CartoDB.Positron') %>%\n    addAwesomeMarkers(lat =~y, lng = ~x,\n                      clusterOptions = markerClusterOptions(),\n                      icon = ~ landmark_icons[구분],\n                      popup = ~ as.character(paste0(\"<strong>\", paste0(\"회사:\",`종목명`),\n                                                   \"</strong><br>\",\n                                                   \"-------------------------------------<br>\",\n                                                   \"&middot; 시총: \", round(`시가총액`,1), \"조<br>\",\n                                                   \"&middot; 주소: \", `본사주소`, \"<br>\",\n                                                   \"&middot; 홈페이지: \", `홈페이지`, \"<br>\"\n                     )))"
+  },
+  {
     "objectID": "quarto_about.html#블로그-저작-소프트웨어",
     "href": "quarto_about.html#블로그-저작-소프트웨어",
     "title": "Quarto",
@@ -896,52 +938,38 @@
     "text": "3.4 표의 문자\n한자와 같은 표의 문자가 여러가지 단점이 있는 것처럼 보이기도 하지만 표의문자가 갖는 장점으로 인해 그 중요성이 더욱 부각되고 있다. 표의문자가 갖는 장점은 문자 자체 의미가 부여되기 때문에 전세계 누구도 문자만 보면 그 뜻을 유추할 수 있다는 점이다.\n\n그림문자(Pictographic): 🌜, 😀, 🍰, …\n표의문자(Ideogrpahic): 🚫 금지와 같은 의미를 갖는 문자로 ⛔ 🚸 교통 표지판, ▶️ 전자제품 사용\n추상 어표(Abstract Logograpahic): 한자 사람 인(人), %, &, …\n\n그림문자와 표의문자를 결합하게 되면 다음과 같이 흡연을 금지하는 의미를 명확히 전달할 수 있다.\n\n\n\n흡연과 금지가 결합된 표의문자"
   },
   {
-    "objectID": "posts/20221124_ftc/index.html",
-    "href": "posts/20221124_ftc/index.html",
-    "title": "대기업 본사 지도",
+    "objectID": "youtube.html",
+    "href": "youtube.html",
+    "title": "동영상 글쓰기",
     "section": "",
-    "text": "대기업 주소를 지도에 로고를 입혀 시각화하기 위해 필요한 데이터는 다음과 같다.\n\n공정거래위원회 지정 최신 공시대상기업집단: 공정위 뉴스 2022년 대기업집단 지정결과 \n\n\n자료출처: www.ftc.go.kr\n\n공정위 2022년 기준 공시대상 대기업집단 지정결과를 확인할 수 있다.\n\nlibrary(tidyverse)\nlibrary(readxl)\n\nrank_raw <- read_excel(glue::glue(\"{here::here()}/data/220428(조간) 2022년도 대기업집단 지정결과_별첨1.xlsx\"), sheet = \"22년\", skip = 4)\n\nrank_tbl <- rank_raw %>% \n  set_names(c(\"순위_22\", \"순위_21\", \"변동\", \"기업명\", \"동일인\", \"계열사_22\", \"계열사_21\", \"자산_22\", \"자산_21\")) %>% \n  filter(변동 !=\"제외\") %>% \n  select(기업명, 동일인, 계열사수=계열사_22, 자산총액 = 자산_22) %>% \n  mutate(계열사수 = parse_number(계열사수),\n         자산총액 = parse_number(자산총액)/1000) %>% \n  filter(!is.na(기업명))\n\nrank_tbl\n\n# A tibble: 76 × 4\n   기업명     동일인             계열사수 자산총액\n   <chr>      <chr>                 <dbl>    <dbl>\n 1 삼성       이재용                   60    484. \n 2 에스케이   최태원                  186    292. \n 3 현대자동차 정의선                   57    258. \n 4 엘지       구광모                   73    168. \n 5 롯데       신동빈                   85    122. \n 6 포스코     포스코홀딩스(주)         38     96.3\n 7 한화       김승연                   91     80.4\n 8 지에스     허창수                   93     76.8\n 9 현대중공업 정몽준                   36     75.3\n10 농협       농업협동조합중앙회       53     67.0\n# … with 66 more rows\n\n\n\n\n\nfnguide 에서 기업주소록에서 엑셀파일로 가-하, A-Z, 0-9 기업본사주소가 담긴 정보를 다운로드 받아 후처리한다.\n\n.xls 파일을 .xlsx 파일 변환\n자세한 사항 How To Convert Multiple Xls Files To Xlsx Files In Excel? 참조하여 VBA 스크립트로 처리한다.\n\n\ncompany_list <- fs::dir_ls(glue::glue(\"{here::here()}/data/company_xlsx\"))\n\ncompany_raw <- map_df(company_list, read_excel)\n\ncompany_raw\n\n# A tibble: 2,553 × 6\n   종목명           시장   홈페이지                   본사주소    대표…¹  IR담당\n   <chr>            <chr>  <chr>                      <chr>       <chr>   <chr> \n 1 가비아           코스닥 ir.gabia.com               경기도 성…  1544-4… 02-82…\n 2 가온미디어       코스닥 www.kaonmedia.co.kr        경기도 성…  031-72… 031-7…\n 3 가온전선         코스피 www.gaoncable.com          경기도 군…  031-80… 031-8…\n 4 가온칩스         코스닥 www.gaonchips.com          경기도 성…  031-69… <NA>  \n 5 감성코퍼레이션   코스닥 www.virtualtek.co.kr       서울특별시… 02-314… 070-4…\n 6 강남제비스코     코스피 www.jevisco.com            부산광역시… 051-89… 051-8…\n 7 강스템바이오텍   코스닥 www.kangstem.com           서울시 강…  02-888… 02-20…\n 8 강원랜드         코스피 kangwonland.high1.com      강원도 정…  033-59… 033-5…\n 9 강원에너지       코스닥 www.kwb21.com              전라북도 …  031-35… 02-66…\n10 갤럭시아머니트리 코스닥 www.galaxiamoneytree.co.kr 서울시 강…  1566-0… 070-4…\n# … with 2,543 more rows, and abbreviated variable name ¹​대표전화\n\n\n\n\n\n\nrank_tbl %>% \n  left_join(company_raw, by = c(\"기업명\" = \"종목명\")) %>% \n  filter(!is.na(본사주소))\n\n# A tibble: 23 × 9\n   기업명     동일인 계열사수 자산총액 시장   홈페이지    본사…¹  대표…²  IR담당\n   <chr>      <chr>     <dbl>    <dbl> <chr>  <chr>       <chr>   <chr>   <chr> \n 1 한화       김승연       91     80.4 코스피 www.hanwha… 서울시… 02-729… 02-72…\n 2 현대중공업 정몽준       36     75.3 코스피 www.hhi.co… 울산광… 052-20… 052-2…\n 3 신세계     이명희       53     61.1 코스피 www.shinse… 서울시… 02-727… 02-72…\n 4 한진       조원태       33     35.2 코스피 www.hanjin… 서울시… 02-728… 02-72…\n 5 카카오     김범수      136     32.2 코스피 www.kakaoc… 제주도… 1577-3… 1577-…\n 6 두산       박정원       21     26.3 코스피 www.doosan… 서울시… 02-339… 02-33…\n 7 DL         이준용       42     24.8 코스피 www.dlhold… 서울특… 02-201… 02-20…\n 8 현대백화점 정지선       23     18.2 코스피 www.ehyund… 서울특… 02-549… 02-54…\n 9 하림       김홍국       55     15.4 코스닥 www.harim.… 전북 …  063-86… 063-8…\n10 효성       조현준       53     14.8 코스피 www.hyosun… 서울시… 02-707… 02-70…\n# … with 13 more rows, and abbreviated variable names ¹​본사주소, ²​대표전화"
+    "text": "용호수님의 파이널 컷 한시간에 끝내기에 언급된 사항을 중심으로 요약"
   },
   {
-    "objectID": "posts/20221124_ftc/index.html#지오코딩",
-    "href": "posts/20221124_ftc/index.html#지오코딩",
-    "title": "대기업 본사 지도",
-    "section": "2.1 지오코딩",
-    "text": "2.1 지오코딩\n현재까지 준비한 데이터는 텍스트 주소정보로 이를 지도위에 뿌리기 위해서는 지오코딩을 통해 위경도를 계산해야만 한다.\n\n2.1.1 지오코딩 함수\n카카오 지도 API를 사용해서 주소 텍스트를 넣게 되면 위경도를 반환하는 함수를 제작한다.\n\nlibrary(httr)\nlibrary(jsonlite)\n\n# usethis::edit_r_environ()\n\nget_geocodes <- function(address) {\n  # HTTP 요청을 실행합니다. \n  address_res <- GET(url = 'https://dapi.kakao.com/v2/local/search/address.json',\n             query = list(query = address),\n             add_headers(Authorization = paste0(\"KakaoAK \", Sys.getenv(\"KAKAO_MAP_API_KEY\"))))\n  \n  # KPMG 지리정보 데이터프레임\n  address_list <- address_res %>% \n    content(as = 'text') %>% \n    fromJSON()\n  \n  ## 도로명주소\n  long_lat <- address_list$documents$road_address %>% \n    dplyr::select(x, y) %>% \n    mutate(across(.cols = c(x, y), as.numeric))\n  \n  return(long_lat)\n}\n# 주소를 지정합니다. \nkpmg_addr <- '서울특별시 강남구 역삼동 737' \nget_geocodes(kpmg_addr)\n\n         x        y\n1 127.0365 37.50002\n\n# get_geocodes('서울 종로구 서린동 99')\n\n\n\n2.1.2 지오코딩 실행\n기업수가 제법 되기 때문에 데이터프레임으로 주소를 앞서 개발한 사용자정의함수 get_geocodes()에 보내 위경도 정보를 받아 후속 분석 업무에 효율적으로 사용할 수 있도록 준비한다. 네이버 주소에 우편번호가 포함되어 있어 이를 위경도 좌표로 변환하는 과정에 오류가 있어 이를 발견하고 확인한 후 모든 종목에 대한 데이터를 깔끔하게 정리해둔다.\n\nmarcap_geocode <- marcap_address %>% \n  mutate(geocode_data = map(본사주소, safely(get_geocodes, otherwise = NA_real_)))\n\nmarcap_geocode_tbl <- marcap_geocode %>% \n  # select(종목명, geocode_data) %>% \n  mutate(result = map(geocode_data, \"result\")) %>% \n  # mutate(check = map_lgl(result, is.data.frame)) %>% \n  # filter(check) %>% \n  select(종목명, 홈페이지, 시가총액, 본사주소, result) %>% \n  unnest(result) \n  \nmarcap_geocode_tbl %>% \n  write_rds(glue::glue(\"{here::here()}/data/marcap_geocode.rds\"))"
+    "objectID": "youtube.html#파이널-컷의-개괄적-이해",
+    "href": "youtube.html#파이널-컷의-개괄적-이해",
+    "title": "동영상 글쓰기",
+    "section": "1 파이널 컷의 개괄적 이해",
+    "text": "1 파이널 컷의 개괄적 이해\n파이널 컷의 Library(라이브러리)는 Finder(윈도의 탐색기)의 Bundle(번들) fcpbundle의 확장자가 동영상 글쓰기의 모든 것을 담아낸다. 즉, 파이널 컷은 기본적으로 fcpbundle 확장자를 갖는 파일에 동영상 제작에 필요한 모든 자원(소리, 동영상, 이미지, 텍스트 등)을 한 곳에 저장한다."
   },
   {
-    "objectID": "posts/20221124_ftc/index.html#지도",
-    "href": "posts/20221124_ftc/index.html#지도",
-    "title": "대기업 본사 지도",
-    "section": "3.1 지도",
-    "text": "3.1 지도\n시가총액 상위 기업 본사 위치를 지도에 올리기 위해서 지도가 필요하다. 이를 위해서 leaflet 패키지가 필요하고 전체 지도를 표시하는 것은 의미가 없기 때문에 해당 본사가 위치한 특히 본사가 몰려있는 수도권에 한정하여 지도를 가져온다.\n\nlibrary(leaflet)\nlibrary(fontawesome)\n\nmarcap_geocode <- \n  read_rds(glue::glue(\"{here::here()}/data/marcap_geocode.rds\")) \n  \n\n## 서울경기도 중심\nlat_lng_tbl <- marcap_geocode %>% \n  filter(str_detect(본사주소, \"서울|경기\")) %>% \n  summarise(lat_mean = mean(y),\n            lng_mean = mean(x))\n\nleaflet(marcap_geocode) %>%\n  setView(lat = lat_lng_tbl$lat_mean, \n          lng = lat_lng_tbl$lng_mean, zoom=11) %>%\n  addTiles()"
+    "objectID": "youtube.html#importing-organizing",
+    "href": "youtube.html#importing-organizing",
+    "title": "동영상 글쓰기",
+    "section": "2 Importing & Organizing",
+    "text": "2 Importing & Organizing\n\n2.1 작업대 정리\n아무것도 없는 상황에서 시작작업을 설정한다. 이를 위해서 기존 fcpbundle 확장자를 갖는 라이브러리가 열려있는 경우 “Close Library”를 마우스 우클릭으로 실행한다. 그렇게 되면 깔끔한 작업공간이 생성된다.\n\n\n2.2 신규 라이브러리\n“Open Library” 를 클릭한 후 기존 작업된 라이브러리를 가져오거나 New…를 클릭하여 새로운 작업공간을 Finder에서 지정한다. 이를 통해서 Finder와 Final Cut 두 작업공간이 동기화 되었다.\n\n\n\n2.3 자원 가져오기\n아래 화살표 버튼을 클릭하면 동영상 편집에 사용되는 다양한 외부 자원(동영상, 소리, 이미지, 텍스트, 애니메이션 등)을 가져와서 작업대에서 다양한 요리를 통해 멋진 동영상을 제작할 수 있다.\n\n\n\n2.4 내장음원\nSound Effects가 내장되어 있어 필요한 음원을 검색하여 동영상에 녹여낸다."
   },
   {
-    "objectID": "posts/20221124_ftc/index.html#본사위치",
-    "href": "posts/20221124_ftc/index.html#본사위치",
-    "title": "대기업 본사 지도",
-    "section": "3.2 본사위치",
-    "text": "3.2 본사위치\n본사위치를 다른 곳과 달리하여 시각화를 한다.\n\n# 시각화 아이콘\nlandmark_icons <- awesomeIconList(\n  \"학교\" = makeAwesomeIcon(\n    icon = \"school\",\n    markerColor = \"blue\",\n    library = \"fa\",\n    text = fa(\"school\")\n  ),\n  \"기업\" = makeAwesomeIcon(\n    icon = \"walking\",\n    markerColor = \"green\",\n    library = \"fa\",\n    text = fa(\"walking\")\n  )\n)\n\nmarcap_geocode %>% \n  add_row(종목명 = \"한양대\", 홈페이지=\"https://www.hanyang.ac.kr/\", 시가총액 = 0,\n          본사주소 = \"서울 성동구 왕십리로 222\", \n          x = 127.0454092, y = 37.5571759) %>% \n  mutate(구분 = ifelse(종목명 == \"한양대\", \"학교\", \"기업\")) %>% \n  leaflet() %>%\n    setView(lat = lat_lng_tbl$lat_mean, \n            lng = lat_lng_tbl$lng_mean, zoom=11) %>%\n    addProviderTiles('CartoDB.Positron') %>%\n    addAwesomeMarkers(lat =~y, lng = ~x,\n                      clusterOptions = markerClusterOptions(),\n                      icon = ~ landmark_icons[구분],\n                      popup = ~ as.character(paste0(\"<strong>\", paste0(\"회사:\",`종목명`),\n                                                   \"</strong><br>\",\n                                                   \"-------------------------------------<br>\",\n                                                   \"&middot; 시총: \", round(`시가총액`,1), \"조<br>\",\n                                                   \"&middot; 주소: \", `본사주소`, \"<br>\",\n                                                   \"&middot; 홈페이지: \", `홈페이지`, \"<br>\"\n                     )))"
+    "objectID": "youtube.html#sequencing-시퀀싱하기",
+    "href": "youtube.html#sequencing-시퀀싱하기",
+    "title": "동영상 글쓰기",
+    "section": "3 Sequencing (시퀀싱하기)",
+    "text": "3 Sequencing (시퀀싱하기)\n결국 동영상 글쓰기는 프로젝트를 통해 다양한 자원을 시퀀싱하는 것으로 이해할 수 있다. 이를 위해 프로젝트를 생성하여 시퀀싱 작업을 수행한다.\n\n\n3.1 동영상 잘라내기\n요리재료 동영상을 자를 경우 시작점과 끝점을 지정하여 해당 동영상만 잘라내어 편집에 사용한다.\n\n동영상 잘라내기 위치 지정\n\nI, in-point 설정\nO, out-point 설정\n\n동영상 삽입위치 지정\n\nE, Main Storyline 맨뒤에 붙이기\nQ, Main Storyline에 연결하여 삽입\nW, Time Indicator 기준으로 중간에 삽입\n\n\n\n\n3.2 소리 편집\n소리를 편집해야 하는 경우 우측 하단에 있는 기능을 활용한다. 우선 동영상과 소리를 분리하고 소리를 편집하는 Blade를 사용하여 편집할 위치를 지정하고 ⌥ (Option, Alt) + ] 혹은 ⌥ (Option, Alt) + [ 을 사용한다. 혹은 단축키로 ⌘ + B… ⌘ + B를 눌러 날려버릴 영역의 지점을 표시하고 A키를 눌러 영역을 선정한 후 ⌫ 삭제키를 눌러 삭제한다. 즉,\n\n⌘ + B: 클립 자르기\n⌥ + [ 혹은 ] 앞뒤 잘라내기\n\n\n\n\n3.3 미세조정\n\n,: 좌측으로 1 프레임 잘라내기 (Trimming)\n\n쉬프트 ⇧ + ,: 좌측으로 10 프레임 잘라내기 (Trimming)\n\n.: 우측으로 1 프레임 잘라내기 (Trimming)\n\n쉬프트 ⇧ + .: 우측으로 10 프레임 잘라내기 (Trimming)\n\n쉬프트 ⇧ + /: 다듬어진 트림 결과 확인\n\n\n\n3.4 오디오 삭제\n동영상에 오디오가 딸려오는데 경우에 따라서 오디오를 날려버리고 영상만 필요한 경우가 있다. 이럴때 해당 클립을 선택하여 우클릭을 한다. 그리고 난 후 Expand Audio Components를 클릭하여 동영상에서 영상과 오디오를 분리하고 오디오를 삭제한다. 단축키는 ⌃ + ⌥ + S로 오디오를 분리한 후 삭제한다.\n\n\n\n3.5 볼륨조정\n오디오 클립을 선택한 후에 단축키를 사용해서 음량을 조절할 수 있다.\n\n⌃ + : 1 데시벨 음량 증가\n⌃ - : 1 데시벨 음량 감소\n\n양쪽 점을 클릭하여 음량에 대한 Fade 효과도 넣을 수 있다.\n\n\n\n3.6 텍스트 넣기\n⌃ + t 단축키를 사용하여 텍스트를 동영상에 올릴 수 있다.\n\n\n3.7 이미지 넣기\n다운로드 받은 이미지를 드래그하여 편집중인 작업대에 넣으면 자동으로 자원으로 삽입되고 이를 시퀀싱에 가져와서 적당한 곳에 넣으면 이미지를 동영상에 넣을 수 있다.\n\n\n3.8 이미지 이동 변형\n이미지를 영상 하단에 버튼을 클릭하여 자유롭게 영상을 이동시키고 크기를 확대축소한다.\n\n\n\n3.9 애니메이션\nCrop + Transform 기능을 사용하여 해당 영상에 애니메이션 기능 좌우 이동 혹은 확대축소를 할 수 있다.\n\n\n3.10 배경음 넣기\n음원을 선택하고** R (Range Selection)**을 눌러 배경음을 선택하고 소리를 배경음으로 넣어 줄인다.\n\n\n\n3.11 소리Limiter\n\n\n3.12 Transition\nCross Dissolve가 기본설정입니다.\n\n\n3.13 색보정"
   },
   {
-    "objectID": "posts/20221124_ftc/index.html#대기업-집단-순위",
-    "href": "posts/20221124_ftc/index.html#대기업-집단-순위",
-    "title": "대기업 본사 지도",
-    "section": "1.1 대기업 집단 순위",
-    "text": "1.1 대기업 집단 순위\n공정위 2022년 기준 공시대상 대기업집단 지정결과를 확인할 수 있다.\n\nlibrary(tidyverse)\nlibrary(readxl)\n\nrank_raw <- read_excel(glue::glue(\"{here::here()}/data/220428(조간) 2022년도 대기업집단 지정결과_별첨1.xlsx\"), sheet = \"22년\", skip = 4)\n\nrank_tbl <- rank_raw %>% \n  set_names(c(\"순위_22\", \"순위_21\", \"변동\", \"기업명\", \"동일인\", \"계열사_22\", \"계열사_21\", \"자산_22\", \"자산_21\")) %>% \n  filter(변동 !=\"제외\") %>% \n  select(기업명, 동일인, 계열사수=계열사_22, 자산총액 = 자산_22) %>% \n  mutate(계열사수 = parse_number(계열사수),\n         자산총액 = parse_number(자산총액)/1000) %>% \n  filter(!is.na(기업명))\n\nrank_tbl\n\n# A tibble: 76 × 4\n   기업명     동일인             계열사수 자산총액\n   <chr>      <chr>                 <dbl>    <dbl>\n 1 삼성       이재용                   60    484. \n 2 에스케이   최태원                  186    292. \n 3 현대자동차 정의선                   57    258. \n 4 엘지       구광모                   73    168. \n 5 롯데       신동빈                   85    122. \n 6 포스코     포스코홀딩스(주)         38     96.3\n 7 한화       김승연                   91     80.4\n 8 지에스     허창수                   93     76.8\n 9 현대중공업 정몽준                   36     75.3\n10 농협       농업협동조합중앙회       53     67.0\n# … with 66 more rows"
-  },
-  {
-    "objectID": "posts/20221124_ftc/index.html#본사-주소",
-    "href": "posts/20221124_ftc/index.html#본사-주소",
-    "title": "대기업 본사 지도",
-    "section": "1.2 본사 주소",
-    "text": "1.2 본사 주소\nfnguide 에서 기업주소록에서 엑셀파일로 가-하, A-Z, 0-9 기업본사주소가 담긴 정보를 다운로드 받아 후처리한다.\n\n.xls 파일을 .xlsx 파일 변환\n자세한 사항 How To Convert Multiple Xls Files To Xlsx Files In Excel? 참조하여 VBA 스크립트로 처리한다.\n\n\ncompany_list <- fs::dir_ls(glue::glue(\"{here::here()}/data/company_xlsx\"))\n\ncompany_raw <- map_df(company_list, read_excel)\n\ncompany_raw\n\n# A tibble: 2,553 × 6\n   종목명           시장   홈페이지                   본사주소    대표…¹  IR담당\n   <chr>            <chr>  <chr>                      <chr>       <chr>   <chr> \n 1 가비아           코스닥 ir.gabia.com               경기도 성…  1544-4… 02-82…\n 2 가온미디어       코스닥 www.kaonmedia.co.kr        경기도 성…  031-72… 031-7…\n 3 가온전선         코스피 www.gaoncable.com          경기도 군…  031-80… 031-8…\n 4 가온칩스         코스닥 www.gaonchips.com          경기도 성…  031-69… <NA>  \n 5 감성코퍼레이션   코스닥 www.virtualtek.co.kr       서울특별시… 02-314… 070-4…\n 6 강남제비스코     코스피 www.jevisco.com            부산광역시… 051-89… 051-8…\n 7 강스템바이오텍   코스닥 www.kangstem.com           서울시 강…  02-888… 02-20…\n 8 강원랜드         코스피 kangwonland.high1.com      강원도 정…  033-59… 033-5…\n 9 강원에너지       코스닥 www.kwb21.com              전라북도 …  031-35… 02-66…\n10 갤럭시아머니트리 코스닥 www.galaxiamoneytree.co.kr 서울시 강…  1566-0… 070-4…\n# … with 2,543 more rows, and abbreviated variable name ¹​대표전화"
-  },
-  {
-    "objectID": "posts/20221124_ftc/index.html#데이터-결합",
-    "href": "posts/20221124_ftc/index.html#데이터-결합",
-    "title": "대기업 본사 지도",
-    "section": "1.3 데이터 결합",
-    "text": "1.3 데이터 결합\n\nrank_tbl %>% \n  left_join(company_raw, by = c(\"기업명\" = \"종목명\")) %>% \n  filter(!is.na(본사주소))\n\n# A tibble: 23 × 9\n   기업명     동일인 계열사수 자산총액 시장   홈페이지    본사…¹  대표…²  IR담당\n   <chr>      <chr>     <dbl>    <dbl> <chr>  <chr>       <chr>   <chr>   <chr> \n 1 한화       김승연       91     80.4 코스피 www.hanwha… 서울시… 02-729… 02-72…\n 2 현대중공업 정몽준       36     75.3 코스피 www.hhi.co… 울산광… 052-20… 052-2…\n 3 신세계     이명희       53     61.1 코스피 www.shinse… 서울시… 02-727… 02-72…\n 4 한진       조원태       33     35.2 코스피 www.hanjin… 서울시… 02-728… 02-72…\n 5 카카오     김범수      136     32.2 코스피 www.kakaoc… 제주도… 1577-3… 1577-…\n 6 두산       박정원       21     26.3 코스피 www.doosan… 서울시… 02-339… 02-33…\n 7 DL         이준용       42     24.8 코스피 www.dlhold… 서울특… 02-201… 02-20…\n 8 현대백화점 정지선       23     18.2 코스피 www.ehyund… 서울특… 02-549… 02-54…\n 9 하림       김홍국       55     15.4 코스닥 www.harim.… 전북 …  063-86… 063-8…\n10 효성       조현준       53     14.8 코스피 www.hyosun… 서울시… 02-707… 02-70…\n# … with 13 more rows, and abbreviated variable names ¹​본사주소, ²​대표전화"
+    "objectID": "youtube.html#export내보내기",
+    "href": "youtube.html#export내보내기",
+    "title": "동영상 글쓰기",
+    "section": "4 Export(내보내기)",
+    "text": "4 Export(내보내기)"
   }
 ]
