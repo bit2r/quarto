@@ -16,7 +16,7 @@ format:
       - css/quarto-fonts.css
     code-fold: false
     toc: true
-    toc-depth: 2
+    toc-depth: 3
     toc-title: 목차
     number-sections: true
     highlight-style: github    
@@ -156,11 +156,28 @@ Cross Dissolve가 기본설정입니다.
 
 ### 색보정
 
+구매하여 사용한다.
 
+### 더빙
 
+&#x2325; + &#x2318; + 8 단축키를 통해 동영상에 목소리를 더빙하여 입힐 수 있다.
+
+![](images/final_cut_dubbing.png)
 
 ## Export(내보내기)
 
+### 썸네일 만들기
 
+`Save Current Frame...`을 클릭하여 썸네일을 제작한다.
 
+![](images/final_cut_thumbnail.png)
 
+### 저장하기
+
+`File` &rarr; `Delete Generated Library Files...` 선택하여 불필요한 파일들을 정리하여 삭제한다.
+
+![](images/final_cut_save.png)
+
+`File` &rarr; `Consolidate Library Media...` 선택하여 관련 파일들을 하나로 합치시킨다. 
+
+![](images/final_cut_save_consolidate.png)
