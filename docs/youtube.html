@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.237">
+<meta name="generator" content="quarto-1.3.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="dcterms.date" content="2022-12-01">
+<meta name="dcterms.date" content="2022-12-06">
 <meta name="description" content="2005년 스타트업으로 시작한 유튜브가 이제는 대세를 넘어 유튜브 없는 세상을 상상할 수 없게 되었다. 이제 동영상 글쓰기도 심각히 고민해봐야 하는 시점이 된 듯 싶다.">
 
 <title>Quarto 데이터 사이언스 - 동영상 글쓰기</title>
@@ -42,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,90 +90,90 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quarto_blog.html">
+    <a class="nav-link" href="./quarto_blog.html" rel="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="">
  <span class="menu-text">Quarto</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
         <li>
-    <a class="dropdown-item" href="./quarto_install.html">
+    <a class="dropdown-item" href="./quarto_install.html" rel="">
  <span class="dropdown-text">Quarto 설치/출판</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quarto_about.html">
+    <a class="dropdown-item" href="./quarto_about.html" rel="">
  <span class="dropdown-text">Quarto 소개</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="">
  <span class="menu-text">글쓰기</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="./writing_history.html">
+    <a class="dropdown-item" href="./writing_history.html" rel="">
  <span class="dropdown-text">문자와 종이 역사</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./hangul_encoding.html">
+    <a class="dropdown-item" href="./hangul_encoding.html" rel="">
  <span class="dropdown-text">한글 인코딩</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quarto_fonts.html">
+    <a class="dropdown-item" href="./quarto_fonts.html" rel="">
  <span class="dropdown-text">글꼴</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quarto_sass.html">
+    <a class="dropdown-item" href="./quarto_sass.html" rel="">
  <span class="dropdown-text">외양 SASS</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quarto_layout.html">
+    <a class="dropdown-item" href="./quarto_layout.html" rel="">
  <span class="dropdown-text">레이아웃</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quarto_latex.html">
+    <a class="dropdown-item" href="./quarto_latex.html" rel="">
  <span class="dropdown-text">한글 PDF 제작방법</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quarto_pdf.pdf">
+    <a class="dropdown-item" href="./quarto_pdf.pdf" rel="">
  <span class="dropdown-text">[사례] 한글 PDF</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./youtube.html">
+    <a class="dropdown-item" href="./youtube.html" rel="">
  <span class="dropdown-text">동영상 글쓰기</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="">
  <span class="menu-text">관련 정보</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
-    <a class="dropdown-item" href="https://use-r.kr/">
+    <a class="dropdown-item" href="https://use-r.kr/" rel="">
  <span class="dropdown-text">한국 R 컨퍼런스</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup">
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup" rel="">
  <span class="dropdown-text">서울 R Meetup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://tidyverse-korea.github.io/seoul-R/">
+    <a class="dropdown-item" href="https://tidyverse-korea.github.io/seoul-R/" rel="">
  <span class="dropdown-text">서울 R Meetup Archive</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://r-community.org/usergroups/">
+    <a class="dropdown-item" href="https://r-community.org/usergroups/" rel="">
  <span class="dropdown-text">글로벌 R Meetup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://quarto.org/">
+    <a class="dropdown-item" href="https://quarto.org/" rel="">
  <span class="dropdown-text">Quarto</span></a>
   </li>  
     </ul>
@@ -179,21 +181,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://r2bit.com">
+    <a class="nav-link" href="https://r2bit.com" rel="">
  <span class="menu-text">R사용자회</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw"><i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw" rel=""><i class="bi bi-youtube" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bit2r/quarto"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bit2r/quarto" rel=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse"><i class="bi bi-facebook" role="img">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse" rel=""><i class="bi bi-facebook" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -226,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
     
   <div class="quarto-title-meta-author">
     <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading"></div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
       <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
@@ -246,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 1, 2022</p>
+        <p class="date">December 6, 2022</p>
       </div>
     </div>
     
@@ -373,6 +375,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#썸네일-만들기" id="toc-썸네일-만들기" class="nav-link" data-scroll-target="#썸네일-만들기"><span class="toc-section-number">4.1</span>  썸네일 만들기</a></li>
   <li><a href="#저장하기" id="toc-저장하기" class="nav-link" data-scroll-target="#저장하기"><span class="toc-section-number">4.2</span>  저장하기</a></li>
   </ul></li>
+  <li><a href="#작업-결과물" id="toc-작업-결과물" class="nav-link" data-scroll-target="#작업-결과물"><span class="toc-section-number">5</span>  작업 결과물</a>
+  <ul class="collapse">
+  <li><a href="#gif-이미지" id="toc-gif-이미지" class="nav-link" data-scroll-target="#gif-이미지"><span class="toc-section-number">5.1</span>  GIF 이미지</a></li>
+  <li><a href="#디지털-글쓰기" id="toc-디지털-글쓰기" class="nav-link" data-scroll-target="#디지털-글쓰기"><span class="toc-section-number">5.2</span>  디지털 글쓰기</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -383,39 +390,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">용호수님의 <a href="https://www.youtube.com/watch?v=2aORJ7hKVMI">파이널 컷 한시간에 끝내기</a>에 언급된 사항을 중심으로 요약</span></div></div>
-<section id="파이널-컷의-개괄적-이해" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="파이널-컷의-개괄적-이해"><span class="header-section-number">1</span> 파이널 컷의 개괄적 이해</h2>
+<section id="파이널-컷의-개괄적-이해" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 파이널 컷의 개괄적 이해</h1>
 <p>파이널 컷의 <strong>Library(라이브러리)</strong>는 Finder(윈도의 탐색기)의 Bundle(번들) <code>fcpbundle</code>의 확장자가 동영상 글쓰기의 모든 것을 담아낸다. 즉, 파이널 컷은 기본적으로 <code>fcpbundle</code> 확장자를 갖는 파일에 동영상 제작에 필요한 모든 자원(소리, 동영상, 이미지, 텍스트 등)을 한 곳에 저장한다.</p>
 <p><img src="images/final_cut_overview.png" class="img-fluid"></p>
 </section>
-<section id="importing-organizing" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="importing-organizing"><span class="header-section-number">2</span> Importing &amp; Organizing</h2>
-<section id="작업대-정리" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="작업대-정리"><span class="header-section-number">2.1</span> 작업대 정리</h3>
+<section id="importing-organizing" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Importing &amp; Organizing</h1>
+<section id="작업대-정리" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="작업대-정리"><span class="header-section-number">2.1</span> 작업대 정리</h2>
 <p>아무것도 없는 상황에서 시작작업을 설정한다. 이를 위해서 기존 <code>fcpbundle</code> 확장자를 갖는 라이브러리가 열려있는 경우 “Close Library”를 마우스 우클릭으로 실행한다. 그렇게 되면 깔끔한 작업공간이 생성된다.</p>
 </section>
-<section id="신규-라이브러리" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="신규-라이브러리"><span class="header-section-number">2.2</span> 신규 라이브러리</h3>
+<section id="신규-라이브러리" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="신규-라이브러리"><span class="header-section-number">2.2</span> 신규 라이브러리</h2>
 <p><strong>“Open Library”</strong> 를 클릭한 후 기존 작업된 라이브러리를 가져오거나 <strong>New…</strong>를 클릭하여 새로운 작업공간을 Finder에서 지정한다. 이를 통해서 Finder와 Final Cut 두 작업공간이 동기화 되었다.</p>
 <p><img src="images/final_cut_library.png" class="img-fluid"></p>
 </section>
-<section id="자원-가져오기" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="자원-가져오기"><span class="header-section-number">2.3</span> 자원 가져오기</h3>
+<section id="자원-가져오기" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="자원-가져오기"><span class="header-section-number">2.3</span> 자원 가져오기</h2>
 <p>아래 화살표 버튼을 클릭하면 동영상 편집에 사용되는 다양한 외부 자원(동영상, 소리, 이미지, 텍스트, 애니메이션 등)을 가져와서 작업대에서 다양한 요리를 통해 멋진 동영상을 제작할 수 있다.</p>
 <p><img src="images/final_cut_import.png" class="img-fluid"></p>
 </section>
-<section id="내장음원" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="내장음원"><span class="header-section-number">2.4</span> 내장음원</h3>
+<section id="내장음원" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="내장음원"><span class="header-section-number">2.4</span> 내장음원</h2>
 <p><strong>Sound Effects</strong>가 내장되어 있어 필요한 음원을 검색하여 동영상에 녹여낸다.</p>
 <p><img src="images/final_cut_audio_builtin.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="sequencing-시퀀싱하기" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="sequencing-시퀀싱하기"><span class="header-section-number">3</span> Sequencing (시퀀싱하기)</h2>
+<section id="sequencing-시퀀싱하기" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Sequencing (시퀀싱하기)</h1>
 <p>결국 동영상 글쓰기는 프로젝트를 통해 다양한 자원을 시퀀싱하는 것으로 이해할 수 있다. 이를 위해 프로젝트를 생성하여 시퀀싱 작업을 수행한다.</p>
 <p><img src="images/final_cut_project.png" class="img-fluid"></p>
-<section id="동영상-잘라내기" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="동영상-잘라내기"><span class="header-section-number">3.1</span> 동영상 잘라내기</h3>
+<section id="동영상-잘라내기" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="동영상-잘라내기"><span class="header-section-number">3.1</span> 동영상 잘라내기</h2>
 <p>요리재료 동영상을 자를 경우 시작점과 끝점을 지정하여 해당 동영상만 잘라내어 편집에 사용한다.</p>
 <ul>
 <li>동영상 잘라내기 위치 지정
@@ -431,8 +438,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="소리-편집" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="소리-편집"><span class="header-section-number">3.2</span> 소리 편집</h3>
+<section id="소리-편집" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="소리-편집"><span class="header-section-number">3.2</span> 소리 편집</h2>
 <p>소리를 편집해야 하는 경우 우측 하단에 있는 기능을 활용한다. 우선 동영상과 소리를 분리하고 소리를 편집하는 Blade를 사용하여 편집할 위치를 지정하고 <strong>⌥ (Option, Alt) + <code>]</code></strong> 혹은 <strong>⌥ (Option, Alt) + <code>[</code></strong> 을 사용한다. 혹은 단축키로 ⌘ + <code>B</code>… ⌘ + <code>B</code>를 눌러 날려버릴 영역의 지점을 표시하고 <code>A</code>키를 눌러 영역을 선정한 후 ⌫ 삭제키를 눌러 삭제한다. 즉,</p>
 <ul>
 <li>⌘ + B: 클립 자르기</li>
@@ -440,8 +447,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><img src="images/final_cut_audio.png" class="img-fluid"></p>
 </section>
-<section id="미세조정" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="미세조정"><span class="header-section-number">3.3</span> 미세조정</h3>
+<section id="미세조정" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="미세조정"><span class="header-section-number">3.3</span> 미세조정</h2>
 <ul>
 <li><code>,</code>: 좌측으로 1 프레임 잘라내기 (Trimming)
 <ul>
@@ -454,13 +461,13 @@ ul.task-list li input[type="checkbox"] {
 <li>쉬프트 ⇧ + <code>/</code>: 다듬어진 트림 결과 확인</li>
 </ul>
 </section>
-<section id="오디오-삭제" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="오디오-삭제"><span class="header-section-number">3.4</span> 오디오 삭제</h3>
+<section id="오디오-삭제" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="오디오-삭제"><span class="header-section-number">3.4</span> 오디오 삭제</h2>
 <p>동영상에 오디오가 딸려오는데 경우에 따라서 오디오를 날려버리고 영상만 필요한 경우가 있다. 이럴때 해당 클립을 선택하여 우클릭을 한다. 그리고 난 후 <code>Expand Audio Components</code>를 클릭하여 동영상에서 영상과 오디오를 분리하고 오디오를 삭제한다. 단축키는 <strong>⌃ + ⌥ + S</strong>로 오디오를 분리한 후 삭제한다.</p>
 <p><img src="images/final_cut_audio_remove.png" class="img-fluid"></p>
 </section>
-<section id="볼륨조정" class="level3" data-number="3.5">
-<h3 data-number="3.5" class="anchored" data-anchor-id="볼륨조정"><span class="header-section-number">3.5</span> 볼륨조정</h3>
+<section id="볼륨조정" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="볼륨조정"><span class="header-section-number">3.5</span> 볼륨조정</h2>
 <p>오디오 클립을 선택한 후에 단축키를 사용해서 음량을 조절할 수 있다.</p>
 <ul>
 <li>⌃ + : 1 데시벨 음량 증가</li>
@@ -469,58 +476,82 @@ ul.task-list li input[type="checkbox"] {
 <p>양쪽 점을 클릭하여 음량에 대한 Fade 효과도 넣을 수 있다.</p>
 <p><img src="images/final_cut_audio_fade.png" class="img-fluid"></p>
 </section>
-<section id="텍스트-넣기" class="level3" data-number="3.6">
-<h3 data-number="3.6" class="anchored" data-anchor-id="텍스트-넣기"><span class="header-section-number">3.6</span> 텍스트 넣기</h3>
+<section id="텍스트-넣기" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="텍스트-넣기"><span class="header-section-number">3.6</span> 텍스트 넣기</h2>
 <p>⌃ + t 단축키를 사용하여 텍스트를 동영상에 올릴 수 있다.</p>
 </section>
-<section id="이미지-넣기" class="level3" data-number="3.7">
-<h3 data-number="3.7" class="anchored" data-anchor-id="이미지-넣기"><span class="header-section-number">3.7</span> 이미지 넣기</h3>
+<section id="이미지-넣기" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="이미지-넣기"><span class="header-section-number">3.7</span> 이미지 넣기</h2>
 <p>다운로드 받은 이미지를 드래그하여 편집중인 작업대에 넣으면 자동으로 자원으로 삽입되고 이를 시퀀싱에 가져와서 적당한 곳에 넣으면 이미지를 동영상에 넣을 수 있다.</p>
 </section>
-<section id="이미지-이동-변형" class="level3" data-number="3.8">
-<h3 data-number="3.8" class="anchored" data-anchor-id="이미지-이동-변형"><span class="header-section-number">3.8</span> 이미지 이동 변형</h3>
+<section id="이미지-이동-변형" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="이미지-이동-변형"><span class="header-section-number">3.8</span> 이미지 이동 변형</h2>
 <p>이미지를 영상 하단에 버튼을 클릭하여 자유롭게 영상을 이동시키고 크기를 확대축소한다.</p>
 <p><img src="images/final_cut_image.png" class="img-fluid"></p>
 </section>
-<section id="애니메이션" class="level3" data-number="3.9">
-<h3 data-number="3.9" class="anchored" data-anchor-id="애니메이션"><span class="header-section-number">3.9</span> 애니메이션</h3>
+<section id="애니메이션" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="애니메이션"><span class="header-section-number">3.9</span> 애니메이션</h2>
 <p>Crop + Transform 기능을 사용하여 해당 영상에 애니메이션 기능 좌우 이동 혹은 확대축소를 할 수 있다.</p>
 </section>
-<section id="배경음-넣기" class="level3" data-number="3.10">
-<h3 data-number="3.10" class="anchored" data-anchor-id="배경음-넣기"><span class="header-section-number">3.10</span> 배경음 넣기</h3>
+<section id="배경음-넣기" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="배경음-넣기"><span class="header-section-number">3.10</span> 배경음 넣기</h2>
 <p>음원을 선택하고** R (Range Selection)**을 눌러 배경음을 선택하고 소리를 배경음으로 넣어 줄인다.</p>
 <p><img src="images/final_cut_background_sound.png" class="img-fluid"></p>
 </section>
-<section id="소리limiter" class="level3" data-number="3.11">
-<h3 data-number="3.11" class="anchored" data-anchor-id="소리limiter"><span class="header-section-number">3.11</span> 소리Limiter</h3>
+<section id="소리limiter" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="소리limiter"><span class="header-section-number">3.11</span> 소리Limiter</h2>
 </section>
-<section id="transition" class="level3" data-number="3.12">
-<h3 data-number="3.12" class="anchored" data-anchor-id="transition"><span class="header-section-number">3.12</span> Transition</h3>
+<section id="transition" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="transition"><span class="header-section-number">3.12</span> Transition</h2>
 <p>Cross Dissolve가 기본설정입니다.</p>
 </section>
-<section id="색보정" class="level3" data-number="3.13">
-<h3 data-number="3.13" class="anchored" data-anchor-id="색보정"><span class="header-section-number">3.13</span> 색보정</h3>
+<section id="색보정" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="색보정"><span class="header-section-number">3.13</span> 색보정</h2>
 <p>구매하여 사용한다.</p>
 </section>
-<section id="더빙" class="level3" data-number="3.14">
-<h3 data-number="3.14" class="anchored" data-anchor-id="더빙"><span class="header-section-number">3.14</span> 더빙</h3>
+<section id="더빙" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="더빙"><span class="header-section-number">3.14</span> 더빙</h2>
 <p>⌥ + ⌘ + 8 단축키를 통해 동영상에 목소리를 더빙하여 입힐 수 있다.</p>
 <p><img src="images/final_cut_dubbing.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="export내보내기" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="export내보내기"><span class="header-section-number">4</span> Export(내보내기)</h2>
-<section id="썸네일-만들기" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="썸네일-만들기"><span class="header-section-number">4.1</span> 썸네일 만들기</h3>
+<section id="export내보내기" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Export(내보내기)</h1>
+<section id="썸네일-만들기" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="썸네일-만들기"><span class="header-section-number">4.1</span> 썸네일 만들기</h2>
 <p><code>Save Current Frame...</code>을 클릭하여 썸네일을 제작한다.</p>
 <p><img src="images/final_cut_thumbnail.png" class="img-fluid"></p>
 </section>
-<section id="저장하기" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="저장하기"><span class="header-section-number">4.2</span> 저장하기</h3>
+<section id="저장하기" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="저장하기"><span class="header-section-number">4.2</span> 저장하기</h2>
 <p><code>File</code> → <code>Delete Generated Library Files...</code> 선택하여 불필요한 파일들을 정리하여 삭제한다.</p>
 <p><img src="images/final_cut_save.png" class="img-fluid"></p>
 <p><code>File</code> → <code>Consolidate Library Media...</code> 선택하여 관련 파일들을 하나로 합치시킨다.</p>
 <p><img src="images/final_cut_save_consolidate.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="작업-결과물" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 작업 결과물</h1>
+<section id="gif-이미지" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="gif-이미지"><span class="header-section-number">5.1</span> GIF 이미지</h2>
+<div id="figs-final" class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="fig/jobshop.gif" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="fig/quarto_to_go.mp4"></video></div>
+</div>
+</div>
+</div>
+<ul>
+<li><a href="fig/jobshop.mp4">현재상황</a></li>
+<li><a href="fig/quarto_to_go.mp4">쿼토 도구</a></li>
+</ul>
+</section>
+<section id="디지털-글쓰기" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="디지털-글쓰기"><span class="header-section-number">5.2</span> 디지털 글쓰기</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/y7Ai5TUVCEQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 </section>
@@ -666,6 +697,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
