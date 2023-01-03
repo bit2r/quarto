@@ -22,6 +22,9 @@ format:
 bibliography: bibliography.bib
 link-citations: yes
 csl: apa-single-spaced.csl
+filters:
+   - lightbox
+lightbox: auto
 ---
 
 # 환경설치 방법
@@ -52,3 +55,15 @@ csl: apa-single-spaced.csl
 ## 유튜브 동영상
 
 {{< video https://youtu.be/c3ZQ8-OYj2M >}}
+
+
+# 코딩 글꼴
+
+다른 언어와 마찬가지로 R 코드로 데이터 과학 제품을 개발할 경우 글꼴도 코딩에 적합한 한글 글꼴을 설정한다.
+
+먼저 [D2 Coding 글꼴](https://github.com/naver/d2codingfont)을 다운로드 받아 운영체제에 설치한다.
+
+VS Code 좌측 하단 톱니바퀴 <kbd> Settings </kbd> 설정을 클릭 혹은 메뉴에서 "File" &rarr; "Preferences" &rarr; "Settings"를 통해 `편집기 (Text Editor)`로 들어가 운영체제에 설치한 코딩 폰트를 지정한다. **Font Ligatures** 도 `true`로 설정한다. 이를 통해 `< -` 표시가 &larra; 로 화면에 표현된다.
+
+![D2코딩 글꼴 장착](fig/vscode_font.png)
+

@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -360,6 +363,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#헬로우-월드" id="toc-헬로우-월드" class="nav-link" data-scroll-target="#헬로우-월드"><span class="toc-section-number">1.2</span>  헬로우 월드</a></li>
   <li><a href="#유튜브-동영상" id="toc-유튜브-동영상" class="nav-link" data-scroll-target="#유튜브-동영상"><span class="toc-section-number">1.3</span>  유튜브 동영상</a></li>
   </ul></li>
+  <li><a href="#코딩-글꼴" id="toc-코딩-글꼴" class="nav-link" data-scroll-target="#코딩-글꼴"><span class="toc-section-number">2</span>  코딩 글꼴</a></li>
   </ul>
 </nav>
     </div>
@@ -387,7 +391,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>R extension</code>을 설치하게 되면 VS Code에서 R 코드 개발을 원활히 할 수 있도록 지원한다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig/vscode_R_extension.png" class="img-fluid figure-img"></p>
+<p><a href="fig/vscode_R_extension.png" class="lightbox" title="VS Code를 실행하고 R Extension 설치" data-gallery="quarto-lightbox-gallery-1"><img src="fig/vscode_R_extension.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">VS Code를 실행하고 R Extension 설치</figcaption><p></p>
 </figure>
 </div>
@@ -397,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>R Extension</code> 설치되면 코드 창 상단에 실행버튼이 활성화되고 <kbd>Ctrl</kbd> + <kbd>Enter</kbd> 혹은 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig/vscode_helloworld.png" class="img-fluid figure-img"></p>
+<p><a href="fig/vscode_helloworld.png" class="lightbox" title="R 코드 실행화면" data-gallery="quarto-lightbox-gallery-2"><img src="fig/vscode_helloworld.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">R 코드 실행화면</figcaption><p></p>
 </figure>
 </div>
@@ -405,9 +409,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="유튜브-동영상" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="유튜브-동영상"><span class="header-section-number">1.3</span> 유튜브 동영상</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/c3ZQ8-OYj2M" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-
-
 </section>
+</section>
+<section id="코딩-글꼴" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 코딩 글꼴</h1>
+<p>다른 언어와 마찬가지로 R 코드로 데이터 과학 제품을 개발할 경우 글꼴도 코딩에 적합한 한글 글꼴을 설정한다.</p>
+<p>먼저 <a href="https://github.com/naver/d2codingfont">D2 Coding 글꼴</a>을 다운로드 받아 운영체제에 설치한다.</p>
+<p>VS Code 좌측 하단 톱니바퀴 <kbd> Settings </kbd> 설정을 클릭 혹은 메뉴에서 “File” → “Preferences” → “Settings”를 통해 <code>편집기 (Text Editor)</code>로 들어가 운영체제에 설치한 코딩 폰트를 지정한다. <strong>Font Ligatures</strong> 도 <code>true</code>로 설정한다. 이를 통해 <code>&lt; -</code> 표시가 &amp;larra; 로 화면에 표현된다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/vscode_font.png" class="lightbox" title="D2코딩 글꼴 장착" data-gallery="quarto-lightbox-gallery-3"><img src="fig/vscode_font.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">D2코딩 글꼴 장착</figcaption><p></p>
+</figure>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -550,6 +566,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":true});</script>
 
 
 
