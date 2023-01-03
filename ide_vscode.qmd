@@ -1,0 +1,54 @@
+---
+title: "Visual Studio Code"
+description: "비쥬얼 스튜디오 코드 IDE를 사용하여 개발 생산성을 높인다."
+date: today # 날짜 설정: now, last-modified
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    toc: true
+    toc-depth: 2
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+bibliography: bibliography.bib
+link-citations: yes
+csl: apa-single-spaced.csl
+---
+
+# 환경설치 방법
+
+1. R을 설치한다.
+2. `languageserver` 패키지를 설치한다.
+  - `install.packages("languageserver")`
+3. Visual Studio Code 에서 `R extension`을 설치한다.
+4. `.R` 파일에 개발을 시작한다.
+
+
+## `R extension` 설치
+
+`R extension`을 설치하게 되면 VS Code에서 R 코드 개발을 원활히 할 수 있도록 지원한다. 
+
+
+![VS Code를 실행하고 R Extension 설치](fig/vscode_R_extension.png)
+
+## 헬로우 월드
+
+`R Extension` 설치되면 코드 창 상단에 실행버튼이 활성화되고 <kbd>Ctrl</kbd> + <kbd>Enter</kbd> 혹은 
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+
+
+![R 코드 실행화면](fig/vscode_helloworld.png)
+
+
+## 유튜브 동영상
+
+{{< video https://youtu.be/c3ZQ8-OYj2M >}}

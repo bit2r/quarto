@@ -57,6 +57,10 @@ website:
             text: "글로벌 R Meetup"
           - href: https://quarto.org/
             text: "Quarto"
+      - text: "IDE"
+        menu: 
+          - href: ide_vscode.qmd
+            text: "Visual Studio Code"
     right: 
       - href: https://r2bit.com
         text: "R사용자회"

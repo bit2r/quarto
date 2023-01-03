@@ -515,7 +515,7 @@
     "href": "quarto_slideshow.html#executable-code",
     "title": "Quarto Presentations",
     "section": "Executable Code",
-    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\n\nLearn more: Executable Code"
+    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\n\n\n\nLearn more: Executable Code"
   },
   {
     "objectID": "quarto_slideshow.html#latex-equations",
@@ -529,7 +529,7 @@
     "href": "quarto_slideshow.html#column-layout",
     "title": "Quarto Presentations",
     "section": "Column Layout",
-    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\nMotor Trend Car Road Tests\nThe data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.440\n\n\nValiant\n18.1\n6\n225\n105\n3.460\n\n\n\n\n\n\n\n\nLearn more: Multiple Columns"
+    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\n\nMotor Trend Car Road Tests\nThe data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.440\n\n\nValiant\n18.1\n6\n225\n105\n3.460\n\n\n\n\n\n\n\n\nLearn more: Multiple Columns"
   },
   {
     "objectID": "quarto_slideshow.html#incremental-lists",
@@ -606,7 +606,7 @@
     "href": "quarto_slideshow.html#interactive-slides-1",
     "title": "Quarto Presentations",
     "section": "Interactive Slides",
-    "text": "Interactive Slides\nTurn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.\n\n\n\n\n\nviewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Observable, Shiny, Component Layout"
+    "text": "Interactive Slides\nTurn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.\n\n\n\n\n\nviewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Observable, Shiny, Component Layout"
   },
   {
     "objectID": "quarto_slideshow.html#preview-links",
@@ -648,7 +648,7 @@
     "href": "quarto_slideshow.html#speaker-view",
     "title": "Quarto Presentations",
     "section": "Speaker View",
-    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\n\nLearn more: Speaker View"
+    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\n\n\n\n\n\nLearn more: Speaker View"
   },
   {
     "objectID": "quarto_slideshow.html#authoring-tools",
@@ -669,7 +669,7 @@
     "href": "quarto_slideshow.html#and-more",
     "title": "Quarto Presentations",
     "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\nhttps://quarto.org"
+    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations"
   },
   {
     "objectID": "slideshow/data-science.html",
@@ -725,7 +725,7 @@
     "href": "slideshow/index.html#데이터-과학-욕구단계설",
     "title": "Quarto 데이터 사이언스",
     "section": "데이터 과학 욕구단계설",
-    "text": "데이터 과학 욕구단계설\n\n\n매슬로 욕구단계설\n가치 피라미드"
+    "text": "데이터 과학 욕구단계설\n\n매슬로 욕구단계설가치 피라미드"
   },
   {
     "objectID": "slideshow/index.html#section-2",
@@ -746,42 +746,42 @@
     "href": "slideshow/index.html#데이터-사이언스---출판",
     "title": "Quarto 데이터 사이언스",
     "section": "데이터 사이언스 - 출판",
-    "text": "데이터 사이언스 - 출판\n\n\n문제점\n개념\nSingle Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
+    "text": "데이터 사이언스 - 출판\n\n문제점개념Single Sourcing Multi-Use\n\n\n\n\n\nFigure 1: 문제점\n\n\n\n\n\n\n\nFigure 2: Single Sourcing 개념\n\n\n\n\n\n\n\nFigure 3: Single Sourcing Multi-Use"
   },
   {
     "objectID": "slideshow/index.html#복잡성",
     "href": "slideshow/index.html#복잡성",
     "title": "Quarto 데이터 사이언스",
     "section": "복잡성",
-    "text": "복잡성\n\n\n\n엑셀 1\n\n\n아래한글 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nXKCD 1667: AlgorithmsWriting Technical Papers with Markdown and Pandoc"
+    "text": "복잡성\n\n엑셀 1아래한글 2"
   },
   {
     "objectID": "slideshow/index.html#시각화---그래프-문법",
     "href": "slideshow/index.html#시각화---그래프-문법",
     "title": "Quarto 데이터 사이언스",
-    "section": "시각화 - 그래프 문법 1\n",
-    "text": "시각화 - 그래프 문법 1\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n실행결과\n\n\n\n\n\n\n\n\nComparing ggplot2 and R Base Graphics By Nathan Yau"
+    "section": "시각화 - 그래프 문법 3",
+    "text": "시각화 - 그래프 문법 3\n\n\n\n\n\nR 코드\n\nlibrary(tidyverse)\nbill_df <- data.frame(\n  sex = factor(c(\"여성\",\"여성\",\"남성\",\"남성\")),\n  time = factor(c(\"점심\",\"저녁\",\"점심\",\"저녁\"), levels=c(\"점심\",\"저녁\")),\n  total_bill = c(13.53, 16.81, 16.24, 17.42)\n)\n\n\n\n\n실행결과\n\nbill_df\n\n   sex time total_bill\n1 여성 점심      13.53\n2 여성 저녁      16.81\n3 남성 점심      16.24\n4 남성 저녁      17.42\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_df %>% \n  ggplot(aes(x=time, y=total_bill, group=sex, shape=sex, colour=sex)) +\n    geom_line(aes(linetype=sex), size=1) +    \n    geom_point(size=3, fill=\"white\") +        \n    expand_limits(y=0) +                      \n    scale_colour_hue(name=\"결재자 성별\", l=30) +\n    scale_shape_manual(name=\"결재자 성별\", values=c(22,21)) +\n    scale_linetype_discrete(name=\"결재자 성별\") +\n    xlab(\"점심, 석식\") + ylab(\"팁(Tip)\") +\n    ggtitle(\"식사 결재 평균 팁\") +    \n    theme_bw() +\n    theme(legend.position=c(.7, .4))\n\n\n\n\n실행결과\n\n\n\n\n\n\n\n\n\n\n\n\nR 코드\n\nbill_mat <- matrix( bill_df$total_bill,\n                   nrow = 2,\n                   byrow=TRUE,\n                   dimnames = list(c(\"여성\", \"남성\"), c(\"점심\", \"저녁\"))\n                   )\n\nmf_col <- c(\"#3CC3BD\", \"#FD8210\")\nbarplot(bill_mat, beside = TRUE, border=NA, col=mf_col)\nlegend(\"topleft\", row.names(bill_mat), pch=15, col=mf_col)\n\n\npar(cex=1.2, cex.axis=1.1)\nmatplot(bill_mat, type=\"b\", lty=1, pch=19, col=mf_col,\n    cex=1.5, lwd=3, las=1, bty=\"n\", xaxt=\"n\",\n    xlim=c(0.7, 2.2), ylim=c(12,18), ylab=\"\",\n    main=\"식사 결재 평균 팁\", yaxt=\"n\")\naxis(2, at=axTicks(2), labels=sprintf(\"$%s\", axTicks(2)),\n    las=1, cex.axis=0.8, col=NA, line = -0.5)\ngrid(NA, NULL, lty=3, lwd=1, col=\"#000000\")\nabline(v=c(1,2), lty=3, lwd=1, col=\"#000000\")\nmtext(\"점심\", side=1, at=1)\nmtext(\"저녁\", side=1, at=2)\ntext(1.5, 17.3, \"남성\", srt=8, font=3)\ntext(1.5, 15.1, \"여성\", srt=33, font=3)\n\n\n\n\n실행결과"
   },
   {
     "objectID": "slideshow/index.html#디자인---코드",
     "href": "slideshow/index.html#디자인---코드",
     "title": "Quarto 데이터 사이언스",
     "section": "디자인 - 코드",
-    "text": "디자인 - 코드\n\n\n데이터 가공\ndplyr R\nBase R\nSQL\n파이썬\n\n\n\n\n날짜와 시간별로 총 빈도수와 출발연착 평균 시간을 구한다. 단, 총빈도수가 10 회 미만인 것은 제외하고 출발연착 시간의 결측값을 제거하고 계산한다.\n\n\n\nflights 데이터프레임에서\n출발 연착시간(dep_delay) 칼럼에서 결측값이 없는 (!is.na()) 행을 필터링 하고\n날짜별(date), 시간별(hour) 그룹을 묶어\n평균 출발 연착시간을 계산하고 총빈도수 총계를 내고\n총빈도수가 10회 이상인 날짜와 시간을 찾아내시오\n\n\n\n\nhourly_delay <- flights %>%  \n  filter(!is.na(dep_delay)) %>% \n  group_by(date, hour) %>% \n  summarise(delay = mean(dep_delay), n = n()) %>%  \n  filter(n > 10) \n\n\n\n\nhourly_delay <- filter(   \n    summarise(   \n        group_by(   \n             filter(   \n                 flights,    \n                 !is.na(dep_delay)   \n             ),    \n             date, hour   \n        ),    \n    delay = mean(dep_delay),    \n         n = n()   \n    ),    \n    n > 10   \n)\n\n\n\n\nSELECT \"date\", \"hour\", \"delay\", \"n\"\nFROM (\n    SELECT \"date\", \"hour\",\n        AVG(\"dep_delay\") AS \"delay\",\n        COUNT() AS \"n\"\n    FROM \"flights\"\n    WHERE NOT(\"dep_delay\" IS NULL)\n    GROUP BY \"date\", \"hour\"\n) AS \"_W1\"\nWHERE \"n\" > 10.0\n\n\n\n\nflights[['date','hour','dep_delay']]\n..."
+    "text": "디자인 - 코드\n\n데이터 가공dplyr RBase RSQL파이썬\n\n\n\n날짜와 시간별로 총 빈도수와 출발연착 평균 시간을 구한다. 단, 총빈도수가 10 회 미만인 것은 제외하고 출발연착 시간의 결측값을 제거하고 계산한다.\n\n\nflights 데이터프레임에서\n출발 연착시간(dep_delay) 칼럼에서 결측값이 없는 (!is.na()) 행을 필터링 하고\n날짜별(date), 시간별(hour) 그룹을 묶어\n평균 출발 연착시간을 계산하고 총빈도수 총계를 내고\n총빈도수가 10회 이상인 날짜와 시간을 찾아내시오\n\n\n\n\nhourly_delay <- flights %>%  \n  filter(!is.na(dep_delay)) %>% \n  group_by(date, hour) %>% \n  summarise(delay = mean(dep_delay), n = n()) %>%  \n  filter(n > 10) \n\n\n\n\nhourly_delay <- filter(   \n    summarise(   \n        group_by(   \n             filter(   \n                 flights,    \n                 !is.na(dep_delay)   \n             ),    \n             date, hour   \n        ),    \n    delay = mean(dep_delay),    \n         n = n()   \n    ),    \n    n > 10   \n)\n\n\n\n\nSELECT \"date\", \"hour\", \"delay\", \"n\"\nFROM (\n    SELECT \"date\", \"hour\",\n        AVG(\"dep_delay\") AS \"delay\",\n        COUNT() AS \"n\"\n    FROM \"flights\"\n    WHERE NOT(\"dep_delay\" IS NULL)\n    GROUP BY \"date\", \"hour\"\n) AS \"_W1\"\nWHERE \"n\" > 10.0\n\n\n\n\nflights[['date','hour','dep_delay']]\n..."
   },
   {
     "objectID": "slideshow/index.html#디자인---데이터",
     "href": "slideshow/index.html#디자인---데이터",
     "title": "Quarto 데이터 사이언스",
     "section": "디자인 - 데이터",
-    "text": "디자인 - 데이터\n\n\n정돈된 데이터\n사례 - 결핵 데이터\n사례 - Messy 데이터\n사례 - 코드\n사례 - Tidy 데이터\n\n\n\n\n\n\n\n\n\nWHO 결핵 원데이터\n\nWHO 에서 년도별, 국가별, 연령별, 성별, 진단방법별 결핵 발병사례 조사 통계 데이터\n진단방법\n\n\nrel stands for cases of relapse\n\nep stands for cases of extrapulmonary TB\n\nsn stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)\n\nsp stands for cases of pulmonary TB that could be diagnosed by a pulmonary smear (smear positive)\n\n\n연령\n\n014 = 0 – 14 years old\n1524 = 15 – 24 years old\n2534 = 25 – 34 years old\n3544 = 35 – 44 years old\n4554 = 45 – 54 years old\n5564 = 55 – 64 years old\n65 = 65 or older\n\n\n성별\n\nmales (m)\nfemales (f)\n\n\n\n\n\n\nlibrary(tidyverse)\ntidyr::who \n\n# A tibble: 7,240 × 60\n   country     iso2  iso3   year new_s…¹ new_s…² new_s…³ new_s…⁴ new_s…⁵ new_s…⁶\n   <chr>       <chr> <chr> <int>   <int>   <int>   <int>   <int>   <int>   <int>\n 1 Afghanistan AF    AFG    1980      NA      NA      NA      NA      NA      NA\n 2 Afghanistan AF    AFG    1981      NA      NA      NA      NA      NA      NA\n 3 Afghanistan AF    AFG    1982      NA      NA      NA      NA      NA      NA\n 4 Afghanistan AF    AFG    1983      NA      NA      NA      NA      NA      NA\n 5 Afghanistan AF    AFG    1984      NA      NA      NA      NA      NA      NA\n 6 Afghanistan AF    AFG    1985      NA      NA      NA      NA      NA      NA\n 7 Afghanistan AF    AFG    1986      NA      NA      NA      NA      NA      NA\n 8 Afghanistan AF    AFG    1987      NA      NA      NA      NA      NA      NA\n 9 Afghanistan AF    AFG    1988      NA      NA      NA      NA      NA      NA\n10 Afghanistan AF    AFG    1989      NA      NA      NA      NA      NA      NA\n# … with 7,230 more rows, 50 more variables: new_sp_m65 <int>,\n#   new_sp_f014 <int>, new_sp_f1524 <int>, new_sp_f2534 <int>,\n#   new_sp_f3544 <int>, new_sp_f4554 <int>, new_sp_f5564 <int>,\n#   new_sp_f65 <int>, new_sn_m014 <int>, new_sn_m1524 <int>,\n#   new_sn_m2534 <int>, new_sn_m3544 <int>, new_sn_m4554 <int>,\n#   new_sn_m5564 <int>, new_sn_m65 <int>, new_sn_f014 <int>,\n#   new_sn_f1524 <int>, new_sn_f2534 <int>, new_sn_f3544 <int>, …\n\n\n\n\n\nwho %>%\n  pivot_longer(\n    cols = new_sp_m014:newrel_f65, \n    names_to = \"key\", \n    values_to = \"cases\", \n    values_drop_na = TRUE\n  ) %>% \n  mutate(\n    key = stringr::str_replace(key, \"newrel\", \"new_rel\")\n  ) %>%\n  separate(key, c(\"new\", \"var\", \"sexage\")) %>% \n  select(-new, -iso2, -iso3) %>% \n  separate(sexage, c(\"sex\", \"age\"), sep = 1)\n\n\n\n\n\n# A tibble: 76,046 × 6\n   country      year var   sex   age   cases\n   <chr>       <int> <chr> <chr> <chr> <int>\n 1 Afghanistan  1997 sp    m     014       0\n 2 Afghanistan  1997 sp    m     1524     10\n 3 Afghanistan  1997 sp    m     2534      6\n 4 Afghanistan  1997 sp    m     3544      3\n 5 Afghanistan  1997 sp    m     4554      5\n 6 Afghanistan  1997 sp    m     5564      2\n 7 Afghanistan  1997 sp    m     65        0\n 8 Afghanistan  1997 sp    f     014       5\n 9 Afghanistan  1997 sp    f     1524     38\n10 Afghanistan  1997 sp    f     2534     36\n# … with 76,036 more rows"
+    "text": "디자인 - 데이터\n\n정돈된 데이터사례 - 결핵 데이터사례 - Messy 데이터사례 - 코드사례 - Tidy 데이터\n\n\n\n\n\n\n\n\nWHO 결핵 원데이터\nWHO 에서 년도별, 국가별, 연령별, 성별, 진단방법별 결핵 발병사례 조사 통계 데이터\n진단방법\n\nrel stands for cases of relapse\nep stands for cases of extrapulmonary TB\nsn stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)\nsp stands for cases of pulmonary TB that could be diagnosed by a pulmonary smear (smear positive)\n\n연령\n\n014 = 0 – 14 years old\n1524 = 15 – 24 years old\n2534 = 25 – 34 years old\n3544 = 35 – 44 years old\n4554 = 45 – 54 years old\n5564 = 55 – 64 years old\n65 = 65 or older\n\n성별\n\nmales (m)\nfemales (f)\n\n\n\n\n\nlibrary(tidyverse)\ntidyr::who \n\n# A tibble: 7,240 × 60\n   country     iso2  iso3   year new_s…¹ new_s…² new_s…³ new_s…⁴ new_s…⁵ new_s…⁶\n   <chr>       <chr> <chr> <int>   <int>   <int>   <int>   <int>   <int>   <int>\n 1 Afghanistan AF    AFG    1980      NA      NA      NA      NA      NA      NA\n 2 Afghanistan AF    AFG    1981      NA      NA      NA      NA      NA      NA\n 3 Afghanistan AF    AFG    1982      NA      NA      NA      NA      NA      NA\n 4 Afghanistan AF    AFG    1983      NA      NA      NA      NA      NA      NA\n 5 Afghanistan AF    AFG    1984      NA      NA      NA      NA      NA      NA\n 6 Afghanistan AF    AFG    1985      NA      NA      NA      NA      NA      NA\n 7 Afghanistan AF    AFG    1986      NA      NA      NA      NA      NA      NA\n 8 Afghanistan AF    AFG    1987      NA      NA      NA      NA      NA      NA\n 9 Afghanistan AF    AFG    1988      NA      NA      NA      NA      NA      NA\n10 Afghanistan AF    AFG    1989      NA      NA      NA      NA      NA      NA\n# … with 7,230 more rows, 50 more variables: new_sp_m65 <int>,\n#   new_sp_f014 <int>, new_sp_f1524 <int>, new_sp_f2534 <int>,\n#   new_sp_f3544 <int>, new_sp_f4554 <int>, new_sp_f5564 <int>,\n#   new_sp_f65 <int>, new_sn_m014 <int>, new_sn_m1524 <int>,\n#   new_sn_m2534 <int>, new_sn_m3544 <int>, new_sn_m4554 <int>,\n#   new_sn_m5564 <int>, new_sn_m65 <int>, new_sn_f014 <int>,\n#   new_sn_f1524 <int>, new_sn_f2534 <int>, new_sn_f3544 <int>, …\n\n\n\n\n\nwho %>%\n  pivot_longer(\n    cols = new_sp_m014:newrel_f65, \n    names_to = \"key\", \n    values_to = \"cases\", \n    values_drop_na = TRUE\n  ) %>% \n  mutate(\n    key = stringr::str_replace(key, \"newrel\", \"new_rel\")\n  ) %>%\n  separate(key, c(\"new\", \"var\", \"sexage\")) %>% \n  select(-new, -iso2, -iso3) %>% \n  separate(sexage, c(\"sex\", \"age\"), sep = 1)\n\n\n\n\n\n# A tibble: 76,046 × 6\n   country      year var   sex   age   cases\n   <chr>       <int> <chr> <chr> <chr> <int>\n 1 Afghanistan  1997 sp    m     014       0\n 2 Afghanistan  1997 sp    m     1524     10\n 3 Afghanistan  1997 sp    m     2534      6\n 4 Afghanistan  1997 sp    m     3544      3\n 5 Afghanistan  1997 sp    m     4554      5\n 6 Afghanistan  1997 sp    m     5564      2\n 7 Afghanistan  1997 sp    m     65        0\n 8 Afghanistan  1997 sp    f     014       5\n 9 Afghanistan  1997 sp    f     1524     38\n10 Afghanistan  1997 sp    f     2534     36\n# … with 76,036 more rows"
   },
   {
     "objectID": "slideshow/index.html#디자인---사람-대-기계",
     "href": "slideshow/index.html#디자인---사람-대-기계",
     "title": "Quarto 데이터 사이언스",
     "section": "디자인 - 사람 대 기계",
-    "text": "디자인 - 사람 대 기계\n\n\n전체 개발 시간\n사람 < 기계\n사람 > 기계"
+    "text": "디자인 - 사람 대 기계\n\n전체 개발 시간사람 < 기계사람 > 기계"
   },
   {
     "objectID": "slideshow/index.html#section-4",
@@ -802,7 +802,7 @@
     "href": "slideshow/index.html#quarto",
     "title": "Quarto 데이터 사이언스",
     "section": "Quarto",
-    "text": "Quarto\n\n\nR\n파이썬\nQuarto: R\nQuarto: 파이썬"
+    "text": "Quarto\n\nR파이썬Quarto: RQuarto: 파이썬"
   },
   {
     "objectID": "slideshow/index.html#section-6",
@@ -1125,5 +1125,40 @@
     "title": "동영상 글쓰기",
     "section": "5.2 디지털 글쓰기",
     "text": "5.2 디지털 글쓰기"
+  },
+  {
+    "objectID": "ide_vscode.html",
+    "href": "ide_vscode.html",
+    "title": "Visual Studio Code",
+    "section": "",
+    "text": "R을 설치한다.\nlanguageserver 패키지를 설치한다.\n\n\ninstall.packages(\"languageserver\")\n\n\nVisual Studio Code 에서 R extension을 설치한다.\n.R 파일에 개발을 시작한다.\n\n\n\nR extension을 설치하게 되면 VS Code에서 R 코드 개발을 원활히 할 수 있도록 지원한다.\n\n\n\nVS Code를 실행하고 R Extension 설치\n\n\n\n\n\nR Extension 설치되면 코드 창 상단에 실행버튼이 활성화되고 Ctrl + Enter 혹은 Ctrl + Shift + Enter\n\n\n\nR 코드 실행화면"
+  },
+  {
+    "objectID": "quarto_pdf.html#표-1",
+    "href": "quarto_pdf.html#표-1",
+    "title": "한글 PDF",
+    "section": "표",
+    "text": "표"
+  },
+  {
+    "objectID": "quarto_pdf.html#gt-표",
+    "href": "quarto_pdf.html#gt-표",
+    "title": "한글 PDF",
+    "section": "gt 표",
+    "text": "gt 표\n\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3"
+  },
+  {
+    "objectID": "quarto_slideshow.html",
+    "href": "quarto_slideshow.html",
+    "title": "Quarto Presentations",
+    "section": "",
+    "text": "This presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
+  },
+  {
+    "objectID": "slideshow/index.html",
+    "href": "slideshow/index.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "데이터 사이언스와 디자인"
   }
 ]
