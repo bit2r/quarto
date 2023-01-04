@@ -1,0 +1,13 @@
+---
+title: "Title of Your Document"
+output: html_document
+---
+
+## Introduction
+
+This is the introduction to your document. Here, you can provide some context and background information about the content that you are about to present.
+
+## Analysis
+
+Here, you can include the R code that you used to perform your analysis, as well as the results of that analysis. You can use R Markdown to embed code chunks within your document and display the results of the code alongside your text.
+

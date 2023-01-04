@@ -1131,7 +1131,7 @@
     "href": "ide_vscode.html",
     "title": "Visual Studio Code",
     "section": "",
-    "text": "R을 설치한다.\nlanguageserver 패키지를 설치한다.\n\n\ninstall.packages(\"languageserver\")\n\n\nVisual Studio Code 에서 R extension을 설치한다.\n.R 파일에 개발을 시작한다.\n\n\n\nR extension을 설치하게 되면 VS Code에서 R 코드 개발을 원활히 할 수 있도록 지원한다.\n\n\n\nVS Code를 실행하고 R Extension 설치\n\n\n\n\n\nR Extension 설치되면 코드 창 상단에 실행버튼이 활성화되고 Ctrl + Enter 혹은 Ctrl + Shift + Enter\n\n\n\nR 코드 실행화면"
+    "text": "R을 설치한다.\nlanguageserver 패키지를 설치한다.\n\n\ninstall.packages(\"languageserver\")\n\n\nVisual Studio Code 에서 R extension을 설치한다.\n.R 파일에 개발을 시작한다.\n\n\n\nR extension을 설치하게 되면 VS Code에서 R 코드 개발을 원활히 할 수 있도록 지원한다. VS Code 에 필수적인 R extension은 다음을 꼽을 수 있다. R extension을 설치하면 RStudio에서 기본설정으로 지정된 단축키를 별도 설정없이 자동 지정되기 때문에 편리하다.\n\nR - REditorSupport\nR Markdown All in One\nQuarto\nR Debugger\n\n\n\n\nVS Code를 실행하고 R Extension 설치\n\n\n\n\n\nR Extension 설치되면 코드 창 상단에 실행버튼이 활성화되고 Ctrl + Enter 혹은 Ctrl + Shift + Enter\n\n\n\nR 코드 실행화면"
   },
   {
     "objectID": "quarto_pdf.html#표-1",
@@ -1160,5 +1160,33 @@
     "title": "Quarto 데이터 사이언스",
     "section": "",
     "text": "데이터 사이언스와 디자인"
+  },
+  {
+    "objectID": "vscode/sample.html",
+    "href": "vscode/sample.html",
+    "title": "Quarto 데이터 사이언스",
+    "section": "",
+    "text": "This is the introduction to your document. Here, you can provide some context and background information about the content that you are about to present."
+  },
+  {
+    "objectID": "vscode/sample.html#analysis",
+    "href": "vscode/sample.html#analysis",
+    "title": "Quarto 데이터 사이언스",
+    "section": "Analysis",
+    "text": "Analysis\nHere, you can include the R code that you used to perform your analysis, as well as the results of that analysis. You can use R Markdown to embed code chunks within your document and display the results of the code alongside your text.\n\n\n  [1]  0.77040052 -2.27801147 -0.35891346  0.40524979 -0.56497057 -0.43990036\n  [7]  0.39977321 -0.71001747  0.80270425  2.48073394 -0.27300862 -0.60481505\n [13]  0.61303653 -0.95710565  0.61627216  0.73418949  0.15521901  2.14957421\n [19]  1.51190171 -0.91990533  0.19317825  1.12297896 -1.05554287 -1.46582593\n [25] -1.92973612 -0.43739248 -0.93171510 -0.37705147 -1.10877065  0.23790565\n [31] -0.15766660  1.57727190 -1.62455227  0.70118126  2.02226978  2.16172722\n [37]  2.04610066 -0.69551276 -0.28007696 -0.06931483 -1.49993891 -1.62381227\n [43] -1.86482193  0.18625735 -0.48912439  0.10006197 -0.63004758 -0.63904183\n [49]  0.06506095  0.63694955  0.03127080  1.50617106  0.71653265  0.57096379\n [55] -2.62825961 -0.89601648 -1.71827056 -0.36753178  0.40836153 -0.29141005\n [61]  1.42700502 -1.47731506 -1.07092989 -2.99748802  0.34475618 -0.25645831\n [67]  1.55611828  0.85078319  1.64880178 -0.15006179 -1.15957365 -0.88526201\n [73] -2.60015967  0.35018018  0.95897968 -0.18968666  2.05540593  2.59758483\n [79]  0.30643962  0.67626127 -2.36223549  0.17511668  1.78140258  1.88157338\n [85] -0.48638108  0.72671570  0.76382421 -0.44254441 -0.18535939  0.54121599\n [91]  1.72373005  0.58694669  0.24025229 -0.88586513  0.39028531 -0.32151467\n [97]  0.33190181  0.15268575 -1.61966450  0.25999695"
+  },
+  {
+    "objectID": "ide_vscode.html#keybindings.json",
+    "href": "ide_vscode.html#keybindings.json",
+    "title": "Visual Studio Code",
+    "section": "5.1 keybindings.json",
+    "text": "5.1 keybindings.json\nkeybindings.json 파일에 R 혹은 파이썬 코드를 삽입시킬 수 있는 키보드 단축키를 등록시킨다. 자료출처: VS Code: Add a Rmarkdown Code Chunk Snippet Key Binding\n// Place your key bindings in this file to override the defaults\n[\n    // keybindings for R scripts. \n    {\n        \"key\": \"Ctrl+Shift+m\",\n        \"command\": \"type\",\n        \"args\": { \"text\": \" %>% \" },\n        \"when\": \"editorTextFocus && editorLangId == r\"\n      },\n      {\n        \"key\": \"Alt+-\",\n        \"command\": \"type\",\n        \"args\": { \"text\": \" <- \" },\n        \"when\": \"editorTextFocus && editorLangId == r\"\n      },\n      // keybindings for Rmarkdown\n      {\n        \"key\": \"Ctrl+Shift+m\",\n        \"command\": \"type\",\n        \"args\": { \"text\": \" %>% \" },\n        \"when\": \"editorTextFocus && editorLangId == rmd\"\n      },\n      {\n        \"key\": \"Alt+-\",\n        \"command\": \"type\",\n        \"args\": { \"text\": \" <- \" },\n        \"when\": \"editorTextFocus && editorLangId == rmd\"\n      },\n      // keybindings for R terminal (radian included)\n      {\n        \"key\": \"Ctrl+Shift+m\",\n        \"command\": \"workbench.action.terminal.sendSequence\",\n        \"args\": { \"text\": \" %>% \" },\n        \"when\": \"terminalFocus\"\n      },\n      {\n        \"key\": \"Alt+-\",\n        \"command\": \"workbench.action.terminal.sendSequence\",\n        \"args\": { \"text\": \" <- \" },\n        \"when\": \"terminalFocus\"\n      },\n      // Insert R Code chunk\n      {\n        \"key\": \"ctrl+alt+i\". \n        \"command\": \"editor.action.insertSnippet\",\n        \"when\": \"editorTextFocus\",\n        \"args\": {\"snippet\": \"```{r}\\n$0\\n```\"}\n      },\n      {\n        \"key\": \"ctrl+alt+o\". \n        \"command\": \"editor.action.insertSnippet\",\n        \"when\": \"editorTextFocus\",\n        \"args\": {\"snippet\": \"options(\\n  max.print=100,\\n  vsc.use_httpgd=TRUE,\\n  device='quartz'\\n)\"}\n      },\n      {\n        \"key\": \"ctrl+alt+m\",\n        \"command\": \"editor.action.insertSnippet\",\n        \"when\": \"editorTextFocus\",\n        \"args\":{\n          \"snippet\": \"---\\ntitle: '$0'\\nauthor: '이광춘'\\ndate: '2023-01-04'\\noutput:\\n  pagedown::html_paged:\\n    self_contained: true\\n    toc: false\\n---\\n\\n```{r setup, include=FALSE}\\nknitr::opts_chunk\\\\$set(\\n  echo = FALSE,\\n  message = FALSE,\\n  warning=FALSE\\n)\\n```\"\n        }\n      },\n\n]"
+  },
+  {
+    "objectID": "ide_vscode.html#html-미리보기",
+    "href": "ide_vscode.html#html-미리보기",
+    "title": "Visual Studio Code",
+    "section": "5.2 HTML 미리보기",
+    "text": "5.2 HTML 미리보기\n.Rmd 파일을  CTRL  +  Shift  +  k  단축키로 컴파일시키면 .html 파일이 생성된다. .html 파일 결과를 직접 실시간으로 확인하고자 한다면, 마이크로소프트가 개발한 Live Preview - VS Code Extension 플러그인을 설치한다."
   }
 ]

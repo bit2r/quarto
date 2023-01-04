@@ -1,0 +1,34 @@
+---
+title: ''
+author: 'Michael Schmidt'
+date: '`r Sys.Date()`'
+output:
+  pagedown::html_paged:
+    self_contained: false
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning=FALSE
+)
+```
+
+## Introduction
+
+This is the introduction to your document. Here, you can provide some context and background information about the content that you are about to present.
+
+## Analysis
+
+Here, you can include the R code that you used to perform your analysis, as well as the results of that analysis. You can use R Markdown to embed code chunks within your document and display the results of the code alongside your text.
+
+```{r}
+rnorm(100)
+```
+
+```{python}
+import numpy as np
+```
+
