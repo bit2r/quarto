@@ -5,6 +5,8 @@ project:
     - "*.qmd"
     - "!materials/workshop/"
 
+lang: kr
+
 website:
   title: "Quarto 데이터 사이언스"
   site-url: https://quartopub.com/sites/statkclee/quarto-ds
@@ -59,8 +61,10 @@ website:
             text: "Quarto"
       - text: "IDE"
         menu: 
+          - href: ide_war.qmd
+            text: "AI가 쏘아올린 작은 공"
           - href: ide_vscode.qmd
-            text: "Visual Studio Code"
+            text: "Visual Studio Code"            
     right: 
       - href: https://r2bit.com
         text: "R사용자회"

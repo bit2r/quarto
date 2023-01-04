@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.280">
@@ -130,15 +130,15 @@ div.csl-indent {
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색"
   }
 }</script>
 
@@ -263,6 +263,10 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ide">    
         <li>
+    <a class="dropdown-item" href="./ide_war.html">
+ <span class="dropdown-text">AI가 쏘아올린 작은 공</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./ide_vscode.html">
  <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
@@ -312,8 +316,8 @@ div.csl-indent {
   </div>
     
   <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-heading">소속</div>
     
       <div class="quarto-title-meta-contents">
       <a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> 
@@ -433,6 +437,8 @@ div.csl-indent {
   <li><a href="#저작" id="toc-저작" class="nav-link" data-scroll-target="#저작"><span class="toc-section-number">3.3</span>  저작</a></li>
   </ul></li>
   <li><a href="#한글-글꼴" id="toc-한글-글꼴" class="nav-link" data-scroll-target="#한글-글꼴"><span class="toc-section-number">4</span>  한글 글꼴</a></li>
+  <li><a href="#로컬-폰트" id="toc-로컬-폰트" class="nav-link" data-scroll-target="#로컬-폰트"><span class="toc-section-number">5</span>  로컬 폰트</a></li>
+  <li><a href="#pdf-파일" id="toc-pdf-파일" class="nav-link" data-scroll-target="#pdf-파일"><span class="toc-section-number">6</span>  PDF 파일</a></li>
   </ul>
 </nav>
     </div>
@@ -448,7 +454,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Danger
+주의
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -513,14 +519,14 @@ Danger
 <section id="latex-엔진" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="latex-엔진"><span class="header-section-number">3.1</span> <span class="math inline">\(\LaTeX\)</span> 엔진</h2>
 <p>보통 TexLive에 기반을 둔 <code>tinytex</code> 를 사용하는데 한글을 사용하는 입장에서는 <code>kotex</code>를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 <code>xelatex</code>이 Quarto <span class="math inline">\(\LaTeX\)</span> 기본엔진이다. 달리 특정하지 않게 되면 <code>xelatex</code>을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tool tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tool tinytex</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>kotex</code> 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 <span class="math inline">\(\LaTeX\)</span> 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, <code>tidytex</code>를 기본 <span class="math inline">\(\LaTeX\)</span> 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 <code>tinytex::parse_install()</code> 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.</p>
 <div class="cell">
 <details>
-<summary>Code</summary>
+<summary>코드</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">parse_install</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="st">"! LaTeX Error: File `titlepic.sty' not found."</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -547,7 +553,7 @@ Danger
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"NanumMyeongjo"</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"NanumGothic"</span></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">monofont</span><span class="kw">:</span><span class="at"> </span><span class="st">"D2Coding"</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Quarto 가 문서 변환 핵심 엔진으로 사용하고 있는 Pandoc 은 <span class="math inline">\(\LaTeX\)</span> 외에도 ConTeXt, roff ms, HTML (via wkhtmltopdf) 을 사용해서 PDF 파일을 제작할 수 있다. 기존 Pandoc을 이런 방식으로 PDF 를 제작하신 분은 다음 내용을 건너뛰는 것도 좋을 듯 싶다.</p>
 </section>
 <section id="저작" class="level2" data-number="3.3">
@@ -562,7 +568,7 @@ Danger
 <div id="fig-penguins" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig/penguin_species.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Allison Horst 박사가 그린 펭귄 3종 도식화</figcaption><p></p>
+<p></p><figcaption class="figure-caption">그림&nbsp;1: Allison Horst 박사가 그린 펭귄 3종 도식화</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -570,7 +576,7 @@ Danger
 <div id="fig-bill" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig/culmen_depth.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: 펭귄 부리(bill) 변수 설명</figcaption><p></p>
+<p></p><figcaption class="figure-caption">그림&nbsp;2: 펭귄 부리(bill) 변수 설명</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -582,7 +588,7 @@ Danger
 <p><span class="math inline">\(\LaTeX\)</span>에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.</p>
 <div class="cell">
 <details>
-<summary>Code</summary>
+<summary>코드</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mass_flipper <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
@@ -595,7 +601,7 @@ Danger
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"체질량(Body mass) (g)"</span>) <span class="sc">+</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>mass_flipper</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>mass_flipper</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -610,10 +616,10 @@ Danger
 <h4 data-number="3.3.3.2" class="anchored" data-anchor-id="gt-표"><span class="header-section-number">3.3.3.2</span> <code>gt</code> 표</h4>
 <div class="cell">
 <details>
-<summary>Code</summary>
+<summary>코드</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
@@ -763,33 +769,60 @@ Danger
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"NanumMyeongjo"</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"NanumGothic"</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">monofont</span><span class="kw">:</span><span class="at"> </span><span class="st">"D2Coding"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"NanumGothic"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"NanumGothic"</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>다른 방식은 글꼴 관련 사항은 <code>packages.tex</code> <span class="math inline">\(\TeX\)</span> 파일에 지정하는 것이다.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> packages.tex</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> macros.tex</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-before-body</span><span class="kw">:</span><span class="at"> before.tex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-before-body</span><span class="kw">:</span><span class="at"> before.tex</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>예를 들어 <code>packages.tex</code> 에 한글 글꼴을 다음과 같이 지정한다.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 한글 폰트 ----------------------------</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainhangulfont</span>{NanumMyeongjo} <span class="co">% 나눔명조</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\setsanshangulfont</span>{NanumGothic}   <span class="co">% 나눔고딕</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmonohangulfont</span>{D2Coding}      <span class="co">% D2코딩</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmonohangulfont</span>{D2Coding}      <span class="co">% D2코딩</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="로컬-폰트" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 로컬 폰트</h1>
+<p>로컬 컴퓨터에 설치된 한글 폰트를 찾지 못해 PDF 파일에 한글 제대로 구현하지 못하는 경우 <a href="https://github.com/googlefonts/noto-cjk">구글 CJK 폰트</a>를 다운로드 받아 로컬 디렉토리에 저장한다. 그리고, <code>CJKmainfont</code>를 지정한다. 글꼴을 사용하는 패키지로 <code>xeCJK</code> 패키지를 사용한다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> report</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">colorlinks</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lof</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lot</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        \usepackage{pdfpages}</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        \usepackage{xeCJK}</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> NotoSansKR</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">CJKoptions</span><span class="kw">:</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Path=fonts/</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> BoldFont=NotoSansKR</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Extension = .ttf</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pdf-파일" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> PDF 파일</h1>
+<p>상기 작업을 이용한 최종 PDF 파일은 다음에서 확인 가능하다.</p>
 
 
 
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Gorman-2014" class="csl-entry" role="doc-biblioentry">
 Gorman, K. B., Williams, T. D., &amp; Fraser, W. R. (2014). Ecological sexual dimorphism and environmental variability within a community of antarctic penguins (genus pygoscelis). <em>PloS One</em>, <em>9</em>(3), e90081. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>
 </div>
 <div id="ref-palmer-penguins" class="csl-entry" role="doc-biblioentry">
 Horst, A. M., Hill, A. P., &amp; Gorman, K. B. (2020). <em>Palmerpenguins: Palmer archipelago (antarctica) penguin data</em>. <a href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a>
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
 
 <ol>
 <li id="fn1"><p><a href="http://wiki.ktug.org/wiki/wiki.php/ModernLaTeX">Modern LaTeX</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -836,12 +869,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "복사완료!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "복사완료!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

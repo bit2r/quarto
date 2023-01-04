@@ -17,13 +17,16 @@ format:
     lot: true
     include-in-header: 
       text: |
-        \usepackage{pdfpages} 
+        \usepackage{pdfpages}
+        \usepackage{xeCJK}
 bibliography: bibliography.bib
 link-citations: yes
 csl: apa-single-spaced.csl
-mainfont: "NanumMyeongjo"
-sansfont: "NanumGothic"
-monofont: "D2Coding"
+CJKmainfont: NotoSansKR
+CJKoptions:
+  - Path=fonts/
+  - BoldFont=NotoSansKR
+  - Extension = .ttf
 ---
  
 
