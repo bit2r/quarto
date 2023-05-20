@@ -305,7 +305,7 @@
     "href": "quarto_blog.html",
     "title": "Quarto 데이터 과학",
     "section": "",
-    "text": "대기업 본사 지도\n\n\n\n\n\n\n\n지도\n\n\n대기업\n\n\n공정거래위원회\n\n\n로고\n\n\n\n\n공정거래위원회에서 지정한 상위 대기업 본사 주소를 기준으로 서울시 지도에 로고를 입혀 시각화 합니다.\n\n\n\n\n\n\nNov 24, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n기존 Bookdown 책을 Quarto Book 변환\n\n\n\n\n\n\n\nQuarto Book\n\n\nBookdown\n\n\n전자책\n\n\n리보그\n\n\nReeborg\n\n\n\n\n기존 Bookdown으로 제작된 리보그(Reeborg) 코딩 전자책을 Quato Book으로 변환한 경험을 공유합니다.\n\n\n\n\n\n\nNov 10, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n로우코드 Shiny 앱 개발\n\n\n\n\n\n\n\nQuarto\n\n\nLow code\n\n\nshiny\n\n\n앱개발\n\n\nshinyuieditor\n\n\n데이터 패키지\n\n\nbslib\n\n\n구글 폰트\n\n\ndashboard-builder\n\n\n\n\nShiny 앱개발에 Shiny 생태계를 구성하는 로우코드(Low Code)를 적극 도입하여 개발시간을 단축하고 생산성을 높이는 방법을 소개한다.\n\n\n\n\n\n\nAug 31, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n재현가능 글쓰기\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\nQuarto 블로그\n\n\n\n\n\n\n\nQuarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 15, 2022\n\n\n이광춘\n\n\n\n\n\n\n일치 없음"
+    "text": "대기업 본사 지도\n\n\n\n\n\n\n\n지도\n\n\n대기업\n\n\n공정거래위원회\n\n\n로고\n\n\n\n\n공정거래위원회에서 지정한 상위 대기업 본사 주소를 기준으로 서울시 지도에 로고를 입혀 시각화 합니다.\n\n\n\n\n\n\nNov 24, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n기존 Bookdown 책을 Quarto Book 변환\n\n\n\n\n\n\n\nQuarto Book\n\n\nBookdown\n\n\n전자책\n\n\n리보그\n\n\nReeborg\n\n\n\n\n기존 Bookdown으로 제작된 리보그(Reeborg) 코딩 전자책을 Quato Book으로 변환한 경험을 공유합니다.\n\n\n\n\n\n\nNov 10, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n로우코드 Shiny 앱 개발\n\n\n\n\n\n\n\nQuarto\n\n\nLow code\n\n\nshiny\n\n\n앱개발\n\n\nshinyuieditor\n\n\n데이터 패키지\n\n\nbslib\n\n\n구글 폰트\n\n\ndashboard-builder\n\n\n\n\nShiny 앱개발에 Shiny 생태계를 구성하는 로우코드(Low Code)를 적극 도입하여 개발시간을 단축하고 생산성을 높이는 방법을 소개한다.\n\n\n\n\n\n\nAug 31, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\n재현가능 글쓰기\n\n\n\n\n\n\n\nQuarto\n\n\n재현가능 글쓰기\n\n\nCompendium\n\n\n\n\n과학기술에서 중요성을 더해가고 있는 재현성 위기에 대해 재현가능한 글쓰기에 대한 이론적인 토대와 관련 기술 사항을 살펴본다.\n\n\n\n\n\n\nAug 16, 2022\n\n\n이광춘\n\n\n\n\n\n\n  \n\n\n\n\nQuarto 블로그\n\n\n\n\n\n\n\nQuarto\n\n\n블로그\n\n\n\n\nQuarto 블로그 제작방법\n\n\n\n\n\n\nAug 15, 2022\n\n\n이광춘\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quarto_fonts.html",
@@ -340,14 +340,14 @@
     "href": "quarto_latex.html",
     "title": "한글 LaTeX",
     "section": "",
-    "text": "주의\n\n\n\n\n\n이광춘, “글을 쓰는 것은 소프트웨어 개발이다!”, 강서양천신문 특집기고(’15년 9월) 와 LaTeX, PDF, 문서, 그리고 사고에서 관련 내용을 발췌한 것임을 밝혀둡니다. 그리고, Quarto PDF 문서를 많이 참고 했습니다."
+    "text": "Caution\n\n\n\n\n\n이광춘, “글을 쓰는 것은 소프트웨어 개발이다!”, 강서양천신문 특집기고(’15년 9월) 와 LaTeX, PDF, 문서, 그리고 사고에서 관련 내용을 발췌한 것임을 밝혀둡니다. 그리고, Quarto PDF 문서를 많이 참고 했습니다."
   },
   {
     "objectID": "quarto_latex.html#latex-엔진",
     "href": "quarto_latex.html#latex-엔진",
     "title": "한글 LaTeX",
     "section": "3.1 \\(\\LaTeX\\) 엔진",
-    "text": "3.1 \\(\\LaTeX\\) 엔진\n보통 TexLive에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex이 Quarto \\(\\LaTeX\\) 기본엔진이다. 달리 특정하지 않게 되면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\nquarto install tool tinytex\nkotex 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 \\(\\LaTeX\\) 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, tidytex를 기본 \\(\\LaTeX\\) 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 tinytex::parse_install() 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.\n\n\n코드\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)"
+    "text": "3.1 \\(\\LaTeX\\) 엔진\n보통 TexLive에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex이 Quarto \\(\\LaTeX\\) 기본엔진이다. 달리 특정하지 않게 되면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\nquarto install tool tinytex\nkotex 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 \\(\\LaTeX\\) 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, tidytex를 기본 \\(\\LaTeX\\) 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 tinytex::parse_install() 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.\n\n\nCode\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)"
   },
   {
     "objectID": "quarto_latex.html#yaml-파일",
@@ -361,7 +361,7 @@
     "href": "quarto_latex.html#저작",
     "title": "한글 LaTeX",
     "section": "3.3 저작",
-    "text": "3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(\\LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n\n3.3.1 이미지\n\\(\\LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n\n\n그림 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\n그림 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n3.3.2 R 코드\n\\(\\LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\n\n코드\nmass_flipper <- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n3.3.3 표\n\\(\\LaTeX\\)에 \\(\\LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\n\n3.3.3.1 LaTeX 표\n\n\n\n3.3.3.2 gt 표\n\n\n코드\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n\n\n\n3.3.4 데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다.\n\n\n3.3.5 PDF 겉면\nfitpaper \\(\\LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다."
+    "text": "3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(\\LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n\n3.3.1 이미지\n\\(\\LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n\n\nFigure 1: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n\n\n\n\nFigure 2: 펭귄 부리(bill) 변수 설명\n\n\n\n\n\n\n\n3.3.2 R 코드\n\\(\\LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\n\nCode\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n\n\n\n3.3.3 표\n\\(\\LaTeX\\)에 \\(\\LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\n\n3.3.3.1 LaTeX 표\n\n\n\n3.3.3.2 gt 표\n\n\nCode\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n\n\n\n3.3.4 데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (Horst et al., 2020)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 Gorman et al. (2014) 에서 최초 공개되었다.\n\n\n3.3.5 PDF 겉면\nfitpaper \\(\\LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다."
   },
   {
     "objectID": "quarto_layout.html",
@@ -1195,5 +1195,12 @@
     "title": "AI가 쏘아올린 작은 공",
     "section": "",
     "text": "1 데이터 과학 편집기\n데이터 과학 제품과 서비스 개발을 위해서 IDE(통합개발환경)을 두고 RStudio와 Jupyter 두 진영으로 나눠 치열한 경쟁을 펼쳤다. 각자 장점을 두고 범위를 확대하면서 진정한 데이터 과학 패자가 되고자 한편의 드라마를 펼쳤다.\n그 중심에는 RStudio와 아나콘다가 있으며 마치 현대차와 기아차처럼 동일한 자동차인데 세부 구성과 디자인에 차이만 있을 뿐 어느 것이 더 우월하고 좋다는 마케팅을 펼쳤다.\n\n\n\n\n\n\n\n2 마이크로소프트의 등장\n데이터 과학 편집기에 Visual Studio Code가 등장하면서 큰 변화가 일어나고 있다. 특히 인공지능 기능을 탑재한 Extension이 VS Code에 추가되면서 기존 RStudio와 쥬피터 IDE가 하던 기능을 넘어 새로운 지평을 열어가고 있다.\n그 중심에는 GitHub을 마이크로소프트가 인수하면서 새로 출시한 부조종사(Copilot)이 있고 조만간 CodeGPT도 도입되면 기존 RStudio와 Jupyter는 기존과 전혀 다른 위상을 가지게 될 것으로 보인다."
+  },
+  {
+    "objectID": "quarto_latex.html#footnotes",
+    "href": "quarto_latex.html#footnotes",
+    "title": "한글 LaTeX",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nModern LaTeX↩︎\nWhat is TeX and Metafont all about?↩︎"
   }
 ]

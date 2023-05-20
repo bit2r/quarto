@@ -19,7 +19,7 @@ format:
     highlight-style: github    
     self-contained: false
 bibliography: bibliography.bib
-link-citations: yes
+link-citations: true
 csl: apa-single-spaced.csl
 reference-location: margin
 ---

@@ -8,11 +8,11 @@ project:
 lang: kr
 
 website:
-  title: "Quarto 데이터 사이언스"
+  title: "디지털 글쓰기"
   site-url: https://quartopub.com/sites/statkclee/quarto-ds
   twitter-card:
     card-style: summary_large_image
-    description: "한글 Quarto 첫걸음"
+    description: "한글 쿼토"
     image: "fig/koRea_logo.png"
   page-footer:
     left: "[Quarto](https://quarto.org/) 로 제작"
@@ -53,8 +53,8 @@ website:
             text: "한국 R 컨퍼런스"
           - href: https://www.meetup.com/seoul-r-meetup
             text: "서울 R Meetup"
-          - href: https://tidyverse-korea.github.io/seoul-R/
-            text: "서울 R Meetup Archive"
+          - href: https://r2bit.com/seoul-r/
+            text: "서울 R Meetup 발표자료"
           - href: https://r-community.org/usergroups/
             text: "글로벌 R Meetup"
           - href: https://quarto.org/
