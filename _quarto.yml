@@ -47,6 +47,8 @@ website:
             text: "[사례] 한글 PDF"
           - href: youtube.qmd
             text: "동영상 글쓰기"
+          - href: sat_pdf.qmd
+            text: "2023년 수능 수학(홀수)"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/

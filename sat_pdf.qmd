@@ -1,0 +1,311 @@
+---
+title: "수능 PDF"
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 정답
+
+2023년 2교시 수학영역 정답표 홀수형을 텍스트 형태로 추출해낸다.
+
+```{r}
+library(tidyverse)
+library(pdftools)
+library(gt)
+library(gtExtras)
+library(patchwork)
+
+answer_raw <- pdf_text("data/PDF/2교시_수학영역_정답표_홀수형.pdf")
+
+## 1. 텍스트 정제
+answer <- answer_raw %>% 
+  str_split(pattern = "\n\n", simplify = FALSE) %>% .[[1]] %>% 
+  str_trim() 
+
+## 2. 데이터프레임 변환
+answer_df <- answer[5:length(answer)] %>% 
+  str_split(pattern = "\\s+", simplify = TRUE) %>% 
+  as.data.frame()  %>% 
+  janitor::clean_names()
+
+## 3. 항목 구분
+### 3.1. 공통
+answer_common01_df <- answer_df %>% 
+  select(v1, v2, v3) %>% 
+  mutate(구분 = "공통") %>% 
+  select(구분, 문항번호=v1, 정답=v2, 배점=v3)
+
+answer_common02_df <- answer_df %>% 
+  select(v4, v5, v6) %>% 
+  mutate(구분 = "공통") %>% 
+  select(구분, 문항번호=v4, 정답=v5, 배점=v6)
+
+answer_common_df <- bind_rows(answer_common01_df, answer_common02_df)
+
+### 3.2. 확률통계
+answer_prob_df <- answer_df %>% 
+  select(v7, v8, v9) %>% 
+  mutate(구분 = "확률과 통계") %>% 
+  select(구분, 문항번호=v7, 정답=v8, 배점=v9)
+
+### 3.3. 미적분
+answer_calculus_df <- answer_df %>% 
+  select(v10, v11, v12) %>% 
+  mutate(구분 = "미적분") %>% 
+  select(구분, 문항번호=v10, 정답=v11, 배점=v12)
+
+### 3.4. 기하
+answer_geometry_df <- answer_df %>% 
+  select(v13, v14, v15) %>% 
+  mutate(구분 = "기하") %>% 
+  select(구분, 문항번호=v13, 정답=v14, 배점=v15)
+
+## 4. 정답 결합
+
+answer_tbl <- bind_rows(answer_common_df, answer_prob_df) %>% 
+  bind_rows(answer_calculus_df) %>% 
+  bind_rows(answer_geometry_df) %>% 
+  filter(문항번호 != "") %>% 
+  mutate(정답 = case_when(정답 == "①"  ~  "1",
+                          정답 == "②"  ~  "2",
+                          정답 == "③"  ~  "3",
+                          정답 == "④"  ~  "4",
+                          정답 == "⑤"  ~  "5",
+                          TRUE ~ 정답)) %>% 
+  as_tibble() %>% 
+  mutate_at(vars(문항번호, 정답, 배점), as.numeric)
+
+# answer_tbl %>% 
+#   write_csv("data/sat_math_2023_odd.csv")
+
+common_gt <- answer_tbl %>% 
+  filter(구분 == "공통") %>% 
+  gt::gt() %>% 
+    gt_theme_pff()
+
+calculus_gt <- answer_tbl %>% 
+  filter(구분 == "미적분") %>% 
+  gt::gt()  %>% 
+    gt_theme_pff()
+
+probstat_gt <- answer_tbl %>% 
+  filter(구분 == "확률과 통계") %>% 
+  gt::gt()  %>% 
+    gt_theme_pff()
+
+
+geometry_gt <- answer_tbl %>% 
+  filter(구분 == "기하") %>% 
+  gt::gt()  %>% 
+    gt_theme_pff()
+
+tmp <- tempfile(fileext = '.png') #generate path to temp .png file
+gtsave(common_gt, tmp) #save gt table as png
+common_gt_png <- png::readPNG(tmp, native = TRUE) # read tmp png file
+
+tmp <- tempfile(fileext = '.png') #generate path to temp .png file
+gtsave(calculus_gt, tmp) #save gt table as png
+calculus_gt_png <- png::readPNG(tmp, native = TRUE) # read tmp png file
+
+tmp <- tempfile(fileext = '.png') #generate path to temp .png file
+gtsave(probstat_gt, tmp) #save gt table as png
+probstat_gt_png <- png::readPNG(tmp, native = TRUE) # read tmp png file
+
+tmp <- tempfile(fileext = '.png') #generate path to temp .png file
+gtsave(geometry_gt, tmp) #save gt table as png
+geometry_gt_png <- png::readPNG(tmp, native = TRUE) # read tmp png file
+
+layout <- "
+AABBCCDDEE
+AABBCCDDEE
+"
+(ggplot() + theme_void()) + common_gt_png + calculus_gt_png + 
+  probstat_gt_png + geometry_gt_png +
+  plot_layout(design = layout)
+```
+
+# $\LaTeX$ 문제
+
+PDF 파일에서 수능문제를 $\LaTeX$ 텍스트로 변환시킨다. 
+[MathPix PDFs](https://snip.mathpix.com/)에 PDF 파일을 올려 `.tex` 파일로 변환시킨다.
+
+:::{.column-page}
+
+```{r}
+md_raw <- read_lines("data/PDF/2교시_수학영역_문제지_홀수형.md")
+
+# ![] 이미지 | \\section \\title 시작 삭제
+image_mask <- !str_detect(md_raw, pattern = "\\!\\[\\]|\\\\section|\\\\title|홀수형|(2023학년도 대학수학능력시험 문제지)|(제 2 교시)|5지선다형|(\\* 확인 사항)|(- 답안지의 해당란에 필요한 내용을)|(답안지의 해당란에 필요한)|(5 지선다형)|(○ 이어서)" )
+
+md_text <- md_raw[image_mask]
+
+md_txt <- str_c(md_text, collapse = " ")
+
+md_csv <- str_extract_all(md_txt, pattern = "(?<=\\d{1,2}\\.)(.*?)(?=\\d{1,2}\\.)")[[1]]
+  
+md_tbl <- md_csv %>% 
+  enframe(name = "문항번호", value = "문제") %>% 
+  mutate(문제 = str_remove(문제, "\\[\\d+점\\]")) %>% 
+  mutate(문제 = str_remove(문제, "\\(1\\).*$") %>% str_squish(.)) %>% 
+  mutate(문자수 = str_length(문제)) %>% 
+  filter(문자수 > 20) %>% 
+  select(-문자수)
+  
+md_tbl %>% 
+  slice(-22) %>% 
+  knitr::kable(escape = FALSE)
+```
+
+:::
+
+# 문제 해결
+
+## GPT-3.5
+
+```{r}
+#| eval: true
+library(bitGPT)
+
+question_for_chatGPT <- glue::glue("아래 수학문제를 풀어주세요. 단, 풀이과정은 출력하지말고 정답만 간결하게 출력합니다: \n{md_tbl %>% slice(1) %>% pull(문제)}") %>% 
+  as.character(.)
+
+res <- chat_completion(question_for_chatGPT, 
+                model = "gpt-3.5-turbo",
+                type = "console",
+                temperature=0)
+
+res[[1]]$content
+res[[2]]$content
+```
+
+:::::{.columns}
+:::{.column}
+### 10번 문제{.unnumbered}
+
+아래 수학문제를 풀어주세요: \n두 곡선 $y=x^{3}+x^{2}, y=-x^{2}+k$ 와 $y$ 축으로 둘러싸인 부분의 넓이를 $A$, 두 곡선 $y=x^{3}+x^{2}, y=-x^{2}+k$ 와 직선 $x=2$ 로 둘러싸인 부분의 넓이를 $B$ 라 하자. $A=B$ 일 때, 상수 $k$ 의 값은? (단, $4<k<5$ )
+:::
+
+:::{.column}
+### 10번 해답{.unnumbered}
+우선, 두 곡선이 만나는 지점을 구해야 한다. 두 곡선이 만나는 지점에서 $y$ 값이 같으므로, $x^{3}+x^{2}=-x^{2}+k$ 이다. 이를 정리하면 $x^{3}+2x^{2}-k=0$ 이 된다. 이 식의 근을 구하기 위해 $f(x)=x^{3}+2x^{2}-k$ 라고 두고, $f(-2)$ 와 $f(0)$ 의 부호를 비교해보자. $f(-2)=(-2)^{3}+2(-2)^{2}-k=-8+8-k=-k$ 이므로 $k>0$ 일 때 $f(-2)<0$ 이다. $f(0)=0^{3}+2\\cdot0^{2}-k=-k$ 이므로 $k<0$ 일 때 $f(0)<0$ 이다. 따라서 $k$ 는 $0$ 과 $0$ 사이에 위치한다. 이제 두 곡선이 만나는 지점의 $x$ 좌표를 구해보자. 이를 위해 $f(x)$ 의 도함수를 구하면 $f'(x)=3x^{2}+4x$ 이다. 이 식이 $0$ 이 되는 $x$ 값은 $x=0$ 과 $x=-\\frac{4}{3}$ 이다. 이 중에서 $x=-\\frac{4}{3}$ 은 $y$ 축으로 둘러싸인 부분에 속하지 않으므로, $x=0$ 일 때의 $y$ 값을 구하면 된다. $y=x^{3}+x^{2}=0^{3}+0^{2}=0$ 이므로, 두 곡선이 만나는 지점은 $(0,0)$ 이다. 이제 $A$ 와 $B$ 를 구해보자. $A$ 는 $y$ 축으로 둘러싸인 부분의 넓이이므로, $x=0$ 일 때의 $y$ 값인 $0$ 에서 $k$ 까지 적분하면 된다. 따라서 $A=\\int_{0}^{k}(k-0)dk=k^{2}$ 이다. $B$ 는 $x=2$ 로 둘러싸인 부분의 넓이이므로, $x$ 값이 $0$ 에서 $2$ 까지이고, 이에 해당하는 $y$ 값은 $y=-x^{2}+k$ 이므로 $B=\\int_{0}^{2}(-x^{2}+k)dx=\\frac{8}{3}+k$ 이다. $A=B$ 이므로 $k^{2}=\\frac{8}{3}+k$ 이다. 이를 정리하면 $k^{2}-k-\\frac{8}{3}=0$ 이 되고, 이 방정식의 해는 $k=\\frac{4}{3}$ 또는 $k=-\\frac{2}{3}$ 이다. $k>0$ 이므로 $k=\\frac{4}{3}$ 이다. 따라서 답은 $\\frac{4}{3}$ 이다.
+:::
+:::::
+
+
+# 전체문제 풀이
+
+## 함수
+
+```{r}
+#| eval: true
+get_answer <- function(questions) {
+  question_for_chatGPT <- glue::glue("아래 수학문제를 풀어주세요. 단, 풀이과정은 출력하지말고 정답만 간결하게 출력합니다: \n{md_tbl %>% slice(questions) %>% pull(문제)}") %>% 
+  as.character(.)
+  res <- chat_completion(question_for_chatGPT, 
+                  model = "gpt-3.5-turbo",
+                  type = "console",
+                  temperature=0)
+  
+  return(res[[2]]$content)
+}
+
+get_answer(2)
+```
+
+# `text-davinci-003`
+
+## 스크립트
+
+```{r}
+#| eval: false
+library(httr)
+
+question_for_chatGPT <- glue::glue("아래 수학문제를 풀어주세요. 단, 풀이과정은 출력하지말고 정답만 간결하게 출력합니다: \n{md_tbl %>% slice(1) %>% pull(문제)}")
+# question_for_chatGPT <- glue::glue("아래 수학문제를 풀어주세요: \n{md_tbl %>% slice(1) %>% pull(문제)}") %>% as.character(.)
+
+completion_url <- "https://api.openai.com/v1/completions"
+auth <- add_headers(Authorization = paste("Bearer", Sys.getenv("OPENAI_API_KEY")))
+body <- list(model = "text-davinci-003", prompt = question_for_chatGPT, 
+             temperature = 0,
+             max_tokens =200)
+
+resp <- POST(
+  completion_url,
+  auth,
+  body = body,
+  encode = "json"
+)
+
+answer <- content(resp, as = "text", encoding = "UTF-8") %>%
+  jsonlite::fromJSON(flatten = TRUE) %>% 
+  pluck("choices")
+
+answer$text
+```
+
+
+## 스크립트
+
+```{r}
+#| eval: false
+solve_problem <- function(question) {
+  # question_for_chatGPT <- glue::glue("아래 수학문제를 풀어주세요. 단, 풀이과정은 출력하지말고 정답만 간결하게 출력합니다: \n{md_tbl %>% slice(question) %>% pull(문제)}")
+question_for_chatGPT <- glue::glue("아래 수학문제를 풀어주세요: \n{md_tbl %>% slice(question) %>% pull(문제)}") %>% as.character(.)
+
+  completion_url <- "https://api.openai.com/v1/completions"
+  auth <- add_headers(Authorization = paste("Bearer", Sys.getenv("OPENAI_API_KEY")))
+  body <- list(model = "text-davinci-003", prompt = question_for_chatGPT, 
+               temperature = 0,
+               max_tokens =1000)
+  
+  resp <- POST(
+    completion_url,
+    auth,
+    body = body,
+    encode = "json"
+  )
+  
+  answer <- content(resp, as = "text", encoding = "UTF-8") %>%
+    jsonlite::fromJSON(flatten = TRUE) %>% 
+    pluck("choices")
+  
+  return(answer$text)
+}
+
+solve_problem(3)
+
+```
+
+\n\n등비수열의 정의는 $a_{n+1}=qa_{n}$ 이므로, \n\n$a_{2}=qa_{1}$\n\n$a_{4}=q^{2}a_{1}$\n\n$a_{6}=q^{3}a_{1}$\n\n따라서, \n\n$a_{2}+a_{4}=30 \\Rightarrow qa_{1}+q^{2}a_{1}=30$\n\n$a_{4}+a_{6}=\\frac{15}{2} \\Rightarrow q^{2}a_{1}+q^{3}a_{1}=\\frac{15}{2}$\n\n두 식을 더하면, \n\n$qa_{1}+2q^{2}a_{1}+q^{3}a_{1}=\\frac{45}{2}$\n\n$(q+2q^{2}+q^{3})a_{1}=\\frac{45}{2}$\n\n$a_{1}=\\frac{45}{2(q+2q^{2}+q^{3})}$
