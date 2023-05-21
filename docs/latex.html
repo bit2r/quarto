@@ -205,8 +205,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">문서 편집기</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./latex_lipsum.qmd" rel="" target="">
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
  <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.html" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_thesis.html" rel="" target="">
+ <span class="dropdown-text">학위논문 양식</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_cover.html" rel="" target="">
+ <span class="dropdown-text">책표지와 본문결합</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
+ <span class="dropdown-text">Rmd &amp;rarr; PDF</span></a>
   </li>  
     </ul>
   </li>
@@ -438,6 +454,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">4.3</span> <code>tools</code></a></li>
   <li><a href="#adobe-웹사이트" id="toc-adobe-웹사이트" class="nav-link" data-scroll-target="#adobe-웹사이트"><span class="header-section-number">4.4</span> <code>Adobe</code> 웹사이트</a></li>
   </ul></li>
+  <li><a href="#standard-page-size" id="toc-standard-page-size" class="nav-link" data-scroll-target="#standard-page-size"><span class="header-section-number">5</span> 종이 크기 </a>
+  <ul class="collapse">
+  <li><a href="#layout-pkg" id="toc-layout-pkg" class="nav-link" data-scroll-target="#layout-pkg"><span class="header-section-number">5.1</span> 레이아웃 팩키지 </a></li>
+  </ul></li>
+  <li><a href="#hlatex" id="toc-hlatex" class="nav-link" data-scroll-target="#hlatex"><span class="header-section-number">6</span> 한글과 <span class="math inline">\(\TeX\)</span> 연습문제</a></li>
   </ul>
 </nav>
     </div>
@@ -629,18 +650,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adobe-웹사이트" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="adobe-웹사이트"><span class="header-section-number">4.4</span> <code>Adobe</code> 웹사이트</h2>
 <p><a href="https://www.adobe.com/acrobat/online/compress-pdf.html">Adobe Acrobat Compress PDF size</a> 웹사이트에 PDF를 끌어다 놓아 PDF 압축기로 파일 크기를 줄이는 것도 가능하다.</p>
-
-
 </section>
+</section>
+<section id="standard-page-size" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 종이 크기 <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h1>
+<p>종이 크기(Standard Paper Size)는 수많은 표준이 있으며 나라와 시기에 따라 다르다. 오늘날 쓰이는 크기에는 대한민국에서 활용하는 국제 표준인 <strong>ISO A형(A4 등 A 계열)</strong>과 북아메리카(North American) 미국 종이 크기가 있다. 국제 종이 크기 표준은 ISO 216이며 이를 따라 제작한 종이를 흔히 ISO A형이라고도 한다. A형 전지는 A0로 표기하며 이를 접어서 절단할 때마다 숫자를 늘린다. A1은 한번 접어서 자른 크기이며, 흔히 사용하는 A4는 A0를 네 번 접어서 자른 종이 크기이다. 가장 많이 사용되고 있는 A4는 가로 x 세로 <span class="math inline">\(210 mm \times 297 mm\)</span> 크기를 갖는다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ISO_A_size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="fig/ISO_A_size.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<section id="layout-pkg" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="layout-pkg"><span class="header-section-number">5.1</span> 레이아웃 팩키지 <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></h2>
+<p><code>geometry</code>가 문서 레이아웃을 자유로이 지정하는 대표적인 팩키지다. 이외에도 국내에서 많이 사용되는 <code>memoir</code>, <code>oblivoir</code> 팩키지를 사용할 수 있다.</p>
+<ul>
+<li><code>geometry</code> 팩키지: 판형과 판면을 설정하는 대표적인 팩키지. <code>showcrop</code>과 <code>showframe</code> 옵션을 주어 재단선을 그려준다.</li>
+<li><code>memoir</code>, <code>oblivoir</code> 클래스: 클래스 옵션으로 <code>showtrmis</code>를 주고 <code>\trimLmarks</code>, <code>\trimXmarks</code>, <code>\trimFrame</code> 명령을 줄 수 있고 <code>QuarkXpress</code>에서 작업한 것과 비슷한 모양으로 그려주는 <code>\quarkmarks</code> 명령도 제공.</li>
+<li><code>crop</code> 팩키지: <code>\crop</code> 명령과 cam, cross, frame, axes, noaxes 옵션 설정 가능.</li>
+</ul>
+<p><code>documentclass</code> 선택사양을 지정하면 문서를 원하는 방향으로 작성할 수 있다. <code>class_name</code>에 지정할 수 있는 것은 <code>book</code>, <code>article</code>, <code>report</code>, <code>letter</code> 등이 대표적이다.</p>
+<ul>
+<li><code>\documentclass[option1, option2, etc.]{class_name}</code>
+<ul>
+<li>Font size (10pt, 11pt, 12pt)</li>
+<li>Paper size and format (a4paper, letterpaper, etc.)</li>
+<li>Draft mode (draft)</li>
+<li>Multiple columns (onecolumn, twocolumn)</li>
+<li>Formula-specific options (fleqn and leqno)</li>
+<li>Landscape print mode (landscape)</li>
+<li>Single- and double-sided documents (oneside, twoside)</li>
+<li>Titlepage behavior (notitlepage, titlepage)</li>
+<li>Chapter opening page (openright, openany)</li>
+</ul></li>
+</ul>
+<div class="row">
+<div class="col-md-6">
+<p><strong><code>article</code>, <code>report</code>, <code>book</code></strong></p>
+<p>10 ~ 12pt 만 가능.</p>
+</div>
+<div class="col-md-6">
+<p><strong><code>extrarticle</code>, <code>extreport</code>, <code>extbook</code></strong></p>
+<p>글꼴 크기를 8 ~ 12pt, 14pt, 17pt, 20pt 범위에서 나름 자유롭게 선택가능.</p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[a4paper]{<span class="ex">article</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">kotex</span>}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">jiwonlipsum</span>}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">layout</span>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[showframe]{<span class="ex">geometry</span>}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\geometry</span>{</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    a4paper, </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    landscape, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    left=50mm,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    top=30mm,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    showcrop}</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\layout</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\tiny</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\jiwon</span>[1-2]</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<hr>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"lipsum/layout/layout-geometry.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="lipsum/layout/layout-geometry.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><embed src="lipsum/layout/layout-geometry.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="hlatex" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 한글과 <span class="math inline">\(\TeX\)</span> 연습문제</h1>
+<p>한국과학기술원 산업수학연구실 고기형 지음(1995), “한글 LATEX의 모든 것—한글과 TEX”의 목차와 연습문제를 보게 되면 <span class="math inline">\(\LaTeX\)</span> 기본기를 익히는데 큰 도움이 될 듯 싶다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/hangul-latex-exercises.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/hangul-latex-exercises.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><embed src="data/hangul-latex-exercises.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+
+
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://www.quora.com/How-did-the-PDF-file-format-become-the-de-facto-standard-for-document-publishing">“How did the PDF file format become the de facto standard for document publishing?”, Quora</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p><a href="https://www.youtube.com/watch?v=-cFOsAzigyQ&amp;t=5s">Brailsford (2016-10-01), “PDF Workflow - Computerphile”, Computerphile</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://ko.wikipedia.org/wiki/종이_크기">위키백과, “종이 크기”</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/">tom (2013-02-13), “LaTeX documentclass options illustrated”, texblog because LaTeX matters</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -888,7 +1008,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":true});</script>
 
 
 

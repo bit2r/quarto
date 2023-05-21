@@ -42,9 +42,9 @@ $\LaTeX$ 프로젝트 구조는 다음과 같다.
 
 ![](fig/latex-project-structure.png)
 
-# PDF 파일 [^1] {#pdf-file}
+# PDF 파일 [^standard] {#pdf-file}
 
-[^1]: ["How did the PDF file format become the de facto standard for document publishing?", Quora](https://www.quora.com/How-did-the-PDF-file-format-become-the-de-facto-standard-for-document-publishing)
+[^standard]: ["How did the PDF file format become the de facto standard for document publishing?", Quora](https://www.quora.com/How-did-the-PDF-file-format-become-the-de-facto-standard-for-document-publishing)
 
 PDF는 이동 가능 문서형식으로 번역되며 Portable Document Format의 약자기도 하지만 파일명이기도 하다.
 PDF 파일에는 일반 문서 및 문자, 도형, 그림, 글꼴이 포함된다.
@@ -57,9 +57,9 @@ PDF 파일에는 일반 문서 및 문자, 도형, 그림, 글꼴이 포함된�
 
 ![](fig/why-pdf.png)
 
-# 팩키지 관리자 [^1] {#tex-live-package-manager}
+# 팩키지 관리자 [^yoon] {#tex-live-package-manager}
 
-[^1]: 윤석천, 이주호 (2017), "텍라이브 매니저와 KTUG 사설 저장소", TeX: 조판, 그 이상의 가능성
+[^yoon]: 윤석천, 이주호 (2017), "텍라이브 매니저와 KTUG 사설 저장소", TeX: 조판, 그 이상의 가능성
 
 $\TeX$ 엔진을 보좌하는 다양한 팩키지가 존재한다.
 $\LaTeX$ 저작을 할 때 당연히 기본 $\LaTeX$ 기능외에도 제3자가 개발한 팩키지를 활용하여 $\LaTeX$ 저작물을 더욱 읽기 쉽고 가독성 높게 작성할 수 있다.
@@ -181,9 +181,9 @@ $ kpsewhich xy.sty
 /usr/local/texlive/2020/texmf-dist/tex/generic/xypic/xy.sty
 ```
 
-# PDF 파일크기 [^2] {#pdf-reader-write}
+# PDF 파일크기 [^size] {#pdf-reader-write}
 
-[^2]: [Brailsford (2016-10-01), "PDF Workflow - Computerphile", Computerphile](https://www.youtube.com/watch?v=-cFOsAzigyQ&t=5s)
+[^size]: [Brailsford (2016-10-01), "PDF Workflow - Computerphile", Computerphile](https://www.youtube.com/watch?v=-cFOsAzigyQ&t=5s)
 
 ## `distiller`
 
@@ -214,4 +214,94 @@ tools::compactPDF()
 
 [Adobe Acrobat Compress PDF size](https://www.adobe.com/acrobat/online/compress-pdf.html) 웹사이트에 PDF를 끌어다 놓아 PDF 압축기로 파일 크기를 줄이는 것도 가능하다.
 
+
+# 종이 크기 [^paper] {#standard-page-size}
+
+[^paper]: [위키백과, "종이 크기"](https://ko.wikipedia.org/wiki/종이_크기)
+
+종이 크기(Standard Paper Size)는 수많은 표준이 있으며 나라와 시기에 따라 다르다.
+오늘날 쓰이는 크기에는 대한민국에서 활용하는 국제 표준인 **ISO A형(A4 등 A 계열)**과 북아메리카(North American) 미국 종이 크기가 있다.
+국제 종이 크기 표준은 ISO 216이며 이를 따라 제작한 종이를 흔히 ISO A형이라고도 한다.
+A형 전지는 A0로 표기하며 이를 접어서 절단할 때마다 숫자를 늘린다.
+A1은 한번 접어서 자른 크기이며, 흔히 사용하는 A4는 A0를 네 번 접어서 자른 종이 크기이다.
+가장 많이 사용되고 있는 A4는 가로 x 세로 $210 mm \times 297 mm$ 크기를 갖는다.
+
+![](fig/ISO_A_size.png)
+
+## 레이아웃 팩키지 [^layout-latex2] {#layout-pkg}
+
+[^layout-latex2]: [tom (2013-02-13), "LaTeX documentclass options illustrated", texblog because LaTeX matters](https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/)
+
+`geometry`가 문서 레이아웃을 자유로이 지정하는 대표적인 팩키지다. 이외에도 국내에서 많이 사용되는 `memoir`, `oblivoir` 팩키지를 사용할 수 있다. 
+
+- `geometry` 팩키지: 판형과 판면을 설정하는 대표적인 팩키지. `showcrop`과 `showframe` 옵션을 주어 재단선을 그려준다.
+- `memoir`, `oblivoir` 클래스: 클래스 옵션으로 `showtrmis`를 주고 `\trimLmarks`, `\trimXmarks`, `\trimFrame` 명령을 줄 수 있고 `QuarkXpress`에서 작업한 것과 비슷한 모양으로 그려주는 `\quarkmarks` 명령도 제공.
+- `crop` 팩키지: `\crop` 명령과 cam, cross, frame, axes, noaxes 옵션 설정 가능.
+
+`documentclass` 선택사양을 지정하면 문서를 원하는 방향으로 작성할 수 있다. `class_name`에 지정할 수 있는 것은 `book`, `article`, `report`, `letter` 등이 대표적이다.
+
+
+- `\documentclass[option1, option2, etc.]{class_name}`
+    - Font size (10pt, 11pt, 12pt)
+    - Paper size and format (a4paper, letterpaper, etc.)
+    - Draft mode (draft)
+    - Multiple columns (onecolumn, twocolumn)
+    - Formula-specific options (fleqn and leqno)
+    - Landscape print mode (landscape)
+    - Single- and double-sided documents (oneside, twoside)
+    - Titlepage behavior (notitlepage, titlepage)
+    - Chapter opening page (openright, openany)
+
+
+<div class = "row">
+  <div class = "col-md-6">
+**`article`, `report`, `book`**
+
+10 ~ 12pt 만 가능.
+
+  </div>
+  <div class = "col-md-6">
+**`extrarticle`, `extreport`, `extbook`**
+
+글꼴 크기를 8 ~ 12pt, 14pt, 17pt, 20pt 범위에서 나름 자유롭게 선택가능.
+
+  </div>
+</div>
+
+
+
+```{latex show-guideline, eval = FALSE}
+\documentclass[a4paper]{article}
+\usepackage{kotex}
+\usepackage{jiwonlipsum}
+\usepackage{layout}
+
+\usepackage[showframe]{geometry}
+\geometry{
+	a4paper, 
+	landscape, 
+	left=50mm,
+	top=30mm,
+	showcrop}
+
+\begin{document}
+	\layout
+	\tiny
+	\jiwon[1-2]
+\end{document}
+```
+
+---
+
+``` {r embed-latex-layout-pdf, out.height = "460px", out.width='800px', echo=TRUE} 
+knitr::include_graphics("lipsum/layout/layout-geometry.pdf")
+```
+
+# 한글과 $\TeX$ 연습문제 {#hlatex}
+
+한국과학기술원 산업수학연구실 고기형 지음(1995), "한글 LATEX의 모든 것—한글과 TEX"의 목차와 연습문제를 보게 되면 $\LaTeX$ 기본기를 익히는데 큰 도움이 될 듯 싶다.
+
+```{r tex--exercise-embed-pdf, out.height = "460px", out.width='800px', echo=TRUE} 
+knitr::include_graphics("data/hangul-latex-exercises.pdf")
+```
 

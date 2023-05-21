@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/latex.html</loc>
-    <lastmod>2023-05-21T13:37:08.438Z</lastmod>
+    <lastmod>2023-05-21T23:04:50.874Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/document_editor.html</loc>
@@ -183,5 +183,17 @@
   <url>
     <loc>https://quartopub.com/sites/statkclee/quarto-ds/latex_helloworld.html</loc>
     <lastmod>2023-05-21T13:53:27.826Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quartopub.com/sites/statkclee/quarto-ds/latex_thesis.html</loc>
+    <lastmod>2023-05-21T22:46:49.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quartopub.com/sites/statkclee/quarto-ds/latex_cover.html</loc>
+    <lastmod>2023-05-21T22:55:04.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quartopub.com/sites/statkclee/quarto-ds/latex_rmd.html</loc>
+    <lastmod>2023-05-21T23:26:19.114Z</lastmod>
   </url>
 </urlset>

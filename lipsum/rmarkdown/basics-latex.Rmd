@@ -1,0 +1,83 @@
+---
+layout: page
+output:
+  bookdown::pdf_document2: 
+    latex_engine: xelatex
+    toc: true
+    toc_depth: 2  
+    number_sections: true
+    fig_width: 3
+    fig_height: 2
+    fig_caption: true
+    df_print: kable
+    highlight: tango
+    includes:
+      in_header: sections/import.tex
+      before_body: sections/cover.tex
+mainfont: NanumGothic
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+library(tidyverse)
+```
+
+
+# 들어가며 {#rmd-intro}
+
+[`lorem`](https://github.com/gadenbuie/lorem), [`shinipsum`](https://github.com/ThinkR-open/shinipsum) 팩키지가 도움이 된다.
+
+`r lorem::ipsum(paragraphs = 1)`
+
+# 텍스트 {#rmd-main}
+
+`r lorem::ipsum(paragraphs = 1)`
+
+## 증명 {#rmd-proof}
+
+`r lorem::ipsum(paragraphs = 1)`
+
+## 표 {#rmd-table}
+
+`r shinipsum::random_table(5, 7, "numeric")`
+
+## 그래프 {#rmd-graph}
+
+<!-- `r shinipsum::random_ggplot()` -->
+
+```{r lorem-ipsum-penguin}
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 1,
+             alpha = 0.8) +
+  theme_minimal() +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  theme(legend.position = c(0.2, 0.7),
+        legend.background = element_rect(fill = "white", color = NA),
+        plot.title.position = "plot",
+        plot.caption = element_text(hjust = 0, face= "italic"),
+        plot.caption.position = "plot")
+```
+
+
+## 그림 {#rmd-image}
+
+<!-- `r shinipsum::random_image()` -->
+
+![](../fig/latex-editor.png)
+
+## 모형 {#rmd-model}
+
+`r shinipsum::random_print("model")  %>% broom::glance()`
+
+# 마무리 {#rmd-conclusion}
+
+`r lorem::ipsum(paragraphs = 1)`
+

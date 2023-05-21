@@ -59,6 +59,12 @@ website:
             text: "국영문 `lipsum`"
           - href: latex_helloworld.qmd
             text: "헬로월드 한영 문서"
+          - href: latex_thesis.qmd
+            text: "학위논문 양식"
+          - href: latex_cover.qmd
+            text: "책표지와 본문결합"
+          - href: latex_rmd.qmd
+            text: "Rmd --> PDF"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/

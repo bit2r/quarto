@@ -1,0 +1,174 @@
+---
+title: "디지털 글쓰기"
+subtitle: "책표지와 본문결합"
+description: |
+  이미지로 제작한 책표지와 국영문 $\LaTeX$ 본문 콘텐츠를 하나로 결합시켜보자.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 책표지 {#frontpage}
+
+[`Canva`](https://www.canva.com/)와 같은 이미지 제작 웹사이트에서 책이나 보고서 첫페이지에 사용될 이미지를 제작한다. 제작한 파일을 `pdf` 파일로 저장한다.
+
+![](fig/canva-frontmatter.png){width="453"}
+
+최근에는 생성형 AI의 도입으로 Midjourney, DALL·E, Stable Diffusion 등을 
+활용하는 사례가 표준으로 자리잡아가고 있다.
+
+## 책표지 이미지 {#insert-image-with-title}
+
+`titlepic` 팩키지를 동원해서 책제목과 함께 이미지를 함께 넣어 PDF 문서를 제작할 수 있다.
+`titlepage`를 별도로 빼서 나름 모듈화 시킨다.
+
+```latex
+\documentclass[a4paper]{article}
+\usepackage{kotex}
+\usepackage{jiwonlipsum}
+
+% 첫장
+\usepackage{titlepic}
+\usepackage{graphicx}
+
+\title{데이터 과학 입문}
+\author{이광춘}
+\date{\today}
+\titlepic{\includegraphics[width=7cm]{cover.png}}
+%\titlepic{\includegraphics[width=\textwidth/2]{cover.png}}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\maketitle
+	\end{titlepage}
+
+	\section{들어가며}
+	\jiwon
+	
+\end{document}
+```
+
+
+---
+
+``` {r embed-front-image-pdf, out.height = "460px", out.width='800px', echo=TRUE} 
+knitr::include_graphics("lipsum/cover/cover-image.pdf")
+```
+
+## PDF 책표지 {#frontpage-pdf}
+
+`pdfpages` 팩키지를 사용하면 `\includepdf[fitpaper]{canva-cover}` 명령어를 통해 간단하게 PDF 책표지를 넣어 멋진 책이나 보고서를 꾸밀 수 있다. 마찬가지로 `\includepdf[fitpaper]{canva-backmatter}` 명령어와 PDF 파일 뒷면을 준비한다.
+
+```{latex pdf-cover-canva, eval = FALSE}
+\documentclass[a4paper]{article}
+\usepackage{kotex}
+\usepackage{jiwonlipsum}
+
+% PDF 겉장 -------------------------------
+\usepackage{pdfpages}
+
+\title{데이터 과학 입문}
+\author{이광춘}
+\date{\today}
+
+\begin{document}
+	
+	\includepdf[fitpaper]{canva-cover}
+	
+	\begin{titlepage}
+		\maketitle
+	\end{titlepage}
+
+	\section{들어가며}
+	\jiwon
+	
+	\includepdf[fitpaper]{canva-backmatter}	
+	
+\end{document}
+```
+
+---
+
+``` {r embed-cover-final-pdf, out.height = "460px", out.width='800px', echo=TRUE} 
+knitr::include_graphics("lipsum/cover/cover-pdf.pdf")
+```
+
+[]{.aside}
+윈도우즈 10 `canva` PDF 파일은 R마크다운과 함께 작업할 경우 잘 동작하지 않는 오류가 있다.
+
+```{r}
+htmltools::a(href = 'lipsum/cover/cover-pdf.pdf', '다운로드')
+```
+
+
+![](fig/merge-pdfs.png){width="622"}
+
+# PDF 파일 합치기 {#merge-pdf}
+
+`pdfpages` 팩키지를 활용하게 되면 `PDF` 파일을 결합할 수 있다.
+즉, 책이나 보고서의 겉장을 PDF 파일로 멋지게 작업한 후 이를 본문 `PDF` 파일과 결합시키게 되면 나름 전문가스러운 `PDF` 파일을 얻을 수 있다.
+
+## 표지 PDF {#show-front-pdf} 
+
+[`Canva`](https://www.canva.com/) 웹사이트에서 제작한 표지를 PDF로 다운로드 받아 겉장 표지로 준비한다.
+
+```{r embed-front-image-pdf2, out.height = "460px", out.width='800px', echo=TRUE}
+knitr::include_graphics("lipsum/cover/cover-pdf.pdf")
+```
+
+## PDF 본문 {#show-main-pdf} 
+
+보고서나 논문으로 제작한 결과를 `PDF` 파일로 저장시킨다.
+
+```{r embed-main-image-pdf, out.height = "460px", out.width='800px', echo=TRUE}
+knitr::include_graphics("lipsum/cover/main-pdf.pdf")
+```
+
+## PDF 결합 {#show-merge-pdf} 
+
+겉장 PDF 파일과 본문 PDF 파일을 결합시켜 최종 결과보고서로 준비한다.
+
+```{r merge-image-pdf, out.height = "460px", out.width='800px', echo=TRUE}
+knitr::include_graphics("lipsum/cover/merge-pdf.pdf")
+```
+
+```{r download-pdf}
+htmltools::a(href = 'lipsum/cover/merge-pdf.pdf', '다운로드')
+```
+
+
+
+
+

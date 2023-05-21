@@ -1299,7 +1299,7 @@
     "href": "latex.html#footnotes",
     "title": "\\(\\LaTeX\\) 들어가며",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\n윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성↩︎\n윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성↩︎\nBrailsford (2016-10-01), “PDF Workflow - Computerphile”, Computerphile↩︎"
+    "text": "Footnotes\n\n\n“How did the PDF file format become the de facto standard for document publishing?”, Quora↩︎\n윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성↩︎\nBrailsford (2016-10-01), “PDF Workflow - Computerphile”, Computerphile↩︎\n위키백과, “종이 크기”↩︎\ntom (2013-02-13), “LaTeX documentclass options illustrated”, texblog because LaTeX matters↩︎"
   },
   {
     "objectID": "latex.html#distiller",
@@ -1419,5 +1419,166 @@
     "title": "디지털 글쓰기",
     "section": "2.2 한글 글꼴",
     "text": "2.2 한글 글꼴\n한글 글꼴을 적용하고자 하는 경우 \\setmainhangulfont, \\setsanshangulfont, \\setmonohangulfont를 지정하여 표현한다. \\hangulfontspec{맑은 고딕}을 지정하면 특정 글꼴을 선별하여 지정할 수 있다.\n\\documentclass{article}\n\\usepackage{kotex}\n\\usepackage{import}\n\\usepackage{lipsum}  \n\n% Fonts\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n%% 영문 폰트\n%\\setmainfont{TeX Gyre Termes}\n%\\setromanfont{Times New Roman}\n%\\setsansfont{Arial}\n%\\setmonofont{Courier New}\n%\\setmainfont{Arial}\n%% 한글 폰트\n\\setmainhangulfont{NanumMyeongjo} % NanumMyeongjo\n\\setsanshangulfont{맑은 고딕}     % MalgunGothic\n\\setmonohangulfont{D2Coding}\n\n% References\n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n% 제 X 장 설정\n\\renewcommand{\\thesection}{제 \\arabic{section} 절}\n\n\\begin{document}\n    % Title and Author\n    \\title{한글 \\LaTeX}\n    \\author{이광춘}\n    \\maketitle\n    \n    % Main Contents\n    \\abstract{}\n        {\\fontfamily{lmtt}\\selectfont\n            \\lipsum[1]  \n        }\n    \\section{들어가며}\n        {\\hangulfontspec{맑은 고딕}\n            \\import{sections/}{01_intro.tex}\n        }\n    \\section{main findings}\n        \\lipsum[1-2]\n    \\section{주장 증명방법}\n            \\import{sections/}{02_proof.tex}\n    \\section{코드}\n        \\begin{verbatim}\n            코딩 글꼴 한글도 함께 합니다!!!\n            Text enclosed inside \\texttt{verbatim} environment \n            is printed directly \n            and all \\LaTeX{} commands are ignored.\n        \\end{verbatim}\n    % References\n    \\section{참고 문헌}\n            Lorem \\autocite{sigfridsson}\n            ipsum \\autocite{worman}\n            dolor \\autocite{nussbaum}\n            sit \\autocite{sigfridsson}\n            amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean_font/main.pdf\")"
+  },
+  {
+    "objectID": "latex_thesis.html",
+    "href": "latex_thesis.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "1 논문 내 저자\n논문과 보고서의 첫인상은 무척이나 중요하다. 제목과 함께 저자와 소속도 명기하고 필요한 경우 교신 저자(Corresponding author)도 넣어 전자우편주소를 추가한다. authblk 팩키지의 도움으로 이런 전체 과정이 참 단순화되고 문서 작성코드도 깔끔해졌다.\n\n\nCode\n\\documentclass[]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\\usepackage{authblk}\n\n%opening\n\\title{멋진 \\LaTeX 제목 페이지}\n\\author{이광춘 \\thanks{교신저자(Corresponding author): tidyverse@edu.go.kr}}\n\\author[2]{나R러브}\n\\date{2021-03-03}\n\n\\affil{Tidyverse Korea}\n\\affil[2]{Seoul R Meetup}\n\n\\begin{document}\n\n\\maketitle\n\n\\begin{abstract}\n    \\jiwon[1]\n\\end{abstract}\n\n\\section{들어가며}\n    \\jiwon\n\n\\end{document}\n\n\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean_lipsum/title.pdf\")\n\n\n\n\n\n\n\n\n\n\n\n2 이미지 삽입\n\\begin{titlepage}를 사용하여 학위논문에 관련된 내용을 채워넣고 graphicx 팩키지를 사용해서 학위논문에 들어갈 학교 이미지도 추가하여 모듈화시켜 깔끔하게 작성한다.\n\n\nCode\n\\documentclass[a4]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\\usepackage{authblk}\n\\usepackage{graphicx}\n\\graphicspath{ {./fig/} }\n\n\\begin{document}\n\n\\begin{titlepage}   \n    \\centering  \n    {\\LARGE \\bfseries 멋진 \\LaTeX 학위논문}\n    \\vspace{3\\baselineskip}\n    \n    {\\Large Tidyverse가 데이터 과학자 정신건강에 미치는 긍정효과}\n    \\vspace{3.5\\baselineskip}\n    \n    {\\Large Submitted in partial fulfillment of the requirements     \\vspace{0.5\\baselineskip}\n        \n        for the degree of  }\n    \\vspace{3.5\\baselineskip}\n    \n    {\\Large Master of Technology}\n    \\vspace{0.5\\baselineskip}\n    \n    {\\Large by}\n    \\vspace{0.5\\baselineskip}\n    \n    {\\Large \\bfseries 이광춘}\n    \\vspace{3\\baselineskip}\n    \n    {\\Large Supervisor: \\bfseries 해드리 위컴}\n    \\vspace{3.5\\baselineskip}\n    \n    \\includegraphics[width=0.1\\linewidth]{tidyverse}\n    \\vspace{3.5\\baselineskip}\n    \n    {\\Large Department of Data Science}\n    \\vspace{0.5\\baselineskip}\n    \n    {\\Large RStudio}\n    \\vspace{3.5\\baselineskip}\n    \n    {\\Large \\today}    \n    \n\\end{titlepage}     \n%--------------------------------------------------------   \n\n\\begin{abstract}\n    \\jiwon[1]\n\\end{abstract}\n\n\\section{들어가며}\n    \\jiwon\n\n\\end{document}\n\n\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean_lipsum/title_in_practice.pdf\")"
+  },
+  {
+    "objectID": "latex_thesis.html#latex-format",
+    "href": "latex_thesis.html#latex-format",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "lipsum.tex 파일은 다음과 같이 문서 양식을 지정한 후에 lipsum 팩키지를 통해 아무 의미없는 문단을 생성시켜 작성된 문서의 대략의 형태를 파악할 수 있게 한다. 참고문헌 서지관리를 위해 bibtex을 핵심 엔진으로 사용하고 \\addbibresource를 사용해서 BibTeX 파일을 biblatex-examples.bib을 지정한다. \\maketitle 명령어를 통해 문서 제목과 저자를 작성하고 \\abstract, \\section을 통해 문서의 주요 내용을 작성한다. 그리고 나서 \\autocite를 통해 참고문헌 관리를 자동화한다.\n\\documentclass{article}\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{English \\LaTeX}\n    \\author{Tidyverse Korea}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n        \\lipsum[1]  \n    \\section{introduction}\n        \\lipsum[3]\n    \\section{main findings\n    }\n        \\lipsum[1-2]\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/english/lipsum.pdf\")"
+  },
+  {
+    "objectID": "latex_thesis.html#set-english-font",
+    "href": "latex_thesis.html#set-english-font",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "대부분의 \\(\\LaTeX\\) 기본 글꼴 설정은 “Computer Modern” 서체 가족(family) 인데, 다음 4가지 중 하나로 설정을 변경할 수 있다.\n\n컴퓨터 모던 (표준 \\(\\LaTeX\\) 클래스): CM Roman, CM Sans Serif, CM Typewriter\n라틴 모던 (Latin Modern): LM Roman, LM Sans Serif, LM Typewriter, LM Dunhill\n포스트 스크립트(Post Script Fonts): Times, Utopia/Fourier, Palatino, Bookman, Helvetica, Courier\n\\(\\TeX\\) Gyre\n\n글꼴 변경을 위해서 fontenc, inputenc를 기본을 두고 Helvetica 글꼴로 변경하고자 할 경우 helvet을 지정하면 전체 문서 글꼴이 Helvetica 글꼴로 변경된다. 특정 영역을 Latin Modern Sans Typewriter 글꼴로 변경하고자 하는 경우 {\\fontfamily{lmtt}\\selectfont ... }을 감싸고 나서 ...에 글자를 넣으면 된다. 여기서 lmtt가 Latin Modern Sans Typewriter 글꼴을 지정한다. Roman(Serif), Sans Serif, Typewriter(Monospaced) 글꼴에 대해서는 비교표에 대해서는 “Font typefaces”를 참조한다. 예를 들어, Times 글꼴을 사용하고자 하는 경우 다음과 같이 작업한다.\n\n\\usepackage{mathptmx} 을 지정하거나,\n{\\fontfamily{ptm}\\selectfont ... } 을 지정한다.\n\n\\documentclass{article}\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% Fonts                         &lt;---- 전체 글꼴 변경\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{helvet}             &lt;---- Helvetica 글꼴\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{English \\LaTeX}\n    \\author{Tidyverse Korea}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n        {\\fontfamily{lmtt}\\selectfont  &lt;---- Latin Modern Sans Typewriter 글꼴\n            \\lipsum[1]  \n        }\n    \\section{introduction}\n        \\lipsum[3]\n    \\section{main findings\n    }\n        \\lipsum[1-2]\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/english_font/font-whole-document.pdf\")"
+  },
+  {
+    "objectID": "latex_thesis.html#latex-파일-구성",
+    "href": "latex_thesis.html#latex-파일-구성",
+    "title": "디지털 글쓰기",
+    "section": "2.1 \\(\\LaTeX\\) 파일 구성",
+    "text": "2.1 \\(\\LaTeX\\) 파일 구성\nlipsum.tex 파일은 다음과 같이 문서 양식을 지정한 후에 lipsum 팩키지를 통해 아무 의미없는 문단을 생성시켜 작성된 문서의 대략의 형태를 파악할 수 있게 한다. 참고문헌 서지관리를 위해 bibtex을 핵심 엔진으로 사용하고 \\addbibresource를 사용해서 BibTeX 파일을 biblatex-examples.bib을 지정한다. \\maketitle 명령어를 통해 문서 제목과 저자를 작성하고 \\abstract, \\section을 통해 문서의 주요 내용을 작성한다. 그리고 나서 \\autocite를 통해 참고문헌 관리를 자동화한다.\n\\documentclass{article}\n\\usepackage{kotex}              &lt;---- 한글 필수 팩키지\n\\usepackage{import}             &lt;---- 파일 가져오기\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{한글 \\LaTeX}\n    \\author{이광춘}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n      {\\fontfamily{lmtt}\\selectfont  &lt;---- Latin Modern Sans Typewriter 글꼴\n          \\lipsum[1]  \n      }\n    \\section{들어가며}\n            \\import{sections/}{01_intro.tex}\n    \\section{main findings}\n        \\lipsum[1-2]\n    \\section{주장 증명방법}\n            \\import{sections/}{02_proof.tex}\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean/korean.pdf\")"
+  },
+  {
+    "objectID": "latex_thesis.html#한글-글꼴",
+    "href": "latex_thesis.html#한글-글꼴",
+    "title": "디지털 글쓰기",
+    "section": "2.2 한글 글꼴",
+    "text": "2.2 한글 글꼴\n한글 글꼴을 적용하고자 하는 경우 \\setmainhangulfont, \\setsanshangulfont, \\setmonohangulfont를 지정하여 표현한다. \\hangulfontspec{맑은 고딕}을 지정하면 특정 글꼴을 선별하여 지정할 수 있다.\n\\documentclass{article}\n\\usepackage{kotex}\n\\usepackage{import}\n\\usepackage{lipsum}  \n\n% Fonts\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n%% 영문 폰트\n%\\setmainfont{TeX Gyre Termes}\n%\\setromanfont{Times New Roman}\n%\\setsansfont{Arial}\n%\\setmonofont{Courier New}\n%\\setmainfont{Arial}\n%% 한글 폰트\n\\setmainhangulfont{NanumMyeongjo} % NanumMyeongjo\n\\setsanshangulfont{맑은 고딕}     % MalgunGothic\n\\setmonohangulfont{D2Coding}\n\n% References\n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n% 제 X 장 설정\n\\renewcommand{\\thesection}{제 \\arabic{section} 절}\n\n\\begin{document}\n    % Title and Author\n    \\title{한글 \\LaTeX}\n    \\author{이광춘}\n    \\maketitle\n    \n    % Main Contents\n    \\abstract{}\n        {\\fontfamily{lmtt}\\selectfont\n            \\lipsum[1]  \n        }\n    \\section{들어가며}\n        {\\hangulfontspec{맑은 고딕}\n            \\import{sections/}{01_intro.tex}\n        }\n    \\section{main findings}\n        \\lipsum[1-2]\n    \\section{주장 증명방법}\n            \\import{sections/}{02_proof.tex}\n    \\section{코드}\n        \\begin{verbatim}\n            코딩 글꼴 한글도 함께 합니다!!!\n            Text enclosed inside \\texttt{verbatim} environment \n            is printed directly \n            and all \\LaTeX{} commands are ignored.\n        \\end{verbatim}\n    % References\n    \\section{참고 문헌}\n            Lorem \\autocite{sigfridsson}\n            ipsum \\autocite{worman}\n            dolor \\autocite{nussbaum}\n            sit \\autocite{sigfridsson}\n            amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean_font/main.pdf\")"
+  },
+  {
+    "objectID": "latex_thesis.html#footnotes",
+    "href": "latex_thesis.html#footnotes",
+    "title": "디지털 글쓰기",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOverleaf, “Font typefaces”↩︎"
+  },
+  {
+    "objectID": "latex_cover.html",
+    "href": "latex_cover.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "Canva와 같은 이미지 제작 웹사이트에서 책이나 보고서 첫페이지에 사용될 이미지를 제작한다. 제작한 파일을 pdf 파일로 저장한다.\n\n\n\n\n\n최근에는 생성형 AI의 도입으로 Midjourney, DALL·E, Stable Diffusion 등을 활용하는 사례가 표준으로 자리잡아가고 있다.\n\n\ntitlepic 팩키지를 동원해서 책제목과 함께 이미지를 함께 넣어 PDF 문서를 제작할 수 있다. titlepage를 별도로 빼서 나름 모듈화 시킨다.\n\\documentclass[a4paper]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\n% 첫장\n\\usepackage{titlepic}\n\\usepackage{graphicx}\n\n\\title{데이터 과학 입문}\n\\author{이광춘}\n\\date{\\today}\n\\titlepic{\\includegraphics[width=7cm]{cover.png}}\n%\\titlepic{\\includegraphics[width=\\textwidth/2]{cover.png}}\n\n\\begin{document}\n    \n    \\begin{titlepage}\n        \\maketitle\n    \\end{titlepage}\n\n    \\section{들어가며}\n    \\jiwon\n    \n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/cover-image.pdf\")\n\n\n\n\n\n\n\n\n\n\n\n\npdfpages 팩키지를 사용하면 \\includepdf[fitpaper]{canva-cover} 명령어를 통해 간단하게 PDF 책표지를 넣어 멋진 책이나 보고서를 꾸밀 수 있다. 마찬가지로 \\includepdf[fitpaper]{canva-backmatter} 명령어와 PDF 파일 뒷면을 준비한다.\n\n\nCode\n\\documentclass[a4paper]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\n% PDF 겉장 -------------------------------\n\\usepackage{pdfpages}\n\n\\title{데이터 과학 입문}\n\\author{이광춘}\n\\date{\\today}\n\n\\begin{document}\n    \n    \\includepdf[fitpaper]{canva-cover}\n    \n    \\begin{titlepage}\n        \\maketitle\n    \\end{titlepage}\n\n    \\section{들어가며}\n    \\jiwon\n    \n    \\includepdf[fitpaper]{canva-backmatter} \n    \n\\end{document}\n\n\n\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/cover-pdf.pdf\")\n\n\n\n\n\n\n\n\n\n 윈도우즈 10 canva PDF 파일은 R마크다운과 함께 작업할 경우 잘 동작하지 않는 오류가 있다.\n\n\nCode\nhtmltools::a(href = 'lipsum/cover/cover-pdf.pdf', '다운로드')\n\n\n다운로드"
+  },
+  {
+    "objectID": "latex_cover.html#insert-image-with-title",
+    "href": "latex_cover.html#insert-image-with-title",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "titlepic 팩키지를 동원해서 책제목과 함께 이미지를 함께 넣어 PDF 문서를 제작할 수 있다. titlepage를 별도로 빼서 나름 모듈화 시킨다.\n\\documentclass[a4paper]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\n% 첫장\n\\usepackage{titlepic}\n\\usepackage{graphicx}\n\n\\title{데이터 과학 입문}\n\\author{이광춘}\n\\date{\\today}\n\\titlepic{\\includegraphics[width=7cm]{cover.png}}\n%\\titlepic{\\includegraphics[width=\\textwidth/2]{cover.png}}\n\n\\begin{document}\n    \n    \\begin{titlepage}\n        \\maketitle\n    \\end{titlepage}\n\n    \\section{들어가며}\n    \\jiwon\n    \n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/cover-image.pdf\")"
+  },
+  {
+    "objectID": "latex_cover.html#frontpage-pdf",
+    "href": "latex_cover.html#frontpage-pdf",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "pdfpages 팩키지를 사용하면 \\includepdf[fitpaper]{canva-cover} 명령어를 통해 간단하게 PDF 책표지를 넣어 멋진 책이나 보고서를 꾸밀 수 있다. 마찬가지로 \\includepdf[fitpaper]{canva-backmatter} 명령어와 PDF 파일 뒷면을 준비한다.\n\n\nCode\n\\documentclass[a4paper]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\n% PDF 겉장 -------------------------------\n\\usepackage{pdfpages}\n\n\\title{데이터 과학 입문}\n\\author{이광춘}\n\\date{\\today}\n\n\\begin{document}\n    \n    \\includepdf[fitpaper]{canva-cover}\n    \n    \\begin{titlepage}\n        \\maketitle\n    \\end{titlepage}\n\n    \\section{들어가며}\n    \\jiwon\n    \n    \\includepdf[fitpaper]{canva-backmatter} \n    \n\\end{document}\n\n\n\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/cover-pdf.pdf\")\n\n\n\n\n\n\n\n\n\n 윈도우즈 10 canva PDF 파일은 R마크다운과 함께 작업할 경우 잘 동작하지 않는 오류가 있다.\n\n\nCode\nhtmltools::a(href = 'lipsum/cover/cover-pdf.pdf', '다운로드')\n\n\n다운로드"
+  },
+  {
+    "objectID": "latex_cover.html#show-front-pdf",
+    "href": "latex_cover.html#show-front-pdf",
+    "title": "디지털 글쓰기",
+    "section": "2.1 표지 PDF",
+    "text": "2.1 표지 PDF\nCanva 웹사이트에서 제작한 표지를 PDF로 다운로드 받아 겉장 표지로 준비한다.\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/cover-pdf.pdf\")"
+  },
+  {
+    "objectID": "latex_cover.html#show-main-pdf",
+    "href": "latex_cover.html#show-main-pdf",
+    "title": "디지털 글쓰기",
+    "section": "2.2 PDF 본문",
+    "text": "2.2 PDF 본문\n보고서나 논문으로 제작한 결과를 PDF 파일로 저장시킨다.\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/main-pdf.pdf\")"
+  },
+  {
+    "objectID": "latex_cover.html#show-merge-pdf",
+    "href": "latex_cover.html#show-merge-pdf",
+    "title": "디지털 글쓰기",
+    "section": "2.3 PDF 결합",
+    "text": "2.3 PDF 결합\n겉장 PDF 파일과 본문 PDF 파일을 결합시켜 최종 결과보고서로 준비한다.\n\n\nCode\nknitr::include_graphics(\"lipsum/cover/merge-pdf.pdf\")\n\n\n\n\n\n\n\n\n\n\n\nCode\nhtmltools::a(href = 'lipsum/cover/merge-pdf.pdf', '다운로드')\n\n\n다운로드"
+  },
+  {
+    "objectID": "latex.html#layout-pkg",
+    "href": "latex.html#layout-pkg",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "5.1 레이아웃 팩키지 5",
+    "text": "5.1 레이아웃 팩키지 5\ngeometry가 문서 레이아웃을 자유로이 지정하는 대표적인 팩키지다. 이외에도 국내에서 많이 사용되는 memoir, oblivoir 팩키지를 사용할 수 있다.\n\ngeometry 팩키지: 판형과 판면을 설정하는 대표적인 팩키지. showcrop과 showframe 옵션을 주어 재단선을 그려준다.\nmemoir, oblivoir 클래스: 클래스 옵션으로 showtrmis를 주고 \\trimLmarks, \\trimXmarks, \\trimFrame 명령을 줄 수 있고 QuarkXpress에서 작업한 것과 비슷한 모양으로 그려주는 \\quarkmarks 명령도 제공.\ncrop 팩키지: \\crop 명령과 cam, cross, frame, axes, noaxes 옵션 설정 가능.\n\ndocumentclass 선택사양을 지정하면 문서를 원하는 방향으로 작성할 수 있다. class_name에 지정할 수 있는 것은 book, article, report, letter 등이 대표적이다.\n\n\\documentclass[option1, option2, etc.]{class_name}\n\nFont size (10pt, 11pt, 12pt)\nPaper size and format (a4paper, letterpaper, etc.)\nDraft mode (draft)\nMultiple columns (onecolumn, twocolumn)\nFormula-specific options (fleqn and leqno)\nLandscape print mode (landscape)\nSingle- and double-sided documents (oneside, twoside)\nTitlepage behavior (notitlepage, titlepage)\nChapter opening page (openright, openany)\n\n\n\n\narticle, report, book\n10 ~ 12pt 만 가능.\n\n\nextrarticle, extreport, extbook\n글꼴 크기를 8 ~ 12pt, 14pt, 17pt, 20pt 범위에서 나름 자유롭게 선택가능.\n\n\n\n\nCode\n\\documentclass[a4paper]{article}\n\\usepackage{kotex}\n\\usepackage{jiwonlipsum}\n\\usepackage{layout}\n\n\\usepackage[showframe]{geometry}\n\\geometry{\n    a4paper, \n    landscape, \n    left=50mm,\n    top=30mm,\n    showcrop}\n\n\\begin{document}\n    \\layout\n    \\tiny\n    \\jiwon[1-2]\n\\end{document}\n\n\n\n\n\nCode\nknitr::include_graphics(\"lipsum/layout/layout-geometry.pdf\")"
+  },
+  {
+    "objectID": "latex_rmd.html",
+    "href": "latex_rmd.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "R마크다운에서 PDF 파일 문서를 생성하기 위해서는 \\(\\LaTeX\\) 엔진이 필요한데 유니코드를 지원하는 xeLaTeX을 기본 엔진으로 설정한다. 이를 위해서 ko.TeX를 설치하고 RStudio에서 RSTUDIO_PDFLATEX 환경변수 설정을 통해 \\(\\LaTeX\\) 엔진을 연결시킨다. usethis::edit_r_environ() 명령어를 통해 RSTUDIO_PDFLATEX=\"C:\\texlive\\2020\\bin\\win32\"와 같이 ko.TeX이 설치된 경로를 지정하면 된다.\n\n\nCode\nSys.getenv(\"RSTUDIO_PDFLATEX\")\n#&gt; [1] \"\"\n\n\n\n\n\n\\(\\LaTeX\\)을 통해 PDF 파일을 조판하기 위해서는 한글글꼴이 필요하다. YAML 헤더에 mainfont: NanumGothic을 지정하여 한글 글꼴을 명시해야 ??? 혹은 ㅁ 와 같은 한글깨짐 문제를 해결할 수 있다.\n---\nlayout: page\ntitle: \"LaTeX 과 PDF \"\nsubtitle: \"PDF 문서 기본\"\nauthor: \"이광춘\"\ndate: \"2023-05-22\"\noutput:\n  pdf_document: \n    latex_engine: xelatex     &lt;-- `LaTeX` 엔진 지정\n    toc: true\n    toc_depth: 2  \n    number_sections: true\n    fig_width: 3\n    fig_height: 2\n    fig_caption: true\n    df_print: kable\n    highlight: tango\nmainfont: NanumGothic        &lt;-- 한글 글꼴 설정\n---\n\n\n\nR 마크다운으로도 다른 \\(\\LaTeX\\)과 마찬가지로 로렘입섬(Lorem Ipsum)을 작성할 수 있는 팩키지가 다수 존재한다.\n\nlorem\nshinipsum\n\nshinipsum은 특히 샤이니 앱을 개발할 때 빠르게 기능을 구현하는데 도움을 준다. lorem::ipsum() 기능도 좋지만, shinipsum::random_*() 함수를 사용하게 되면 텍스트는 물론이고 표, 모형, ggplot, 이미지 등을 빠르게 문서에 Shiny 앱에 넣을 수가 있다.\n```{r}\nlibrary(tidyverse)\ncat(readr::read_lines('lipsum/rmarkdown/basics.Rmd'), sep = '\\n')\n```"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-engine",
+    "href": "latex_rmd.html#latex-engine",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "R마크다운에서 PDF 파일 문서를 생성하기 위해서는 \\(\\LaTeX\\) 엔진이 필요한데 유니코드를 지원하는 xeLaTeX을 기본 엔진으로 설정한다. 이를 위해서 ko.TeX를 설치하고 RStudio에서 RSTUDIO_PDFLATEX 환경변수 설정을 통해 \\(\\LaTeX\\) 엔진을 연결시킨다. usethis::edit_r_environ() 명령어를 통해 RSTUDIO_PDFLATEX=\"C:\\texlive\\2020\\bin\\win32\"와 같이 ko.TeX이 설치된 경로를 지정하면 된다.\n\n\nCode\nSys.getenv(\"RSTUDIO_PDFLATEX\")\n#&gt; [1] \"\""
+  },
+  {
+    "objectID": "latex_rmd.html#latex-font",
+    "href": "latex_rmd.html#latex-font",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "\\(\\LaTeX\\)을 통해 PDF 파일을 조판하기 위해서는 한글글꼴이 필요하다. YAML 헤더에 mainfont: NanumGothic을 지정하여 한글 글꼴을 명시해야 ??? 혹은 ㅁ 와 같은 한글깨짐 문제를 해결할 수 있다.\n---\nlayout: page\ntitle: \"LaTeX 과 PDF \"\nsubtitle: \"PDF 문서 기본\"\nauthor: \"이광춘\"\ndate: \"2023-05-22\"\noutput:\n  pdf_document: \n    latex_engine: xelatex     &lt;-- `LaTeX` 엔진 지정\n    toc: true\n    toc_depth: 2  \n    number_sections: true\n    fig_width: 3\n    fig_height: 2\n    fig_caption: true\n    df_print: kable\n    highlight: tango\nmainfont: NanumGothic        &lt;-- 한글 글꼴 설정\n---"
+  },
+  {
+    "objectID": "latex_rmd.html#basic-lorem-ipsum",
+    "href": "latex_rmd.html#basic-lorem-ipsum",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "R 마크다운으로도 다른 \\(\\LaTeX\\)과 마찬가지로 로렘입섬(Lorem Ipsum)을 작성할 수 있는 팩키지가 다수 존재한다.\n\nlorem\nshinipsum\n\nshinipsum은 특히 샤이니 앱을 개발할 때 빠르게 기능을 구현하는데 도움을 준다. lorem::ipsum() 기능도 좋지만, shinipsum::random_*() 함수를 사용하게 되면 텍스트는 물론이고 표, 모형, ggplot, 이미지 등을 빠르게 문서에 Shiny 앱에 넣을 수가 있다.\n```{r}\nlibrary(tidyverse)\ncat(readr::read_lines('lipsum/rmarkdown/basics.Rmd'), sep = '\\n')\n```"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-import",
+    "href": "latex_rmd.html#latex-import",
+    "title": "디지털 글쓰기",
+    "section": "3.1 import.tex",
+    "text": "3.1 import.tex\npdfpages를 사용하기 위해 import.tex 파일에 가져올 팩키지를 명시하고 HTML 파일을 PDF 파일에서 클릭하면 바로 연결할 수 있도록 \\renewcommand 매크로도 함께 설정한다.\n\n\nCode\ncat(readr::read_lines('lipsum/rmarkdown/sections/import.tex'), sep = '\\n')\n#&gt; \\usepackage{kotex}\n#&gt; \n#&gt; % PDF 겉장 -------------------------------\n#&gt; \\usepackage{pdfpages}\n#&gt; \n#&gt; % HTML 링크\n#&gt; \\renewcommand{\\href}[2]{#2\\footnote{\\url{#1}}}"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-cover-tex",
+    "href": "latex_rmd.html#latex-cover-tex",
+    "title": "디지털 글쓰기",
+    "section": "3.2 cover.tex",
+    "text": "3.2 cover.tex\ncover.tex 파일에는 canva 웹사이트에서 제작한 겉표지 PDF 파일을 R마크다운 문서에 넣을 수 있도록 설정한다.\n\n\nCode\ncat(readr::read_lines('lipsum/rmarkdown/sections/cover.tex'), sep = '\\n')\n#&gt; \n#&gt; \\includepdf[fitpaper]{cover-pdf}"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-rmarkdown",
+    "href": "latex_rmd.html#latex-rmarkdown",
+    "title": "디지털 글쓰기",
+    "section": "3.3 basics-latex.Rmd",
+    "text": "3.3 basics-latex.Rmd\nbasics-latex.Rmd 파일은 PDF \\(\\LaTeX\\) 겉장을 포함시켜 데이터 과학 보고서를 제작할 수 있도록 설정한다.\n\n\nCode\ncat(readr::read_lines('lipsum/rmarkdown/basics-latex.Rmd'), sep = '\\n')\n#&gt; ---\n#&gt; layout: page\n#&gt; output:\n#&gt;   bookdown::pdf_document2: \n#&gt;     latex_engine: xelatex\n#&gt;     toc: true\n#&gt;     toc_depth: 2  \n#&gt;     number_sections: true\n#&gt;     fig_width: 3\n#&gt;     fig_height: 2\n#&gt;     fig_caption: true\n#&gt;     df_print: kable\n#&gt;     highlight: tango\n#&gt;     includes:\n#&gt;       in_header: sections/import.tex\n#&gt;       before_body: sections/cover.tex\n#&gt; mainfont: NanumGothic\n#&gt; ---\n#&gt; \n#&gt; ```{r setup, include=FALSE}\n#&gt; knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE,\n#&gt;                       comment=\"\", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')\n#&gt; library(tidyverse)\n#&gt; ```\n#&gt; \n#&gt; \n#&gt; # 들어가며 {#rmd-intro}\n#&gt; \n#&gt; [`lorem`](https://github.com/gadenbuie/lorem), [`shinipsum`](https://github.com/ThinkR-open/shinipsum) 팩키지가 도움이 된다.\n#&gt; \n#&gt; `r lorem::ipsum(paragraphs = 1)`\n#&gt; \n#&gt; # 텍스트 {#rmd-main}\n#&gt; \n#&gt; `r lorem::ipsum(paragraphs = 1)`\n#&gt; \n#&gt; ## 증명 {#rmd-proof}\n#&gt; \n#&gt; `r lorem::ipsum(paragraphs = 1)`\n#&gt; \n#&gt; ## 표 {#rmd-table}\n#&gt; \n#&gt; `r shinipsum::random_table(5, 7, \"numeric\")`\n#&gt; \n#&gt; ## 그래프 {#rmd-graph}\n#&gt; \n#&gt; &lt;!-- `r shinipsum::random_ggplot()` --&gt;\n#&gt; \n#&gt; ```{r lorem-ipsum-penguin}\n#&gt; library(palmerpenguins)\n#&gt; library(tidyverse)\n#&gt; \n#&gt; ggplot(data = penguins,\n#&gt;                        aes(x = flipper_length_mm,\n#&gt;                            y = body_mass_g)) +\n#&gt;   geom_point(aes(color = species,\n#&gt;                  shape = species),\n#&gt;              size = 1,\n#&gt;              alpha = 0.8) +\n#&gt;   theme_minimal() +\n#&gt;   scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n#&gt;   theme(legend.position = c(0.2, 0.7),\n#&gt;         legend.background = element_rect(fill = \"white\", color = NA),\n#&gt;         plot.title.position = \"plot\",\n#&gt;         plot.caption = element_text(hjust = 0, face= \"italic\"),\n#&gt;         plot.caption.position = \"plot\")\n#&gt; ```\n#&gt; \n#&gt; \n#&gt; ## 그림 {#rmd-image}\n#&gt; \n#&gt; &lt;!-- `r shinipsum::random_image()` --&gt;\n#&gt; \n#&gt; ![](../fig/latex-editor.png)\n#&gt; \n#&gt; ## 모형 {#rmd-model}\n#&gt; \n#&gt; `r shinipsum::random_print(\"model\")  %&gt;% broom::glance()`\n#&gt; \n#&gt; # 마무리 {#rmd-conclusion}\n#&gt; \n#&gt; `r lorem::ipsum(paragraphs = 1)`"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-structure",
+    "href": "latex_rmd.html#latex-structure",
+    "title": "디지털 글쓰기",
+    "section": "2.1 \\(\\LaTeX\\) 구조",
+    "text": "2.1 \\(\\LaTeX\\) 구조\n\\(\\LaTeX\\) 문서구조는 Preamble 전문과 본문(Body)으로 구성된다. R마크다운에 들어가는 내용은 주로 본문으로 구성되기 때문에 문서 앞과 뒤를 넣을 수 있는 부분을 \\(\\LaTeX\\)의 전문(Preamble) 기능으로 대체할 경우 품질 좋은 데이터 과학 문서를 제작할 수 있다.\n\n\nCode\n\\documentclass{article}\n% 전문 preamble\n\n\\begin{document}\n% 본문 body\n\\end{document}"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-rmarkdown-str",
+    "href": "latex_rmd.html#latex-rmarkdown-str",
+    "title": "디지털 글쓰기",
+    "section": "2.2 R마크다운 PDF 구조",
+    "text": "2.2 R마크다운 PDF 구조\npreamble을 조금더 직관적으로 표현하면 \\(\\LaTeX\\)의 팩키지를 가져오는 import.tex 파일로 지정하고, 첫장을 cover.tex PDF 파일로 준비한다. 그리고 나머지 부분은 일반적인 문서 작성하듯이 하면 된다.\n\n\nCode\nreport/\n|-- rmarkdown.Rmd\n|-- biblatex.bib\n|-- sections/\n  |-- import.tex\n  |-- cover.tex\n|-- images/\n  |-- ggplot.png"
+  },
+  {
+    "objectID": "latex_rmd.html#latex-rmarkdown-document",
+    "href": "latex_rmd.html#latex-rmarkdown-document",
+    "title": "디지털 글쓰기",
+    "section": "2.3 R마크다운 문서",
+    "text": "2.3 R마크다운 문서\nin_header에 가져올 팩키지를 지정하고, 겉표지 PDF는 cover.tex에서 설정한다.\n---\nlayout: page\noutput:\n  bookdown::pdf_document2: \n    latex_engine: xelatex\n    toc: true\n    toc_depth: 2  \n    number_sections: true\n    fig_width: 3\n    fig_height: 2\n    fig_caption: true\n    df_print: kable\n    highlight: tango\n    includes:\n      in_header: sections/import.tex   &lt;-- 팩키지 설정\n      before_body: sections/cover.tex  &lt;-- 겉표지 PDF\nmainfont: NanumGothic\n---"
   }
 ]
