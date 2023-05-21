@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{import}
+\usepackage{blindtext}            % ipsum 역할
+
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%% 한글 폰트
+\setmainhangulfont{NanumMyeongjo} % NanumMyeongjo
+\setsanshangulfont{맑은 고딕}     % MalgunGothic
+\setmonohangulfont{D2Coding}
+
+%% 수식
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+%% 표
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+
+%% 이미지
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[rightcaption]{sidecap}
+\graphicspath{ {./images/} }
+
+%% SI 국제 단위계
+\usepackage{siunitx}
+\sisetup{group-separator = {,}}
+
+% 제 X 장 설정
+\renewcommand{\thesection}{제 \arabic{section} 절}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+% 본분
+\begin{document}
+	% Title and Author
+	\title{한글 \LaTeX 팩키지}
+	
+	\author{이광춘}
+	\maketitle
+	
+	% Main Contents
+	\section{수식}
+		\import{sections/}{01_math.tex}
+	\section{표}
+		\import{sections/}{02_tables.tex}
+	\section{그래프}
+		\import{sections/}{03_graphics.tex}
+	\section{국제단위계}
+		\import{sections/}{04_si.tex}
+
+	\listoftables
+	\listoffigures
+	
+\end{document}

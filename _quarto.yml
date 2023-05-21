@@ -55,6 +55,10 @@ website:
             text: "$\\LaTeX$ 들어가며"
           - href: document_editor.qmd
             text: "문서 편집기"
+          - href: latex_lipsum.qmd
+            text: "국영문 `lipsum`"
+          - href: latex_helloworld.qmd
+            text: "헬로월드 한영 문서"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/

@@ -1,0 +1,188 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{geer}{thesis}{useprefix=false}
+    \name{author}{1}{}{%
+      {{hash=dGI}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Geer},
+         familyi={G\bibinitperiod},
+         given={Ingrid},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GId1}
+    \strng{fullhash}{GId1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1985}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{langidopts}{variant=british}
+    \field{subtitle}{The {Orkney Earldom} of the Twelfth Century. {A}
+  Musicological Study}
+    \field{title}{Earl, Saint, Bishop, Skald~-- and Music}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Uppsala}%
+    }
+    \list{institution}{1}{%
+      {Uppsala Universitet}%
+    }
+    \field{type}{phdthesis}
+    \field{annotation}{%
+    This is a typical \texttt{thesis} entry for a PhD thesis. Note the
+  \texttt{type} field in the database file which uses a localization key. Also
+  note the format of the printed name and compare the \texttt{useprefix} option
+  in the \texttt{options} field as well as \texttt{vangennep}%
+    }
+    \field{year}{1985}
+  \endentry
+
+  \entry{nussbaum}{book}{}
+    \name{author}{1}{}{%
+      {{hash=NM}{%
+         family={Nussbaum},
+         familyi={N\bibinitperiod},
+         given={Martha},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton University Press}%
+    }
+    \keyw{secondary}
+    \strng{namehash}{NM1}
+    \strng{fullhash}{NM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1978}
+    \field{labeldatesource}{}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{indexsorttitle}{Aristotle's De Motu Animalium}
+    \field{langidopts}{variant=american}
+    \field{title}{Aristotle's \mkbibquote{De Motu Animalium}}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Princeton}%
+    }
+    \field{annotation}{%
+    A \texttt{book} entry. Note the \texttt{sorttitle} and
+  \texttt{indexsorttitle} fields and the markup of the quotes in the database
+  file%
+    }
+    \field{year}{1978}
+  \endentry
+
+  \entry{sigfridsson}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SE}{%
+         family={Sigfridsson},
+         familyi={S\bibinitperiod},
+         given={Emma},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=RU}{%
+         family={Ryde},
+         familyi={R\bibinitperiod},
+         given={Ulf},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SERU1}
+    \strng{fullhash}{SERU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Four methods for deriving partial atomic charges from the quantum chemical
+  electrostatic potential (CHELP, CHELPG, Merz-Kollman, and RESP) have been
+  compared and critically evaluated. It is shown that charges strongly depend
+  on how and where the potential points are selected. Two alternative methods
+  are suggested to avoid the arbitrariness in the point-selection schemes and
+  van der Waals exclusion radii: CHELP-BOW, which also estimates the charges
+  from the electrostatic potential, but with potential points that are
+  Boltzmann-weighted after their occurrence in actual simulations using the
+  energy function of the program in which the charges will be used, and CHELMO,
+  which estimates the charges directly from the electrostatic multipole
+  moments. Different criteria for the quality of the charges are discussed.%
+    }
+    \verb{doi}
+    \verb 10.1002/(SICI)1096-987X(199803)19:4<377::AID-JCC1>3.0.CO;2-P
+    \endverb
+    \field{indextitle}{Methods for deriving atomic charges}
+    \field{langidopts}{variant=american}
+    \field{number}{4}
+    \field{pages}{377\bibrangedash 395}
+    \field{title}{Comparison of methods for deriving atomic charges from the
+  electrostatic potential and moments}
+    \field{volume}{19}
+    \field{langid}{english}
+    \field{journaltitle}{Journal of Computational Chemistry}
+    \field{annotation}{%
+    An \texttt{article} entry with \texttt{volume}, \texttt{number}, and
+  \texttt{doi} fields. Note that the \textsc{doi} is transformed into a
+  clickable link if \texttt{hyperref} support has been enabled%
+    }
+    \field{year}{1998}
+  \endentry
+
+  \entry{worman}{book}{}
+    \name{author}{1}{}{%
+      {{hash=WN}{%
+         family={Worman},
+         familyi={W\bibinitperiod},
+         given={Nancy},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {University of Texas Press}%
+    }
+    \strng{namehash}{WN1}
+    \strng{fullhash}{WN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{indextitle}{Cast of Character, The}
+    \field{langidopts}{variant=american}
+    \field{shorttitle}{Cast of Character}
+    \field{subtitle}{Style in {Greek} Literature}
+    \field{title}{The Cast of Character}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Austin}%
+    }
+    \field{annotation}{%
+    A \texttt{book} entry. Note the \texttt{sorttitle} and \texttt{indextitle}
+  fields%
+    }
+    \field{year}{2002}
+  \endentry
+\enddatalist
+\endinput

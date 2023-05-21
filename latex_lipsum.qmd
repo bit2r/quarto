@@ -1,0 +1,161 @@
+---
+title: "디지털 글쓰기"
+subtitle: "국영문 `lipsum`"
+description: |
+  국영문 로렘 입숨을 활용하여 PDF 문서를 작성한다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 로렘 입숨 [^lpsum] {#lorem-ipsum}
+
+[^lpsum]: [위키백과, "로렘 입숨"](https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A0%98_%EC%9E%85%EC%88%A8)
+
+로렘 입숨(lorem ipsum, 줄여서 립숨, lipsum)은  출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 문서에서 텍스트가 보이면 사람들은 전체적인 프레젠테이션보다는 텍스트에 담긴 뜻에 집중하는 경향이 있어서 출판사들은 서체나 디자인을 보일 때는 프레젠테이션 자체에 초점을 맞추기 위해 로렘 입숨을 사용한다. 전형적인 로렘 입숨 영문 텍스트는 다음과 같다.
+
+
+::: {.callout-note}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+:::
+
+
+
+# 영문 lipsum {#english-lipsum}
+
+`blindtext` 팩키지를 사용하면 `lipsum` 긴문장과 단문을 $\LaTeX$에서 쉽게 만들어낼 수 있다. 
+- `\blindtext`: 단문
+- `\Blindtext`: 장문
+
+```latex
+\documentclass[]{article}
+\usepackage{kotex}
+\usepackage{blindtext}
+
+%opening
+\title{멋진 \LaTeX 제목 페이지}
+\author{이광춘}
+\date{2021-03-03}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\blindtext
+
+\end{abstract}
+
+\section{들어가며}
+
+\Blindtext
+
+\end{document}
+```
+
+---
+
+``` {r embed-blindtext, out.height = "460px", out.width='800px', echo=TRUE} 
+knitr::include_graphics("lipsum/korean_lipsum/lipsum.pdf")
+```
+
+
+# 한글 lipsum {#korean-lipsum}
+
+## lipsum 팩키지 설치 {#korean-lipsum-install}
+
+`jiwonlipsum` 팩키지는 [KTUG Private Repository](http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository)에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. `jiwonlipsum` 팩키지가 저장된 [KTUG Private Repository](http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository) 저장소를 활용하는 방식은 다음과 같다.
+
+```{bash install-private-repo, eval = FALSE}
+$ tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug
+$ tlmgr pinning add ktug "*"
+$ tlmgr install jiwonlipsum
+tlmgr.pl: package repositories
+        main = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet (verified)
+        ktug = http://ftp.ktug.org/KTUG/texlive/tlnet/ (not verified: pubkey missing)
+For more about verification, see https://texlive.info/verification.html.
+[1/1, ??:??/??:??] install: jiwonlipsum @ktug [245k]
+running mktexlsr ...
+done running mktexlsr.
+running mtxrun --generate ...
+done running mtxrun --generate.
+tlmgr.pl: package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log
+```
+
+## lipsum 헬로월드 {#korean-lipsum-hw}
+
+```latex
+\documentclass[]{article}
+\usepackage{kotex}
+%\usepackage{blindtext}
+\usepackage{jiwonlipsum}
+
+%opening
+\title{멋진 \LaTeX 제목 페이지}
+\author{이광춘}
+\date{2021-03-03}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+%\blindtext
+\jiwon[1]
+
+\end{abstract}
+
+\section{들어가며}
+
+%\Blindtext
+\jiwon
+
+\end{document}
+```
+
+---
+
+``` {r embed-blindtext-korean, out.height = "460px", out.width='800px', echo=TRUE} 
+knitr::include_graphics("lipsum/korean_lipsum/korean_lipsum.pdf")
+```
+
+
+
+
+
+

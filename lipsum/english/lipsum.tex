@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{lipsum}  
+
+% References
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear, backend=bibtex]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\begin{document}
+	% Title and Author
+	\title{English \LaTeX}
+	\author{Tidyverse Korea}
+	\maketitle
+	
+	% Main Contents
+	\abstract{}
+		\lipsum[1]	
+	\section{introduction}
+		\lipsum[3]
+	\section{main findings}
+		\lipsum[1-2]
+	% References
+	\section{references}
+		Lorem \autocite{sigfridsson}
+		ipsum \autocite{worman}
+		dolor \autocite{nussbaum}
+		sit \autocite{sigfridsson}
+		amet \autocite{geer}	
+	\printbibliography
+\end{document}

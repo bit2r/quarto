@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
+<meta name="description" content="국영문 로렘 입숨을 활용하여 PDF 문서를 작성한다.">
 
-<title>디지털 글쓰기 - \(\LaTeX\) 들어가며</title>
+<title>디지털 글쓰기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,8 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="twitter:title" content="디지털 글쓰기 - \(\LaTeX\) 들어가며">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="디지털 글쓰기">
+<meta name="twitter:description" content="국영문 로렘 입숨을 활용하여 PDF 문서를 작성한다.">
 <meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
@@ -205,8 +206,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">문서 편집기</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./latex_lipsum.qmd" rel="" target="">
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
  <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.qmd" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
   </li>  
     </ul>
   </li>
@@ -284,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><span class="math inline">\(\LaTeX\)</span> 들어가며</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -294,8 +299,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><span class="math inline">\(\LaTeX\)</span> 들어가며</h1>
-                      </div>
+      <h1 class="title">디지털 글쓰기</h1>
+            <p class="subtitle lead">국영문 <code>lipsum</code></p>
+                  <div>
+        <div class="description">
+          <p>국영문 로렘 입숨을 활용하여 PDF 문서를 작성한다.</p>
+        </div>
+      </div>
+                </div>
   </div>
     
   <div class="quarto-title-meta-author">
@@ -423,20 +434,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#latex-구조" id="toc-latex-구조" class="nav-link active" data-scroll-target="#latex-구조"><span class="header-section-number">1</span> <span class="math inline">\(\LaTeX\)</span> 구조</a></li>
-  <li><a href="#pdf-file" id="toc-pdf-file" class="nav-link" data-scroll-target="#pdf-file"><span class="header-section-number">2</span> PDF 파일 </a></li>
-  <li><a href="#tex-live-package-manager" id="toc-tex-live-package-manager" class="nav-link" data-scroll-target="#tex-live-package-manager"><span class="header-section-number">3</span> 팩키지 관리자 </a>
+  <li><a href="#lorem-ipsum" id="toc-lorem-ipsum" class="nav-link active" data-scroll-target="#lorem-ipsum"><span class="header-section-number">1</span> 로렘 입숨 </a></li>
+  <li><a href="#english-lipsum" id="toc-english-lipsum" class="nav-link" data-scroll-target="#english-lipsum"><span class="header-section-number">2</span> 영문 lipsum</a></li>
+  <li><a href="#korean-lipsum" id="toc-korean-lipsum" class="nav-link" data-scroll-target="#korean-lipsum"><span class="header-section-number">3</span> 한글 lipsum</a>
   <ul class="collapse">
-  <li><a href="#tlmgr-pkg-mgr" id="toc-tlmgr-pkg-mgr" class="nav-link" data-scroll-target="#tlmgr-pkg-mgr"><span class="header-section-number">3.1</span> <code>tlmgr</code> 팩키지 관리자</a></li>
-  <li><a href="#tlmgr-pkg-repository" id="toc-tlmgr-pkg-repository" class="nav-link" data-scroll-target="#tlmgr-pkg-repository"><span class="header-section-number">3.2</span> 한글 사설 저장소</a></li>
-  <li><a href="#package-tip" id="toc-package-tip" class="nav-link" data-scroll-target="#package-tip"><span class="header-section-number">3.3</span> 팩키지 꿀팁</a></li>
-  </ul></li>
-  <li><a href="#pdf-reader-write" id="toc-pdf-reader-write" class="nav-link" data-scroll-target="#pdf-reader-write"><span class="header-section-number">4</span> PDF 파일크기 </a>
-  <ul class="collapse">
-  <li><a href="#distiller" id="toc-distiller" class="nav-link" data-scroll-target="#distiller"><span class="header-section-number">4.1</span> <code>distiller</code></a></li>
-  <li><a href="#pdfsizeopt" id="toc-pdfsizeopt" class="nav-link" data-scroll-target="#pdfsizeopt"><span class="header-section-number">4.2</span> <code>pdfsizeopt</code></a></li>
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">4.3</span> <code>tools</code></a></li>
-  <li><a href="#adobe-웹사이트" id="toc-adobe-웹사이트" class="nav-link" data-scroll-target="#adobe-웹사이트"><span class="header-section-number">4.4</span> <code>Adobe</code> 웹사이트</a></li>
+  <li><a href="#korean-lipsum-install" id="toc-korean-lipsum-install" class="nav-link" data-scroll-target="#korean-lipsum-install"><span class="header-section-number">3.1</span> lipsum 팩키지 설치</a></li>
+  <li><a href="#korean-lipsum-hw" id="toc-korean-lipsum-hw" class="nav-link" data-scroll-target="#korean-lipsum-hw"><span class="header-section-number">3.2</span> lipsum 헬로월드</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -447,188 +450,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="latex-구조" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <span class="math inline">\(\LaTeX\)</span> 구조</h1>
-<p><span class="math inline">\(\LaTeX\)</span> 프로젝트 구조는 다음과 같다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fig/latex-project-structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fig/latex-project-structure.png" class="img-fluid figure-img"></a></p>
-</figure>
+<section id="lorem-ipsum" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 로렘 입숨 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h1>
+<p>로렘 입숨(lorem ipsum, 줄여서 립숨, lipsum)은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 문서에서 텍스트가 보이면 사람들은 전체적인 프레젠테이션보다는 텍스트에 담긴 뜻에 집중하는 경향이 있어서 출판사들은 서체나 디자인을 보일 때는 프레젠테이션 자체에 초점을 맞추기 위해 로렘 입숨을 사용한다. 전형적인 로렘 입숨 영문 텍스트는 다음과 같다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
 </div>
 </section>
-<section id="pdf-file" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> PDF 파일 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h1>
-<p>PDF는 이동 가능 문서형식으로 번역되며 Portable Document Format의 약자기도 하지만 파일명이기도 하다. PDF 파일에는 일반 문서 및 문자, 도형, 그림, 글꼴이 포함된다. 아도브(Adobe)에서 1993년에 개발한 전자 문서 형식이자 국제 표준(ISO) 문서 형식(ISO 19005)으로 어느 환경에서나 동일한 결과물을 보여주기 위해 개발되어 사실상 문서를 주고 받을 때 사용하는 표준으로 자리잡았다. 좀더 쉽게 PDF는 컴퓨터 환경에 관계없이 같은 표현을 하기 위한 목적으로 개발되었고, 장치 독립성 및 해상도 독립성을 가진다라고 이해할 수 있다. <code>pdf</code>는 어디까지나 출력해서 얻는 ’인쇄물’이라 이를 편집하기 위해서는 전용 소프트웨어가 따로 필요하다. 윈도우에서는 <code>PDF Writer Distiller</code>, 리눅스에서는 <code>PDF Studio</code>가 대표적이다.</p>
-<p><code>.pdf</code>가 사실상의 표준이 되기 이전 팩스기에서 나온 <code>TIFF</code> 파일, 아도브 자사 포스트스크립트(<code>.ps</code>), AT&amp;T 연구소에서 도서관의 도서나 각종 문서보관을 위햇 개발된 DuVu 프로젝트에서 나온 <code>.djv</code>, <code>.djvu</code> 등이 있었지만 결국 <code>.pdf</code> 파일로 정리되었다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fig/why-pdf.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="fig/why-pdf.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="tex-live-package-manager" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> 팩키지 관리자 <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h1>
-<p><span class="math inline">\(\TeX\)</span> 엔진을 보좌하는 다양한 팩키지가 존재한다. <span class="math inline">\(\LaTeX\)</span> 저작을 할 때 당연히 기본 <span class="math inline">\(\LaTeX\)</span> 기능외에도 제3자가 개발한 팩키지를 활용하여 <span class="math inline">\(\LaTeX\)</span> 저작물을 더욱 읽기 쉽고 가독성 높게 작성할 수 있다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fig/tex-live-package-manager.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="fig/tex-live-package-manager.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<p><span class="math inline">\(\LaTeX\)</span>에서 많이 사용되는 팩키지 관리자는 <span class="math inline">\(\TeX\)</span> 라이브 매니저 즉, <code>tlmgr</code> 이다. 텍라이브 팩키지 관리자는 운영체제와 독립적으로 이용되며 팩키지와 폰트 꾸러미를 설치 삭제하는데 큰 도움을 준다. 리눅스 <code>package manager</code> 나 R <code>CRAN</code> 혹은 파이썬 <code>PIP</code> 혹은 GitHub 저장소를 통해 동일한 개념을 활용하여 생태계 각각을 풍성하게 하고 영향력을 높여나가고 있다.</p>
-<p>한글 폰트 설치 사례를 들어, 과거 폰트꾸러미를 설치하는 것과 팩키지 관리자 사용하는 것을 비교해보자.</p>
-<table class="table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 41%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>고수의 영역</th>
-<th>팩키지 관리자: <code>tlmgr</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><ol type="1">
-<li>폰트 꾸러미 설치</li>
-<li><code>updmap.cfg</code> 에 해당 <code>map</code> 파일 기록</li>
-<li><code>udpmap-sys</code> 실행</li>
-</ol></td>
-<td><ol type="1">
-<li><code>tlmgr install nanumttf</code></li>
-</ol></td>
-</tr>
-</tbody>
-</table>
-<section id="tlmgr-pkg-mgr" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="tlmgr-pkg-mgr"><span class="header-section-number">3.1</span> <code>tlmgr</code> 팩키지 관리자</h2>
-<p><code>tlmgr info geometry</code> 명령어를 통해서 이미 설치된 <span class="math inline">\(\LaTeX\)</span> <code>geometry</code> 팩키지에 대한 정보를 확인할 수 있다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr info geometry</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">package:</span>     geometry</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">category:</span>    Package</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">shortdesc:</span>   Flexible and complete interface to document dimensions</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">longdesc:</span>    The package provides an easy and flexible user interface to customize page layout, implementing auto-centering and auto-balancing mechanisms so that the users have only to give the least description for the page layout. For example, if you want to set each margin 2cm without header space, what you need is just <span class="dt">\u</span>sepackage<span class="pp">[</span><span class="ss">margin=2cm,nohead</span><span class="pp">]</span>{geometry}. The package knows about all the standard paper sizes, so that the user need not know what the nominal <span class="st">'real'</span> dimensions of the paper are, just its standard name <span class="er">(</span><span class="ex">such</span> as a4, letter, etc.<span class="kw">)</span><span class="bu">.</span> An important feature is the package<span class="st">'s ability to communicate the paper size it'</span>s set up to the output <span class="er">(</span><span class="ex">whether</span> via DVI <span class="dt">\s</span>pecials or via direct interaction with pdf<span class="er">(</span><span class="ex">La</span><span class="kw">)</span><span class="ex">TeX</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">installed:</span>   Yes</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">revision:</span>    54080</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">sizes:</span>       src: 325k, doc: 921k, run: 45k</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">relocatable:</span> No</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">cat-version:</span> 5.9</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">cat-license:</span> lppl1.3c</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">cat-topics:</span>  geometry</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">cat-related:</span> vmargin typearea geometry-de</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">cat-contact-bugs:</span> https://github.com/davidcarlisle/geometry/issues</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">cat-contact-repository:</span> https://github.com/davidcarlisle/geometry</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">collection:</span>  collection-latex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>이외에도 <code>tlmgr</code> 다양한 명령어를 통해 다양한 팩키지 관련 작업을 수행할 수 있다. 자세한 내용은 <a href="http://tug.ctan.org/info/tlmgrbasics/doc/tlmgr.pdf">Basic Usage of tlmgr, the TEX Live Manager</a> 을 참조한다. 기본 사용법은 쉘에서 다음 방식을 사용한다. 즉, 팩키지에 대한 정보를 확인하고 팩키지를 검색하고 팩키지를 설치하고 시간이 지나 최신 팩키지를 갱신하고 팩키지를 삭제하는 작업 등이 포함된다.</p>
-<p><code>tlmgr [global options ] action [action-specific options] [operands]</code></p>
-<ul>
-<li><code>info</code></li>
-<li><code>search</code></li>
-<li><code>install</code></li>
-<li><code>update</code></li>
-<li><code>remove</code></li>
-<li><code>option</code></li>
-<li><code>path</code></li>
-</ul>
+<section id="english-lipsum" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 영문 lipsum</h1>
+<p><code>blindtext</code> 팩키지를 사용하면 <code>lipsum</code> 긴문장과 단문을 <span class="math inline">\(\LaTeX\)</span>에서 쉽게 만들어낼 수 있다. - <code>\blindtext</code>: 단문 - <code>\Blindtext</code>: 장문</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[]{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">kotex</span>}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">blindtext</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">%opening</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{멋진 <span class="fu">\LaTeX</span> 제목 페이지}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{이광춘}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{2021-03-03}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\blindtext</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{들어가며}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">\Blindtext</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/tlmgr.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"lipsum/korean_lipsum/lipsum.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="data/tlmgr.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><embed src="data/tlmgr.pdf" width="800" height="460"></a></p>
+<p><a href="lipsum/korean_lipsum/lipsum.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><embed src="lipsum/korean_lipsum/lipsum.pdf" width="800" height="460"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="tlmgr-pkg-repository" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="tlmgr-pkg-repository"><span class="header-section-number">3.2</span> 한글 사설 저장소</h2>
-<p><code>tex live</code>를 설치하게 되면 기본 주 저장소로 <a href="http://mirror.ctan.org/systems/texlive/tlnet" class="uri">http://mirror.ctan.org/systems/texlive/tlnet</a> 이 설정된다. 하지만 모든 팩키지가 기본 저장소에 등록된 것이 아니라서 한글의 경우 사설 저장소를 등록해서 필요한 팩키지를 설치해야 저작물 작성에 활용할 수 있다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr repository list</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">List</span> of repositories <span class="er">(</span><span class="ex">with</span> tags if set<span class="kw">)</span><span class="bu">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">http://mirror.ctan.org/systems/texlive/tlnet</span> <span class="er">(</span><span class="ex">main</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>한글 lipsum 을 위해서 <a href="https://statkclee.github.io/latex/latex-lipsum.html#3_%ED%95%9C%EA%B8%80_lipsum">lipsum 팩키지 설치</a>를 해야 되는 경우가 대표적인 사례다.</p>
-<p><code>jiwonlipsum</code> 팩키지는 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a>에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. <code>jiwonlipsum</code> 팩키지를 저장된 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a> 저장소 안내글을 참고하여 설치한다. 사설 저장소를 등록시키고 사설 저장소에 등록된 팩키지를 사용하는 작업흐름은 대략 다음과 같다.</p>
-<ol type="1">
-<li>사설 저장소를 등록한다.
-<ul>
-<li><code>$ &lt;sudo&gt; tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug</code></li>
-</ul></li>
-<li>사설 저장소 등록이 완료되면 <code>tex live</code> 팩키지 관리자가 신규 저장소를 파악해야 되는데 이 과정을 <code>pinning</code>이라고 한다.
-<ul>
-<li><code>$ &lt;sudo&gt; tlmgr pinning add ktug "*"</code></li>
-</ul></li>
-<li>사설 저장소에 등록된 예를 들어 <code>jiwonlipsum</code> 등 필요한 팩키지를 설치한다.
-<ul>
-<li><code>$ &lt;sudo&gt; tlmgr install jiwonlipsum</code></li>
-</ul></li>
-<li>시간이 오래 지난 후에, 저장소 등록 팩키지 업데이트 명령어는 다음과 같다.
-<ul>
-<li><code>$ &lt;sudo&gt; tlmgr update --all --self</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="package-tip" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="package-tip"><span class="header-section-number">3.3</span> 팩키지 꿀팁</h2>
-<p><code>tex live</code>를 용량이나 네트워크 등 다양한 이유로 인해서 전체 설치하지 않고 일부만 설치할 경우 특정 팩키지가 빠져 컴파일 과정에서 오류가 발생되는 경우가 종종 발생된다. 이런 문제는 다음과 같은 방식으로 문제를 해결한다.</p>
-<p><code>xy.sty</code> 파일이 정상적으로 설치된 경우 다음과 같이 확인되지만 없는 경우 <code>package xy not present in repoistory</code>와 같은 오류가 발생된다.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr search <span class="at">--global</span> <span class="at">--file</span> xy.sty</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr:</span> package repositories</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">main</span> = http://mirror.ctan.org/systems/texlive/tlnet <span class="er">(</span><span class="ex">not</span> verified: gpg unavailable<span class="kw">)</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ktug</span> = http://ftp.ktug.org/KTUG/texlive/tlnet/ <span class="er">(</span><span class="ex">not</span> verified: gpg unavailable<span class="kw">)</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more about verification, see https://texlive.info/verification.html.</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">lwarp:</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">texmf-dist/tex/latex/lwarp/lwarp-xy.sty</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">pb-diagram:</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">texmf-dist/tex/latex/pb-diagram/pb-xy.sty</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">xypic:</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">texmf-dist/tex/generic/xypic/xy.sty</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>이를 고치는 방식은 <code>xypic</code> 팩키지에 <code>xy.sty</code> 파일이 있는 것이 확인되기 때문에 <code>xypic</code> 팩키지를 설치한다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr install xypic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>kpsewhich xy.sty</code> 명령어로 설치된 위치를 확인할 수 있다.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> kpsewhich xy.sty</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/local/texlive/2020/texmf-dist/tex/generic/xypic/xy.sty</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="pdf-reader-write" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> PDF 파일크기 <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></h1>
-<section id="distiller" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="distiller"><span class="header-section-number">4.1</span> <code>distiller</code></h2>
-<p>파워포인트 파일 크기가 370 메가바이트로매우 크지만 이를 “다른 이름 저장”을 통해 PDF로 변환시키게 되면 크기를 다소 줄일 수 있지만, PDF Writer <code>distiller</code>로 변환시킬 경우 크기를 획기적으로 줄일 수 있다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fig/role-of-pdf-writer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="fig/role-of-pdf-writer.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<p>레이저 프린터로 고화질 출력을 할 경우 포스트스크립트(Postscript)를 사용해서 레이저 프린터로 출력할 수 있다. 이를 다시 PDF Writer <code>Distiller</code>를 사용해서 PDF 파일을 제작할 수 있고 현재는 기술이 많이 발달해서 워드, 아래한글 등 다양한 문서 저작 편집기를 사용해서 바로 PDF 파일을 제작할 수 있다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fig/pdf-writer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="fig/pdf-writer.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="pdfsizeopt" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="pdfsizeopt"><span class="header-section-number">4.2</span> <code>pdfsizeopt</code></h2>
-<p>또다른 방식으로 <a href="https://github.com/pts/pdfsizeopt"><code>pdfsizeopt</code></a>는 시각적 품질을 저하시키거나 대화형 기능(예: 하이퍼링크)을 제거하지 않고 대용량 PDF 파일을 작은 파일로 변환하는 프로그램이다. <code>pdfsizeopt</code>는 Linux, Windows, macOS, Unix 환경에서 동작하고, <code>TeX</code> 및 <code>LaTeX</code> 문서에서 생성된 PDF를 중심으로 PDF 파일 크기를 최적화하는 모범 사례를 모아둔 패키지다. pdfsizeopt는 Python으로 작성되어 속도가 약간 느리지만, 무거운 작업의 일부를 더 빠른 종속성(C, C++ 및 Java)으로 구현했다.</p>
-</section>
-<section id="tools" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="tools"><span class="header-section-number">4.3</span> <code>tools</code></h2>
-<p>R <code>tools</code> 패키지 <code>compactPDF()</code> 명령어로 PDF 파일 크기를 줄일 수 있다.</p>
+<section id="korean-lipsum" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 한글 lipsum</h1>
+<section id="korean-lipsum-install" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="korean-lipsum-install"><span class="header-section-number">3.1</span> lipsum 팩키지 설치</h2>
+<p><code>jiwonlipsum</code> 팩키지는 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a>에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. <code>jiwonlipsum</code> 팩키지가 저장된 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a> 저장소를 활용하는 방식은 다음과 같다.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tools<span class="sc">::</span><span class="fu">compactPDF</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr pinning add ktug <span class="st">"*"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr install jiwonlipsum</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package repositories</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">main</span> = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet <span class="er">(</span><span class="ex">verified</span><span class="kw">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ktug</span> = http://ftp.ktug.org/KTUG/texlive/tlnet/ <span class="er">(</span><span class="ex">not</span> verified: pubkey missing<span class="kw">)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more about verification, see https://texlive.info/verification.html.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">[1/1,</span> <span class="pp">??</span>:<span class="pp">??</span>/<span class="pp">??</span>:<span class="pp">??</span>] install: jiwonlipsum @ktug <span class="pp">[</span><span class="ss">245k</span><span class="pp">]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mktexlsr ...</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mktexlsr.</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mtxrun <span class="at">--generate</span> ...</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mtxrun <span class="at">--generate.</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="adobe-웹사이트" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="adobe-웹사이트"><span class="header-section-number">4.4</span> <code>Adobe</code> 웹사이트</h2>
-<p><a href="https://www.adobe.com/acrobat/online/compress-pdf.html">Adobe Acrobat Compress PDF size</a> 웹사이트에 PDF를 끌어다 놓아 PDF 압축기로 파일 크기를 줄이는 것도 가능하다.</p>
+<section id="korean-lipsum-hw" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="korean-lipsum-hw"><span class="header-section-number">3.2</span> lipsum 헬로월드</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[]{<span class="ex">article</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">kotex</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">%\usepackage{blindtext}</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">jiwonlipsum</span>}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">%opening</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{멋진 <span class="fu">\LaTeX</span> 제목 페이지}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{이광춘}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{2021-03-03}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">%\blindtext</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span>[1]</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{들어가며}</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">%\Blindtext</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"lipsum/korean_lipsum/korean_lipsum.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="lipsum/korean_lipsum/korean_lipsum.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><embed src="lipsum/korean_lipsum/korean_lipsum.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -638,9 +585,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://www.youtube.com/watch?v=-cFOsAzigyQ&amp;t=5s">Brailsford (2016-10-01), “PDF Workflow - Computerphile”, Computerphile</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A0%98_%EC%9E%85%EC%88%A8">위키백과, “로렘 입숨”</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -888,7 +833,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":true});</script>
 
 
 

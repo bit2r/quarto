@@ -1250,7 +1250,7 @@
     "href": "latex.html",
     "title": "\\(\\LaTeX\\) 들어가며",
     "section": "",
-    "text": "1 들어가며"
+    "text": "\\(\\LaTeX\\) 프로젝트 구조는 다음과 같다."
   },
   {
     "objectID": "document_editor.html#visual-markdown-main-features-all",
@@ -1286,5 +1286,138 @@
     "title": "디지털 글쓰기",
     "section": "Footnotes",
     "text": "Footnotes\n\n\n위키백과, “위지위그”↩︎\n나무위키, “WYSIWYG”↩︎\nJesal Shethna, “Microsoft Word Features”, EDUCBA↩︎"
+  },
+  {
+    "objectID": "latex.html#pdf-reader-write",
+    "href": "latex.html#pdf-reader-write",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "",
+    "text": "파워포인트 파일 크기가 370 메가바이트로매우 크지만 이를 “다른 이름 저장”을 통해 PDF로 변환시키게 되면 크기를 다소 줄일 수 있지만, PDF Writer distiller로 변환시킬 경우 크기를 획기적으로 줄일 수 있다.\n\n\n\n\n\n레이저 프린터로 고화질 출력을 할 경우 포스트스크립트(Postscript)를 사용해서 레이저 프린터로 출력할 수 있다. 이를 다시 PDF Writer Distiller를 사용해서 PDF 파일을 제작할 수 있고 현재는 기술이 많이 발달해서 워드, 아래한글 등 다양한 문서 저작 편집기를 사용해서 바로 PDF 파일을 제작할 수 있다.\n\n\n\n\n\n\n\n\n또다른 방식으로 pdfsizeopt는 시각적 품질을 저하시키거나 대화형 기능(예: 하이퍼링크)을 제거하지 않고 대용량 PDF 파일을 작은 파일로 변환하는 프로그램이다. pdfsizeopt는 Linux, Windows, macOS, Unix 환경에서 동작하고, TeX 및 LaTeX 문서에서 생성된 PDF를 중심으로 PDF 파일 크기를 최적화하는 모범 사례를 모아둔 패키지다. pdfsizeopt는 Python으로 작성되어 속도가 약간 느리지만, 무거운 작업의 일부를 더 빠른 종속성(C, C++ 및 Java)으로 구현했다.\n\n\n\nR tools 패키지 compactPDF() 명령어로 PDF 파일 크기를 줄일 수 있다.\n\n\nCode\ntools::compactPDF()\n\n\n\n\n\nAdobe Acrobat Compress PDF size 웹사이트에 PDF를 끌어다 놓아 PDF 압축기로 파일 크기를 줄이는 것도 가능하다."
+  },
+  {
+    "objectID": "latex.html#footnotes",
+    "href": "latex.html#footnotes",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성↩︎\n윤석천, 이주호 (2017), “텍라이브 매니저와 KTUG 사설 저장소”, TeX: 조판, 그 이상의 가능성↩︎\nBrailsford (2016-10-01), “PDF Workflow - Computerphile”, Computerphile↩︎"
+  },
+  {
+    "objectID": "latex.html#distiller",
+    "href": "latex.html#distiller",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "4.1 distiller",
+    "text": "4.1 distiller\n파워포인트 파일 크기가 370 메가바이트로매우 크지만 이를 “다른 이름 저장”을 통해 PDF로 변환시키게 되면 크기를 다소 줄일 수 있지만, PDF Writer distiller로 변환시킬 경우 크기를 획기적으로 줄일 수 있다.\n\n\n\n\n\n레이저 프린터로 고화질 출력을 할 경우 포스트스크립트(Postscript)를 사용해서 레이저 프린터로 출력할 수 있다. 이를 다시 PDF Writer Distiller를 사용해서 PDF 파일을 제작할 수 있고 현재는 기술이 많이 발달해서 워드, 아래한글 등 다양한 문서 저작 편집기를 사용해서 바로 PDF 파일을 제작할 수 있다."
+  },
+  {
+    "objectID": "latex.html#pdfsizeopt",
+    "href": "latex.html#pdfsizeopt",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "4.2 pdfsizeopt",
+    "text": "4.2 pdfsizeopt\n또다른 방식으로 pdfsizeopt는 시각적 품질을 저하시키거나 대화형 기능(예: 하이퍼링크)을 제거하지 않고 대용량 PDF 파일을 작은 파일로 변환하는 프로그램이다. pdfsizeopt는 Linux, Windows, macOS, Unix 환경에서 동작하고, TeX 및 LaTeX 문서에서 생성된 PDF를 중심으로 PDF 파일 크기를 최적화하는 모범 사례를 모아둔 패키지다. pdfsizeopt는 Python으로 작성되어 속도가 약간 느리지만, 무거운 작업의 일부를 더 빠른 종속성(C, C++ 및 Java)으로 구현했다."
+  },
+  {
+    "objectID": "latex.html#tools",
+    "href": "latex.html#tools",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "4.3 tools",
+    "text": "4.3 tools\nR tools 패키지 compactPDF() 명령어로 PDF 파일 크기를 줄일 수 있다.\n\n\nCode\ntools::compactPDF()"
+  },
+  {
+    "objectID": "latex.html#adobe-웹사이트",
+    "href": "latex.html#adobe-웹사이트",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "4.4 Adobe 웹사이트",
+    "text": "4.4 Adobe 웹사이트\nAdobe Acrobat Compress PDF size 웹사이트에 PDF를 끌어다 놓아 PDF 압축기로 파일 크기를 줄이는 것도 가능하다."
+  },
+  {
+    "objectID": "latex.html#tlmgr-pkg-mgr",
+    "href": "latex.html#tlmgr-pkg-mgr",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "3.1 tlmgr 팩키지 관리자",
+    "text": "3.1 tlmgr 팩키지 관리자\ntlmgr info geometry 명령어를 통해서 이미 설치된 \\(\\LaTeX\\) geometry 팩키지에 대한 정보를 확인할 수 있다.\n$ tlmgr info geometry\n\npackage:     geometry\ncategory:    Package\nshortdesc:   Flexible and complete interface to document dimensions\nlongdesc:    The package provides an easy and flexible user interface to customize page layout, implementing auto-centering and auto-balancing mechanisms so that the users have only to give the least description for the page layout. For example, if you want to set each margin 2cm without header space, what you need is just \\usepackage[margin=2cm,nohead]{geometry}. The package knows about all the standard paper sizes, so that the user need not know what the nominal 'real' dimensions of the paper are, just its standard name (such as a4, letter, etc.). An important feature is the package's ability to communicate the paper size it's set up to the output (whether via DVI \\specials or via direct interaction with pdf(La)TeX).\ninstalled:   Yes\nrevision:    54080\nsizes:       src: 325k, doc: 921k, run: 45k\nrelocatable: No\ncat-version: 5.9\ncat-license: lppl1.3c\ncat-topics:  geometry\ncat-related: vmargin typearea geometry-de\ncat-contact-bugs: https://github.com/davidcarlisle/geometry/issues\ncat-contact-repository: https://github.com/davidcarlisle/geometry\ncollection:  collection-latex\n이외에도 tlmgr 다양한 명령어를 통해 다양한 팩키지 관련 작업을 수행할 수 있다. 자세한 내용은 Basic Usage of tlmgr, the TEX Live Manager 을 참조한다. 기본 사용법은 쉘에서 다음 방식을 사용한다. 즉, 팩키지에 대한 정보를 확인하고 팩키지를 검색하고 팩키지를 설치하고 시간이 지나 최신 팩키지를 갱신하고 팩키지를 삭제하는 작업 등이 포함된다.\ntlmgr [global options ] action [action-specific options] [operands]\n\ninfo\nsearch\ninstall\nupdate\nremove\noption\npath\n\n\n\nCode\nknitr::include_graphics(\"data/tlmgr.pdf\")"
+  },
+  {
+    "objectID": "latex.html#tlmgr-pkg-repository",
+    "href": "latex.html#tlmgr-pkg-repository",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "3.2 한글 사설 저장소",
+    "text": "3.2 한글 사설 저장소\ntex live를 설치하게 되면 기본 주 저장소로 http://mirror.ctan.org/systems/texlive/tlnet 이 설정된다. 하지만 모든 팩키지가 기본 저장소에 등록된 것이 아니라서 한글의 경우 사설 저장소를 등록해서 필요한 팩키지를 설치해야 저작물 작성에 활용할 수 있다.\n$ tlmgr repository list\nList of repositories (with tags if set):\n        http://mirror.ctan.org/systems/texlive/tlnet (main)\n한글 lipsum 을 위해서 lipsum 팩키지 설치를 해야 되는 경우가 대표적인 사례다.\njiwonlipsum 팩키지는 KTUG Private Repository에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. jiwonlipsum 팩키지를 저장된 KTUG Private Repository 저장소 안내글을 참고하여 설치한다. 사설 저장소를 등록시키고 사설 저장소에 등록된 팩키지를 사용하는 작업흐름은 대략 다음과 같다.\n\n사설 저장소를 등록한다.\n\n$ &lt;sudo&gt; tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug\n\n사설 저장소 등록이 완료되면 tex live 팩키지 관리자가 신규 저장소를 파악해야 되는데 이 과정을 pinning이라고 한다.\n\n$ &lt;sudo&gt; tlmgr pinning add ktug \"*\"\n\n사설 저장소에 등록된 예를 들어 jiwonlipsum 등 필요한 팩키지를 설치한다.\n\n$ &lt;sudo&gt; tlmgr install jiwonlipsum\n\n시간이 오래 지난 후에, 저장소 등록 팩키지 업데이트 명령어는 다음과 같다.\n\n$ &lt;sudo&gt; tlmgr update --all --self"
+  },
+  {
+    "objectID": "latex.html#package-tip",
+    "href": "latex.html#package-tip",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "3.3 팩키지 꿀팁",
+    "text": "3.3 팩키지 꿀팁\ntex live를 용량이나 네트워크 등 다양한 이유로 인해서 전체 설치하지 않고 일부만 설치할 경우 특정 팩키지가 빠져 컴파일 과정에서 오류가 발생되는 경우가 종종 발생된다. 이런 문제는 다음과 같은 방식으로 문제를 해결한다.\nxy.sty 파일이 정상적으로 설치된 경우 다음과 같이 확인되지만 없는 경우 package xy not present in repoistory와 같은 오류가 발생된다.\n$ tlmgr search --global --file xy.sty\n\ntlmgr: package repositories\n    main = http://mirror.ctan.org/systems/texlive/tlnet (not verified: gpg unavailable)\n    ktug = http://ftp.ktug.org/KTUG/texlive/tlnet/ (not verified: gpg unavailable)\nFor more about verification, see https://texlive.info/verification.html.\nlwarp:\n    texmf-dist/tex/latex/lwarp/lwarp-xy.sty\npb-diagram:\n    texmf-dist/tex/latex/pb-diagram/pb-xy.sty\nxypic:\n    texmf-dist/tex/generic/xypic/xy.sty\n이를 고치는 방식은 xypic 팩키지에 xy.sty 파일이 있는 것이 확인되기 때문에 xypic 팩키지를 설치한다.\n$ tlmgr install xypic\nkpsewhich xy.sty 명령어로 설치된 위치를 확인할 수 있다.\n$ kpsewhich xy.sty\n/usr/local/texlive/2020/texmf-dist/tex/generic/xypic/xy.sty"
+  },
+  {
+    "objectID": "latex_lipsum.html",
+    "href": "latex_lipsum.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "로렘 입숨(lorem ipsum, 줄여서 립숨, lipsum)은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 문서에서 텍스트가 보이면 사람들은 전체적인 프레젠테이션보다는 텍스트에 담긴 뜻에 집중하는 경향이 있어서 출판사들은 서체나 디자인을 보일 때는 프레젠테이션 자체에 초점을 맞추기 위해 로렘 입숨을 사용한다. 전형적인 로렘 입숨 영문 텍스트는 다음과 같다.\n\n\n\n\n\n\nNote\n\n\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "objectID": "latex_lipsum.html#korean-lipsum-install",
+    "href": "latex_lipsum.html#korean-lipsum-install",
+    "title": "디지털 글쓰기",
+    "section": "3.1 lipsum 팩키지 설치",
+    "text": "3.1 lipsum 팩키지 설치\njiwonlipsum 팩키지는 KTUG Private Repository에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. jiwonlipsum 팩키지가 저장된 KTUG Private Repository 저장소를 활용하는 방식은 다음과 같다.\n\n\nCode\n$ tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug\n$ tlmgr pinning add ktug \"*\"\n$ tlmgr install jiwonlipsum\ntlmgr.pl: package repositories\n        main = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet (verified)\n        ktug = http://ftp.ktug.org/KTUG/texlive/tlnet/ (not verified: pubkey missing)\nFor more about verification, see https://texlive.info/verification.html.\n[1/1, ??:??/??:??] install: jiwonlipsum @ktug [245k]\nrunning mktexlsr ...\ndone running mktexlsr.\nrunning mtxrun --generate ...\ndone running mtxrun --generate.\ntlmgr.pl: package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log"
+  },
+  {
+    "objectID": "latex_lipsum.html#korean-lipsum-hw",
+    "href": "latex_lipsum.html#korean-lipsum-hw",
+    "title": "디지털 글쓰기",
+    "section": "3.2 lipsum 헬로월드",
+    "text": "3.2 lipsum 헬로월드\n\\documentclass[]{article}\n\\usepackage{kotex}\n%\\usepackage{blindtext}\n\\usepackage{jiwonlipsum}\n\n%opening\n\\title{멋진 \\LaTeX 제목 페이지}\n\\author{이광춘}\n\\date{2021-03-03}\n\n\\begin{document}\n\n\\maketitle\n\n\\begin{abstract}\n\n%\\blindtext\n\\jiwon[1]\n\n\\end{abstract}\n\n\\section{들어가며}\n\n%\\Blindtext\n\\jiwon\n\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean_lipsum/korean_lipsum.pdf\")"
+  },
+  {
+    "objectID": "latex_lipsum.html#footnotes",
+    "href": "latex_lipsum.html#footnotes",
+    "title": "디지털 글쓰기",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n위키백과, “로렘 입숨”↩︎"
+  },
+  {
+    "objectID": "latex_helloworld.html",
+    "href": "latex_helloworld.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "TeXstudio 상단 메뉴 옵션(O) → Root Directory 에서 lipsum.tex 파일이 위치하는 곳을 지정해야 된다. 그리고 나서, lipsum.pdf 영문 파일은 참고문헌 서지관리를 위해 BibTeX 파일로 biblatex-examples.bib을 사용하기 때문에 다음과 같은 단순한 구조를 갖게 된다.\nlatex/\n|-- lipsum.tex\n|-- biblatex-examples.bib\n\n\nlipsum.tex 파일은 다음과 같이 문서 양식을 지정한 후에 lipsum 팩키지를 통해 아무 의미없는 문단을 생성시켜 작성된 문서의 대략의 형태를 파악할 수 있게 한다. 참고문헌 서지관리를 위해 bibtex을 핵심 엔진으로 사용하고 \\addbibresource를 사용해서 BibTeX 파일을 biblatex-examples.bib을 지정한다. \\maketitle 명령어를 통해 문서 제목과 저자를 작성하고 \\abstract, \\section을 통해 문서의 주요 내용을 작성한다. 그리고 나서 \\autocite를 통해 참고문헌 관리를 자동화한다.\n\\documentclass{article}\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{English \\LaTeX}\n    \\author{Tidyverse Korea}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n        \\lipsum[1]  \n    \\section{introduction}\n        \\lipsum[3]\n    \\section{main findings\n    }\n        \\lipsum[1-2]\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/english/lipsum.pdf\")\n\n\n\n\n\n\n\n\n\n\n\n\n대부분의 \\(\\LaTeX\\) 기본 글꼴 설정은 “Computer Modern” 서체 가족(family) 인데, 다음 4가지 중 하나로 설정을 변경할 수 있다.\n\n컴퓨터 모던 (표준 \\(\\LaTeX\\) 클래스): CM Roman, CM Sans Serif, CM Typewriter\n라틴 모던 (Latin Modern): LM Roman, LM Sans Serif, LM Typewriter, LM Dunhill\n포스트 스크립트(Post Script Fonts): Times, Utopia/Fourier, Palatino, Bookman, Helvetica, Courier\n\\(\\TeX\\) Gyre\n\n글꼴 변경을 위해서 fontenc, inputenc를 기본을 두고 Helvetica 글꼴로 변경하고자 할 경우 helvet을 지정하면 전체 문서 글꼴이 Helvetica 글꼴로 변경된다. 특정 영역을 Latin Modern Sans Typewriter 글꼴로 변경하고자 하는 경우 {\\fontfamily{lmtt}\\selectfont ... }을 감싸고 나서 ...에 글자를 넣으면 된다. 여기서 lmtt가 Latin Modern Sans Typewriter 글꼴을 지정한다. Roman(Serif), Sans Serif, Typewriter(Monospaced) 글꼴에 대해서는 비교표에 대해서는 “Font typefaces”를 참조한다. 예를 들어, Times 글꼴을 사용하고자 하는 경우 다음과 같이 작업한다.\n\n\\usepackage{mathptmx} 을 지정하거나,\n{\\fontfamily{ptm}\\selectfont ... } 을 지정한다.\n\n\\documentclass{article}\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% Fonts                         &lt;---- 전체 글꼴 변경\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{helvet}             &lt;---- Helvetica 글꼴\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{English \\LaTeX}\n    \\author{Tidyverse Korea}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n        {\\fontfamily{lmtt}\\selectfont  &lt;---- Latin Modern Sans Typewriter 글꼴\n            \\lipsum[1]  \n        }\n    \\section{introduction}\n        \\lipsum[3]\n    \\section{main findings\n    }\n        \\lipsum[1-2]\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/english_font/font-whole-document.pdf\")"
+  },
+  {
+    "objectID": "latex_helloworld.html#latex-format",
+    "href": "latex_helloworld.html#latex-format",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "lipsum.tex 파일은 다음과 같이 문서 양식을 지정한 후에 lipsum 팩키지를 통해 아무 의미없는 문단을 생성시켜 작성된 문서의 대략의 형태를 파악할 수 있게 한다. 참고문헌 서지관리를 위해 bibtex을 핵심 엔진으로 사용하고 \\addbibresource를 사용해서 BibTeX 파일을 biblatex-examples.bib을 지정한다. \\maketitle 명령어를 통해 문서 제목과 저자를 작성하고 \\abstract, \\section을 통해 문서의 주요 내용을 작성한다. 그리고 나서 \\autocite를 통해 참고문헌 관리를 자동화한다.\n\\documentclass{article}\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{English \\LaTeX}\n    \\author{Tidyverse Korea}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n        \\lipsum[1]  \n    \\section{introduction}\n        \\lipsum[3]\n    \\section{main findings\n    }\n        \\lipsum[1-2]\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/english/lipsum.pdf\")"
+  },
+  {
+    "objectID": "latex_helloworld.html#set-english-font",
+    "href": "latex_helloworld.html#set-english-font",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "대부분의 \\(\\LaTeX\\) 기본 글꼴 설정은 “Computer Modern” 서체 가족(family) 인데, 다음 4가지 중 하나로 설정을 변경할 수 있다.\n\n컴퓨터 모던 (표준 \\(\\LaTeX\\) 클래스): CM Roman, CM Sans Serif, CM Typewriter\n라틴 모던 (Latin Modern): LM Roman, LM Sans Serif, LM Typewriter, LM Dunhill\n포스트 스크립트(Post Script Fonts): Times, Utopia/Fourier, Palatino, Bookman, Helvetica, Courier\n\\(\\TeX\\) Gyre\n\n글꼴 변경을 위해서 fontenc, inputenc를 기본을 두고 Helvetica 글꼴로 변경하고자 할 경우 helvet을 지정하면 전체 문서 글꼴이 Helvetica 글꼴로 변경된다. 특정 영역을 Latin Modern Sans Typewriter 글꼴로 변경하고자 하는 경우 {\\fontfamily{lmtt}\\selectfont ... }을 감싸고 나서 ...에 글자를 넣으면 된다. 여기서 lmtt가 Latin Modern Sans Typewriter 글꼴을 지정한다. Roman(Serif), Sans Serif, Typewriter(Monospaced) 글꼴에 대해서는 비교표에 대해서는 “Font typefaces”를 참조한다. 예를 들어, Times 글꼴을 사용하고자 하는 경우 다음과 같이 작업한다.\n\n\\usepackage{mathptmx} 을 지정하거나,\n{\\fontfamily{ptm}\\selectfont ... } 을 지정한다.\n\n\\documentclass{article}\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% Fonts                         &lt;---- 전체 글꼴 변경\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{helvet}             &lt;---- Helvetica 글꼴\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{English \\LaTeX}\n    \\author{Tidyverse Korea}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n        {\\fontfamily{lmtt}\\selectfont  &lt;---- Latin Modern Sans Typewriter 글꼴\n            \\lipsum[1]  \n        }\n    \\section{introduction}\n        \\lipsum[3]\n    \\section{main findings\n    }\n        \\lipsum[1-2]\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/english_font/font-whole-document.pdf\")"
+  },
+  {
+    "objectID": "latex_helloworld.html#footnotes",
+    "href": "latex_helloworld.html#footnotes",
+    "title": "디지털 글쓰기",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOverleaf, “Font typefaces”↩︎"
+  },
+  {
+    "objectID": "latex_helloworld.html#latex-파일-구성",
+    "href": "latex_helloworld.html#latex-파일-구성",
+    "title": "디지털 글쓰기",
+    "section": "2.1 \\(\\LaTeX\\) 파일 구성",
+    "text": "2.1 \\(\\LaTeX\\) 파일 구성\nlipsum.tex 파일은 다음과 같이 문서 양식을 지정한 후에 lipsum 팩키지를 통해 아무 의미없는 문단을 생성시켜 작성된 문서의 대략의 형태를 파악할 수 있게 한다. 참고문헌 서지관리를 위해 bibtex을 핵심 엔진으로 사용하고 \\addbibresource를 사용해서 BibTeX 파일을 biblatex-examples.bib을 지정한다. \\maketitle 명령어를 통해 문서 제목과 저자를 작성하고 \\abstract, \\section을 통해 문서의 주요 내용을 작성한다. 그리고 나서 \\autocite를 통해 참고문헌 관리를 자동화한다.\n\\documentclass{article}\n\\usepackage{kotex}              &lt;---- 한글 필수 팩키지\n\\usepackage{import}             &lt;---- 파일 가져오기\n\\usepackage{lipsum}             &lt;---- 아무 의미없는 문단 자동생성\n\n% References                    &lt;---- 참고문헌 \n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n\\begin{document}\n    % Title and Author          &lt;---- 문서 제목과 저자\n    \\title{한글 \\LaTeX}\n    \\author{이광춘}\n    \\maketitle\n    \n    % Main Contents             &lt;---- 초록을 비롯한 본문\n    \\abstract{}\n      {\\fontfamily{lmtt}\\selectfont  &lt;---- Latin Modern Sans Typewriter 글꼴\n          \\lipsum[1]  \n      }\n    \\section{들어가며}\n            \\import{sections/}{01_intro.tex}\n    \\section{main findings}\n        \\lipsum[1-2]\n    \\section{주장 증명방법}\n            \\import{sections/}{02_proof.tex}\n    % References               &lt;---- 참고문헌 테스트 \n    \\section{references}\n        Lorem \\autocite{sigfridsson}\n        ipsum \\autocite{worman}\n        dolor \\autocite{nussbaum}\n        sit \\autocite{sigfridsson}\n        amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean/korean.pdf\")"
+  },
+  {
+    "objectID": "latex_helloworld.html#한글-글꼴",
+    "href": "latex_helloworld.html#한글-글꼴",
+    "title": "디지털 글쓰기",
+    "section": "2.2 한글 글꼴",
+    "text": "2.2 한글 글꼴\n한글 글꼴을 적용하고자 하는 경우 \\setmainhangulfont, \\setsanshangulfont, \\setmonohangulfont를 지정하여 표현한다. \\hangulfontspec{맑은 고딕}을 지정하면 특정 글꼴을 선별하여 지정할 수 있다.\n\\documentclass{article}\n\\usepackage{kotex}\n\\usepackage{import}\n\\usepackage{lipsum}  \n\n% Fonts\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n%% 영문 폰트\n%\\setmainfont{TeX Gyre Termes}\n%\\setromanfont{Times New Roman}\n%\\setsansfont{Arial}\n%\\setmonofont{Courier New}\n%\\setmainfont{Arial}\n%% 한글 폰트\n\\setmainhangulfont{NanumMyeongjo} % NanumMyeongjo\n\\setsanshangulfont{맑은 고딕}     % MalgunGothic\n\\setmonohangulfont{D2Coding}\n\n% References\n\\usepackage{babel}\n\\usepackage{csquotes}\n\\usepackage[style=authoryear, backend=bibtex]{biblatex}\n\\addbibresource{biblatex-examples.bib}\n\n% 제 X 장 설정\n\\renewcommand{\\thesection}{제 \\arabic{section} 절}\n\n\\begin{document}\n    % Title and Author\n    \\title{한글 \\LaTeX}\n    \\author{이광춘}\n    \\maketitle\n    \n    % Main Contents\n    \\abstract{}\n        {\\fontfamily{lmtt}\\selectfont\n            \\lipsum[1]  \n        }\n    \\section{들어가며}\n        {\\hangulfontspec{맑은 고딕}\n            \\import{sections/}{01_intro.tex}\n        }\n    \\section{main findings}\n        \\lipsum[1-2]\n    \\section{주장 증명방법}\n            \\import{sections/}{02_proof.tex}\n    \\section{코드}\n        \\begin{verbatim}\n            코딩 글꼴 한글도 함께 합니다!!!\n            Text enclosed inside \\texttt{verbatim} environment \n            is printed directly \n            and all \\LaTeX{} commands are ignored.\n        \\end{verbatim}\n    % References\n    \\section{참고 문헌}\n            Lorem \\autocite{sigfridsson}\n            ipsum \\autocite{worman}\n            dolor \\autocite{nussbaum}\n            sit \\autocite{sigfridsson}\n            amet \\autocite{geer}    \n    \\printbibliography\n\\end{document}\n\n\n\nCode\nknitr::include_graphics(\"lipsum/korean_font/main.pdf\")"
   }
 ]

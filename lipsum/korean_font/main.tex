@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{import}
+\usepackage{lipsum}  
+
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%% 영문 폰트
+%\setmainfont{TeX Gyre Termes}
+%\setromanfont{Times New Roman}
+%\setsansfont{Arial}
+%\setmonofont{Courier New}
+%\setmainfont{Arial}
+%% 한글 폰트
+\setmainhangulfont{NanumMyeongjo} % NanumMyeongjo
+\setsanshangulfont{맑은 고딕}     % MalgunGothic
+\setmonohangulfont{D2Coding}
+
+% References
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear, backend=bibtex]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+% 제 X 장 설정
+\renewcommand{\thesection}{제 \arabic{section} 절}
+
+\begin{document}
+	% Title and Author
+	\title{한글 \LaTeX}
+	\author{이광춘}
+	\maketitle
+	
+	% Main Contents
+	\abstract{}
+		{\fontfamily{lmtt}\selectfont
+			\lipsum[1]	
+		}
+	\section{들어가며}
+		{\hangulfontspec{맑은 고딕}
+			\import{sections/}{01_intro.tex}
+		}
+	\section{main findings}
+		\lipsum[1-2]
+	\section{주장 증명방법}
+			\import{sections/}{02_proof.tex}
+	\section{코드}
+		\begin{verbatim}
+			코딩 글꼴 한글도 함께 합니다!!!
+			Text enclosed inside \texttt{verbatim} environment 
+			is printed directly 
+			and all \LaTeX{} commands are ignored.
+		\end{verbatim}
+	% References
+	\section{참고 문헌}
+			Lorem \autocite{sigfridsson}
+			ipsum \autocite{worman}
+			dolor \autocite{nussbaum}
+			sit \autocite{sigfridsson}
+			amet \autocite{geer}	
+	\printbibliography
+\end{document}
