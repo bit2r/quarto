@@ -49,6 +49,12 @@ website:
             text: "동영상 글쓰기"
           - href: sat_pdf.qmd
             text: "2023년 수능 수학(홀수)"
+      - text: "$\\LaTeX$"
+        menu: 
+          - href: latex.qmd
+            text: "$\\LaTeX$ 들어가며"
+          - href: document_editor.qmd
+            text: "문서 편집기"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/

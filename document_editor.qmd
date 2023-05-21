@@ -1,0 +1,187 @@
+---
+title: "디지털 글쓰기"
+subtitle: "문서 편집기"
+description: |
+  문서를 저작하는 저작도구에 대해서 살펴본다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+![](fig/document-ide.png)
+
+# 디지털 전환 시대 글쓰기 {#digital-transformation-writing}
+
+디지털 전환(Digital Transformation) 전 글쓰기는 착상 후 종이와 연필을 가지고 글을 작성하고 수차례 수정작업을 거쳐 타자기로 탈고를 하고 이를 출판사에 넘겨 책이나 보고서로 고객에게 전달하게 된다.
+
+하지만, **디지털 전환(Digital Transformation)** 시대를 맞이하여 글쓰기는 아래한글 혹은 마이크로소프 워드 리브레 Write와 같은 워드 프로세서(Word Processor) 시대를 지나 정말 하드코어한 빔(Vim), 이맥스(Emacs), VS 코드 와 같은 코딩 편집기를 마크다운을 활용하거나 아예 HTML을 직접 코딩하기도 했다. 그 중간에 \$\\LaTeX\$ 을 활용하여 수식이 포함된 학위논문과 저널이나 컨퍼런스에 발표할 논문을 미려한 저작을 하기도 했다. 이를 위해서 \$\\LaTeX\$에 특화된 [TeXStudio](https://www.texstudio.org/) IDE를 사용해서 생산성을 높이기도 했다. 하지만, RStudio의 [Visual R Markdown 편집기](https://rstudio.github.io/visual-markdown-editing/)가 RStudio v1.4에 포함되어 출시되면서 문서를 생산하는 방식에 혁명적인 변화가 생겼다.
+
+|                문서 컴파일                 |             **위지위그**              |
+|:------------------------------------:|:--------------------------------:|
+| ![](fig/wyswig-wikipedia.png){width="242"} | ![](fig/wyswyg-word.png){width="375"} |
+
+# 저작방식 패러다임 [^1] [^2] {#paradigm}
+
+[^1]: [위키백과, "위지위그"](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8)
+
+[^2]: [나무위키, "WYSIWYG"](https://namu.wiki/w/WYSIWYG)
+
+**위지위그**(WYSIWYG: What You See Is What You Get, "보는 대로 얻는다")는 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식을 말한다. 이는 편집 명령어를 입력하여 글꼴이나 문장 형태를 바꾸는 방식과 구별된다. 현재 대부분의 워드 프로세서는 위지위그 방식을 쓰고 있으나 HTML이나 TeX는 편집 명령어를 통해 편집하는 방식을 고수하는데 이유는 문서의 호환성, 범용성 때문이다. 하지만, WYSIWYG를 구현하기 위해 필연적으로 쓸모없는 요소가 들어가게 되기 때문에 문제가 생긴다. 이것이 거듭될수록, 날코딩으로 전환해서 최적화를 하려고 해도 답이 없는 상황으로 변하게 된다. 결국, 오늘도 WYSIWYG 제작자는 어떻게든 결과물의 최적화를 위해 갈리고 있다.
+
+WYSIWYG 방식이 본래의 코드 구조를 바로 알아 볼 수 없다는 점을 보완한 위지윔(WYSIWYM: What You See Is What You Mean, "네가 보는 것은 네가 뜻하는 것이다")은 위지위그가 완벽하지 못하다는 점에서 새로 등장한 용어로 RStudio Visual 마크다운 편집기능이 추가되면서 추구하는 지향점을 나타내는 표현이다. WYSIWYM의 대표적인 사례로 오픈 소스 LaTeX 편집기인 [LyX](https://www.lyx.org/)라는 소프트웨어가 이 개념을 채용하였다.
+
+![](fig/wysiwym.png){fig-align="center" width="750"}
+
+# 워드 프로세서 [^3] {#main-features}
+
+[^3]: [Jesal Shethna, "Microsoft Word Features", EDUCBA](https://www.educba.com/microsoft-word-features/)
+
+워드 프로세서(Word Processor) 는 문서를 제작하는데 사용되는 주요 기능을 시각적으로 잘 배치시켜뒀고 직관적인 인터페이스를 통해 원하는 문서를 제작할 수 있도록 개발된 전용 소프트웨어다. 아래한글도 유사한 방식으로 이와 같은 기능을 제공하고 있는데 좀더 한국적인 상황을 반영하여 예를 들어 정부나 공공기관 문서서식을 많이 담고 있어 양식에 대한 고민없이 해당 업무 글쓰기에 집중할 수 있도록 진화되었다.
+
+-   Tab Ribbon Screen
+-   File Tab Save Screen
+-   Font Screen
+-   Paragraph Screen
+-   Modify Style Screen
+-   Find Replace Editing Screen
+-   Page Layout Screen
+-   Page Layout Breaks Screen
+-   View Screen
+-   Full Screen View Screen
+
+```{r slickr-word-processor}
+library(tidyverse)
+library(slickR)
+
+word_filenames <- fs::dir_ls(path = "fig/", glob = "fig/word*.jpg")
+
+word_tbl <- tibble(file_path = word_filenames)
+
+word_tbl <- word_tbl %>% 
+  mutate(features = str_remove_all(file_path, pattern = "(fig/word-[0-9][0-9]-)|(\\.jpg)") %>% 
+           str_replace_all(., pattern = "-", replacement = " "))
+
+slickR(obj = word_tbl$file_path, width = "80%") %synch%
+  ( slickR(word_tbl$features, slideType = 'p') + settings(arrows = FALSE) )
+```
+
+# Visual R 마크다운 편집기 {#visual-markdown-main-features}
+
+[Visual R 마크다운](https://rstudio.github.io/visual-markdown-editing) 기능을 사용하게 되면 과학/기술 문서 작성의 용이성 뿐만 아니라 인용(Citation), literate programming 을 통한 재현가능한 과학문서 구현, Pandoc을 사용하여 R 마크다운 코드 하나로 PDF, HTML, 워드 등 다양한 문서 생성이 가능하다.
+
+![](fig/visual-edit-01-demo.gif){fig-align="center" width="1053"}
+
+## 주요기능 {#visual-markdown-main-features-all}
+
+Visual R 마크다운 편집기의 주요기능은 다음과 같다.
+
+```{r visual-word-processor}
+library(magick)
+
+## toolbar 이미지가 너무 커서 크기 재조정
+toolbar <- image_read("fig/visual-edit-toolbar.png") %>% 
+  image_scale("320x!")
+
+toolbar %>% 
+  image_write(path = "fig/visual-edit-resized-toolbar.png")
+
+## list 이미지가 너무 커서 크기 재조정
+list_img <- image_read("fig/visual-edit-list.png") %>% 
+  image_scale("500x250!")
+
+list_img %>% 
+  image_write(path = "fig/visual-edit-resized-list.png")
+
+## html 이미지가 너무 커서 크기 재조정
+html_img <- image_read("fig/visual-edit-html.png") %>% 
+  image_scale("800x370!")
+
+html_img %>% 
+  image_write(path = "fig/visual-edit-resized-html.png")
+
+
+## latex 이미지가 너무 커서 크기 재조정
+latex_img <- image_read("fig/visual-edit-latex-block.png") %>% 
+  image_scale("800x370!")
+
+latex_img %>% 
+  image_write(path = "fig/visual-edit-resized-latex.png")
+
+visual_filenames <- fs::dir_ls(path = "fig/", glob = "fig/visual-edit*.png") %>% 
+  setdiff("fig/visual-edit-toolbar.png") %>% 
+  setdiff("fig/visual-edit-list.png") %>% 
+  setdiff("fig/visual-edit-html.png") %>% 
+  setdiff("fig/visual-edit-latex-block.png")
+
+visual_tbl <- tibble(file_path = visual_filenames)
+
+visual_tbl <- visual_tbl %>% 
+  mutate(features = str_remove_all(file_path, pattern = "(fig/visual-edit-)|(\\.(png)|(jpg)|(gif))") %>% 
+           str_replace_all(., pattern = "-", replacement = " "))
+
+slickR(obj = visual_tbl$file_path, width = "80%") %synch%
+  ( slickR(visual_tbl$features, slideType = 'p') + settings(arrows = FALSE) )
+```
+
+# $\LaTeX$ 편집기 {#latex-editor}
+
+$\LaTeX$ 편집기는 운영체제에 따라 나름 인기있는 편집기가 존재한다. 하지만, $\LaTeX$ 기능을 생각하면 클라우드 [Overleaf](https://www.overleaf.com/) 편집기, 설치형 Stand-alone [TeXstudio](https://www.texstudio.org/), 데이터 과학 전용 RStudio Desktop IDE 등 다양한 편집기가 $\LaTeX$ 전용 혹은 일부 기능을 따로 떼어내 활용가능하다.
+
+![](fig/latex-editor.png){fig-align="center" width="1151"}
+
+------------------------------------------------------------------------
+
+## 클라우드 $\LaTeX$ 편집기 {#sharelatex}
+
+[Overleaf](https://www.overleaf.com/) $\LaTeX$ 편집기는 과거 ShareLaTeX 서비스가 확대된 것으로 $\LaTeX$ 관련 저작물을 수월하게 클라우드 $\LaTeX$ 편집기능을 활용하여 저작할 수 있고 클라우드 특성상 공유와 협업도 자유로운 장점이 있다.
+
+![](fig/overleaf-screenshot.png){fig-align="center" width="1033"}
+
+------------------------------------------------------------------------
+
+## TeXStudio 편집기 {#texstudio}
+
+과거 `Texmaker`가 있었다면 이를 오픈 소스 $\LaTeX$ 편집기로 공개된 것으로 [TeXstudio](https://www.texstudio.org/)를 다운로드 받아 설치하여 자유로이 사용할 수 있다. GitHub [`texstudio`](https://github.com/texstudio-org/texstudio) 저장소에서 한국어 현지화의 도움도 기다리고 있다.
+
+![](fig/texstudio-screenshot.png){fig-align="center" width="821"}
+
+------------------------------------------------------------------------
+
+## RStudio IDE 편집기 {#rstudio-ide}
+
+RStudio도 $\LaTeX$ 편집기로 활용하여 다양한 문서를 저작할 수 있다.
+
+![](fig/rstudio-screenshot.png){fig-align="center" width="763"}
+
+# [맞춤법 검사](https://statkclee.github.io/comp_document/cd-rstudio-wp.html) {#spelling-check}

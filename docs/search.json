@@ -1244,5 +1244,47 @@
     "title": "수능 PDF",
     "section": "5.2 스크립트",
     "text": "5.2 스크립트\n\n\nCode\nsolve_problem &lt;- function(question) {\n  # question_for_chatGPT &lt;- glue::glue(\"아래 수학문제를 풀어주세요. 단, 풀이과정은 출력하지말고 정답만 간결하게 출력합니다: \\n{md_tbl %&gt;% slice(question) %&gt;% pull(문제)}\")\nquestion_for_chatGPT &lt;- glue::glue(\"아래 수학문제를 풀어주세요: \\n{md_tbl %&gt;% slice(question) %&gt;% pull(문제)}\") %&gt;% as.character(.)\n\n  completion_url &lt;- \"https://api.openai.com/v1/completions\"\n  auth &lt;- add_headers(Authorization = paste(\"Bearer\", Sys.getenv(\"OPENAI_API_KEY\")))\n  body &lt;- list(model = \"text-davinci-003\", prompt = question_for_chatGPT, \n               temperature = 0,\n               max_tokens =1000)\n  \n  resp &lt;- POST(\n    completion_url,\n    auth,\n    body = body,\n    encode = \"json\"\n  )\n  \n  answer &lt;- content(resp, as = \"text\", encoding = \"UTF-8\") %&gt;%\n    jsonlite::fromJSON(flatten = TRUE) %&gt;% \n    pluck(\"choices\")\n  \n  return(answer$text)\n}\n\nsolve_problem(3)\n\n\n정의는 \\(a_{n+1}=qa_{n}\\) 이므로, \\(a_{2}=qa_{1}\\)\\(a_{4}=q^{2}a_{1}\\)\\(a_{6}=q^{3}a_{1}\\), \\(a_{2}+a_{4}=30 \\\\Rightarrow qa_{1}+q^{2}a_{1}=30\\)\\(a_{4}+a_{6}=\\\\frac{15}{2} \\\\Rightarrow q^{2}a_{1}+q^{3}a_{1}=\\\\frac{15}{2}\\)식을 더하면, \\(qa_{1}+2q^{2}a_{1}+q^{3}a_{1}=\\\\frac{45}{2}\\)\\((q+2q^{2}+q^{3})a_{1}=\\\\frac{45}{2}\\)\\(a_{1}=\\\\frac{45}{2(q+2q^{2}+q^{3})}\\)"
+  },
+  {
+    "objectID": "latex.html",
+    "href": "latex.html",
+    "title": "\\(\\LaTeX\\) 들어가며",
+    "section": "",
+    "text": "1 들어가며"
+  },
+  {
+    "objectID": "document_editor.html#visual-markdown-main-features-all",
+    "href": "document_editor.html#visual-markdown-main-features-all",
+    "title": "디지털 글쓰기",
+    "section": "4.1 주요기능",
+    "text": "4.1 주요기능\nVisual R 마크다운 편집기의 주요기능은 다음과 같다.\n\n\nCode\nlibrary(magick)\n\n## toolbar 이미지가 너무 커서 크기 재조정\ntoolbar &lt;- image_read(\"fig/visual-edit-toolbar.png\") %&gt;% \n  image_scale(\"320x!\")\n\ntoolbar %&gt;% \n  image_write(path = \"fig/visual-edit-resized-toolbar.png\")\n\n## list 이미지가 너무 커서 크기 재조정\nlist_img &lt;- image_read(\"fig/visual-edit-list.png\") %&gt;% \n  image_scale(\"500x250!\")\n\nlist_img %&gt;% \n  image_write(path = \"fig/visual-edit-resized-list.png\")\n\n## html 이미지가 너무 커서 크기 재조정\nhtml_img &lt;- image_read(\"fig/visual-edit-html.png\") %&gt;% \n  image_scale(\"800x370!\")\n\nhtml_img %&gt;% \n  image_write(path = \"fig/visual-edit-resized-html.png\")\n\n\n## latex 이미지가 너무 커서 크기 재조정\nlatex_img &lt;- image_read(\"fig/visual-edit-latex-block.png\") %&gt;% \n  image_scale(\"800x370!\")\n\nlatex_img %&gt;% \n  image_write(path = \"fig/visual-edit-resized-latex.png\")\n\nvisual_filenames &lt;- fs::dir_ls(path = \"fig/\", glob = \"fig/visual-edit*.png\") %&gt;% \n  setdiff(\"fig/visual-edit-toolbar.png\") %&gt;% \n  setdiff(\"fig/visual-edit-list.png\") %&gt;% \n  setdiff(\"fig/visual-edit-html.png\") %&gt;% \n  setdiff(\"fig/visual-edit-latex-block.png\")\n\nvisual_tbl &lt;- tibble(file_path = visual_filenames)\n\nvisual_tbl &lt;- visual_tbl %&gt;% \n  mutate(features = str_remove_all(file_path, pattern = \"(fig/visual-edit-)|(\\\\.(png)|(jpg)|(gif))\") %&gt;% \n           str_replace_all(., pattern = \"-\", replacement = \" \"))\n\nslickR(obj = visual_tbl$file_path, width = \"80%\") %synch%\n  ( slickR(visual_tbl$features, slideType = 'p') + settings(arrows = FALSE) )"
+  },
+  {
+    "objectID": "document_editor.html#sharelatex",
+    "href": "document_editor.html#sharelatex",
+    "title": "디지털 글쓰기",
+    "section": "5.1 클라우드 \\(\\LaTeX\\) 편집기",
+    "text": "5.1 클라우드 \\(\\LaTeX\\) 편집기\nOverleaf \\(\\LaTeX\\) 편집기는 과거 ShareLaTeX 서비스가 확대된 것으로 \\(\\LaTeX\\) 관련 저작물을 수월하게 클라우드 \\(\\LaTeX\\) 편집기능을 활용하여 저작할 수 있고 클라우드 특성상 공유와 협업도 자유로운 장점이 있다."
+  },
+  {
+    "objectID": "document_editor.html#texstudio",
+    "href": "document_editor.html#texstudio",
+    "title": "디지털 글쓰기",
+    "section": "5.2 TeXStudio 편집기",
+    "text": "5.2 TeXStudio 편집기\n과거 Texmaker가 있었다면 이를 오픈 소스 \\(\\LaTeX\\) 편집기로 공개된 것으로 TeXstudio를 다운로드 받아 설치하여 자유로이 사용할 수 있다. GitHub texstudio 저장소에서 한국어 현지화의 도움도 기다리고 있다."
+  },
+  {
+    "objectID": "document_editor.html#rstudio-ide",
+    "href": "document_editor.html#rstudio-ide",
+    "title": "디지털 글쓰기",
+    "section": "5.3 RStudio IDE 편집기",
+    "text": "5.3 RStudio IDE 편집기\nRStudio도 \\(\\LaTeX\\) 편집기로 활용하여 다양한 문서를 저작할 수 있다."
+  },
+  {
+    "objectID": "document_editor.html#footnotes",
+    "href": "document_editor.html#footnotes",
+    "title": "디지털 글쓰기",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n위키백과, “위지위그”↩︎\n나무위키, “WYSIWYG”↩︎\nJesal Shethna, “Microsoft Word Features”, EDUCBA↩︎"
   }
 ]
