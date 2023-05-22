@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.299">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+<meta name="description" content="Bahlai 법칙에 따르면 “다른 사람 데이터는 항상 일관되지 못하고 형식이 틀렸다.” 다음 간단한 예제를 통해서 그런 데이터(스프레드쉬트에 내장된 참고문헌정보)를 어떻게 받아서 유용한 것으로 변경할지 보여줄 것이다. 이런 과정을 거치면서 지금까지 소개된 모든 도구를 사용해서 그렇지 않다면 작업하기 어렵거나 불가능한 정보를 추출하고, 형태를 바꾸고, 분석할 것이다.">
+
+<title>디지털 글쓰기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="twitter:title" content="디지털 글쓰기">
+<meta name="twitter:description" content="Bahlai 법칙에 따르면 “다른 사람 데이터는 항상 일관되지 못하고 형식이 틀렸다.” 다음 간단한 예제를 통해서 그런 데이터(스프레드쉬트에 내장된 참고문헌정보)를 어떻게 받아서 유용한 것으로 변경할지 보여줄 것이다. 이런 과정을 거치면서 지금까지 소개된 모든 도구를 사용해서 그렇지 않다면 작업하기 어렵거나 불가능한 정보를 추출하고, 형태를 바꾸고, 분석할 것이다.">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto_blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./quarto_install.html" rel="" target="">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_about.html" rel="" target="">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">글쓰기</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html" rel="" target="">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html" rel="" target="">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_fonts.html" rel="" target="">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_sass.html" rel="" target="">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_layout.html" rel="" target="">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html" rel="" target="">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf" rel="" target="">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./youtube.html" rel="" target="">
+ <span class="dropdown-text">동영상 글쓰기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pdf.html" rel="" target="">
+ <span class="dropdown-text">2023년 수능 수학(홀수)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-latex" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><span class="math inline">\(\LaTeX\)</span></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-latex">    
+        <li>
+    <a class="dropdown-item" href="./latex.html" rel="" target="">
+ <span class="dropdown-text"><span class="math inline">\(\LaTeX\)</span> 들어가며</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./document_editor.html" rel="" target="">
+ <span class="dropdown-text">문서 편집기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
+ <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.html" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_thesis.html" rel="" target="">
+ <span class="dropdown-text">학위논문 양식</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_cover.html" rel="" target="">
+ <span class="dropdown-text">책표지와 본문결합</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
+ <span class="dropdown-text">Rmd –&gt; PDF</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-excel" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">엑셀(Excel)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-excel">    
+        <li>
+    <a class="dropdown-item" href="./excel_why.html" rel="" target="">
+ <span class="dropdown-text">왜 엑셀(?)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">관련 정보</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/" rel="" target="">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r2bit.com/seoul-r/" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup 발표자료</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/" rel="" target="">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/" rel="" target="">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ide" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">IDE</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ide">    
+        <li>
+    <a class="dropdown-item" href="./ide_war.html" rel="" target="">
+ <span class="dropdown-text">AI가 쏘아올린 작은 공</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ide_vscode.html" rel="" target="">
+ <span class="dropdown-text">Visual Studio Code</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com" rel="" target="">
+ <span class="menu-text">R사용자회</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw" rel="" target=""><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse" rel="" target=""><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">디지털 글쓰기</h1>
+            <p class="subtitle lead">왜 엑셀(?)</p>
+                  <div>
+        <div class="description">
+          <p>Bahlai 법칙에 따르면 “다른 사람 데이터는 항상 일관되지 못하고 형식이 틀렸다.” 다음 간단한 예제를 통해서 그런 데이터(스프레드쉬트에 내장된 참고문헌정보)를 어떻게 받아서 유용한 것으로 변경할지 보여줄 것이다. 이런 과정을 거치면서 지금까지 소개된 모든 도구를 사용해서 그렇지 않다면 작업하기 어렵거나 불가능한 정보를 추출하고, 형태를 바꾸고, 분석할 것이다.</p>
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">PPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 슬라이드</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">홍익대 특강</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">전자책</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 전자책</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">디지털 글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">마크다운 글쓰기</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">코딩(Computation)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">코딩 (계산)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib_py.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.ipynb 파이썬 파일</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.qmd Quarto 파일</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#엑셀-이해하기" id="toc-엑셀-이해하기" class="nav-link active" data-scroll-target="#엑셀-이해하기"><span class="header-section-number">1</span> 엑셀 이해하기</a></li>
+  <li><a href="#엑셀-활용-사례" id="toc-엑셀-활용-사례" class="nav-link" data-scroll-target="#엑셀-활용-사례"><span class="header-section-number">2</span> 엑셀 활용 사례</a></li>
+  <li><a href="#왜-엑셀이-위기인가" id="toc-왜-엑셀이-위기인가" class="nav-link" data-scroll-target="#왜-엑셀이-위기인가"><span class="header-section-number">3</span> 왜 엑셀이 위기인가</a>
+  <ul class="collapse">
+  <li><a href="#엑셀-포기-이유" id="toc-엑셀-포기-이유" class="nav-link" data-scroll-target="#엑셀-포기-이유"><span class="header-section-number">3.1</span> 엑셀 포기 이유</a></li>
+  <li><a href="#엑셀-참사" id="toc-엑셀-참사" class="nav-link" data-scroll-target="#엑셀-참사"><span class="header-section-number">3.2</span> 엑셀 참사</a></li>
+  </ul></li>
+  <li><a href="#엑셀-탈옥" id="toc-엑셀-탈옥" class="nav-link" data-scroll-target="#엑셀-탈옥"><span class="header-section-number">4</span> 엑셀 탈옥</a>
+  <ul class="collapse">
+  <li><a href="#엑셀-코퍼스-excel-enron" id="toc-엑셀-코퍼스-excel-enron" class="nav-link" data-scroll-target="#엑셀-코퍼스-excel-enron"><span class="header-section-number">4.1</span> 엑셀 코퍼스 </a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="엑셀-이해하기" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 엑셀 이해하기</h1>
+<p>데이터 분석을 위해서 컴퓨터도 읽을 수 있고, 사람도 읽을 수 있는 프로그램이 다수 존재한다. 컴퓨터 프로그램을 열어보면 컴퓨터가 무시하고 넘어어 가지만 사람이 더 관심을 갖는 주석과 실제 컴퓨터가 실행하는 코드로 구성된다. 따라서 컴퓨터도 읽을 수 있고, 사람도 읽을 수 있는 코드가 데이터 과학을 위해 필요하다.</p>
+<p><strong>코드</strong> 도 사람과 컴퓨터 모두에게 가독성을 제공해야 하지만, <strong>데이터</strong> 도 사람과 컴퓨터 모두에게 가독성을 제공해야만 된다. 문제는 <strong>스프레드쉬트</strong> 가 사람과 컴퓨터 모두에게 가독성을 제공하지 않는데 있다. 어쩌면 가장 복잡성이 높은 것이 스프레드쉬트라고도 볼 수 있다. 처음에는 쉽게 다가오지만, 1주일만 지나도 해독하기가 만만치 않는 경험을 종종 했을 것이다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-algo-complexity.png" class="lightbox" title="엑셀 알고리즘 복잡성" data-gallery="quarto-lightbox-gallery-1"><img src="fig/ds-xls-algo-complexity.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">엑셀 알고리즘 복잡성</figcaption><p></p>
+</figure>
+</div>
+<p>스프레드쉬트는 데이터, 서식, 수식으로 구성된다. 숫자 데이터를 엑셀로 가져오게 되면 엑셀 내장 함수를 통해 수식 계산을 수행하고, 엑셀 사용자 본인 혹은 외부 사람을 위해 서식을 입히는 과정을 거쳐 비로소 완성된 스프레드쉬트가 된다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-data-format-logic.png" class="lightbox" title="엑셀 구성요소" data-gallery="quarto-lightbox-gallery-2"><img src="fig/ds-xls-data-format-logic.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">엑셀 구성요소</figcaption><p></p>
+</figure>
+</div>
+<p>스프레드쉬트와 R을 비교해 보면, 서로 상응하는 기능이 일대일로 대응되는 것을 확인할 수 있다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><strong>스프레드쉬트</strong></th>
+<th><strong>R</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>* 데이터</td>
+<td>* 데이터</td>
+</tr>
+<tr class="even">
+<td>* 로직</td>
+<td>* .R, .Rmd</td>
+</tr>
+<tr class="odd">
+<td>* 그림</td>
+<td>* .png, .svg</td>
+</tr>
+<tr class="even">
+<td>* 서식을 갖춘 표</td>
+<td>* .md, .html, .pdf, Shiny 앱</td>
+</tr>
+<tr class="odd">
+<td>* <strong>반응성(reactivity)</strong></td>
+<td>* <strong>빌드와 배포</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이런 스프레드쉬트 문제점을 극복하기 위해서 다양한 시도가 진행되고 있다.</p>
+<ul>
+<li>차세대 스프레드쉬트 응용프로그램을 개발: <a href="https://stenci.la/">Stencila</a>, <a href="http://www.alphasheets.com/">AlphaSheets</a>, <a href="https://manns.github.io/pyspread/">Pyspread</a></li>
+<li>스프레드쉬트는 그대로 두고, 스프레드쉬트에서 좋은 것을 뽑아내거나 다시 되돌리는 시도
+<ul>
+<li>readxl: <a href="https://cran.r-project.org/web/packages/readxl/index.html">CRAN</a></li>
+<li>openxlsx: <a href="https://cran.r-project.org/web/packages/openxlsx/index.html">CRAN</a></li>
+<li>XLConnect: <a href="https://cran.r-project.org/web/packages/XLConnect/index.html">CRAN</a></li>
+<li>gdata: <a href="https://cran.r-project.org/web/packages/gdata/index.html">CRAN</a></li>
+<li>xlsx: <a href="https://cran.r-project.org/web/packages/xlsx/index.html">CRAN</a></li>
+<li>RODBC: <a href="https://cran.r-project.org/web/packages/RODBC/index.html">CRAN</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="엑셀-활용-사례" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 엑셀 활용 사례</h1>
+<p>엑셀을 창의적으로 활용하는 다양한 사례를 살펴보자.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">대쉬보드 사례</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">스포츠 토토</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">데이터 서식</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">수식(formulas)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">병합(merge)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-enron-ex01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="fig/ds-xls-enron-ex01.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-enron-ex02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="fig/ds-xls-enron-ex02.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-enron-ex03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="fig/ds-xls-enron-ex03.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-enron-ex04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="fig/ds-xls-enron-ex04.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-enron-ex05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="fig/ds-xls-enron-ex05.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="왜-엑셀이-위기인가" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 왜 엑셀이 위기인가</h1>
+<p>엑셀은 작은 데이터를 가지고 임의 분석과 계산을 하는데 최적화 되었지만, 데이터베이스 기능으로 사용하는 것은 자제하여야 한다. 아주 많은 기업이나 조직에서 마이크로소프트 엑셀 스프레드쉬트에 매우 중요한 데이터로 보관하고 작업을 해서, 사소한 실수로 중요한 의사결정이 왜곡되는 위험에 처해 있다.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+엑셀 사용 이유
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>항상 엑셀을 사용했다: 항상 데이터를 엑셀로 저장하고 분석해서 사용했고, 버튼 하나로 데이터를 내보내기 쉽다.</li>
+<li>데이터베이스를 사용할 만큼 데이터가 충분하지 않다: 데이터가 작아서 데이터베이스를 사용할 이유를 찾지 못하지만, 사업이 커지고, 업무량이 늘어나면서 엑셀 작업량이 높아지고, 복잡성도 커지고, 엑셀 자체에서 처리되는 시간도 늘어난다.</li>
+</ul>
+</div>
+</div>
+</div>
+<section id="엑셀-포기-이유" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="엑셀-포기-이유"><span class="header-section-number">3.1</span> 엑셀 포기 이유</h2>
+<ol type="1">
+<li>한번에 한사람만 작업이 가능하다: 해당 시간에 한번만 엑셀로 작업이 가능하다. 만약 다른 직원이 엑셀을 열어 작업을 하게 되면 “읽기 전용(Read-Only)”으로만 볼 수만 있다.</li>
+<li>데이터 감사는 데이터베이스에서만 가능: 보통 한 사람만 엑셀 스프레드쉬트 파일을 생성하고 유지보수한다. 이 직원이 다른 부서로 전보되거나 회사를 떠나게 되면, 모든 지식이 직원과 함께 날아간다. 고로, 해당 업무를 담고 있는 엑셀 스프레드쉬트를 익히는데 수개월이 소요된다. 이와 비교하여 감사 기능이 제공되는 데이터베이스는 주기적으로 사용자 활동을 기록해서 엑셀 스프레드쉬트가 담고 있는 정보 및 직관도 전달한다.</li>
+<li>데이터베이스는 정형화된 작업흐름을 지원한다: 업무 프로세스를 엑셀 스프레드쉬트로 정의할 경우, 엑셀 스프레드쉬트 파일을 전자우편으로 다수 개발자, 검토자, 승인자에게 셀 수 없이 많이 전달해야 한다. 더 큰 문제는 이를 취합해서 수작업으로 정리해야 된다. 하지만, 업무 프로세스를 데이터베이스로 정의할 경우, 특정 사업 요구사항을 해결하는데 작업을 매핑하고, 추적하고 관리하기 편하다. 효과적으로 중앙에서 체계적으로 관리되는 스프레드쉬트, 데이터베이스로 할당된 작업에 대응하기 좋다.</li>
+<li>데이터베이스는 엑셀보다 모형을 보다 잘 지원한다: 엑셀 스프레드쉬트 업무가 늘어나고 크기가 커지게 되면, 오류에 취약해 진다. 예를 들어, 새로운 수식을 새로운 곳에 복사해서 넣게 되면 셀참조가 엉클어져서 엉뚱한 값이 반영되는 경우도 흔히 발견된다.</li>
+<li>데이터베이스로 보고서 생성이 수월하다: 데이터베이스에서 쿼리, 쿼리에 기반한 보고서를 작성하기 더 쉽다. 정적 스프레드쉬트와 반대로 관계형 환경에서 데이터를 정렬, 매칭, 조합하기 더 좋다.</li>
+<li>데이터베이스는 보안이 강력하고 규제하기 좋다: 스프레드쉬트는 규제를 가하고 보안기능을 두기가 마땅치 않는다. 보안과 제한 기능은 완전히 사용자 몫으로 남겨진다. 엑셀 사용자가 수작업으로 모든 것을 식별해서 작업해야 되고 실수한 것도 고쳐야 된다. 스프레드쉬트에 이러한 기능이 거의 전무하기 때문에, 실수한 것도 알아차리지 못한 상태로 그냥 넘어가는 경우가 상당히 많다.</li>
+</ol>
+</section>
+<section id="엑셀-참사" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="엑셀-참사"><span class="header-section-number">3.2</span> 엑셀 참사</h2>
+<p>대표적인 엑셀 참사를 정리해보자. <span class="citation" data-cites="Teampay">(<a href="#ref-Teampay" role="doc-biblioref"><span>“The 7 Biggest Excel Mistakes of All Time,”</span> n.d.</a>)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>회사</th>
+<th>참사 비용</th>
+<th>발생일</th>
+<th>영향</th>
+<th>참사 개요</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>옥스포드 대학</td>
+<td>미확인</td>
+<td>’11.12월</td>
+<td>학생 인터뷰 일정 지연</td>
+<td>엑셀이 수식이 꼬여 인터뷰 일정이 뒤죽박죽</td>
+</tr>
+<tr class="even">
+<td>MI5</td>
+<td>미확인</td>
+<td>’11년</td>
+<td>잘못된 전화번호 작업</td>
+<td>엑셀 서식 수식이 꼬여 엉뚱한 전화번호 작업</td>
+</tr>
+<tr class="odd">
+<td>’12년 런던 올림픽</td>
+<td>£ 0.5백만</td>
+<td>’12.01월</td>
+<td>티켓 환불 소동</td>
+<td>수영장 10,000 티켓이 초과 판매 (엑셀 입력 오류)</td>
+</tr>
+<tr class="even">
+<td>Mouchel</td>
+<td>£ 4.3백만</td>
+<td>’10.11월</td>
+<td>CEO 사임, 주가폭락</td>
+<td>연금펀드평가 £ 4.3백만 엑셀 오류</td>
+</tr>
+<tr class="odd">
+<td>C&amp;C Group</td>
+<td>£ 9 백만</td>
+<td>’09.7월</td>
+<td>주가 15% 하락 등</td>
+<td>매출 3% 상승이 아니고 5% 하락, 엑셀 오류</td>
+</tr>
+<tr class="even">
+<td>UK 교통부</td>
+<td>최소 £ 50 백만</td>
+<td>’12.10월</td>
+<td>영국민 추가 세금 부담</td>
+<td>영국 철도 입찰 오류</td>
+</tr>
+<tr class="odd">
+<td>King 펀드</td>
+<td>£ 130 백만</td>
+<td>’11.05월</td>
+<td>브래드 이미지 하락</td>
+<td>웨일즈 지방 NHS 지출 엑셀 오류</td>
+</tr>
+<tr class="even">
+<td>AXA Rosenberg</td>
+<td>£ 150 백만</td>
+<td>’11.02월</td>
+<td>은폐, 벌금, 브래드 이미지 하락</td>
+<td>엑셀 오류를 감춰서 $242 백만 벌금</td>
+</tr>
+<tr class="odd">
+<td>JP Morgan Chase</td>
+<td>£ 250 백만</td>
+<td>’13.01월</td>
+<td>명성, 고객 신뢰도 저하</td>
+<td>바젤 II VaR 위험 평가 엑셀 오류</td>
+</tr>
+<tr class="even">
+<td>Fidelity Magellan 펀드</td>
+<td>£ 1.6 십억</td>
+<td>’95.01월</td>
+<td>투자자에게 약속한 배당금 지급 못함</td>
+<td>음수 부호 누락으로 자본이득 과대계상 <span class="citation" data-cites="Plumer_2021">(<a href="#ref-Plumer_2021" role="doc-biblioref">Plumer, 2021</a>)</span></td>
+</tr>
+</tbody>
+</table>
+<p>2010년 하버드 경제학자 카르멘 라인하트와 케네스 로고프가 발표한 학술 논문은 Excel 스프레드시트를 잘못 사용해 심각한 오류를 범한 사례로 유명하다. <strong>국가의 부채가 GDP의 90%를 초과하면 경제 성장이 둔화</strong>된다는 이들의 연구는 긴축 정책에 대한 논거를 강화하는 데 사용되었다. 그러나 재분석 결과, 엑셀 오류로 인해 일부 국가의 데이터가 계산에서 누락되었다는 사실이 밝혀졌다. 오류를 수정하자 마이너스 성장률 수치가 플러스 성장률로 바뀌었다. 이 사건은 연구에서 세심한 데이터 처리와 투명성의 중요성과 복잡한 계산을 위해 Excel에 크게 의존할 경우 발생할 수 있는 잠재적 위험의 대표적인 사례로 회자된다. <span class="citation" data-cites="Borwein_Bailey_2023">(<a href="#ref-Borwein_Bailey_2023" role="doc-biblioref">Borwein &amp; Bailey, 2023</a>)</span></p>
+<div class="columns">
+<div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/reinhart_rogoff_coding_error_0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="fig/reinhart_rogoff_coding_error_0.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/R_Rcorrect-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="fig/R_Rcorrect-1.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="엑셀-탈옥" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 엑셀 탈옥</h1>
+<p>스프레드쉬트에 대한 대중성을 인정한다. 엔론 사례를 통해 스프레드쉬트 현황을 통해 스프레드쉬트에서 R/파이썬으로 나아갈 방향을 살펴본다.</p>
+<p>엑셀로 대표되는 스프레드쉬트는 가장 많은 사람들이 사용하는 데이터 분석 및 숫자형 데이터 처리를 위해 사용하는 도구다. 사실 애플 컴퓨터가 대중화 되는데 있어 가장 많은 기여를 한 것도 <a href="https://en.wikipedia.org/wiki/VisiCalc">비지캘크(VisiCalc)</a> 라는 스프레드쉬트다. 전세계적으로 R 사용자는 백만명이 되지 않을 것으로 추산된다. 2016년 <a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/jailbreakr-Get-out-of-Excel-free">jailbreakr: Get out of Excel, free</a> 발표에 따르면 숫자를 다루는 가장 많은 사람이 사용하는 도구는 엑셀이다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>데이터 분석 도구</th>
+<th>사용자 수</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>마이크로소프트 오피스</td>
+<td>10 억명</td>
+</tr>
+<tr class="even">
+<td>스프레드쉬트(엑셀)</td>
+<td>6억 5천만명</td>
+</tr>
+<tr class="odd">
+<td>수식(formulas) 사용</td>
+<td>50% ↑</td>
+</tr>
+<tr class="even">
+<td>파이썬</td>
+<td>백만 ~ 오백만명</td>
+</tr>
+<tr class="odd">
+<td>R</td>
+<td>25만 ~ 백만명</td>
+</tr>
+</tbody>
+</table>
+<section id="엑셀-코퍼스-excel-enron" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="엑셀-코퍼스-excel-enron"><span class="header-section-number">4.1</span> 엑셀 코퍼스 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<p><strong>엑셀 코퍼스 저장소</strong></p>
+<ul>
+<li><a href="http://openscience.us/repo/spreadsheet/euses.html">EUSES corpus</a>: 4,447 스프레드쉬트 (16,853 워크쉬트)</li>
+<li><a href="http://www.felienne.com/archives/3634">A modern day Pompeii - Spreadsheets at Enron</a>: 15,770 스프레드쉬트 (79,983 워크쉬트)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-enron-vs-euses.png" class="lightbox" title="엔론 vs Euses 엑셀 코퍼스 비교" data-gallery="quarto-lightbox-gallery-5"><img src="fig/ds-xls-enron-vs-euses.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">엔론 vs Euses 엑셀 코퍼스 비교</figcaption><p></p>
+</figure>
+</div>
+<p><strong>엔론 엑셀 코퍼스 분석 결과</strong></p>
+<ul>
+<li><strong>24%</strong> 엔론 스프레드쉬트 수식에 엑셀 오류가 있음</li>
+<li>스프레드쉬트에 사용되는 함수 : 핵심 함수 15 개가 76% 스프레드쉬트에 사용됨</li>
+<li><strong>매일</strong> 스프레드쉬트 100개가 전자우편에 첨부되어 유통</li>
+<li>전자우편을 통해 스프레드쉬트가 10% 전자우편이 첨부되거나 주제로 전달됨.</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>순위</th>
+<th>함수</th>
+<th>스프레드쉬트 갯수</th>
+<th>누적 백분율(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>SUM</td>
+<td>578</td>
+<td>6.4%</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>+</td>
+<td>1259</td>
+<td>14.0%</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>-</td>
+<td>2262</td>
+<td>25.1%</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>/</td>
+<td>2625</td>
+<td>29.1%</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>*</td>
+<td>3959</td>
+<td>43.9%</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>IF</td>
+<td>4260</td>
+<td>47.3%</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>NOW</td>
+<td>5322</td>
+<td>59.1%</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>AVERAGE</td>
+<td>5664</td>
+<td>62.8%</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>VLOOKUP</td>
+<td>5733</td>
+<td>63.6%</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>ROUND</td>
+<td>5990</td>
+<td>66.5%</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>TODAY</td>
+<td>6182</td>
+<td>68.6%</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>SUBTOTAL</td>
+<td>6480</td>
+<td>71.9%</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>MONTH</td>
+<td>6520</td>
+<td>72.3%</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>CELL</td>
+<td>6774</td>
+<td>75.2%</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>YEAR</td>
+<td>6812</td>
+<td>75.6%</td>
+</tr>
+</tbody>
+</table>
+<section id="section" class="level4" data-number="4.1.0.1">
+<h4 data-number="4.1.0.1" class="anchored" data-anchor-id="section"><span class="header-section-number">4.1.0.1</span> </h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/ds-xls-worksheets-dist.png" class="lightbox" title="스프레드쉬트 내 워크쉬트 갯수 분포" data-gallery="quarto-lightbox-gallery-6"><img src="fig/ds-xls-worksheets-dist.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">스프레드쉬트 내 워크쉬트 갯수 분포</figcaption><p></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+럼스펠트가 통계에 남긴 명언
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>‘you go to war with the army you have, not the army you might want or wish to have at a later time’ – Donald Rumsfeld <br> ‘you go into data analysis with the tools you know, not the tools you need’ – Jenny Bryan</p>
+</div>
+</div>
+
+
+
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Borwein_Bailey_2023" class="csl-entry" role="listitem">
+Borwein, J., &amp; Bailey, D. H. (2023). The reinhart-rogoff error – or how not to excel at economics. In <em>The Conversation</em>. <a href="https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646">https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646</a>
+</div>
+<div id="ref-Plumer_2021" class="csl-entry" role="listitem">
+Plumer, B. (2021). Is the evidence for austerity based on an excel spreadsheet error? In <em>The Washington Post</em>. WP Company. <a href="https://www.washingtonpost.com/news/wonk/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/">https://www.washingtonpost.com/news/wonk/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/</a>
+</div>
+<div id="ref-Teampay" class="csl-entry" role="listitem">
+The 7 biggest excel mistakes of all time. (n.d.). In <em>Teampay</em>. <a href="https://www.teampay.co/blog/biggest-excel-mistakes-of-all-time">https://www.teampay.co/blog/biggest-excel-mistakes-of-all-time</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://figshare.com/articles/Enron_s_Spreadsheets_and_Related_Emails_A_Dataset_and_Analysis/1222882">Enron’s Spreadsheets and Related Emails: A Dataset and Analysis</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+
+
+
+</body></html>

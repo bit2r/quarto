@@ -65,6 +65,10 @@ website:
             text: "책표지와 본문결합"
           - href: latex_rmd.qmd
             text: "Rmd --> PDF"
+      - text: "엑셀(Excel)"
+        menu: 
+          - href: excel_why.qmd
+            text: "왜 엑셀(?)"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/

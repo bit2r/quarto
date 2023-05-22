@@ -1580,5 +1580,40 @@
     "title": "디지털 글쓰기",
     "section": "2.3 R마크다운 문서",
     "text": "2.3 R마크다운 문서\nin_header에 가져올 팩키지를 지정하고, 겉표지 PDF는 cover.tex에서 설정한다.\n---\nlayout: page\noutput:\n  bookdown::pdf_document2: \n    latex_engine: xelatex\n    toc: true\n    toc_depth: 2  \n    number_sections: true\n    fig_width: 3\n    fig_height: 2\n    fig_caption: true\n    df_print: kable\n    highlight: tango\n    includes:\n      in_header: sections/import.tex   &lt;-- 팩키지 설정\n      before_body: sections/cover.tex  &lt;-- 겉표지 PDF\nmainfont: NanumGothic\n---"
+  },
+  {
+    "objectID": "excel_why.html",
+    "href": "excel_why.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "데이터 분석을 위해서 컴퓨터도 읽을 수 있고, 사람도 읽을 수 있는 프로그램이 다수 존재한다. 컴퓨터 프로그램을 열어보면 컴퓨터가 무시하고 넘어어 가지만 사람이 더 관심을 갖는 주석과 실제 컴퓨터가 실행하는 코드로 구성된다. 따라서 컴퓨터도 읽을 수 있고, 사람도 읽을 수 있는 코드가 데이터 과학을 위해 필요하다.\n코드 도 사람과 컴퓨터 모두에게 가독성을 제공해야 하지만, 데이터 도 사람과 컴퓨터 모두에게 가독성을 제공해야만 된다. 문제는 스프레드쉬트 가 사람과 컴퓨터 모두에게 가독성을 제공하지 않는데 있다. 어쩌면 가장 복잡성이 높은 것이 스프레드쉬트라고도 볼 수 있다. 처음에는 쉽게 다가오지만, 1주일만 지나도 해독하기가 만만치 않는 경험을 종종 했을 것이다.\n\n\n\n엑셀 알고리즘 복잡성\n\n\n스프레드쉬트는 데이터, 서식, 수식으로 구성된다. 숫자 데이터를 엑셀로 가져오게 되면 엑셀 내장 함수를 통해 수식 계산을 수행하고, 엑셀 사용자 본인 혹은 외부 사람을 위해 서식을 입히는 과정을 거쳐 비로소 완성된 스프레드쉬트가 된다.\n\n\n\n엑셀 구성요소\n\n\n스프레드쉬트와 R을 비교해 보면, 서로 상응하는 기능이 일대일로 대응되는 것을 확인할 수 있다.\n\n\n\n스프레드쉬트\nR\n\n\n\n\n* 데이터\n* 데이터\n\n\n* 로직\n* .R, .Rmd\n\n\n* 그림\n* .png, .svg\n\n\n* 서식을 갖춘 표\n* .md, .html, .pdf, Shiny 앱\n\n\n* 반응성(reactivity)\n* 빌드와 배포\n\n\n\n이런 스프레드쉬트 문제점을 극복하기 위해서 다양한 시도가 진행되고 있다.\n\n차세대 스프레드쉬트 응용프로그램을 개발: Stencila, AlphaSheets, Pyspread\n스프레드쉬트는 그대로 두고, 스프레드쉬트에서 좋은 것을 뽑아내거나 다시 되돌리는 시도\n\nreadxl: CRAN\nopenxlsx: CRAN\nXLConnect: CRAN\ngdata: CRAN\nxlsx: CRAN\nRODBC: CRAN"
+  },
+  {
+    "objectID": "excel_why.html#엑셀-포기-이유",
+    "href": "excel_why.html#엑셀-포기-이유",
+    "title": "디지털 글쓰기",
+    "section": "3.1 엑셀 포기 이유",
+    "text": "3.1 엑셀 포기 이유\n\n한번에 한사람만 작업이 가능하다: 해당 시간에 한번만 엑셀로 작업이 가능하다. 만약 다른 직원이 엑셀을 열어 작업을 하게 되면 “읽기 전용(Read-Only)”으로만 볼 수만 있다.\n데이터 감사는 데이터베이스에서만 가능: 보통 한 사람만 엑셀 스프레드쉬트 파일을 생성하고 유지보수한다. 이 직원이 다른 부서로 전보되거나 회사를 떠나게 되면, 모든 지식이 직원과 함께 날아간다. 고로, 해당 업무를 담고 있는 엑셀 스프레드쉬트를 익히는데 수개월이 소요된다. 이와 비교하여 감사 기능이 제공되는 데이터베이스는 주기적으로 사용자 활동을 기록해서 엑셀 스프레드쉬트가 담고 있는 정보 및 직관도 전달한다.\n데이터베이스는 정형화된 작업흐름을 지원한다: 업무 프로세스를 엑셀 스프레드쉬트로 정의할 경우, 엑셀 스프레드쉬트 파일을 전자우편으로 다수 개발자, 검토자, 승인자에게 셀 수 없이 많이 전달해야 한다. 더 큰 문제는 이를 취합해서 수작업으로 정리해야 된다. 하지만, 업무 프로세스를 데이터베이스로 정의할 경우, 특정 사업 요구사항을 해결하는데 작업을 매핑하고, 추적하고 관리하기 편하다. 효과적으로 중앙에서 체계적으로 관리되는 스프레드쉬트, 데이터베이스로 할당된 작업에 대응하기 좋다.\n데이터베이스는 엑셀보다 모형을 보다 잘 지원한다: 엑셀 스프레드쉬트 업무가 늘어나고 크기가 커지게 되면, 오류에 취약해 진다. 예를 들어, 새로운 수식을 새로운 곳에 복사해서 넣게 되면 셀참조가 엉클어져서 엉뚱한 값이 반영되는 경우도 흔히 발견된다.\n데이터베이스로 보고서 생성이 수월하다: 데이터베이스에서 쿼리, 쿼리에 기반한 보고서를 작성하기 더 쉽다. 정적 스프레드쉬트와 반대로 관계형 환경에서 데이터를 정렬, 매칭, 조합하기 더 좋다.\n데이터베이스는 보안이 강력하고 규제하기 좋다: 스프레드쉬트는 규제를 가하고 보안기능을 두기가 마땅치 않는다. 보안과 제한 기능은 완전히 사용자 몫으로 남겨진다. 엑셀 사용자가 수작업으로 모든 것을 식별해서 작업해야 되고 실수한 것도 고쳐야 된다. 스프레드쉬트에 이러한 기능이 거의 전무하기 때문에, 실수한 것도 알아차리지 못한 상태로 그냥 넘어가는 경우가 상당히 많다."
+  },
+  {
+    "objectID": "excel_why.html#엑셀-참사",
+    "href": "excel_why.html#엑셀-참사",
+    "title": "디지털 글쓰기",
+    "section": "3.2 엑셀 참사",
+    "text": "3.2 엑셀 참사\n대표적인 엑셀 참사를 정리해보자. (“The 7 Biggest Excel Mistakes of All Time,” n.d.)\n\n\n\n\n\n\n\n\n\n\n회사\n참사 비용\n발생일\n영향\n참사 개요\n\n\n\n\n옥스포드 대학\n미확인\n’11.12월\n학생 인터뷰 일정 지연\n엑셀이 수식이 꼬여 인터뷰 일정이 뒤죽박죽\n\n\nMI5\n미확인\n’11년\n잘못된 전화번호 작업\n엑셀 서식 수식이 꼬여 엉뚱한 전화번호 작업\n\n\n’12년 런던 올림픽\n£ 0.5백만\n’12.01월\n티켓 환불 소동\n수영장 10,000 티켓이 초과 판매 (엑셀 입력 오류)\n\n\nMouchel\n£ 4.3백만\n’10.11월\nCEO 사임, 주가폭락\n연금펀드평가 £ 4.3백만 엑셀 오류\n\n\nC&C Group\n£ 9 백만\n’09.7월\n주가 15% 하락 등\n매출 3% 상승이 아니고 5% 하락, 엑셀 오류\n\n\nUK 교통부\n최소 £ 50 백만\n’12.10월\n영국민 추가 세금 부담\n영국 철도 입찰 오류\n\n\nKing 펀드\n£ 130 백만\n’11.05월\n브래드 이미지 하락\n웨일즈 지방 NHS 지출 엑셀 오류\n\n\nAXA Rosenberg\n£ 150 백만\n’11.02월\n은폐, 벌금, 브래드 이미지 하락\n엑셀 오류를 감춰서 $242 백만 벌금\n\n\nJP Morgan Chase\n£ 250 백만\n’13.01월\n명성, 고객 신뢰도 저하\n바젤 II VaR 위험 평가 엑셀 오류\n\n\nFidelity Magellan 펀드\n£ 1.6 십억\n’95.01월\n투자자에게 약속한 배당금 지급 못함\n음수 부호 누락으로 자본이득 과대계상 (Plumer, 2021)\n\n\n\n2010년 하버드 경제학자 카르멘 라인하트와 케네스 로고프가 발표한 학술 논문은 Excel 스프레드시트를 잘못 사용해 심각한 오류를 범한 사례로 유명하다. 국가의 부채가 GDP의 90%를 초과하면 경제 성장이 둔화된다는 이들의 연구는 긴축 정책에 대한 논거를 강화하는 데 사용되었다. 그러나 재분석 결과, 엑셀 오류로 인해 일부 국가의 데이터가 계산에서 누락되었다는 사실이 밝혀졌다. 오류를 수정하자 마이너스 성장률 수치가 플러스 성장률로 바뀌었다. 이 사건은 연구에서 세심한 데이터 처리와 투명성의 중요성과 복잡한 계산을 위해 Excel에 크게 의존할 경우 발생할 수 있는 잠재적 위험의 대표적인 사례로 회자된다. (Borwein & Bailey, 2023)"
+  },
+  {
+    "objectID": "excel_why.html#엑셀-코퍼스-excel-enron",
+    "href": "excel_why.html#엑셀-코퍼스-excel-enron",
+    "title": "디지털 글쓰기",
+    "section": "4.1 엑셀 코퍼스 1",
+    "text": "4.1 엑셀 코퍼스 1\n엑셀 코퍼스 저장소\n\nEUSES corpus: 4,447 스프레드쉬트 (16,853 워크쉬트)\nA modern day Pompeii - Spreadsheets at Enron: 15,770 스프레드쉬트 (79,983 워크쉬트)\n\n\n\n\n엔론 vs Euses 엑셀 코퍼스 비교\n\n\n엔론 엑셀 코퍼스 분석 결과\n\n24% 엔론 스프레드쉬트 수식에 엑셀 오류가 있음\n스프레드쉬트에 사용되는 함수 : 핵심 함수 15 개가 76% 스프레드쉬트에 사용됨\n매일 스프레드쉬트 100개가 전자우편에 첨부되어 유통\n전자우편을 통해 스프레드쉬트가 10% 전자우편이 첨부되거나 주제로 전달됨.\n\n\n\n\n순위\n함수\n스프레드쉬트 갯수\n누적 백분율(%)\n\n\n\n\n1\nSUM\n578\n6.4%\n\n\n2\n+\n1259\n14.0%\n\n\n3\n-\n2262\n25.1%\n\n\n4\n/\n2625\n29.1%\n\n\n5\n*\n3959\n43.9%\n\n\n6\nIF\n4260\n47.3%\n\n\n7\nNOW\n5322\n59.1%\n\n\n8\nAVERAGE\n5664\n62.8%\n\n\n9\nVLOOKUP\n5733\n63.6%\n\n\n10\nROUND\n5990\n66.5%\n\n\n11\nTODAY\n6182\n68.6%\n\n\n12\nSUBTOTAL\n6480\n71.9%\n\n\n13\nMONTH\n6520\n72.3%\n\n\n14\nCELL\n6774\n75.2%\n\n\n15\nYEAR\n6812\n75.6%\n\n\n\n\n4.1.0.1 \n\n\n\n스프레드쉬트 내 워크쉬트 갯수 분포\n\n\n\n\n\n\n\n\n럼스펠트가 통계에 남긴 명언\n\n\n\n‘you go to war with the army you have, not the army you might want or wish to have at a later time’ – Donald Rumsfeld  ‘you go into data analysis with the tools you know, not the tools you need’ – Jenny Bryan"
+  },
+  {
+    "objectID": "excel_why.html#footnotes",
+    "href": "excel_why.html#footnotes",
+    "title": "디지털 글쓰기",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nEnron’s Spreadsheets and Related Emails: A Dataset and Analysis↩︎"
   }
 ]
