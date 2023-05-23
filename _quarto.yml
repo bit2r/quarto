@@ -70,7 +70,7 @@ website:
           - href: excel_why.qmd
             text: "왜 엑셀(?)"
           - href: excel_dc.qmd
-            text: "데이터 카펜트리"
+            text: "엑셀: 데이터 기본기"
       - text: 관련 정보
         menu: 
           - href: https://use-r.kr/
