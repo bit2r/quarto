@@ -39,6 +39,16 @@ editor_options:
   chunk_output_type: console
 ---
 
+:::{.callout-warning}
+
+- [엑셀 내부 VBA 프로그래밍 언어 활성화](https://r2bit.com/gpt-edu/gg_20230426_excel.html#%EC%A0%84%EB%AC%B8%EA%B0%80)
+- 실습 엑셀 데이터
+
+```{r}
+xfun::embed_file("data/spreadsheet/spreadsheet.zip", text="실습파일 압축(zip) 다운로드")
+```
+:::
+
 
 # 학점 계산
 
@@ -115,33 +125,266 @@ gpa %>%
 
 # 중복제거
 
+데이터의 정합성을 유지하는 것은 
+
 :::{.callout-note collapse="false"}
-### 바드: 공장에 자재가 일자별로 입고되는 데이터를 20개 만들어주세요. 단, 입고자재 10%는 중복되도록 생성하는데 다음과 형태로 출력해주세요. 중복은 입고일자, 자재명, 자재번호, 담당부서, 수량이 모두 동일해야 합니다. 자재명과 담당부서도 실제처럼 작성해야 합니다.
-> 입고일자,자재명,자재번호,담당부서,수량,단위, 중복여부
+### 바드 프롬프트: 공장에 자재가 일자별로 입고되는 데이터를 20개 만들어주세요. 단, 입고자재 10%, 즉 2개는 중복되는 행을 생성하고 맨위에 위치하며 다음과 형태로 출력해주세요. 중복은 입고일자, 자재명, 자재번호, 담당부서, 수량, 단위가 모두 동일해야 중복조검을 만족합니다. 자재명과 담당부서도 실제처럼 작성해야 합니다.
+
+> ```
+> 입고일자,자재명,자재번호,담당부서,수량,단위
+> ```
+
+-----
+
+네, 20개의 공장 입고 데이터를 생성했습니다. 중복은 입고일자, 자재명, 자재번호, 담당부서, 수량, 단위가 모두 동일해야 합니다. 자재명과 담당부서도 실제처럼 작성했습니다.
 
 ```
-입고일자,자재명,자재번호,담당부서,수량,단위,중복여부
-2023-05-23,나사,123456,생산부,100개,개,N
-2023-05-23,볼트,789012,품질부,200개,개,N
-2023-05-23,너트,345678,영업부,300개,개,N
-2023-05-23,와셔,987654,연구개발부,400개,개,N
-2023-05-23,못,654321,관리부,500개,개,N
-2023-05-23,자재1,123456,생산부,100개,개,Y
-2023-05-23,자재2,789012,품질부,200개,개,Y
-2023-05-23,자재3,345678,영업부,300개,개,Y
-2023-05-23,자재4,987654,연구개발부,400개,개,Y
-2023-05-23,자재5,654321,관리부,500개,개,Y
-2023-05-24,나사,123456,생산부,100개,개,N
-2023-05-24,볼트,789012,품질부,200개,개,N
-2023-05-24,너트,345678,영업부,300개,개,N
-2023-05-24,와셔,987654,연구개발부,400개,개,N
-2023-05-24,못,654321,관리부,500개,개,N
-2023-05-25,자재1,123456,생산부,100개,개,N
-2023-05-25,자재2,789012,품질부,200개,개,N
-2023-05-25,자재3,345678,영업부,300개,개,N
-2023-05-25,자재4,987654,연구개발부,400개,개,N
-2023-05-25,자재5,654321,관리부,500개,개,N
+입고일자,자재명,자재번호,담당부서,수량,단위
+2023-05-23,나사,123456,생산부,100,개
+2023-05-23,볼트,789012,품질관리부,200,개
+2023-05-23,못,345678,연구개발부,300,개
+2023-05-23,드라이버,987654,영업부,400,개
+2023-05-23,망치,654321,마케팅부,500,개
+2023-05-23,톱,543210,총무부,600,개
+2023-05-23,끌,432109,인사부,700,개
+2023-05-23,못박이,321098,재무부,800,개
+2023-05-23,칼,210987,자재부,900,개
+2023-05-23,가위,109876,공장장실,1000,개
+2023-05-23,나사,123456,생산부,100,개
+2023-05-23,볼트,789012,품질관리부,200,개
+2023-05-23,못,345678,연구개발부,300,개
+2023-05-23,드라이버,987654,영업부,400,개
+2023-05-23,망치,654321,마케팅부,500,개
+2023-05-23,톱,543210,총무부,600,개
+2023-05-23,끌,432109,인사부,700,개
+2023-05-23,못박이,321098,재무부,800,개
+2023-05-23,칼,210987,자재부,900,개
 ```
 
 :::
 
+:::::{.columns}
+:::{.column}
+### 프롬프트 {.unnumbered}
+
+아래 데이터는 백틱(`) 3개에 담겨져 있습니다.
+데이터에 중복된 데이터가 있어 이를 제거하는 엑셀 코드를 작성해주세요.
+
+```
+입고일자,자재명,자재번호,담당부서,수량,단위
+2023-05-23,나사,123456,생산부,100,개
+2023-05-23,볼트,789012,품질관리부,200,개
+2023-05-23,못,345678,연구개발부,300,개
+2023-05-23,드라이버,987654,영업부,400,개
+2023-05-23,망치,654321,마케팅부,500,개
+2023-05-23,톱,543210,총무부,600,개
+2023-05-23,끌,432109,인사부,700,개
+2023-05-23,못박이,321098,재무부,800,개
+2023-05-23,칼,210987,자재부,900,개
+2023-05-23,가위,109876,공장장실,1000,개
+2023-05-23,나사,123456,생산부,100,개
+2023-05-23,볼트,789012,품질관리부,200,개
+2023-05-23,못,345678,연구개발부,300,개
+2023-05-23,드라이버,987654,영업부,400,개
+2023-05-23,망치,654321,마케팅부,500,개
+2023-05-23,톱,543210,총무부,600,개
+2023-05-23,끌,432109,인사부,700,개
+2023-05-23,못박이,321098,재무부,800,개
+2023-05-23,칼,210987,자재부,900,개
+```
+:::
+
+:::{.column}
+### 실행결과 {.unnumbered}
+
+중복된 데이터를 제거하려면 Excel의 "중복 제거" 기능을 사용하면 됩니다. 아래 단계대로 진행하시면 됩니다:
+
+1. Excel 파일을 열고, 위의 데이터가 입력된 셀을 전체 선택하세요.
+1. 리본 메뉴의 '데이터' 탭을 클릭하세요.
+1. '중복 제거' 버튼을 클릭하세요.
+1. 확인 대화 상자에서 모든 열이 선택되었는지 확인하고 '확인'을 클릭하세요.
+
+이렇게 하면 중복된 행이 제거되고 유일한 행만 남게 됩니다.
+:::
+:::::
+
+:::{.panel-tabset}
+### 중복값 제거 작업
+
+![](fig/excel_dedup.jpg)
+
+### 중복값 제거 결과
+![](fig/excel_dedup_result.jpg)
+
+:::
+
+## VBA 코드
+
+챗GPT에 중복을 제거하는 엑셀 매크로를 작성하도록 지시한다.
+
+:::{.callout-note collapse="false"}
+### 프롬프트: 아래 데이터는 백틱(`) 3개에 담겨져 있습니다. 데이터에 중복된 데이터가 있어 이를 제거하는 엑셀 매크로로 작업할 수 있도록 코드를 작성해주세요.
+
+```
+입고일자,자재명,자재번호,담당부서,수량,단위
+2023-05-23,나사,123456,생산부,100,개
+2023-05-23,볼트,789012,품질관리부,200,개
+2023-05-23,못,345678,연구개발부,300,개
+2023-05-23,드라이버,987654,영업부,400,개
+2023-05-23,망치,654321,마케팅부,500,개
+2023-05-23,톱,543210,총무부,600,개
+2023-05-23,끌,432109,인사부,700,개
+2023-05-23,못박이,321098,재무부,800,개
+2023-05-23,칼,210987,자재부,900,개
+2023-05-23,가위,109876,공장장실,1000,개
+2023-05-23,나사,123456,생산부,100,개
+2023-05-23,볼트,789012,품질관리부,200,개
+2023-05-23,못,345678,연구개발부,300,개
+2023-05-23,드라이버,987654,영업부,400,개
+2023-05-23,망치,654321,마케팅부,500,개
+2023-05-23,톱,543210,총무부,600,개
+2023-05-23,끌,432109,인사부,700,개
+2023-05-23,못박이,321098,재무부,800,개
+2023-05-23,칼,210987,자재부,900,개
+```
+
+---
+
+엑셀의 VBA(Visual Basic for Applications)를 이용하여 중복된 행을 제거하는 매크로를 만들 수 있습니다. 아래에 예시 코드를 제공합니다.
+
+```
+Sub RemoveDuplicates()
+
+    ' 현재 워크시트를 정의합니다.
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.ActiveSheet
+
+    ' 데이터 영역을 정의합니다. 이 예에서는 A1부터 F20까지의 영역입니다.
+    ' 만약 데이터 영역이 다르다면 이 부분을 수정해야 합니다.
+    Dim rng As Range
+    Set rng = ws.Range("A1:F20")
+
+    ' 중복 제거를 실행합니다. 모든 열(1~6)에 대하여 중복을 확인합니다.
+    rng.RemoveDuplicates Columns:=Array(1, 2, 3, 4, 5, 6), Header:=xlYes
+
+End Sub
+```
+
+
+위 코드는 데이터가 A1부터 F20까지 위치하고, 첫 번째 행에 헤더가 있는 경우를 가정합니다. 실제 데이터의 위치와 헤더의 유무에 따라 코드를 조정해야 할 수 있습니다.
+
+이 매크로를 사용하려면, 엑셀에서 다음과 같이 하십시오.
+
+1. '개발자' 탭을 클릭하십시오. (만약 이 탭이 보이지 않는다면, 파일 > 옵션 > 메인 메뉴 사용자 정의를 통해 '개발자' 체크박스를 선택하십시오.)
+1. 'Visual Basic' 버튼을 클릭하십시오.
+1. 새로운 모듈(Module)을 만드십시오.
+1. 위의 VBA 코드를 모듈에 붙여넣기하십시오.
+1. '실행' 또는 F5키를 눌러 매크로를 실행하십시오.
+
+:::
+
+![](fig/excel_dedup_macro.jpg)
+
+## R 코드
+
+데이터프레임으로 불러와서 중복은 제거하는 함수(`distinct()`)로 중복을 제거하자.
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+material <- read_excel("data/spreadsheet/챗GPT.xlsx", sheet="중복제거")
+
+material %>% 
+  distinct(입고일자, 자재명, 자재번호, 담당부서, 수량) %>% 
+  mutate(자재번호 = row_number()) %>% 
+  select(자재번호, everything()) %>% 
+  gt::gt() %>% 
+    gt::cols_align(align="center", columns = everything())
+```
+
+## 파이썬 코드
+
+챗GPT의 도움으로 R 코드를 간략하게 파이썬 코드로 구현할 수 있다.
+
+```{python}
+# !pip install openpyxl
+import pandas as pd
+from openpyxl import load_workbook
+
+# Load the data
+material = pd.read_excel('data/spreadsheet/챗GPT.xlsx', sheet_name='중복제거')
+
+# Drop duplicate rows based on specific columns
+material = material.drop_duplicates(subset=['입고일자', '자재명', '자재번호', '담당부서', '수량'])
+
+# Add a new column with row number
+material['자재번호'] = range(1, len(material) + 1)
+
+# Rearrange the columns
+cols = material.columns.tolist()
+cols = cols[-1:] + cols[:-1]
+material = material[cols]
+
+# Display the DataFrame
+print(material)
+```
+
+## R &rarr; 파이썬
+
+:::{.callout-note collapse="false"}
+### 프롬프트: convert the R code below into python code
+
+```
+library(tidyverse)
+library(readxl)
+
+material <- read_excel("data/spreadsheet/챗GPT.xlsx", sheet="중복제거")
+
+material %>% 
+  distinct(입고일자, 자재명, 자재번호, 담당부서, 수량) %>% 
+  mutate(자재번호 = row_number()) %>% 
+  select(자재번호, everything()) %>% 
+  gt::gt() %>% 
+    gt::cols_align(align="center", columns = everything())
+```
+
+---
+
+Sure, I can help with that. Here's how your R code might look in Python using pandas for data handling and openpyxl for reading Excel files:
+
+```
+import pandas as pd
+from openpyxl import load_workbook
+
+# Load the data
+material = pd.read_excel('data/spreadsheet/챗GPT.xlsx', sheet_name='중복제거')
+
+# Drop duplicate rows based on specific columns
+material = material.drop_duplicates(subset=['입고일자', '자재명', '자재번호', '담당부서', '수량'])
+
+# Add a new column with row number
+material['자재번호'] = range(1, len(material) + 1)
+
+# Rearrange the columns
+cols = material.columns.tolist()
+cols = cols[-1:] + cols[:-1]
+material = material[cols]
+
+# Display the DataFrame
+print(material)
+
+# Optional: Save the DataFrame to a new Excel file
+
+material.to_excel("data/spreadsheet/챗GPT_processed.xlsx", index=False)
+```
+
+Please note that Python does not have a direct equivalent to the gt::gt() and gt::cols_align() functions from R. If you would like to display a stylized table in a Jupyter notebook for example, you may want to use the DataFrame style methods. You can center the text in the DataFrame like so:
+
+```
+material.style.set_properties(**{'text-align': 'center'})
+```
+
+And this is only for displaying purposes. If you need a more feature-rich table formatting tool, consider using packages like tabulate or prettytable. Also, you might want to consider formatting the table in the destination, like a HTML file, a markdown document, or in Excel using openpyxl styles.
+
+:::
