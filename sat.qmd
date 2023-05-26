@@ -272,3 +272,72 @@ application_tbl  %>%
     scale_color_manual(values = c("gray30", "blue", "red"))
 ```
 
+## 채점: 등급구분
+
+공공데이터포털에서 [한국교육과정평가원_대학수학능력시험 등급구분-표준점수](https://www.data.go.kr/data/15080193/fileData.do#/layer_data_infomation) 데이터를 가져온다.
+
+```{r}
+library(tidyverse)
+
+## 연도별 등급 데이터
+grade_files <- fs::dir_ls("data/suneung/", glob="*.csv")
+
+grade_raw <- map(grade_files, read_csv, locale = locale(encoding = "EUC-KR"))
+
+## 연도
+grade_year <- map_chr(grade_files, str_extract, pattern = "\\d{4}")
+
+## 연도별 데이터 정제함수
+clean_grade <- function(df, year) {
+  grade_tbl <- df %>% 
+    janitor::clean_names(ascii = FALSE) %>% 
+    select(!starts_with("x")) %>% 
+    mutate(연도 = year) %>% 
+    set_names(c("등급", "과목", "구분점수", "도수_명", "비율", "연도")) %>% 
+    mutate_all(as.character)
+  return(grade_tbl)
+}
+
+## 데이터 결합
+
+grade_list <- map2(grade_raw, grade_year, clean_grade)
+
+grade_tbl <- map_df(grade_list, bind_rows)
+```
+
+
+```{r}
+grade_df <- grade_tbl %>% 
+  mutate(구분점수 = ifelse(str_detect(구분점수, "미만"), parse_number(구분점수) - 3, 구분점수)) %>% 
+  mutate(등급 = as.integer(등급),
+         연도 = as.integer(연도),
+         도수_명 = parse_number(도수_명),
+         구분점수 = parse_number(구분점수),
+         비율 = parse_number(비율))
+
+grade_df  %>% 
+  filter(str_detect(과목, "^국어")) %>% 
+  filter(!str_detect(과목, "[A|B|C|가|나|다]형")) %>% 
+  ggplot(aes(x = 등급, y = 비율, color = as.factor(연도))) +
+  # ggplot(aes(x = 등급, y = 구분점수, color = as.factor(연도))) +
+  # ggplot(aes(x = 구분점수, y = 등급, color = as.factor(연도))) +
+    geom_line() +
+    geom_point()
+```
+
+```{r}
+grade_df %>% 
+  filter(연도 == max(연도),
+         str_detect(과목, "국어|(영어)|수학")) %>% 
+  pivot_longer(cols = c(구분점수, 비율)) %>% 
+  ggplot(aes(x = 등급, y = value, color = 과목)) +
+    geom_line() +
+    geom_point() +
+    labs(title = "2023년 수능 등급분포",
+         y = "비율(%)") +
+    facet_wrap(~name, nrow = 2, scales = "free_y") +
+    theme(legend.position = "top")
+```
+
+
+
