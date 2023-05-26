@@ -1,0 +1,3268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.299">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+<meta name="description" content="데이터 과학자 학부모입장에서 챗GPT시대 수학능력평가에 대해서 알아보자.">
+
+<title>디지털 글쓰기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/visjs-7.4.9/vis-timeline-graph2d.min.css" rel="stylesheet">
+<script src="site_libs/visjs-7.4.9/vis-timeline-graph2d.min.js"></script>
+<link href="site_libs/timeline-0.4/timevis.css" rel="stylesheet">
+<script src="site_libs/timevis-binding-2.1.0/timevis.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="twitter:title" content="디지털 글쓰기">
+<meta name="twitter:description" content="데이터 과학자 학부모입장에서 챗GPT시대 수학능력평가에 대해서 알아보자.">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto_blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./quarto_install.html" rel="" target="">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_about.html" rel="" target="">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">글쓰기</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html" rel="" target="">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html" rel="" target="">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_fonts.html" rel="" target="">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_sass.html" rel="" target="">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_layout.html" rel="" target="">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html" rel="" target="">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf" rel="" target="">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./youtube.html" rel="" target="">
+ <span class="dropdown-text">동영상 글쓰기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pdf.html" rel="" target="">
+ <span class="dropdown-text">2023년 수능 수학(홀수)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-latex" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><span class="math inline">\(\LaTeX\)</span></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-latex">    
+        <li>
+    <a class="dropdown-item" href="./latex.html" rel="" target="">
+ <span class="dropdown-text"><span class="math inline">\(\LaTeX\)</span> 들어가며</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./document_editor.html" rel="" target="">
+ <span class="dropdown-text">문서 편집기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
+ <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.html" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_thesis.html" rel="" target="">
+ <span class="dropdown-text">학위논문 양식</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_cover.html" rel="" target="">
+ <span class="dropdown-text">책표지와 본문결합</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
+ <span class="dropdown-text">Rmd –&gt; PDF</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-excel" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">엑셀(Excel)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-excel">    
+        <li>
+    <a class="dropdown-item" href="./excel_why.html" rel="" target="">
+ <span class="dropdown-text">왜 엑셀(?)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_dc.html" rel="" target="">
+ <span class="dropdown-text">엑셀: 데이터 기본기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_chatGPT.html" rel="" target="">
+ <span class="dropdown-text">챗GPT 엑셀</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">수능</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="./sat.html" rel="" target="">
+ <span class="dropdown-text">수학능력평가</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--2" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">관련 정보</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--2">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/" rel="" target="">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r2bit.com/seoul-r/" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup 발표자료</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/" rel="" target="">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/" rel="" target="">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ide" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">IDE</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ide">    
+        <li>
+    <a class="dropdown-item" href="./ide_war.html" rel="" target="">
+ <span class="dropdown-text">AI가 쏘아올린 작은 공</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ide_vscode.html" rel="" target="">
+ <span class="dropdown-text">Visual Studio Code</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com" rel="" target="">
+ <span class="menu-text">R사용자회</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw" rel="" target=""><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse" rel="" target=""><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">디지털 글쓰기</h1>
+            <p class="subtitle lead">수학능력평가</p>
+                  <div>
+        <div class="description">
+          <p>데이터 과학자 학부모입장에서 챗GPT시대 수학능력평가에 대해서 알아보자.</p>
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">PPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 슬라이드</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">홍익대 특강</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">전자책</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 전자책</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">디지털 글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">마크다운 글쓰기</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">코딩(Computation)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">코딩 (계산)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib_py.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.ipynb 파이썬 파일</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.qmd Quarto 파일</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#수능이란" id="toc-수능이란" class="nav-link active" data-scroll-target="#수능이란"><span class="header-section-number">1</span> 수능이란?</a></li>
+  <li><a href="#년-일정" id="toc-년-일정" class="nav-link" data-scroll-target="#년-일정"><span class="header-section-number">2</span> ’23년 일정</a></li>
+  <li><a href="#시험시간과-문항수" id="toc-시험시간과-문항수" class="nav-link" data-scroll-target="#시험시간과-문항수"><span class="header-section-number">3</span> 시험시간과 문항수</a></li>
+  <li><a href="#수능통계" id="toc-수능통계" class="nav-link" data-scroll-target="#수능통계"><span class="header-section-number">4</span> 수능통계</a>
+  <ul class="collapse">
+  <li><a href="#연도별-응시현황" id="toc-연도별-응시현황" class="nav-link" data-scroll-target="#연도별-응시현황"><span class="header-section-number">4.1</span> 연도별 응시현황</a></li>
+  <li><a href="#수능-접수현황" id="toc-수능-접수현황" class="nav-link" data-scroll-target="#수능-접수현황"><span class="header-section-number">4.2</span> 수능 접수현황</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="수능이란" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 수능이란?</h1>
+<p>수능은 대한민국에서 실시하는 대학입학 자격시험으로 국어, 수학, 영어, 한국사, 사회탐구, 과학탐구 총 6개 과목으로 구성되어 있다. 수능은 대한민국의 모든 고등학교 졸업생과 검정고시 합격자가 응시할 수 있다. 수능은 대학 입학 전형에 있어 가장 중요한 요소 중 하나로, 수능 성적은 대학 입학 정원의 50% 이상을 차지하는 경우가 많다.</p>
+<p>한국교육과정평가원에서 밝히 대한수학능력시험의 성격과 목적은 다음과 같다.</p>
+<ul>
+<li>대학 교육에 필요한 수학 능력 측정으로 <strong>선발의 공정성과 객관성 확보</strong></li>
+<li>고등학교 교육과정의 내용과 수준에 맞는 출제로 <strong>고등학교 학교교육의 정상화 기여</strong></li>
+<li>개별 교과의 특성을 바탕으로 신뢰도와 타당도를 갖춘 시험으로서 <strong>공정성과 객관성 높은 대입 전형자료 제공</strong></li>
+</ul>
+</section>
+<section id="년-일정" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> ’23년 일정</h1>
+<p>대한수학능력시험 주요업무추진 일정은 다음과 같다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datapasta)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>schedule_raw <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="sc">~</span><span class="st">"주요.업무"</span>,                   <span class="sc">~</span><span class="st">"추진일정"</span>,            <span class="sc">~</span><span class="st">"비고"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       <span class="st">"시행기본계획 발표"</span>,              <span class="st">"3.28.(화)"</span>,             <span class="cn">NA</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>       <span class="st">"시행세부계획 공고"</span>,               <span class="st">"7.3.(월)"</span>,       <span class="st">"중앙 일간지"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"원서 교부, 접수 및 변경"</span>,    <span class="st">"8.24.(목) ~ 9.8.(금)"</span>, <span class="st">"토요일 및 공휴일 제외"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">"시험 실시"</span>,             <span class="st">"11.16.(목)"</span>,             <span class="cn">NA</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"문제 및 정답 이의신청"</span>, <span class="st">"11.16.(목) ~ 11.20.(월)"</span>,          <span class="st">"5일간"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>           <span class="st">"정답 확정"</span>,             <span class="st">"11.28.(화)"</span>,             <span class="cn">NA</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">"채점"</span>,  <span class="st">"11.17.(금) ~ 12.8.(금)"</span>,         <span class="st">"22일간"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>           <span class="st">"성적 통지"</span>,              <span class="st">"12.8.(금)"</span>,             <span class="cn">NA</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> schedule_raw <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(추진일정, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"시작일"</span>, <span class="st">"완료일"</span>), <span class="at">sep =</span> <span class="st">"~"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(시작일 <span class="ot">=</span> <span class="fu">sub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">(.*</span><span class="sc">\\</span><span class="st">)"</span>, <span class="st">""</span>, 시작일),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>         완료일 <span class="ot">=</span> <span class="fu">sub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">(.*</span><span class="sc">\\</span><span class="st">)"</span>, <span class="st">""</span>, 완료일)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(시작일 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"2023.{시작일}"</span>) <span class="sc">%&gt;%</span> <span class="fu">as.character</span>(.) <span class="sc">%&gt;%</span> <span class="fu">as.Date</span>(<span class="at">format =</span> <span class="st">"%Y.%m.%d"</span>),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>         완료일 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"2023.{완료일}"</span>) <span class="sc">%&gt;%</span> <span class="fu">as.character</span>(.) <span class="sc">%&gt;%</span> <span class="fu">as.Date</span>(<span class="at">format =</span> <span class="st">"%Y.%m.%d"</span>))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>schedule <span class="sc">%&gt;%</span> </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_nytimes</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmt_missing</span>(</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">everything</span>(),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing_text =</span> <span class="st">"-"</span> <span class="co"># replace NA with "-"</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="sfwbusszvb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#sfwbusszvb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sfwbusszvb thead, #sfwbusszvb tbody, #sfwbusszvb tfoot, #sfwbusszvb tr, #sfwbusszvb td, #sfwbusszvb th {
+  border-style: none;
+}
+
+#sfwbusszvb p {
+  margin: 0;
+  padding: 0;
+}
+
+#sfwbusszvb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sfwbusszvb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sfwbusszvb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sfwbusszvb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sfwbusszvb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sfwbusszvb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sfwbusszvb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sfwbusszvb .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sfwbusszvb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sfwbusszvb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sfwbusszvb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sfwbusszvb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sfwbusszvb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sfwbusszvb .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sfwbusszvb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sfwbusszvb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sfwbusszvb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sfwbusszvb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sfwbusszvb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sfwbusszvb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sfwbusszvb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sfwbusszvb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sfwbusszvb .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#sfwbusszvb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sfwbusszvb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sfwbusszvb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sfwbusszvb .gt_left {
+  text-align: left;
+}
+
+#sfwbusszvb .gt_center {
+  text-align: center;
+}
+
+#sfwbusszvb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sfwbusszvb .gt_font_normal {
+  font-weight: normal;
+}
+
+#sfwbusszvb .gt_font_bold {
+  font-weight: bold;
+}
+
+#sfwbusszvb .gt_font_italic {
+  font-style: italic;
+}
+
+#sfwbusszvb .gt_super {
+  font-size: 65%;
+}
+
+#sfwbusszvb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#sfwbusszvb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sfwbusszvb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sfwbusszvb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sfwbusszvb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sfwbusszvb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sfwbusszvb .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="주요_업무">주요_업무</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="시작일">시작일</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="완료일">완료일</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="비고">비고</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">시행기본계획 발표</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-03-28</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">시행세부계획 공고</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-07-03</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">중앙 일간지</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">원서 교부, 접수 및 변경</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-08-24</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-09-08</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">토요일 및 공휴일 제외</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">시험 실시</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-11-16</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">문제 및 정답 이의신청</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-11-16</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-11-20</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">5일간</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">정답 확정</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-11-28</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">채점</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-11-17</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-12-08</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">22일간</td></tr>
+    <tr><td headers="주요_업무" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성적 통지</td>
+<td headers="시작일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023-12-08</td>
+<td headers="완료일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td>
+<td headers="비고" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vistime)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(timevis)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>schedule_tv <span class="ot">&lt;-</span> schedule <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">c</span>(<span class="st">"시행계획"</span>, <span class="st">"시행계획"</span>, <span class="st">"원서교부"</span>, <span class="st">"시험"</span>, <span class="fu">rep</span>(<span class="st">"채점 성적통지"</span>, <span class="dv">4</span>)) ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"content"</span>, <span class="st">"start"</span>, <span class="st">"end"</span>, <span class="st">"remark"</span>, <span class="st">"id"</span>, <span class="st">"group"</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>schedule_grp <span class="ot">&lt;-</span> schedule_tv <span class="sc">%&gt;%</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">id =</span> group, <span class="at">content =</span> group) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">timevis</span>(<span class="at">data =</span> schedule_tv, <span class="at">groups =</span> schedule_grp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="timevis html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f2ac4cb6c4a4600aaa48" style="width:100%;height:464px;">
+<div class="btn-group zoom-menu">
+<button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
+<button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
+</div>
+</div>
+<script type="application/json" data-for="htmlwidget-f2ac4cb6c4a4600aaa48">{"x":{"items":[{"content":"시행기본계획 발표","start":"2023-03-28","id":"1","group":"시행계획"},{"content":"시행세부계획 공고","start":"2023-07-03","remark":"중앙 일간지","id":"2","group":"시행계획"},{"content":"원서 교부, 접수 및 변경","start":"2023-08-24","end":"2023-09-08","remark":"토요일 및 공휴일 제외","id":"3","group":"원서교부"},{"content":"시험 실시","start":"2023-11-16","id":"4","group":"시험"},{"content":"문제 및 정답 이의신청","start":"2023-11-16","end":"2023-11-20","remark":"5일간","id":"5","group":"채점 성적통지"},{"content":"정답 확정","start":"2023-11-28","id":"6","group":"채점 성적통지"},{"content":"채점","start":"2023-11-17","end":"2023-12-08","remark":"22일간","id":"7","group":"채점 성적통지"},{"content":"성적 통지","start":"2023-12-08","id":"8","group":"채점 성적통지"}],"groups":[{"id":"시행계획","content":"시행계획"},{"id":"원서교부","content":"원서교부"},{"id":"시험","content":"시험"},{"id":"채점 성적통지","content":"채점 성적통지"}],"showZoom":true,"zoomFactor":0.5,"fit":true,"options":[],"height":null,"timezone":null,"api":[]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="시험시간과-문항수" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 시험시간과 문항수</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/suneung_table.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/suneung_table.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</section>
+<section id="수능통계" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 수능통계</h1>
+<section id="연도별-응시현황" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="연도별-응시현황"><span class="header-section-number">4.1</span> 연도별 응시현황</h2>
+<p>응시자가 2000년 전후 정점을 찍은 이후 수능지원자와 응시자수가 꾸준히 줄고 있으며 응시자와 지원자수 사이 간극이 커지고 있다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install tabula-py</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tabula</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="st">"data/suneung/수능 연도별 응시현황 (2022.12.게시).pdf"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>taker <span class="op">=</span> tabula.read_pdf(<span class="bu">file</span>, pages<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>taker_pd <span class="op">=</span> taker[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>taker_raw <span class="ot">&lt;-</span> py<span class="sc">$</span>taker_pd <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>taker_tbl <span class="ot">&lt;-</span> taker_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">3</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>비고, <span class="sc">-</span>unnamed_0) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"학년도"</span>, <span class="st">"시험일"</span>, <span class="st">"지원자"</span>, <span class="st">"응시자"</span>, <span class="st">"응시율"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(시험일 <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">ymd</span>(시험일)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> 지원자<span class="sc">:</span>응시자, <span class="at">names_to =</span> <span class="st">"구분"</span>, <span class="at">values_to =</span> <span class="st">"사람수"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(사람수 <span class="ot">=</span> <span class="fu">parse_number</span>(사람수)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(시험일, 구분, 사람수)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>taker_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> 구분, <span class="at">values_from =</span> 사람수) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(시험일)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(응시율 <span class="ot">=</span> 응시자 <span class="sc">/</span> 지원자) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_nytimes</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmt_missing</span>(</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">everything</span>(),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing_text =</span> <span class="st">"-"</span> <span class="co"># replace NA with "-"</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_integer</span>( <span class="at">columns =</span> <span class="fu">c</span>(지원자, 응시자)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(응시율, <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"수능 지원자, 응시자, 응시율표"</span>),</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"1994년 제외"</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="smmweeakki" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#smmweeakki table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#smmweeakki thead, #smmweeakki tbody, #smmweeakki tfoot, #smmweeakki tr, #smmweeakki td, #smmweeakki th {
+  border-style: none;
+}
+
+#smmweeakki p {
+  margin: 0;
+  padding: 0;
+}
+
+#smmweeakki .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#smmweeakki .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#smmweeakki .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#smmweeakki .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#smmweeakki .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#smmweeakki .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#smmweeakki .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#smmweeakki .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#smmweeakki .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#smmweeakki .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#smmweeakki .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#smmweeakki .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#smmweeakki .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#smmweeakki .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#smmweeakki .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#smmweeakki .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#smmweeakki .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#smmweeakki .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#smmweeakki .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#smmweeakki .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#smmweeakki .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#smmweeakki .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#smmweeakki .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#smmweeakki .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#smmweeakki .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#smmweeakki .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#smmweeakki .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#smmweeakki .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#smmweeakki .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#smmweeakki .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#smmweeakki .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#smmweeakki .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#smmweeakki .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#smmweeakki .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#smmweeakki .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#smmweeakki .gt_left {
+  text-align: left;
+}
+
+#smmweeakki .gt_center {
+  text-align: center;
+}
+
+#smmweeakki .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#smmweeakki .gt_font_normal {
+  font-weight: normal;
+}
+
+#smmweeakki .gt_font_bold {
+  font-weight: bold;
+}
+
+#smmweeakki .gt_font_italic {
+  font-style: italic;
+}
+
+#smmweeakki .gt_super {
+  font-size: 65%;
+}
+
+#smmweeakki .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#smmweeakki .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#smmweeakki .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#smmweeakki .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#smmweeakki .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#smmweeakki .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#smmweeakki .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="font-family: 'Libre Franklin'; font-weight: 800;">수능 지원자, 응시자, 응시율표</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">1994년 제외</td>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="시험일">시험일</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="지원자">지원자</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="응시자">응시자</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="응시율">응시율</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2022-11-17</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">508,030</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">447,669</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">88.1%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2021-11-18</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">509,821</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">448,138</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">87.9%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2020-12-03</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">493,434</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">421,034</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">85.3%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2019-11-14</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">548,734</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">484,737</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">88.3%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2018-11-15</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">594,924</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">530,220</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">89.1%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2017-11-23</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">593,527</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">531,327</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">89.5%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2016-11-17</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">605,987</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">552,297</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">91.1%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2015-11-12</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">631,187</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">585,332</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">92.7%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2014-11-13</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">640,621</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">594,835</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">92.9%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2013-11-07</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">650,747</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">606,813</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">93.2%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2012-11-08</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">668,522</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">621,336</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">92.9%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2011-11-10</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">693,631</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">648,946</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">93.6%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2010-11-18</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">712,227</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">668,991</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">93.9%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2009-11-12</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">677,834</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">638,216</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">94.2%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2008-11-13</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">588,839</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">559,475</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">95.0%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2007-11-15</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">584,934</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">550,588</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">94.1%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2006-11-16</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">588,899</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">551,884</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">93.7%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2005-11-23</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">593,806</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">554,345</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">93.4%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2004-11-17</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">610,257</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">574,218</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">94.1%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2003-11-05</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">674,154</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">642,583</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">95.3%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2002-11-06</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">675,922</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">655,384</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">97.0%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2001-11-07</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">739,129</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">718,441</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">97.2%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2000-11-15</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">872,297</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">850,305</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">97.5%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">1999-11-17</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">896,122</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">868,366</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">96.9%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">1998-11-18</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">868,643</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">839,837</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">96.7%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">1997-11-19</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">885,321</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">854,272</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">96.5%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">1996-11-13</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">824,374</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">795,338</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">96.5%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">1995-11-22</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">840,661</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">809,867</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">96.3%</td></tr>
+    <tr><td headers="시험일" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">1994-11-23</td>
+<td headers="지원자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">781,749</td>
+<td headers="응시자" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">757,509</td>
+<td headers="응시율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">96.9%</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>taker_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>( 사람수 <span class="ot">=</span> 사람수 <span class="sc">/</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 시험일, <span class="at">y =</span> 사람수, <span class="at">color =</span> 구분)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"수능 지원자와 응시자수 추세"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"사람수(만명)"</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gray35"</span>, <span class="st">"blue"</span>)) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expand_limits</span>(<span class="at">y =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="sat_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="sat_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="수능-접수현황" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="수능-접수현황"><span class="header-section-number">4.2</span> 수능 접수현황</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tabula</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>application_file <span class="op">=</span> <span class="st">"data/suneung/수능 연도별 접수현황 (2022.12.게시).pdf"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>application <span class="op">=</span> tabula.read_pdf(application_file, pages<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>applicatin_1_pd <span class="op">=</span> application[<span class="dv">0</span>]</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>applicatin_2_pd <span class="op">=</span> application[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 페이지 </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>application_1_raw <span class="ot">&lt;-</span> py<span class="sc">$</span>applicatin_1_pd <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>application_1 <span class="ot">&lt;-</span> application_1_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(학년도 <span class="ot">=</span> <span class="fu">map_chr</span>(학년도, <span class="dv">1</span>) <span class="sc">%&gt;%</span> as.integer) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(학년도 <span class="sc">&gt;=</span> <span class="dv">2005</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"학년도"</span>, <span class="st">"기간"</span>, <span class="st">"총계"</span>, <span class="st">"성별_남"</span>, <span class="st">"성별_여"</span>, <span class="st">"계열별"</span>, <span class="st">"출신별_재학"</span>, <span class="st">"출신별_졸업"</span>, <span class="st">"출신별_검정"</span>, <span class="st">"응시료"</span>, <span class="st">"가"</span>, <span class="st">"나"</span>, <span class="st">"다"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(학년도, <span class="fu">contains</span>(<span class="st">"_"</span>))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 페이지 </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>application_2_raw <span class="ot">&lt;-</span> py<span class="sc">$</span>applicatin_2_pd <span class="sc">%&gt;%</span> </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>application_2 <span class="ot">&lt;-</span> application_2_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">2</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"학년도"</span>, <span class="st">"기간"</span>, <span class="st">"총계"</span>, <span class="st">"성별_남"</span>, <span class="st">"성별_여"</span>, <span class="st">"계열별"</span>, <span class="st">"출신별_재학"</span>, <span class="st">"출신별_졸업"</span>, <span class="st">"출신별_검정"</span>, <span class="st">"응시료"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(학년도, <span class="fu">contains</span>(<span class="st">"_"</span>))</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 1~2 페이지</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>application_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(application_1, application_2) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>학년도) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(name, <span class="at">into =</span><span class="fu">c</span>(<span class="st">"대구분"</span>, <span class="st">"중구분"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">str_remove</span>(value, <span class="st">'</span><span class="sc">\\</span><span class="st">r</span><span class="sc">\\</span><span class="st">(.*</span><span class="sc">\\</span><span class="st">)'</span>) <span class="sc">%&gt;%</span> <span class="fu">parse_number</span>(.))</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="do">## 표 제작</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="do">### 성별</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>application_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(대구분 <span class="sc">==</span> <span class="st">"성별"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> 중구분, <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(총계 <span class="ot">=</span> 남 <span class="sc">+</span> 여) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(남여비율 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{scales::percent(남/(남+여), accuracy=0.1)} / {scales::percent(여/(남+여), accuracy=0.1)}"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(학년도)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_integer</span>(<span class="at">columns =</span> <span class="fu">c</span>(남, 여, 총계)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="puxohbnbgz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#puxohbnbgz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#puxohbnbgz thead, #puxohbnbgz tbody, #puxohbnbgz tfoot, #puxohbnbgz tr, #puxohbnbgz td, #puxohbnbgz th {
+  border-style: none;
+}
+
+#puxohbnbgz p {
+  margin: 0;
+  padding: 0;
+}
+
+#puxohbnbgz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#puxohbnbgz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#puxohbnbgz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#puxohbnbgz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#puxohbnbgz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#puxohbnbgz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#puxohbnbgz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#puxohbnbgz .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#puxohbnbgz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#puxohbnbgz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#puxohbnbgz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#puxohbnbgz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#puxohbnbgz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#puxohbnbgz .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#puxohbnbgz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#puxohbnbgz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#puxohbnbgz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#puxohbnbgz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#puxohbnbgz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#puxohbnbgz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#puxohbnbgz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#puxohbnbgz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#puxohbnbgz .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#puxohbnbgz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#puxohbnbgz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#puxohbnbgz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#puxohbnbgz .gt_left {
+  text-align: left;
+}
+
+#puxohbnbgz .gt_center {
+  text-align: center;
+}
+
+#puxohbnbgz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#puxohbnbgz .gt_font_normal {
+  font-weight: normal;
+}
+
+#puxohbnbgz .gt_font_bold {
+  font-weight: bold;
+}
+
+#puxohbnbgz .gt_font_italic {
+  font-style: italic;
+}
+
+#puxohbnbgz .gt_super {
+  font-size: 65%;
+}
+
+#puxohbnbgz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#puxohbnbgz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#puxohbnbgz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#puxohbnbgz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#puxohbnbgz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#puxohbnbgz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#puxohbnbgz .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="학년도">학년도</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="대구분">대구분</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="남">남</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="여">여</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="총계">총계</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="남여비율">남여비율</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">260,126</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">247,904</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">508,030</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.2% / 48.8%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2022</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">261,350</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">248,471</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">509,821</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.3% / 48.7%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2021</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">254,027</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">239,407</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">493,434</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.5% / 48.5%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2020</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">282,036</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">266,698</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">548,734</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.4% / 48.6%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2019</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">306,142</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">288,782</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">594,924</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.5% / 48.5%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2018</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">303,620</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">289,907</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">593,527</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.2% / 48.8%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2017</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">310,451</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">295,536</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">605,987</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.2% / 48.8%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2016</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">323,783</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">307,404</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">631,187</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">51.3% / 48.7%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2015</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">333,204</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">307,417</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">640,621</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">52.0% / 48.0%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2014</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">342,776</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">307,971</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">650,747</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">52.7% / 47.3%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2013</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">356,924</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">311,598</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">668,522</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.4% / 46.6%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2012</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">371,771</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">321,860</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">693,631</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.6% / 46.4%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2011</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">379,385</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">332,842</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">712,227</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.3% / 46.7%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2010</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">358,142</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">319,692</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">677,834</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">52.8% / 47.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2009</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">313,002</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">275,837</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">588,839</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.2% / 46.8%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2008</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">312,064</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">272,870</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">584,934</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.4% / 46.6%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2007</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">313,715</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">275,184</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">588,899</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.3% / 46.7%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2006</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">314,323</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">279,483</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">593,806</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">52.9% / 47.1%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2005</td>
+<td headers="대구분" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">성별</td>
+<td headers="남" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">324,700</td>
+<td headers="여" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">285,557</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">610,257</td>
+<td headers="남여비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">53.2% / 46.8%</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">### 출신별</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>application_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(대구분 <span class="sc">==</span> <span class="st">"출신별"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> 중구분, <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(총계 <span class="ot">=</span> 재학 <span class="sc">+</span> 졸업 <span class="sc">+</span> 검정) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(출신비율 <span class="ot">=</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{scales::percent(재학/총계, accuracy=0.1)} / {scales::percent(졸업/총계, accuracy=0.1)} / {scales::percent(검정/총계, accuracy=0.1)}"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(학년도)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>대구분) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_integer</span>(<span class="at">columns =</span> <span class="fu">c</span>(재학, 졸업, 검정, 총계)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(출신비율 <span class="sc">~</span> <span class="fu">md</span>(<span class="st">"비율 (%)&lt;br&gt; 졸업 / 검정 / 총계"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**출신별**"</span>),</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>      재학, 졸업, 검정</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="areaiafymb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#areaiafymb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#areaiafymb thead, #areaiafymb tbody, #areaiafymb tfoot, #areaiafymb tr, #areaiafymb td, #areaiafymb th {
+  border-style: none;
+}
+
+#areaiafymb p {
+  margin: 0;
+  padding: 0;
+}
+
+#areaiafymb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#areaiafymb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#areaiafymb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#areaiafymb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#areaiafymb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#areaiafymb .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#areaiafymb .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#areaiafymb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#areaiafymb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#areaiafymb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#areaiafymb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#areaiafymb .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#areaiafymb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#areaiafymb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#areaiafymb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#areaiafymb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#areaiafymb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#areaiafymb .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#areaiafymb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#areaiafymb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#areaiafymb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#areaiafymb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#areaiafymb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#areaiafymb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#areaiafymb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#areaiafymb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#areaiafymb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#areaiafymb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#areaiafymb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#areaiafymb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#areaiafymb .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#areaiafymb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#areaiafymb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#areaiafymb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#areaiafymb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#areaiafymb .gt_left {
+  text-align: left;
+}
+
+#areaiafymb .gt_center {
+  text-align: center;
+}
+
+#areaiafymb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#areaiafymb .gt_font_normal {
+  font-weight: normal;
+}
+
+#areaiafymb .gt_font_bold {
+  font-weight: bold;
+}
+
+#areaiafymb .gt_font_italic {
+  font-style: italic;
+}
+
+#areaiafymb .gt_super {
+  font-size: 65%;
+}
+
+#areaiafymb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#areaiafymb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#areaiafymb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#areaiafymb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#areaiafymb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#areaiafymb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#areaiafymb .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="학년도">학년도</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="<strong>출신별</strong>">
+        <span class="gt_column_spanner"><strong>출신별</strong></span>
+      </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="총계">총계</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="비율 (%)<br> 졸업 / 검정 / 총계">비율 (%)<br> 졸업 / 검정 / 총계</th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="재학">재학</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="졸업">졸업</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="검정">검정</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2023</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">350,239</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">142,303</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">15,488</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">508,030</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">68.9% / 28.0% / 3.0%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2022</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">360,710</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">134,834</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">14,277</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">509,821</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">70.8% / 26.4% / 2.8%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2021</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">346,673</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">133,070</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">13,691</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">493,434</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">70.3% / 27.0% / 2.8%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2020</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">394,024</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">142,271</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">12,439</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">548,734</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">71.8% / 25.9% / 2.3%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2019</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">448,111</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">135,482</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">11,331</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">594,924</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">75.3% / 22.8% / 1.9%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2018</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">444,873</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">137,533</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">11,121</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">593,527</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">75.0% / 23.2% / 1.9%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2017</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">459,342</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">135,120</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">11,525</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">605,987</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">75.8% / 22.3% / 1.9%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2016</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">482,054</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">136,090</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">13,043</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">631,187</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">76.4% / 21.6% / 2.1%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2015</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">495,027</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">131,539</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">14,055</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">640,621</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">77.3% / 20.5% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2014</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">509,081</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">127,634</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">14,032</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">650,747</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">78.2% / 19.6% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2013</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">510,972</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">142,561</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">14,989</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">668,522</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">76.4% / 21.3% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2012</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">526,418</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">151,887</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">15,326</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">693,631</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">75.9% / 21.9% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2011</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">541,880</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">154,661</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">15,686</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">712,227</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">76.1% / 21.7% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2010</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">532,436</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">130,658</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">14,740</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">677,834</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">78.5% / 19.3% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2009</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">448,472</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">127,586</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">12,781</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">588,839</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">76.2% / 21.7% / 2.2%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2008</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">446,597</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">126,729</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">11,608</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">584,934</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">76.3% / 21.7% / 2.0%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2007</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">425,396</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">151,697</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">11,806</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">588,899</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">72.2% / 25.8% / 2.0%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2006</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">422,310</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">159,190</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">12,306</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">593,806</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">71.1% / 26.8% / 2.1%</td></tr>
+    <tr><td headers="학년도" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">2005</td>
+<td headers="재학" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">435,538</td>
+<td headers="졸업" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">161,524</td>
+<td headers="검정" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">13,195</td>
+<td headers="총계" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">610,257</td>
+<td headers="출신비율" class="gt_row gt_center" style="font-family: 'Source Sans Pro'; font-weight: 400;">71.4% / 26.5% / 2.2%</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>application_tbl  <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> value<span class="sc">/</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( 대구분 <span class="sc">==</span> <span class="st">"출신별"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 학년도, <span class="at">y =</span> value, <span class="at">color =</span> 중구분)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"출신별 수능 접수현황"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span><span class="st">""</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"접수자수(만명)"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="st">"접수구분: "</span>) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gray30"</span>, <span class="st">"blue"</span>, <span class="st">"red"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="sat_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="sat_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});</script>
+
+
+
+</body></html>

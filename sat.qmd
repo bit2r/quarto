@@ -1,0 +1,274 @@
+---
+title: "디지털 글쓰기"
+subtitle: "수학능력평가"
+description: |
+  데이터 과학자 학부모입장에서 챗GPT시대 수학능력평가에 대해서 알아보자.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 수능이란?
+
+수능은 대한민국에서 실시하는 대학입학 자격시험으로 국어, 수학, 영어, 한국사, 사회탐구, 과학탐구 총 6개 과목으로 구성되어 있다. 수능은 대한민국의 모든 고등학교 졸업생과 검정고시 합격자가 응시할 수 있다. 수능은 대학 입학 전형에 있어 가장 중요한 요소 중 하나로, 수능 성적은 대학 입학 정원의 50% 이상을 차지하는 경우가 많다. 
+
+한국교육과정평가원에서 밝히 대한수학능력시험의 성격과 목적은 다음과 같다.
+
+- 대학 교육에 필요한 수학 능력 측정으로 **선발의 공정성과 객관성 확보**
+- 고등학교 교육과정의 내용과 수준에 맞는 출제로 **고등학교 학교교육의 정상화 기여**
+- 개별 교과의 특성을 바탕으로 신뢰도와 타당도를 갖춘 시험으로서 **공정성과 객관성 높은 대입 전형자료 제공**
+
+# '23년 일정
+
+대한수학능력시험 주요업무추진 일정은 다음과 같다.
+
+```{r}
+library(datapasta)
+library(tidyverse)
+library(gtExtras)
+library(gt)
+
+schedule_raw <- tibble::tribble(
+            ~"주요.업무",                   ~"추진일정",            ~"비고",
+       "시행기본계획 발표",              "3.28.(화)",             NA,
+       "시행세부계획 공고",               "7.3.(월)",       "중앙 일간지",
+  "원서 교부, 접수 및 변경",    "8.24.(목) ~ 9.8.(금)", "토요일 및 공휴일 제외",
+           "시험 실시",             "11.16.(목)",             NA,
+    "문제 및 정답 이의신청", "11.16.(목) ~ 11.20.(월)",          "5일간",
+           "정답 확정",             "11.28.(화)",             NA,
+              "채점",  "11.17.(금) ~ 12.8.(금)",         "22일간",
+           "성적 통지",              "12.8.(금)",             NA
+  )
+
+schedule <- schedule_raw %>%
+  janitor::clean_names(ascii=FALSE) %>% 
+  separate(추진일정, into = c("시작일", "완료일"), sep = "~") %>% 
+  mutate(시작일 = sub("\\(.*\\)", "", 시작일),
+         완료일 = sub("\\(.*\\)", "", 완료일)) %>% 
+  mutate(시작일 = glue::glue("2023.{시작일}") %>% as.character(.) %>% as.Date(format = "%Y.%m.%d"),
+         완료일 = glue::glue("2023.{완료일}") %>% as.character(.) %>% as.Date(format = "%Y.%m.%d"))
+
+schedule %>% 
+  gt::gt() %>% 
+  gt_theme_nytimes() %>% 
+    cols_align(align = "center", columns = everything()) %>% 
+    fmt_missing(
+      columns = everything(),
+      missing_text = "-" # replace NA with "-"
+    )
+```
+
+
+```{r}
+library(vistime)
+library(timevis)
+
+schedule_tv <- schedule %>% 
+  mutate(id = row_number()) %>% 
+  mutate(group = c("시행계획", "시행계획", "원서교부", "시험", rep("채점 성적통지", 4)) ) %>%
+  set_names(c("content", "start", "end", "remark", "id", "group"))
+
+schedule_grp <- schedule_tv %>% 
+  select(id = group, content = group) %>% 
+  distinct()
+
+timevis(data = schedule_tv, groups = schedule_grp)
+```
+
+
+# 시험시간과 문항수
+
+
+![](images/suneung_table.jpg)
+
+# 수능통계
+
+## 연도별 응시현황
+
+응시자가 2000년 전후 정점을 찍은 이후 수능지원자와 응시자수가 꾸준히 줄고 있으며 응시자와 지원자수 사이 간극이 커지고 있다.
+
+```{python}
+# !pip install tabula-py
+
+import pandas as pd
+import tabula
+file = "data/suneung/수능 연도별 응시현황 (2022.12.게시).pdf"
+taker = tabula.read_pdf(file, pages='all')
+
+taker_pd = taker[0]
+```
+
+```{r}
+library(reticulate)
+
+taker_raw <- py$taker_pd %>% 
+  as_tibble()
+
+taker_tbl <- taker_raw %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  slice(3:n()) %>% 
+  select(-비고, -unnamed_0) %>% 
+  set_names(c("학년도", "시험일", "지원자", "응시자", "응시율")) %>% 
+  mutate(시험일 = lubridate::ymd(시험일)) %>% 
+  pivot_longer(cols = 지원자:응시자, names_to = "구분", values_to = "사람수") %>% 
+  mutate(사람수 = parse_number(사람수)) %>% 
+  select(시험일, 구분, 사람수)
+
+taker_tbl %>% 
+  pivot_wider(names_from = 구분, values_from = 사람수) %>% 
+  arrange(desc(시험일)) %>% 
+  mutate(응시율 = 응시자 / 지원자) %>% 
+  gt::gt() %>% 
+  gt_theme_nytimes() %>% 
+    cols_align(align = "center", columns = everything()) %>% 
+    fmt_missing(
+      columns = everything(),
+      missing_text = "-" # replace NA with "-"
+    ) %>% 
+  fmt_integer( columns = c(지원자, 응시자)) %>% 
+  fmt_percent(응시율, decimals = 1) %>% 
+  tab_header(
+    title = md("수능 지원자, 응시자, 응시율표"),
+    subtitle = md("1994년 제외")
+  )
+
+```
+
+
+```{r}
+taker_tbl %>% 
+  mutate( 사람수 = 사람수 / 10^4) %>% 
+  ggplot(aes(x = 시험일, y = 사람수, color = 구분)) +
+    geom_line() +
+    geom_point() +
+    labs(title = "수능 지원자와 응시자수 추세",
+         x = "",
+         y = "사람수(만명)") +
+    theme(legend.position = "top") +
+    scale_color_manual(values = c("gray35", "blue")) +
+    expand_limits(y = 0)
+```
+
+## 수능 접수현황
+
+
+```{python}
+import pandas as pd
+import tabula
+application_file = "data/suneung/수능 연도별 접수현황 (2022.12.게시).pdf"
+application = tabula.read_pdf(application_file, pages='all')
+
+applicatin_1_pd = application[0]
+applicatin_2_pd = application[1]
+```
+
+```{r}
+## 1 페이지 
+application_1_raw <- py$applicatin_1_pd %>% 
+  as_tibble() 
+
+application_1 <- application_1_raw %>% 
+  mutate(학년도 = map_chr(학년도, 1) %>% as.integer) %>% 
+  filter(학년도 >= 2005) %>% 
+  janitor::clean_names(ascii=FALSE) %>% 
+  set_names(c("학년도", "기간", "총계", "성별_남", "성별_여", "계열별", "출신별_재학", "출신별_졸업", "출신별_검정", "응시료", "가", "나", "다")) %>% 
+  select(학년도, contains("_"))
+
+## 2 페이지 
+application_2_raw <- py$applicatin_2_pd %>% 
+  as_tibble() 
+
+application_2 <- application_2_raw %>% 
+  slice(2:n()) %>% 
+  janitor::clean_names(ascii=FALSE) %>% 
+  set_names(c("학년도", "기간", "총계", "성별_남", "성별_여", "계열별", "출신별_재학", "출신별_졸업", "출신별_검정", "응시료")) %>% 
+  select(학년도, contains("_"))
+  
+## 1~2 페이지
+application_tbl <- bind_rows(application_1, application_2) %>% 
+  pivot_longer(-학년도) %>% 
+  separate(name, into =c("대구분", "중구분"), sep = "_") %>% 
+  mutate(value = str_remove(value, '\\r\\(.*\\)') %>% parse_number(.))
+
+## 표 제작
+library(scales)
+
+### 성별
+application_tbl %>% 
+  filter(대구분 == "성별") %>% 
+  pivot_wider(names_from = 중구분, values_from = value) %>% 
+  mutate(총계 = 남 + 여) %>% 
+  mutate(남여비율 = glue::glue("{scales::percent(남/(남+여), accuracy=0.1)} / {scales::percent(여/(남+여), accuracy=0.1)}")) %>% 
+  arrange(desc(학년도)) %>% 
+  gt::gt() %>% 
+  gtExtras::gt_theme_nytimes() %>% 
+  fmt_integer(columns = c(남, 여, 총계)) %>% 
+  cols_align(align = "center")
+
+### 출신별
+application_tbl %>% 
+  filter(대구분 == "출신별") %>% 
+  pivot_wider(names_from = 중구분, values_from = value) %>% 
+  mutate(총계 = 재학 + 졸업 + 검정) %>% 
+  mutate(출신비율 = glue::glue("{scales::percent(재학/총계, accuracy=0.1)} / {scales::percent(졸업/총계, accuracy=0.1)} / {scales::percent(검정/총계, accuracy=0.1)}")) %>% 
+  arrange(desc(학년도)) %>% 
+  select(-대구분) %>% 
+  gt::gt() %>% 
+  gtExtras::gt_theme_nytimes() %>% 
+  fmt_integer(columns = c(재학, 졸업, 검정, 총계)) %>% 
+  cols_align(align = "center") %>% 
+  cols_label(출신비율 ~ md("비율 (%)<br> 졸업 / 검정 / 총계")) %>% 
+  tab_spanner(
+    label = md("**출신별**"),
+    columns = c(
+      재학, 졸업, 검정
+    )
+  )
+```
+
+```{r}
+application_tbl  %>% 
+  mutate(value = value/ 10^4)  %>% 
+  filter( 대구분 == "출신별") %>% 
+  ggplot(aes(x = 학년도, y = value, color = 중구분)) +
+    geom_line() +
+    geom_point() +
+    labs(title = "출신별 수능 접수현황",
+         x ="",
+         y = "접수자수(만명)",
+         color = "접수구분: ") +
+    theme(legend.position = "top") +
+    scale_color_manual(values = c("gray30", "blue", "red"))
+```
+
