@@ -1,0 +1,386 @@
+---
+title: "디지털 글쓰기"
+subtitle: "전국대학"
+description: |
+  데이터 과학자 학부모입장에서 챗GPT시대 입학할 대학을 살펴봅니다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 대학현황
+
+공공데이터포털에서 [전국대학및전문대학정보표준데이터](https://www.data.go.kr/data/15107736/standard.do)를 기준으로 살펴보자.
+
+대학이 너무 많아 본교 및 대학구분명에서 "대학"으로 한정하여 살펴보자.
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(reactable)
+library(gt)
+
+univ_raw <- read_csv("data/suneung/한국대학교육협의회_대학및전문대학정보_20221221.csv",
+                     locale = locale(encoding = "EUC-KR"))
+
+univ_tbl <- univ_raw %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  filter(본분교구분명 == "본교",
+         대학구분명 == "대학") %>% 
+  mutate(학교명 = str_remove(학교명, "\\(.*\\)"),
+         소재지도로명주소 = str_remove(소재지도로명주소, "\\(.*\\)") %>% str_squish(.)) %>% 
+  mutate(학교명 = str_remove(학교명, "학교")) %>% 
+  select(학교명, 설립형태=설립형태구분명, 시도명, 주소=소재지도로명주소, 설립일=설립일자)
+  # mutate(설립일 = ifelse(str_detect(학교명,"한국에너지공과대"), ymd("2020-04-03"), 설립일))
+
+# univ_tbl %>% 
+#   arrange(desc(설립일)) %>% 
+#   reactable(
+#     defaultPageSize = 10, # 5 data per page
+#     showPageSizeOptions = TRUE, # show option to change number of data per page
+#     pageSizeOptions = c(5, 10, 25, 50, 100),
+#     highlight = TRUE,     
+#     # Table Theme
+#     theme = reactableTheme(backgroundColor = "#1D2024", color = "white", borderColor = "#666666",
+#                            paginationStyle = list(color = "white"), 
+#                            selectStyle = list(color = "black"),
+#                            headerStyle = list(color = "white", fontFamily = "Arial"),
+#                            cellStyle = list(color = "#FAFAFA", 
+#                                             fontFamily = "NanumGothic, Consolas, Monaco, monospace", 
+#                                             fontSize = "12px")
+#                            ),
+#     columns = list(
+#       학교명 = colDef(align = "center", minWidth = 100),
+#       설립형태 = colDef(align = "center", minWidth = 75),
+#       시도명 = colDef(align = "center", minWidth = 100),
+#       주소 = colDef(align = "center", minWidth = 250),
+#       설립일 = colDef(align = "center", minWidth = 75))
+#   )
+```
+
+## 설립형태 및 시도
+
+```{r}
+univ_tbl %>% 
+  count(시도명, 설립형태) %>% 
+  pivot_wider(names_from = 설립형태, values_from = n) %>% 
+  arrange(desc(사립)) %>% 
+  janitor::adorn_totals(where = "col", name = "합계") %>% 
+  gt::gt() %>% 
+  fmt_missing(missing_text = "-") %>% 
+  cols_align("center") %>% 
+  gtExtras::gt_theme_538() %>% 
+  gt::grand_summary_rows(columns = c(국립, 사립, 특별법법인, 공립, 국립대법인, 특별법국립),
+    fns = list(
+      합계 ~ sum(.)
+    )) %>% 
+  gt::tab_spanner(label = "법인구분",
+    columns = c(국립, 사립, 특별법법인, 공립, 국립대법인, 특별법국립))
+```
+
+
+# 지도
+
+대학 도로명 주소가 있기 때문에 이를 위경도 좌표로 변환시켜 지도위에 표시한다.
+
+```{r}
+#| eval: false
+
+library(jsonlite)
+
+get_lonlat <- function(address) {
+  cat(address, "\n")
+  # HTTP 요청을 실행합니다. 
+  geo_res <- GET(url = 'https://dapi.kakao.com/v2/local/search/address.json',
+             query = list(query = address),
+             add_headers(Authorization = paste0("KakaoAK ", Sys.getenv("DAUM_MAP_API_KEY"))))
+  
+  # KPMG 지리정보 데이터프레임
+  geo_list <- geo_res %>% 
+    content(as = 'text') %>% 
+    fromJSON()
+  
+  ## 도로명주소
+  geo_tbl <- geo_list$documents$road_address %>% 
+    select(lon=x,lat=y)
+  
+  return(geo_tbl)
+}
+
+univ_tbl <- univ_tbl %>% 
+  mutate(lonlat = map(주소, get_lonlat)) %>% 
+  mutate(lon = map_chr(lonlat, "lon") %>% as.numeric(.),
+         lat = map_chr(lonlat, "lat") %>% as.numeric(.)) 
+
+# univ_tbl %>%
+#   select(-lonlat) %>%
+#   write_csv("data/suneung/univ_tbl.csv")
+```
+
+```{r}
+#| eval: true
+univ_tbl <- 
+  read_csv("data/suneung/univ_tbl.csv")
+
+library(leaflet)
+library(sf)
+library(rgdal)
+library(rgeos)
+
+kor_geojson <- st_read("data/map/HangJeongDong_ver20230401.geojson")
+
+kor_geojson <- st_make_valid(kor_geojson)
+
+sido_geojson <- kor_geojson %>% 
+  # st_simplify(preserveTopology = TRUE, dTolerance = 1000) %>% 
+  group_by(시도명 = sidonm) %>% 
+  summarise(geometry = st_union(geometry)) 
+
+univ_sf <- univ_tbl %>% 
+  left_join(sido_geojson)
+
+# univ_sf %>% 
+#   leaflet() %>%
+#   addTiles() %>%
+#   addProviderTiles(providers$OpenStreetMap) %>% 
+#   addMarkers(lng=~lon, lat=~lat,
+#              popup = glue::glue("학교명: <strong>{univ_tbl$학교명}</strong><br>
+#                                 &middot 설립형태: {univ_tbl$설립형태}<br>
+#                                 &middot 설립일: {univ_tbl$설립일}<br>
+#                                 &middot 주소: {univ_tbl$주소}"))  %>% 
+#   addPolygons(data=univ_sf$geometry, fill=FALSE, stroke = TRUE, color = "blue") 
+
+```
+
+
+# 대학생수
+
+1980-2022 4년제 일반대학의 설립별(교원수, 학교수, 학생수), 시도별(학교수, 학생수) 자료는 공공데이터 포털 [한국교육개발원_대학 개황](https://www.data.go.kr/data/15053812/fileData.do) 을 통해 확인가능하다.
+
+## 시도 대학생수
+
+행정구역별 KOSIS [대학교 학생수(시도/시/군/구)](https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL8801)를 살펴보자.
+
+```{r}
+library(readxl)
+
+students_raw <- read_excel("data/suneung/대학교_학생수_시도_시_군_구__20230527183544.xlsx")
+
+students <- students_raw %>% 
+  fill(행정구역별, .direction="down") %>% 
+  janitor::clean_names(ascii=FALSE) %>% 
+  rename(시도명 = 행정구역별,
+         일반대 = 일반대_a,
+         전문대 = 전문대_b,
+         교육대 = 교육대_c,
+         산업대 = 산업대_d) %>% 
+  select(-대학교_재학생수_a_b_c_d) %>% 
+  filter(시도명 != "전국") %>% 
+  mutate_all(as.character) %>% 
+  pivot_longer(cols = 일반대:산업대, names_to = "구분", values_to = "재학생수") %>% 
+  mutate(시점 = as.integer(시점),
+         재학생수 = as.integer(재학생수) / 10^4)
+
+students_ttl <- students %>% 
+  group_by(시점, 구분) %>% 
+  summarise(재학생수 = sum(재학생수, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(시도명 = "전국")
+
+students_ttl %>% 
+  bind_rows(students) %>% 
+  filter(!str_detect(시도명, "세종")) %>% 
+  mutate(시도명 = factor(시도명, levels = c("전국", "서울특별시", "경기도", "부산광역시", "경상북도", "충청남도", "대전광역시", "강원도", "전라북도", "충청북도", "경상남도", "대구광역시", "광주광역시", "전라남도", "인천광역시", "울산광역시", "제주특별자치도")),
+         구분 = factor(구분, levels = c("일반대", "전문대", "산업대", "교육대"))) %>% 
+  ggplot(aes(x = 시점, y = 재학생수, color = 구분)) +
+    geom_line() +
+    facet_wrap(~시도명) +
+    labs(x = "",
+         y = "대학 재학생수(만명)",
+         title = "시도별 대학교 대학생수",
+         subtitle = "통계청 KOSIS, 2007~2022년 기준, 세종시 제외")  +
+    scale_color_manual(values = c("일반대" ="blue",
+                                  "전문대" ="red",
+                                  "산업대" = "black",
+                                  "교육대" = "orange")) +
+    scale_y_sqrt()
+```
+
+## 학교별 학생수
+
+대학알리미 [대학주요정보 한눈에 보기](https://www.academyinfo.go.kr/main/main2130/doInit.do) 웹사이트에서 학교별 입학생수와 졸업생수를 살펴보자.
+
+:::{layout-ncol=2}
+
+```{r}
+library(ggrepel)
+library(ggbeeswarm)
+
+univ_info_2021 <- read_excel("data/suneung/대학주요정보_2021.xlsx") %>% 
+    set_names(c("no", "공시년도", "학교명", "본분교명", "학교종류", 
+              "학교유형", "설립유형", "지역명", "입학정원_학부", 
+              "졸업생수_학부", "전임교원수", "재학생_학부", "신입생_경쟁률_학부", 
+              "신입생_충원율_학부", "취업률_학부", "외국인_학부"))  
+univ_info_2022 <- read_excel("data/suneung/대학주요정보_2022.xlsx") %>% 
+    set_names(c("no", "공시년도", "학교명", "본분교명", "학교종류", 
+              "학교유형", "설립유형", "지역명", "입학정원_학부", 
+              "졸업생수_학부", "전임교원수", "재학생_학부", "신입생_경쟁률_학부", 
+              "신입생_충원율_학부", "취업률_학부", "외국인_학부"))  
+univ_info_2023 <- read_excel("data/suneung/대학주요정보_2023.xlsx") %>% 
+    set_names(c("no", "공시년도", "학교명", "본분교명", "학교종류", 
+              "학교유형", "설립유형", "지역명", "입학정원_학부", 
+              "졸업생수_학부", "전임교원수", "재학생_학부", "신입생_경쟁률_학부", 
+              "신입생_충원율_학부", "취업률_학부", "외국인_학부"))  
+
+univ_info <- bind_rows(univ_info_2021, univ_info_2022) %>% 
+  bind_rows(univ_info_2023) %>% 
+  filter(학교종류 != "전문대학") %>% 
+  mutate(학교명 = str_remove_all(학교명, "\\(.*\\)")) %>% 
+  select(공시년도, 학교명, 시도명=지역명, 입학정원_학부, 졸업생수_학부, 재학생_학부) %>% 
+  group_by(공시년도, 학교명) %>% 
+  summarise(입학생 = sum(입학정원_학부, na.rm = TRUE),
+            재학생 = sum(재학생_학부, na.rm = TRUE),
+            졸업생 = sum(졸업생수_학부, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(총합 = 입학생 + 재학생 + 졸업생) %>% 
+  pivot_longer(cols = 입학생:졸업생, names_to = "구분", values_to = "학생수")
+
+univ_info_ttl <- univ_info %>% 
+  filter(구분 == "재학생",
+         공시년도 == max(공시년도)) %>% 
+  select(공시년도, 학교명, 학생수)
+
+univ_admission_g <- univ_info %>% 
+  filter(구분 == "입학생") %>% 
+  select(학교명, 공시년도, 학생수) %>% 
+  pivot_wider(names_from = 공시년도, values_from = 학생수) %>% 
+  mutate(차이 = `2023` - `2021`) %>% 
+  left_join(univ_info_ttl) %>% 
+  mutate(학교명 = str_remove(학교명, "대학교?$")) %>% 
+  ggplot(aes(x = 차이, y = 학생수, color=학교명)) +
+    geom_beeswarm() +
+    geom_text_repel(aes(label = 학교명), size = 2) +
+    theme(legend.position = "none") +
+    scale_y_sqrt(labels = scales::comma) +
+    scale_x_continuous(labels = scales::comma) +
+    labs(x = "입학생 증감",
+         y = "재학생수",
+         title = "대학 입학생수 증감과 재학생수",
+         subtitle = "공시년도 21년과 비교 23년 학생수 증감")
+
+univ_admission_g
+```
+
+
+```{r}
+univ_admission_g2 <- univ_info %>% 
+  filter(구분 == "입학생") %>% 
+  select(학교명, 공시년도, 학생수) %>% 
+  pivot_wider(names_from = 공시년도, values_from = 학생수) %>% 
+  mutate(차이 = `2023` - `2021`) %>% 
+  left_join(univ_info_ttl) %>% 
+  mutate(학교명 = str_remove(학교명, "대학교?$")) %>% 
+  filter(!str_detect(학교명, "경남과학기술|경상국립|한국방송통신")) %>% 
+  ggplot(aes(x = 차이, y = 학생수, color=학교명)) +
+    geom_beeswarm() +
+    geom_text_repel(aes(label = 학교명), size = 2) +
+    theme(legend.position = "none") +
+    scale_y_sqrt(labels = scales::comma) +
+    scale_x_continuous(labels = scales::comma) +
+    labs(x = "입학생 증감",
+         y = "재학생수",
+         title = "대학 입학생수 증감과 재학생수",
+         subtitle = "공시년도 21년과 비교 23년 학생수 증감")
+
+univ_admission_g2
+
+```
+
+:::
+
+# 대학과 재학생수
+
+## 표
+
+```{r}
+univ_admin_tbl <- univ_info %>% 
+  filter(구분 == "입학생",
+         공시년도 == max(공시년도)) %>% 
+  select(공시년도, 학교명, 입학생 = 학생수) %>% 
+  mutate(학교명 = str_remove(학교명, "학교$")) %>% 
+  left_join(univ_sf) %>% 
+  arrange(desc(입학생)) 
+  
+univ_admin_tbl %>% 
+  reactable(
+    defaultPageSize = 10, # 5 data per page
+    showPageSizeOptions = TRUE, # show option to change number of data per page
+    pageSizeOptions = c(5, 10, 25, 50, 100),
+    highlight = TRUE,     
+    # Table Theme
+    theme = reactableTheme(backgroundColor = "#1D2024", color = "white", borderColor = "#666666",
+                           paginationStyle = list(color = "white"), 
+                           selectStyle = list(color = "black"),
+                           headerStyle = list(color = "white", fontFamily = "Arial"),
+                           cellStyle = list(color = "#FAFAFA", 
+                                            fontFamily = "NanumGothic, Consolas, Monaco, monospace", 
+                                            fontSize = "12px")
+                           ),
+    columns = list(
+      학교명 = colDef(align = "center", minWidth = 100),
+      입학생 = colDef(align = "center", minWidth = 100, 
+                      format = colFormat(separators = TRUE)),
+      설립형태 = colDef(align = "center", minWidth = 75),
+      시도명 = colDef(align = "center", minWidth = 100),
+      주소 = colDef(align = "center", minWidth = 250),
+      설립일 = colDef(align = "center", minWidth = 75))
+  )  
+```
+
+
+## 지도
+
+```{r}
+univ_admin_tbl %>% 
+  leaflet() %>%
+    addTiles() %>%
+    addProviderTiles(providers$OpenStreetMap) %>% 
+    addMarkers(lng=~lon, lat=~lat,
+               popup = glue::glue("학교명: <strong>{univ_admin_tbl$학교명}</strong><br>
+                                  &middot 입학생: <strong>{univ_admin_tbl$입학생}</strong><br>
+                                  &middot 설립형태: {univ_admin_tbl$설립형태}<br>
+                                  &middot 설립일: {univ_admin_tbl$설립일}<br>
+                                  &middot 주소: {univ_admin_tbl$주소}")) %>% 
+    addPolygons(data=univ_sf$geometry, fill=FALSE, stroke = TRUE, color = "blue") 
+```

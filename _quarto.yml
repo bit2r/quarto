@@ -77,6 +77,8 @@ website:
         menu: 
           - href: sat.qmd
             text: "수학능력평가"
+          - href: sat_university.qmd
+            text: "전국대학현황"
             
       - text: 관련 정보
         menu: 
