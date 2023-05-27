@@ -340,4 +340,70 @@ grade_df %>%
 ```
 
 
+# 배점
+
+[전라북도 교육청: [2024학년도 영역/과목별 출제범위, 문항유형 및 배점](https://www.jbe.go.kr/jinro/index.jbe?menuCd=DOM_000001105004005005)]{.aside}
+
+
+```{r}
+library(datapasta)
+library(tidyverse)
+library(rvest)
+library(gt)
+library(gtExtras)
+
+table_url <- "https://www.jbe.go.kr/jinro/index.jbe?menuCd=DOM_000001105004005005"
+
+point_raw <- read_html(table_url) %>% 
+  html_elements("table") %>% 
+  html_table() %>% 
+  .[[1]]
+
+point_tbl <- point_raw %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  slice(2:n()) %>% 
+  set_names(c("대구분", "소구분", "문항수", "문항유형", "배점_문항", "배점_전체", "시험시간",
+              "출제범위")) %>% 
+  mutate_all(.funs = str_remove_all, pattern = "ㆍ?\n\t\t\t|\t\t") %>% 
+  mutate(대구분 = str_remove(대구분, "\\(필수\\)"),
+         소구분 = str_remove(소구분, "\\(필수\\)")) %>% 
+  mutate(과목수 = ifelse(str_detect(출제범위, "지구과학"), 2, 1))  %>% 
+  mutate(배점_전체 = parse_number(배점_전체),
+         과목점수 = 배점_전체 * 과목수) %>% 
+  relocate(과목수, .before=시험시간) %>% 
+  relocate(과목점수, .before=시험시간)
+  
+
+point_tbl %>% 
+  gt(rowname_col = "대구분") %>% 
+  gt_theme_538() %>%
+  cols_align("center") %>% 
+  tab_options(
+    table.font.size = px(12L),
+    stub.border.width = px(2),
+    stub.border.color = "black"
+  ) %>% 
+  tab_spanner(
+    label = md("**배점**"),
+    columns = c(
+      배점_문항, 배점_전체, 과목수, 과목점수 
+    )
+  )  %>% 
+  cols_label(
+    배점_문항 = "문항",
+    배점_전체 = "전체"
+  ) %>% 
+  tab_footnote(
+    footnote = md("필수"),
+    locations = cells_body(columns = c(대구분, 소구분),
+      rows = 대구분 == "한국사")
+  ) %>% 
+  grand_summary_rows(
+    columns = 과목점수,
+    fns = list(
+      총점 = ~ sum(., na.rm = TRUE)
+    )
+  )
+```
+
 
