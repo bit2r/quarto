@@ -84,7 +84,7 @@ website:
           - href: sat_pop.qmd
             text: "연령별 인구구조"
           - href: sat_english.qmd
-            text: "영어듣기"
+            text: "수능영어 (2023)"
             
       - text: 관련 정보
         menu: 
