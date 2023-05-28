@@ -1,0 +1,166 @@
+---
+title: "디지털 글쓰기"
+subtitle: "연령별 인구구조"
+description: |
+  데이터 과학자 학부모입장에서 챗GPT시대 대학에 들어갈 사람수를 살펴보자.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 인구수
+
+행정안전부 [주민등록 인구 및 세대현황](https://jumin.mois.go.kr/) 인구 데이터를 바탕으로 연도별 대학수학능력 시험 및 지원인원을 살펴보자. 2022년 12월말 기준 1세기준 인구수다.
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(gt)
+library(gtExtras)
+
+pop_raw <- read_excel("data/suneung/202212_202212_연령별인구현황_연간.xlsx", skip=3)
+
+pop_tbl <- pop_raw %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(-연령구간인구수, -행정기관코드) %>% 
+  pivot_longer(cols = `x0세`:`x100세_이상`, names_to = "나이", values_to = "인구수") %>% 
+  rename(시도=행정기관, 총인구수=총_인구수) %>% 
+  mutate(총인구수 = parse_number(총인구수),
+         나이 = parse_number(나이),
+         인구수 = parse_number(인구수))
+
+```
+
+```{r}
+pop_tbl %>% 
+  filter(시도 == "전국") %>% 
+  ggplot(aes(x=나이, y=인구수)) +
+    geom_col() +
+    labs(title = "2022년 말 기준 연령별 인구수") +
+    scale_y_continuous(labels = scales::comma) +
+    geom_vline(xintercept = 19, color="red") +
+    geom_label(label = "수능나이", aes(x = 24, y = 900000))
+```
+
+
+# 수능응시 출생년도
+
+[학교 입학·졸업 연도 계산기](https://superkts.com/cal/school/student/2009)를 통해 수능응시생 출생년도를 확인할 수 있다. 
+
+[한국 나이 및 한국 나이 8세 입학 기준.]{.aside}
+
+:::::{.columns}
+:::{.column}
+
+## 2023년 시점기준
+
+```{r}
+go3 <- read_excel("data/suneung/202212_202212_연령별인구현황_연간.xlsx", sheet= "고3_2023년")
+
+go3 %>% 
+  gt::gt() %>% 
+    gtExtras::gt_theme_538() %>% 
+     gt_highlight_rows(
+     rows = str_detect(학년, pattern = "고등학교 3학년"),
+     fill = "lightgrey",
+     bold_target_only = TRUE,
+     target_col = everything()
+   )  
+```
+
+:::
+
+:::{.column}
+
+## 2027년 시점기준
+
+```{r}
+go3_2009 <- read_excel("data/suneung/202212_202212_연령별인구현황_연간.xlsx", sheet= "고3_2027년")
+
+go3_2009 %>% 
+  gt::gt() %>% 
+    gtExtras::gt_theme_538() %>% 
+     gt_highlight_rows(
+     rows = str_detect(학년, pattern = "고등학교 3학년"),
+     fill = "lightgrey",
+     bold_target_only = TRUE,
+     target_col = everything()
+   )
+```
+:::
+
+:::::
+
+
+# 4년후 인구비교
+
+```{r}
+pop_ttl <- pop_tbl %>% 
+  filter(시도 == "전국") %>% 
+  mutate(나이_2027 = 나이 + 4) %>% 
+  mutate(인구수_2027 = lag(인구수, n = 4)) %>% 
+  drop_na() 
+
+pop_now <- pop_ttl %>% 
+  select(나이, 인구수) %>% 
+  mutate(시점 = "현재")
+
+pop_future <- pop_ttl %>% 
+  select(나이 = 나이_2027, 인구수 = 인구수_2027)  %>% 
+  mutate(시점 = "4년후")
+
+proj_tbl <- bind_rows(pop_now, pop_future)
+
+proj_tbl %>% 
+  ggplot(aes(x = 나이, y = 인구수, fill = 시점)) +
+    geom_col(position = "dodge") +
+    scale_fill_manual(values = c("현재" = "gray20",
+                                 "4년후" = "blue")) +
+    theme(legend.position = "top") +
+    ## 대입
+    geom_vline(xintercept = 19, color="red") +
+    geom_text(aes(x = 25, y = 900000, label = "수능나이", color = "red"), 
+               show.legend = FALSE) +
+    ## 정년
+    geom_vline(xintercept = 60, color="red") +
+    geom_text(aes(x = 67, y = 950000, label = "법적 정년", color = "red"), 
+               show.legend = FALSE) +
+    scale_y_continuous(labels = scales::comma) +
+    labs(title = "대한민국 4년 후 인구구조 변화",
+         subtitle = "2023년 현재와 4년후(2027년) 인구구조변화")
+
+```
+
+
+

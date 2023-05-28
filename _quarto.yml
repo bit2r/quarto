@@ -79,6 +79,8 @@ website:
             text: "수학능력평가"
           - href: sat_university.qmd
             text: "전국대학현황"
+          - href: sat_pop.qmd
+            text: "연령별 인구구조"
             
       - text: 관련 정보
         menu: 

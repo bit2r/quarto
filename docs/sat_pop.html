@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.299">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+<meta name="description" content="데이터 과학자 학부모입장에서 챗GPT시대 대학에 들어갈 사람수를 살펴보자.">
+
+<title>디지털 글쓰기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="twitter:title" content="디지털 글쓰기">
+<meta name="twitter:description" content="데이터 과학자 학부모입장에서 챗GPT시대 대학에 들어갈 사람수를 살펴보자.">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto_blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./quarto_install.html" rel="" target="">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_about.html" rel="" target="">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">글쓰기</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html" rel="" target="">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html" rel="" target="">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_fonts.html" rel="" target="">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_sass.html" rel="" target="">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_layout.html" rel="" target="">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html" rel="" target="">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf" rel="" target="">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./youtube.html" rel="" target="">
+ <span class="dropdown-text">동영상 글쓰기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pdf.html" rel="" target="">
+ <span class="dropdown-text">2023년 수능 수학(홀수)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-latex" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><span class="math inline">\(\LaTeX\)</span></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-latex">    
+        <li>
+    <a class="dropdown-item" href="./latex.html" rel="" target="">
+ <span class="dropdown-text"><span class="math inline">\(\LaTeX\)</span> 들어가며</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./document_editor.html" rel="" target="">
+ <span class="dropdown-text">문서 편집기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
+ <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.html" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_thesis.html" rel="" target="">
+ <span class="dropdown-text">학위논문 양식</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_cover.html" rel="" target="">
+ <span class="dropdown-text">책표지와 본문결합</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
+ <span class="dropdown-text">Rmd –&gt; PDF</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-excel" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">엑셀(Excel)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-excel">    
+        <li>
+    <a class="dropdown-item" href="./excel_why.html" rel="" target="">
+ <span class="dropdown-text">왜 엑셀(?)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_dc.html" rel="" target="">
+ <span class="dropdown-text">엑셀: 데이터 기본기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_chatGPT.html" rel="" target="">
+ <span class="dropdown-text">챗GPT 엑셀</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">수능</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="./sat.html" rel="" target="">
+ <span class="dropdown-text">수학능력평가</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_university.html" rel="" target="">
+ <span class="dropdown-text">전국대학현황</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pop.html" rel="" target="">
+ <span class="dropdown-text">연령별 인구구조</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--2" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">관련 정보</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--2">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/" rel="" target="">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r2bit.com/seoul-r/" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup 발표자료</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/" rel="" target="">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/" rel="" target="">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ide" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">IDE</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ide">    
+        <li>
+    <a class="dropdown-item" href="./ide_war.html" rel="" target="">
+ <span class="dropdown-text">AI가 쏘아올린 작은 공</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ide_vscode.html" rel="" target="">
+ <span class="dropdown-text">Visual Studio Code</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com" rel="" target="">
+ <span class="menu-text">R사용자회</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw" rel="" target=""><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse" rel="" target=""><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">디지털 글쓰기</h1>
+            <p class="subtitle lead">연령별 인구구조</p>
+                  <div>
+        <div class="description">
+          <p>데이터 과학자 학부모입장에서 챗GPT시대 대학에 들어갈 사람수를 살펴보자.</p>
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">PPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 슬라이드</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">홍익대 특강</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">전자책</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 전자책</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">디지털 글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">마크다운 글쓰기</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">코딩(Computation)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">코딩 (계산)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib_py.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.ipynb 파이썬 파일</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.qmd Quarto 파일</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#인구수" id="toc-인구수" class="nav-link active" data-scroll-target="#인구수"><span class="header-section-number">1</span> 인구수</a></li>
+  <li><a href="#수능응시-출생년도" id="toc-수능응시-출생년도" class="nav-link" data-scroll-target="#수능응시-출생년도"><span class="header-section-number">2</span> 수능응시 출생년도</a></li>
+  <li><a href="#년후-인구비교" id="toc-년후-인구비교" class="nav-link" data-scroll-target="#년후-인구비교"><span class="header-section-number">3</span> 4년후 인구비교</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<section id="인구수" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 인구수</h1>
+<p>행정안전부 <a href="https://jumin.mois.go.kr/">주민등록 인구 및 세대현황</a> 인구 데이터를 바탕으로 연도별 대학수학능력 시험 및 지원인원을 살펴보자. 2022년 12월말 기준 1세기준 인구수다.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>pop_raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/suneung/202212_202212_연령별인구현황_연간.xlsx"</span>, <span class="at">skip=</span><span class="dv">3</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>pop_tbl <span class="ot">&lt;-</span> pop_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>연령구간인구수, <span class="sc">-</span>행정기관코드) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">x0세</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">x100세_이상</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">"나이"</span>, <span class="at">values_to =</span> <span class="st">"인구수"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(시도<span class="ot">=</span>행정기관, 총인구수<span class="ot">=</span>총_인구수) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(총인구수 <span class="ot">=</span> <span class="fu">parse_number</span>(총인구수),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>         나이 <span class="ot">=</span> <span class="fu">parse_number</span>(나이),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>         인구수 <span class="ot">=</span> <span class="fu">parse_number</span>(인구수))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pop_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(시도 <span class="sc">==</span> <span class="st">"전국"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>나이, <span class="at">y=</span>인구수)) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2022년 말 기준 연령별 인구수"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">19</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_label</span>(<span class="at">label =</span> <span class="st">"수능나이"</span>, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="dv">900000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="sat_pop_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="sat_pop_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="수능응시-출생년도" class="level1 page-columns page-full" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 수능응시 출생년도</h1>
+<p><a href="https://superkts.com/cal/school/student/2009">학교 입학·졸업 연도 계산기</a>를 통해 수능응시생 출생년도를 확인할 수 있다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">한국 나이 및 한국 나이 8세 입학 기준.</span></div></div>
+<div class="columns">
+<div class="column">
+<section id="년-시점기준" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="년-시점기준"><span class="header-section-number">2.1</span> 2023년 시점기준</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>go3 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/suneung/202212_202212_연령별인구현황_연간.xlsx"</span>, <span class="at">sheet=</span> <span class="st">"고3_2023년"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>go3 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">gt_highlight_rows</span>(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">rows =</span> <span class="fu">str_detect</span>(학년, <span class="at">pattern =</span> <span class="st">"고등학교 3학년"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">fill =</span> <span class="st">"lightgrey"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">bold_target_only =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">target_col =</span> <span class="fu">everything</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>   )  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="lrrvyhmyrf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#lrrvyhmyrf table {
+  font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lrrvyhmyrf thead, #lrrvyhmyrf tbody, #lrrvyhmyrf tfoot, #lrrvyhmyrf tr, #lrrvyhmyrf td, #lrrvyhmyrf th {
+  border-style: none;
+}
+
+#lrrvyhmyrf p {
+  margin: 0;
+  padding: 0;
+}
+
+#lrrvyhmyrf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lrrvyhmyrf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lrrvyhmyrf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lrrvyhmyrf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lrrvyhmyrf .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lrrvyhmyrf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lrrvyhmyrf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lrrvyhmyrf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lrrvyhmyrf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lrrvyhmyrf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lrrvyhmyrf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#lrrvyhmyrf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lrrvyhmyrf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lrrvyhmyrf .gt_row {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lrrvyhmyrf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrrvyhmyrf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lrrvyhmyrf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lrrvyhmyrf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lrrvyhmyrf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrrvyhmyrf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lrrvyhmyrf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrrvyhmyrf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lrrvyhmyrf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrrvyhmyrf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lrrvyhmyrf .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrrvyhmyrf .gt_left {
+  text-align: left;
+}
+
+#lrrvyhmyrf .gt_center {
+  text-align: center;
+}
+
+#lrrvyhmyrf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lrrvyhmyrf .gt_font_normal {
+  font-weight: normal;
+}
+
+#lrrvyhmyrf .gt_font_bold {
+  font-weight: bold;
+}
+
+#lrrvyhmyrf .gt_font_italic {
+  font-style: italic;
+}
+
+#lrrvyhmyrf .gt_super {
+  font-size: 65%;
+}
+
+#lrrvyhmyrf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lrrvyhmyrf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lrrvyhmyrf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lrrvyhmyrf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lrrvyhmyrf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lrrvyhmyrf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lrrvyhmyrf .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="학년">학년</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="출생연도">출생연도</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="그때">그때</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="현재">현재</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2016년</td>
+<td headers="그때" class="gt_row gt_left">8세</td>
+<td headers="현재" class="gt_row gt_left">8세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 2학년</td>
+<td headers="출생연도" class="gt_row gt_left">2015년</td>
+<td headers="그때" class="gt_row gt_left">9세</td>
+<td headers="현재" class="gt_row gt_left">9세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 3학년</td>
+<td headers="출생연도" class="gt_row gt_left">2014년</td>
+<td headers="그때" class="gt_row gt_left">10세</td>
+<td headers="현재" class="gt_row gt_left">10세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 4학년</td>
+<td headers="출생연도" class="gt_row gt_left">2013년</td>
+<td headers="그때" class="gt_row gt_left">11세</td>
+<td headers="현재" class="gt_row gt_left">11세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 5학년</td>
+<td headers="출생연도" class="gt_row gt_left">2012년</td>
+<td headers="그때" class="gt_row gt_left">12세</td>
+<td headers="현재" class="gt_row gt_left">12세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 6학년</td>
+<td headers="출생연도" class="gt_row gt_left">2011년</td>
+<td headers="그때" class="gt_row gt_left">13세</td>
+<td headers="현재" class="gt_row gt_left">13세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">중학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2010년</td>
+<td headers="그때" class="gt_row gt_left">14세</td>
+<td headers="현재" class="gt_row gt_left">14세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">중학교 2학년</td>
+<td headers="출생연도" class="gt_row gt_left">2009년</td>
+<td headers="그때" class="gt_row gt_left">15세</td>
+<td headers="현재" class="gt_row gt_left">15세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">중학교 3학년</td>
+<td headers="출생연도" class="gt_row gt_left">2008년</td>
+<td headers="그때" class="gt_row gt_left">16세</td>
+<td headers="현재" class="gt_row gt_left">16세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">고등학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2007년</td>
+<td headers="그때" class="gt_row gt_left">17세</td>
+<td headers="현재" class="gt_row gt_left">17세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">고등학교 2학년</td>
+<td headers="출생연도" class="gt_row gt_left">2006년</td>
+<td headers="그때" class="gt_row gt_left">18세</td>
+<td headers="현재" class="gt_row gt_left">18세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">고등학교 3학년</td>
+<td headers="출생연도" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">2005년</td>
+<td headers="그때" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">19세</td>
+<td headers="현재" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">19세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">대학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2004년</td>
+<td headers="그때" class="gt_row gt_left">20세</td>
+<td headers="현재" class="gt_row gt_left">20세</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+</div><div class="column">
+<section id="년-시점기준-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="년-시점기준-1"><span class="header-section-number">2.2</span> 2027년 시점기준</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>go3_2009 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/suneung/202212_202212_연령별인구현황_연간.xlsx"</span>, <span class="at">sheet=</span> <span class="st">"고3_2027년"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>go3_2009 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">gt_highlight_rows</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">rows =</span> <span class="fu">str_detect</span>(학년, <span class="at">pattern =</span> <span class="st">"고등학교 3학년"</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">fill =</span> <span class="st">"lightgrey"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">bold_target_only =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">target_col =</span> <span class="fu">everything</span>()</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="ufnbefmhug" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#ufnbefmhug table {
+  font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ufnbefmhug thead, #ufnbefmhug tbody, #ufnbefmhug tfoot, #ufnbefmhug tr, #ufnbefmhug td, #ufnbefmhug th {
+  border-style: none;
+}
+
+#ufnbefmhug p {
+  margin: 0;
+  padding: 0;
+}
+
+#ufnbefmhug .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ufnbefmhug .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ufnbefmhug .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ufnbefmhug .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ufnbefmhug .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ufnbefmhug .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ufnbefmhug .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ufnbefmhug .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ufnbefmhug .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ufnbefmhug .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ufnbefmhug .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#ufnbefmhug .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ufnbefmhug .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ufnbefmhug .gt_row {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ufnbefmhug .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ufnbefmhug .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ufnbefmhug .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ufnbefmhug .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ufnbefmhug .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ufnbefmhug .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ufnbefmhug .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ufnbefmhug .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ufnbefmhug .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ufnbefmhug .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ufnbefmhug .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ufnbefmhug .gt_left {
+  text-align: left;
+}
+
+#ufnbefmhug .gt_center {
+  text-align: center;
+}
+
+#ufnbefmhug .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ufnbefmhug .gt_font_normal {
+  font-weight: normal;
+}
+
+#ufnbefmhug .gt_font_bold {
+  font-weight: bold;
+}
+
+#ufnbefmhug .gt_font_italic {
+  font-style: italic;
+}
+
+#ufnbefmhug .gt_super {
+  font-size: 65%;
+}
+
+#ufnbefmhug .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ufnbefmhug .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ufnbefmhug .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ufnbefmhug .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ufnbefmhug .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ufnbefmhug .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ufnbefmhug .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="학년">학년</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="출생연도">출생연도</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="그때">그때</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="현재">현재</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2020년</td>
+<td headers="그때" class="gt_row gt_left">8세</td>
+<td headers="현재" class="gt_row gt_left">4세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 2학년</td>
+<td headers="출생연도" class="gt_row gt_left">2019년</td>
+<td headers="그때" class="gt_row gt_left">9세</td>
+<td headers="현재" class="gt_row gt_left">5세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 3학년</td>
+<td headers="출생연도" class="gt_row gt_left">2018년</td>
+<td headers="그때" class="gt_row gt_left">10세</td>
+<td headers="현재" class="gt_row gt_left">6세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 4학년</td>
+<td headers="출생연도" class="gt_row gt_left">2017년</td>
+<td headers="그때" class="gt_row gt_left">11세</td>
+<td headers="현재" class="gt_row gt_left">7세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 5학년</td>
+<td headers="출생연도" class="gt_row gt_left">2016년</td>
+<td headers="그때" class="gt_row gt_left">12세</td>
+<td headers="현재" class="gt_row gt_left">8세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">초등학교 6학년</td>
+<td headers="출생연도" class="gt_row gt_left">2015년</td>
+<td headers="그때" class="gt_row gt_left">13세</td>
+<td headers="현재" class="gt_row gt_left">9세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">중학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2014년</td>
+<td headers="그때" class="gt_row gt_left">14세</td>
+<td headers="현재" class="gt_row gt_left">10세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">중학교 2학년</td>
+<td headers="출생연도" class="gt_row gt_left">2013년</td>
+<td headers="그때" class="gt_row gt_left">15세</td>
+<td headers="현재" class="gt_row gt_left">11세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">중학교 3학년</td>
+<td headers="출생연도" class="gt_row gt_left">2012년</td>
+<td headers="그때" class="gt_row gt_left">16세</td>
+<td headers="현재" class="gt_row gt_left">12세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">고등학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2011년</td>
+<td headers="그때" class="gt_row gt_left">17세</td>
+<td headers="현재" class="gt_row gt_left">13세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">고등학교 2학년</td>
+<td headers="출생연도" class="gt_row gt_left">2010년</td>
+<td headers="그때" class="gt_row gt_left">18세</td>
+<td headers="현재" class="gt_row gt_left">14세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">고등학교 3학년</td>
+<td headers="출생연도" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">2009년</td>
+<td headers="그때" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">19세</td>
+<td headers="현재" class="gt_row gt_left" style="background-color: rgba(211,211,211,0.8); color: #000000; font-weight: bold;">15세</td></tr>
+    <tr><td headers="학년" class="gt_row gt_left">대학교 1학년</td>
+<td headers="출생연도" class="gt_row gt_left">2008년</td>
+<td headers="그때" class="gt_row gt_left">20세</td>
+<td headers="현재" class="gt_row gt_left">16세</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+<section id="년후-인구비교" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 4년후 인구비교</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pop_ttl <span class="ot">&lt;-</span> pop_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(시도 <span class="sc">==</span> <span class="st">"전국"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(나이<span class="at">_2027 =</span> 나이 <span class="sc">+</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(인구수<span class="at">_2027 =</span> <span class="fu">lag</span>(인구수, <span class="at">n =</span> <span class="dv">4</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>pop_now <span class="ot">&lt;-</span> pop_ttl <span class="sc">%&gt;%</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(나이, 인구수) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(시점 <span class="ot">=</span> <span class="st">"현재"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>pop_future <span class="ot">&lt;-</span> pop_ttl <span class="sc">%&gt;%</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(나이 <span class="ot">=</span> 나이_2027, 인구수 <span class="ot">=</span> 인구수_2027)  <span class="sc">%&gt;%</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(시점 <span class="ot">=</span> <span class="st">"4년후"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>proj_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(pop_now, pop_future)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>proj_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 나이, <span class="at">y =</span> 인구수, <span class="at">fill =</span> 시점)) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"현재"</span> <span class="ot">=</span> <span class="st">"gray20"</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"4년후"</span> <span class="ot">=</span> <span class="st">"blue"</span>)) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 대입</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">19</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">25</span>, <span class="at">y =</span> <span class="dv">900000</span>, <span class="at">label =</span> <span class="st">"수능나이"</span>, <span class="at">color =</span> <span class="st">"red"</span>), </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 정년</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">60</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">67</span>, <span class="at">y =</span> <span class="dv">950000</span>, <span class="at">label =</span> <span class="st">"법적 정년"</span>, <span class="at">color =</span> <span class="st">"red"</span>), </span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"대한민국 4년 후 인구구조 변화"</span>,</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">"2023년 현재와 4년후(2027년) 인구구조변화"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="sat_pop_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="sat_pop_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});</script>
+
+
+
+</body></html>

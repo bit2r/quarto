@@ -1853,5 +1853,26 @@
     "title": "디지털 글쓰기",
     "section": "4.2 지도",
     "text": "4.2 지도\n\n\nCode\nuniv_admin_tbl %&gt;% \n  leaflet() %&gt;%\n    addTiles() %&gt;%\n    addProviderTiles(providers$OpenStreetMap) %&gt;% \n    addMarkers(lng=~lon, lat=~lat,\n               popup = glue::glue(\"학교명: &lt;strong&gt;{univ_admin_tbl$학교명}&lt;/strong&gt;&lt;br&gt;\n                                  &middot 입학생: &lt;strong&gt;{univ_admin_tbl$입학생}&lt;/strong&gt;&lt;br&gt;\n                                  &middot 설립형태: {univ_admin_tbl$설립형태}&lt;br&gt;\n                                  &middot 설립일: {univ_admin_tbl$설립일}&lt;br&gt;\n                                  &middot 주소: {univ_admin_tbl$주소}\")) %&gt;% \n    addPolygons(data=univ_sf$geometry, fill=FALSE, stroke = TRUE, color = \"blue\")"
+  },
+  {
+    "objectID": "sat_pop.html",
+    "href": "sat_pop.html",
+    "title": "디지털 글쓰기",
+    "section": "",
+    "text": "행정안전부 주민등록 인구 및 세대현황 인구 데이터를 바탕으로 연도별 대학수학능력 시험 및 지원인원을 살펴보자. 2022년 12월말 기준 1세기준 인구수다.\n\n\nCode\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(gt)\nlibrary(gtExtras)\n\npop_raw &lt;- read_excel(\"data/suneung/202212_202212_연령별인구현황_연간.xlsx\", skip=3)\n\npop_tbl &lt;- pop_raw %&gt;% \n  janitor::clean_names(ascii = FALSE) %&gt;% \n  select(-연령구간인구수, -행정기관코드) %&gt;% \n  pivot_longer(cols = `x0세`:`x100세_이상`, names_to = \"나이\", values_to = \"인구수\") %&gt;% \n  rename(시도=행정기관, 총인구수=총_인구수) %&gt;% \n  mutate(총인구수 = parse_number(총인구수),\n         나이 = parse_number(나이),\n         인구수 = parse_number(인구수))\n\n\n\n\nCode\npop_tbl %&gt;% \n  filter(시도 == \"전국\") %&gt;% \n  ggplot(aes(x=나이, y=인구수)) +\n    geom_col() +\n    labs(title = \"2022년 말 기준 연령별 인구수\") +\n    scale_y_continuous(labels = scales::comma) +\n    geom_vline(xintercept = 19, color=\"red\") +\n    geom_label(label = \"수능나이\", aes(x = 24, y = 900000))"
+  },
+  {
+    "objectID": "sat_pop.html#년-시점기준",
+    "href": "sat_pop.html#년-시점기준",
+    "title": "디지털 글쓰기",
+    "section": "2.1 2023년 시점기준",
+    "text": "2.1 2023년 시점기준\n\n\nCode\ngo3 &lt;- read_excel(\"data/suneung/202212_202212_연령별인구현황_연간.xlsx\", sheet= \"고3_2023년\")\n\ngo3 %&gt;% \n  gt::gt() %&gt;% \n    gtExtras::gt_theme_538() %&gt;% \n     gt_highlight_rows(\n     rows = str_detect(학년, pattern = \"고등학교 3학년\"),\n     fill = \"lightgrey\",\n     bold_target_only = TRUE,\n     target_col = everything()\n   )  \n\n\n\n\n\n\n  \n    \n    \n      학년\n      출생연도\n      그때\n      현재\n    \n  \n  \n    초등학교 1학년\n2016년\n8세\n8세\n    초등학교 2학년\n2015년\n9세\n9세\n    초등학교 3학년\n2014년\n10세\n10세\n    초등학교 4학년\n2013년\n11세\n11세\n    초등학교 5학년\n2012년\n12세\n12세\n    초등학교 6학년\n2011년\n13세\n13세\n    중학교 1학년\n2010년\n14세\n14세\n    중학교 2학년\n2009년\n15세\n15세\n    중학교 3학년\n2008년\n16세\n16세\n    고등학교 1학년\n2007년\n17세\n17세\n    고등학교 2학년\n2006년\n18세\n18세\n    고등학교 3학년\n2005년\n19세\n19세\n    대학교 1학년\n2004년\n20세\n20세"
+  },
+  {
+    "objectID": "sat_pop.html#년-시점기준-1",
+    "href": "sat_pop.html#년-시점기준-1",
+    "title": "디지털 글쓰기",
+    "section": "2.2 2027년 시점기준",
+    "text": "2.2 2027년 시점기준\n\n\nCode\ngo3_2009 &lt;- read_excel(\"data/suneung/202212_202212_연령별인구현황_연간.xlsx\", sheet= \"고3_2027년\")\n\ngo3_2009 %&gt;% \n  gt::gt() %&gt;% \n    gtExtras::gt_theme_538() %&gt;% \n     gt_highlight_rows(\n     rows = str_detect(학년, pattern = \"고등학교 3학년\"),\n     fill = \"lightgrey\",\n     bold_target_only = TRUE,\n     target_col = everything()\n   )\n\n\n\n\n\n\n  \n    \n    \n      학년\n      출생연도\n      그때\n      현재\n    \n  \n  \n    초등학교 1학년\n2020년\n8세\n4세\n    초등학교 2학년\n2019년\n9세\n5세\n    초등학교 3학년\n2018년\n10세\n6세\n    초등학교 4학년\n2017년\n11세\n7세\n    초등학교 5학년\n2016년\n12세\n8세\n    초등학교 6학년\n2015년\n13세\n9세\n    중학교 1학년\n2014년\n14세\n10세\n    중학교 2학년\n2013년\n15세\n11세\n    중학교 3학년\n2012년\n16세\n12세\n    고등학교 1학년\n2011년\n17세\n13세\n    고등학교 2학년\n2010년\n18세\n14세\n    고등학교 3학년\n2009년\n19세\n15세\n    대학교 1학년\n2008년\n20세\n16세"
   }
 ]
