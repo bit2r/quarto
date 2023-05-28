@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "data/2023_3교시_영어영역_듣기평가_음원/*.mp3"
   render:
     - "*.qmd"
     - "!materials/workshop/"
@@ -81,6 +83,8 @@ website:
             text: "전국대학현황"
           - href: sat_pop.qmd
             text: "연령별 인구구조"
+          - href: sat_english.qmd
+            text: "영어듣기"
             
       - text: 관련 정보
         menu: 
