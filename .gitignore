@@ -48,5 +48,6 @@ vignettes/*.pdf
 
 data/map/HangJeongDong_ver20230401.geojson
 
+.env
 
 

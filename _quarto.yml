@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - "data/2023_3교시_영어영역_듣기평가_음원/*.mp3"
+    - "data/*.mp3"
   render:
     - "*.qmd"
     - "!materials/workshop/"
@@ -87,6 +88,8 @@ website:
             text: "수능영어 (2023)"
           - href: sat_english_solve.qmd
             text: "수능영어 (2023): 풀이"
+          - href: sat_english_practice.qmd
+            text: "수능영어 (2023): 훈련"            
             
       - text: 관련 정보
         menu: 
