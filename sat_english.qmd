@@ -1,8 +1,8 @@
 ---
 title: "디지털 글쓰기"
-subtitle: "영어듣기"
+subtitle: "수능영어 (2023)"
 description: |
-  데이터 과학자 학부모입장에서 챗GPT시대 대학에 들어갈 사람수를 살펴보자.
+  PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 자유로이 풀어보자.
 author:
   - name: 이광춘
     url: https://www.linkedin.com/in/kwangchunlee/

@@ -1,0 +1,615 @@
+---
+title: "디지털 글쓰기"
+subtitle: "수능영어 (2023): 풀이"
+description: |
+  PDF 파일 갇혀 불쌍하게 있던 수능영어 문제가 자유를 찾아 첫번째 행보가
+  수능영어 (2023) 출제문제를 기계가 풀어보는 것이다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 문제 풀이
+
+[ShareGPT: <https://sharegpt.com/c/p756hUN>]{.aside}
+
+## `Model: Default (GPT-3.5)` 사용
+
+:::{.panel-tabset}
+
+### 정답 프롬프트
+
+다음 문제를 푸세요. 과정은 필요없고 다음과 같이 출력하시면 됩니다.
+
+정답:
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. ① 도서관의 변경된 운영 시간을 안내하려고 ② 독후감 쓰기 대회의 일정을 공지하려고 ③ 책갈피 디자인 대회 참가를 독려하려고 ④ 기한 내 도서 반납을 촉구하려고 ⑤ 전자책 이용 방법을 설명하려고
+
+---
+
+정답: ③ 책갈피 디자인 대회 참가를 독려하려고
+
+### 설명 프롬프트
+
+다음 문제를 푸세요. 문제는 백틱(`) 세개로 감싸여 있고 다음과 같이 되어 있습니다.
+
+````yaml
+``` 
+문제
+```
+````
+
+출력:
+
+1. 영어지문 전체를 한글로 번역한다.
+2. 정답을 제시하고 이유도 설명한다.
+
+
+````yaml
+```
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. ① 도서관의 변경된 운영 시간을 안내하려고 ② 독후감 쓰기 대회의 일정을 공지하려고 ③ 책갈피 디자인 대회 참가를 독려하려고 ④ 기한 내 도서 반납을 촉구하려고 ⑤ 전자책 이용 방법을 설명하려고
+```
+````
+
+
+---
+
+1. 영어지문 전체를 한글로 번역한다.
+
+````yaml
+```
+M: 안녕하세요, 록우드 고등학교 학생 여러분. 여러분의 학교 도서관 책사서인 윌킨스 선생님입니다. 학교 도서관에서는 현재 책갈피 디자인 대회를 개최하고 있다는 것을 여러분들도 알고 계실 것 같습니다. 모든 학년의 학생들이 이 대회에 참가하도록 장려하고 있습니다. 우승한 디자인은 책갈피로 제작되어 도서관 방문객들에게 배포될 것입니다. 우리는 또한 다양한 상품도 제공하고 있습니다. 그러니 이 좋은 기회를 놓치지 마세요. 책갈피 디자인 대회의 등록 기간은 이번 주 금요일에 마감되므로, 신청을 제출하기 위해 학교 도서관을 방문하시기 바랍니다. 여러분의 창의력과 재능을 발휘하기 위해 참여해 주세요.
+```
+````
+
+2. 정답을 제시하고 이유도 설명한다.
+
+정답: ③ 책갈피 디자인 대회 참가를 독려하려고
+
+이유: 지문에서 남자가 하는 말의 목적은 책갈피 디자인 대회에 대한 참가를 독려하는 것입니다. 남자는 학교 도서관에서 개최되는 책갈피 디자인 대회에 대해 언급하며, 모든 학년의 학생들이 대회에 참가하도록 장려하고 있음을 알려줍니다. 우승한 디자인이 책갈피로 제작되어 도서관 방문객들에게 배포될 것이며, 다양한 상품도 제공된다고 언급합니다. 따라서, 이 말의 목적은 책갈피 디자인 대회에 대한 참가를 독려하는 것입니다.
+
+### 예제 프롬프트
+
+유사한문제를 3개 작성해주세요. 문제는 5지선다형 문제로 정답도 제시하여 주세요.
+
+---
+
+문제 1:
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Attention, students. I'm excited to announce that the school will be hosting a talent show next month. We are looking for talented individuals or groups who can showcase their skills on stage. Whether you're a singer, dancer, musician, or have any other talent, this is your chance to shine. The talent show will be a great opportunity to share your abilities with the school community. So start preparing your performances and get ready to impress!
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. <br>
+① 동아리 활동에 대한 안내를 하려고 <br>
+② 학교 규칙을 알리려고 <br>
+③ 재학생증 발급 절차를 안내하려고 <br>
+④ 공연 참가자를 모집하려고 <br>
+⑤ 선생님들의 출결 관리를 부탁하려고 <br>
+
+정답: ④ 공연 참가자를 모집하려고
+
+문제 2:
+
+다음을 듣고, 여자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+W: Good morning, everyone. I'd like to inform you that the school newspaper club is currently accepting new members. If you're interested in journalism, writing articles, or graphic design, this is a fantastic opportunity for you. By joining the club, you can contribute to our school's newspaper and gain valuable experience in media production. So, if you're passionate about storytelling and want to be part of a creative team, come and join us!
+
+다음을 듣고, 여자가 하는 말의 목적으로 가장 적절한 것을 고르시오. <br>
+① 영어 스터디 그룹을 만들기 위해 멤버를 모집하려고 <br>
+② 방과 후 동아리 활동에 대한 안내를 하려고 <br>
+③ 독서 대회 일정을 공지하려고 <br>
+④ 학교 신문사 동아리에 가입을 권유하려고 <br>
+⑤ 기부 캠페인 참여를 호소하려고 <br>
+
+정답: ④ 학교 신문사 동아리에 가입을 권유하려고
+
+문제 3:
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Ladies and gentlemen, I'd like to inform you that the school is organizing a fundraising event next week. We are raising money to support a local charity that helps underprivileged children. There will be various activities, including a bake sale, a talent show, and a raffle. We encourage everyone to participate and contribute to this meaningful cause. Let's come together as a community and make a difference in the lives of those in need.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장적절한 것을 고르시오. <br>
+① 여름방학 동안 개최되는 학습 캠프에 대한 안내를 하려고 <br>
+② 지난 주간 동아리 활동 내역을 공유하려고 <br>
+③ 지역 환경 보호 운동에 참여를 독려하려고 <br>
+④ 과학 박람회 일정을 공지하려고 <br>
+⑤ 가을 체육대회 참가 신청을 받으려고 <br>
+
+정답: ③ 지역 환경 보호 운동에 참여를 독려하려고
+
+:::
+
+
+## `Model: GPT-4` 사용
+
+[ShareGPT: <https://sharegpt.com/c/DapAlmL>]{.aside}
+
+:::{.panel-tabset}
+
+### 설명 프롬프트
+
+다음 문제를 푸세요. 문제는 백틱(`) 세개로 감싸여 있고 다음과 같이 되어 있습니다.
+
+````yaml
+``` 
+문제
+```
+````
+
+출력:
+
+1. 영어지문 전체를 한글로 번역한다.
+2. 정답을 제시하고 이유도 설명한다.
+
+
+````yaml
+```
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. ① 도서관의 변경된 운영 시간을 안내하려고 ② 독후감 쓰기 대회의 일정을 공지하려고 ③ 책갈피 디자인 대회 참가를 독려하려고 ④ 기한 내 도서 반납을 촉구하려고 ⑤ 전자책 이용 방법을 설명하려고
+```
+````
+
+---
+
+1. 영어지문 전체를 한글로 번역한다.
+
+```
+M: 안녕하세요, 록우드 고등학교 학생 여러분. 이곳은 학교 도서관 사서인 Mr. Wilkins입니다. 우리 학교 도서관에서 책갈피 디자인 대회를 개최한다는 사실을 이미 알고 계실 겁니다. 저는 모든 학년의 학생들이 이 대회에 참여하길 권장합니다. 우승한 디자인들은 책갈피로 만들어져 도서관 방문자에게 배포될 것입니다. 또한 다양한 다른 상품들도 준비되어 있습니다. 그러니 이 좋은 기회를 놓치지 마세요. 책갈피 디자인 대회 등록 기간이 이번 금요일에 종료되니, 학교 도서관에 방문하여 신청서를 제출하시기 바랍니다. 여러분의 창의력과 재능을 선보일 수 있는 이 기회에 참여하세요.
+```
+
+2. 정답을 제시하고 이유도 설명한다.
+
+정답: ③ 책갈피 디자인 대회 참가를 독려하려고
+
+이유: Mr. Wilkins가 학생들에게 말하고 있는 내용은 학교 도서관에서 개최하는 책갈피 디자인 대회에 대한 것이다. 그는 모든 학년의 학생들이 이 대회에 참여하도록 권장하고 있으며, 대회에 대한 정보와 마감일, 그리고 어떻게 참여할 수 있는지에 대해 설명하고 있다. 따라서 그의 목적은 책갈피 디자인 대회 참가를 독려하는 것이다.
+
+### 예제 프롬프트 
+
+유사한문제를 3개 작성해주세요. 문제는 5지선다형 문제로 정답도 제시하여 주세요.
+
+---
+
+문제1:
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hello, all students of Pineville Middle School. This is your school principal, Mr. Smith. I'm pleased to announce that we are organizing a school-wide science fair. We invite all students to participate, regardless of your grade. The top projects will be awarded prizes and will have the opportunity to be presented at the district science fair. So don't miss out on this exciting opportunity. The deadline for project submission is next Monday, so please ensure to prepare and submit your projects on time. Let's all participate and showcase our scientific talents.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. <br> 
+① 학교 식당의 새로운 메뉴를 알리려고 <br> 
+② 학부모 회의 일정을 공지하려고 <br> 
+③ 과학 박람회 참가를 독려하려고 <br> 
+④ 중간고사 시험 일정을 공지하려고 <br> 
+⑤ 학교 체육대회 일정을 알리려고 <br> 
+
+정답: ③ 과학 박람회 참가를 독려하려고
+
+문제2:
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hi there, folks of the city. This is your local mayor. It is my pleasure to share that our city park will host a community cleanup event this weekend. We encourage all citizens to join in this environmental initiative. All gathered trash will be appropriately recycled or disposed of, and participants will be given a small token of appreciation. Remember, the event begins at 9 am this Saturday. Let's come together and make our city cleaner and greener.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. <br> 
+① 새로 개장하는 도서관을 홍보하려고 <br> 
+② 도시 공원 청소 행사 참가를 독려하려고 <br> 
+③ 도시의 범죄율 문제에 대해 설명하려고 <br> 
+④ 시민들에게 투표를 촉구하려고 <br> 
+⑤ 도시 교통 체계에 대한 변화를 알리려고 <br> 
+
+정답: ② 도시 공원 청소 행사 참가를 독려하려고
+
+문제3:
+
+다음을 듣고, 여자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+F: Good afternoon, everyone. I'm the director of our community center. I want to inform you all that we are starting a new yoga class from next week. The classes will be held twice a week and are open to all ages. Taking part in yoga has many health benefits, so I highly encourage everyone to participate. Registration ends this Sunday, so make sure to register if you are interested. Don't miss this chance to embrace a healthier lifestyle.
+
+다음을 듣고, 여자가 하는 말의 목적으로 가장 적절한 것을 고르시오. <br> 
+① 커뮤니티 센터의 청소 봉사를 모집하려고 <br> 
+② 커뮤니티 센터의 보건 세미나를 알리려고 <br> 
+③ 요가 수업 참가를 독려하려고 <br> 
+④ 커뮤니티 센터의 새로운 이사장을 소개하려고 <br> 
+⑤ 선거용지를 배포하려고 <br> 
+
+정답: ③ 요가 수업 참가를 독려하려고
+
+:::
+
+## 구글 바드
+
+:::{.panel-tabset}
+
+### 정답 프롬프트
+
+다음 문제를 푸세요. 과정은 필요없고 다음과 같이 출력하시면 됩니다.
+
+정답:
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. ① 도서관의 변경된 운영 시간을 안내하려고 ② 독후감 쓰기 대회의 일정을 공지하려고 ③ 책갈피 디자인 대회 참가를 독려하려고 ④ 기한 내 도서 반납을 촉구하려고 ⑤ 전자책 이용 방법을 설명하려고
+
+---
+
+정답은 ③입니다.
+
+남자는 학생들에게 책갈피 디자인 대회에 참가하도록 독려하고 있습니다. 그는 대회의 일정과 우승자에게 주어지는 상금에 대해서도 설명하고 있습니다. 따라서 그의 말의 목적은 책갈피 디자인 대회 참가를 독려하는 것입니다.
+
+### 설명 프롬프트
+
+다음 문제를 푸세요. 문제는 백틱(`) 세개로 감싸여 있고 다음과 같이 되어 있습니다.
+
+````yaml
+``` 
+문제
+```
+````
+
+출력:
+
+1. 영어지문 전체를 한글로 번역한다.
+2. 정답을 제시하고 이유도 설명한다.
+
+
+````yaml
+```
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.
+M: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.
+
+다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. ① 도서관의 변경된 운영 시간을 안내하려고 ② 독후감 쓰기 대회의 일정을 공지하려고 ③ 책갈피 디자인 대회 참가를 독려하려고 ④ 기한 내 도서 반납을 촉구하려고 ⑤ 전자책 이용 방법을 설명하려고
+```
+````
+
+---
+
+네, 알겠습니다.
+
+- 영어지문 전체를 한글로 번역합니다.
+
+안녕하세요, Lockwood 고등학교 학생들. 저는 학교 사서인 Wilkins 선생님입니다. 우리 학교 도서관에서 책갈피 디자인 대회를 개최하고 있다는 것을 알고 계실 것입니다. 저는 모든 학년의 학생들이 대회에 참가하도록 권장합니다. 우승 디자인은 책갈피로 만들어져 도서관 방문객들에게 배포될 것입니다. 우리는 또한 다양한 다른 상품을 제공합니다. 그러니 이 멋진 기회를 놓치지 마세요. 책갈피 디자인 대회 등록 기간은 이번 금요일로 끝나므로 도서관을 방문하여 신청서를 제출하십시오. 여러분의 창의성과 재능을 보여주기 위해 와서 참가하십시오.
+
+- 정답을 제시하고 이유도 설명합니다.
+
+정답은 ③입니다. 남자는 학생들에게 책갈피 디자인 대회에 참가하도록 독려하고 있습니다. 그는 대회의 일정과 우승자에게 주어지는 상금에 대해서도 설명하고 있습니다. 따라서 그의 말의 목적은 책갈피 디자인 대회 참가를 독려하는 것입니다.
+
+### 예제 프롬프트
+
+유사한문제를 3개 작성해주세요. 문제는 5지선다형 문제로 정답도 제시하여 주세요.
+
+---
+
+
+네, 다음은 5지선다형 문제 3개입니다.
+
+1. 지구의 표면적은 약 몇 제곱킬로미터인가? (A) 5천만 km2 (B) 1억 km2 (C) 5억 km2 (D) 10억 km2 (E) 50억 km2
+
+정답: (C) 10억 km2
+
+2. 태양의 질량은 태양계의 다른 모든 천체의 질량을 합친 것보다 약 몇 배가 더 무거운가? (A) 10배 (B) 100배 (C) 1000배 (D) 10000배 (E) 100000배
+
+정답: (D) 10000배
+
+3. 지구의 자전축은 약 몇도 기울어져 있는가? (A) 23도 (B) 24도 (C) 25도 (D) 26도 (E) 27도
+
+정답: (A) 23도
+
+이 문제들이 도움이 되었기를 바랍니다.
+
+### 화면캡쳐
+
+:::{layout-ncol=3}
+
+![](images/bard_english_01.jpg)
+
+![](images/bard_english_02.jpg)
+
+![](images/bard_english_03.jpg)
+
+:::
+
+:::
+
+
+# 듣기문제 풀이
+
+## 한문제 풀이
+
+```{python}
+# ! pip install pymupdf
+
+import fitz
+
+problem_file="data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf"
+
+problem_list = []
+
+with fitz.open(problem_file) as doc:
+  for page in doc:
+    page_text = page.get_text()
+    problem_list.append(page_text)
+
+# problem_list
+```
+
+### 문제지
+
+```{r}
+library(tidyverse)
+library(reticulate)
+
+problems_split <- map(py$problem_list, str_split, pattern = "\n(?=\\b\\d{1,2}\\.\\s+?\\b)") %>% 
+  unlist %>% map_chr(str_trim)
+
+problems_tbl <- problems_split[str_detect(problems_split, pattern = "^(?=\\b\\d{1,2}\\.\\s+?\\b)")] %>% 
+  enframe(name = "문항", value = "문제")
+
+listen_raw <- problems_tbl %>% 
+  filter(문항 <= 15)
+
+```
+
+### 듣기 대본
+
+```{r}
+library(pdftools)
+library(gsubfn)
+
+sources <- pdftools::pdf_text(pdf = "data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf")
+
+# sources_squish <- map_chr(sources, str_squish)
+# sources_clean <- map_chr(sources_squish, str_extract, pattern = "(\\d{1,2}\\.\\s+).*")
+# map_chr(sources_clean, str_remove, pattern = "-\\s+\\d{1,2}\\s+-$")
+
+replacement <- function(x) {
+  if (x == "W:") {
+    return("\n\nW:")
+  } else if (x == "M:") {
+    return("\n\nM:")
+  }
+}
+
+sources_text <- map_chr(sources, str_squish) %>% 
+  map_chr(str_extract, pattern = "(\\d{1,2}\\.\\s+).*") %>% 
+  map_chr(str_remove, pattern = "-\\s+\\d{1,2}\\s+-$") %>% 
+  map_chr(gsubfn, pattern = "(W:|M:)", replacement = replacement) %>% 
+  map_chr(str_trim) %>% 
+  map_chr(str_c, "\n")
+
+# gsubfn("(W:|M:)", replacement, sources_text)
+sources_text
+```
+
+### 정답
+
+```{python}
+import pandas as pd
+import tabula
+answer_file = "data/2023_3교시_영어영역_정답표.pdf"
+answer = tabula.read_pdf(answer_file, pages='all')
+```
+
+## 홀수형
+
+```{r}
+odd_1 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(1:3) %>% 
+  set_names(c("문항번호", "정답", "배점"))
+
+odd_2 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(4:6) %>% 
+  set_names(c("문항번호", "정답", "배점"))
+
+answer_tbl <- bind_rows(odd_1, odd_2) %>% 
+  filter(문항번호<=15)
+```
+
+
+### 대본과 문제지
+
+:::::{.column-page}
+
+```{r}
+library(gt)
+library(gtExtras)
+
+listen_tbl <- listen_raw %>% 
+  mutate(대본 = sources_text[1:15]) %>% 
+  bind_cols(answer_tbl %>% select(-문항번호))
+
+listen_tbl %>% 
+  gt::gt() %>% 
+    gt_theme_538()
+```
+
+:::::
+
+# 문제풀이
+
+## 한문제 풀이
+
+```{r}
+library(bitGPT)
+
+question_prompt <- glue::glue("다음 문제를 푸세요. 과정은 필요없고 다음과 같이 출력하시면 됩니다.\n",  "정답:\n", "{listen_tbl$대본[1]}", "\n", "{listen_tbl$문제[1]}") %>% 
+  as.character(.)
+
+answer <- chat_completion(
+  messages = question_prompt,
+  model = "gpt-3.5-turbo",
+  temperature = 0,
+  top_p = 1,
+  n = 1,
+  stream = FALSE,
+  stop = NULL,
+  max_tokens = NULL,
+  presence_penalty = 0,
+  frequency_penalty = 0,
+  logit_bias = NULL,
+  user = NULL,
+  type = "messages",
+  openai_api_key = Sys.getenv("OPENAI_API_KEY")
+)
+
+parsed_answer <- str_extract(answer[[2]]$content, "[①-⑨]") 
+
+# 변환기--
+
+old_chars <- "①②③④⑤"
+new_chars <- "12345"
+
+result <- chartr(old_chars, new_chars, parsed_answer)
+
+result
+```
+
+
+## 함수
+
+```{r}
+get_answer <- function(problem_num = 1) {
+  
+  cat("\n ....", problem_num, " ... 풀이 중\n")
+  
+  question_prompt <- glue::glue("다음 문제를 푸세요. 과정은 필요없고 다음과 같이 출력하시면 됩니다.\n",  "정답:\n", "{listen_tbl$대본[problem_num]}", "\n", "{listen_tbl$문제[problem_num]}") %>% 
+  as.character(.)
+
+  answer <- chat_completion(
+    messages = question_prompt,
+    model = "gpt-3.5-turbo",
+    temperature = 0,
+    top_p = 1,
+    n = 1,
+    stream = FALSE,
+    stop = NULL,
+    max_tokens = NULL,
+    presence_penalty = 0,
+    frequency_penalty = 0,
+    logit_bias = NULL,
+    user = NULL,
+    type = "messages",
+    openai_api_key = Sys.getenv("OPENAI_API_KEY")
+  )
+  
+  parsed_answer <- str_extract(answer[[2]]$content, "[①-⑨]") 
+  
+  # 변환기--
+  
+  old_chars <- "①②③④⑤"
+  new_chars <- "12345"
+  
+  result <- chartr(old_chars, new_chars, parsed_answer)
+  
+  Sys.sleep(time = runif(1, min=1, max=2))
+  
+  return(result)
+}
+
+cat("2번 문제 정답: ", get_answer(2), "\n")
+```
+
+
+## 자동풀이
+
+```{r}
+#| eval: false
+
+chatGPT_tbl <- listen_tbl %>% 
+  mutate(기계풀이 = map_chr(문항, get_answer))
+
+chatGPT_tbl %>% 
+  write_rds("data/chatGPT_english_solution.rds")
+```
+
+### 총 득점
+
+챗GPT가 수능문제 풀이 결과를 살펴보자. 이미지(4번), 표(10번)를 제외하고 6번문제만 틀리고 다른 모든 문제는 맞췄다.
+
+```{r}
+library(gt)
+
+chatGPT_tbl <- 
+  read_rds("data/chatGPT_english_solution.rds")
+
+chatGPT_score <- chatGPT_tbl %>% 
+  mutate(채점 = ifelse(정답 == 기계풀이, 배점, 0)) 
+
+chatGPT_score %>% 
+  summarise(만점 = sum(배점),
+            기계득점 = sum(채점, na.rm=TRUE)) %>% 
+  gt() %>% 
+    gt_theme_538() %>% 
+    tab_header(
+      title = "챗GPT 수능영어문제 풀이",
+      subtitle = "OpenAI gpt-3.5-turbo 엔진"
+    ) %>% 
+    tab_footnote(
+      footnote = "ChatGPT 2 문제 (이미지와 표) 제외 기준",
+      locations = cells_body(columns = 기계득점, rows = 1),
+      placement = "right"
+    )  
+```
+
+
+### 풀이결과
+
+각 문제별로 풀이 결과를 살펴보자.
+
+:::::{.column-page}
+
+```{r}
+chatGPT_score %>% 
+  gt::gt() %>% 
+    sub_missing(missing_text = "-") %>% 
+    gt_theme_538() %>% 
+    tab_footnote(
+      footnote = "ChatGPT 3.5 결과가 없음(이미지와 표)",
+      locations = cells_body(columns = 채점, rows = is.na(채점)),
+      placement = "right"
+    ) %>% 
+  tab_style(
+    style = list(cell_fill(color = "lightblue")),
+    locations = cells_body(columns = everything(), rows = is.na(채점))
+  )  
+```
+
+:::::
+
+
