@@ -1,0 +1,594 @@
+---
+title: "디지털 글쓰기"
+subtitle: "`bitPublish` 참조 안내서"
+description: |
+  `bitPublish` 디지털 출판을 원활하게 할 수 있는 `bitPublish` 글쓰기 주요기능을 참조 안내서로 정리한다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: false
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+# 용지규격
+
+현재 bitPublish의 기본 페이지 레이아웃\index{페이지 레이아웃} 설정은 $4\times6$ 배판으로 설계되었습니다. $4\times6$ 배판 `판형`\index{판형}의 레이아웃 설정을 변경하려면, `_extensions/bit2r/bitPublish/_extension.yml` 파일의 다음 행들을 수정합니다. `LaTeX`의 `geometry`\index{geometry} 패키지를 사용합니다.
+
+[[Booktory 용지규격](http://www.booktory.com.cn/prm/print-in2.asp)]{.aside}
+
+:::{.panel-tabset}
+
+## $4\times6$ 배판
+
+학위논문, 팬북 등
+
+```{yaml}
+  geometry:       # 4x6 배판 도서를 위한 설정
+    - paper=a4paper
+    - layoutwidth=190mm
+    - layoutheight=260mm
+    - layouthoffset=10mm
+    - layoutvoffset=18.5mm
+    - showcrop
+    - top=20mm
+    - headsep=10mm             
+    - bottom=30mm
+    - footskip=15mm                 
+    - left=25mm
+    - right=25mm
+    - centering   
+```
+
+## 국배판(A4)
+
+학원교재
+
+## 국배배판(A3)
+
+포스터 등
+
+## 신국판
+
+소설, 수필, 자서전, 전문서적 등
+
+## 크라운판
+
+소설, 수필, 자서전, 전문서적 등
+
+## Letter
+
+해외대학 학위논문, 해외서적 등
+
+:::
+
+
+# 글꼴
+
+bitPublish는 전자책이 아닌 종이에 출력되는 책의 저작을 목적으로 만들어졌기 때문에, 폰트의 선택에서 `TTF`(`True Type Font`)\index{TTF}\index{True Type Font}가 아닌 `OTF`(`Open Type Font`)\index{OTF}\index{Open Type Font}를 선택하였습니다.
+
+:::{.callout-warning}
+
+#### 폰트 선정의 기준
+
+- 출판 시 발생할 라이센스 이슈
+    - **모든 폰트를 상업적으로 이용이 가능한 폰트로 선정**
+    - serif[^serif] 영어 폰트인 Times New Roman\index{Times New Roman} 저작권의 이슈
+        - 가독성이 뛰어난 범용적인 세리프체로 영문 에세이와 학위 논문의 표준 폰트로 자리잡았으나
+        - 상업용으로 쓸 땐 저작권 면책 조건을 확인해야 함 
+    - sans-serif[^sans-serif] 영어 폰트인 Helvetica\index{Helvetica} 저작권의 이슈
+        - 대표적인 산세리프 글꼴로 20세기에 널리 쓰였음  
+- 출판 인쇄물의 미적 완성도
+    - 가독성, 심미성 등  
+
+:::
+
+:::{.panel-tabset}
+
+#### 한국어 글꼴
+
+- serif 폰트:
+    - **KoPubWorld바탕체_Pro**
+- sans-serif 폰트:
+    - **KoPubWorld돋움체_Pro**
+    
+#### 영어 글꼴
+
+- serif 폰트:
+    - Times New Roman 대체 폰트
+    - **STIX Two Text**
+- sans-serif 폰트:
+    - **Nimbus Sans L**
+   
+#### 한자 글꼴
+
+- **KoPubWorld돋움체_Pro**
+ 
+#### 코딩 글꼴
+
+- mono space 폰트
+    - **D2Coding**
+       - 영어/한국어 모두 동일한 폰트 사용
+       - 영어 mono space\index{mono space}와 한국어 mono space를 혼용하면 자간격이 틀어짐
+
+#### 수학 글꼴
+
+- STIX Two Math
+
+#### R 그래픽스 글꼴
+
+- 한국어 폰트
+    - **나눔스퀘어**
+- 영어 폰트
+    - **Nimbus Sans L**
+
+[^serif]: serif 폰트는 바탕체 폰트를 의미합니다. 글자의 획에서 부리처럼 날카롭게 튀어나온 부분을 `세리프`(`serif`)\index{세리프}\index{serif}라 합니다. 영어는 `로만체`, 한국어의 경우에는 과거에 `명조체`라는 이름으로 통용되던 `바탕체`\index{바탕체} 서체를 의미합니다.
+[^sans-serif]: serif 폰트는 `돋움체`\index{돋움체} 폰트를 의미합니다. 프랑스어로 sans는 "~가 없이"라는 뜻으로, `sans-serif`\index{sans-serif}는 세리프가 없는 서체입니다. 한국어의 경우에는 과거에 `고딕체`라는 이름으로 통용되던 `돋움체`\index{돋움체} 서체를 의미합니다.
+
+:::
+
+:::{.callout-warning}
+
+#### 주의사항
+
+모든 폰트는 \_extensions/bit2r/bitPublish/fonts 디렉토리에 위치합니다. 그래서 따로 설치할 필요도 없고, 이미 설치된 폰트도 중복으로 위치하게 됩니다. 그리고 `KoPubWorld바탕체_Pro`와 `KoPubWorld돋움체_Pro` 폰트를 사용하기 위해서는 `한국출판인회의` 홈페이지인 https://forms.gle/aQU7b3EoaF53zMKaA에 사용자 정보를 등록 후 무료로 사용하실 수 있습니다. 이 경우에는 https://www.kopus.org/wp-content/uploads/2021/04/서체_라이센스.pdf 페이지의 라이센스를 일독하시기 바랍니다.
+:::
+
+# 머리글 바닥글
+
+`머리글`(`header`)\index{머리글}\index{header}과 `바닥글`(`footer`)\index{바닥글}\index{footer}는 `fancyhdr`\index{fancyhdr} 패키지를 사용해서 정의하였습니다.
+
+\_extensions/bit2r/bitPublish/_extension.yml 파일에 다음과 같이 설정되어 있습니다.
+
+```{tex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+중간 생략
+
+\fancyhf{}
+\fancyhead[EL]{\changesize \numberfont --- bitPublish를 이용하여}
+\fancyhead[OR]{\changesize \numberfont 한글 책 조판하기 ---}
+\fancyfoot[EL]{{\pagefont\thepage}{\hskip4mm}{\changesize \leftmark}}
+\fancyfoot[OR]{{\changesize \rightmark}{\hskip4mm}{\pagefont\thepage}}
+```
+
+만약에 머리글과 바닥글의 모양을 바꾸려면 직접 LaTeX 스크립트를 수정하면 됩니다. 책의 제목을 바꾸기 위해서는 `fancyhead`\index{fancyhead}의 `EL`\index{EL}과 `OR`\index{OR}을 변경하면 됩니다.
+
+# `bitPublish` 서식
+
+`bitPublish`는 본문에서 예제, 연습문제, 주의, 정보, 인용 등을 표현할 수 있는 여러 LaTeX 서식을 지원합니다. 이 서식은 다음과 같은 구조의 LaTeX `환경`\index{환경}(`enviroment`\index{enviroment})으로 제공합니다.
+
+```{tex}
+\begin{enviroment name}[optional argument]{main argument}
+  text of enviroment
+\end{enviroment name}
+```
+
+또한 다음과 같은 LaTeX `명령`(`command`)으로도 제공합니다.
+
+```{tex}
+\command name[optional argument]{main argument} 
+```
+
+## 멀티 아웃 포맷
+
+bitPublish 서식은 전자출판이 아닌, 종이로 된 서책의 출판을 염두에 둔 것이라서 LaTeX을 기반으로 서식을 정의합니다. 그러나 이 경우에는 종이 서책 출판을 위한 PDF 포맷은 지원하지만 전자책 위한 HTML 포맷을 지원하지 못하는 단점이 있습니다.  
+
+bitPublish 초기 버전에서 대부분의 서식은 LaTeX 출력을 지원하지만, 전자책을 위한 HTML 출력도 동시에 지원하는 `멀티 아웃 포맷`(`multiple output formats`)\index{멀티 아웃 포맷}\index{multiple output formats}으로 업그레이드하려 합니다. 
+
+## 사용자 정의 블록
+
+bitPublish 서식의 대표적인 것에 `커스텀 블록`(`custom blocks`)\index{사용자 정의 블록}\index{custom blocks}[@rmcook]이 있습니다. 사용자 정의 블록은 보고서나 책의 일부 콘텐츠를 블록으로 정의하여 본문보다 돋보이게 하여 독자가 핵심 포인트를 쉽게 이해할 수 있도록 주목도를 높이는 서식입니다. 
+
+사용자 정의 블록은 `팬독`의 `fenced Div blocks` 기능을 사용합니다. 이 기능은 Div 블록을 HTML과 LaTeX 모두로 변환해줍니다.
+
+다음의 `팬독` 사용자 정의 블록은,
+
+```{md}
+::: {.verbatim data-latex=""}
+We show some _verbatim_ text here.
+:::
+```
+
+LaTeX 출력일 경우에는 다음과 같이 변환하고,
+
+```{tex}
+\begin{verbatim}
+We show some \emph{verbatim} text here.
+\end{verbatim}
+```
+
+HTML 출력일 경우에는 다음과 같이 변환해 줍니다.
+
+```{html}
+<div class="verbatim">
+We show some <em>verbatim</em> text here.
+</div>
+```
+
+## 정보 블록
+
+정보 블록\index{정보 블록}은 멀티 아웃 포맷을 지원하는데, 다음과 같은 네 개의 유형을 지원합니다. 네 개의 유형은 HTML과 LaTeX에서 우주 똑같은 모양은 아니지만, 거의 유사한 모습으로 출력됩니다.
+
+- 정보 
+    - information
+- 주의
+    - caution
+- 경고
+    - warning
+- 팁
+    - tip
+   
+멀티 아웃 포맷을 지원하기 위한 `팬독` 사용자 정의 블록의 구문은 다음과 같습니다. 그리고 정보 블록에 들어갈 내용은 마크다운 문법으로 기술해야 합니다.
+
+```{md}
+::: {.infobox .<type> data-latex="{<type>}{<title>}"}
+text of infobox
+:::
+```    
+
+
+## 정보 블록
+
+본문에서 서술하는 것보다 **유용한 정보**를 기술하는 데 사용하는 `정보`(`information`) `블록`\index{정보 블록!정보 블록} 블록은 다음처럼 사용합니다. 
+
+블록 청크의 옵션 중에 `data-latex`는 LaTeX에 전달하는 인수입니다. 정보(information)를 의미하는 .information와 {information}가 중복으로 기술된 것은, 멀티 아웃 포맷을 위한 것이므로 반드시 이 형식을 따라야 합니다.
+
+```{md}
+::: {.infobox .information data-latex="{information}{information의 용도}"}
+information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
+짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+환경의 내부에는 **Markdown**으로 문장을 기술합니다.
+:::
+```
+
+::: {.infobox .information data-latex="{information}{information의 용도}"}
+information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
+짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+환경의 내부에는 **Markdown**으로 문장을 기술합니다.
+:::
+
+다음은 정보 블록에서 제목을 생략한 예제입니다. 
+
+```{md}
+::: {.infobox .information data-latex="{information}{}"}
+information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
+짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+환경의 내부에는 **Markdown**으로 문장을 기술합니다.
+:::
+```
+
+::: {.infobox .information data-latex="{information}{}"}
+information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
+짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+환경의 내부에는 **Markdown**으로 문장을 기술합니다..
+:::
+
+infobox를 팬독 블록으로 정의할 경우 HTML에서는 제목이 출력되지 않는 버그[^bug]가 있습니다. 이 경우에는 다음처럼 기술하면 재목이 출력되는 멀티 아웃 포맷이 가능합니다. 즉, 본문에서 제목을 표현하는 방법입니다.
+
+[^bug]: 원인을 알고 있으나 저자의 웹 프로그래밍 기술적인 한계로 해결하지 못했음
+
+```{md}
+::: {.infobox .information data-latex="{information}{}"}
+**information의 용도**
+
+information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
+짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+환경의 내부에는 **Markdown**으로 문장을 기술합니다.
+:::
+```
+
+::: {.infobox .information data-latex="{information}{}"}
+**information의 용도**
+
+information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
+짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+환경의 내부에는 **Markdown**으로 문장을 기술합니다.
+:::
+
+또 하나의 방법은 bitPublish가 제공하는 사용자 정의 R 함수 custom\_block()를 사용하는 방법이 있습니다.
+
+```{md}
+custom_block(msg, type, title)
+```
+
+```{r init2, include=FALSE}
+#| eval: false
+# source(here::here("_extensions", "bitPublish", "init_environments.R"))
+source(here::here("_extensions", "bit2r", "bitPublish", "init_environments.R"))
+```
+
+이 방법도 멀티 아웃 포맷을 지원합니다. 다음과 같은 `knitr` 청크를 이용합니다.
+
+
+```{{r}}
+#| echo: false
+#| results: asis
+custom_block("
+**information**은 본문에서 서술하는 것보다 **유용한 정보**를 기술하는 데 사용합니다. 
+파란색 테두리와 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+", title = "information의 용도", type = "information")
+```
+
+사용자 정의 함수인 custom\_block()를 사용하기 위해서는 사전에 다음처럼 init_environments.R 파일을 로드해야 합니다.
+
+
+```{{r}}
+#| label: init
+#| include: false
+source(here::here("_extensions", "bit2r", "bitPublish", "init_environments.R"))
+```
+
+
+### 주의 블록
+
+당부하고 싶은 **주의사항**을 기술하는 데 사용하는 `주의`(`caution`) `블록`\index{정보 블록!주의 블록}은 다음처럼 사용합니다. 
+
+```{md}
+::: {.infobox .caution data-latex="{caution}{}"}
+**caution의 용도**
+
+**caution**은 당부하고 싶은 **주의사항**을 기술하는 데 사용합니다. 
+주황색 테두리에 주의를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+:::
+```
+
+::: {.infobox .caution data-latex="{caution}{}"}
+**caution의 용도**
+
+**caution**은 당부하고 싶은 **주의사항**을 기술하는 데 사용합니다. 
+주황색 테두리에 주의를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+:::
+
+
+### 경고 블록
+
+주의사항보다 더 치명적인 문제를 야기할 **경고**를 기술하는 데 사용하는 `경고`(`warning`) `블록`\index{정보 블록!경고 블록}은 다음처럼 사용합니다. 
+
+```{md}
+::: {.infobox .warning data-latex="{warning}{}"}
+**warning의 용도**
+
+**warning**은 주의사항보다 더 치명적인 문제를 야기할 **경고**를 기술하는 데 사용합니다. 
+붉은색 테두리에 폭탄을 표현한 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+:::
+```
+
+
+::: {.infobox .warning data-latex="{warning}{}"}
+**warning의 용도**
+
+**warning**은 주의사항보다 더 치명적인 문제를 야기할 **경고**를 기술하는 데 사용합니다. 
+붉은색 테두리에 폭탄을 표현한 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+:::
+
+
+### 팁 블록
+
+유용하게 사용할 수 있는 **아이디어나 비법**을 설명하는 데 사용하는 `팁`(`tip`) `블록`\index{정보 블록!팁 블록}은 다음처럼 사용합니다. 
+
+```{md}
+::: {.infobox .tip data-latex="{tip}{}"}
+**tip의 용도**
+
+**tip**은 유용하게 사용할 수 있는 **아이디어나 비법**을 기술하는 데 사용합니다. 
+초록색 테두리에 아이디어를 나타내는 전구 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+:::
+```
+
+::: {.infobox .tip data-latex="{tip}{}"}
+**tip의 용도**
+
+**tip**은 유용하게 사용할 수 있는 **아이디어나 비법**을 기술하는 데 사용합니다. 
+초록색 테두리에 아이디어를 나타내는 전구 아이콘을 배치하여 주위를 환기시킵니다.
+블록 내부를 채울 텍스트는 **Markdown 문법**으로 기술합니다.
+:::
+
+
+## 이야기 박스
+
+`shadequote` 환경을 이용합니다. 이야기 박스 구문은 다음과 같습니다.
+
+```{tex}
+\begin{shadequote}[<alignment>]{<author>}
+  text of quote
+\end{shadequote}
+```
+
+다음처럼 괄호를 비우면, 저자의 이야기를 표시합니다. 
+
+```{tex}
+\begin{shadequote}{}
+나는 통계계산이 수리영역인 줄만 알았다. 그런데, 이제는 논리적인 사고도 필요한
+논리영역임을 느낀다. 그래서 논리적 사고로 통계적 데이터 분석을 위한 성능 좋은
+연장이 필요하기 시작했다.
+\end{shadequote}
+```
+
+```{=tex}
+\begin{shadequote}[r]{}
+통상적으로 많은 사람들은 `수준을 등급의 높고 낮음을 의미하는 가치의 척도'로 인식하고 있다. 그러나 통계학계에서는 levels을 수준으로 직역하여 사용해 왔다. 혼동스럽다면, \textbf{수준을 범주형 데이터의 범주로 이해}하기 바란다.
+\end{shadequote}
+```
+
+명사의 명언을 인용하여 이야기할 경우에는 명사의 이름을 첫째 괄호에 기입합니다. 이 예제는 명사의 이름을 오른쪽 정렬하였습니다.
+
+```{tex}
+\begin{shadequote}[r]{스피노자}
+자신은 할 수 없다고 생각하는 동안 사실은 그것을 하기 싫다고 다짐하고 있는 것이다.
+\end{shadequote}
+```
+
+```{=tex}
+\begin{shadequote}[r]{스피노자}
+자신은 할 수 없다고 생각하는 동안 사실은 그것을 하기 싫다고 다짐하고 있는 것이다.
+\end{shadequote}
+```
+
+
+## 타이틀 박스
+
+앞의 예제에서 `학습목표'를 정의한 박스 서식을 타이틀 박스라 부르겠습니다. 여러 용도로 사용될 수 있어 목적으로 이름을 특정할 수 없기 때문입니다. 학습 시나리오, 학습의 목표든 상관없습니다.
+
+다음과 같은 LaTeX `명령`으로 제공합니다.
+
+```{tex}
+\snbox{text of title}{title fill color}{box fill color}{text of box} 
+```
+
+다음 명령은 `학습 목표`라는 타이틀을 갖는 박스를 생성합니다.
+
+```{tex}
+\snbox{학습 목표}{blue!30}{blue!10}{데이터의 분류 체계로서의 척도를 이해하고, 
+이를 기반으로 한 R 데이터 객체를 이해한다. CSV 파일을 읽고, 데이터 프레임 
+객체로 CSV 파일을 생성할 수 있다.}
+```
+
+```{=tex}
+\snbox{학습 목표}{blue!30}{blue!10}{데이터의 분류 체계로서의 척도를 이해하고, 이를 기반으로 한 R 데이터 객체를 이해한다. CSV 파일을 읽고, 데이터 프레임 객체로 CSV 파일을 생성할 수 있다.}
+```
+
+## 예제
+
+`example` 환경을 이용합니다. 인용의 구문은 다음과 같습니다.
+
+```{tex}
+\begin{example}{number of example}
+  text of example
+\end{example}
+```
+
+그러나 예제는 다음처럼 생각보다 복잡합니다.
+
+- 장(chapter)에서 여러 예제가 있어서, 번호를 매겨야 한다.
+    - 번호는 자동으로 채번되어야 추가 및 제거 시 번호의 오류를 줄인다.
+- 예제를 본문이나 다른 예제에서 참조하는 경우가 있다.
+    - `크로스-레퍼런스`\index{크로스-레퍼런스}(`cross-reference`)\index{cross-reference}를 지원해야 한다.
+
+예제를 위해서 다음과 같이 장(chapter)의 시작부분에 환경변수를 정의해야 합니다. 장의 라벨과 예제의 순번을 위한 카운더를 설정했습니다.
+
+```{tex}
+\label{chap:bitpublish}                    % 장 라벨 정의
+\newcounter{exam_num_bitpub}               % 새로운 카운터 생성
+\setcounter{exam_num_bitpub}{0}            % 카운터 값 0으로 초기화
+```
+
+다음은 예제를 위한 환경 설정과 예제를 구현하는 예제입니다. 크로스-레퍼런스를 위해서 예제에 대해서 `ex1`이라는 라벨을 `example` 환경 안에서 정의한 것을 주의깊게 보십시오.
+
+```{tex}
+\addtocounter{exam_num_bitpub}{1}          % 예제를 위한 카운터 1 증가
+\begin{example}{\ref{chap:bitpublish}.\arabic{exam_num_bitpub}}
+\examplelabel{ex1}{\ref{chap:bitpublish}.\arabic{exam_num_bitpub}}
+bitPublish의 서식 중에서 예제, 연습문제, 주의, 정보, 인용을 만들어 보아라.
+\end{example}
+```
+
+```{=tex}
+\addtocounter{exam_num_bitpub}{1}         
+\begin{example}{\ref{chap:bitpublish}.\arabic{exam_num_bitpub}}
+\examplelabel{ex1}{\ref{chap:bitpublish}.\arabic{exam_num_bitpub}}
+bitPublish의 서식 중에서 예제, 연습문제, 주의, 정보, 인용을 만들어 보아라.
+\end{example}
+```
+
+`ex1`이라는 라벨을 레퍼런스하는 방법은 다음과 같습니다.
+
+```{tex}
+예제 \ref{ex1}를 레퍼런스하기 위해서는 레퍼런스 명령 \ref{}를 사용합니다.
+```
+
+예제 \ref{ex1}를 레퍼런스하기 위해서는 레퍼런스 명령 \\ref{}를 사용합니다.
+
+
+## 연습문제
+
+기술서나 학습서의 경우에는 연습문제를 제공하는 경우가 많습니다. bitPublish에서 연습문제 서식은 `Exercise` 환경을 이용합니다. 
+
+```{tex}
+\begin{Exercise}
+  text of exercise
+\end{Exercise}
+```
+
+또한 연습문제의 내용을 위해서 `tasks` 환경과 `task`\index{tasks} 명령을 사용할 수 있습니다.
+
+```{tex}
+\begin{tasks}[label](1)
+ \task text of task
+ \task text of task
+\end{tasks}
+```
+
+다음 명령은 예제 장에서 사용한 연습문제를 기술한 LaTeX 스크립트입니다.
+
+```{tex}
+\begin{Exercise}\label{EX2}
+\noindent 1. 다음의 데이터를 R의 객체로 만들어 보아라.
+\begin{tasks}[label=(\arabic*)](1)
+ \task 합격, 불합격, 불합격, 합격, 불합격
+ \task 1등급, 2등급, 3등급, 2등급, 5등급, 3등급, 4등급, 4등급, 3등급, 3등급
+ \task 12㎝, 23㎝, 32㎝, 22㎝, 19㎝, 21㎝, 20㎝
+\end{tasks}
+
+\noindent 2. 다음의 데이터 객체를 외부 파일로 출력해 보아라.
+\begin{tasks}[label=(\arabic*)](1)
+ \task R의 datas 패키지에 포함되어 있는 women 데이터 프레임을 women.csv 파일로 출력해 보아라.
+ \task (1)의 파일을 다시 읽어 들여서 women2라는 이름의 데이터 프레임을 만들어라.
+\end{tasks}
+\end{Exercise}
+```
+
+```{=tex}
+\begin{Exercise}\label{EX2}
+\noindent 1. 다음의 데이터를 R의 객체로 만들어 보아라.
+\begin{tasks}[label=(\arabic*)](1)
+ \task 합격, 불합격, 불합격, 합격, 불합격
+ \task 1등급, 2등급, 3등급, 2등급, 5등급, 3등급, 4등급, 4등급, 3등급, 3등급
+ \task 12㎝, 23㎝, 32㎝, 22㎝, 19㎝, 21㎝, 20㎝
+\end{tasks}
+
+\noindent 2. 다음의 데이터 객체를 외부 파일로 출력해 보아라.
+\begin{tasks}[label=(\arabic*)](1)
+ \task R의 datas 패키지에 포함되어 있는 women 데이터 프레임을 women.csv 파일로 출력해 보아라.
+ \task (1)의 파일을 다시 읽어 들여서 women2라는 이름의 데이터 프레임을 만들어라.
+\end{tasks}
+\end{Exercise}
+```
+
+만약에 연습문제를 별도의 페이지에서 시각하고 싶다면 \\clearpage 명령어를 사용하면 됩니다.
+
