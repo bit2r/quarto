@@ -1,0 +1,278 @@
+---
+title: "디지털 글쓰기"
+subtitle: "글쓰기 &rarr; 출판: `bitPublish`"
+description: |
+  디지털 글쓰기를 출판으로 확장해서 진정한 글쓰기 마무리를 해보자.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+![](images/bitPublish_workflow.jpg)
+
+# 작업흐름
+
+단하나의 디지털 글쓰기 저작언어(마크다운, Markdown)을 통해 텍스트 글쓰기를 진행하지만,
+증거기반 데이터 과학 글쓰기를 위해 R/파이썬을 활용하여 표, 그래프를 비롯한 다양한
+문서를 구성하는 글쓰기 작업을 수행한다. 또한 챗GPT를 활용하여 AI(인공지능)와 글쓰기를 하면서 
+글쓰기를 더 빠르고, 고품질, 저비용으로 수행할 수 있다.
+
+챗GPT 디지털 글쓰기를 통해 저작작업을 마무리한 후에 디지털 출판 작업을 수행한다.
+한국 R 사용자회에서 제작한 [bitPublish](https://github.com/bit2r/bitPublish) 도구를 활용하면
+한글 도서출판에 필요한 모든 사항을 담아내어 이를 활용할 경우 출판작업에 걸리는 시간을 대폭 줄일 수 있다.
+
+마지막으로 저작물을 [bitPublish](https://github.com/bit2r/bitPublish)으로 컴파일하게 되면
+출판이 바로 가능한 `.pdf` 파일을 얻게 되어 전자책 혹은 인쇄기를 통해 대량 도서 출판이 가능하다.
+
+
+# 환경설정
+
+## 쿼토 설치
+
+최신 [Download Quarto CLI](https://quarto.org/docs/get-started/)를 운영체제에 맞춰 설치한다.
+
+## tidytex 설치
+
+도서출판을 위해서 `PDF` 엔진이 필요하기 때문에 쿼토에서 [`tinytex`](https://yihui.org/tinytex/)을 다음 명령어로 설치한다. [`tinytex`](https://yihui.org/tinytex/)은 TeX Live를 기반으로 하는 경량의 크로스 플랫폼, 휴대성, 유지 관리가 용이한 LaTeX 배포판이다.
+
+```
+quarto install tinytex
+```
+
+## `[bitPublish](https://github.com/bit2r/bitPublish)` 설치
+
+
+`quarto use template bit2r/bitPublish` 명령어를 통해서 `publish` 디렉토리 아래 
+디지털 출판을 위한 모든 사항이 준비되어 바로 글쓰기를 수행하면 된다.
+
+```
+$ quarto use template bit2r/bitPublish
+
+Quarto templates may execute code when documents are rendered. If you do not
+trust the authors of the template, we recommend that you do not install or
+use the template.
+ ? Do you trust the authors of this template (Y/n) » Yes
+ ? Directory name: » publish
+[>] Downloading
+(/) Unzipping. : File C:\Users\statkclee\OneDrive\문서\WindowsPowerShell\profile.ps1 cannot be loaded because running scripts is disab
+led on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+[>] Unzipping
+    Found 1 extension.
+[>] Copying files...
+
+Files created:
+ - chap_exams.qmd
+ - chap_intro_bitpublish.qmd
+ - chap_troubleshooting.qmd
+ - chap_version.qmd
+ - img
+ - index.qmd
+ - references.bib
+ - references.qmd
+ - _extensions
+ - _quarto.yml
+(base)
+```
+
+
+
+![](images/publishing_toolchain.jpg)
+
+# 살펴보기
+
+`_extensions/` 디렉토리 아래 한국 R 사용자회 (`bit2r`)에서 개발한 [bitPublish](https://github.com/bit2r/bitPublish) 템플릿이 포함되어 있어 이를 사용하여 
+다양하면 즉시 출판이 가능한 기반을 제공하고 있다.
+저자는 `_quarto.yml` 파일에 등록된 `.qmd` 파일을 주석처리 혹은 수정하여 글쓰기 작업을 진행하면 된다.
+
+```{r}
+fs::dir_tree(path = "../publish")
+```
+
+# 헬로월드
+
+`quarto preview` 명령어로 미리보기, `quarto render` 명령어로 `.pdf` 파일을 생성하게 된다.
+
+```
+$ quarto preview --to bitPublish-pdf # 미리보기 
+$ quarto render --to bitPublish-pdf  # pdf 파일 생성하기
+```
+
+## `.pdf` 파일 생성
+
+`quarto render --to bitPublish-pdf` 명령어를 실행하게 되면 
+`docs` 폴더에 `docs\bitPublish를-이용하여-한글-책-조판하기.pdf` 문서 제목하고 동일한 
+`bitPublish를-이용하여-한글-책-조판하기.pdf` PDF 파일이 생성된다.
+
+```bash
+$ quarto render --to bitPublish-pdf
+
+[1/6] index.qmd
+[2/6] chap_exams.qmd
+
+
+processing file: chap_exams.qmd
+                                                                                
+output file: chap_exams.knit.md
+
+[3/6] chap_intro_bitpublish.qmd
+
+
+processing file: chap_intro_bitpublish.qmd
+  |...                                                |   6% (unnamed-chunk-3)    |....................                               |  39% (unnamed-chunk-20)   |...............................                    |  61% (fig-hist2)          |................................................   |  94% (unnamed-chunk-50)                                                                                 
+output file: chap_intro_bitpublish.knit.md
+
+There were 44 warnings (use warnings() to see them)
+[4/6] chap_troubleshooting.qmd
+
+Starting python3 kernel...Done
+
+Executing 'chap_troubleshooting.ipynb'
+
+[5/6] chap_version.qmd
+  |
+
+processing file: chap_version.qmd
+                                                                                
+output file: chap_version.knit.md
+
+[6/6] references.qmd
+
+pandoc
+  to: latex
+  output-file: index.tex
+  standalone: true
+  toc: true
+  number-sections: true
+  top-level-division: chapter
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  cite-method: biblatex
+
+metadata
+  crossref:
+    chapters: true
+    fig-title: 그림
+    tbl-title: 표
+  documentclass: book
+  papersize: letter
+  block-headings: true
+  geometry:
+    - paper=a4paper
+    - layoutwidth=190mm
+    - layoutheight=260mm
+    - layouthoffset=10mm
+    - layoutvoffset=18.5mm
+    - showcrop
+    - top=20mm
+    - headsep=10mm
+    - bottom=30mm
+    - footskip=15mm
+    - left=25mm
+    - right=25mm
+    - centering
+  fig-cap-location: bottom
+  tbl-cap-location: bottom
+  toc-title: 목차
+  linkcolor: highlight
+  urlcolor: highlight
+  lang: ko-KR
+  bibliography:
+    - references.bib
+  link-citations: false
+  title: bitPublish를 이용하여 한글 책 조판하기
+
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+
+  Re-compiling document for index
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+
+making index
+  This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).
+  Scanning input file index.idx....done (99 entries accepted, 0 rejected).
+  Sorting entries....done (682 comparisons).
+  Generating output file index.ind....done (163 lines written, 0 warnings).
+  Output written in index.ind.
+  Transcript written in index.ilg.
+
+generating bibliography
+  INFO - This is Biber 2.19
+  INFO - Logfile is 'index.blg'
+  INFO - Reading 'index.bcf'
+  INFO - Found 7 citekeys in bib section 0
+  INFO - Processing section 0
+  INFO - Looking for bibtex file 'references.bib' for section 0
+  INFO - LaTeX decoding ...
+  INFO - Found BibTeX data source 'references.bib'
+  INFO - Overriding locale 'korean' defaults 'variable = shifted' with 'variable = non-ignorable'
+  INFO - Overriding locale 'korean' defaults 'normalization = NFD' with 'normalization = prenormalized'
+  INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'korean'
+  INFO - No sort tailoring available for locale 'korean'
+  INFO - Writing 'index.bbl' with encoding 'UTF-8'
+  INFO - Output to index.bbl
+
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+
+running xelatex - 3
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+
+
+Output created: docs\bitPublish를-이용하여-한글-책-조판하기.pdf
+```
+
+## PDF 파일
+
+[bitPublish](https://github.com/bit2r/bitPublish) 템플릿으로 지원되는 기능들이 PDF 파일에 담겨있다. 필요한 경우 이를 참조하여 글쓰기 외양에 신경쓰지 않고 오로지 글쓰기 본질에 집중하여 마음에 드는 책을 저작하여 일사천리로 출판할 수 있다.
+
+``` {r}
+#| label: embed-cover-final-pdf
+#| out.height: "800px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/bitPublish를-이용하여-한글-책-조판하기.pdf")
+```
+
+

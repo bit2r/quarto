@@ -2371,5 +2371,40 @@
     "title": "디지털 글쓰기",
     "section": "3.3 문제 1 번",
     "text": "3.3 문제 1 번\n영어듣기지문 1번 문제를 TTS로 구현한다.\n\n\nCode\nfrom elevenlabslib.helpers import *\nfrom elevenlabslib import *\n\nimport os\nfrom dotenv import load_dotenv, find_dotenv\n_ = load_dotenv(find_dotenv())\n\nuser = ElevenLabsUser(os.getenv('ELEVENLAB_API_KEY'))\nvoice = user.get_voices_by_name(\"Rachel\")[0]\n\ntranscript=r\"Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.\"\n\n\ngenerated_voice = voice.generate_play_audio(transcript, stability=0.7,\n                                             playInBackground=False)\n\nsave_audio_bytes(generated_voice[0], \"data/elevenlabs_transcript.mp3\", outputFormat=\"mp3\")\n\n\n\n\nCode\nhtml_tag_audio(\"data/elevenlabs_transcript.mp3\", type = \"mp3\")"
+  },
+  {
+    "objectID": "bitPublish.html#쿼토-설치",
+    "href": "bitPublish.html#쿼토-설치",
+    "title": "디지털 글쓰기",
+    "section": "2.1 쿼토 설치",
+    "text": "2.1 쿼토 설치\n최신 Download Quarto CLI를 운영체제에 맞춰 설치한다."
+  },
+  {
+    "objectID": "bitPublish.html#tidytex-설치",
+    "href": "bitPublish.html#tidytex-설치",
+    "title": "디지털 글쓰기",
+    "section": "2.2 tidytex 설치",
+    "text": "2.2 tidytex 설치\n도서출판을 위해서 PDF 엔진이 필요하기 때문에 쿼토에서 tinytex을 다음 명령어로 설치한다. tinytex은 TeX Live를 기반으로 하는 경량의 크로스 플랫폼, 휴대성, 유지 관리가 용이한 LaTeX 배포판이다.\nquarto install tinytex"
+  },
+  {
+    "objectID": "bitPublish.html#bitpublishhttpsgithub.combit2rbitpublish-설치",
+    "href": "bitPublish.html#bitpublishhttpsgithub.combit2rbitpublish-설치",
+    "title": "디지털 글쓰기",
+    "section": "2.3 [bitPublish](https://github.com/bit2r/bitPublish) 설치",
+    "text": "2.3 [bitPublish](https://github.com/bit2r/bitPublish) 설치\nquarto use template bit2r/bitPublish 명령어를 통해서 publish 디렉토리 아래 디지털 출판을 위한 모든 사항이 준비되어 바로 글쓰기를 수행하면 된다.\n$ quarto use template bit2r/bitPublish\n\nQuarto templates may execute code when documents are rendered. If you do not\ntrust the authors of the template, we recommend that you do not install or\nuse the template.\n ? Do you trust the authors of this template (Y/n) » Yes\n ? Directory name: » publish\n[&gt;] Downloading\n(/) Unzipping. : File C:\\Users\\statkclee\\OneDrive\\문서\\WindowsPowerShell\\profile.ps1 cannot be loaded because running scripts is disab\nled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.\n[&gt;] Unzipping\n    Found 1 extension.\n[&gt;] Copying files...\n\nFiles created:\n - chap_exams.qmd\n - chap_intro_bitpublish.qmd\n - chap_troubleshooting.qmd\n - chap_version.qmd\n - img\n - index.qmd\n - references.bib\n - references.qmd\n - _extensions\n - _quarto.yml\n(base)"
+  },
+  {
+    "objectID": "bitPublish.html#pdf-파일-생성",
+    "href": "bitPublish.html#pdf-파일-생성",
+    "title": "디지털 글쓰기",
+    "section": "4.1 .pdf 파일 생성",
+    "text": "4.1 .pdf 파일 생성\nquarto render --to bitPublish-pdf 명령어를 실행하게 되면 docs 폴더에 docs\\bitPublish를-이용하여-한글-책-조판하기.pdf 문서 제목하고 동일한 bitPublish를-이용하여-한글-책-조판하기.pdf PDF 파일이 생성된다.\n$ quarto render --to bitPublish-pdf\n\n[1/6] index.qmd\n[2/6] chap_exams.qmd\n\n\nprocessing file: chap_exams.qmd\n                                                                                \noutput file: chap_exams.knit.md\n\n[3/6] chap_intro_bitpublish.qmd\n\n\nprocessing file: chap_intro_bitpublish.qmd\n  |...                                                |   6% (unnamed-chunk-3)    |....................                               |  39% (unnamed-chunk-20)   |...............................                    |  61% (fig-hist2)          |................................................   |  94% (unnamed-chunk-50)                                                                                 \noutput file: chap_intro_bitpublish.knit.md\n\nThere were 44 warnings (use warnings() to see them)\n[4/6] chap_troubleshooting.qmd\n\nStarting python3 kernel...Done\n\nExecuting 'chap_troubleshooting.ipynb'\n\n[5/6] chap_version.qmd\n  |\n\nprocessing file: chap_version.qmd\n                                                                                \noutput file: chap_version.knit.md\n\n[6/6] references.qmd\n\npandoc\n  to: latex\n  output-file: index.tex\n  standalone: true\n  toc: true\n  number-sections: true\n  top-level-division: chapter\n  pdf-engine: xelatex\n  variables:\n    graphics: true\n    tables: true\n  default-image-extension: pdf\n  cite-method: biblatex\n\nmetadata\n  crossref:\n    chapters: true\n    fig-title: 그림\n    tbl-title: 표\n  documentclass: book\n  papersize: letter\n  block-headings: true\n  geometry:\n    - paper=a4paper\n    - layoutwidth=190mm\n    - layoutheight=260mm\n    - layouthoffset=10mm\n    - layoutvoffset=18.5mm\n    - showcrop\n    - top=20mm\n    - headsep=10mm\n    - bottom=30mm\n    - footskip=15mm\n    - left=25mm\n    - right=25mm\n    - centering\n  fig-cap-location: bottom\n  tbl-cap-location: bottom\n  toc-title: 목차\n  linkcolor: highlight\n  urlcolor: highlight\n  lang: ko-KR\n  bibliography:\n    - references.bib\n  link-citations: false\n  title: bitPublish를 이용하여 한글 책 조판하기\n\nrunning xelatex - 1\n  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)\n   restricted \\write18 enabled.\n  entering extended mode\n\n  Re-compiling document for index\n  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)\n   restricted \\write18 enabled.\n  entering extended mode\n\nmaking index\n  This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).\n  Scanning input file index.idx....done (99 entries accepted, 0 rejected).\n  Sorting entries....done (682 comparisons).\n  Generating output file index.ind....done (163 lines written, 0 warnings).\n  Output written in index.ind.\n  Transcript written in index.ilg.\n\ngenerating bibliography\n  INFO - This is Biber 2.19\n  INFO - Logfile is 'index.blg'\n  INFO - Reading 'index.bcf'\n  INFO - Found 7 citekeys in bib section 0\n  INFO - Processing section 0\n  INFO - Looking for bibtex file 'references.bib' for section 0\n  INFO - LaTeX decoding ...\n  INFO - Found BibTeX data source 'references.bib'\n  INFO - Overriding locale 'korean' defaults 'variable = shifted' with 'variable = non-ignorable'\n  INFO - Overriding locale 'korean' defaults 'normalization = NFD' with 'normalization = prenormalized'\n  INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'korean'\n  INFO - No sort tailoring available for locale 'korean'\n  INFO - Writing 'index.bbl' with encoding 'UTF-8'\n  INFO - Output to index.bbl\n\nrunning xelatex - 2\n  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)\n   restricted \\write18 enabled.\n  entering extended mode\n\nrunning xelatex - 3\n  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)\n   restricted \\write18 enabled.\n  entering extended mode\n\n\nOutput created: docs\\bitPublish를-이용하여-한글-책-조판하기.pdf"
+  },
+  {
+    "objectID": "bitPublish.html#pdf-파일",
+    "href": "bitPublish.html#pdf-파일",
+    "title": "디지털 글쓰기",
+    "section": "4.2 PDF 파일",
+    "text": "4.2 PDF 파일\nbitPublish 템플릿으로 지원되는 기능들이 PDF 파일에 담겨있다. 필요한 경우 이를 참조하여 글쓰기 외양에 신경쓰지 않고 오로지 글쓰기 본질에 집중하여 마음에 드는 책을 저작하여 일사천리로 출판할 수 있다.\n\n\nCode\nknitr::include_graphics(\"data/bitPublish를-이용하여-한글-책-조판하기.pdf\")"
   }
 ]

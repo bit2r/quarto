@@ -68,6 +68,9 @@ website:
             text: "책표지와 본문결합"
           - href: latex_rmd.qmd
             text: "Rmd --> PDF"
+          - text: "------------"
+          - href: bitPublish.qmd
+            text: "글쓰기 --> 출판: `bitPublish`"
       - text: "엑셀(Excel)"
         menu: 
           - href: excel_why.qmd
