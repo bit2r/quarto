@@ -73,6 +73,9 @@ website:
             text: "글쓰기 --> 출판: `bitPublish`"
           - href: bitPublish_cheatsheet.qmd
             text: "`bitPublish` 참조안내서"
+          - text: "------------"
+          - href: R_manual.qmd
+            text: "R 매뉴얼"
       - text: "엑셀(Excel)"
         menu: 
           - href: excel_why.qmd

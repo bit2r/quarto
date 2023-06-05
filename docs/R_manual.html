@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="description" content="빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.">
+<meta name="description" content="R 매뉴얼 한국어 번역을 준비합니다.">
 
-<title>디지털 글쓰기 - 데이터 과학 글쓰기</title>
+<title>디지털 글쓰기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -41,6 +75,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,8 +101,8 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="twitter:title" content="디지털 글쓰기 - 데이터 과학 글쓰기">
-<meta name="twitter:description" content="빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.">
+<meta name="twitter:title" content="디지털 글쓰기">
+<meta name="twitter:description" content="R 매뉴얼 한국어 번역을 준비합니다.">
 <meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
@@ -90,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -328,14 +365,51 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">데이터 과학 글쓰기</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">디지털 글쓰기</h1>
+            <p class="subtitle lead">R 매뉴얼</p>
+                  <div>
+        <div class="description">
+          <p>R 매뉴얼 한국어 번역을 준비합니다.</p>
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-heading">소속</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -435,120 +509,160 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
+  <ul>
+  <li><a href="#현황" id="toc-현황" class="nav-link active" data-scroll-target="#현황"><span class="header-section-number">1</span> 현황</a></li>
+  <li><a href="#소스코드" id="toc-소스코드" class="nav-link" data-scroll-target="#소스코드"><span class="header-section-number">2</span> 소스코드</a></li>
+  <li><a href="#윈도우-컴파일-환경" id="toc-윈도우-컴파일-환경" class="nav-link" data-scroll-target="#윈도우-컴파일-환경"><span class="header-section-number">3</span> 윈도우 컴파일 환경</a></li>
+  <li><a href="#texinfo-.texi" id="toc-texinfo-.texi" class="nav-link" data-scroll-target="#texinfo-.texi"><span class="header-section-number">4</span> Texinfo (<code>.texi</code>)</a>
   <ul class="collapse">
-  <li><a href="#글쓰기" id="toc-글쓰기" class="nav-link active" data-scroll-target="#글쓰기"><span class="header-section-number">1</span> 글쓰기</a></li>
-  <li><a href="#재현가능-글쓰기" id="toc-재현가능-글쓰기" class="nav-link" data-scroll-target="#재현가능-글쓰기"><span class="header-section-number">2</span> 재현가능 글쓰기</a></li>
-  <li><a href="#디지털-글쓰기" id="toc-디지털-글쓰기" class="nav-link" data-scroll-target="#디지털-글쓰기"><span class="header-section-number">3</span> 디지털 글쓰기</a>
-  <ul class="collapse">
-  <li><a href="#latex-philosophy" id="toc-latex-philosophy" class="nav-link" data-scroll-target="#latex-philosophy"><span class="header-section-number">3.1</span> <span class="math inline">\(\LaTeX\)</span> 철학</a></li>
-  <li><a href="#wysiwyg" id="toc-wysiwyg" class="nav-link" data-scroll-target="#wysiwyg"><span class="header-section-number">3.2</span> 시각적 디자인</a></li>
-  <li><a href="#latex-engine" id="toc-latex-engine" class="nav-link" data-scroll-target="#latex-engine"><span class="header-section-number">3.3</span> <span class="math inline">\(\LaTeX\)</span> 엔진</a></li>
+  <li><a href="#구조" id="toc-구조" class="nav-link" data-scroll-target="#구조"><span class="header-section-number">4.1</span> 구조</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">데이터 과학 글쓰기</h1>
-</div>
 
-<div>
-  <div class="description">
-    빅데이터와 인공지능 시대를 살고 있는 우리에게 필요한 것은 글쓰기다. 어떻게 보면 거의 모든 인간활동은 글쓰기라고 볼 수 있다. 하지만, 진정 제대로된 글쓰기 교육이 되고 있는가? 이점에 대해 문제를 제기하고 과학기술 더 나아가 빅데이터 시대 데이터 사이언스 글쓰기에 대해 살펴보자.
-  </div>
-</div>
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">저자</div>
-  <div class="quarto-title-meta-heading">소속</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            <a href="https://github.com/bit2r">
-            한국 R 사용자회
-            </a>
-          </p>
-      </div>
-    </div>
-
-<div class="quarto-title-meta">
-
-      
-    <div>
-    <div class="quarto-title-meta-heading">공개</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2023년 6월 5일</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig/horst-eco-r4ds.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Original Openscapes artwork by Allison Horst</figcaption><p></p>
+<p><a href="fig/manual/texi_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fig/manual/texi_workflow.jpg" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
-<div class="page-columns page-full"><p>Allison Horst <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 데이터 사이언스와 Tidyverse, 그리고 이를 지탱하는 커뮤니티에 대해 직관적으로 시각화한 사례.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;An extended version of the classic R4DS schematic from Grolemund &amp; Wickham, with environmental data science, communities, and communication <a href="https://www.openscapes.org/gallery/" class="uri">https://www.openscapes.org/gallery/</a></p></li></div></div>
-<section id="글쓰기" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 글쓰기</h1>
-<p><a href="https://quarto.org/docs/guide/">Quarto Guide</a> 웹사이트에 과학기술을 위한 문서 저작에 대한 전체적인 사항이 조망되어 있다. 최근 과학기술 저작물은 다양한 출판형식과 더불어 literate programming 패러다임을 도입하고 가독성과 커뮤니케이션 강화를 위해 상호작용 인터랙티브한 기능도 내장되어 있다.</p>
-<p><img src="fig/birds-eye-view.png" class="img-fluid"></p>
+<section id="현황" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 현황</h1>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="fig/manual/cran_home.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="fig/manual/cran_home.jpg" class="img-fluid"></a></span></div></div>
+<p>비엔나 경제 및 경영 대학교(WU, Wirtschaftsuniversität Wien)에서 운영되는 <a href="https://cran.r-project.org/">CRAN</a>을 통해서 R 코어 개발팀이 Debian Linux를 근간으로 R 설명서를 배포하고 있다. R 설명서/매뉴얼은 R에 따라 변경되므로 가장 최근에 릴리스된 R 버전(R-release), 패치된 릴리스 버전(R-patched)의 최신 버전, 마지막으로 아직 개발 중인 R 버전(R-devel)에 대한 버전으로 제공된다. 매뉴얼은 좌측 메뉴 <code>Documentation &gt; Manuals</code>을 통해 제공되고 다른 언어로 번역된 것은 아래 <code>Documentation &gt; Contributed</code>를 통해 제공되고 있다.</p>
 </section>
-<section id="재현가능-글쓰기" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> 재현가능 글쓰기</h1>
-<p>과학기술에서 재현성은 매우 중요한 개념이다. 과학기술에서 재현성이 무너진 연구결과가 무더기로 나옴에 따라 2010년 전후 <a href="https://ko.wikipedia.org/wiki/%EC%9E%AC%ED%98%84%EC%84%B1_%EC%9C%84%EA%B8%B0"><strong>재현성 위기(Reproducibity Crisis)</strong></a>에 대한 응전으로 재현가능한 논문저작과 관련된 기술적인 커뮤니티 활동이 전방위적으로 전개되고 있다.</p>
-<p><img src="fig/compendium-rr.png" class="img-fluid"></p>
+<section id="소스코드" class="level1 page-columns page-full" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 소스코드</h1>
+<p>최신 R 소스코드는 좌측 메뉴 <code>Software &gt; R Sources</code>을 클릭하게 되면 <strong>R Sources</strong><br>
+<code>Official releases</code>를 통해 다운로드받아 이용이 가능하다. <code>R-4.3.0.tar.gz</code> 버전 기준 34MB 정도 크기를 갖고 있으며 압축을 풀게 되면 매뉴얼은 다음 <code>R-4.3.0/doc/manual/</code> 디렉토리 아래 <code>TexInfo</code> 파일 <code>.texi</code> 확장자를 갖고 있어 이를 컴파일하게 되면 HTML, PDF, EPUB 형식으로 변환하여 사용할 수 있다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="fig/manual/cran_source.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="fig/manual/cran_source.jpg" class="img-fluid"></a></span></div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">"../R-4.3.0/doc/manual/"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## ../R-4.3.0/doc/manual/</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── dir</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── epsf.tex</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── images</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ecdf.pdf</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ecdf.png</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig11.pdf</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig11.png</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig12.pdf</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig12.png</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── hist.pdf</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── hist.png</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ice.pdf</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ice.png</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── QQ.pdf</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## │   └── QQ.png</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── ISBN</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Makefile.in</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Makefile.win</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── pdfcolor.tex</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── quot.sed</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-admin.texi</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-data.texi</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-defs.texi</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-exts.c</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-exts.R</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-exts.texi</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-FAQ.texi</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.aux</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.cp</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.cps</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.html</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.log</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.pdf</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.R</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.texi</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.toc</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.vr</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.vrs</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-ints.texi</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-lang.texi</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── README</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── refman.bot</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── refman.top</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── resources.texi</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Rfaq.css</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Rman.css</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── rw-FAQ.texi</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="do">## └── version.texi</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="디지털-글쓰기" class="level1 page-columns page-full" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> 디지털 글쓰기</h1>
-<p>글쓰기의 난이도가 극강으로 진화하고 있다. 기존 원고지에 한글이나 영어로 감정, 사실, 소설 등 콘텐츠를 저작했다면 현재는 이미지를 넣어 이목을 끌고 가독성이 뛰어난 글꼴을 사용하여 가독성을 높여야한다. 재현성도 중요한 부분이라 자동화와 버젼관리도 기본기능으로 들어가야하고, 최근에는 인공지능 기계 저작물도 점차 범위를 넓혀가고 있어 이에 대한 학습과 이를 반영하는 기술적인 시도도 늘고 있다.</p>
-<p><img src="fig/digital-writing-overview.png" class="img-fluid"></p>
-<section id="latex-philosophy" class="level2 page-columns page-full" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="latex-philosophy"><span class="header-section-number">3.1</span> <span class="math inline">\(\LaTeX\)</span> 철학</h2>
-<div class="page-columns page-full"><p><span class="math inline">\(\LaTeX\)</span>은 한마디로 정의하게 되면 <strong>“논리적인 디자인”</strong>이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. <span class="math inline">\(\LaTeX\)</span> 과 <span class="math inline">\(\TeX\)</span> 이 하는 업무가 다소 차이가 난다. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;김영록 (2017) “교육 현장에서의 텍의 활용”, <span class="math inline">\(\TeX\)</span> : 조판, 그 이상의 가능성</p></li></div></div>
-<ul>
-<li><span class="math inline">\(\LaTeX\)</span> 은 편집디자이너에 해당되는 업무를 수행</li>
-<li><span class="math inline">\(\TeX\)</span> 은 식자공에 해당되는 업무를 수행</li>
-</ul>
-<p><img src="fig/document-logical-design.png" class="img-fluid"></p>
-<p>컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. <span class="math inline">\(\LaTeX\)</span>의 명령어는 기본적으로 <strong>문서의 논리적 구조를 기술</strong>하는 것이다. 이렇게 기술된 명령어를 <span class="math inline">\(\TeX\)</span>으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.</p>
-<p><span class="math inline">\(\LaTeX\)</span>에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. <span class="math inline">\(\LaTeX\)</span> 으로 글을 작성하게 되면 점점 <span class="math inline">\(\LaTeX\)</span>이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.</p>
-<p>아마도 <span class="math inline">\(\LaTeX\)</span>의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 <span class="math inline">\(\LaTeX\)</span> 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.</p>
-<p>따라서, <span class="math inline">\(\LaTeX\)</span> 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다.</p>
+<section id="윈도우-컴파일-환경" class="level1 page-columns page-full" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 윈도우 컴파일 환경</h1>
+<p>R 매뉴얼(<code>.texi</code>)을 컴파일해서 PDF, HTML, EPUB 등 가독성 높은 파일형태로 변환시키기 위해서 다양한 방법이 존재하지만 윈도우 환경에서 <strong>VS코드</strong>를 통합개발환경(IDE)로 삼아 WSL(Windows Subsystem for Linux)를 터미널로 연결시켜 사용하는 방법이 그다지 노력을 많이 들이지 않는 방법이다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/manual/r_manual_texi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="fig/manual/r_manual_texi.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p><code>--no-split</code> 옵션을 주지 않으면 <code>R-intro/</code> 폴더아래 html 파일들이 작성된다.</p>
+<div class="column-page">
+<div class="columns">
+<div class="column" style="width:33%;">
+<section id="texi-r-intro" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="texi-r-intro"><code>.texi</code> → <code>R-intro</code></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2any</span> <span class="at">--html</span> R-intro.texi</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="wysiwyg" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="wysiwyg"><span class="header-section-number">3.2</span> 시각적 디자인</h2>
-<p>문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 <strong>위즈윅(WSYIWIG, What You See Is What You Get)</strong> 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다.</p>
+</div><div class="column" style="width:34%;">
+<section id="texi-.html" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="texi-.html"><code>.texi</code> → <code>.html</code></h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2any</span> <span class="at">--html</span> R-intro.texi <span class="at">--no-split</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="latex-engine" class="level2 page-columns page-full" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="latex-engine"><span class="header-section-number">3.3</span> <span class="math inline">\(\LaTeX\)</span> 엔진</h2>
-<div class="page-columns page-full"><p><span class="math inline">\(\LaTeX\)</span> 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 <a href="http://www.ktug.org/">KTUG 한국 <span class="math inline">\(\TeX\)</span> 사용자 그룹</a>에서 <span class="math inline">\(ko.TeX\)</span> Live를 추천하고 있다. 이유는 다음과 같다. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;이호재 (2017), “레이텍을 빨리 쓸 수 있는 방법”, <span class="math inline">\(\TeX\)</span> : 조판, 그 이상의 가능성</p></li></div></div>
-<ul>
-<li>pdfLaTeX, XeLaTeX, LuaLaTeX 3종 <span class="math inline">\(\LaTeX\)</span> 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.</li>
-<li>운영체제에 따라 차이가 나지만 안정적으로 <span class="math inline">\(\LaTeX\)</span> 을 설치하여 실제 문서작업에 이용하기에는 <span class="math inline">\(\TeX\)</span> Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.</li>
-<li><span class="math inline">\(\TeX\)</span> 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 <span class="math inline">\(\TeX\)</span> 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨</li>
-</ul>
-<p>과거 <code>latex+divps+pspdf</code> 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, <code>pstricks</code>를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 <code>eps</code> 파일만 사용한다는 한계가 있다. 또 다른 <code>latex+dvipdfmx</code> 작업흐름은 중간에 <code>.dvi</code> 파일을 생성하고 <code>dvipdfmx</code>를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 <code>.tex</code> 소스파일에서 <code>.pdf</code> 파일을 즉시 생성한다는 점에서 인기가 있다.</p>
-<p>이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 <code>memoir</code> 혹은 <code>oblivoir</code> 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.</p>
-<p><img src="fig/tex-engines.png" class="img-fluid"></p>
+</div><div class="column" style="width:33%;">
+<section id="texi-.html-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="texi-.html-1"><code>.texi</code> → <code>.html</code></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2pdf</span> R-intro.texi</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="texinfo-.texi" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Texinfo (<code>.texi</code>)</h1>
+<p>R 매뉴얼은 리눅스 Texinfo 에 따라 작성된다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Texinfo는 한개의 소스 화일을 사용해서 온라인 정보와 인쇄된 출력물을 얻어낼 수 있는 문서화 system이다. 온라인 도움말 및 그외 온라인 정보와 매뉴얼 및 그외 인쇄물을 작성하기 위해 두개의 별도의 문서를 작성하는 대신, 오직 1개의 문서만 작성하면 된다. 문서가 변경되었을때, 오직 1개 문서만 변경하면 된다.</p>
+<p>Texinfo를 사용해서, 장(chapter), 절(section), 상호참조(cross reference ), 그리고 색인(index)같은 보통 서적의 특징을 가진 인쇄 문서를 만들 수 있다. 동일한 Texinfo 소스 화일에서 menu에 의해 동작하는 node, menu, 상호참조, 색인이 있는 온라인 Info file을 만들어 낼 수 있다. 인쇄 문서의 장과 절을 온라인 정보의 노드와 일치시킬 수 있다; 그리고 상호참조와 색인을 Info file과 인쇄물에 동시에 이용할 수 있다</p>
+<p>인쇄 문서를 만들어 내려면, Texinfo 소스 화일을 TeX typesetting 프로그램으로 처리한다. 이렇게 하면 조판하고, 책이나 보고서로 인쇄할 수 있는 DVI 화일이 만들어 진다. (Texinfo 언어는 TeX의 일반적인 언어인 plain TeX 과는 완전히 다르다는 것에 유의한다.)</p>
+<p>Info 파일을 만들려면, Texinfo 소스 화일을 makeinfo 유틸리티로 처리하거나, Emacs의 texinfo-format-buffer 명령을 사용하라; 이렇게 하면 온라인으로 설치할 수 있는 Info 화일이 만들어 진다.</p>
+<p>Texinfo 파일은 글과 typesetting and formatting 프로그램이 뭘 해야 할지 알려주는 @-명령(`@’다음에 오는 단어)이 들어 있는 plain ASCII 화일이다. Texinfo는 온라인 도움말과 인쇄된 매뉴얼을 동시에 만드는 데 쓸 수 있다; 게다가 Texinfo는 자유롭게 재배포할 수 있다. 이러한 이유때문에, Texinfo는 GNU 유틸리티와 라이브러리의 문서가 쓰여진 형식이 되었다.</p>
+<section id="구조" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="구조"><span class="header-section-number">4.1</span> 구조</h2>
+<p>한개의 Texinfo 파일은 보통 chapter, section, subsection과 같은 것으로 구성된 책과 같이 구조가 짜여진다. 이 구조는 맨위에 root가 있고, chapter, section, subsection, 그리고 subsubsection에 해당하는 level로 된 tree로 (혹은 뒤집어진 tree로) visualize할 수 있다.</p>
+<p>여기 각각 두개씩의 section이 있는 세개의 chapter로 구성된 Texinfo 파일을 보여주는 diagram이 있다.</p>
+<pre><code>                          Top
+                           |
+         -------------------------------------
+        |                  |                  |
+     Chapter 1          Chapter 2          Chapter 3
+        |                  |                  |
+     --------           --------           --------
+    |        |         |        |         |        |
+ Section  Section   Section  Section   Section  Section
+   1.1      1.2       2.1      2.2       3.1      3.2</code></pre>
+<p>이러한 구조를 갖는 Texinfo 파일에서, Chapter 2의 시작부분은 다음과 같다;</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">@node    Chapter 2,  Chapter 3, Chapter 1, top</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">@chapter Chapter 2</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
 </section>
 
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
+
+<ol>
+<li id="fn1"><p><a href="http://korea.gnu.org/manual/release/texinfo/texinfo-ko_toc.html">Texinfo GNU 문서 형식(1996년 10월), 류창우 번역</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -794,6 +908,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 
