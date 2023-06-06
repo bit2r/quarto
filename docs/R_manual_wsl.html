@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="description" content="R 매뉴얼 한국어 번역을 준비합니다.">
+<meta name="description" content="WSL 환경에서 R 매뉴얼 한국어 번역을 준비합니다.">
 
 <title>디지털 글쓰기</title>
 <style>
@@ -102,14 +102,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="twitter:title" content="디지털 글쓰기">
-<meta name="twitter:description" content="R 매뉴얼 한국어 번역을 준비합니다.">
+<meta name="twitter:description" content="WSL 환경에서 R 매뉴얼 한국어 번역을 준비합니다.">
 <meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
 <meta name="twitter:image-width" content="1388">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -380,10 +380,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">디지털 글쓰기</h1>
-            <p class="subtitle lead">R 매뉴얼</p>
+            <p class="subtitle lead">WSL 환경 R 매뉴얼</p>
                   <div>
         <div class="description">
-          <p>R 매뉴얼 한국어 번역을 준비합니다.</p>
+          <p>WSL 환경에서 R 매뉴얼 한국어 번역을 준비합니다.</p>
         </div>
       </div>
                 </div>
@@ -514,159 +514,242 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#현황" id="toc-현황" class="nav-link active" data-scroll-target="#현황"><span class="header-section-number">1</span> 현황</a></li>
-  <li><a href="#소스코드" id="toc-소스코드" class="nav-link" data-scroll-target="#소스코드"><span class="header-section-number">2</span> 소스코드</a></li>
-  <li><a href="#윈도우-컴파일-환경" id="toc-윈도우-컴파일-환경" class="nav-link" data-scroll-target="#윈도우-컴파일-환경"><span class="header-section-number">3</span> 윈도우 컴파일 환경</a></li>
-  <li><a href="#texinfo-.texi" id="toc-texinfo-.texi" class="nav-link" data-scroll-target="#texinfo-.texi"><span class="header-section-number">4</span> Texinfo (<code>.texi</code>)</a>
-  <ul class="collapse">
-  <li><a href="#구조" id="toc-구조" class="nav-link" data-scroll-target="#구조"><span class="header-section-number">4.1</span> 구조</a></li>
-  </ul></li>
+  <li><a href="#wsl-데비안" id="toc-wsl-데비안" class="nav-link active" data-scroll-target="#wsl-데비안"><span class="header-section-number">1</span> WSL 데비안</a></li>
+  <li><a href="#latex-설치" id="toc-latex-설치" class="nav-link" data-scroll-target="#latex-설치"><span class="header-section-number">2</span> <span class="math inline">\(\LaTeX\)</span> 설치</a></li>
+  <li><a href="#한글-latex" id="toc-한글-latex" class="nav-link" data-scroll-target="#한글-latex"><span class="header-section-number">3</span> 한글 <span class="math inline">\(\LaTeX\)</span></a></li>
+  <li><a href="#texinfo-설치" id="toc-texinfo-설치" class="nav-link" data-scroll-target="#texinfo-설치"><span class="header-section-number">4</span> <code>Texinfo</code> 설치</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="fig/manual/texi_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fig/manual/texi_workflow.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="fig/manual/debian_texi_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fig/manual/debian_texi_workflow.jpg" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
-<section id="현황" class="level1 page-columns page-full" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 현황</h1>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="fig/manual/cran_home.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="fig/manual/cran_home.jpg" class="img-fluid"></a></span></div></div>
-<p>비엔나 경제 및 경영 대학교(WU, Wirtschaftsuniversität Wien)에서 운영되는 <a href="https://cran.r-project.org/">CRAN</a>을 통해서 R 코어 개발팀이 Debian Linux를 근간으로 R 설명서를 배포하고 있다. R 설명서/매뉴얼은 R에 따라 변경되므로 가장 최근에 릴리스된 R 버전(R-release), 패치된 릴리스 버전(R-patched)의 최신 버전, 마지막으로 아직 개발 중인 R 버전(R-devel)에 대한 버전으로 제공된다. 매뉴얼은 좌측 메뉴 <code>Documentation &gt; Manuals</code>을 통해 제공되고 다른 언어로 번역된 것은 아래 <code>Documentation &gt; Contributed</code>를 통해 제공되고 있다.</p>
+<p>코어 개발팀에서 Debian Linux를 근간으로 R 코어 및 관련 개발을 진행하기 때문에 동일한 개발환경을 맞추는 것은 중요하다. 리눅스의 경우 다양한 배포판이 있지만 가장 많이 사용되는 리눅스 배포판은 <a href="https://ubuntu.com/download">우분투</a>와 <a href="https://www.debian.org/index.ko.html">데비안</a>을 꼽을 수 있다.</p>
+<section id="wsl-데비안" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> WSL 데비안</h1>
+<p>WSL(Linux용 Windows 서브시스템)을 통해 Debian 배포를 설치하는 경우 WSL을 설치하고 이어서 데비안 리눅스 배포판을 설치한다.</p>
+<p>Windows PowerShell을 통해 WSL(Linux용 Windows 하위 시스템)을 설치한다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wsl <span class="at">--install</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>상기 명령을 실행하면 시스템이 WSL과 Linux 배포판(기본값은 우분투)을 설치하고 PC를 재시낙한다.</p>
+<p>‘가상 머신 플랫폼’ 선택적 구성 요소를 활성화시킨다. 새 Linux 배포판을 설치하기 전에 ‘가상 머신 플랫폼’ 구성 요소가 활성화되어 있는지 확인해야 하고, 관리자 권한으로 PowerShell을 다시 열고 실행한다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>PC를 다시 시작하여 WSL 설치 및 WSL 2로 업데이트를 완료하고, WSL 2를 기본 버전으로 설정한다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wsl <span class="at">--set-default-version</span> 2</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>wsl --install</code> 디폴트로 우분투 리눅스 배포판이 설치되지만 <code>-d Debian</code> 인자를 넣게 되면 데비안 리눅스 배포판을 설치할 수 있다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wsl <span class="at">--install</span> <span class="at">-d</span> Debian</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>정상으로 WSL 데비안 배포판이 설치되었는지 확인한다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat /etc/os-release</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">PRETTY_NAME</span><span class="op">=</span><span class="st">"Debian GNU/Linux 11 (bullseye)"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">NAME</span><span class="op">=</span><span class="st">"Debian GNU/Linux"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="va">VERSION_ID</span><span class="op">=</span><span class="st">"11"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="va">VERSION</span><span class="op">=</span><span class="st">"11 (bullseye)"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="va">VERSION_CODENAME</span><span class="op">=</span>bullseye</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="va">ID</span><span class="op">=</span>debian</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="va">HOME_URL</span><span class="op">=</span><span class="st">"https://www.debian.org/"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="va">SUPPORT_URL</span><span class="op">=</span><span class="st">"https://www.debian.org/support"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="va">BUG_REPORT_URL</span><span class="op">=</span><span class="st">"https://bugs.debian.org/"</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="소스코드" class="level1 page-columns page-full" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> 소스코드</h1>
-<p>최신 R 소스코드는 좌측 메뉴 <code>Software &gt; R Sources</code>을 클릭하게 되면 <strong>R Sources</strong><br>
-<code>Official releases</code>를 통해 다운로드받아 이용이 가능하다. <code>R-4.3.0.tar.gz</code> 버전 기준 34MB 정도 크기를 갖고 있으며 압축을 풀게 되면 매뉴얼은 다음 <code>R-4.3.0/doc/manual/</code> 디렉토리 아래 <code>TexInfo</code> 파일 <code>.texi</code> 확장자를 갖고 있어 이를 컴파일하게 되면 HTML, PDF, EPUB 형식으로 변환하여 사용할 수 있다.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="fig/manual/cran_source.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="fig/manual/cran_source.jpg" class="img-fluid"></a></span></div></div>
+<section id="latex-설치" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <span class="math inline">\(\LaTeX\)</span> 설치</h1>
+<p>다음 명령어로 <span class="math inline">\(\LaTeX\)</span>을 설치하여 <code>.tex</code> 파일을 컴파일하여 <code>.pdf</code> 파일 생성을 준비한다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get update</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install texlive-full</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>latex --version</code> 명령어로 데비안 리눅스에 <span class="math inline">\(\LaTeX\)</span> 엔진이 설치되었는지 확인한다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> latex <span class="at">--version</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">XeTeX</span> 3.14159265-2.6-0.999992 <span class="er">(</span><span class="ex">TeX</span> Live 2020/Debian<span class="kw">)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">kpathsea</span> version 6.3.2</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> 2020 SIL International, Jonathan Kew and Khaled Hosny.</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO warranty.  Redistribution of this software is</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">covered</span> by the terms of both the XeTeX copyright and</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">the</span> Lesser GNU General Public License.</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more information about these matters, see the file</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">named</span> COPYING and the XeTeX source.</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Primary</span> author of XeTeX: Jonathan Kew.</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with ICU version 67.1<span class="kw">;</span> <span class="ex">using</span> 67.1</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with zlib version 1.2.11<span class="kw">;</span> <span class="ex">using</span> 1.2.11</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with FreeType2 version 2.10.4<span class="kw">;</span> <span class="ex">using</span> 2.10.4</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with Graphite2 version 1.3.14<span class="kw">;</span> <span class="ex">using</span> 1.3.14</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with HarfBuzz version 2.7.4<span class="kw">;</span> <span class="ex">using</span> 2.7.4</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with libpng version 1.6.37<span class="kw">;</span> <span class="ex">using</span> 1.6.37</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with poppler version 0.68.0</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Compiled</span> with fontconfig version 2.13.1<span class="kw">;</span> <span class="ex">using</span> 2.13.1</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><code>hello.tex</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">출력결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">"../R-4.3.0/doc/manual/"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## ../R-4.3.0/doc/manual/</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── dir</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── epsf.tex</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── images</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ecdf.pdf</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ecdf.png</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig11.pdf</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig11.png</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig12.pdf</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── fig12.png</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── hist.pdf</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── hist.png</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ice.pdf</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── ice.png</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## │   ├── QQ.pdf</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## │   └── QQ.png</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── ISBN</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Makefile.in</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Makefile.win</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── pdfcolor.tex</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── quot.sed</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-admin.texi</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-data.texi</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-defs.texi</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-exts.c</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-exts.R</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-exts.texi</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-FAQ.texi</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.aux</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.cp</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.cps</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.html</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.log</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.pdf</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.R</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.texi</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.toc</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.vr</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-intro.vrs</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-ints.texi</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── R-lang.texi</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── README</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── refman.bot</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── refman.top</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── resources.texi</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Rfaq.css</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── Rman.css</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="do">## ├── rw-FAQ.texi</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="do">## └── version.texi</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[12pt]{<span class="ex">article</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Hello, World!}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Your Name}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Introduction}</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>Hello, world! This is my first LaTeX document.</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="윈도우-컴파일-환경" class="level1 page-columns page-full" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> 윈도우 컴파일 환경</h1>
-<p>R 매뉴얼(<code>.texi</code>)을 컴파일해서 PDF, HTML, EPUB 등 가독성 높은 파일형태로 변환시키기 위해서 다양한 방법이 존재하지만 윈도우 환경에서 <strong>VS코드</strong>를 통합개발환경(IDE)로 삼아 WSL(Windows Subsystem for Linux)를 터미널로 연결시켜 사용하는 방법이 그다지 노력을 많이 들이지 않는 방법이다.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="fig/manual/r_manual_texi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="fig/manual/r_manual_texi.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="fig/manual/xetex_helloworld.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="fig/manual/xetex_helloworld.jpg" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
-<p><code>--no-split</code> 옵션을 주지 않으면 <code>R-intro/</code> 폴더아래 html 파일들이 작성된다.</p>
-<div class="column-page">
-<div class="columns">
-<div class="column" style="width:33%;">
-<section id="texi-r-intro" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="texi-r-intro"><code>.texi</code> → <code>R-intro</code></h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2any</span> <span class="at">--html</span> R-intro.texi</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</div><div class="column" style="width:34%;">
-<section id="texi-.html" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="texi-.html"><code>.texi</code> → <code>.html</code></h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2any</span> <span class="at">--html</span> R-intro.texi <span class="at">--no-split</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</div><div class="column" style="width:33%;">
-<section id="texi-.html-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="texi-.html-1"><code>.texi</code> → <code>.html</code></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2pdf</span> R-intro.texi</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 </div>
 </div>
 </div>
 </section>
-<section id="texinfo-.texi" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Texinfo (<code>.texi</code>)</h1>
-<p>R 매뉴얼은 리눅스 Texinfo 에 따라 작성된다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Texinfo는 한개의 소스 화일을 사용해서 온라인 정보와 인쇄된 출력물을 얻어낼 수 있는 문서화 system이다. 온라인 도움말 및 그외 온라인 정보와 매뉴얼 및 그외 인쇄물을 작성하기 위해 두개의 별도의 문서를 작성하는 대신, 오직 1개의 문서만 작성하면 된다. 문서가 변경되었을때, 오직 1개 문서만 변경하면 된다.</p>
-<p>Texinfo를 사용해서, 장(chapter), 절(section), 상호참조(cross reference ), 그리고 색인(index)같은 보통 서적의 특징을 가진 인쇄 문서를 만들 수 있다. 동일한 Texinfo 소스 화일에서 menu에 의해 동작하는 node, menu, 상호참조, 색인이 있는 온라인 Info file을 만들어 낼 수 있다. 인쇄 문서의 장과 절을 온라인 정보의 노드와 일치시킬 수 있다; 그리고 상호참조와 색인을 Info file과 인쇄물에 동시에 이용할 수 있다</p>
-<p>인쇄 문서를 만들어 내려면, Texinfo 소스 화일을 TeX typesetting 프로그램으로 처리한다. 이렇게 하면 조판하고, 책이나 보고서로 인쇄할 수 있는 DVI 화일이 만들어 진다. (Texinfo 언어는 TeX의 일반적인 언어인 plain TeX 과는 완전히 다르다는 것에 유의한다.)</p>
-<p>Info 파일을 만들려면, Texinfo 소스 화일을 makeinfo 유틸리티로 처리하거나, Emacs의 texinfo-format-buffer 명령을 사용하라; 이렇게 하면 온라인으로 설치할 수 있는 Info 화일이 만들어 진다.</p>
-<p>Texinfo 파일은 글과 typesetting and formatting 프로그램이 뭘 해야 할지 알려주는 @-명령(`@’다음에 오는 단어)이 들어 있는 plain ASCII 화일이다. Texinfo는 온라인 도움말과 인쇄된 매뉴얼을 동시에 만드는 데 쓸 수 있다; 게다가 Texinfo는 자유롭게 재배포할 수 있다. 이러한 이유때문에, Texinfo는 GNU 유틸리티와 라이브러리의 문서가 쓰여진 형식이 되었다.</p>
-<section id="구조" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="구조"><span class="header-section-number">4.1</span> 구조</h2>
-<p>한개의 Texinfo 파일은 보통 chapter, section, subsection과 같은 것으로 구성된 책과 같이 구조가 짜여진다. 이 구조는 맨위에 root가 있고, chapter, section, subsection, 그리고 subsubsection에 해당하는 level로 된 tree로 (혹은 뒤집어진 tree로) visualize할 수 있다.</p>
-<p>여기 각각 두개씩의 section이 있는 세개의 chapter로 구성된 Texinfo 파일을 보여주는 diagram이 있다.</p>
-<pre><code>                          Top
-                           |
-         -------------------------------------
-        |                  |                  |
-     Chapter 1          Chapter 2          Chapter 3
-        |                  |                  |
-     --------           --------           --------
-    |        |         |        |         |        |
- Section  Section   Section  Section   Section  Section
-   1.1      1.2       2.1      2.2       3.1      3.2</code></pre>
-<p>이러한 구조를 갖는 Texinfo 파일에서, Chapter 2의 시작부분은 다음과 같다;</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">@node    Chapter 2,  Chapter 3, Chapter 1, top</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">@chapter Chapter 2</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="한글-latex" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 한글 <span class="math inline">\(\LaTeX\)</span></h1>
+<p>한글 <span class="math inline">\(\LaTeX\)</span> 문서를 컴파일하여 <code>.pdf</code> 파일을 생성하고자 하는 경우 한글글꼴이 필요하다. 나눔글꼴을 다음 명령어로 설치하고 <code>.tex</code> 파일에서 불러 사용한다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install fonts-nanum</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>영문 <code>.tex</code>과 비교하여 한글 글꼴을 명시하면 수월하게 미려한 한글을 문서에 담아낼 수 있다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><code>hello.tex</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">출력결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[12pt]{<span class="ex">article</span>}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainfont</span>{NanumGothic}</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{qqq안녕 세상아!}</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{당신의 이름}</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{서론}</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>안녕, 세상아! 이것은 나의 첫번째 LaTeX 문서입니다.</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/manual/xetex_ko_helloworld.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="fig/manual/xetex_ko_helloworld.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="texinfo-설치" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <code>Texinfo</code> 설치</h1>
+<p>R 매뉴얼을 비롯한 리눅스 매뉴얼은 <code>.texi</code> 확장자를 갖는 Texinfo를 기반으로 개발된다. 이를 위해서 패키지를 설치한다.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get update</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install texinfo</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>texi2any</code> 명령어로 제대로 설치되었는지 확인한다.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> texi2any <span class="at">--version</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">texi2any</span> <span class="er">(</span><span class="ex">GNU</span> texinfo<span class="kw">)</span> <span class="ex">6.7</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">2017</span> Free Software Foundation, Inc.</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><code>helloworld.texi</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">출력결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\input</span> texinfo</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>@settitle Sample Manual 1.0</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>@copying</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>This is a short example of a complete Texinfo file.</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>Copyright @copyright{} 2023 OpenAI Foundation, Inc.</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>@end copying</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>@titlepage</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>@title Sample Title</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>@page</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>@vskip 0pt plus 1filll</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>@insertcopying</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>@end titlepage</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>@contents</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>@node Top</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>@top GNU Sample</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>This manual is for GNU Sample</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>(version @value{VERSION}, @value{UPDATED}).</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>@menu</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>* First Chapter::    The first chapter is the</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>                      only chapter in this sample.</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>* Index::            Complete index.</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>@end menu</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>@node First Chapter</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>@chapter First Chapter</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>@cindex chapter, first</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>This is the first chapter.</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>@cindex index entry, another</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>Here is a numbered list.</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>@enumerate</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>@item</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>This is the first item.</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>@item</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>This is the second item.</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>@end enumerate</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>@node First Section</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>@section First Section</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>First section of first chapter.</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>@node Second Section</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>@section Second Section</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>Second section of first chapter.</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>@node Index</span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>@unnumbered Index</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>@printindex cp</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>@bye</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="fig/manual/texinfo_helloworld.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="fig/manual/texinfo_helloworld.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
-</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p><a href="http://korea.gnu.org/manual/release/texinfo/texinfo-ko_toc.html">Texinfo GNU 문서 형식(1996년 10월), 류창우 번역</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -912,7 +995,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
 
 
 

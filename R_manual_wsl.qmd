@@ -1,0 +1,295 @@
+---
+title: "디지털 글쓰기"
+subtitle: "WSL 환경 R 매뉴얼"
+description: |
+  WSL 환경에서 R 매뉴얼 한국어 번역을 준비합니다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: false
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+![](fig/manual/debian_texi_workflow.jpg)
+
+코어 개발팀에서 Debian Linux를 근간으로 R 코어 및 관련 개발을 진행하기 때문에 동일한 개발환경을 맞추는 것은 중요하다. 리눅스의 경우 다양한 배포판이 있지만 가장 많이 사용되는 리눅스 배포판은 [우분투](https://ubuntu.com/download)와 [데비안](https://www.debian.org/index.ko.html)을 꼽을 수 있다.
+
+
+# WSL 데비안
+
+WSL(Linux용 Windows 서브시스템)을 통해 Debian 배포를 설치하는 경우 WSL을 설치하고 
+이어서 데비안 리눅스 배포판을 설치한다.
+
+Windows PowerShell을 통해 WSL(Linux용 Windows 하위 시스템)을 설치한다.
+
+```bash
+$ wsl --install
+```
+
+상기 명령을 실행하면 시스템이 WSL과 Linux 배포판(기본값은 우분투)을 설치하고 PC를 재시낙한다.
+
+'가상 머신 플랫폼' 선택적 구성 요소를 활성화시킨다. 새 Linux 배포판을 설치하기 전에 '가상 머신 플랫폼' 구성 요소가 활성화되어 있는지 확인해야 하고, 관리자 권한으로 PowerShell을 다시 열고 실행한다.
+
+```bash
+$ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+PC를 다시 시작하여 WSL 설치 및 WSL 2로 업데이트를 완료하고, WSL 2를 기본 버전으로 설정한다.
+
+```bash
+$ wsl --set-default-version 2
+```
+
+`wsl --install` 디폴트로 우분투 리눅스 배포판이 설치되지만
+`-d Debian` 인자를 넣게 되면 데비안 리눅스 배포판을 설치할 수 있다.
+
+```bash
+$ wsl --install -d Debian
+```
+
+정상으로 WSL 데비안 배포판이 설치되었는지 확인한다.
+
+```bash
+$ cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+NAME="Debian GNU/Linux"
+VERSION_ID="11"
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+```
+
+# $\LaTeX$ 설치
+
+다음 명령어로 $\LaTeX$을 설치하여 `.tex` 파일을 컴파일하여 `.pdf` 파일 생성을 준비한다.
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install texlive-full
+```
+
+`latex --version` 명령어로 데비안 리눅스에 $\LaTeX$ 엔진이 설치되었는지 확인한다.
+
+```bash
+$ latex --version
+XeTeX 3.14159265-2.6-0.999992 (TeX Live 2020/Debian)
+kpathsea version 6.3.2
+Copyright 2020 SIL International, Jonathan Kew and Khaled Hosny.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the XeTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the XeTeX source.
+Primary author of XeTeX: Jonathan Kew.
+Compiled with ICU version 67.1; using 67.1
+Compiled with zlib version 1.2.11; using 1.2.11
+Compiled with FreeType2 version 2.10.4; using 2.10.4
+Compiled with Graphite2 version 1.3.14; using 1.3.14
+Compiled with HarfBuzz version 2.7.4; using 2.7.4
+Compiled with libpng version 1.6.37; using 1.6.37
+Compiled with poppler version 0.68.0
+Compiled with fontconfig version 2.13.1; using 2.13.1
+```
+
+:::{.panel-tabset}
+
+### `hello.tex`
+
+```{tex}
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Hello, World!}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Hello, world! This is my first LaTeX document.
+
+\end{document}
+```
+
+### 출력결과
+
+![](fig/manual/xetex_helloworld.jpg)
+
+:::
+
+# 한글 $\LaTeX$
+
+한글 $\LaTeX$ 문서를 컴파일하여 `.pdf` 파일을 생성하고자 하는 경우 한글글꼴이 필요하다.
+나눔글꼴을 다음 명령어로 설치하고 `.tex` 파일에서 불러 사용한다.
+
+```bash
+$ sudo apt-get install fonts-nanum
+```
+
+영문 `.tex`과 비교하여 한글 글꼴을 명시하면 수월하게 미려한 한글을 문서에 담아낼 수 있다.
+
+:::{.panel-tabset}
+
+### `hello.tex`
+
+```{tex}
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\setmainfont{NanumGothic}
+
+\begin{document}
+
+\title{qqq안녕 세상아!}
+\author{당신의 이름}
+\date{\today}
+
+\maketitle
+
+\section{서론}
+
+안녕, 세상아! 이것은 나의 첫번째 LaTeX 문서입니다.
+
+\end{document}
+```
+
+### 출력결과
+
+![](fig/manual/xetex_ko_helloworld.jpg)
+
+:::
+
+
+# `Texinfo` 설치
+
+R 매뉴얼을 비롯한 리눅스 매뉴얼은 `.texi` 확장자를 갖는 Texinfo를 기반으로 개발된다. 이를 위해서 패키지를 설치한다.
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install texinfo
+```
+
+`texi2any` 명령어로 제대로 설치되었는지 확인한다.
+
+```bash
+$ texi2any --version
+texi2any (GNU texinfo) 6.7
+
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
+
+:::{.panel-tabset}
+
+### `helloworld.texi`
+
+```{tex}
+\input texinfo
+@settitle Sample Manual 1.0
+
+@copying
+This is a short example of a complete Texinfo file.
+
+Copyright @copyright{} 2023 OpenAI Foundation, Inc.
+@end copying
+
+@titlepage
+@title Sample Title
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@node Top
+@top GNU Sample
+
+This manual is for GNU Sample
+(version @value{VERSION}, @value{UPDATED}).
+
+@menu
+* First Chapter::    The first chapter is the
+                      only chapter in this sample.
+* Index::            Complete index.
+@end menu
+
+@node First Chapter
+@chapter First Chapter
+
+@cindex chapter, first
+This is the first chapter.
+@cindex index entry, another
+
+Here is a numbered list.
+
+@enumerate
+@item
+This is the first item.
+
+@item
+This is the second item.
+@end enumerate
+
+@node First Section
+@section First Section
+
+First section of first chapter.
+
+@node Second Section
+@section Second Section
+
+Second section of first chapter.
+
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye
+```
+
+### 출력결과
+
+![](fig/manual/texinfo_helloworld.jpg)
+
+:::
+
+
+
+

@@ -74,8 +74,10 @@ website:
           - href: bitPublish_cheatsheet.qmd
             text: "`bitPublish` 참조안내서"
           - text: "------------"
+          - href: R_manual_wsl.qmd
+            text: "WSL 환경 R 매뉴얼"
           - href: R_manual.qmd
-            text: "R 매뉴얼"
+            text: "R 매뉴얼(`.texi`)"
       - text: "엑셀(Excel)"
         menu: 
           - href: excel_why.qmd
