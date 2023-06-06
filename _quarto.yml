@@ -94,12 +94,16 @@ website:
             text: "전국대학현황"
           - href: sat_pop.qmd
             text: "연령별 인구구조"
+          - text: "------------"
           - href: sat_english.qmd
             text: "수능영어 (2023)"
           - href: sat_english_solve.qmd
             text: "수능영어 (2023): 풀이"
           - href: sat_english_practice.qmd
             text: "수능영어 (2023): 훈련"            
+          - text: "------------"
+          - href: sat_math.qmd
+            text: "수능수학 (2023)"
             
       - text: 관련 정보
         menu: 

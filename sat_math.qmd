@@ -1,0 +1,175 @@
+---
+title: "디지털 글쓰기"
+subtitle: "수능수학 (2023)"
+description: |
+  데이터 과학자 학부모입장에서 챗GPT시대 수학능력평가 수학문제를 풀어보자.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 대학수학능력시험
+
+한국교육과정평가원에서 대학수학능력시험을 주관한다. 가장 최근에 실시된
+[수학능력평가시험지](https://www.suneung.re.kr/sub/info.do?m=0401&s=suneung)를 살펴보면 다음과 같다.
+
+## 문제지
+
+2023학년도 대학수학능력시험 문제지 중에서 수학영역 PDF를 다운로드 받으면 
+다음과 같이 확인이 가능하다.
+
+``` {r}
+#| label: sat-math-problems
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/math/2교시_수학영역_문제지.pdf")
+```
+
+
+## 정답지
+
+정답지도 함께 제공되어 각문제에 대한 정답도 확인가능하다.
+
+``` {r}
+#| label: sat-math-solutions
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/math/2교시_수학영역_정답표.pdf")
+```
+
+
+# 기계판독
+
+기계판독 가능한 형태로 작업을 해야만 챗GPT를 활용하여 문제를 풀 수 있다.
+이를 위해서 다양한 도구를 사용하여 작업을 수행한다.
+
+## 정답지
+
+파이썬 `tabula` 패키지를 사용하여 PDF 파일에서 텍스트를 표형태로 된 데이터를 추출한다.
+
+```{python}
+import pandas as pd
+import tabula
+answer_file = "data/math/2교시_수학영역_정답표.pdf"
+answer = tabula.read_pdf(answer_file, pages='all')
+```
+
+파이썬 `tabula` 패키지로 추출한 데이터표를 R에서 데이터 전처리 작업을 수행한다.
+
+```{r}
+library(tidyverse)
+library(reticulate)
+library(gt)
+
+odd_1 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(1:3) %>% 
+  set_names(c("문항번호", "정답", "배점")) %>% 
+  mutate(구분 = "공통") %>% 
+  mutate_all(.funs=as.character)
+
+odd_2 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(4:6) %>% 
+  set_names(c("문항번호", "정답", "배점")) %>% 
+  mutate(구분 = "공통") %>% 
+  mutate_all(.funs=as.character)
+
+odd_3 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(7:9) %>% 
+  set_names(c("문항번호", "정답", "배점")) %>% 
+  mutate(구분 = "확통") %>% 
+  mutate_all(.funs=as.character)
+
+odd_4 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(10:12) %>% 
+  set_names(c("문항번호", "정답", "배점")) %>% 
+  mutate(구분 = "미적") %>% 
+  mutate_all(.funs=as.character)
+
+odd_5 <- py$answer[[1]] %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  select(13:15) %>% 
+  set_names(c("문항번호", "정답", "배점")) %>% 
+  mutate(구분 = "기하") %>% 
+  mutate_all(.funs=as.character)
+
+
+odd_tbl <- bind_rows(odd_1, odd_2) %>% 
+  bind_rows(odd_3) %>% 
+  bind_rows(odd_4) %>% 
+  filter(str_detect(문항번호, "\\d"))
+
+odd_tbl %>% 
+  gt::gt() %>% 
+  cols_align("center") %>% 
+  # gtExtras::gt_theme_538() %>% 
+    opt_interactive(
+    use_search = TRUE,
+    use_filters = TRUE,
+    use_resizers = TRUE,
+    use_highlight = TRUE,
+    use_compact_mode = TRUE,
+    use_text_wrapping = FALSE,
+    use_page_size_select = TRUE
+  )
+```
+
+
+## 문제지
+
+$\LaTeX$으로 작성된 `.tex` 파일을 `.md` 파일로 쉽게 변환시킬 수 있다.
+
+```bash
+pandoc -s 2교시_수학영역_문제지.tex -o 2교시_수학영역_문제지.md
+```
+
+2023학년도 대학수학능력시험 문제지 수학문제 홀수형 1번 문제를 추출해보자.
+
+```{r}
+#| results: asis
+problems <- read_lines("data/math/2교시_수학영역_문제지/2교시_수학영역_문제지.md")
+## \\ --> \
+writeLines(str_replace_all(problems[13:14], "\\\\\\\\", "\\\\"))
+```
+
+한 문항을 확장하여 전체문제를 기계판독해보자.
+
+
+
+
