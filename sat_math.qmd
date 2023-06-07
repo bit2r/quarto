@@ -21,6 +21,7 @@ format:
     number-sections: true
     highlight-style: github    
     self-contained: false
+    default-image-extension: jpg
 filters:
    - lightbox
 lightbox: auto
@@ -151,7 +152,7 @@ odd_tbl %>%
 ```
 
 
-## 문제지
+## 문제지 (한문항)
 
 $\LaTeX$으로 작성된 `.tex` 파일을 `.md` 파일로 쉽게 변환시킬 수 있다.
 
@@ -168,8 +169,66 @@ problems <- read_lines("data/math/2교시_수학영역_문제지/2교시_수학�
 writeLines(str_replace_all(problems[13:14], "\\\\\\\\", "\\\\"))
 ```
 
+## 문제지 (전체문항)
+
 한 문항을 확장하여 전체문제를 기계판독해보자.
+먼저 파이썬에서 텍스트 문제를 불러 전처리 작업을 수행한다.
+
+```{python}
+#| eval: true
+import pandas as pd
+import re
+
+# Read the lines of the file
+with open("data/math/2교시_수학영역_문제지/2교시_수학영역_문제지.md", 'r') as f:
+    problems = f.readlines()
+
+# Combine the lines into a single string
+problems_txt = ' '.join(problems)
+
+# Split the string on "짝수형"
+problems_split = re.split('짝수형', problems_txt, maxsplit=1)
+
+# Get the first part of the split (equivalent to problems_split[1] in R)
+problem_odd_raw = problems_split[0]
+
+split_text = re.split(r"(?=\b\d+\.\s)", problem_odd_raw)
+
+# for i, segment in enumerate(split_text):
+#     print(f"Segment {i}:\n{segment}\n-----")
+
+# split_text_as_string = '\n'.join(split_text)
+# 
+# # Write the string to a text file
+# with open('data/math_problems.txt', 'w') as f:
+#     f.write(split_text_as_string)
+
+```
 
 
 
+```{r}
+#| results: asis
+
+# problems_py <- read_lines('data/math_problems.txt')
+
+problem_tbl <- py$split_text %>% 
+  enframe(value = "raw_text") %>% 
+  filter(str_detect(raw_text, "^\\d")) %>% 
+  mutate(구분 = c(rep("공통", 22), rep("확통", 8), rep("미적", 8), rep("기하", 8)) ) %>% 
+  mutate(문제 = raw_text) %>% 
+  select(구분, 문제) 
+
+
+problem_tbl %>% 
+  mutate(문제 = str_replace(문제, "2023_06_06_", "data/math/2교시_수학영역_문제지/images/2023_06_06_")) %>% 
+  gt::gt() %>% 
+    fmt(
+      columns = 문제,
+      fns = function(x) {
+        writeLines(str_replace_all(x, "\\\\\\\\", "\\\\"))
+      }
+    )
+  
+```
 
