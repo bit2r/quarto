@@ -69,6 +69,8 @@ website:
           - href: latex_rmd.qmd
             text: "Rmd --> PDF"
           - text: "------------"
+          - href: book_cover.qmd
+            text: "생성AI: 책표지 + 로고"
           - href: bitPublish.qmd
             text: "글쓰기 --> 출판: `bitPublish`"
           - href: bitPublish_cheatsheet.qmd
