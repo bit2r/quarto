@@ -98,7 +98,7 @@ website:
             text: "연령별 인구구조"
           - text: "------------"
           - href: sat_english.qmd
-            text: "수능영어 (2023)"
+            text: "수능영어 (2023): 사전준비"
           - href: sat_english_solve.qmd
             text: "수능영어 (2023): 풀이"
           - href: sat_english_practice.qmd

@@ -1,8 +1,8 @@
 ---
 title: "디지털 글쓰기"
-subtitle: "수능영어 (2023)"
+subtitle: "수능영어 (2023): 사전준비"
 description: |
-  PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 자유로이 풀어보자.
+  PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 챗GPT로 풀어볼 수 있도록 준비한다.
 author:
   - name: 이광춘
     url: https://www.linkedin.com/in/kwangchunlee/
@@ -38,8 +38,48 @@ editor_options:
   chunk_output_type: console
 ---
 
-# 듣기 문제
+# 수능 문제지
 
+한국교육과정평가원 대학수학능력시험 [기출문제](https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung) 웹사이트에서 PDF파일을 다운로드 받게 되면 2023년 수능 영어 기출문제를 다운로드 받을 수 있다.
+
+:::{.panel-tabset}
+
+### 문제지
+
+``` {r}
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf")
+```
+
+
+### 듣기문제 대본
+
+``` {r}
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf")
+```
+
+### 정답지
+
+``` {r}
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/2023_3교시_영어영역_정답표.pdf")
+```
+
+:::
+
+# 챗GPT 선행작업
+
+챗GPT 문제 풀이 및 정답 확인을 위해서 PDF, *.mp3 파일에 대한 준비작업을 수행한다.
+이를 통해서 챗GPT에서 푼 문제에 대한 해답을 확인할 수 있다.
+
+## 음원파일 정리
 
 ```{r}
 library(tidyverse)
@@ -72,7 +112,7 @@ mp3_audio <- mp3_files[!str_detect(mp3_files, "안내")]
 # }
 ```
 
-# 듣기평가대본
+## 듣기평가대본
 
 ```{r}
 library(pdftools)
@@ -104,8 +144,9 @@ sources_text <- map_chr(sources, str_squish) %>%
 sources_text
 ```
 
+# PDF &rarr; 챗GPT 준비
 
-# 음원과 대본
+## 음원과 대본
 
 ```{r}
 #| results: asis
@@ -127,7 +168,7 @@ for(i in seq_along(mp3_audio)) {
 ```
 
 
-# 문제
+## 문제
 
 ```{python}
 # ! pip install pymupdf
@@ -159,7 +200,7 @@ problems_tbl <- problems_split[str_detect(problems_split, pattern = "^(?=\\b\\d{
 
 ```
 
-## 홀수형
+### 홀수형
 
 ```{r}
 #| results: asis
@@ -176,7 +217,7 @@ for( i in 1:nrow(problems_odd)) {
 }
 ```
 
-## 짝수형
+### 짝수형
 
 ```{r}
 #| results: asis
@@ -194,7 +235,7 @@ for( i in 1:nrow(problems_odd)) {
 }
 ```
 
-# 정답
+## 정답
 
 ```{python}
 import pandas as pd
@@ -203,7 +244,7 @@ answer_file = "data/2023_3교시_영어영역_정답표.pdf"
 answer = tabula.read_pdf(answer_file, pages='all')
 ```
 
-## 홀수형
+### 홀수형
 
 ```{r}
 odd_1 <- py$answer[[1]] %>% 
@@ -237,7 +278,7 @@ odd_tbl %>%
   gtExtras::gt_theme_538()
 ```
 
-## 짝수형
+### 짝수형
 
 ```{r}
 even_1 <- py$answer[[2]] %>% 

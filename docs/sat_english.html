@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.299">
+<meta name="generator" content="quarto-1.4.288">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="이광춘">
-<meta name="description" content="PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 자유로이 풀어보자.">
+<meta name="description" content="PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 챗GPT로 풀어볼 수 있도록 준비한다.">
 
 <title>디지털 글쓰기</title>
 <style>
@@ -75,6 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,16 +85,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
   }
 }</script>
 
@@ -99,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="twitter:title" content="디지털 글쓰기">
-<meta name="twitter:description" content="PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 자유로이 풀어보자.">
+<meta name="twitter:description" content="한글 쿼토">
 <meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
@@ -112,13 +121,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">디지털 글쓰기</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="검색"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="탐색 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -222,6 +231,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
  <span class="dropdown-text">Rmd –&gt; PDF</span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./book_cover.html" rel="" target="">
+ <span class="dropdown-text">생성AI: 책표지 + 로고</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bitPublish.html" rel="" target="">
+ <span class="dropdown-text">글쓰기 –&gt; 출판: <code>bitPublish</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bitPublish_cheatsheet.html" rel="" target="">
+ <span class="dropdown-text"><code>bitPublish</code> 참조안내서</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./R_manual_wsl.html" rel="" target="">
+ <span class="dropdown-text">WSL 환경 R 매뉴얼</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./R_manual.html" rel="" target="">
+ <span class="dropdown-text">R 매뉴얼(<code>.texi</code>)</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -260,13 +291,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./sat_pop.html" rel="" target="">
  <span class="dropdown-text">연령별 인구구조</span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="./sat_english.html" rel="" target="">
- <span class="dropdown-text">수능영어 (2023)</span></a>
+ <span class="dropdown-text">수능영어 (2023): 사전준비</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./sat_english_solve.html" rel="" target="">
  <span class="dropdown-text">수능영어 (2023): 풀이</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_english_practice.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 훈련</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_math.html" rel="" target="">
+ <span class="dropdown-text">수능수학 (2023)</span></a>
   </li>  
     </ul>
   </li>
@@ -334,19 +375,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -355,18 +396,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">디지털 글쓰기</h1>
-            <p class="subtitle lead">수능영어 (2023)</p>
+            <p class="subtitle lead">수능영어 (2023): 사전준비</p>
                   <div>
         <div class="description">
-          <p>PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 자유로이 풀어보자.</p>
+          <p>PDF 파일 갇혀 불쌍하게 있던 수능영어 문제를 챗GPT로 풀어볼 수 있도록 준비한다.</p>
         </div>
       </div>
                 </div>
   </div>
     
   <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-heading">소속</div>
     
       <div class="quarto-title-meta-contents">
       <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
@@ -397,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">PPT</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -420,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">전자책</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -437,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">디지털 글쓰기</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -454,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">코딩(Computation)</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -489,10 +530,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#듣기-문제" id="toc-듣기-문제" class="nav-link active" data-scroll-target="#듣기-문제"><span class="header-section-number">1</span> 듣기 문제</a></li>
-  <li><a href="#듣기평가대본" id="toc-듣기평가대본" class="nav-link" data-scroll-target="#듣기평가대본"><span class="header-section-number">2</span> 듣기평가대본</a></li>
-  <li><a href="#음원과-대본" id="toc-음원과-대본" class="nav-link" data-scroll-target="#음원과-대본"><span class="header-section-number">3</span> 음원과 대본</a>
+  <li><a href="#수능-문제지" id="toc-수능-문제지" class="nav-link active" data-scroll-target="#수능-문제지"><span class="header-section-number">1</span> 수능 문제지</a></li>
+  <li><a href="#챗gpt-선행작업" id="toc-챗gpt-선행작업" class="nav-link" data-scroll-target="#챗gpt-선행작업"><span class="header-section-number">2</span> 챗GPT 선행작업</a>
   <ul class="collapse">
+  <li><a href="#음원파일-정리" id="toc-음원파일-정리" class="nav-link" data-scroll-target="#음원파일-정리"><span class="header-section-number">2.1</span> 음원파일 정리</a></li>
+  <li><a href="#듣기평가대본" id="toc-듣기평가대본" class="nav-link" data-scroll-target="#듣기평가대본"><span class="header-section-number">2.2</span> 듣기평가대본</a></li>
+  </ul></li>
+  <li><a href="#pdf-챗gpt-준비" id="toc-pdf-챗gpt-준비" class="nav-link" data-scroll-target="#pdf-챗gpt-준비"><span class="header-section-number">3</span> PDF → 챗GPT 준비</a>
+  <ul class="collapse">
+  <li><a href="#음원과-대본" id="toc-음원과-대본" class="nav-link" data-scroll-target="#음원과-대본"><span class="header-section-number">3.1</span> 음원과 대본</a></li>
   <li><a href="#문제-01" id="toc-문제-01" class="nav-link" data-scroll-target="#문제-01">문제 01</a></li>
   <li><a href="#문제-02" id="toc-문제-02" class="nav-link" data-scroll-target="#문제-02">문제 02</a></li>
   <li><a href="#문제-03" id="toc-문제-03" class="nav-link" data-scroll-target="#문제-03">문제 03</a></li>
@@ -509,11 +555,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#문제-14" id="toc-문제-14" class="nav-link" data-scroll-target="#문제-14">문제 14</a></li>
   <li><a href="#문제-15" id="toc-문제-15" class="nav-link" data-scroll-target="#문제-15">문제 15</a></li>
   <li><a href="#문제-1617" id="toc-문제-1617" class="nav-link" data-scroll-target="#문제-1617">문제 16~17</a></li>
-  </ul></li>
-  <li><a href="#문제" id="toc-문제" class="nav-link" data-scroll-target="#문제"><span class="header-section-number">4</span> 문제</a>
+  <li><a href="#문제" id="toc-문제" class="nav-link" data-scroll-target="#문제"><span class="header-section-number">3.2</span> 문제</a>
   <ul class="collapse">
-  <li><a href="#홀수형" id="toc-홀수형" class="nav-link" data-scroll-target="#홀수형"><span class="header-section-number">4.1</span> 홀수형</a>
-  <ul class="collapse">
+  <li><a href="#홀수형" id="toc-홀수형" class="nav-link" data-scroll-target="#홀수형"><span class="header-section-number">3.2.1</span> 홀수형</a></li>
   <li><a href="#문제-1" id="toc-문제-1" class="nav-link" data-scroll-target="#문제-1">문제 1</a></li>
   <li><a href="#문제-2" id="toc-문제-2" class="nav-link" data-scroll-target="#문제-2">문제 2</a></li>
   <li><a href="#문제-3" id="toc-문제-3" class="nav-link" data-scroll-target="#문제-3">문제 3</a></li>
@@ -559,9 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#문제-43" id="toc-문제-43" class="nav-link" data-scroll-target="#문제-43">문제 43</a></li>
   <li><a href="#문제-44" id="toc-문제-44" class="nav-link" data-scroll-target="#문제-44">문제 44</a></li>
   <li><a href="#문제-45" id="toc-문제-45" class="nav-link" data-scroll-target="#문제-45">문제 45</a></li>
-  </ul></li>
-  <li><a href="#짝수형" id="toc-짝수형" class="nav-link" data-scroll-target="#짝수형"><span class="header-section-number">4.2</span> 짝수형</a>
-  <ul class="collapse">
+  <li><a href="#짝수형" id="toc-짝수형" class="nav-link" data-scroll-target="#짝수형"><span class="header-section-number">3.2.2</span> 짝수형</a></li>
   <li><a href="#문제-1-1" id="toc-문제-1-1" class="nav-link" data-scroll-target="#문제-1-1">문제 1</a></li>
   <li><a href="#문제-2-1" id="toc-문제-2-1" class="nav-link" data-scroll-target="#문제-2-1">문제 2</a></li>
   <li><a href="#문제-3-1" id="toc-문제-3-1" class="nav-link" data-scroll-target="#문제-3-1">문제 3</a></li>
@@ -608,11 +650,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#문제-44-1" id="toc-문제-44-1" class="nav-link" data-scroll-target="#문제-44-1">문제 44</a></li>
   <li><a href="#문제-45-1" id="toc-문제-45-1" class="nav-link" data-scroll-target="#문제-45-1">문제 45</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#정답" id="toc-정답" class="nav-link" data-scroll-target="#정답"><span class="header-section-number">5</span> 정답</a>
+  <li><a href="#정답" id="toc-정답" class="nav-link" data-scroll-target="#정답"><span class="header-section-number">3.3</span> 정답</a>
   <ul class="collapse">
-  <li><a href="#홀수형-1" id="toc-홀수형-1" class="nav-link" data-scroll-target="#홀수형-1"><span class="header-section-number">5.1</span> 홀수형</a></li>
-  <li><a href="#짝수형-1" id="toc-짝수형-1" class="nav-link" data-scroll-target="#짝수형-1"><span class="header-section-number">5.2</span> 짝수형</a></li>
+  <li><a href="#홀수형-1" id="toc-홀수형-1" class="nav-link" data-scroll-target="#홀수형-1"><span class="header-section-number">3.3.1</span> 홀수형</a></li>
+  <li><a href="#짝수형-1" id="toc-짝수형-1" class="nav-link" data-scroll-target="#짝수형-1"><span class="header-section-number">3.3.2</span> 짝수형</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -623,113 +665,174 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="듣기-문제" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 듣기 문제</h1>
+<section id="수능-문제지" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 수능 문제지</h1>
+<p>한국교육과정평가원 대학수학능력시험 <a href="https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&amp;m=0403&amp;s=suneung">기출문제</a> 웹사이트에서 PDF파일을 다운로드 받게 되면 2023년 수능 영어 기출문제를 다운로드 받을 수 있다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">문제지</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">듣기문제 대본</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">정답지</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>html_tag_audio <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"mp3"</span>)) {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  type <span class="ot">&lt;-</span> <span class="fu">match.arg</span>(type)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  htmltools<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">audio</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">controls =</span> <span class="st">""</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    htmltools<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">source</span>(</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">src =</span> file,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"audio/{type}"</span>, <span class="at">type =</span> type)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>mp3_path <span class="ot">&lt;-</span> <span class="st">"data/2023_3교시_영어영역_듣기평가_음원/"</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>mp3_files <span class="ot">&lt;-</span> fs<span class="sc">::</span><span class="fu">dir_ls</span>(mp3_path)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>mp3_audio <span class="ot">&lt;-</span> mp3_files[<span class="sc">!</span><span class="fu">str_detect</span>(mp3_files, <span class="st">"안내"</span>)]</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># html_tag_audio("data/2023_3교시_영어영역_듣기평가_음원/01_문제 01.mp3", type = "mp3")</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># for(i in seq_along(mp3_audio)) {</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#   question &lt;- str_remove(mp3_audio[i], 'data/2023_3교시_영어영역_듣기평가_음원/') %&gt;% </span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   str_remove("^\\d{1,2}_")</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#   cat(paste0("### ", question, " {.unnumbered}", "\n"))</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(html_tag_audio(mp3_audio[i], type = "mp3"))</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><embed src="data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><embed src="data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/2023_3교시_영어영역_정답표.pdf"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/2023_3교시_영어영역_정답표.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><embed src="data/2023_3교시_영어영역_정답표.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="챗gpt-선행작업" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 챗GPT 선행작업</h1>
+<p>챗GPT 문제 풀이 및 정답 확인을 위해서 PDF, *.mp3 파일에 대한 준비작업을 수행한다. 이를 통해서 챗GPT에서 푼 문제에 대한 해답을 확인할 수 있다.</p>
+<section id="음원파일-정리" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="음원파일-정리"><span class="header-section-number">2.1</span> 음원파일 정리</h2>
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>html_tag_audio <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"mp3"</span>)) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  type <span class="ot">&lt;-</span> <span class="fu">match.arg</span>(type)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  htmltools<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">audio</span>(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">controls =</span> <span class="st">""</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    htmltools<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">source</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">src =</span> file,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"audio/{type}"</span>, <span class="at">type =</span> type)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>mp3_path <span class="ot">&lt;-</span> <span class="st">"data/2023_3교시_영어영역_듣기평가_음원/"</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>mp3_files <span class="ot">&lt;-</span> fs<span class="sc">::</span><span class="fu">dir_ls</span>(mp3_path)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>mp3_audio <span class="ot">&lt;-</span> mp3_files[<span class="sc">!</span><span class="fu">str_detect</span>(mp3_files, <span class="st">"안내"</span>)]</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># html_tag_audio("data/2023_3교시_영어영역_듣기평가_음원/01_문제 01.mp3", type = "mp3")</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># for(i in seq_along(mp3_audio)) {</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#   question &lt;- str_remove(mp3_audio[i], 'data/2023_3교시_영어영역_듣기평가_음원/') %&gt;% </span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   str_remove("^\\d{1,2}_")</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#   cat(paste0("### ", question, " {.unnumbered}", "\n"))</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(html_tag_audio(mp3_audio[i], type = "mp3"))</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="듣기평가대본" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> 듣기평가대본</h1>
+<section id="듣기평가대본" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="듣기평가대본"><span class="header-section-number">2.2</span> 듣기평가대본</h2>
 <div class="cell">
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsubfn)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sources <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_text</span>(<span class="at">pdf =</span> <span class="st">"data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># sources_squish &lt;- map_chr(sources, str_squish)</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sources_clean &lt;- map_chr(sources_squish, str_extract, pattern = "(\\d{1,2}\\.\\s+).*")</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># map_chr(sources_clean, str_remove, pattern = "-\\s+\\d{1,2}\\s+-$")</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>replacement <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">==</span> <span class="st">"W:"</span>) {</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">W:"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="st">"M:"</span>) {</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">M:"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>sources_text <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(sources, str_squish) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_extract, <span class="at">pattern =</span> <span class="st">"(</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+).*"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_remove, <span class="at">pattern =</span> <span class="st">"-</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">s+-$"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(gsubfn, <span class="at">pattern =</span> <span class="st">"(W:|M:)"</span>, <span class="at">replacement =</span> replacement) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_trim) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_c, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># gsubfn("(W:|M:)", replacement, sources_text)</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>sources_text</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] "1. 다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. \n\nM: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.\n"                                                                                                                                                                                         </span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="do">##  [2] "2. 대화를 듣고, 여자의 의견으로 가장 적절한 것을 고르시오. \n\nM: Honey, do you want some apples with breakfast? \n\nW: Sounds great. Can you save the apple peels for me? \n\nM: Why? What do you want them for? \n\nW: I’m going to use them to make a face pack. Apple peels are effective for improving skin condition. \n\nM: Where did you hear about that? \n\nW: I recently read an ar ticle about their benef its for our skin. \n\nM: Interesting. What’s in them? \n\nW: It said apple peels are rich in vitamins and minerals, so they moisturize our skin and enhance skin glow. \n\nM: That’s good to know. \n\nW: Also, they remove oil from our skin and have a cooling effect. \n\nM: Wow! Then I shouldn’t throw them away. \n\nW: Right. Apple peels can help improve our skin condition. \n\nM: I see. I’ll save them for you.\n"                                                                                           </span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] "3. 대화를 듣고, 두 사람의 관계를 가장 잘 나타낸 것을 고르시오. \n\nW: Hello, Mr. Rober ts. I appreciate you taking the time to share your experience and knowledge. \n\nM: My pleasure, Ms. Lee. I’ve enjoyed all your bestselling books. So, I’m excited to help you. \n\nW: Thanks. Since I’m writing about world-class athletes, I wanted to hear how you’ve trained children who became Olympic swimming champions. \n\nM: Then we should star t with what I observe on the f irst day of my swimming classes. \n\nW: Do some children stand out right away? \n\nM: Yes. Some kids are able to pick up my instructions quickly and easily. \n\nW: I see. So did many of those kids go on to become Olympic champions? \n\nM: Well, practicing is much more impor tant. Those who consistently practiced made great improvements and ultimately became champions. \n\nW: This is good insight I can use in my book. \n\nM: I hope it helps.\n"</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  [4] "4. 대화를 듣고, 그림에서 대화의 내용과 일치하지 않는 것을 고르시오. \n\nM: Hi, Jane. What are you looking at on your phone? \n\nW: Hi, Brian. It’s a picture I took at Grand Boulder National Park. I went hiking there last weekend. \n\nM: Let me see. I like the bear statue wearing the check patter n jacket. \n\nW: It’s cute, right? \n\nM: Yeah. There’s a park map between the lights. It seems to include useful infor mation. \n\nW: It helps me pick a different trail each time I go hiking. Do you see the two f lowerpots in front of the cabin? \n\nM: Yes. They look beautiful. Oh, there’s a round table by the path. \n\nW: I had lunch there. \n\nM: What a nice place to enjoy lunch! Look at the bird on the tree branch. \n\nW: Isn’t it lovely? I love going there and being close to nature.\n"                                                                                                                        </span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] "5. 대화를 듣고, 남자가 할 일로 가장 적절한 것을 고르시오. \n\nW: Honey, I’m so excited for our restaurant’s reopening event tomor row. \n\nM: So am I. Let’s see. We’ve ordered enough ingredients, right? \n\nW: I think so. We need to remind our loyal customers of the event. \n\nM: I already sent text messages. \n\nW: Good. I hope people like the new menu items that we added. \n\nM: Don’t worr y. We have a great chef. So I’m sure the new dishes will be a hit. \n\nW: What about the live music? Did you conf ir m the song list with the band? \n\nM: Not yet. And we also need to wrap wine glasses to give as gifts for the customers. \n\nW: Okay. Could you wrap them? \n\nM: Sure. I’ll do it now. \n\nW: Great! Then I’ll contact the band.\n"                                                                                                                                                                         </span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] "6. 대화를 듣고, 여자가 지불할 금액을 고르시오. \n\nM: Hello, are you enjoying your time here at Magic Unicor n Children’s Far m? \n\nW: Yes, thank you. I’d like to buy some snacks to feed the animals. \n\nM: Sure. We sell two kinds of food for the animals, vegetable sticks and sliced fruits. \n\nW: How much do they cost? \n\nM: It’s $5 for a pack of vegetable sticks and $10 for a pack of sliced fruits. \n\nW: I’ll take four packs of vegetable sticks. Are there any other activities? \n\nM: We offer horseback riding. A ticket for a ride around the far m is $25. \n\nW: Oh, my son and daughter will love it. Two tickets, please. \n\nM: So, four packs of vegetable sticks and two horseback riding tickets, cor rect? \n\nW: Right. And I heard you’re offering a 10% discount as an autumn promotional event. \n\nM: I’m sorr y. That event ended last week. \n\nW: I see. Here’s my credit card.\n"                 </span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] "7. 대화를 듣고, 남자가 K-Trend Festival에 갈 수 없는 이유를 고르시오. \n\nW: Sam, do you want to go to the K-Trend Festival with me this Saturday? \n\nM: Hi, Olivia. Is that the festival held at Central Square? \n\nW: Yeah, that’s it. There’ll be many attractions including Taekwondo perfor mances that incorporate K-pop dance moves. \n\nM: Really? Sounds cool! What time does it star t? \n\nW: It star ts at 5 p.m. Will you be working at the movie theater at that time? \n\nM: No, I’m not working this Saturday. But I can’t come to the festival. \n\nW: Too bad. Do you have to study for your economics exam? \n\nM: Actually, I already took the exam yesterday. \n\nW: Then, what’s the matter? \n\nM: I have to take my younger sister to the airpor t on Saturday evening. \n\nW: Where’s she going? \n\nM: She’s going to Canada to study abroad. \n\nW: That’s awesome. I hope she has a good experience there.\n"  </span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  [8] "8. 대화를 듣고, 졸업 사진 촬영에 관해 언급되지 않은 것을 고르시오. [Telephone rings.] \n\nW: Hello, Jennifer Por ter speaking. \n\nM: Hi, Ms. Por ter. This is Steve Jackson from Lifetime Photo Studio. \n\nW: Oh, how are you? \n\nM: Good. I’m scheduled to shoot your school’s graduation photos on Wednesday, November 23rd. So, I’m calling to conf ir m the details. \n\nW: Sure. As we previously discussed, the place will be Lily Pond Park. \n\nM: Okay. Could you tell me the exact number of students taking par t in the photo session? \n\nW: Let me check. [Pause] Well, it’ll be 180 students. \n\nM: I see. The same as you said before. \n\nW: That’s right. How long will it take to shoot the photos? \n\nM: It’ll take almost three hours. We should f inish by noon. \n\nW: Great. Is there any other infor mation you need? \n\nM: No, I’m all set. Bye.\n"                                                           </span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] "9. Greenville Houseplant Expo에 관한 다음 내용을 듣고, 일치하지 않는 것을 고르시오. \n\nW: Hello, listeners. I’m Melinda Jones from the organizing committee of the Greenville Houseplant Expo. I’m here to announce that the expo will run for three days star ting on March 17th, 2023. Just on the opening day, there’ll be a lecture on plant care methods. This lecture will be given by Dr. Evans, host of the TV show Plants Love You. Most impor tantly, you can buy a variety of plants, including rare species, exhibited in the expo. Due to its popularity, you’d better get your tickets early. Tickets are available through online purchase only. If you’re a plant lover, come to the expo, which will take place at the Emerald Convention Center, and refresh your houseplant collection.\n"                                                                                                                                  </span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [10] "10. 다음 표를 보면서 대화를 듣고, 여자가 구매할 첼로 케이스를 고르시오. \n\nM: Welcome to Uptown Music Shop. How can I help you? \n\nW: Hi, I’m looking for a hard cello case. \n\nM: All right. Here’s our catalog. These are the ones we have in stock. How much are you willing to spend? \n\nW: I can spend up to $200. \n\nM: Okay. How about the interior material? Do you have a preference? \n\nW: Well, I don’t want the velvet one. It seems diff icult to take care of. \n\nM: Right. Then how about the length? \n\nW: I have a full-size cello, so I want a case that’s at least 50 inches long. \n\nM: Now you have two options left. Do you need wheels on your case? \n\nW: No, I don’t need them. I won’t carr y it around a lot. \n\nM: Then this is the one for you. \n\nW: Thank you. I’ll take it.\n"                                                                                                                    </span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] "11. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오. \n\nM: Mom, I’d like to get a new bicycle helmet. Can you buy me one? \n\nW: I’ll buy you a new helmet if you need it. But what’s the problem with the one you have now? \n\nM: My helmet feels too tight. It hur ts my head. \n\nW:\n"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [12] "12. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오. \n\nW: Honey, are you free on Saturday after noon? Our son said he’s going to a career fair and asked if we can come along. \n\nM: Great, I’m free. I’ve been wondering what kinds of emerging careers might suit him. \n\nW: Me, too. Then why don’t we join him? \n\nM:\n"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] "13. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오. [3점] \n\nM: Can I come in, Professor Rossini? \n\nW: Of course. Come on in, Ben. What brings you here? \n\nM: I came to ask for advice on studying Italian. \n\nW: Is there anything specif ic you’re having trouble with? \n\nM: Yes. I’m experiencing diff iculty using words properly. Could I get some tips? \n\nW: Sure. First, let me ask how you use your dictionar y. \n\nM: Well, I use it to look up words that I don’t know the meanings of. \n\nW: Dictionaries provide example sentences for most words. Do you read them, too? \n\nM: No, I don’t pay attention to the example sentences. \n\nW: Knowing the meaning of words is impor tant, but you should also understand the context in which the words are properly used. \n\nM: I see. So you’re suggesting that I study the example sentences as well, right? \n\nW:\n"                </span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [14] "14. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오. [3점] \n\nW: Dad, I found these old photos of our camping trip from 25 years ago. \n\nM: Oh, I remember this trip. You were about the same age as your son, Peter. \n\nW: Right. It was a really fun trip. \n\nM: Yeah. I still go camping often, but that’s the most memorable one. \n\nW: I agree. I want Peter to have that experience, too. But he always refuses to go. \n\nM: Why doesn’t he want to go camping? \n\nW: He just wants to stay home and spend all his time on his smar tphone. \n\nM: Don’t worr y. I’m sure Peter will like camping once he experiences how fun it is. \n\nW: You’re probably right. Dad, when is the next time you’re going camping? \n\nM: This weekend. We should all go together. \n\nW: That’d be great. Peter might come as well if his favorite grandpa invites him. \n\nM:\n"                               </span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "15. 다음 상황 설명을 듣고, Katie가 Jacob에게 할 말로 가장 적절한 것을 고르시오. [3점] \n\nM: Jacob just star ted volunteering at a nursing home and is planning his next visit. He recalls that not ever y resident in the nursing home enjoyed the activity he had prepared last time. To avoid this situation, he tries to f ind an activity that all residents in the nursing home can enjoy. But he can’t come up with one that ever yone would like. He asks his friend Katie for advice because she has lots of experience volunteering at a nursing home. Katie thinks there’s no single activity that can interest all the residents. So Katie wants to suggest to Jacob that next time he should plan more than one activity. In this situation, what would Katie most likely say to Jacob?\n"                                                                                                                                            </span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] "16. 여자가 하는 말의 주제로 가장 적절한 것은?\n"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] "17. 언급된 금속이 아닌 것은?\n"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsubfn)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sources <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_text</span>(<span class="at">pdf =</span> <span class="st">"data/2023_3교시_영어영역_문제지/3교시_영어영역_듣기평가대본.pdf"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># sources_squish &lt;- map_chr(sources, str_squish)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sources_clean &lt;- map_chr(sources_squish, str_extract, pattern = "(\\d{1,2}\\.\\s+).*")</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># map_chr(sources_clean, str_remove, pattern = "-\\s+\\d{1,2}\\s+-$")</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>replacement <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">==</span> <span class="st">"W:"</span>) {</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">W:"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="st">"M:"</span>) {</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">M:"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>sources_text <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(sources, str_squish) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_extract, <span class="at">pattern =</span> <span class="st">"(</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+).*"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_remove, <span class="at">pattern =</span> <span class="st">"-</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">s+-$"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(gsubfn, <span class="at">pattern =</span> <span class="st">"(W:|M:)"</span>, <span class="at">replacement =</span> replacement) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_trim) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_chr</span>(str_c, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># gsubfn("(W:|M:)", replacement, sources_text)</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>sources_text</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] "1. 다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오. \n\nM: Hello, Lockwood High School students. This is your school librarian, Mr. Wilkins. I’m sure you’re aware that our school librar y is hosting a bookmark design competition. I encourage students of all grades to par ticipate in the competition. The winning designs will be made into bookmarks, which will be distributed to librar y visitors. We’re also giving out a variety of other prizes. So don’t let this great oppor tunity slip away. Since the registration period for the bookmark design competition ends this Friday, make sure you visit our school librar y to submit your application. Come and par ticipate to display your creativity and talents.\n"                                                                                                                                                                                         </span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="do">##  [2] "2. 대화를 듣고, 여자의 의견으로 가장 적절한 것을 고르시오. \n\nM: Honey, do you want some apples with breakfast? \n\nW: Sounds great. Can you save the apple peels for me? \n\nM: Why? What do you want them for? \n\nW: I’m going to use them to make a face pack. Apple peels are effective for improving skin condition. \n\nM: Where did you hear about that? \n\nW: I recently read an ar ticle about their benef its for our skin. \n\nM: Interesting. What’s in them? \n\nW: It said apple peels are rich in vitamins and minerals, so they moisturize our skin and enhance skin glow. \n\nM: That’s good to know. \n\nW: Also, they remove oil from our skin and have a cooling effect. \n\nM: Wow! Then I shouldn’t throw them away. \n\nW: Right. Apple peels can help improve our skin condition. \n\nM: I see. I’ll save them for you.\n"                                                                                           </span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] "3. 대화를 듣고, 두 사람의 관계를 가장 잘 나타낸 것을 고르시오. \n\nW: Hello, Mr. Rober ts. I appreciate you taking the time to share your experience and knowledge. \n\nM: My pleasure, Ms. Lee. I’ve enjoyed all your bestselling books. So, I’m excited to help you. \n\nW: Thanks. Since I’m writing about world-class athletes, I wanted to hear how you’ve trained children who became Olympic swimming champions. \n\nM: Then we should star t with what I observe on the f irst day of my swimming classes. \n\nW: Do some children stand out right away? \n\nM: Yes. Some kids are able to pick up my instructions quickly and easily. \n\nW: I see. So did many of those kids go on to become Olympic champions? \n\nM: Well, practicing is much more impor tant. Those who consistently practiced made great improvements and ultimately became champions. \n\nW: This is good insight I can use in my book. \n\nM: I hope it helps.\n"</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  [4] "4. 대화를 듣고, 그림에서 대화의 내용과 일치하지 않는 것을 고르시오. \n\nM: Hi, Jane. What are you looking at on your phone? \n\nW: Hi, Brian. It’s a picture I took at Grand Boulder National Park. I went hiking there last weekend. \n\nM: Let me see. I like the bear statue wearing the check patter n jacket. \n\nW: It’s cute, right? \n\nM: Yeah. There’s a park map between the lights. It seems to include useful infor mation. \n\nW: It helps me pick a different trail each time I go hiking. Do you see the two f lowerpots in front of the cabin? \n\nM: Yes. They look beautiful. Oh, there’s a round table by the path. \n\nW: I had lunch there. \n\nM: What a nice place to enjoy lunch! Look at the bird on the tree branch. \n\nW: Isn’t it lovely? I love going there and being close to nature.\n"                                                                                                                        </span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] "5. 대화를 듣고, 남자가 할 일로 가장 적절한 것을 고르시오. \n\nW: Honey, I’m so excited for our restaurant’s reopening event tomor row. \n\nM: So am I. Let’s see. We’ve ordered enough ingredients, right? \n\nW: I think so. We need to remind our loyal customers of the event. \n\nM: I already sent text messages. \n\nW: Good. I hope people like the new menu items that we added. \n\nM: Don’t worr y. We have a great chef. So I’m sure the new dishes will be a hit. \n\nW: What about the live music? Did you conf ir m the song list with the band? \n\nM: Not yet. And we also need to wrap wine glasses to give as gifts for the customers. \n\nW: Okay. Could you wrap them? \n\nM: Sure. I’ll do it now. \n\nW: Great! Then I’ll contact the band.\n"                                                                                                                                                                         </span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] "6. 대화를 듣고, 여자가 지불할 금액을 고르시오. \n\nM: Hello, are you enjoying your time here at Magic Unicor n Children’s Far m? \n\nW: Yes, thank you. I’d like to buy some snacks to feed the animals. \n\nM: Sure. We sell two kinds of food for the animals, vegetable sticks and sliced fruits. \n\nW: How much do they cost? \n\nM: It’s $5 for a pack of vegetable sticks and $10 for a pack of sliced fruits. \n\nW: I’ll take four packs of vegetable sticks. Are there any other activities? \n\nM: We offer horseback riding. A ticket for a ride around the far m is $25. \n\nW: Oh, my son and daughter will love it. Two tickets, please. \n\nM: So, four packs of vegetable sticks and two horseback riding tickets, cor rect? \n\nW: Right. And I heard you’re offering a 10% discount as an autumn promotional event. \n\nM: I’m sorr y. That event ended last week. \n\nW: I see. Here’s my credit card.\n"                 </span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] "7. 대화를 듣고, 남자가 K-Trend Festival에 갈 수 없는 이유를 고르시오. \n\nW: Sam, do you want to go to the K-Trend Festival with me this Saturday? \n\nM: Hi, Olivia. Is that the festival held at Central Square? \n\nW: Yeah, that’s it. There’ll be many attractions including Taekwondo perfor mances that incorporate K-pop dance moves. \n\nM: Really? Sounds cool! What time does it star t? \n\nW: It star ts at 5 p.m. Will you be working at the movie theater at that time? \n\nM: No, I’m not working this Saturday. But I can’t come to the festival. \n\nW: Too bad. Do you have to study for your economics exam? \n\nM: Actually, I already took the exam yesterday. \n\nW: Then, what’s the matter? \n\nM: I have to take my younger sister to the airpor t on Saturday evening. \n\nW: Where’s she going? \n\nM: She’s going to Canada to study abroad. \n\nW: That’s awesome. I hope she has a good experience there.\n"  </span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  [8] "8. 대화를 듣고, 졸업 사진 촬영에 관해 언급되지 않은 것을 고르시오. [Telephone rings.] \n\nW: Hello, Jennifer Por ter speaking. \n\nM: Hi, Ms. Por ter. This is Steve Jackson from Lifetime Photo Studio. \n\nW: Oh, how are you? \n\nM: Good. I’m scheduled to shoot your school’s graduation photos on Wednesday, November 23rd. So, I’m calling to conf ir m the details. \n\nW: Sure. As we previously discussed, the place will be Lily Pond Park. \n\nM: Okay. Could you tell me the exact number of students taking par t in the photo session? \n\nW: Let me check. [Pause] Well, it’ll be 180 students. \n\nM: I see. The same as you said before. \n\nW: That’s right. How long will it take to shoot the photos? \n\nM: It’ll take almost three hours. We should f inish by noon. \n\nW: Great. Is there any other infor mation you need? \n\nM: No, I’m all set. Bye.\n"                                                           </span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] "9. Greenville Houseplant Expo에 관한 다음 내용을 듣고, 일치하지 않는 것을 고르시오. \n\nW: Hello, listeners. I’m Melinda Jones from the organizing committee of the Greenville Houseplant Expo. I’m here to announce that the expo will run for three days star ting on March 17th, 2023. Just on the opening day, there’ll be a lecture on plant care methods. This lecture will be given by Dr. Evans, host of the TV show Plants Love You. Most impor tantly, you can buy a variety of plants, including rare species, exhibited in the expo. Due to its popularity, you’d better get your tickets early. Tickets are available through online purchase only. If you’re a plant lover, come to the expo, which will take place at the Emerald Convention Center, and refresh your houseplant collection.\n"                                                                                                                                  </span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [10] "10. 다음 표를 보면서 대화를 듣고, 여자가 구매할 첼로 케이스를 고르시오. \n\nM: Welcome to Uptown Music Shop. How can I help you? \n\nW: Hi, I’m looking for a hard cello case. \n\nM: All right. Here’s our catalog. These are the ones we have in stock. How much are you willing to spend? \n\nW: I can spend up to $200. \n\nM: Okay. How about the interior material? Do you have a preference? \n\nW: Well, I don’t want the velvet one. It seems diff icult to take care of. \n\nM: Right. Then how about the length? \n\nW: I have a full-size cello, so I want a case that’s at least 50 inches long. \n\nM: Now you have two options left. Do you need wheels on your case? \n\nW: No, I don’t need them. I won’t carr y it around a lot. \n\nM: Then this is the one for you. \n\nW: Thank you. I’ll take it.\n"                                                                                                                    </span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] "11. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오. \n\nM: Mom, I’d like to get a new bicycle helmet. Can you buy me one? \n\nW: I’ll buy you a new helmet if you need it. But what’s the problem with the one you have now? \n\nM: My helmet feels too tight. It hur ts my head. \n\nW:\n"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [12] "12. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오. \n\nW: Honey, are you free on Saturday after noon? Our son said he’s going to a career fair and asked if we can come along. \n\nM: Great, I’m free. I’ve been wondering what kinds of emerging careers might suit him. \n\nW: Me, too. Then why don’t we join him? \n\nM:\n"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] "13. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오. [3점] \n\nM: Can I come in, Professor Rossini? \n\nW: Of course. Come on in, Ben. What brings you here? \n\nM: I came to ask for advice on studying Italian. \n\nW: Is there anything specif ic you’re having trouble with? \n\nM: Yes. I’m experiencing diff iculty using words properly. Could I get some tips? \n\nW: Sure. First, let me ask how you use your dictionar y. \n\nM: Well, I use it to look up words that I don’t know the meanings of. \n\nW: Dictionaries provide example sentences for most words. Do you read them, too? \n\nM: No, I don’t pay attention to the example sentences. \n\nW: Knowing the meaning of words is impor tant, but you should also understand the context in which the words are properly used. \n\nM: I see. So you’re suggesting that I study the example sentences as well, right? \n\nW:\n"                </span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [14] "14. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오. [3점] \n\nW: Dad, I found these old photos of our camping trip from 25 years ago. \n\nM: Oh, I remember this trip. You were about the same age as your son, Peter. \n\nW: Right. It was a really fun trip. \n\nM: Yeah. I still go camping often, but that’s the most memorable one. \n\nW: I agree. I want Peter to have that experience, too. But he always refuses to go. \n\nM: Why doesn’t he want to go camping? \n\nW: He just wants to stay home and spend all his time on his smar tphone. \n\nM: Don’t worr y. I’m sure Peter will like camping once he experiences how fun it is. \n\nW: You’re probably right. Dad, when is the next time you’re going camping? \n\nM: This weekend. We should all go together. \n\nW: That’d be great. Peter might come as well if his favorite grandpa invites him. \n\nM:\n"                               </span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "15. 다음 상황 설명을 듣고, Katie가 Jacob에게 할 말로 가장 적절한 것을 고르시오. [3점] \n\nM: Jacob just star ted volunteering at a nursing home and is planning his next visit. He recalls that not ever y resident in the nursing home enjoyed the activity he had prepared last time. To avoid this situation, he tries to f ind an activity that all residents in the nursing home can enjoy. But he can’t come up with one that ever yone would like. He asks his friend Katie for advice because she has lots of experience volunteering at a nursing home. Katie thinks there’s no single activity that can interest all the residents. So Katie wants to suggest to Jacob that next time he should plan more than one activity. In this situation, what would Katie most likely say to Jacob?\n"                                                                                                                                            </span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] "16. 여자가 하는 말의 주제로 가장 적절한 것은?\n"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] "17. 언급된 금속이 아닌 것은?\n"</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="음원과-대본" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> 음원과 대본</h1>
+</section>
+<section id="pdf-챗gpt-준비" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> PDF → 챗GPT 준비</h1>
+<section id="음원과-대본" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="음원과-대본"><span class="header-section-number">3.1</span> 음원과 대본</h2>
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(mp3_audio)) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  question <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(mp3_audio[i], <span class="st">'data/2023_3교시_영어영역_듣기평가_음원/'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_remove</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">d{1,2}_"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_remove</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">.mp3"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"## {trimws(question, which='right')}"</span>, <span class="st">"{{.unnumbered}}"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">html_tag_audio</span>(mp3_audio[i], <span class="at">type =</span> <span class="st">"mp3"</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(cat("\n", str_remove(sources_text[i], "NULL$"), "\n\n\n"))</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print("\n")</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{trimws(sources_text[i], which='right')} </span><span class="sc">\n\n\n</span><span class="st">"</span>))</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(mp3_audio)) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  question <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(mp3_audio[i], <span class="st">'data/2023_3교시_영어영역_듣기평가_음원/'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_remove</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">d{1,2}_"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_remove</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">.mp3"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"## {trimws(question, which='right')}"</span>, <span class="st">"{{.unnumbered}}"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">html_tag_audio</span>(mp3_audio[i], <span class="at">type =</span> <span class="st">"mp3"</span>))</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(cat("\n", str_remove(sources_text[i], "NULL$"), "\n\n\n"))</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print("\n")</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{trimws(sources_text[i], which='right')} </span><span class="sc">\n\n\n</span><span class="st">"</span>))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</section>
 <section id="문제-01" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="문제-01">문제 01</h2>
 <audio controls="">
@@ -1002,57 +1105,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>여자가 하는 말의 주제로 가장 적절한 것은?</li>
 </ol>
 </section>
+<section id="문제" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="문제"><span class="header-section-number">3.2</span> 문제</h2>
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ! pip install pymupdf</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fitz</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>problem_file<span class="op">=</span><span class="st">"data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>problem_list <span class="op">=</span> []</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> fitz.<span class="bu">open</span>(problem_file) <span class="im">as</span> doc:</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> page <span class="kw">in</span> doc:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    page_text <span class="op">=</span> page.get_text()</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    problem_list.append(page_text)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># problem_list</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># str_split(py$problem_list[1], "(?=\\b\\d{1,2}\\b\\.)")</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>problems_split <span class="ot">&lt;-</span> <span class="fu">map</span>(py<span class="sc">$</span>problem_list, str_split, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">(?=</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+?</span><span class="sc">\\</span><span class="st">b)"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  unlist <span class="sc">%&gt;%</span> <span class="fu">map_chr</span>(str_trim)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>problems_tbl <span class="ot">&lt;-</span> problems_split[<span class="fu">str_detect</span>(problems_split, <span class="at">pattern =</span> <span class="st">"^(?=</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+?</span><span class="sc">\\</span><span class="st">b)"</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enframe</span>(<span class="at">name =</span> <span class="st">"문항"</span>, <span class="at">value =</span> <span class="st">"문제"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="홀수형" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="홀수형"><span class="header-section-number">3.2.1</span> 홀수형</h3>
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>problems_odd <span class="ot">&lt;-</span> problems_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(문항 <span class="sc">&lt;=</span> <span class="dv">45</span>) </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(problems_odd)) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"### 문제 {trimws(problems_odd$문항[i], which='right')}"</span>, <span class="st">"{{.unnumbered}}"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{problems_odd$문제[i]} </span><span class="sc">\n\n\n</span><span class="st">"</span>))</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </section>
-<section id="문제" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> 문제</h1>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ! pip install pymupdf</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fitz</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>problem_file<span class="op">=</span><span class="st">"data/2023_3교시_영어영역_문제지/3교시_영어영역_문제지.pdf"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>problem_list <span class="op">=</span> []</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> fitz.<span class="bu">open</span>(problem_file) <span class="im">as</span> doc:</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> page <span class="kw">in</span> doc:</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    page_text <span class="op">=</span> page.get_text()</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    problem_list.append(page_text)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># problem_list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># str_split(py$problem_list[1], "(?=\\b\\d{1,2}\\b\\.)")</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>problems_split <span class="ot">&lt;-</span> <span class="fu">map</span>(py<span class="sc">$</span>problem_list, str_split, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">(?=</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+?</span><span class="sc">\\</span><span class="st">b)"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  unlist <span class="sc">%&gt;%</span> <span class="fu">map_chr</span>(str_trim)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>problems_tbl <span class="ot">&lt;-</span> problems_split[<span class="fu">str_detect</span>(problems_split, <span class="at">pattern =</span> <span class="st">"^(?=</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d{1,2}</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+?</span><span class="sc">\\</span><span class="st">b)"</span>)] <span class="sc">%&gt;%</span> </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enframe</span>(<span class="at">name =</span> <span class="st">"문항"</span>, <span class="at">value =</span> <span class="st">"문제"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<section id="홀수형" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="홀수형"><span class="header-section-number">4.1</span> 홀수형</h2>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>problems_odd <span class="ot">&lt;-</span> problems_tbl <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(문항 <span class="sc">&lt;=</span> <span class="dv">45</span>) </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(problems_odd)) {</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"### 문제 {trimws(problems_odd$문항[i], which='right')}"</span>, <span class="st">"{{.unnumbered}}"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{problems_odd$문제[i]} </span><span class="sc">\n\n\n</span><span class="st">"</span>))</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <section id="문제-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="문제-1">문제 1</h3>
 <ol type="1">
@@ -1392,23 +1495,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>확인 사항 ◦답안지의 해당란에 필요한 내용을 정확히 기입(표기)했는지 확인 하시오. 이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.</li>
 </ul>
 </section>
-</section>
-<section id="짝수형" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="짝수형"><span class="header-section-number">4.2</span> 짝수형</h2>
+<section id="짝수형" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="짝수형"><span class="header-section-number">3.2.2</span> 짝수형</h3>
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>problems_even <span class="ot">&lt;-</span> problems_tbl <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(문항 <span class="sc">&gt;</span> <span class="dv">45</span>)  <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(문항 <span class="ot">=</span> 문항<span class="dv">-45</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(problems_odd)) {</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"### 문제 {trimws(problems_even$문항[i], which='right')}"</span>, <span class="st">"{{.unnumbered}}"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{problems_even$문제[i]} </span><span class="sc">\n\n\n</span><span class="st">"</span>))</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>problems_even <span class="ot">&lt;-</span> problems_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(문항 <span class="sc">&gt;</span> <span class="dv">45</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(문항 <span class="ot">=</span> 문항<span class="dv">-45</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(problems_odd)) {</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"### 문제 {trimws(problems_even$문항[i], which='right')}"</span>, <span class="st">"{{.unnumbered}}"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{problems_even$문제[i]} </span><span class="sc">\n\n\n</span><span class="st">"</span>))</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</section>
 <section id="문제-1-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="문제-1-1">문제 1</h3>
 <ol type="1">
@@ -1749,85 +1852,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-</section>
-<section id="정답" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> 정답</h1>
+<section id="정답" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="정답"><span class="header-section-number">3.3</span> 정답</h2>
 <div class="cell">
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tabula</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>answer_file <span class="op">=</span> <span class="st">"data/2023_3교시_영어영역_정답표.pdf"</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> tabula.read_pdf(answer_file, pages<span class="op">=</span><span class="st">'all'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Got stderr: 5월 29, 2023 10:00:00 오전 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+24813 (24813) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 5월 29, 2023 10:00:00 오전 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+29678 (29678) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">## 5월 29, 2023 10:00:00 오전 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+30205 (30205) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">## 5월 29, 2023 10:00:01 오전 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+24813 (24813) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">## 5월 29, 2023 10:00:01 오전 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+29678 (29678) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">## 5월 29, 2023 10:00:01 오전 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+30205 (30205) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tabula</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>answer_file <span class="op">=</span> <span class="st">"data/2023_3교시_영어영역_정답표.pdf"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> tabula.read_pdf(answer_file, pages<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Got stderr: 8월 10, 2023 3:17:26 오후 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+24813 (24813) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 8월 10, 2023 3:17:26 오후 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+29678 (29678) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">## 8월 10, 2023 3:17:26 오후 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+30205 (30205) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">## 8월 10, 2023 3:17:26 오후 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+24813 (24813) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">## 8월 10, 2023 3:17:26 오후 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+29678 (29678) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">## 8월 10, 2023 3:17:26 오후 org.apache.pdfbox.pdmodel.font.PDType0Font toUnicode</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">## 경고: No Unicode mapping for CID+30205 (30205) in font *ÇÑ¾ç½Å¸íÁ¶-Identity-H</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="홀수형-1" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="홀수형-1"><span class="header-section-number">5.1</span> 홀수형</h2>
+<section id="홀수형-1" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="홀수형-1"><span class="header-section-number">3.3.1</span> 홀수형</h3>
 <div class="cell">
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>odd_1 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>odd_2 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>odd_3 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>odd_4 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>odd_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(odd_1, odd_2) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(odd_3) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(odd_4) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.nan</span>(정답))</span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>odd_tbl <span class="sc">%&gt;%</span> </span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="st">"center"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>odd_1 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>odd_2 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>odd_3 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>odd_4 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>odd_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(odd_1, odd_2) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(odd_3) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(odd_4) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.nan</span>(정답))</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>odd_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="st">"center"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="tnsjekdqju" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zygqhnxsrs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#tnsjekdqju table {
+#zygqhnxsrs table {
   font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tnsjekdqju thead, #tnsjekdqju tbody, #tnsjekdqju tfoot, #tnsjekdqju tr, #tnsjekdqju td, #tnsjekdqju th {
+#zygqhnxsrs thead, #zygqhnxsrs tbody, #zygqhnxsrs tfoot, #zygqhnxsrs tr, #zygqhnxsrs td, #zygqhnxsrs th {
   border-style: none;
 }
 
-#tnsjekdqju p {
+#zygqhnxsrs p {
   margin: 0;
   padding: 0;
 }
 
-#tnsjekdqju .gt_table {
+#zygqhnxsrs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1853,12 +1954,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_caption {
+#zygqhnxsrs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tnsjekdqju .gt_title {
+#zygqhnxsrs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1870,7 +1971,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#tnsjekdqju .gt_subtitle {
+#zygqhnxsrs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1882,7 +1983,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#tnsjekdqju .gt_heading {
+#zygqhnxsrs .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1894,13 +1995,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_bottom_border {
+#zygqhnxsrs .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_col_headings {
+#zygqhnxsrs .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1915,7 +2016,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_col_heading {
+#zygqhnxsrs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1935,7 +2036,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#tnsjekdqju .gt_column_spanner_outer {
+#zygqhnxsrs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1947,15 +2048,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#tnsjekdqju .gt_column_spanner_outer:first-child {
+#zygqhnxsrs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tnsjekdqju .gt_column_spanner_outer:last-child {
+#zygqhnxsrs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tnsjekdqju .gt_column_spanner {
+#zygqhnxsrs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -1967,11 +2068,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#tnsjekdqju .gt_spanner_row {
+#zygqhnxsrs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tnsjekdqju .gt_group_heading {
+#zygqhnxsrs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1997,7 +2098,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#tnsjekdqju .gt_empty_group_heading {
+#zygqhnxsrs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2012,15 +2113,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#tnsjekdqju .gt_from_md > :first-child {
+#zygqhnxsrs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tnsjekdqju .gt_from_md > :last-child {
+#zygqhnxsrs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tnsjekdqju .gt_row {
+#zygqhnxsrs .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -2039,7 +2140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#tnsjekdqju .gt_stub {
+#zygqhnxsrs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -2052,7 +2153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tnsjekdqju .gt_stub_row_group {
+#zygqhnxsrs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2066,15 +2167,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#tnsjekdqju .gt_row_group_first td {
+#zygqhnxsrs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tnsjekdqju .gt_row_group_first th {
+#zygqhnxsrs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tnsjekdqju .gt_summary_row {
+#zygqhnxsrs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2084,16 +2185,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tnsjekdqju .gt_first_summary_row {
+#zygqhnxsrs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_first_summary_row.thick {
+#zygqhnxsrs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tnsjekdqju .gt_last_summary_row {
+#zygqhnxsrs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2103,7 +2204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_grand_summary_row {
+#zygqhnxsrs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2113,7 +2214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tnsjekdqju .gt_first_grand_summary_row {
+#zygqhnxsrs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2123,7 +2224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_last_grand_summary_row_top {
+#zygqhnxsrs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2133,11 +2234,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_striped {
+#zygqhnxsrs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tnsjekdqju .gt_table_body {
+#zygqhnxsrs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2146,7 +2247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_footnotes {
+#zygqhnxsrs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2160,7 +2261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_footnote {
+#zygqhnxsrs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2169,7 +2270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tnsjekdqju .gt_sourcenotes {
+#zygqhnxsrs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2183,7 +2284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tnsjekdqju .gt_sourcenote {
+#zygqhnxsrs .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2191,63 +2292,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tnsjekdqju .gt_left {
+#zygqhnxsrs .gt_left {
   text-align: left;
 }
 
-#tnsjekdqju .gt_center {
+#zygqhnxsrs .gt_center {
   text-align: center;
 }
 
-#tnsjekdqju .gt_right {
+#zygqhnxsrs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tnsjekdqju .gt_font_normal {
+#zygqhnxsrs .gt_font_normal {
   font-weight: normal;
 }
 
-#tnsjekdqju .gt_font_bold {
+#zygqhnxsrs .gt_font_bold {
   font-weight: bold;
 }
 
-#tnsjekdqju .gt_font_italic {
+#zygqhnxsrs .gt_font_italic {
   font-style: italic;
 }
 
-#tnsjekdqju .gt_super {
+#zygqhnxsrs .gt_super {
   font-size: 65%;
 }
 
-#tnsjekdqju .gt_footnote_marks {
+#zygqhnxsrs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tnsjekdqju .gt_asterisk {
+#zygqhnxsrs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tnsjekdqju .gt_indent_1 {
+#zygqhnxsrs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tnsjekdqju .gt_indent_2 {
+#zygqhnxsrs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tnsjekdqju .gt_indent_3 {
+#zygqhnxsrs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tnsjekdqju .gt_indent_4 {
+#zygqhnxsrs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tnsjekdqju .gt_indent_5 {
+#zygqhnxsrs .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -2408,61 +2509,60 @@ tbody tr:last-child {
 </div>
 </div>
 </section>
-<section id="짝수형-1" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="짝수형-1"><span class="header-section-number">5.2</span> 짝수형</h2>
+<section id="짝수형-1" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="짝수형-1"><span class="header-section-number">3.3.2</span> 짝수형</h3>
 <div class="cell">
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>even_1 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>even_2 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>even_3 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>even_4 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>even_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(even_1, even_2) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(even_3) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(even_4) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.nan</span>(정답))</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>even_tbl <span class="sc">%&gt;%</span> </span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="st">"center"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>even_1 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>even_2 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>even_3 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>even_4 <span class="ot">&lt;-</span> py<span class="sc">$</span>answer[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">ascii =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"문항번호"</span>, <span class="st">"정답"</span>, <span class="st">"배점"</span>))</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>even_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(even_1, even_2) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(even_3) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(even_4) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.nan</span>(정답))</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>even_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="st">"center"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="oqpbdusxqn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="uenonvuzsn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#oqpbdusxqn table {
+#uenonvuzsn table {
   font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oqpbdusxqn thead, #oqpbdusxqn tbody, #oqpbdusxqn tfoot, #oqpbdusxqn tr, #oqpbdusxqn td, #oqpbdusxqn th {
+#uenonvuzsn thead, #uenonvuzsn tbody, #uenonvuzsn tfoot, #uenonvuzsn tr, #uenonvuzsn td, #uenonvuzsn th {
   border-style: none;
 }
 
-#oqpbdusxqn p {
+#uenonvuzsn p {
   margin: 0;
   padding: 0;
 }
 
-#oqpbdusxqn .gt_table {
+#uenonvuzsn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2488,12 +2588,12 @@ tbody tr:last-child {
   border-left-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_caption {
+#uenonvuzsn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oqpbdusxqn .gt_title {
+#uenonvuzsn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2505,7 +2605,7 @@ tbody tr:last-child {
   border-bottom-width: 0;
 }
 
-#oqpbdusxqn .gt_subtitle {
+#uenonvuzsn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2517,7 +2617,7 @@ tbody tr:last-child {
   border-top-width: 0;
 }
 
-#oqpbdusxqn .gt_heading {
+#uenonvuzsn .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2529,13 +2629,13 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_bottom_border {
+#uenonvuzsn .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_col_headings {
+#uenonvuzsn .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2550,7 +2650,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_col_heading {
+#uenonvuzsn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -2570,7 +2670,7 @@ tbody tr:last-child {
   overflow-x: hidden;
 }
 
-#oqpbdusxqn .gt_column_spanner_outer {
+#uenonvuzsn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -2582,15 +2682,15 @@ tbody tr:last-child {
   padding-right: 4px;
 }
 
-#oqpbdusxqn .gt_column_spanner_outer:first-child {
+#uenonvuzsn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oqpbdusxqn .gt_column_spanner_outer:last-child {
+#uenonvuzsn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oqpbdusxqn .gt_column_spanner {
+#uenonvuzsn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -2602,11 +2702,11 @@ tbody tr:last-child {
   width: 100%;
 }
 
-#oqpbdusxqn .gt_spanner_row {
+#uenonvuzsn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oqpbdusxqn .gt_group_heading {
+#uenonvuzsn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2632,7 +2732,7 @@ tbody tr:last-child {
   text-align: left;
 }
 
-#oqpbdusxqn .gt_empty_group_heading {
+#uenonvuzsn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2647,15 +2747,15 @@ tbody tr:last-child {
   vertical-align: middle;
 }
 
-#oqpbdusxqn .gt_from_md > :first-child {
+#uenonvuzsn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oqpbdusxqn .gt_from_md > :last-child {
+#uenonvuzsn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oqpbdusxqn .gt_row {
+#uenonvuzsn .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -2674,7 +2774,7 @@ tbody tr:last-child {
   overflow-x: hidden;
 }
 
-#oqpbdusxqn .gt_stub {
+#uenonvuzsn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -2687,7 +2787,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#oqpbdusxqn .gt_stub_row_group {
+#uenonvuzsn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2701,15 +2801,15 @@ tbody tr:last-child {
   vertical-align: top;
 }
 
-#oqpbdusxqn .gt_row_group_first td {
+#uenonvuzsn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oqpbdusxqn .gt_row_group_first th {
+#uenonvuzsn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oqpbdusxqn .gt_summary_row {
+#uenonvuzsn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2719,16 +2819,16 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#oqpbdusxqn .gt_first_summary_row {
+#uenonvuzsn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_first_summary_row.thick {
+#uenonvuzsn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oqpbdusxqn .gt_last_summary_row {
+#uenonvuzsn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2738,7 +2838,7 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_grand_summary_row {
+#uenonvuzsn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2748,7 +2848,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#oqpbdusxqn .gt_first_grand_summary_row {
+#uenonvuzsn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2758,7 +2858,7 @@ tbody tr:last-child {
   border-top-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_last_grand_summary_row_top {
+#uenonvuzsn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2768,11 +2868,11 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_striped {
+#uenonvuzsn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oqpbdusxqn .gt_table_body {
+#uenonvuzsn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2781,7 +2881,7 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_footnotes {
+#uenonvuzsn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2795,7 +2895,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_footnote {
+#uenonvuzsn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2804,7 +2904,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#oqpbdusxqn .gt_sourcenotes {
+#uenonvuzsn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2818,7 +2918,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#oqpbdusxqn .gt_sourcenote {
+#uenonvuzsn .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2826,63 +2926,63 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#oqpbdusxqn .gt_left {
+#uenonvuzsn .gt_left {
   text-align: left;
 }
 
-#oqpbdusxqn .gt_center {
+#uenonvuzsn .gt_center {
   text-align: center;
 }
 
-#oqpbdusxqn .gt_right {
+#uenonvuzsn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oqpbdusxqn .gt_font_normal {
+#uenonvuzsn .gt_font_normal {
   font-weight: normal;
 }
 
-#oqpbdusxqn .gt_font_bold {
+#uenonvuzsn .gt_font_bold {
   font-weight: bold;
 }
 
-#oqpbdusxqn .gt_font_italic {
+#uenonvuzsn .gt_font_italic {
   font-style: italic;
 }
 
-#oqpbdusxqn .gt_super {
+#uenonvuzsn .gt_super {
   font-size: 65%;
 }
 
-#oqpbdusxqn .gt_footnote_marks {
+#uenonvuzsn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oqpbdusxqn .gt_asterisk {
+#uenonvuzsn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oqpbdusxqn .gt_indent_1 {
+#uenonvuzsn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oqpbdusxqn .gt_indent_2 {
+#uenonvuzsn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oqpbdusxqn .gt_indent_3 {
+#uenonvuzsn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oqpbdusxqn .gt_indent_4 {
+#uenonvuzsn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oqpbdusxqn .gt_indent_5 {
+#uenonvuzsn .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -3044,6 +3144,7 @@ tbody tr:last-child {
 </div>
 
 
+</section>
 </section>
 </section>
 
@@ -3102,12 +3203,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "복사완료!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "복사완료!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -3127,10 +3228,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -3140,8 +3240,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -3154,6 +3263,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -3197,6 +3381,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -3284,7 +3469,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+    <div class="nav-footer-left">
+<p><a href="https://quarto.org/">Quarto</a> 로 제작</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -3293,6 +3480,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
+
 
 
 
