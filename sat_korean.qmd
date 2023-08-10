@@ -1,0 +1,101 @@
+---
+title: "디지털 글쓰기"
+subtitle: "수능국어 (2023)"
+description: |
+  PDF 파일 갇혀 불쌍하게 있던 수능국어 문제가 자유를 찾아 함께 달려나가 봅시다.
+author:
+  - name: 이광춘
+    url: https://www.linkedin.com/in/kwangchunlee/
+    affiliation: 한국 R 사용자회
+    affiliation-url: https://github.com/bit2r
+title-block-banner: true
+#title-block-banner: "#562457"
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: false
+filters:
+   - lightbox
+lightbox: auto
+bibliography: bibliography.bib
+link-citations: true
+csl: apa-single-spaced.csl
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    collapse: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 수능 문제 및 정답지
+
+한국교육과정평가원 대학수학능력시험 [기출문제](https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&m=0403&s=suneung) 웹사이트에서 PDF파일을 다운로드 받게 되면 2023년 수능 국어 기출문제를 다운로드 받을 수 있다.
+
+:::{.panel-tabset}
+
+### 문제지
+
+``` {r}
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/2023_1교시_국어영역/1교시_국어영역_문제지.pdf")
+```
+
+
+
+### 정답지
+
+``` {r}
+#| out.height: "460px"
+#| out.width: '800px'
+
+knitr::include_graphics("data/2023_1교시_국어영역/1교시_국어영역_정답표.pdf")
+```
+
+:::
+
+
+# PDF &rarr; 데이터셋
+
+[GPT 수능 국어 1등급 프로젝트](https://github.com/NomaDamas/KICE_slayer_AI_Korean)가 진행되면서 데이터도 공개해 두어서 이를 PDF 수능문제지 대신 갈음한다.
+
+## 문제 사례
+
+```{r}
+library(jsonlite)
+library(tidyverse)
+
+sat <- jsonlite::fromJSON("data/2023_1교시_국어영역/data_2023_11_KICE.json", flatten = TRUE)
+
+sat |> 
+  slice(1:3) |> 
+  gt::gt()
+```
+
+
+## 문제 상세
+
+```{r}
+sat |> 
+  as_tibble() |> 
+  slice(1) |> 
+  pull(problems) %>%
+  .[[1]] |> 
+  gt::gt()
+```
+
+
+
+

@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.288">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+<meta name="description" content="PDF 파일 갇혀 불쌍하게 있던 수능국어 문제가 자유를 찾아 함께 달려나가 봅시다.">
+
+<title>디지털 글쓰기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="twitter:title" content="디지털 글쓰기">
+<meta name="twitter:description" content="한글 쿼토">
+<meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1388">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="검색"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="탐색 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto_blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./quarto_install.html" rel="" target="">
+ <span class="dropdown-text">Quarto 설치/출판</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_about.html" rel="" target="">
+ <span class="dropdown-text">Quarto 소개</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">글쓰기</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./writing_history.html" rel="" target="">
+ <span class="dropdown-text">문자와 종이 역사</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hangul_encoding.html" rel="" target="">
+ <span class="dropdown-text">한글 인코딩</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_fonts.html" rel="" target="">
+ <span class="dropdown-text">글꼴</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_sass.html" rel="" target="">
+ <span class="dropdown-text">외양 SASS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_layout.html" rel="" target="">
+ <span class="dropdown-text">레이아웃</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_latex.html" rel="" target="">
+ <span class="dropdown-text">한글 PDF 제작방법</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quarto_pdf.pdf" rel="" target="">
+ <span class="dropdown-text">[사례] 한글 PDF</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./youtube.html" rel="" target="">
+ <span class="dropdown-text">동영상 글쓰기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pdf.html" rel="" target="">
+ <span class="dropdown-text">2023년 수능 수학(홀수)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-latex" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><span class="math inline">\(\LaTeX\)</span></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-latex">    
+        <li>
+    <a class="dropdown-item" href="./latex.html" rel="" target="">
+ <span class="dropdown-text"><span class="math inline">\(\LaTeX\)</span> 들어가며</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./document_editor.html" rel="" target="">
+ <span class="dropdown-text">문서 편집기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
+ <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.html" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_thesis.html" rel="" target="">
+ <span class="dropdown-text">학위논문 양식</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_cover.html" rel="" target="">
+ <span class="dropdown-text">책표지와 본문결합</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
+ <span class="dropdown-text">Rmd –&gt; PDF</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./book_cover.html" rel="" target="">
+ <span class="dropdown-text">생성AI: 책표지 + 로고</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bitPublish.html" rel="" target="">
+ <span class="dropdown-text">글쓰기 –&gt; 출판: <code>bitPublish</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bitPublish_cheatsheet.html" rel="" target="">
+ <span class="dropdown-text"><code>bitPublish</code> 참조안내서</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./R_manual_wsl.html" rel="" target="">
+ <span class="dropdown-text">WSL 환경 R 매뉴얼</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./R_manual.html" rel="" target="">
+ <span class="dropdown-text">R 매뉴얼(<code>.texi</code>)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-excel" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">엑셀(Excel)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-excel">    
+        <li>
+    <a class="dropdown-item" href="./excel_why.html" rel="" target="">
+ <span class="dropdown-text">왜 엑셀(?)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_dc.html" rel="" target="">
+ <span class="dropdown-text">엑셀: 데이터 기본기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_chatGPT.html" rel="" target="">
+ <span class="dropdown-text">챗GPT 엑셀</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">수능</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="./sat.html" rel="" target="">
+ <span class="dropdown-text">수학능력평가</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_university.html" rel="" target="">
+ <span class="dropdown-text">전국대학현황</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pop.html" rel="" target="">
+ <span class="dropdown-text">연령별 인구구조</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_english.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 사전준비</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_english_solve.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 풀이</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_english_practice.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 훈련</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_math.html" rel="" target="">
+ <span class="dropdown-text">수능수학 (2023)</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_korean.html" rel="" target="">
+ <span class="dropdown-text">수능국어 (2023)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--2" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">관련 정보</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--2">    
+        <li>
+    <a class="dropdown-item" href="https://use-r.kr/" rel="" target="">
+ <span class="dropdown-text">한국 R 컨퍼런스</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.meetup.com/seoul-r-meetup" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r2bit.com/seoul-r/" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup 발표자료</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-community.org/usergroups/" rel="" target="">
+ <span class="dropdown-text">글로벌 R Meetup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://quarto.org/" rel="" target="">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ide" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">IDE</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ide">    
+        <li>
+    <a class="dropdown-item" href="./ide_war.html" rel="" target="">
+ <span class="dropdown-text">AI가 쏘아올린 작은 공</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ide_vscode.html" rel="" target="">
+ <span class="dropdown-text">Visual Studio Code</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://r2bit.com" rel="" target="">
+ <span class="menu-text">R사용자회</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw" rel="" target=""><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/quarto" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/groups/tidyverse" rel="" target=""><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">디지털 글쓰기</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">디지털 글쓰기</h1>
+            <p class="subtitle lead">수능국어 (2023)</p>
+                  <div>
+        <div class="description">
+          <p>PDF 파일 갇혀 불쌍하게 있던 수능국어 문제가 자유를 찾아 함께 달려나가 봅시다.</p>
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-heading">소속</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.linkedin.com/in/kwangchunlee/">이광춘</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://github.com/bit2r">
+              한국 R 사용자회
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">PPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 슬라이드</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slideshow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">홍익대 특강</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">전자책</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://statkclee.quarto.pub/quarto-book/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto 전자책</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">디지털 글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">마크다운 글쓰기</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">코딩(Computation)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">코딩 (계산)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib_py.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.ipynb 파이썬 파일</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation/matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">.qmd Quarto 파일</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#수능-문제-및-정답지" id="toc-수능-문제-및-정답지" class="nav-link active" data-scroll-target="#수능-문제-및-정답지"><span class="header-section-number">1</span> 수능 문제 및 정답지</a></li>
+  <li><a href="#pdf-데이터셋" id="toc-pdf-데이터셋" class="nav-link" data-scroll-target="#pdf-데이터셋"><span class="header-section-number">2</span> PDF → 데이터셋</a>
+  <ul class="collapse">
+  <li><a href="#문제-사례" id="toc-문제-사례" class="nav-link" data-scroll-target="#문제-사례"><span class="header-section-number">2.1</span> 문제 사례</a></li>
+  <li><a href="#문제-상세" id="toc-문제-상세" class="nav-link" data-scroll-target="#문제-상세"><span class="header-section-number">2.2</span> 문제 상세</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="수능-문제-및-정답지" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 수능 문제 및 정답지</h1>
+<p>한국교육과정평가원 대학수학능력시험 <a href="https://www.suneung.re.kr/boardCnts/list.do?boardID=1500234&amp;m=0403&amp;s=suneung">기출문제</a> 웹사이트에서 PDF파일을 다운로드 받게 되면 2023년 수능 국어 기출문제를 다운로드 받을 수 있다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">문제지</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">정답지</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/2023_1교시_국어영역/1교시_국어영역_문제지.pdf"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/2023_1교시_국어영역/1교시_국어영역_문제지.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><embed src="data/2023_1교시_국어영역/1교시_국어영역_문제지.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"data/2023_1교시_국어영역/1교시_국어영역_정답표.pdf"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/2023_1교시_국어영역/1교시_국어영역_정답표.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><embed src="data/2023_1교시_국어영역/1교시_국어영역_정답표.pdf" width="800" height="460"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pdf-데이터셋" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> PDF → 데이터셋</h1>
+<p><a href="https://github.com/NomaDamas/KICE_slayer_AI_Korean">GPT 수능 국어 1등급 프로젝트</a>가 진행되면서 데이터도 공개해 두어서 이를 PDF 수능문제지 대신 갈음한다.</p>
+<section id="문제-사례" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="문제-사례"><span class="header-section-number">2.1</span> 문제 사례</h2>
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sat <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(<span class="st">"data/2023_1교시_국어영역/data_2023_11_KICE.json"</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sat <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="jwaqyleffy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jwaqyleffy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jwaqyleffy thead, #jwaqyleffy tbody, #jwaqyleffy tfoot, #jwaqyleffy tr, #jwaqyleffy td, #jwaqyleffy th {
+  border-style: none;
+}
+
+#jwaqyleffy p {
+  margin: 0;
+  padding: 0;
+}
+
+#jwaqyleffy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jwaqyleffy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jwaqyleffy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jwaqyleffy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jwaqyleffy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jwaqyleffy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jwaqyleffy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jwaqyleffy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jwaqyleffy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jwaqyleffy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jwaqyleffy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jwaqyleffy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jwaqyleffy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jwaqyleffy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jwaqyleffy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwaqyleffy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jwaqyleffy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jwaqyleffy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jwaqyleffy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwaqyleffy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jwaqyleffy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwaqyleffy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jwaqyleffy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwaqyleffy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jwaqyleffy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jwaqyleffy .gt_left {
+  text-align: left;
+}
+
+#jwaqyleffy .gt_center {
+  text-align: center;
+}
+
+#jwaqyleffy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jwaqyleffy .gt_font_normal {
+  font-weight: normal;
+}
+
+#jwaqyleffy .gt_font_bold {
+  font-weight: bold;
+}
+
+#jwaqyleffy .gt_font_italic {
+  font-style: italic;
+}
+
+#jwaqyleffy .gt_super {
+  font-size: 65%;
+}
+
+#jwaqyleffy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jwaqyleffy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jwaqyleffy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jwaqyleffy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jwaqyleffy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jwaqyleffy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jwaqyleffy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="id">id</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="paragraph">paragraph</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="type">type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="problems">problems</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="id" class="gt_row gt_left">2023_11_KICE_1-3</td>
+<td headers="paragraph" class="gt_row gt_left">사람들이 지속적으로 책을 읽는 이유 중 하나는 즐거움이다. 독서의 즐거움에는 여러 가지가 있겠지만 그 중심에는 ‘소통의 즐거움’이 있다.독자는 독서를 통해 책과 소통하는 즐거움을 경험한다. 독서는필자와 간접적으로 대화하는 소통 행위이다. 독자는 자신이 속한사회나 시대의 영향 아래 필자가 속해 있거나 드러내고자 하는 사회나 시대를 경험한다. 직접 경험하지 못했던 다양한 삶을 필자를 매개로 만나고 이해하면서 독자는 더 넓은 시야로 세계를바라볼 수 있다. 이때 같은 책을 읽은 독자라도 독자의 배경지식이나 관점 등의 독자 요인, 읽기 환경이나 과제 등의 상황 요인이 다르므로, 필자가 보여 주는 세계를 그대로 수용하지 않고 저마다 소통 과정에서 다른 의미를 구성할 수 있다.[A] (이러한 소통은 독자가 책의 내용에 대해 질문하고 답을 찾아내는 과정에서 가능해진다. 독자는 책에서 답을 찾는 질문, 독자 자신에게서 답을 찾는 질문 등을 제기할 수 있다. 전자의 경우 책에 명시된 내용에서 답을 발견할 수 있고, 책의 내용들을 관계 지으며 답에 해당하는 내용을 스스로 구성할 수도 있다. 또한 후자의 경우 책에는 없는 독자의 경험에서 답을 찾을 수 있다. 이런 질문들을 풍부히 생성하고 주체적으로 답을 찾을 때 소통의 즐거움은 더 커진다.)한편 독자는 ㉠ (다른 독자와 소통하는 즐거움을 경험할 수도 있다.) 책과의 소통을 통해 개인적으로 형성한 의미를 독서 모임이나 독서 동아리 등에서 다른 독자들과 나누는 일이 이에 해당한다. 비슷한 해석에 서로 공감하며 기존 인식을 강화하거나 관점의 차이를 확인하고 기존 인식을 조정하는 과정에서, 독자는자신의 인식을 심화 확장할 수 있다. 최근 소통 공간이 온라인으로 확대되면서 독서를 통해 다른 독자들과 소통하며 즐거움을누리는 양상이 더 다양해지고 있다. 자신의 독서 경험을 담은 글이나 동영상을 생산 공유함으로써, 책을 읽지 않은 타인이 책과 소통하도록 돕는 것도 책을 통한 소통의 즐거움을 나누는 일이다.</td>
+<td headers="type" class="gt_row gt_right">0</td>
+<td headers="problems" class="gt_row gt_center">c("윗글의 내용과 일치하지 않는 것은?", "다음은 학생이 독서 후 작성한 글의 일부이다. [A]를 바탕으로 ⓐ～ⓔ를 이해한 내용으로 가장 적절한 것은?", "윗글을 읽고 ㉠에 대해 보인 반응으로 적절하지 않은 것은?"), list(c("같은 책을 읽은 독자라도 서로 다른 의미를 구성할 수 있다.", "다른 독자와의 소통은 독자가 인식의 폭을 확장하도록 돕는다", "독자는 직접 경험해 보지 못했던 다양한 삶을 책의 필자를 매개로 접할 수 있다.", "독자의 배경지식, 관점, 읽기 환경, 과제는 독자의 의미 구성에 영향을 주는 독자 요인이다.", "독자는 책을 읽을 때 자신이 속한 사회나 시대의 영향을 받으며 필자와 간접적으로 대화한다"
+), c("ⓐ와 ⓑ에는 모두 ‘독자 자신에게서 답을 찾는 질문’이 나타난다.", "ⓒ와 ⓓ에는 모두 ‘책에 명시된 내용’에서 질문의 답을 찾아내는 모습이 나타난다.", "ⓐ에는 ‘책에서 답을 찾는 질문’이, ⓔ에는 그에 대한 답을 ‘독자의 경험’에서 찾아내는 모습이 나타난다.", "ⓑ에는 ‘책에서 답을 찾는 질문’이, ⓒ에는 그에 대한 답을 ‘책의 내용들을 관계 지으며’ 찾아내는 모습이 나타난다.", 
+"ⓓ에는 ‘독자 자신에게서 답을 찾는 질문’이, ⓔ에는 그에 대한 답을 ‘독자의 경험’에서 찾아내는 모습이 나타난다."), c("스스로 독서 계획을 세우고 자신에게 필요한 책을 찾아 개인적으로 읽는 과정에서 경험할 수 있겠군.", "독서 모임에서 서로 다른 관점을 확인하고 자신의 관점을 조정하는 과정에서 경험할 수 있겠군.", "개인적으로 형성한 의미를, 독서 동아리를 통해 심화하는 과정에서 경험할 수 있겠군.", 
+"자신의 독서 경험을 담은 콘텐츠를 생산하고 공유하는 과정에서 경험할 수 있겠군.", "오프라인뿐 아니라 온라인 공간에서 해석을 나누는 과정에서도 경험할 수 있겠군.")), c(4, 5, 1), c(2, 3, 2), c(NA, "ⓐ('음악 시간에 들었던 베토벤의 교향곡 &lt;합창&gt;이 위대한 작품인 이유는 무엇일까?'하는 생각)에, 베토벤에 대한 책을 빌렸다. 책에서는 기약만으로 구성됐던 교향곡에 성악을 결합헤 개성을 드러냈다는 점에서 ⓑ(이 곡이 낭만주의 음악의 특징을 보여 준다고 했다.) &lt;합창&gt;을 해설한 부분에 이어, 베토벤의 생애에 관한 뒷부분도 읽었는데, ⓒ(이 내용들을 종합해, 절망적 상황에서도 열정적으로 자신이 좋아하는 일을 했기에 교향곡 구성의 새로움을 보여 준 명작이 탄생했음을 알게 됐다.) 이후 ⓓ(내가 진정으로 좋아하는 일이 무엇인지 나에게 묻게 되었다.) ⓔ(글 쓰는 일에서 가장 큰 행복을 느꼈던 나를 발견)할 수 있었고, 나도 어떤 상황에서든 좋아하는 일을 계속해야겠다고 생각했다.", 
+NA)</td></tr>
+    <tr><td headers="id" class="gt_row gt_left">2023_11_KICE_4-9</td>
+<td headers="paragraph" class="gt_row gt_left">(가)[A](중국에서 비롯된 유서(類書)는 고금의 서적에서 자료를 수집하고 항목별로 분류, 정리하여 이용에 편리하도록 편찬한서적이다. 일반적으로 유서는 기존 서적에서 필요한 부분을뽑아 배열할 뿐 상호 비교하거나 편찬자의 해석을 가하지 않았다. 유서는 모든 주제를 망라한 일반 유서와 특정 주제를다룬 전문 유서로 나눌 수 있으며, 편찬 방식은 책에 따라다른 경우가 많았다. 중국에서는 대체로 왕조 초기에 많은 학자를 동원하여 국가 주도로 대규모 유서를 편찬하여 간행하였다. 이를 통해 이전까지의 지식을 집성하고 왕조의 위엄을 과시할 수 있었다.고려 때 중국 유서를 수용한 이후, 조선에서는 중국 유서를활용하는 한편, 중국 유서의 편찬 방식에 ⓐ(따라) 필요에 맞게 유서를 편찬하였다. 조선의 유서는 대체로 국가보다 개인이 소규모로 편찬하는 경우가 많았고, 목적에 따른 특정주제의 전문 유서가 집중적으로 편찬되었다. 전문 유서 가운데 편찬자가 미상인 유서가 많은데, 대체로 간행을 염두에 두지 않고 기존 서적에서 필요한 부분을 발췌, 기록하여 시문 창작, 과거 시험 등 개인적 목적으로 유서를 활용하고자 하였기 때문이었다.)이 같은 유서 편찬 경향이 지속되는 가운데 17세기부터 실학의학풍이 하나의 조류를 형성하면서 유서 편찬에 변화가 나타났다. ㉮(실학자들의 유서)는 현실 개혁의 뜻을 담았고, 편찬 의도를 지식의 제공과 확산에 두었다. 또한 단순 정리를 넘어 지식을 재분류하여 범주화하고 평가를 더하는 등 저술의 성격을 드러냈다. 독서와 견문을 통해 주자학에서 중시되지 않았던 지식을 집적했고, 증거를 세워 이론적으로 밝히는 고증과 이에 대한 의견 등 ‘안설’을 덧붙이는 경우가 많았다. 주자학의 지식을 ⓑ(이어받는) 한편, 주자학이 아닌 새로운 지식을 수용하는 유연성과 개방성을 보였다. 광범위하게 정리한 지식을 식자층이 ⓒ(쉽게) 접할 수 있어야 한다고 생각했고, 객관적 사실 탐구를 중시하여 박물학과 자연 과학에 관심을 기울였다.조선 후기 실학자들이 편찬한 유서가 주자학의 관념적 사유에 국한되지 않고 새로운 지식의 축적과 확산을 촉진한 것은 지식의역사에서 적지 않은 의미를 지닌다.(나)예수회 선교사들이 중국에 소개한 서양의 학문, 곧 서학은 조선 후기 유서(類書)의 지적 자원 중 하나로 활용되었다. 조선 후기 실학자들 가운데 이수광, 이익, 이규경 등이 편찬한 백과전서식 유서는 주자학의 지적 영역 내에서 서학의 지식을 어떻게수용하였는지를 보여 주는 대표적인 사례이다.17세기의 이수광은 주자학뿐 아니라 다른 학문에 대해서도 열린 태도를 가지고 있었다. 주자학에 기초하여 도덕에 관한 학문과 경전에 관한 학문 등이 주류였던 당시 상황에서, 그는 지봉유설을 통해 당대 조선의 지식을 망라하여 항목화하고 자신의 견해를 덧붙였을 뿐 아니라 사신의 일원으로 중국에서 접한 서양 관련 지식을 객관적으로 소개했다. 이에 대해 심성 수양에 절실하지 않을뿐더러 주자학이 아닌 것이 ⓓ(뒤섞여) 순수하지 않다는 ㉯(일부 주자학자의 비판)이 있었지만, 그가 소개한 서양 관련 지식은 중국과 큰 시간 차이 없이 주변에 알려졌다.18세기의 이익은 서학 지식 자체를 ㉠(성호사설)의 표제어로삼았고, 기존의 학설을 정당화하거나 배제하는 근거로 서학을 수용하는 등 서학을 지적 자원으로 활용하였다. 특히 그는 서학의 세부 내용을 다른 분야로 확대하며 상호 참조하는 방식으로 지식을 심화하고 확장하여 소개하였다. 서학의 해부학과 생리학을 그 자체로 수용하지 않고 주자학 심성론의 하위 이론으로 재분류하는 등 지식의 범주를 ⓔ(바꾸어) 수용하였다. 또한 서학의 수학을 주자학의 지식 영역 안에서 재구성하기도 하였다.19세기의 이규경도 ㉡(오주연문장전산고)를 편찬하면서 서학을 적극 활용하였다. 그는 성호사설의 분류 체계를 적용하였고 이익과 마찬가지로 서학의 천문학, 우주론 등의 내용을 수록하였다. 그가 주로 유서의 지적 자원으로 활용한 중국의 서학 연구서들은 서학을 소화하여 중국의 학문과 절충한 것이었고, 서학이 가지는 진보성의 토대가 중국이라는 서학 중국 원류설을 반영한 것이었다. 이에 따라 이규경은 이 책들에 담긴 중국화한 서학 지식과 서학 중국 원류설을 받아들였고, 문명의 척도로 여겨진 기존의 중화 관념에서 탈피하지 않으면서도 서학 수용의 이질감과 부담감에서 자유로울 수 있었다. 이렇듯 이규경은 중국의 서학 연구서들을 활용해 매개적 방식으로 서학을 수용하였다.</td>
+<td headers="type" class="gt_row gt_right">0</td>
+<td headers="problems" class="gt_row gt_center">c("(가)와 (나)에 대한 설명으로 가장 적절한 것은?", "[A]에 대한 이해로 적절하지 않은 것은?", "㉮에 대한 이해를 바탕으로 ㉠, ㉡에 대해 파악한 내용으로 적절하지 않은 것은?", "㉯를 반박하기 위한 ‘이수광’의 말로 가장 적절한 것은?", "(가), (나)를 읽은 학생이 &lt;보기&gt;의 임원경제지에 대해 보인 반응으로 적절하지 않은 것은?", "문맥상 ⓐ～ⓔ와 바꾸어 쓰기에 적절하지 않은 것은?"
+), list(c("(가)는 유서의 유형을 분류하였고, (나)는 유서의 분류 기준과적절성 여부를 평가하였다.", "(가)는 유서의 개념과 유용성을 소개하였고, (나)는 국가별 유서의 변천 과정을 설명하였다.", "(가)는 유서의 기원에 대한 다양한 학설을 검토하였고, (나)는 유서 편찬자들 간의 견해 차이를 분석하였다.", "(가)는 유서의 특성과 의의를 설명하였고, (나)는 유서 편찬에서 특정 학문의 수용 양상을 시기별로 소개하였다.", 
+"(가)는 유서에 대한 평가가 시대별로 달라진 원인을 분석하였고, (나)는 역사적으로 대표적인 유서의 특징을 제시하였다."), c("조선에서 편찬자가 미상인 유서가 많았던 것은 편찬자의 개인적 목적으로 유서를 활용하려 했기 때문이다.", "조선에서는 시문 창작, 과거 시험 등에 필요한 내용을 담은 유서가 편찬되는 경우가 적지 않았다.", "조선에서는 중국의 편찬 방식을 따르면서도 대체로 국가보다는개인에 의해 유서가 편찬되었다.", 
+"중국에서는 많은 학자를 동원하여 대규모로 편찬한 유서를 통해 왕조의 위엄을 드러내었다.", "중국에서는 주로 서적에서 발췌한 내용을 비교하고 해석을 덧붙여 유서를 편찬하였다."), c("지식의 제공이라는 ㉮의 편찬 의도는, ㉠에서 지식을 심화하고확장하여 소개한 것에서 나타난다.", "지식을 재분류하여 범주화한 ㉮의 방식은, ㉠에서 해부학과 생리학을 주자학 심성론의 하위 이론으로 수용한 것에서 나타난다.", 
+"평가를 더하는 저술로서 ㉮의 성격은, ㉡에서 중국 학문의 진보성을 확인하고자 서학을 활용한 것에서 나타난다.", "사실 탐구를 중시하며 자연 과학에 대해 드러낸 ㉮의 관심은, ㉡에서 천문학과 우주론의 내용을 수록한 것에서 나타난다.", "새로운 지식을 수용하는 ㉮의 유연성과 개방성은, ㉠과 ㉡에서서학을 지적 자원으로 받아들인 것에서 나타난다."), c("학문에서 의리를 앞세우고 이익을 뒤로하는 것보다 중한 것이없으니, 심성을 수양하는 것은 그다음의 일이다.", 
+"주자학에 매몰되어 세상의 여러 이치를 연구하지 않는 것은 널리 배우고 익히는 앎의 바른 방법이 아닐 것이다.", "주자의 가르침이 쇠퇴하게 되면 주자학이 아닌 학문이 날로 번성하게 되니, 주자의 도가 분명히 밝혀져야 한다.", "유학 경전에서 쓰이지 않은 글자를 한 글자라도 더하는 일을 용납하는 것은 바른 학문을 해치는 길이 될 것이다.", "참되게 알고 참되게 행하는 것이 어려우니, 우리 학문의 여러경전으로부터 널리 배우고 면밀히 익혀야 할 것이다."
+), c("현실 개혁의 뜻을 담았던 (가)의 실학자들의 유서와 마찬가지로 현실의 문제를 개선하려는 목적의식이 확인되겠군.", "증거를 제시하여 이론적으로 밝히거나 의견을 제시하는 경우가많았던 (가)의 실학자들의 유서와 마찬가지로 편찬자의 고증과의견이 반영된 것이 확인되겠군.", "당대 지식을 망라하고 서양 관련 지식을 소개하고자 한 (나)의 지봉유설에 비해 특정한 주제를 중심으로 편찬되는 전문 유서의 성격이 두드러지게 드러나겠군.", 
+"기존 학설의 정당화 내지 배제에 관심을 두었던 (나)의 성호사설에 비해 향촌 사회 구성원의 삶에 필요한 실용적인 지식의활용에 대한 관심이 드러나겠군.", "중국을 문명의 척도로 받아들였던 (나)의 오주연문장전산고와 달리 중화 관념에 구애되지 않고 중국의 현실과 조선의 현실을 비교한 내용이 확인되겠군."), c("ⓐ : 의거(依據)하여", "ⓑ : 계몽(啓蒙)하는", "ⓒ : 용이(容易)하게", 
+"ⓓ : 혼재(混在)되어", "ⓔ : 변경(變更)하여")), c(4, 5, 3, 2, 5, 2), c(2, 2, 2, 2, 3, 2), c(NA, NA, NA, NA, "&lt;보기&gt; 서유구의 임원경제지는 19세기까지의 조선과 중국 서적들에서 향촌 관련 부분을 발췌, 분류하고 고증한 유서이다. 국가를 위한다는 목적의식을 명시한 이 유서에는 향촌 사대부의 이상적인 삶을 제시하는 과정에서 향촌 구성원 전체의 삶의 조건을 개선할 수 있는 방안이 실렸고, 향촌 실생활에서활용할 수 있는 내용이 집성되었다. 주자학을 기반으로 실증과실용의 자세를 견지했던 서유구의 입장, 서학 중국 원류설, 중국과 비교한 조선의 현실 등이 반영되었다. 안설을 부기했으며, 제한적으로 색인을 넣어 검색이 가능하도록 하였다.", 
+NA)</td></tr>
+    <tr><td headers="id" class="gt_row gt_left">2023_11_KICE_10-13</td>
+<td headers="paragraph" class="gt_row gt_left">법령의 조문은 대개 ‘A에 해당하면 B를 해야 한다.’처럼 요건과효과로 구성된 조건문으로 규정된다. 하지만 그 요건이나 효과가항상 일의적인 것은 아니다. 법조문에는 구체적 상황을 고려해야그 상황에 ⓐ(맞는) 진정한 의미가 파악되는 불확정 개념이 사용될 수 있기 때문이다. 개인 간 법률관계를 규율하는 민법에서 불확정 개념이 사용된 예로 ‘손해 배상 예정액이 부당히 과다한경우에는 법원은 적당히 감액할 수 있다.’라는 조문을 ⓑ(들) 수 있다. 이때 법원은 요건과 효과를 재량으로 판단할 수 있다. 손해배상 예정액은 위약금의 일종이며, 계약 위반에 대한 제재인 위약벌도 위약금에 속한다. 위약금의 성격이 둘 중 무엇인지 증명되지 못하면 손해 배상 예정액으로 다루어진다.채무자의 잘못으로 계약 내용이 실현되지 못하여 계약 위반이발생하면, 이로 인해 손해를 입은 채권자가 손해 액수를 증명해야 그 액수만큼 손해 배상금을 받을 수 있다. 그러나 손해 배상 예정액이 정해져 있었다면 채권자는 손해 액수를 증명하지 않아도 손해 배상 예정액만큼 손해 배상금을 받을 수 있다. 이때 손해 액수가 얼마로 증명되든 손해 배상 예정액보다 더 받을 수는 없다. 한편 위약금이 위약벌임이 증명되면 채권자는 위약벌에 해당하는 위약금을 ⓒ(받을) 수 있고, 손해 배상 예정액과는 달리 법원이 감액할 수 없다. 이때 채권자가 손해 액수를증명하면 손해 배상금도 받을 수 있다.불확정 개념은 행정 법령에도 사용된다. 행정 법령은 행정청이구체적 사실에 대해 행하는 법 집행인 행정 작용을 규율한다. 법령상 요건이 충족되면 그 효과로서 행정청이 반드시 해야 하는특정 내용의 행정 작용은 기속 행위이다. 반면 법령상 요건이 충족되더라도 그 효과인 행정 작용의 구체적 내용을 ⓓ(고를)수 있는 재량이 행정청에 주어져 있을 때, 이러한 재량을 행사하는 행정 작용은 재량 행위이다. 법령에서 불확정 개념이 사용되면 이에 근거한 행정 작용은 대개 재량 행위이다.행정청은 재량으로 재량 행사의 기준을 명확히 정할 수 있는데 이 기준을 ㉠(재량 준칙)이라 한다. 재량 준칙은 법령이 아니므로 재량 준칙대로 재량을 행사하지 않아도 근거 법령 위반은 아니다. 다만 특정 요건하에 재량 준칙대로 특정한 내용의 적법한 행정 작용이 반복되어 행정 관행이 생긴 후에는, 같은 요건이 충족되면 행정청은 동일한 내용의 행정 작용을 해야 한다. 행정청은 평등 원칙을 ⓔ(지켜야) 하기 때문이다.</td>
+<td headers="type" class="gt_row gt_right">0</td>
+<td headers="problems" class="gt_row gt_center">c("윗글의 내용과 일치하지 않는 것은?", "㉠에 대한 이해로 가장 적절한 것은?", "윗글을 바탕으로 &lt;보기&gt;를 이해한 내용으로 가장 적절한 것은? [3점]", "문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?"), list(c("법령의 요건과 효과에는 모두 불확정 개념이 사용될 수 있다.", "법원은 불확정 개념이 사용된 법령을 적용할 때 재량을 행사할 수 있다.", "불확정 개념이 사용된 법령의 진정한 의미를 이해하려면 구체적 상황을 고려해야 한다.", "불확정 개념이 사용된 행정 법령에 근거한 행정 작용은 재량 행위인 경우보다 기속 행위인 경우가 많다.", "불확정 개념은 행정청이 행하는 법 집행 작용을 규율하는 법령과 개인 간의 계약 관계를 규율하는 법률에 모두 사용된다."
+), c("재량 준칙은 법령이 아니기 때문에 일의적이지 않은 개념으로 규정된다.", "재량 준칙으로 정해진 내용대로 재량을 행사하는 행정 작용은 기속 행위이다.", "재량 준칙으로 규정된 재량 행사 기준은 반복되어 온 적법한 행정 작용의 내용대로 정해져야 한다.", "재량 준칙이 정해져야 행정청은 특정 요건하에 행정 작용의 구체적 내용을 선택할 수 있는 재량을 행사할 수 있다.", 
+"재량 준칙이 특정 요건에서 적용된 선례가 없으면 행정청은 동일한 요건이 충족되어도 행정 작용을 할 때 재량 준칙을 따르지 않을 수 있다."), c("(가)에서 을의 손해가 얼마인지 증명되지 못한 경우에도, 갑이을에게 80을 지급해야 하고 법원이 감액할 수 없다.", "(나)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 100을지급해야 하고 법원이 감액할 수 있다.", "(나)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 없다", 
+"(다)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 180을지급해야 하고 법원이 감액할 수 있다.", "(다)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다."), c("이것이 네가 찾는 자료가 ⓐ(맞는지) 확인해 보아라.", "그 부부는 노후 대책으로 적금을 ⓑ(들고) 안심했다.", "그의 파격적인 주장은 학계의 큰 주목을 ⓒ(받았다).", 
+"형은 땀 흘려 울퉁불퉁한 땅을 평평하게 ⓓ(골랐다).", "그분은 우리에게 한 약속을 반드시 ⓔ(지킬) 것이다.")), c(4, 5, 2, 5), c(2, 2, 3, 2), c(NA, NA, "&lt;보 기&gt; 갑은 을에게 물건을 팔고 그 대가로 100을 받기로 하는 매매 계약을 했다. 그 후 갑이 계약을 위반하여 을은 80의 손해를 입었다. 이와 관련하여 세 가지 상황이 있다고 하자. (가)(갑과 을 사이에 위약금 약정이 없었다.) (나)(갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 무엇인지 증명되지 못했다.) (다)(갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 위약벌임이 증명되었다.) 단, 위의 모든 상황에서 세금, 이자 및 기타 비용은 고려하지 않음.", 
+NA), c(NA, NA, NA, 3)</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="문제-상세" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="문제-상세"><span class="header-section-number">2.2</span> 문제 상세</h2>
+<div class="cell">
+<details>
+<summary>코드</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sat <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(problems) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  .[[<span class="dv">1</span>]] <span class="sc">|&gt;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="hxhficgger" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hxhficgger table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hxhficgger thead, #hxhficgger tbody, #hxhficgger tfoot, #hxhficgger tr, #hxhficgger td, #hxhficgger th {
+  border-style: none;
+}
+
+#hxhficgger p {
+  margin: 0;
+  padding: 0;
+}
+
+#hxhficgger .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hxhficgger .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hxhficgger .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hxhficgger .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hxhficgger .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxhficgger .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxhficgger .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxhficgger .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hxhficgger .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hxhficgger .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hxhficgger .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hxhficgger .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hxhficgger .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hxhficgger .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hxhficgger .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hxhficgger .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hxhficgger .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hxhficgger .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hxhficgger .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxhficgger .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hxhficgger .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hxhficgger .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hxhficgger .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxhficgger .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hxhficgger .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hxhficgger .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxhficgger .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxhficgger .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hxhficgger .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxhficgger .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hxhficgger .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxhficgger .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxhficgger .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxhficgger .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxhficgger .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxhficgger .gt_left {
+  text-align: left;
+}
+
+#hxhficgger .gt_center {
+  text-align: center;
+}
+
+#hxhficgger .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hxhficgger .gt_font_normal {
+  font-weight: normal;
+}
+
+#hxhficgger .gt_font_bold {
+  font-weight: bold;
+}
+
+#hxhficgger .gt_font_italic {
+  font-style: italic;
+}
+
+#hxhficgger .gt_super {
+  font-size: 65%;
+}
+
+#hxhficgger .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hxhficgger .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hxhficgger .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hxhficgger .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hxhficgger .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hxhficgger .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hxhficgger .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="question">question</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="choices">choices</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="answer">answer</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="score">score</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="question_plus">question_plus</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="question" class="gt_row gt_left">윗글의 내용과 일치하지 않는 것은?</td>
+<td headers="choices" class="gt_row gt_center">같은 책을 읽은 독자라도 서로 다른 의미를 구성할 수 있다., 다른 독자와의 소통은 독자가 인식의 폭을 확장하도록 돕는다, 독자는 직접 경험해 보지 못했던 다양한 삶을 책의 필자를 매개로 접할 수 있다., 독자의 배경지식, 관점, 읽기 환경, 과제는 독자의 의미 구성에 영향을 주는 독자 요인이다., 독자는 책을 읽을 때 자신이 속한 사회나 시대의 영향을 받으며 필자와 간접적으로 대화한다</td>
+<td headers="answer" class="gt_row gt_right">4</td>
+<td headers="score" class="gt_row gt_right">2</td>
+<td headers="question_plus" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="question" class="gt_row gt_left">다음은 학생이 독서 후 작성한 글의 일부이다. [A]를 바탕으로 ⓐ～ⓔ를 이해한 내용으로 가장 적절한 것은?</td>
+<td headers="choices" class="gt_row gt_center">ⓐ와 ⓑ에는 모두 ‘독자 자신에게서 답을 찾는 질문’이 나타난다., ⓒ와 ⓓ에는 모두 ‘책에 명시된 내용’에서 질문의 답을 찾아내는 모습이 나타난다., ⓐ에는 ‘책에서 답을 찾는 질문’이, ⓔ에는 그에 대한 답을 ‘독자의 경험’에서 찾아내는 모습이 나타난다., ⓑ에는 ‘책에서 답을 찾는 질문’이, ⓒ에는 그에 대한 답을 ‘책의 내용들을 관계 지으며’ 찾아내는 모습이 나타난다., ⓓ에는 ‘독자 자신에게서 답을 찾는 질문’이, ⓔ에는 그에 대한 답을 ‘독자의 경험’에서 찾아내는 모습이 나타난다.</td>
+<td headers="answer" class="gt_row gt_right">5</td>
+<td headers="score" class="gt_row gt_right">3</td>
+<td headers="question_plus" class="gt_row gt_left">ⓐ('음악 시간에 들었던 베토벤의 교향곡 &lt;합창&gt;이 위대한 작품인 이유는 무엇일까?'하는 생각)에, 베토벤에 대한 책을 빌렸다. 책에서는 기약만으로 구성됐던 교향곡에 성악을 결합헤 개성을 드러냈다는 점에서 ⓑ(이 곡이 낭만주의 음악의 특징을 보여 준다고 했다.) &lt;합창&gt;을 해설한 부분에 이어, 베토벤의 생애에 관한 뒷부분도 읽었는데, ⓒ(이 내용들을 종합해, 절망적 상황에서도 열정적으로 자신이 좋아하는 일을 했기에 교향곡 구성의 새로움을 보여 준 명작이 탄생했음을 알게 됐다.) 이후 ⓓ(내가 진정으로 좋아하는 일이 무엇인지 나에게 묻게 되었다.) ⓔ(글 쓰는 일에서 가장 큰 행복을 느꼈던 나를 발견)할 수 있었고, 나도 어떤 상황에서든 좋아하는 일을 계속해야겠다고 생각했다.</td></tr>
+    <tr><td headers="question" class="gt_row gt_left">윗글을 읽고 ㉠에 대해 보인 반응으로 적절하지 않은 것은?</td>
+<td headers="choices" class="gt_row gt_center">스스로 독서 계획을 세우고 자신에게 필요한 책을 찾아 개인적으로 읽는 과정에서 경험할 수 있겠군., 독서 모임에서 서로 다른 관점을 확인하고 자신의 관점을 조정하는 과정에서 경험할 수 있겠군., 개인적으로 형성한 의미를, 독서 동아리를 통해 심화하는 과정에서 경험할 수 있겠군., 자신의 독서 경험을 담은 콘텐츠를 생산하고 공유하는 과정에서 경험할 수 있겠군., 오프라인뿐 아니라 온라인 공간에서 해석을 나누는 과정에서도 경험할 수 있겠군.</td>
+<td headers="answer" class="gt_row gt_right">1</td>
+<td headers="score" class="gt_row gt_right">2</td>
+<td headers="question_plus" class="gt_row gt_left">NA</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://quarto.org/">Quarto</a> 로 제작</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});</script>
+
+
+
+
+</body></html>

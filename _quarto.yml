@@ -106,6 +106,9 @@ website:
           - text: "------------"
           - href: sat_math.qmd
             text: "수능수학 (2023)"
+          - text: "------------"
+          - href: sat_korean.qmd
+            text: "수능국어 (2023)"            
             
       - text: 관련 정보
         menu: 
