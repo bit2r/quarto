@@ -68,6 +68,8 @@ website:
             text: "책표지와 본문결합"
           - href: latex_rmd.qmd
             text: "Rmd --> PDF"
+          - href: latex_template.qmd
+            text: "쿼토 라텍 템플릿"            
           - text: "------------"
           - href: book_cover.qmd
             text: "생성AI: 책표지 + 로고"
@@ -171,5 +173,8 @@ format:
     
 execute:
   freeze: true
-  
+
+filters:
+  - lightbox
+lightbox: auto  
     
