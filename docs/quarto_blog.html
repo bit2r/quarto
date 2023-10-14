@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.299">
+<meta name="generator" content="quarto-1.4.288">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,16 +48,22 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
   }
 }</script>
 <script>
@@ -94,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="twitter:title" content="디지털 글쓰기 - Quarto 데이터 과학">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="한글 쿼토">
 <meta name="twitter:image" content="https://quartopub.com/sites/statkclee/quarto-ds/fig/koRea_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="575">
@@ -107,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">디지털 글쓰기</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="검색"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="탐색 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -178,13 +184,135 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./youtube.html" rel="" target="">
  <span class="dropdown-text">동영상 글쓰기</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pdf.html" rel="" target="">
+ <span class="dropdown-text">2023년 수능 수학(홀수)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-latex" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><span class="math inline">\(\LaTeX\)</span></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-latex">    
+        <li>
+    <a class="dropdown-item" href="./latex.html" rel="" target="">
+ <span class="dropdown-text"><span class="math inline">\(\LaTeX\)</span> 들어가며</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./document_editor.html" rel="" target="">
+ <span class="dropdown-text">문서 편집기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_lipsum.html" rel="" target="">
+ <span class="dropdown-text">국영문 <code>lipsum</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_helloworld.html" rel="" target="">
+ <span class="dropdown-text">헬로월드 한영 문서</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_thesis.html" rel="" target="">
+ <span class="dropdown-text">학위논문 양식</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_cover.html" rel="" target="">
+ <span class="dropdown-text">책표지와 본문결합</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./latex_rmd.html" rel="" target="">
+ <span class="dropdown-text">Rmd –&gt; PDF</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./book_cover.html" rel="" target="">
+ <span class="dropdown-text">생성AI: 책표지 + 로고</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bitPublish.html" rel="" target="">
+ <span class="dropdown-text">글쓰기 –&gt; 출판: <code>bitPublish</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bitPublish_cheatsheet.html" rel="" target="">
+ <span class="dropdown-text"><code>bitPublish</code> 참조안내서</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./R_manual_wsl.html" rel="" target="">
+ <span class="dropdown-text">WSL 환경 R 매뉴얼</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./R_manual.html" rel="" target="">
+ <span class="dropdown-text">R 매뉴얼(<code>.texi</code>)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-excel" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">엑셀(Excel)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-excel">    
+        <li>
+    <a class="dropdown-item" href="./excel_why.html" rel="" target="">
+ <span class="dropdown-text">왜 엑셀(?)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_dc.html" rel="" target="">
+ <span class="dropdown-text">엑셀: 데이터 기본기</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./excel_chatGPT.html" rel="" target="">
+ <span class="dropdown-text">챗GPT 엑셀</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">관련 정보</span>
+ <span class="menu-text">수능</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="./sat.html" rel="" target="">
+ <span class="dropdown-text">수학능력평가</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_university.html" rel="" target="">
+ <span class="dropdown-text">전국대학현황</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_pop.html" rel="" target="">
+ <span class="dropdown-text">연령별 인구구조</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_english.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 사전준비</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_english_solve.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 풀이</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sat_english_practice.html" rel="" target="">
+ <span class="dropdown-text">수능영어 (2023): 훈련</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_math.html" rel="" target="">
+ <span class="dropdown-text">수능수학 (2023)</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sat_korean.html" rel="" target="">
+ <span class="dropdown-text">수능국어 (2023)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--2" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">관련 정보</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--2">    
         <li>
     <a class="dropdown-item" href="https://use-r.kr/" rel="" target="">
  <span class="dropdown-text">한국 R 컨퍼런스</span></a>
@@ -194,8 +322,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">서울 R Meetup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://tidyverse-korea.github.io/seoul-R/" rel="" target="">
- <span class="dropdown-text">서울 R Meetup Archive</span></a>
+    <a class="dropdown-item" href="https://r2bit.com/seoul-r/" rel="" target="">
+ <span class="dropdown-text">서울 R Meetup 발표자료</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://r-community.org/usergroups/" rel="" target="">
@@ -244,19 +372,19 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quarto 데이터 과학</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quarto 데이터 과학</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -270,7 +398,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">PPT</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -293,7 +421,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">전자책</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -310,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">디지털 글쓰기</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -327,7 +455,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">코딩(Computation)</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -359,7 +487,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Bookdown">Bookdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Compendium">Compendium <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Low code">Low code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Quarto Book">Quarto Book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reeborg">Reeborg <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bslib">bslib <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dashboard-builder">dashboard-builder <span class="quarto-category-count">(1)</span></div><div class="category" data-category="shiny">shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="shinyuieditor">shinyuieditor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="공정거래위원회">공정거래위원회 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="구글 폰트">구글 폰트 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="대기업">대기업 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="데이터 패키지">데이터 패키지 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="로고">로고 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="리보그">리보그 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="블로그">블로그 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="앱개발">앱개발 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="재현가능 글쓰기">재현가능 글쓰기 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="전자책">전자책 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="지도">지도 <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">분류</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">전체 <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Bookdown">Bookdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Compendium">Compendium <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Low code">Low code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Quarto Book">Quarto Book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reeborg">Reeborg <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bslib">bslib <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dashboard-builder">dashboard-builder <span class="quarto-category-count">(1)</span></div><div class="category" data-category="shiny">shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="shinyuieditor">shinyuieditor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="공정거래위원회">공정거래위원회 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="구글 폰트">구글 폰트 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="대기업">대기업 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="데이터 패키지">데이터 패키지 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="로고">로고 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="리보그">리보그 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="블로그">블로그 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="앱개발">앱개발 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="재현가능 글쓰기">재현가능 글쓰기 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="전자책">전자책 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="지도">지도 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
@@ -370,13 +498,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
     
   </div>
   
+
 
 </header>
 
@@ -386,7 +515,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="지도,대기업,공정거래위원회,로고" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="0" data-categories="지도,대기업,공정거래위원회,로고" data-listing-date-sort="1669215600000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1704">
 <div class="thumbnail">
 <p><a href="./posts/20221124_ftc/index.html"> <!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/20221124_ftc/index.html --> </a></p>
 </div>
@@ -422,7 +551,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="metadata">
 <a href="./posts/20221124_ftc/index.html">
 <div class="listing-date">
-Nov 24, 2022
+2022. 11. 24.
 </div>
 <div class="listing-author">
 이광춘
@@ -430,7 +559,7 @@ Nov 24, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Quarto Book,Bookdown,전자책,리보그,Reeborg" data-listing-date-sort="1668006000000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="1" data-categories="Quarto Book,Bookdown,전자책,리보그,Reeborg" data-listing-date-sort="1668006000000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
 <div class="thumbnail">
 <p><a href="./posts/20221110_bookdown/index.html"> <!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/20221110_bookdown/index.html --> </a></p>
 </div>
@@ -469,7 +598,7 @@ Reeborg
 <div class="metadata">
 <a href="./posts/20221110_bookdown/index.html">
 <div class="listing-date">
-Nov 10, 2022
+2022. 11. 10.
 </div>
 <div class="listing-author">
 이광춘
@@ -477,7 +606,7 @@ Nov 10, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Quarto,Low code,shiny,앱개발,shinyuieditor,데이터 패키지,bslib,구글 폰트,dashboard-builder" data-listing-date-sort="1661871600000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="2" data-categories="Quarto,Low code,shiny,앱개발,shinyuieditor,데이터 패키지,bslib,구글 폰트,dashboard-builder" data-listing-date-sort="1661871600000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="887">
 <div class="thumbnail">
 <p><a href="./posts/20220831_low_code_shiny/index.html"> <!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/20220831_low_code_shiny/index.html --> </a></p>
 </div>
@@ -528,7 +657,7 @@ dashboard-builder
 <div class="metadata">
 <a href="./posts/20220831_low_code_shiny/index.html">
 <div class="listing-date">
-Aug 31, 2022
+2022. 8. 31.
 </div>
 <div class="listing-author">
 이광춘
@@ -536,7 +665,7 @@ Aug 31, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Quarto,재현가능 글쓰기,Compendium" data-listing-date-sort="1660575600000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="3" data-categories="Quarto,재현가능 글쓰기,Compendium" data-listing-date-sort="1660575600000" data-listing-file-modified-sort="1672737148856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1189">
 <div class="thumbnail">
 <p><a href="./posts/20220816_quarto_rr/index.html"> <!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/20220816_quarto_rr/index.html --> </a></p>
 </div>
@@ -569,7 +698,7 @@ Compendium
 <div class="metadata">
 <a href="./posts/20220816_quarto_rr/index.html">
 <div class="listing-date">
-Aug 16, 2022
+2022. 8. 16.
 </div>
 <div class="listing-author">
 이광춘
@@ -577,7 +706,7 @@ Aug 16, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Quarto,블로그" data-listing-date-sort="1660489200000" data-listing-file-modified-sort="1672737148840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="4" data-categories="Quarto,블로그" data-listing-date-sort="1660489200000" data-listing-file-modified-sort="1672737148840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="584">
 <div class="thumbnail">
 <p><a href="./posts/20220815_quarto_blog/index.html"> <!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/20220815_quarto_blog/index.html --> </a></p>
 </div>
@@ -607,7 +736,7 @@ Quarto
 <div class="metadata">
 <a href="./posts/20220815_quarto_blog/index.html">
 <div class="listing-date">
-Aug 15, 2022
+2022. 8. 15.
 </div>
 <div class="listing-author">
 이광춘
@@ -617,7 +746,7 @@ Aug 15, 2022
 </div>
 </div>
 <div class="listing-no-matching d-none">
-No matching items
+일치 없음
 </div>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -674,12 +803,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "복사완료!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "복사완료!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -699,10 +828,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -712,8 +840,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -726,6 +863,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -769,6 +981,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -856,7 +1069,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><a href="https://quarto.org/">Quarto</a> 로 제작</div>   
+    <div class="nav-footer-left">
+<p><a href="https://quarto.org/">Quarto</a> 로 제작</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -865,6 +1080,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
